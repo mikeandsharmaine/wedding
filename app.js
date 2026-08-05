@@ -6,6 +6,19 @@ const App = {
     party: [],
     apiUrl: "https://script.google.com/macros/s/AKfycbyZNzIYT8Vp1zopvc_PANgV5XBeINll9oBiK4FA83tUeutjj6EpvJJhwMxdO6TjH0di/exec"
 };
+async function searchGuest(name) {
+
+    const response = await fetch(
+        `${App.apiUrl}?action=search&name=${encodeURIComponent(name)}`
+    );
+
+    if (!response.ok) {
+        throw new Error("Unable to connect to RSVP server.");
+    }
+
+    return await response.json();
+
+}
 
 // -------------------------------
 // Initial Page
@@ -65,7 +78,7 @@ function renderWelcomePage() {
 // Search Button
 // -------------------------------
 
-function findGuest(){
+async function findGuest(){
 
     const name = document.getElementById("guestName").value.trim();
 
@@ -77,7 +90,30 @@ function findGuest(){
 
     }
 
-    alert("Next step: Connecting to Google Apps Script.");
+    try{
+
+        const guests = await searchGuest(name);
+
+        if(guests.length===0){
+
+            alert("Sorry, we couldn't find your invitation.");
+
+            return;
+
+        }
+
+        App.party = guests;
+
+        renderInvitationSummary();
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        alert("Unable to connect to RSVP server.");
+
+    }
 
 }
 
