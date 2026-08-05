@@ -4,7 +4,7 @@
 
 const App = {
     party: [],
-    apiUrl: "" // We'll add the Apps Script URL later
+    apiUrl: "https://script.google.com/macros/s/AKfycbyZNzIYT8Vp1zopvc_PANgV5XBeINll9oBiK4FA83tUeutjj6EpvJJhwMxdO6TjH0di/exec"
 };
 
 // -------------------------------
