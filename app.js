@@ -120,3 +120,38 @@ async function findGuest(){
 // -------------------------------
 
 window.onload = renderWelcomePage;
+function renderInvitationSummary() {
+
+  const party = App.party;
+
+  document.getElementById("app").innerHTML = `
+    <h1>Welcome!</h1>
+
+    <h2>${party[0].PartyName}</h2>
+
+    <p>Please confirm the attendance of everyone in your invitation.</p>
+
+    ${party.map((guest, index) => `
+      <div class="guest-card">
+
+        <h3>${guest.GuestName}</h3>
+
+        <label>
+          <input
+            type="checkbox"
+            id="guest${index}"
+          >
+          Will Attend
+        </label>
+
+      </div>
+    `).join("")}
+
+    <br>
+
+    <button onclick="submitRSVP()">
+      Continue
+    </button>
+  `;
+
+}
