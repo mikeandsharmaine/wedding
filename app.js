@@ -32,11 +32,13 @@ function renderWelcomePage() {
 
         <h2>Wedding RSVP</h2>
 
-        <br>
+<div class="gold-divider">
+    ❦
+</div>
 
-        <p>
-            Please enter your name exactly as it appears on your invitation.
-        </p>
+<p>
+    Please enter your name exactly as it appears on your invitation.
+</p>
 
         <input
             id="guestName"
