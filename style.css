@@ -56,8 +56,9 @@ body{
     border-radius:40px;
 
     box-shadow:
-    0 12px 35px rgba(126,142,101,.10),
-    0 30px 80px rgba(160,130,80,.18);
+0 8px 25px rgba(90,75,40,.08),
+0 30px 70px rgba(90,75,40,.10),
+0 1px 0 rgba(255,255,255,.9) inset;
 
     padding:70px;
 
