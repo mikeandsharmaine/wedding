@@ -80,12 +80,23 @@ function renderWelcomePage() {
 
 async function findGuest() {
 
+    const btn = document.querySelector("button");
+
+    btn.disabled = true;
+    btn.innerHTML = "⏳ Searching...";
+
     const name = document.getElementById("guestName").value.trim();
 
     if (name === "") {
-        alert("Please enter your name.");
-        return;
-    }
+
+    alert("Please enter your name.");
+
+    btn.disabled = false;
+    btn.innerHTML = "Find My Invitation";
+
+    return;
+
+}
 
     try {
 
@@ -95,10 +106,16 @@ async function findGuest() {
 
         console.log("2. Guests returned:", guests);
 
-        if (guests.length === 0) {
-            alert("Sorry, we couldn't find your invitation.");
-            return;
-        }
+       if (guests.length === 0) {
+
+    alert("Sorry, we couldn't find your invitation.");
+
+    btn.disabled = false;
+    btn.innerHTML = "Find My Invitation";
+
+    return;
+
+}
 
         console.log("3. Saving party");
 
@@ -112,11 +129,12 @@ async function findGuest() {
 
     } catch (error) {
 
-        console.error("FULL ERROR:", error);
+    console.error(error);
 
-        alert(error.message);
+    btn.disabled = false;
+    btn.innerHTML = "Find My Invitation";
 
-    }
+    alert(error.message);
 
 }
 
