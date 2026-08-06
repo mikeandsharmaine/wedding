@@ -46,19 +46,42 @@ body{
 /* Card */
 
 .card{
-    background:rgba(255,255,255,.78);
-    backdrop-filter:blur(8px);
 
-    border-radius:40px;
+    position:relative;
 
-    box-shadow:
-        0 20px 60px rgba(150,120,70,.18);
+    background:rgba(255,250,245,.92);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:42px;
 
     overflow:hidden;
 
-    position:relative;
+    padding:70px 65px;
+
+    border:1px solid rgba(212,190,145,.22);
+
+    box-shadow:
+        0 30px 70px rgba(128,103,66,.15),
+        inset 0 0 0 1px rgba(255,255,255,.45);
+
 }
 
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:20px;
+
+    border:1px solid rgba(214,193,157,.28);
+
+    border-radius:28px;
+
+    pointer-events:none;
+
+}
 
 /* Typography */
 
@@ -68,11 +91,20 @@ h1{
 
     color:#6F7D57;
 
-    font-size:64px;
+    font-size:58px;
+
+    font-weight:600;
 
     text-align:center;
 
-    line-height:1.1;
+    line-height:1.05;
+
+    letter-spacing:.5px;
+
+    margin:0 0 12px;
+
+    text-shadow:
+        0 2px 10px rgba(126,142,101,.08);
 
 }
 
@@ -80,13 +112,17 @@ h2{
 
     font-family:'Cormorant Garamond',serif;
 
-    color:#B78C3D;
+    font-size:34px;
 
-    font-size:46px;
+    font-weight:500;
+
+    color:#B38B59;
 
     text-align:center;
 
-    margin-top:20px;
+    letter-spacing:2px;
+
+    margin-bottom:32px;
 
 }
 
@@ -154,7 +190,11 @@ button{
 
     border-radius:40px;
 
-    background:#7E8E65;
+    background:linear-gradient(
+180deg,
+#95A57A,
+#7E8E65
+);
 
     color:white;
 
@@ -168,19 +208,27 @@ button{
 
     cursor:pointer;
 
-    transition:.3s;
+    transition: all .35s ease;
 
 }
 
 button:hover{
 
-    background:#6F7D57;
+    transform:translateY(-3px);
 
-    transform:translateY(-2px);
+    box-shadow:0 15px 35px rgba(126,142,101,.30);
+
+    filter:brightness(1.04);
 
 }
 
+button:active{
 
+    transform:translateY(0);
+
+    box-shadow:0 6px 15px rgba(126,142,101,.25);
+
+}
 /* Divider */
 
 .divider{
@@ -644,5 +692,30 @@ button:disabled{
     max-width:720px;
 
     margin:auto;
+
+}
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+#app{
+
+animation:fadeUp .8s ease;
 
 }
