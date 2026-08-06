@@ -144,72 +144,68 @@ async function findGuest() {
 window.onload = renderWelcomePage;
 function renderInvitationSummary() {
 
-  const party = App.party;
+    const party = App.party;
 
-  document.getElementById("app").innerHTML = `
-    <h1>Welcome!</h1>
+    document.getElementById("app").innerHTML = `
+        <h1>Welcome!</h1>
 
-    <h2>${party[0].PartyName}</h2>
+        <h2>${party[0].PartyName}</h2>
 
-    <p>Please confirm the attendance of everyone in your invitation.</p>
+        <p>We're so honored to celebrate with your family. Please let us know who will be joining us.</p>
 
-    ${party.map((guest, index) => {
+        ${party.map((guest, index) => {
 
-    const initials = guest.GuestName
-        .split(" ")
-        .map(n => n[0])
-        .join("")
-        .substring(0,2)
-        .toUpperCase();
+            const initials = guest.GuestName
+                .split(" ")
+                .map(name => name[0])
+                .join("")
+                .substring(0,2)
+                .toUpperCase();
 
-    return `
+            return `
+                <div class="guest-card">
 
-    <div class="guest-card">
+                    <div class="guest-icon">
+                        ${initials}
+                    </div>
 
-        <div class="guest-icon">
-            ${initials}
-        </div>
+                    <div class="guest-details">
 
-        <div class="guest-details">
+                        <h3>${guest.GuestName}</h3>
 
-            <h3>${guest.GuestName}</h3>
+                        <div class="attendance-toggle">
 
-            <div class="attendance-toggle">
+                            <label class="switch">
 
-                <label class="switch">
+                                <input
+                                    type="checkbox"
+                                    id="guest${index}"
+                                    checked
+                                    onchange="toggleAttendance(${index})">
 
-                    <input
-                        type="checkbox"
-                        id="guest${index}"
-                        checked
-                        onchange="toggleAttendance(${index})">
+                                <span class="slider"></span>
 
-                    <span class="slider"></span>
+                            </label>
 
-                </label>
+                            <span
+                                class="attendance-text"
+                                id="status${index}">
+                                Joyfully Attending 💚
+                            </span>
 
-                <span
-                    class="attendance-text"
-                    id="status${index}">
-                    Joyfully Attending 💚
-                </span>
+                        </div>
 
-            </div>
+                    </div>
 
-        </div>
+                </div>
+            `;
 
-    </div>
+        }).join("")}
 
+        <button onclick="continueToContact()">
+            Continue
+        </button>
     `;
-
-}).join("")}
-    <br>
-
-   <button onclick="continueToContact()">
-    Continue
-</button>
-
-  `;
 
 }
 function renderContactPage() {
