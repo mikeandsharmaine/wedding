@@ -533,3 +533,7 @@ textarea:focus{
     }
 
 }
+button:disabled{
+    opacity: .85;
+    cursor: not-allowed;
+}
