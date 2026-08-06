@@ -43,7 +43,7 @@ function renderWelcomePage() {
 
 </div>
 
-<p>
+<p class="welcome-text">
     Please enter your name exactly as it appears on your invitation.
 </p>
 
