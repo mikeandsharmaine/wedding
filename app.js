@@ -137,6 +137,7 @@ async function findGuest() {
     alert(error.message);
 
 }
+    }
 
 // -------------------------------
 
