@@ -153,38 +153,58 @@ function renderInvitationSummary() {
 
     <p>Please confirm the attendance of everyone in your invitation.</p>
 
-    ${party.map((guest, index) => `
-      <div class="guest-card">
+    ${party.map((guest, index) => {
 
-        <h3>${guest.GuestName}</h3>
+    const initials = guest.GuestName
+        .split(" ")
+        .map(n => n[0])
+        .join("")
+        .substring(0,2)
+        .toUpperCase();
 
-        <div class="attendance-toggle">
+    return `
 
-    <span class="status off">
-        Unable to Attend
-    </span>
+    <div class="guest-card">
 
-    <label class="switch">
+        <div class="guest-icon">
+            ${initials}
+        </div>
 
-        <input
-            type="checkbox"
-            id="guest${index}"
-            checked
-        >
+        <div class="guest-details">
 
-        <span class="slider"></span>
+            <h3>${guest.GuestName}</h3>
 
-    </label>
+            <div class="attendance-toggle">
 
-    <span class="status on">
-        Joyfully Attending
-    </span>
+                <span class="status off">
+                    Unable
+                </span>
 
-</div>
+                <label class="switch">
 
-      </div>
-    `).join("")}
+                    <input
+                        type="checkbox"
+                        id="guest${index}"
+                        checked
+                    >
 
+                    <span class="slider"></span>
+
+                </label>
+
+                <span class="status on">
+                    Joyfully Attending
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    `;
+
+}).join("")}
     <br>
 
    <button onclick="continueToContact()">
