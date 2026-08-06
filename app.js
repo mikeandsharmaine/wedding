@@ -454,3 +454,4 @@ function createPetal() {
 
 }
 setInterval(createPetal, 1800);
+console.log("Petal script loaded");
