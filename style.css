@@ -49,22 +49,19 @@ body{
 
     position:relative;
 
-    max-width:920px;
-
-    margin:50px auto;
-
-    padding:70px;
-
-    border-radius:36px;
-
-    background:rgba(255,252,247,.93);
-
-    backdrop-filter:blur(8px);
-
     overflow:hidden;
 
-    box-shadow:
-        0 18px 55px rgba(0,0,0,.10);
+    background:
+        url("floral-frame.png") center center / cover no-repeat,
+        rgba(255,255,255,.90);
+
+    backdrop-filter:blur(6px);
+
+    border-radius:40px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.12);
+
+    padding:70px;
 
 }
 
@@ -643,4 +640,15 @@ button:disabled{
 #app{
     position:relative;
     z-index:2;
+}
+#app{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:720px;
+
+    margin:auto;
+
 }
