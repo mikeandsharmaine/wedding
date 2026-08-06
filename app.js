@@ -270,6 +270,11 @@ async function submitRSVP() {
     console.log("ABOUT TO FETCH");
     console.log(payload);
 
+    const btn = document.querySelector("button");
+
+btn.disabled = true;
+btn.innerHTML = "♡ Saving your RSVP...";
+    
     try {
 
         const response = await fetch(
