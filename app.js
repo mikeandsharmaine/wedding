@@ -293,7 +293,7 @@ btn.innerHTML = "♡ Saving your RSVP...";
             alert(result.message);
         }
 
-    catch (error) {
+        } catch (error) {
 
     console.error(error);
 
