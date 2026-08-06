@@ -721,28 +721,44 @@ transform:translateY(0);
 
 }
 
+/* ===========================
+   Floating Watercolor Petals
+=========================== */
+
+#petals{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+}
+
 .petal{
 
     position:absolute;
 
-    top:-60px;
+    top:-80px;
 
-    font-size:22px;
+    will-change:transform;
 
-    opacity:.55;
+    animation:petalFall linear forwards;
 
-    animation:fall linear forwards;
-
-    user-select:none;
+    filter:drop-shadow(0 6px 12px rgba(0,0,0,.08));
 
 }
 
-@keyframes fall{
+@keyframes petalFall{
 
     0%{
 
         transform:
-            translateY(-50px)
+            translateY(-80px)
             translateX(0)
             rotate(0deg);
 
@@ -750,9 +766,18 @@ transform:translateY(0);
 
     }
 
-    15%{
+    10%{
 
-        opacity:.55;
+        opacity:.8;
+
+    }
+
+    50%{
+
+        transform:
+            translateY(50vh)
+            translateX(calc(var(--drift) / 2))
+            rotate(calc(var(--rotate) / 2));
 
     }
 
@@ -760,11 +785,13 @@ transform:translateY(0);
 
         transform:
             translateY(110vh)
-            translateX(80px)
-            rotate(360deg);
+            translateX(var(--drift))
+            rotate(var(--rotate));
 
         opacity:0;
 
     }
+
+}
 
 }
