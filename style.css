@@ -60,7 +60,7 @@ body{
 
     padding:70px;
 
-    max-width:900px;
+    max-width:760px;
 
     width:100%;
 
@@ -333,35 +333,28 @@ button:active{
 
 /* Mobile */
 
-@media(max-width:768px){
+@media (max-width:768px){
 
-.card{
+    .card{
+        padding:35px 22px;
+    }
 
-    padding:30px 22px;
+    h1{
+        font-size:42px;
+    }
 
-}
+    h2{
+        font-size:32px;
+    }
 
-h1{
+    button{
+        font-size:18px;
+    }
 
-    font-size:42px;
-
-}
-
-h2{
-
-    font-size:34px;
-
-}
-
-button{
-
-    font-size:18px;
-
-}
-
-input{
-
-    font-size:16px;
+    input,
+    textarea{
+        font-size:16px;
+    }
 
 }
 
@@ -581,45 +574,7 @@ button:disabled{
     cursor: not-allowed;
 }
 
-/* ===========================
-   Decorative Flowers
-=========================== */
 
-.flower{
-
-    position:absolute;
-
-    width:230px;
-
-    opacity:.20;
-
-    z-index:0;
-
-    pointer-events:none;
-
-    user-select:none;
-
-}
-
-.tl{
-    top:-45px;
-    left:-45px;
-}
-
-.tr{
-    top:-45px;
-    right:-45px;
-}
-
-.bl{
-    bottom:-45px;
-    left:-45px;
-}
-
-.br{
-    bottom:-45px;
-    right:-45px;
-}
 
 #app{
 
@@ -632,8 +587,6 @@ button:disabled{
     margin:auto;
 
     animation:fadeUp .8s ease;
-
-}
 
 }
 @keyframes fadeUp{
@@ -656,8 +609,3 @@ transform:translateY(0);
 
 }
 
-#app{
-
-animation:fadeUp .8s ease;
-
-}
