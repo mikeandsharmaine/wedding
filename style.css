@@ -596,31 +596,23 @@ button:disabled{
 }
 
 .tl{
-
-    top:-15px;
-    left:-15px;
-
+    top:-45px;
+    left:-45px;
 }
 
 .tr{
-
-    top:-15px;
-    right:-15px;
-
+    top:-45px;
+    right:-45px;
 }
 
 .bl{
-
-    bottom:-15px;
-    left:-15px;
-
+    bottom:-45px;
+    left:-45px;
 }
 
 .br{
-
-    bottom:-15px;
-    right:-15px;
-
+    bottom:-45px;
+    right:-45px;
 }
 
 #app{
@@ -631,11 +623,6 @@ button:disabled{
 
 }
 
-.flower{
-
-    opacity:.85;
-
-}
 /* ===========================
    Floral Card Design
 =========================== */
