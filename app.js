@@ -27,6 +27,7 @@ async function searchGuest(name) {
 function renderWelcomePage() {
 
     document.getElementById("app").innerHTML = `
+    
 
         <h1>Mike & Sharmaine</h1>
 
@@ -80,6 +81,7 @@ function renderWelcomePage() {
         </div>
 
     `;
+updateCountdown();
 }
 
 // -------------------------------
@@ -384,5 +386,30 @@ function showLoading(message = "Please wait...") {
 function hideLoading() {
 
     document.getElementById("loadingOverlay").style.display = "none";
+
+}
+// -------------------------------
+// Wedding Countdown
+// -------------------------------
+
+function updateCountdown() {
+
+    const weddingDate = new Date("2027-01-15T15:30:00");
+
+    const today = new Date();
+
+    const difference = weddingDate - today;
+
+    const days = Math.ceil(
+        difference / (1000 * 60 * 60 * 24)
+    );
+
+    const element = document.getElementById("daysRemaining");
+
+    if(element){
+
+        element.textContent = days;
+
+    }
 
 }
