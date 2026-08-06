@@ -774,23 +774,23 @@ transform:translateY(0);
 
     50%{
 
-        transform:
-            translateY(50vh)
-            translateX(calc(var(--drift) / 2))
-            rotate(calc(var(--rotate) / 2));
+    transform:
+        translateY(45vh)
+        translateX(calc(var(--drift) * 0.35))
+        rotate(calc(var(--rotate) * 0.4));
 
-    }
+}
 
     100%{
 
-        transform:
-            translateY(110vh)
-            translateX(var(--drift))
-            rotate(var(--rotate));
+    transform:
+        translateY(115vh)
+        translateX(calc(var(--drift) * 0.75))
+        rotate(calc(var(--rotate) * 0.8));
 
-        opacity:0;
+    opacity:0;
 
-    }
+}
 
 }
 
