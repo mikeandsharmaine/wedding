@@ -703,3 +703,68 @@ transform:translateY(0);
     font-size:14px;
 
 }
+/* ===========================
+   Floating Petals
+=========================== */
+
+#petals{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+.petal{
+
+    position:absolute;
+
+    top:-60px;
+
+    font-size:22px;
+
+    opacity:.55;
+
+    animation:fall linear forwards;
+
+    user-select:none;
+
+}
+
+@keyframes fall{
+
+    0%{
+
+        transform:
+            translateY(-50px)
+            translateX(0)
+            rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:.55;
+
+    }
+
+    100%{
+
+        transform:
+            translateY(110vh)
+            translateX(80px)
+            rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
