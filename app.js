@@ -152,9 +152,10 @@ function renderInvitationSummary() {
 
     <br>
 
-    <button onclick="renderContactPage()">
+   <button onclick="continueToContact()">
     Continue
 </button>
+
   `;
 
 }
