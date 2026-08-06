@@ -421,15 +421,13 @@ function updateCountdown() {
 // -------------------------------
 
 const floatingItems = [
-    "images/petal1.png",
-    "images/petal1.png",
-    "images/petal1.png",
-    "images/petal2.png",
-    "images/petal2.png",
-    "images/petal2.png",
-    "images/leaf1.png",
-    "images/leaf2.png",
-    "images/flower1.png"
+
+    "images/Petal1.png",
+    "images/Petal2.png",
+    "images/Leaf1.png",
+    "images/Leaf2.png",
+    "images/Flower.png"
+
 ];
 
 function createPetal() {
