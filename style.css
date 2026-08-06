@@ -58,6 +58,12 @@ body{
     box-shadow:
         0 20px 60px rgba(150,120,70,.18);
 
+    padding:70px;
+
+    max-width:900px;
+
+    width:100%;
+
 }
 
 .card::before{
@@ -621,61 +627,13 @@ button:disabled{
 
     z-index:2;
 
-}
-
-/* ===========================
-   Floral Card Design
-=========================== */
-
-.card{
-    position: relative;
-    overflow: hidden;
-}
-
-.corner-flower{
-    position:absolute;
-    width:180px;
-    opacity:.95;
-    pointer-events:none;
-    z-index:1;
-}
-
-.corner-flower.top-left{
-    top:-10px;
-    left:-10px;
-}
-
-.corner-flower.top-right{
-    top:-10px;
-    right:-10px;
-    transform:scaleX(-1);
-}
-
-.corner-flower.bottom-left{
-    bottom:-10px;
-    left:-10px;
-    transform:scaleY(-1);
-}
-
-.corner-flower.bottom-right{
-    bottom:-10px;
-    right:-10px;
-    transform:scale(-1);
-}
-
-#app{
-    position:relative;
-    z-index:2;
-}
-#app{
-
-    position:relative;
-
-    z-index:2;
-
     max-width:720px;
 
     margin:auto;
+
+    animation:fadeUp .8s ease;
+
+}
 
 }
 @keyframes fadeUp{
