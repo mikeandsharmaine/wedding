@@ -222,6 +222,16 @@ textarea:focus{
 
 }
 async function submitRSVP() {
+console.log("STEP 1");
+
+const mobile = document.getElementById("mobile").value.trim();
+
+console.log("STEP 2");
+
+const email = document.getElementById("email").value.trim();
+const message = document.getElementById("message").value.trim();
+
+console.log("STEP 3");
 
     const mobile = document.getElementById("mobile").value.trim();
     const email = document.getElementById("email").value.trim();
@@ -240,6 +250,11 @@ async function submitRSVP() {
         message,
         guests
     };
+    console.log("ABOUT TO FETCH");
+
+console.log(payload);
+
+const response = await fetch(
 
     try {
 
