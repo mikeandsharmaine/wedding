@@ -320,10 +320,12 @@ function toggleAttendance(index) {
     if (checkbox.checked) {
 
         status.textContent = "Joyfully Attending 💚";
+        status.style.color = "#7E8E65";
 
     } else {
 
         status.textContent = "Unable to Attend";
+        status.style.color = "#999";
 
     }
 
