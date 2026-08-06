@@ -293,12 +293,16 @@ btn.innerHTML = "♡ Saving your RSVP...";
             alert(result.message);
         }
 
-    } catch (error) {
+    catch (error) {
 
-        console.error(error);
-        alert("Unable to submit RSVP.");
+    console.error(error);
 
-    }
+    btn.disabled = false;
+    btn.innerHTML = "Confirm RSVP";
+
+    alert("Unable to submit RSVP.");
+
+}
 
 }
 function continueToContact() {
