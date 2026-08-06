@@ -78,40 +78,43 @@ function renderWelcomePage() {
 // Search Button
 // -------------------------------
 
-async function findGuest(){
+async function findGuest() {
 
     const name = document.getElementById("guestName").value.trim();
 
-    if(name===""){
-
+    if (name === "") {
         alert("Please enter your name.");
-
         return;
-
     }
 
-    try{
+    try {
+
+        console.log("1. Searching...");
 
         const guests = await searchGuest(name);
 
-        if(guests.length===0){
+        console.log("2. Guests returned:", guests);
 
+        if (guests.length === 0) {
             alert("Sorry, we couldn't find your invitation.");
-
             return;
-
         }
+
+        console.log("3. Saving party");
 
         App.party = guests;
 
+        console.log("4. Calling renderInvitationSummary");
+
         renderInvitationSummary();
 
-    }
-    catch(error){
+        console.log("5. Finished");
 
-        console.error(error);
+    } catch (error) {
 
-        alert("Unable to connect to RSVP server.");
+        console.error("FULL ERROR:", error);
+
+        alert(error.message);
 
     }
 
