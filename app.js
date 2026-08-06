@@ -104,12 +104,12 @@ btn.innerHTML = "View My Invitation";
 
         console.log("2. Guests returned:", guests);
 
-       if (guests.length === 0) {
+      if (guests.length === 0) {
 
     alert("Sorry, we couldn't find your invitation.");
 
     btn.disabled = false;
-    btn.innerHTML = "Find My Invitation";
+    btn.innerHTML = "View My Invitation";
 
     return;
 
@@ -130,7 +130,7 @@ btn.innerHTML = "View My Invitation";
     console.error(error);
 
     btn.disabled = false;
-    btn.innerHTML = "Find My Invitation";
+btn.innerHTML = "View My Invitation";
 
     alert(error.message);
 
