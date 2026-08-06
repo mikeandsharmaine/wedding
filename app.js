@@ -394,22 +394,25 @@ function hideLoading() {
 
 function updateCountdown() {
 
-    const weddingDate = new Date("2027-01-15T15:30:00");
+    const weddingDate = new Date(2027, 0, 15); // January = 0
 
     const today = new Date();
 
-    const difference = weddingDate - today;
+    // Remove the time portion
+    today.setHours(0,0,0,0);
+    weddingDate.setHours(0,0,0,0);
 
-    const days = Math.ceil(
-        difference / (1000 * 60 * 60 * 24)
-    );
+    const diff = weddingDate - today;
+
+    const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
     const element = document.getElementById("daysRemaining");
 
-    if(element){
+    console.log("Countdown element:", element);
+    console.log("Days:", days);
 
+    if (element) {
         element.textContent = days;
-
     }
 
 }
