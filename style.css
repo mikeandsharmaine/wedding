@@ -449,3 +449,14 @@ textarea:focus{
     transform:translateX(30px);
 
 }
+.attendance-text{
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#7E8E65;
+
+    transition:.25s;
+
+}
