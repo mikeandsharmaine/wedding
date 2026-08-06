@@ -41,9 +41,9 @@ function renderWelcomePage() {
             type="text"
             placeholder="Enter your name">
 
-        <button onclick="findGuest()">
-            Find My Invitation
-        </button>
+        <button onclick="searchGuest()">
+    View My Invitation
+</button>
 
         <div class="divider"></div>
 
