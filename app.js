@@ -187,31 +187,6 @@ function renderContactPage() {
     placeholder="Share your well wishes with Mike & Sharmaine...">
 </textarea>
 
-.field-label{
-    display:block;
-    margin:18px 0 8px;
-    text-align:left;
-    font-weight:600;
-    color:#666;
-}
-
-textarea{
-    width:100%;
-    min-height:140px;
-    padding:18px 22px;
-    border:1px solid #ddd;
-    border-radius:28px;
-    font-size:16px;
-    font-family:'Poppins',sans-serif;
-    resize:none;
-    margin-bottom:24px;
-    box-sizing:border-box;
-}
-
-textarea:focus{
-    outline:none;
-    border-color:#7E8E65;
-    box-shadow:0 0 0 4px rgba(126,142,101,.15);
 }
 
        <button onclick="submitRSVP()">
