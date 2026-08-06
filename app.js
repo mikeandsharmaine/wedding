@@ -9,8 +9,8 @@ const App = {
 async function searchGuest(name) {
 
     const response = await fetch(
-        `${App.apiUrl}?action=search&name=${encodeURIComponent(name)}`
-    );
+`${App.apiUrl}?action=submit&payload=${encodeURIComponent(JSON.stringify(payload))}`
+);
 
     if (!response.ok) {
         throw new Error("Unable to connect to RSVP server.");
