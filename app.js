@@ -41,7 +41,7 @@ function renderWelcomePage() {
             type="text"
             placeholder="Enter your name">
 
-        <button onclick="searchGuest()">
+        <button onclick="findGuest()">
     View My Invitation
 </button>
 
@@ -90,7 +90,7 @@ async function findGuest() {
     alert("Please enter your name.");
 
     btn.disabled = false;
-    btn.innerHTML = "Find My Invitation";
+btn.innerHTML = "View My Invitation";
 
     return;
 
