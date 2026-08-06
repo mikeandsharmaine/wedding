@@ -158,13 +158,29 @@ function renderInvitationSummary() {
 
         <h3>${guest.GuestName}</h3>
 
-        <label>
-          <input
+        <div class="attendance-toggle">
+
+    <span class="status off">
+        Unable to Attend
+    </span>
+
+    <label class="switch">
+
+        <input
             type="checkbox"
             id="guest${index}"
-          >
-          Will Attend
-        </label>
+            checked
+        >
+
+        <span class="slider"></span>
+
+    </label>
+
+    <span class="status on">
+        Joyfully Attending
+    </span>
+
+</div>
 
       </div>
     `).join("")}
