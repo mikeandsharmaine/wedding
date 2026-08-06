@@ -211,31 +211,45 @@ button:hover{
 }
 
 
-/* Guest cards */
+
+/* ===========================
+   Guest Card
+=========================== */
 
 .guest-card{
 
     display:flex;
-
     align-items:center;
 
-    gap:20px;
+    gap:22px;
 
-    margin-top:20px;
+    padding:24px;
 
-    padding:18px;
+    margin-top:22px;
 
-    border-radius:18px;
+    border-radius:24px;
 
     background:#faf8f4;
+
+    border:1px solid #efe7da;
+
+    transition:.25s;
+
+}
+
+.guest-card:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 
 }
 
 .guest-icon{
 
-    width:55px;
+    width:64px;
 
-    height:55px;
+    height:64px;
 
     border-radius:50%;
 
@@ -251,13 +265,25 @@ button:hover{
 
     font-size:22px;
 
+    font-weight:700;
+
+    flex-shrink:0;
+
 }
 
-.guest-name{
+.guest-details{
 
-    font-weight:600;
+    flex:1;
 
-    font-size:18px;
+}
+
+.guest-details h3{
+
+    text-align:left;
+
+    margin-bottom:16px;
+
+    font-size:28px;
 
 }
 
