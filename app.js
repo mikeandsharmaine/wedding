@@ -421,23 +421,14 @@ function updateCountdown() {
 // -------------------------------
 
 const floatingItems = [
-
+    "images/petal1.png",
     "images/petal1.png",
     "images/petal2.png",
+    "images/petal2.png",
     "images/petal3.png",
-    "images/petal4.png",
-
+    "images/petal3.png",
     "images/leaf1.png",
-    "images/leaf2.png",
-    "images/leaf3.png",
-
-    "images/flower1.png",
-    "images/flower2.png",
-    "images/flower3.png",
-
-    "images/bud1.png",
-    "images/bud2.png"
-
+    "images/leaf2.png"
 ];
 
 function createPetal() {
@@ -454,11 +445,11 @@ function createPetal() {
 
     // More natural size variation
     petal.style.width =
-        (16 + Math.random() * 26) + "px";
+        (22 + Math.random() * 28) + "px";
 
     // Slower falling
     petal.style.animationDuration =
-        (16 + Math.random() * 10) + "s";
+        (18 + Math.random() * 12) + "s";
 
     // Random delay
     petal.style.animationDelay =
@@ -466,7 +457,7 @@ function createPetal() {
 
     // Slight transparency
     petal.style.opacity =
-        0.35 + Math.random() * 0.45;
+        0.30 + Math.random() * 0.40;
 
     // Stronger side drift
     petal.style.setProperty(
