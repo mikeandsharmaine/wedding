@@ -32,6 +32,16 @@ function renderWelcomePage() {
 
         <h2>Wedding RSVP</h2>
 
+        <div class="countdown">
+
+    <div id="daysRemaining" class="count-number">...</div>
+
+    <div class="count-label">
+        Days Until We Say "I Do"
+    </div>
+
+</div>
+
 <p>
     Please enter your name exactly as it appears on your invitation.
 </p>
