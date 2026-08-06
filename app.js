@@ -416,3 +416,41 @@ function updateCountdown() {
     }
 
 }
+// -------------------------------
+// Floating Petals
+// -------------------------------
+
+const petalIcons = ["🌸", "🤍", "🍃"];
+
+function createPetal() {
+
+    const petal = document.createElement("div");
+
+    petal.className = "petal";
+
+    petal.innerHTML =
+        petalIcons[Math.floor(Math.random() * petalIcons.length)];
+
+    petal.style.left = Math.random() * 100 + "vw";
+
+    petal.style.fontSize =
+        (18 + Math.random() * 18) + "px";
+
+    petal.style.animationDuration =
+        (12 + Math.random() * 8) + "s";
+
+    petal.style.opacity =
+        0.25 + Math.random() * 0.35;
+
+    document
+        .getElementById("petals")
+        .appendChild(petal);
+
+    petal.addEventListener("animationend", () => {
+
+        petal.remove();
+
+    });
+
+}
+setInterval(createPetal, 1800);
