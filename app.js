@@ -449,39 +449,53 @@ function createPetal() {
     petal.src =
         floatingItems[Math.floor(Math.random() * floatingItems.length)];
 
-    petal.style.left = Math.random() * 100 + "vw";
+    // Start slightly outside the screen
+    petal.style.left = (-5 + Math.random() * 110) + "vw";
 
+    // More natural size variation
     petal.style.width =
-        (18 + Math.random() * 22) + "px";
+        (16 + Math.random() * 26) + "px";
 
+    // Slower falling
     petal.style.animationDuration =
-        (12 + Math.random() * 8) + "s";
+        (16 + Math.random() * 10) + "s";
 
+    // Random delay
     petal.style.animationDelay =
-        Math.random() * 2 + "s";
+        Math.random() * 3 + "s";
 
+    // Slight transparency
     petal.style.opacity =
-        0.45 + Math.random() * 0.35;
+        0.35 + Math.random() * 0.45;
 
+    // Stronger side drift
     petal.style.setProperty(
         "--drift",
-        (Math.random() * 160 - 80) + "px"
+        (Math.random() * 240 - 120) + "px"
     );
 
+    // Less spinning
     petal.style.setProperty(
         "--rotate",
-        (Math.random() * 720 - 360) + "deg"
+        (Math.random() * 360 - 180) + "deg"
     );
 
     document.getElementById("petals").appendChild(petal);
 
     petal.addEventListener("animationend", () => {
-
         petal.remove();
-
     });
 
 }
 
-setInterval(createPetal, 3500);
+setInterval(() => {
+
+    const count = Math.random() < 0.25 ? 3 :
+                  Math.random() < 0.60 ? 2 : 1;
+
+    for (let i = 0; i < count; i++) {
+        setTimeout(createPetal, i * 180);
+    }
+
+}, 1800);
 console.log("Petal script loaded");
