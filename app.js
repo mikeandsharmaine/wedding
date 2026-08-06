@@ -204,10 +204,10 @@ async function submitRSVP() {
 
     console.log("STEP 2");
 
-    const guests = App.party.map((guest, index) => ({
-        GuestName: guest.GuestName,
-        RSVP: document.getElementById(`guest${index}`).checked ? "Yes" : "No"
-    }));
+    const guests = App.party.map(guest => ({
+    GuestName: guest.GuestName,
+    RSVP: guest.RSVP
+}));
 
     const payload = {
         action: "submit",
