@@ -197,20 +197,14 @@ function renderContactPage() {
 
 }
 async function submitRSVP() {
-console.log("STEP 1");
 
-const mobile = document.getElementById("mobile").value.trim();
-
-console.log("STEP 2");
-
-const email = document.getElementById("email").value.trim();
-const message = document.getElementById("message").value.trim();
-
-console.log("STEP 3");
+    console.log("STEP 1");
 
     const mobile = document.getElementById("mobile").value.trim();
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
+
+    console.log("STEP 2");
 
     const guests = App.party.map((guest, index) => ({
         GuestName: guest.GuestName,
@@ -225,11 +219,9 @@ console.log("STEP 3");
         message,
         guests
     };
+
     console.log("ABOUT TO FETCH");
-
-console.log(payload);
-
-const response = await fetch(
+    console.log(payload);
 
     try {
 
@@ -241,22 +233,21 @@ const response = await fetch(
             body: JSON.stringify(payload)
         });
 
+        console.log("STATUS:", response.status);
+
         const result = await response.json();
 
-        if(result.success){
+        console.log(result);
 
+        if (result.success) {
             renderThankYouPage();
-
-        }else{
-
+        } else {
             alert(result.message);
-
         }
 
-    }catch(error){
+    } catch (error) {
 
         console.error(error);
-
         alert("Unable to submit RSVP.");
 
     }
