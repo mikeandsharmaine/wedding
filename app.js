@@ -483,5 +483,5 @@ function createPetal() {
 
 }
 
-setInterval(createPetal, 1400);
+setInterval(createPetal, 3500);
 console.log("Petal script loaded");
