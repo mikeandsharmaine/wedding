@@ -181,7 +181,7 @@ function renderContactPage() {
             placeholder="Leave a message for Mike & Sharmaine (Optional)"
             rows="5"></textarea>
 
-        <button onclick="submitRSVP()">
+       <button onclick="submitRSVP()">
     Confirm RSVP
 </button>
 
