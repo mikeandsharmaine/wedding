@@ -541,3 +541,33 @@ button:disabled{
     opacity: .85;
     cursor: not-allowed;
 }
+/* ===========================
+   Floral Frame
+=========================== */
+
+.floral-frame{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    pointer-events:none;
+
+    opacity:.9;
+
+    z-index:0;
+
+}
+.card > *{
+
+    position:relative;
+
+    z-index:1;
+
+}
