@@ -181,14 +181,17 @@ function renderContactPage() {
             placeholder="Leave a message for Mike & Sharmaine (Optional)"
             rows="5"></textarea>
 
-        <button onclick="continueToContact()">
-    Continue
+        <button onclick="submitRSVP()">
+    Confirm RSVP
 </button>
 
     `;
 
 }
 async function submitRSVP() {
+
+    alert("submitRSVP is working!");
+
 
     const mobile = document.getElementById("mobile").value.trim();
     const email = document.getElementById("email").value.trim();
