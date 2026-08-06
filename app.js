@@ -187,14 +187,12 @@ function renderContactPage() {
     placeholder="Share your well wishes with Mike & Sharmaine...">
 </textarea>
 
-}
-
        <button onclick="submitRSVP()">
     Confirm RSVP
 </button>
 
     `;
-
+    
 }
 async function submitRSVP() {
 
