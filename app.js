@@ -417,34 +417,51 @@ function updateCountdown() {
 
 }
 // -------------------------------
-// Floating Petals
+// Floating Watercolor Petals
 // -------------------------------
 
-const petalIcons = ["🌸", "🤍", "🍃"];
+const floatingItems = [
+    "images/petal1.png",
+    "images/petal2.png",
+    "images/leaf1.png",
+    "images/leaf2.png",
+    "images/flower1.png"
+];
 
 function createPetal() {
 
-    const petal = document.createElement("div");
+    const petal = document.createElement("img");
 
     petal.className = "petal";
 
-    petal.innerHTML =
-        petalIcons[Math.floor(Math.random() * petalIcons.length)];
+    petal.src =
+        floatingItems[Math.floor(Math.random() * floatingItems.length)];
 
     petal.style.left = Math.random() * 100 + "vw";
 
-    petal.style.fontSize =
-        (18 + Math.random() * 18) + "px";
+    petal.style.width =
+        (18 + Math.random() * 22) + "px";
 
     petal.style.animationDuration =
         (12 + Math.random() * 8) + "s";
 
-    petal.style.opacity =
-        0.25 + Math.random() * 0.35;
+    petal.style.animationDelay =
+        Math.random() * 2 + "s";
 
-    document
-        .getElementById("petals")
-        .appendChild(petal);
+    petal.style.opacity =
+        0.45 + Math.random() * 0.35;
+
+    petal.style.setProperty(
+        "--drift",
+        (Math.random() * 160 - 80) + "px"
+    );
+
+    petal.style.setProperty(
+        "--rotate",
+        (Math.random() * 720 - 360) + "deg"
+    );
+
+    document.getElementById("petals").appendChild(petal);
 
     petal.addEventListener("animationend", () => {
 
@@ -453,5 +470,6 @@ function createPetal() {
     });
 
 }
-setInterval(createPetal, 1800);
+
+setInterval(createPetal, 1400);
 console.log("Petal script loaded");
