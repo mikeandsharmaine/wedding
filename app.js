@@ -255,7 +255,7 @@ async function submitRSVP() {
 
         if(result.success){
 
-            alert("RSVP submitted successfully!");
+            renderThankYouPage();
 
         }else{
 
@@ -283,5 +283,32 @@ function continueToContact() {
     });
 
     renderContactPage();
+
+}
+function renderThankYouPage() {
+
+    document.getElementById("app").innerHTML = `
+
+        <h1>Thank You!</h1>
+
+        <h2>Your RSVP has been received.</h2>
+
+        <p>
+            We are so excited to celebrate this special day with you.
+        </p>
+
+        <div class="divider"></div>
+
+        <p>
+            See you on
+            <br><br>
+            <strong>January 15, 2027</strong>
+            <br>
+            Fruella's Events Place
+            <br>
+            Tagaytay
+        </p>
+
+    `;
 
 }
