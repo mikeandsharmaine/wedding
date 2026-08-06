@@ -223,19 +223,14 @@ textarea:focus{
 }
 async function submitRSVP() {
 
-    alert("submitRSVP is working!");
-
-
     const mobile = document.getElementById("mobile").value.trim();
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
-    // Collect attendance
-const guests = App.party.map(guest => ({
-    InvitationID: guest.InvitationID,
-    GuestName: guest.GuestName,
-    RSVP: guest.RSVP
-}));    
+    const guests = App.party.map((guest, index) => ({
+        GuestName: guest.GuestName,
+        RSVP: document.getElementById(`guest${index}`).checked ? "Yes" : "No"
+    }));
 
     const payload = {
         action: "submit",
@@ -246,9 +241,36 @@ const guests = App.party.map(guest => ({
         guests
     };
 
-    console.log(payload);
+    try {
 
-    alert("Next step: Sending RSVP to Google Sheets.");
+        const response = await fetch(App.apiUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if(result.success){
+
+            alert("RSVP submitted successfully!");
+
+        }else{
+
+            alert(result.message);
+
+        }
+
+    }catch(error){
+
+        console.error(error);
+
+        alert("Unable to submit RSVP.");
+
+    }
+
 }
 function continueToContact() {
 
