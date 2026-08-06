@@ -49,21 +49,14 @@ body{
 
     position:relative;
 
-    background:rgba(255,250,245,.92);
-
-    backdrop-filter:blur(12px);
-
-    border-radius:42px;
-
     overflow:hidden;
 
-    padding:70px 65px;
+    background:#FFFCF8;
 
-    border:1px solid rgba(212,190,145,.22);
+    border-radius:40px;
 
     box-shadow:
-        0 30px 70px rgba(128,103,66,.15),
-        inset 0 0 0 1px rgba(255,255,255,.45);
+        0 20px 60px rgba(150,120,70,.18);
 
 }
 
