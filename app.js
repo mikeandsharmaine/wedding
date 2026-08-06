@@ -152,9 +152,39 @@ function renderInvitationSummary() {
 
     <br>
 
-    <button onclick="submitRSVP()">
-      Continue
-    </button>
+    <button onclick="renderContactPage()">
+    Continue
+</button>
   `;
+
+}
+function renderContactPage() {
+
+    document.getElementById("app").innerHTML = `
+
+        <h1>Almost Done</h1>
+
+        <p>Please provide your contact details.</p>
+
+        <input
+            id="mobile"
+            type="tel"
+            placeholder="Mobile Number">
+
+        <input
+            id="email"
+            type="email"
+            placeholder="Email Address (Optional)">
+
+        <textarea
+            id="message"
+            placeholder="Leave a message for Mike & Sharmaine (Optional)"
+            rows="5"></textarea>
+
+        <button onclick="submitRSVP()">
+            Confirm RSVP
+        </button>
+
+    `;
 
 }
