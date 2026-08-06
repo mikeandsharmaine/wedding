@@ -608,4 +608,51 @@ transform:translateY(0);
 }
 
 }
+/* ===========================
+   Elegant Gold Divider
+=========================== */
 
+.gold-divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    margin:32px 0;
+}
+
+.gold-divider::before,
+.gold-divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        #e3d6c0,
+        transparent
+    );
+}
+
+.gold-divider span{
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#fffdf9;
+
+    border:1px solid #eadcc8;
+
+    color:#C5A067;
+
+    font-size:14px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+
+}
