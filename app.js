@@ -176,29 +176,26 @@ function renderInvitationSummary() {
 
             <div class="attendance-toggle">
 
-                <span class="status off">
-                    Unable
-                </span>
+    <label class="switch">
 
-                <label class="switch">
+        <input
+            type="checkbox"
+            id="guest${index}"
+            checked
+            onchange="toggleAttendance(${index})"
+        >
 
-                    <input
-                        type="checkbox"
-                        id="guest${index}"
-                        checked
-                    >
+        <span class="slider"></span>
 
-                    <span class="slider"></span>
+    </label>
 
-                </label>
+    <span
+        class="attendance-text"
+        id="status${index}">
+        Joyfully Attending 💚
+    </span>
 
-                <span class="status on">
-                    Joyfully Attending
-                </span>
-
-            </div>
-
-        </div>
+</div>
 
     </div>
 
@@ -313,6 +310,22 @@ function continueToContact() {
     });
 
     renderContactPage();
+
+}
+function toggleAttendance(index) {
+
+    const checkbox = document.getElementById(`guest${index}`);
+    const status = document.getElementById(`status${index}`);
+
+    if (checkbox.checked) {
+
+        status.textContent = "Joyfully Attending 💚";
+
+    } else {
+
+        status.textContent = "Unable to Attend";
+
+    }
 
 }
 function renderThankYouPage() {
