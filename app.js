@@ -176,26 +176,27 @@ function renderInvitationSummary() {
 
             <div class="attendance-toggle">
 
-    <label class="switch">
+                <label class="switch">
 
-        <input
-            type="checkbox"
-            id="guest${index}"
-            checked
-            onchange="toggleAttendance(${index})"
-        >
+                    <input
+                        type="checkbox"
+                        id="guest${index}"
+                        checked
+                        onchange="toggleAttendance(${index})">
 
-        <span class="slider"></span>
+                    <span class="slider"></span>
 
-    </label>
+                </label>
 
-    <span
-        class="attendance-text"
-        id="status${index}">
-        Joyfully Attending 💚
-    </span>
+                <span
+                    class="attendance-text"
+                    id="status${index}">
+                    Joyfully Attending 💚
+                </span>
 
-</div>
+            </div>
+
+        </div>
 
     </div>
 
