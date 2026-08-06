@@ -354,3 +354,18 @@ function renderThankYouPage() {
     `;
 
 }
+function showLoading(message = "Please wait...") {
+
+    const overlay = document.getElementById("loadingOverlay");
+
+    overlay.style.display = "flex";
+
+    overlay.querySelector("h2").innerText = message;
+
+}
+
+function hideLoading() {
+
+    document.getElementById("loadingOverlay").style.display = "none";
+
+}
