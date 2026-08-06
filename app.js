@@ -223,13 +223,9 @@ async function submitRSVP() {
 
     try {
 
-        const response = await fetch(App.apiUrl, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-        });
+        const response = await fetch(
+    `${App.apiUrl}?action=submit&payload=${encodeURIComponent(JSON.stringify(payload))}`
+);
 
         console.log("STATUS:", response.status);
 
