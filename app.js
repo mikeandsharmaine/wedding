@@ -181,10 +181,49 @@ function renderContactPage() {
             placeholder="Leave a message for Mike & Sharmaine (Optional)"
             rows="5"></textarea>
 
-        <button onclick="submitRSVP()">
-            Confirm RSVP
-        </button>
+        <button onclick="continueToContact()">
+    Continue
+</button>
 
     `;
+
+}
+async function submitRSVP() {
+
+    const mobile = document.getElementById("mobile").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Collect attendance
+const guests = App.party.map(guest => ({
+    InvitationID: guest.InvitationID,
+    GuestName: guest.GuestName,
+    RSVP: guest.RSVP
+}));    
+
+    const payload = {
+        action: "submit",
+        invitationID: App.party[0].InvitationID,
+        mobile,
+        email,
+        message,
+        guests
+    };
+
+    console.log(payload);
+
+    alert("Next step: Sending RSVP to Google Sheets.");
+}
+function continueToContact() {
+
+    App.party.forEach((guest, index) => {
+
+        guest.RSVP = document.getElementById(`guest${index}`).checked
+            ? "Yes"
+            : "No";
+
+    });
+
+    renderContactPage();
 
 }
