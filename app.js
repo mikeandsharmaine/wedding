@@ -143,7 +143,9 @@ Would you like to update it?`);
 
     App.editMode = false;
 
-    renderInvitationSummary();
+    App.party = [];
+
+    renderWelcomePage();
 
     return;
 }
