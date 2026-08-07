@@ -324,11 +324,16 @@ async function submitRSVP() {
 
         console.log(result);
 
-        if (result.success) {
+if (result.success) {
 
-            App.editMode = false;
+    App.editMode = false;
 
-            renderThankYouPage();
+    // Clear the current invitation
+    App.party = [];
+
+    renderThankYouPage();
+
+}
 
         } else {
 
