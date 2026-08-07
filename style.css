@@ -797,3 +797,26 @@ transform:translateY(0);
     margin:0 0 12px;
     line-height:1.6;
 }
+.confirmed-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:#EDF6EC;
+
+    color:#4F6F52;
+
+    font-weight:600;
+
+    font-size:.95rem;
+
+    border:1px solid #CFE3CC;
+
+}
