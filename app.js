@@ -122,9 +122,12 @@ btn.innerHTML = "View My Invitation";
 
 const result = await searchGuest(name);
 
-const guests = result.guests;
+const guests = await searchGuest(name);
 
-App.editMode = result.editMode;
+// determine edit mode on the client
+App.editMode =
+    guests.length > 0 &&
+    guests[0].RSVPSubmitted === "Submitted";
 if (!guests || guests.length === 0) {
 
     alert("Sorry, we couldn't find your invitation.\n\nPlease check the spelling of your name.");
