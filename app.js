@@ -146,7 +146,6 @@ Would you like to update it?`);
     App.editMode = true;
 }
 
-}
 console.log("4. Calling renderInvitationSummary");
 
 renderInvitationSummary();
@@ -300,14 +299,14 @@ async function submitRSVP() {
     RSVP: guest.RSVP
 }));
 
-    const payload = {
-        action: "submit",
-        invitationID: App.party[0].InvitationID,
-        mobile,
-        email,
-        message,
-        guests
-    };
+    const response = await fetch(
+    `${App.apiUrl}?action=submit`
+    + `&invitationId=${encodeURIComponent(App.party[0].InvitationID)}`
+    + `&mobile=${encodeURIComponent(mobile)}`
+    + `&email=${encodeURIComponent(email)}`
+    + `&message=${encodeURIComponent(message)}`
+    + `&guests=${encodeURIComponent(JSON.stringify(guests))}`
+);
 
     console.log("ABOUT TO FETCH");
     console.log(payload);
@@ -353,8 +352,8 @@ function continueToContact() {
     App.party.forEach((guest, index) => {
 
         guest.RSVP = document.getElementById(`guest${index}`).checked
-            ? "Yes"
-            : "No";
+    ? "Joyfully Attending"
+    : "Unable to Attend";
 
     });
 
