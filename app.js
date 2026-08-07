@@ -26,6 +26,9 @@ async function searchGuest(name) {
 
 function renderWelcomePage() {
 
+App.party = [];
+App.editMode = false;
+
     document.getElementById("app").innerHTML = `
     
 
@@ -113,48 +116,42 @@ btn.innerHTML = "View My Invitation";
         console.log("1. Searching...");
 
         const guests = await searchGuest(name);
-        App.party = guests;
-        console.log("RSVP Submitted:", guests[0].RSVPSubmitted);
 
+if (!guests || guests.length === 0) {
 
-      if (guests.length === 0) {
-
-    alert("Sorry, we couldn't find your invitation.");
+    alert("Sorry, we couldn't find your invitation.\n\nPlease check the spelling of your name.");
 
     btn.disabled = false;
     btn.innerHTML = "View My Invitation";
 
     return;
-
 }
 
-        console.log("3. Saving party");
-
 App.party = guests;
+
+console.log("RSVP Submitted:", guests[0].RSVPSubmitted);
 
 // Check if already submitted
 if (guests[0].RSVPSubmitted === "Submitted") {
 
-    const update = confirm(`We've already received your RSVP.
+    const update = confirm(
+`We've already received your RSVP.
 
-Would you like to update it?`);
+Would you like to update it?`
+    );
 
-    if (!update) {
-
-    App.editMode = false;
+   if (!update) {
 
     App.party = [];
+    App.editMode = false;
 
     renderWelcomePage();
 
     return;
 }
+        App.editMode = true;
 
-    App.editMode = true;
 }
-
-console.log("4. Calling renderInvitationSummary");
-
 renderInvitationSummary();
 
 console.log("5. Finished");
