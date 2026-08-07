@@ -286,6 +286,8 @@ function renderContactPage() {
 }
 async function submitRSVP() {
 
+    alert("submitRSVP started");
+
     console.log("STEP 1");
 
     const mobile = document.getElementById("mobile").value.trim();
