@@ -277,7 +277,7 @@ function renderContactPage() {
     placeholder="Share your well wishes with Mike & Sharmaine...">
 </textarea>
 
-       <button onclick="submitRSVP()">
+      <button id="submitBtn" onclick="submitRSVP()">
     Confirm RSVP
 </button>
 
@@ -286,67 +286,60 @@ function renderContactPage() {
 }
 async function submitRSVP() {
 
-    alert("submitRSVP started");
+    const btn = document.getElementById("submitBtn");
 
-    console.log("STEP 1");
+    btn.disabled = true;
+    btn.innerHTML = "♡ Saving your RSVP...";
 
     const mobile = document.getElementById("mobile").value.trim();
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
-    console.log("STEP 2");
-
     const guests = App.party.map(guest => ({
-    GuestName: guest.GuestName,
-    RSVP: guest.RSVP
-}));
+        GuestName: guest.GuestName,
+        RSVP: guest.RSVP
+    }));
 
-    const response = await fetch(
-    `${App.apiUrl}?action=submit`
-    + `&invitationId=${encodeURIComponent(App.party[0].InvitationID)}`
-    + `&mobile=${encodeURIComponent(mobile)}`
-    + `&email=${encodeURIComponent(email)}`
-    + `&message=${encodeURIComponent(message)}`
-    + `&guests=${encodeURIComponent(JSON.stringify(guests))}`
-);
-
-    console.log("ABOUT TO FETCH");
-    console.log(payload);
-
-    const btn = document.querySelector("button");
-
-btn.disabled = true;
-btn.innerHTML = "♡ Saving your RSVP...";
-    
     try {
 
-    const response = await fetch(
-`${App.apiUrl}?action=submit`
-+ `&invitationId=${encodeURIComponent(App.party[0].InvitationID)}`
-+ `&guests=${encodeURIComponent(JSON.stringify(guests))}`
-);
-
-        console.log("STATUS:", response.status);
+        const response = await fetch(
+            `${App.apiUrl}?action=submit`
+            + `&invitationId=${encodeURIComponent(App.party[0].InvitationID)}`
+            + `&mobile=${encodeURIComponent(mobile)}`
+            + `&email=${encodeURIComponent(email)}`
+            + `&message=${encodeURIComponent(message)}`
+            + `&guests=${encodeURIComponent(JSON.stringify(guests))}`
+        );
 
         const result = await response.json();
 
         console.log(result);
 
         if (result.success) {
+
+            App.editMode = false;
+
             renderThankYouPage();
+
         } else {
-alert(JSON.stringify(result));        }
 
-        } catch (error) {
+            alert(result.error || "Unable to submit RSVP.");
 
-    console.error(error);
+            btn.disabled = false;
+            btn.innerHTML = "Confirm RSVP";
 
-    btn.disabled = false;
-    btn.innerHTML = "Confirm RSVP";
+        }
 
-    alert("Unable to submit RSVP.");
+    } catch (error) {
 
-}
+        console.error(error);
+
+        btn.disabled = false;
+        btn.innerHTML = "Confirm RSVP";
+
+        alert("Unable to submit RSVP.");
+
+    }
 
 }
 function continueToContact() {
