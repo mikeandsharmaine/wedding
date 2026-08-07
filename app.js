@@ -141,14 +141,11 @@ Would you like to update it?`);
 
     if (!update) {
 
-    alert("No changes were made to your RSVP.");
-
     App.editMode = false;
 
-    renderSearchPage();
+    renderInvitationSummary();
 
     return;
-
 }
 
     App.editMode = true;
