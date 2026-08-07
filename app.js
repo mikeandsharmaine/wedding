@@ -114,8 +114,8 @@ btn.innerHTML = "View My Invitation";
 
         const guests = await searchGuest(name);
         App.party = guests;
+        console.log("RSVP Submitted:", guests[0].RSVPSubmitted);
 
-        console.log("2. Guests returned:", guests);
 
       if (guests.length === 0) {
 
@@ -134,10 +134,18 @@ App.party = guests;
 
 // Check if already submitted
 if (guests[0].RSVPSubmitted === "Submitted") {
-    renderAlreadySubmittedPage();
-    return;
-}
 
+    const update = confirm(
+`We've already received your RSVP.
+
+Would you like to update it?`
+    );
+
+    if (!update) {
+        return;
+    }
+
+}
 console.log("4. Calling renderInvitationSummary");
 
 renderInvitationSummary();
