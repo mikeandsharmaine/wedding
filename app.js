@@ -120,8 +120,11 @@ btn.innerHTML = "View My Invitation";
 
         console.log("1. Searching...");
 
-        const guests = await searchGuest(name);
+const result = await searchGuest(name);
 
+const guests = result.guests;
+
+App.editMode = result.editMode;
 if (!guests || guests.length === 0) {
 
     alert("Sorry, we couldn't find your invitation.\n\nPlease check the spelling of your name.");
@@ -137,8 +140,8 @@ App.party = guests;
 console.log("RSVP Submitted:", guests[0].RSVPSubmitted);
 
 // Check if already submitted
-if (guests[0].RSVPSubmitted === "Submitted") {
-
+if (App.editMode) {
+    
     const update = confirm(
 `We've already received your RSVP.
 
