@@ -122,12 +122,9 @@ btn.innerHTML = "View My Invitation";
 
 const result = await searchGuest(name);
 
-const guests = await searchGuest(name);
+const guests = result.guests;
+App.editMode = result.editMode;
 
-// determine edit mode on the client
-App.editMode =
-    guests.length > 0 &&
-    guests[0].RSVPSubmitted === "Submitted";
 if (!guests || guests.length === 0) {
 
     alert("Sorry, we couldn't find your invitation.\n\nPlease check the spelling of your name.");
@@ -139,34 +136,34 @@ if (!guests || guests.length === 0) {
 }
 
 App.party = guests;
+
 console.log(App.party);
-console.log("RSVP Submitted:", guests[0].RSVPSubmitted);
+console.log("Edit Mode:", App.editMode);
 
 // Check if already submitted
 if (App.editMode) {
-    
+
     const update = confirm(
 `We've already received your RSVP.
 
 Would you like to update it?`
     );
 
-   if (!update) {
+    if (!update) {
 
-    App.party = [];
-    App.editMode = false;
+        App.party = [];
+        App.editMode = false;
 
-    renderWelcomePage();
+        renderWelcomePage();
 
-    return;
+        return;
+    }
 }
-        App.editMode = true;
 
-}
 renderInvitationSummary();
 
 console.log("5. Finished");
-
+        
     } catch (error) {
 
     console.error(error);
