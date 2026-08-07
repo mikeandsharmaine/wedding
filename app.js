@@ -290,8 +290,10 @@ btn.innerHTML = "♡ Saving your RSVP...";
     
     try {
 
-        const response = await fetch(
-    `${App.apiUrl}?action=submit&payload=${encodeURIComponent(JSON.stringify(payload))}`
+    const response = await fetch(
+`${App.apiUrl}?action=submit`
++ `&invitationId=${encodeURIComponent(App.party[0].InvitationID)}`
++ `&guests=${encodeURIComponent(JSON.stringify(guests))}`
 );
 
         console.log("STATUS:", response.status);
