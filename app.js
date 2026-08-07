@@ -130,13 +130,19 @@ btn.innerHTML = "View My Invitation";
 
         console.log("3. Saving party");
 
-        App.party = guests;
+App.party = guests;
 
-        console.log("4. Calling renderInvitationSummary");
+// Check if already submitted
+if (guests[0].RSVPSubmitted === "Submitted") {
+    renderAlreadySubmittedPage();
+    return;
+}
 
-        renderInvitationSummary();
+console.log("4. Calling renderInvitationSummary");
 
-        console.log("5. Finished");
+renderInvitationSummary();
+
+console.log("5. Finished");
 
     } catch (error) {
 
@@ -494,3 +500,28 @@ setInterval(() => {
 
 }, 1800);
 console.log("Petal script loaded");
+function renderAlreadySubmittedPage() {
+
+    document.getElementById("app").innerHTML = `
+
+        <h1>Thank You!</h1>
+
+        <h2>Your RSVP has already been received.</h2>
+
+        <p>
+            Our records show that your RSVP has already been submitted.
+        </p>
+
+        <div class="divider"></div>
+
+        <p>
+            If you need to make changes, please contact
+            <br><br>
+            <strong>Sharmaine Fernandez</strong>
+            <br>
+            0917 804 5576
+        </p>
+
+    `;
+
+}
