@@ -305,8 +305,7 @@ btn.innerHTML = "♡ Saving your RSVP...";
         if (result.success) {
             renderThankYouPage();
         } else {
-            alert(result.message);
-        }
+alert(JSON.stringify(result));        }
 
         } catch (error) {
 
