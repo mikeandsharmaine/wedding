@@ -113,6 +113,7 @@ btn.innerHTML = "View My Invitation";
         console.log("1. Searching...");
 
         const guests = await searchGuest(name);
+        App.party = guests;
 
         console.log("2. Guests returned:", guests);
 
@@ -490,3 +491,37 @@ setInterval(() => {
 
 }, 1800);
 console.log("Petal script loaded");
+
+async function submitRSVP() {
+
+    showLoading();
+
+    const guests = currentGuests.map(g => ({
+        GuestName: g.GuestName,
+        RSVP: g.RSVP,
+        Message: g.Message || ""
+    }));
+
+    const url =
+        API_URL +
+        "?action=submit" +
+        "&invitationId=" + encodeURIComponent(currentGuests[0].InvitationID) +
+        "&guests=" + encodeURIComponent(JSON.stringify(guests));
+
+    const response = await fetch(url);
+
+    const result = await response.json();
+
+    hideLoading();
+
+    if(result.success){
+
+        showSuccessPage();
+
+    }else{
+
+        alert("Unable to save RSVP.");
+
+    }
+
+}
