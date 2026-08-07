@@ -139,7 +139,7 @@ if (!guests || guests.length === 0) {
 }
 
 App.party = guests;
-
+console.log(App.party);
 console.log("RSVP Submitted:", guests[0].RSVPSubmitted);
 
 // Check if already submitted
