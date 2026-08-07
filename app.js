@@ -3,8 +3,13 @@
 // ========================================
 
 const App = {
+
     party: [],
+
+    editMode: false,
+
     apiUrl: "https://script.google.com/macros/s/AKfycbyZNzIYT8Vp1zopvc_PANgV5XBeINll9oBiK4FA83tUeutjj6EpvJJhwMxdO6TjH0di/exec"
+
 };
 async function searchGuest(name) {
 
