@@ -333,8 +333,6 @@ if (result.success) {
 
     renderThankYouPage();
 
-}
-
         } else {
 
             alert(result.error || "Unable to submit RSVP.");
