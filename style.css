@@ -160,8 +160,7 @@ input{
     padding:22px 30px;
     border-radius:999px;
 
-    margin:12px 0 12px;
-
+margin:10px 0;
     border:1px solid rgba(210,200,180,.8);
     background:rgba(255,255,255,.85);
     font-size:1.2rem;
@@ -183,6 +182,8 @@ input:focus{
 /* Buttons */
 
 button{
+
+       margin-top:10px;
 
     background:linear-gradient(
         180deg,
@@ -793,7 +794,7 @@ transform:translateY(0);
 }
 .welcome-text{
 
-    margin: 0 0 14px;
+    margin: 0 0 10px;
 
     line-height: 1.6;
 
