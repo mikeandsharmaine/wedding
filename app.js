@@ -140,8 +140,16 @@ if (guests[0].RSVPSubmitted === "Submitted") {
 Would you like to update it?`);
 
     if (!update) {
-        return;
-    }
+
+    alert("No changes were made to your RSVP.");
+
+    App.editMode = false;
+
+    renderSearchPage();
+
+    return;
+
+}
 
     App.editMode = true;
 }
