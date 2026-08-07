@@ -218,6 +218,7 @@ function renderInvitationSummary() {
         Continue
     </button>
 </div>
+`;
 
 }
 function renderContactPage() {
@@ -492,5 +493,3 @@ setInterval(() => {
 
 }, 1800);
 console.log("Petal script loaded");
-
-}
