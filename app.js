@@ -135,15 +135,16 @@ App.party = guests;
 // Check if already submitted
 if (guests[0].RSVPSubmitted === "Submitted") {
 
-    const update = confirm(
-`We've already received your RSVP.
+    const update = confirm(`We've already received your RSVP.
 
-Would you like to update it?`
-    );
+Would you like to update it?`);
 
     if (!update) {
         return;
     }
+
+    App.editMode = true;
+}
 
 }
 console.log("4. Calling renderInvitationSummary");
@@ -200,33 +201,37 @@ function renderInvitationSummary() {
 
                       <div class="attendance-toggle">
 
-    ${
-        guest.RSVPSubmitted === "Submitted"
-        ? `
-            <div class="confirmed-badge">
-                ✅ Already Confirmed
-            </div>
-        `
-        : `
-            <label class="switch">
+   ${
+    guest.RSVPSubmitted === "Submitted" && !App.editMode
+    ? `
+        <div class="confirmed-badge">
+            ✅ Already Confirmed
+        </div>
+    `
+    : `
+        <label class="switch">
 
-                <input
-                    type="checkbox"
-                    id="guest${index}"
-                    checked
-                    onchange="toggleAttendance(${index})">
+            <input
+                type="checkbox"
+                id="guest${index}"
+                ${guest.RSVP === "Joyfully Attending" ? "checked" : ""}
+                onchange="toggleAttendance(${index})">
 
-                <span class="slider"></span>
+            <span class="slider"></span>
 
-            </label>
+        </label>
 
-            <span
-                class="attendance-text"
-                id="status${index}">
-                Joyfully Attending 💚
-            </span>
-        `
-    }
+        <span
+            class="attendance-text"
+            id="status${index}">
+            ${
+                guest.RSVP === "Unable to Attend"
+                    ? "Unable to Attend 🤍"
+                    : "Joyfully Attending 💚"
+            }
+        </span>
+    `
+}
 
 </div>
 
