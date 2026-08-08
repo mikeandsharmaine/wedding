@@ -505,8 +505,8 @@ function renderThankYouPage() {
         <div class="thank-you-page">
 
             <div class="thank-you-icon">
-                💚
-            </div>
+    ✨
+</div>
 
             <h1>
                 ${isUpdate ? "RSVP Updated!" : "Thank You!"}
