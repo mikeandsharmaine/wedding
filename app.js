@@ -499,11 +499,6 @@ function renderThankYouPage() {
     const isUpdate = App.editMode;
 
     document.getElementById("app").innerHTML = `
-    for(let i=0;i<25;i++){
-
-    setTimeout(createHeart,i*180);
-
-}
 
         <div class="thank-you-page">
 
@@ -518,25 +513,21 @@ function renderThankYouPage() {
             <h2>
                 ${
                     App.party && App.party.length
-                    ? App.party[0].FirstName
-                    : ""
+                        ? App.party[0].FirstName
+                        : ""
                 }
             </h2>
 
             <p>
-
                 ${
                     isUpdate
-                    ? "Your RSVP has been successfully updated. We can't wait to celebrate with you!"
-                    : "Your RSVP has been received. We can't wait to celebrate with you!"
+                        ? "Your RSVP has been successfully updated. We can't wait to celebrate with you!"
+                        : "Your RSVP has been received. We can't wait to celebrate with you!"
                 }
-
             </p>
 
             <p class="thank-you-note">
-
                 January 15, 2027 • Tagaytay
-
             </p>
 
             <button onclick="renderWelcomePage()">
@@ -546,6 +537,11 @@ function renderThankYouPage() {
         </div>
 
     `;
+
+    // Floating hearts
+    for (let i = 0; i < 25; i++) {
+        setTimeout(createHeart, i * 180);
+    }
 
 }
 function showLoading(message = "Please wait...") {
