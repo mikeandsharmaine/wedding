@@ -288,15 +288,17 @@ function renderContactPage() {
 
         <p>Please provide your contact details.</p>
 
-        <input
-            id="mobile"
-            type="tel"
-            placeholder="Mobile Number">
+      <input
+    id="mobile"
+    type="tel"
+    placeholder="Mobile Number"
+    value="${App.party[0]?.Mobile || ""}">
 
         <input
-            id="email"
-            type="email"
-            placeholder="Email Address (Optional)">
+    id="email"
+    type="email"
+    placeholder="Email Address (Optional)"
+    value="${App.party[0]?.Email || ""}">
 
         <label class="field-label">
     Leave a Message (Optional)
@@ -305,11 +307,11 @@ function renderContactPage() {
 <textarea
     id="message"
     rows="5"
-    placeholder="Share your well wishes with Mike & Sharmaine...">
-</textarea>
+    placeholder="Share your well wishes with Mike & Sharmaine...">${App.party[0]?.Message || ""}</textarea>
+
 
       <button id="submitBtn" onclick="submitRSVP()">
-    Confirm RSVP
+    ${App.editMode ? "💚 Save Changes" : "💌 Confirm RSVP"}
 </button>
 
     `;
