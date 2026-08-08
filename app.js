@@ -181,6 +181,10 @@ function renderInvitationSummary() {
 
     const party = App.party;
 
+    const pageTitle = App.editMode
+    ? "Update Your RSVP"
+    : "Welcome!";
+
     const introText = App.editMode
     ? `
         <strong>You're updating your RSVP.</strong><br>
@@ -199,7 +203,7 @@ function renderInvitationSummary() {
     }
 
     document.getElementById("app").innerHTML = `
-        <h1>Welcome!</h1>
+<h1>${pageTitle}</h1>
 
         <h2>${party[0].PartyName}</h2>
 
@@ -270,8 +274,8 @@ function renderInvitationSummary() {
 
     <div class="submit-area">
     <button onclick="continueToContact()">
-        Continue
-    </button>
+    ${App.editMode ? "Update RSVP" : "Continue"}
+</button>
 </div>
 `;
 
