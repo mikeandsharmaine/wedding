@@ -478,8 +478,10 @@ function createHeart() {
 
     heart.className = "floating-heart";
 
-    heart.innerHTML = Math.random() > 0.5 ? "🤍" : "💚";
+const icons = ["🤍", "✨", "🌸"];
 
+heart.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+    
     heart.style.left = Math.random() * 100 + "vw";
 
     heart.style.animationDuration =
