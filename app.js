@@ -355,14 +355,11 @@ if (result.success) {
     // Clear the current invitation
     App.party = [];
 
+    celebrateRSVP();
+
+setTimeout(() => {
     renderThankYouPage();
-
-        } else {
-
-            alert(result.error || "Unable to submit RSVP.");
-
-            btn.disabled = false;
-            btn.innerHTML = "Confirm RSVP";
+}, 800);
 
         }
 
@@ -407,6 +404,22 @@ function toggleAttendance(index) {
         status.style.color = "#999";
 
     }
+
+}
+function celebrateRSVP() {
+
+    confetti({
+        particleCount: 180,
+        spread: 90,
+        origin: { y: 0.6 },
+        colors: [
+            "#7E8E65", // Olive
+            "#C5C69E", // Sage
+            "#EFC770", // Gold
+            "#EFDECD", // Cream
+            "#D58A58"  // Terracotta
+        ]
+    });
 
 }
 function renderThankYouPage() {
