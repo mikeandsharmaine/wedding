@@ -421,6 +421,28 @@ function toggleAttendance(index) {
     }
 
 }
+function transitionTo(nextPage) {
+
+    const app = document.getElementById("app");
+
+    app.classList.add("fade-out");
+
+    setTimeout(() => {
+
+        nextPage();
+
+        app.classList.remove("fade-out");
+        app.classList.add("fade-in");
+
+        setTimeout(() => {
+
+            app.classList.remove("fade-in");
+
+        },300);
+
+    },250);
+
+}
 function celebrateRSVP() {
 
     // Left burst
