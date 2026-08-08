@@ -181,43 +181,48 @@ function renderInvitationSummary() {
 
     const party = App.party;
 
-    const pageTitle = App.editMode
-    ? "Update Your RSVP"
-    : "Welcome!";
-
-    const introText = App.editMode
-    ? `
-        <strong>You're updating your RSVP.</strong><br>
-        Feel free to review and update your response below if your plans have changed.
-      `
-    : `
-        We're so honored to celebrate with your family.
-        Please let us know who will be joining us.
-      `;
-
-    console.log("App.party =", party);
-
     if (!party || party.length === 0) {
-        alert("App.party is empty");
+        renderWelcomePage();
         return;
     }
 
+    const pageTitle = App.editMode
+        ? "Update Your RSVP"
+        : "Welcome!";
+
     const heading = App.editMode
-    ? party[0].FirstName
-    : party[0].PartyName;
-    
-<p>${introText}</p>
+        ? party[0].FirstName
+        : party[0].PartyName;
+
+    const introText = App.editMode
+        ? `
+            <strong>You're updating your RSVP.</strong><br>
+            Feel free to review and update your response below if your plans have changed.
+        `
+        : `
+            We're so honored to celebrate with your family.
+            Please let us know who will be joining us.
+        `;
+
+    document.getElementById("app").innerHTML = `
+
+        <h1>${pageTitle}</h1>
+
+        <h2>${heading}</h2>
+
+        <p>${introText}</p>
 
         ${party.map((guest, index) => {
 
             const initials = guest.GuestName
                 .split(" ")
-                .map(name => name[0])
+                .map(n => n[0])
                 .join("")
                 .substring(0,2)
                 .toUpperCase();
 
             return `
+
                 <div class="guest-card">
 
                     <div class="guest-icon">
@@ -228,93 +233,104 @@ function renderInvitationSummary() {
 
                         <h3>${guest.GuestName}</h3>
 
-                      <div class="attendance-toggle">
+                        <div class="attendance-toggle">
 
-   ${
-    guest.RSVPSubmitted === "Submitted" && !App.editMode
-    ? `
-        <div class="confirmed-badge">
-            ✅ Already Confirmed
-        </div>
-    `
-    : `
-        <label class="switch">
+                            <label class="switch">
 
-            <input
-    type="checkbox"
-    id="guest${index}"
-    ${guest.RSVP === "Joyfully Attending" ? "checked" : ""}
-    onchange="toggleAttendance(${index})">
+                                <input
+                                    type="checkbox"
+                                    id="guest${index}"
+                                    ${guest.RSVP === "Joyfully Attending" ? "checked" : ""}
+                                    onchange="toggleAttendance(${index})">
 
-            <span class="slider"></span>
+                                <span class="slider"></span>
 
-        </label>
+                            </label>
 
-        <span
-    class="attendance-text"
-    id="status${index}">
-    ${
-    guest.RSVP === "Joyfully Attending"
-        ? "Joyfully Attending 💚"
-        : "Unable to Attend 🤍"
-}
-</span>
-    `
-}
+                            <span
+                                class="attendance-text"
+                                id="status${index}">
 
-</div>
+                                ${
+                                    guest.RSVP === "Joyfully Attending"
+                                    ? "Joyfully Attending 💚"
+                                    : "Unable to Attend 🤍"
+                                }
+
+                            </span>
+
+                        </div>
 
                     </div>
 
                 </div>
+
             `;
 
         }).join("")}
 
-    <div class="submit-area">
-    <button onclick="continueToContact()">
-    ${App.editMode ? "Update RSVP" : "Continue"}
-</button>
-</div>
-`;
+        <div class="submit-area">
+
+            <button onclick="continueToContact()">
+
+                ${App.editMode ? "Update RSVP" : "Continue"}
+
+            </button>
+
+        </div>
+
+    `;
 
 }
 function renderContactPage() {
 
     document.getElementById("app").innerHTML = `
 
-        <h1>Almost Done</h1>
+        <h1>${App.editMode ? "Update Contact Details" : "Almost Done"}</h1>
 
-        <p>Please provide your contact details.</p>
+        <p>
 
-      <input
-    id="mobile"
-    type="tel"
-    placeholder="Mobile Number"
-    value="${App.party[0]?.Mobile || ""}">
+            ${
+                App.editMode
+                ? "Please confirm or update your contact details before saving your updated RSVP."
+                : "Please provide your contact details."
+            }
+
+        </p>
 
         <input
-    id="email"
-    type="email"
-    placeholder="Email Address (Optional)"
-    value="${App.party[0]?.Email || ""}">
+            id="mobile"
+            type="tel"
+            placeholder="Mobile Number">
+
+        <input
+            id="email"
+            type="email"
+            placeholder="Email Address (Optional)">
 
         <label class="field-label">
-    Leave a Message (Optional)
-</label>
+            Leave a Message (Optional)
+        </label>
 
-<textarea
-    id="message"
-    rows="5"
-    placeholder="Share your well wishes with Mike & Sharmaine...">${App.party[0]?.Message || ""}</textarea>
+        <textarea
+            id="message"
+            rows="4"
+            placeholder="Share a note with the couple..."></textarea>
 
+        <button
+            id="submitBtn"
+            onclick="submitRSVP()">
 
-      <button id="submitBtn" onclick="submitRSVP()">
-    ${App.editMode ? "💚 Save Changes" : "💌 Confirm RSVP"}
-</button>
+            ${
+                App.editMode
+                ? "Update RSVP"
+                : "Confirm RSVP"
+            }
+
+        </button>
 
     `;
-    
+
 }
 async function submitRSVP() {
 
@@ -347,27 +363,20 @@ async function submitRSVP() {
 
 console.log("Submit Result:", result);
 
-if (!result.success) {
-    alert(result.message || "Submission failed.");
+if (result.success) {
 
-    btn.disabled = false;
-    btn.innerHTML = App.editMode
-        ? "Update RSVP"
-        : "Confirm RSVP";
+    celebrateRSVP();
 
-    return;
+    setTimeout(() => {
+
+        renderThankYouPage();
+
+        App.editMode = false;
+        App.party = [];
+
+    }, 800);
+
 }
-
-App.editMode = false;
-App.party = [];
-
-celebrateRSVP();
-
-setTimeout(() => {
-    renderThankYouPage();
-}, 800);
-
-        }
 
     } catch (error) {
 
@@ -430,44 +439,51 @@ function celebrateRSVP() {
 }
 function renderThankYouPage() {
 
-    const greeting = App.editMode
-        ? App.party[0].FirstName || App.party[0].GuestName
-        : App.party[0].PartyName;
-
-    const title = App.editMode
-        ? "💚 RSVP Updated!"
-        : "💌 Thank You!";
-
-    const message = App.editMode
-        ? `
-            Your RSVP has been successfully updated.
-            <br><br>
-            Thank you for letting us know if your plans have changed.
-        `
-        : `
-            Thank you for taking the time to respond to our invitation.
-            <br><br>
-            We are truly honored to celebrate one of the most special days of our lives with you.
-        `;
+    const isUpdate = App.editMode;
 
     document.getElementById("app").innerHTML = `
 
-    <h1>${pageTitle}</h1>
+        <div class="thank-you-page">
 
-    <h2>${heading}</h2>
+            <div class="thank-you-icon">
+                💚
+            </div>
 
-    <p>${introText}</p>
+            <h1>
+                ${isUpdate ? "RSVP Updated!" : "Thank You!"}
+            </h1>
 
-    ${party.map((guest, index) => {
+            <h2>
+                ${
+                    App.party && App.party.length
+                    ? App.party[0].FirstName
+                    : ""
+                }
+            </h2>
 
-        const initials = guest.GuestName
-            .split(" ")
-            .map(name => name[0])
-            .join("")
-            .substring(0,2)
-            .toUpperCase();
+            <p>
 
-        return `
+                ${
+                    isUpdate
+                    ? "Your RSVP has been successfully updated. We can't wait to celebrate with you!"
+                    : "Your RSVP has been received. We can't wait to celebrate with you!"
+                }
+
+            </p>
+
+            <p class="thank-you-note">
+
+                January 15, 2027 • Tagaytay
+
+            </p>
+
+            <button onclick="renderWelcomePage()">
+                Done
+            </button>
+
+        </div>
+
+    `;
 
 }
 function showLoading(message = "Please wait...") {
