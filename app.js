@@ -533,6 +533,30 @@ function renderThankYouPage() {
     "Fruella's Events Place, Tagaytay"
 );
 
+    const rsvpSummary = App.party.map(guest => `
+
+    <div class="summary-row">
+
+        <span class="summary-icon">
+            ${
+                guest.RSVP === "Joyfully Attending"
+                    ? "✓"
+                    : "✗"
+            }
+        </span>
+
+        <span>
+
+            <strong>${guest.GuestName}</strong>
+
+            — ${guest.RSVP}
+
+        </span>
+
+    </div>
+
+`).join("");
+
     document.getElementById("app").innerHTML = `
 
         <div class="thank-you-page">
@@ -711,6 +735,16 @@ function renderAlreadySubmittedPage() {
         </p>
 
         <div class="divider"></div>
+
+<h3>Your RSVP</h3>
+
+<div class="rsvp-summary">
+
+    ${rsvpSummary}
+
+</div>
+
+<div class="divider"></div>
 
         <p>
             If you need to make changes, please contact
