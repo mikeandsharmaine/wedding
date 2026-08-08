@@ -424,27 +424,77 @@ function celebrateRSVP() {
 }
 function renderThankYouPage() {
 
+    const greeting = App.editMode
+        ? App.party[0].FirstName || App.party[0].GuestName
+        : App.party[0].PartyName;
+
+    const title = App.editMode
+        ? "💚 RSVP Updated!"
+        : "💌 Thank You!";
+
+    const message = App.editMode
+        ? `
+            Your RSVP has been successfully updated.
+            <br><br>
+            Thank you for letting us know if your plans have changed.
+        `
+        : `
+            Thank you for taking the time to respond to our invitation.
+            <br><br>
+            We are truly honored to celebrate one of the most special days of our lives with you.
+        `;
+
     document.getElementById("app").innerHTML = `
 
-        <h1>Thank You!</h1>
+        <div class="thank-you-card">
 
-        <h2>Your RSVP has been received.</h2>
+            <div class="thank-icon">
+                🤍
+            </div>
 
-        <p>
-            We are so excited to celebrate this special day with you.
-        </p>
+            <h1>${title}</h1>
 
-        <div class="divider"></div>
+            <h2>Dear ${greeting},</h2>
 
-        <p>
-            See you on
-            <br><br>
-            <strong>January 15, 2027</strong>
-            <br>
-            Fruella's Events Place
-            <br>
-            Tagaytay
-        </p>
+            <p class="thank-message">
+                ${message}
+            </p>
+
+            <div class="divider"></div>
+
+            <p class="event-details">
+
+                <strong>January 15, 2027</strong>
+
+                <br>
+
+                Fruella's Events Place
+
+                <br>
+
+                Tagaytay City
+
+            </p>
+
+            <div class="divider"></div>
+
+            <p class="closing">
+
+                We can't wait to celebrate with you!
+
+                <br><br>
+
+                With love,
+
+                <br>
+
+                <strong>Mike & Sharmaine</strong>
+
+                🤍
+
+            </p>
+
+        </div>
 
     `;
 
