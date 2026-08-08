@@ -820,3 +820,56 @@ transform:translateY(0);
     border:1px solid #CFE3CC;
 
 }
+.thank-you-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+.thank-icon{
+
+    font-size:60px;
+
+    margin-bottom:15px;
+
+}
+
+.thank-message{
+
+    line-height:1.8;
+
+}
+
+.event-details{
+
+    color:#7E8E65;
+
+    font-size:18px;
+
+}
+
+.closing{
+
+    font-style:italic;
+
+    color:#777;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
