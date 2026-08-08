@@ -149,14 +149,14 @@ Would you like to update it?`
         App.party = [];
         App.editMode = false;
 
-        renderWelcomePage();
-
+transitionTo(renderWelcomePage);
+        
         return;
     }
 }
 
-renderInvitationSummary();
-
+transitionTo(renderInvitationSummary);
+        
 console.log("5. Finished");
         
     } catch (error) {
@@ -369,8 +369,8 @@ if (result.success) {
 
     setTimeout(() => {
 
-        renderThankYouPage();
-
+transitionTo(renderThankYouPage);
+        
         App.editMode = false;
         App.party = [];
 
@@ -400,8 +400,8 @@ function continueToContact() {
 
     });
 
-    renderContactPage();
-
+transitionTo(renderContactPage);
+    
 }
 function toggleAttendance(index) {
 
