@@ -541,9 +541,6 @@ function renderThankYouPage() {
     `;
 
     // Floating hearts
-    for (let i = 0; i < 25; i++) {
-        setTimeout(createHeart, i * 180);
-    }
 
 }
 function showLoading(message = "Please wait...") {
