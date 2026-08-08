@@ -181,6 +181,16 @@ function renderInvitationSummary() {
 
     const party = App.party;
 
+    const introText = App.editMode
+    ? `
+        <strong>You're updating your RSVP.</strong><br>
+        Feel free to review and update your response below if your plans have changed.
+      `
+    : `
+        We're so honored to celebrate with your family.
+        Please let us know who will be joining us.
+      `;
+
     console.log("App.party =", party);
 
     if (!party || party.length === 0) {
@@ -193,7 +203,7 @@ function renderInvitationSummary() {
 
         <h2>${party[0].PartyName}</h2>
 
-        <p>We're so honored to celebrate with your family. Please let us know who will be joining us.</p>
+<p>${introText}</p>
 
         ${party.map((guest, index) => {
 
