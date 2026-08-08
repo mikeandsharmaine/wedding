@@ -202,11 +202,10 @@ function renderInvitationSummary() {
         return;
     }
 
-    document.getElementById("app").innerHTML = `
-<h1>${pageTitle}</h1>
-
-        <h2>${party[0].PartyName}</h2>
-
+    const heading = App.editMode
+    ? party[0].FirstName
+    : party[0].PartyName;
+    
 <p>${introText}</p>
 
         ${party.map((guest, index) => {
@@ -446,57 +445,22 @@ function renderThankYouPage() {
 
     document.getElementById("app").innerHTML = `
 
-        <div class="thank-you-card">
+    <h1>${pageTitle}</h1>
 
-            <div class="thank-icon">
-                🤍
-            </div>
+    <h2>${heading}</h2>
 
-            <h1>${title}</h1>
+    <p>${introText}</p>
 
-            <h2>Dear ${greeting},</h2>
+    ${party.map((guest, index) => {
 
-            <p class="thank-message">
-                ${message}
-            </p>
+        const initials = guest.GuestName
+            .split(" ")
+            .map(name => name[0])
+            .join("")
+            .substring(0,2)
+            .toUpperCase();
 
-            <div class="divider"></div>
-
-            <p class="event-details">
-
-                <strong>January 15, 2027</strong>
-
-                <br>
-
-                Fruella's Events Place
-
-                <br>
-
-                Tagaytay City
-
-            </p>
-
-            <div class="divider"></div>
-
-            <p class="closing">
-
-                We can't wait to celebrate with you!
-
-                <br><br>
-
-                With love,
-
-                <br>
-
-                <strong>Mike & Sharmaine</strong>
-
-                🤍
-
-            </p>
-
-        </div>
-
-    `;
+        return `
 
 }
 function showLoading(message = "Please wait...") {
