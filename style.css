@@ -919,3 +919,16 @@ transform:translateY(0);
     }
 
 }
+#app{
+    transition:opacity .3s ease, transform .3s ease;
+}
+
+.fade-out{
+    opacity:0;
+    transform:translateY(12px);
+}
+
+.fade-in{
+    opacity:1;
+    transform:translateY(0);
+}
