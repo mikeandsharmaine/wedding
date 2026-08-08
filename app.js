@@ -345,16 +345,23 @@ async function submitRSVP() {
 
         const result = await response.json();
 
-        console.log(result);
+console.log("Submit Result:", result);
 
-if (result.success) {
+if (!result.success) {
+    alert(result.message || "Submission failed.");
 
-    App.editMode = false;
+    btn.disabled = false;
+    btn.innerHTML = App.editMode
+        ? "Update RSVP"
+        : "Confirm RSVP";
 
-    // Clear the current invitation
-    App.party = [];
+    return;
+}
 
-    celebrateRSVP();
+App.editMode = false;
+App.party = [];
+
+celebrateRSVP();
 
 setTimeout(() => {
     renderThankYouPage();
