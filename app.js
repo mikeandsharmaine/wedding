@@ -230,7 +230,7 @@ function renderInvitationSummary() {
             <input
     type="checkbox"
     id="guest${index}"
-    ${guest.RSVP === "Yes" ? "checked" : ""}
+    ${guest.RSVP === "Joyfully Attending" ? "checked" : ""}
     onchange="toggleAttendance(${index})">
 
             <span class="slider"></span>
@@ -241,10 +241,10 @@ function renderInvitationSummary() {
     class="attendance-text"
     id="status${index}">
     ${
-        guest.RSVP === "No"
-            ? "Unable to Attend 🤍"
-            : "Joyfully Attending 💚"
-    }
+    guest.RSVP === "Joyfully Attending"
+        ? "Joyfully Attending 💚"
+        : "Unable to Attend 🤍"
+}
 </span>
     `
 }
