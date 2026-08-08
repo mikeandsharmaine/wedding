@@ -522,6 +522,17 @@ function renderThankYouPage() {
 
     const isUpdate = App.editMode;
 
+    const calendarLink =
+"https://calendar.google.com/calendar/render?action=TEMPLATE"
++ "&text=" + encodeURIComponent("Mike & Sharmaine's Wedding")
++ "&dates=20270115T073000Z/20270115T150000Z"
++ "&details=" + encodeURIComponent(
+    "We're excited to celebrate with you! See you at Fruella's Events Place."
+)
++ "&location=" + encodeURIComponent(
+    "Fruella's Events Place, Tagaytay"
+);
+
     document.getElementById("app").innerHTML = `
 
         <div class="thank-you-page">
@@ -553,6 +564,15 @@ function renderThankYouPage() {
             <button onclick="renderWelcomePage()">
                 Done
             </button>
+
+            <a
+    class="calendar-btn"
+    href="${calendarLink}"
+    target="_blank">
+
+    📅 Add to Google Calendar
+
+</a>
 
         </div>
 
