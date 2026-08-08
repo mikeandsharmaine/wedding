@@ -423,18 +423,75 @@ function toggleAttendance(index) {
 }
 function celebrateRSVP() {
 
+    // Left burst
     confetti({
-        particleCount: 180,
-        spread: 90,
-        origin: { y: 0.6 },
+        particleCount: 120,
+        angle: 60,
+        spread: 70,
+        origin: { x: 0 },
         colors: [
-            "#7E8E65", // Olive
-            "#C5C69E", // Sage
-            "#EFC770", // Gold
-            "#EFDECD", // Cream
-            "#D58A58"  // Terracotta
+            "#7E8E65",
+            "#C5C69E",
+            "#EFC770",
+            "#EFDECD",
+            "#D58A58"
         ]
     });
+
+    // Right burst
+    confetti({
+        particleCount: 120,
+        angle: 120,
+        spread: 70,
+        origin: { x: 1 },
+        colors: [
+            "#7E8E65",
+            "#C5C69E",
+            "#EFC770",
+            "#EFDECD",
+            "#D58A58"
+        ]
+    });
+
+    // Center shower
+    setTimeout(() => {
+
+        confetti({
+            particleCount: 180,
+            spread: 120,
+            origin: { y: 0.6 },
+            colors: [
+                "#7E8E65",
+                "#C5C69E",
+                "#EFC770",
+                "#EFDECD",
+                "#D58A58"
+            ]
+        });
+
+    },300);
+
+}
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "floating-heart";
+
+    heart.innerHTML = Math.random() > 0.5 ? "🤍" : "💚";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.animationDuration =
+        (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+
+        heart.remove();
+
+    },8000);
 
 }
 function renderThankYouPage() {
@@ -442,6 +499,11 @@ function renderThankYouPage() {
     const isUpdate = App.editMode;
 
     document.getElementById("app").innerHTML = `
+    for(let i=0;i<25;i++){
+
+    setTimeout(createHeart,i*180);
+
+}
 
         <div class="thank-you-page">
 
