@@ -122,10 +122,11 @@ btn.innerHTML = "View My Invitation";
 
 const result = await searchGuest(name);
 
-console.log("API Response:");
-console.log(result);
+console.log("API Response:", result);
 
 const guests = result.guests;
+
+App.party = guests;          // <-- THIS IS MISSING
 App.editMode = result.editMode;
 
 console.log("Guests:");
@@ -173,9 +174,19 @@ btn.innerHTML = "View My Invitation";
 // -------------------------------
 
 window.onload = renderWelcomePage;
+
+console.log("Edit Mode:", App.editMode);
+console.log("App.party:", App.party);
 function renderInvitationSummary() {
 
     const party = App.party;
+
+    console.log("App.party =", party);
+
+    if (!party || party.length === 0) {
+        alert("App.party is empty");
+        return;
+    }
 
     document.getElementById("app").innerHTML = `
         <h1>Welcome!</h1>
