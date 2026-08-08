@@ -118,7 +118,7 @@ btn.innerHTML = "View My Invitation";
 
     try {
 
-        console.log("1. Searching...");
+   console.log("1. Searching...");
 
 const result = await searchGuest(name);
 
