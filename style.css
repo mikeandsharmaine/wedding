@@ -873,3 +873,49 @@ transform:translateY(0);
     }
 
 }
+.floating-heart{
+
+    position:fixed;
+
+    bottom:-40px;
+
+    font-size:28px;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    animation:floatHeart linear forwards;
+
+}
+
+@keyframes floatHeart{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translateY(0)
+            scale(.4);
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translateY(-120vh)
+            rotate(360deg)
+            scale(1.4);
+
+    }
+
+}
