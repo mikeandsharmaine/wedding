@@ -960,3 +960,40 @@ transform:translateY(0);
     color:white;
 
 }
+.rsvp-summary{
+
+    text-align:left;
+
+    margin:25px auto;
+
+    max-width:420px;
+
+}
+
+.summary-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:14px;
+
+    padding:10px 14px;
+
+    background:#faf9f7;
+
+    border-radius:14px;
+
+}
+
+.summary-icon{
+
+    width:28px;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
