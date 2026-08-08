@@ -122,23 +122,17 @@ btn.innerHTML = "View My Invitation";
 
 const result = await searchGuest(name);
 
+console.log("API Response:");
+console.log(result);
+
 const guests = result.guests;
 App.editMode = result.editMode;
 
-if (!guests || guests.length === 0) {
+console.log("Guests:");
+console.log(guests);
 
-    alert("Sorry, we couldn't find your invitation.\n\nPlease check the spelling of your name.");
-
-    btn.disabled = false;
-    btn.innerHTML = "View My Invitation";
-
-    return;
-}
-
-App.party = guests;
-
-console.log(App.party);
-console.log("Edit Mode:", App.editMode);
+console.log("Edit Mode:");
+console.log(App.editMode);
 
 // Check if already submitted
 if (App.editMode) {
