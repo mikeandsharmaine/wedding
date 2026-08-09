@@ -30,27 +30,27 @@ async function searchGuest(name) {
 // -------------------------------
 function renderProgress(step){
 
-    const labels = [
-        "Search",
-        "RSVP",
-        "Contact",
-        "Complete"
-    ];
-
     return `
-        <div class="progress-container">
 
-            <div class="progress-line">
+        <div class="progress-wrapper">
 
-                ${labels.map((label,index)=>`
+            <div class="progress-dots">
 
-                    <div class="progress-step">
+                ${[0,1,2,3].map(i=>`
+
+                    <div class="progress-item">
 
                         <div class="progress-circle ${
-                            index <= step ? "active" : ""
+                            i <= step ? "active" : ""
                         }"></div>
 
-                        <span>${label}</span>
+                        ${
+                            i<3
+                            ? `<div class="progress-bar ${
+                                i < step ? "active" : ""
+                              }"></div>`
+                            : ""
+                        }
 
                     </div>
 
@@ -58,7 +58,14 @@ function renderProgress(step){
 
             </div>
 
+            <div class="progress-text">
+
+                Step ${step+1} of 4
+
+            </div>
+
         </div>
+
     `;
 
 }
@@ -70,6 +77,7 @@ App.editMode = false;
 
     document.getElementById("app").innerHTML = `
     
+${renderProgress(0)}
 
         <h1>Mike & Sharmaine</h1>
 
@@ -211,6 +219,7 @@ window.onload = renderWelcomePage;
 
 console.log("Edit Mode:", App.editMode);
 console.log("App.party:", App.party);
+
 function renderInvitationSummary() {
 
     const party = App.party;
@@ -239,6 +248,8 @@ function renderInvitationSummary() {
         `;
 
     document.getElementById("app").innerHTML = `
+
+    ${renderProgress(1)}
 
         <h1>${pageTitle}</h1>
 
@@ -319,6 +330,8 @@ function renderInvitationSummary() {
 function renderContactPage() {
 
     document.getElementById("app").innerHTML = `
+
+    ${renderProgress(2)}
 
         <h1>${App.editMode ? "Update Contact Details" : "Almost Done"}</h1>
 
@@ -589,6 +602,8 @@ function renderThankYouPage() {
 `).join("");
 
     document.getElementById("app").innerHTML = `
+
+    ${renderProgress(3)}
 
         <div class="thank-you-page">
 
