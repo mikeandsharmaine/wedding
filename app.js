@@ -190,7 +190,9 @@ btn.innerHTML = "View My Invitation";
 
 showUpdateModal();
 return;
-        
+    }
+        transitionTo(renderInvitationSummary);
+
 console.log("5. Finished");
         
     } catch (error) {
