@@ -454,16 +454,28 @@ function toggleAttendance(index) {
 
     const checkbox = document.getElementById(`guest${index}`);
     const status = document.getElementById(`status${index}`);
+    const card = checkbox.closest(".guest-card");
+
+    // ⭐ IMPORTANT: Update the data
+    App.party[index].RSVP = checkbox.checked
+        ? "Joyfully Attending"
+        : "Unable to Attend";
 
     if (checkbox.checked) {
 
         status.textContent = "Joyfully Attending 💚";
         status.style.color = "#7E8E65";
 
+        card.classList.remove("declined");
+        card.classList.add("selected");
+
     } else {
 
-        status.textContent = "Unable to Attend";
+        status.textContent = "Unable to Attend 🤍";
         status.style.color = "#999";
+
+        card.classList.remove("selected");
+        card.classList.add("declined");
 
     }
 
