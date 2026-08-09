@@ -369,12 +369,9 @@ if (result.success) {
 
     setTimeout(() => {
 
-transitionTo(renderThankYouPage);
-        
-        App.editMode = false;
-        App.party = [];
+        transitionTo(renderThankYouPage);
 
-    }, 800);
+    },800);
 
 }
 
@@ -581,12 +578,26 @@ function renderThankYouPage() {
                 }
             </p>
 
+            <div class="divider"></div>
+
+<h3>
+    ${isUpdate ? "Your Updated RSVP" : "Your RSVP"}
+</h3>
+
+<div class="rsvp-summary">
+
+    ${rsvpSummary}
+
+</div>
+
+<div class="divider"></div>
+
             <p class="thank-you-note">
                 January 15, 2027 • Tagaytay
             </p>
 
-            <button onclick="renderWelcomePage()">
-                Done
+<button onclick="finishRSVP()">
+Done
             </button>
 
             <a
@@ -603,6 +614,14 @@ function renderThankYouPage() {
     `;
 
     // Floating hearts
+
+}
+function finishRSVP(){
+
+    App.party = [];
+    App.editMode = false;
+
+    transitionTo(renderWelcomePage);
 
 }
 function showLoading(message = "Please wait...") {
