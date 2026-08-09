@@ -605,16 +605,13 @@ function renderThankYouPage() {
 
 <button onclick="finishRSVP()">
 Done
-            </button>
+         <button
+class="calendar-btn"
+onclick="addToCalendar()">
 
-            <a
-    class="calendar-btn"
-    href="${calendarLink}"
-    target="_blank">
+📅 Add to Google Calendar
 
-    📅 Add to Google Calendar
-
-</a>
+</button>
 
         </div>
 
@@ -781,5 +778,40 @@ function renderAlreadySubmittedPage() {
         </p>
 
     `;
+
+}
+function addToCalendar() {
+
+    const title = encodeURIComponent(
+        "Mike & Sharmaine Wedding"
+    );
+
+    const location = encodeURIComponent(
+        "Fruella's Events Place, Tagaytay"
+    );
+
+    const details = encodeURIComponent(
+`We're excited to celebrate with you!
+
+Wedding Ceremony
+
+Mike & Sharmaine
+
+See you there ❤️`
+    );
+
+    // January 15, 2027
+    // 3:30 PM - 10:00 PM
+
+    const start = "20270115T153000";
+    const end   = "20270115T220000";
+
+    window.open(
+
+`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location=${location}`,
+
+"_blank"
+
+    );
 
 }
