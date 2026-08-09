@@ -329,6 +329,20 @@ function renderInvitationSummary() {
 
     `;
 
+    document.querySelectorAll(".guest-card").forEach((card, index) => {
+
+    if(App.party[index].RSVP === "Joyfully Attending"){
+
+        card.classList.add("selected");
+
+    }else{
+
+        card.classList.add("declined");
+
+    }
+
+});
+
 }
 function renderContactPage() {
 
