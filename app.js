@@ -189,12 +189,7 @@ btn.disabled = false;
 btn.innerHTML = "View My Invitation";
 
 showUpdateModal();
-
-console.log("Modal shown.");
-
 return;
-
-transitionTo(renderInvitationSummary);
         
 console.log("5. Finished");
         
@@ -952,5 +947,12 @@ function confirmUpdate(){
     App.editMode = true;
 
     transitionTo(renderInvitationSummary);
+
+}
+function hideUpdateModal(){
+
+    document
+        .getElementById("updateModal")
+        .classList.remove("show");
 
 }
