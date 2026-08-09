@@ -1153,3 +1153,120 @@ textarea{
         background .25s ease;
 
 }
+/* ===========================
+   RSVP Update Confirmation Modal
+=========================== */
+
+.modal-overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    backdrop-filter:blur(8px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:9999;
+
+}
+
+.modal-overlay.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.modal-card{
+
+    width:min(420px,90vw);
+
+    background:white;
+
+    border-radius:28px;
+
+    padding:40px 32px;
+
+    text-align:center;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.15);
+
+    transform:translateY(20px);
+
+    transition:.35s;
+
+}
+
+.modal-overlay.show .modal-card{
+
+    transform:translateY(0);
+
+}
+
+.modal-card h2{
+
+    font-family:'Cardo',serif;
+
+    font-size:2rem;
+
+    color:#6E7D58;
+
+    margin-bottom:12px;
+
+}
+
+.modal-card p{
+
+    color:#666;
+
+    line-height:1.7;
+
+    margin-bottom:30px;
+
+}
+
+.modal-buttons{
+
+    display:flex;
+
+    gap:16px;
+
+}
+
+.modal-buttons button{
+
+    flex:1;
+
+    margin:0;
+
+}
+
+.secondary-btn{
+
+    background:white !important;
+
+    color:#7E8E65 !important;
+
+    border:2px solid #C5C69E !important;
+
+}
+
+.secondary-btn:hover{
+
+    background:#F8F6F2 !important;
+
+}
