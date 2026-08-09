@@ -385,7 +385,7 @@ function renderContactPage() {
     id="message"
     rows="4"
     autocapitalize="sentences"
-    placeholder="Leave your blessings, advice, or a short message for the bride and groom...">
+    placeholder="Share your well wishes with us..."></textarea>
 
         <button
             id="submitBtn"
