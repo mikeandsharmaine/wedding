@@ -184,7 +184,12 @@ input:focus{
 button{
 
     margin-top:0;
-    padding:24px;
+
+    width:100%;
+
+    min-height:56px;
+
+    padding:18px 24px;
 
     background:linear-gradient(
         180deg,
@@ -192,7 +197,7 @@ button{
         #87996A
     );
 
-    color:white;
+    color:#fff;
 
     border:none;
 
@@ -200,33 +205,54 @@ button{
 
     font-weight:700;
 
-    font-size:1.25rem;
+    font-size:1.1rem;
 
-    padding:22px;
-
-    width:100%;
+    letter-spacing:.3px;
 
     cursor:pointer;
 
-    transition:.35s;
+    transition:
+        transform .2s ease,
+        box-shadow .3s ease,
+        background .3s ease;
 
     box-shadow:
         0 12px 28px rgba(126,142,101,.25);
+
+    -webkit-tap-highlight-color: transparent;
 
 }
 
 button:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(-2px);
 
     box-shadow:
-        0 18px 40px rgba(126,142,101,.35);
+        0 16px 34px rgba(126,142,101,.30);
 
     background:linear-gradient(
         180deg,
         #AAB98C,
         #7F9265
     );
+
+}
+button:active{
+
+    transform:scale(.98);
+
+}
+
+button:disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+    box-shadow:
+        0 8px 18px rgba(126,142,101,.18);
 
 }
 /* Divider */
