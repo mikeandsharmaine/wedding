@@ -736,41 +736,30 @@ font-size:clamp(3rem,9vw,5rem);
 @keyframes petalFall{
 
     0%{
+        ...
+    }
+
+    10%{
+        ...
+    }
+
+    50%{
+        ...
+    }
+
+    100%{
 
         transform:
-            translateY(-80px)
-            translateX(0)
-            rotate(0deg);
+            translateY(115vh)
+            translateX(calc(var(--drift) * 0.75))
+            rotate(calc(var(--rotate) * 0.8));
 
         opacity:0;
 
     }
 
-    10%{
+}   /* ← THIS BRACE IS MISSING */
 
-        opacity:.8;
-
-    }
-
-    50%{
-
-    transform:
-        translateY(45vh)
-        translateX(calc(var(--drift) * 0.35))
-        rotate(calc(var(--rotate) * 0.4));
-
-}
-
-    100%{
-
-    transform:
-        translateY(115vh)
-        translateX(calc(var(--drift) * 0.75))
-        rotate(calc(var(--rotate) * 0.8));
-
-    opacity:0;
-
-}
 .welcome-text{
     margin:0 0 12px;
     line-height:1.6;
