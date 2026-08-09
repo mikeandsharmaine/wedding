@@ -62,9 +62,8 @@ body{
 
 padding:90px 70px 70px;
    
-    max-width:760px;
+        width:min(100%,760px);
 
-    width:100%;
 
 }
 
@@ -92,8 +91,8 @@ h1{
 
     color:#6F7D57;
 
-    font-size:58px;
-
+font-size:clamp(2.5rem, 6vw, 3.8rem);
+   
     font-weight:600;
 
     text-align:center;
@@ -113,8 +112,8 @@ h2{
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:34px;
-
+font-size:clamp(1.9rem, 4vw, 2.5rem);
+   
     font-weight:500;
 
     color:#B38B59;
@@ -133,8 +132,8 @@ h3{
 
     color:#777;
 
-    font-size:28px;
-
+font-size:clamp(1.35rem, 3vw, 1.8rem);
+   
     text-align:center;
 
 }
@@ -142,6 +141,8 @@ h3{
 p{
 
     text-align:center;
+
+    font-size:clamp(.98rem,2vw,1.1rem);
 
     line-height:1.8;
 
@@ -205,8 +206,8 @@ button{
 
     font-weight:700;
 
-    font-size:1.1rem;
-
+font-size:clamp(1rem,2vw,1.1rem);
+   
     letter-spacing:.3px;
 
     cursor:pointer;
@@ -290,20 +291,24 @@ button:disabled{
 
     display:flex;
     align-items:center;
-
     gap:22px;
 
     padding:24px;
-
     margin-top:22px;
 
     border-radius:24px;
 
-    background:#faf8f4;
+    background:#FCFCFB;
 
-    border:1px solid #efe7da;
+    border:2px solid transparent;
 
-    transition:.25s;
+    cursor:pointer;
+
+    transition:
+        transform .25s ease,
+        box-shadow .30s ease,
+        border-color .30s ease,
+        background .30s ease;
 
 }
 
@@ -317,27 +322,11 @@ button:disabled{
 
 .guest-icon{
 
-    width:64px;
+    width:clamp(52px,9vw,64px);
 
-    height:64px;
+    height:clamp(52px,9vw,64px);
 
-    border-radius:50%;
-
-    background:#7E8E65;
-
-    color:white;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:22px;
-
-    font-weight:700;
-
-    flex-shrink:0;
+    font-size:clamp(18px,3vw,22px);
 
 }
 
@@ -349,11 +338,7 @@ button:disabled{
 
 .guest-details h3{
 
-    text-align:left;
-
-    margin-bottom:16px;
-
-    font-size:28px;
+    font-size:clamp(1.4rem,3vw,1.8rem);
 
 }
 
@@ -363,19 +348,7 @@ button:disabled{
 @media (max-width:768px){
 
     .card{
-        padding:35px 22px;
-    }
-
-    h1{
-        font-size:42px;
-    }
-
-    h2{
-        font-size:32px;
-    }
-
-    button{
-        font-size:18px;
+    padding:40px 24px;
     }
 
     input,
@@ -383,7 +356,6 @@ button:disabled{
         font-size:16px;
     }
 
-}
 
 }
 .field-label{
@@ -596,12 +568,6 @@ textarea:focus{
     }
 
 }
-button:disabled{
-    opacity: .85;
-    cursor: not-allowed;
-}
-
-
 
 #app{
 
@@ -614,6 +580,7 @@ button:disabled{
     margin:auto;
 
     animation:fadeUp .8s ease;
+    transition:opacity .3s ease, transform .3s ease;
 
 }
 @keyframes fadeUp{
@@ -699,8 +666,8 @@ transform:translateY(0);
 
     font-family:'Playfair Display',serif;
 
-    font-size:78px;
-
+font-size:clamp(3rem,9vw,5rem);
+   
     font-weight:700;
 
     line-height:1;
@@ -725,23 +692,6 @@ transform:translateY(0);
     text-transform:uppercase;
 
     font-size:13px;
-
-}
-/* ===========================
-   Floating Petals
-=========================== */
-
-#petals{
-
-    position:fixed;
-
-    inset:0;
-
-    overflow:hidden;
-
-    pointer-events:none;
-
-    z-index:1;
 
 }
 
@@ -815,10 +765,6 @@ transform:translateY(0);
     opacity:0;
 
 }
-
-}
-
-}
 .welcome-text{
     margin:0 0 12px;
     line-height:1.6;
@@ -882,23 +828,6 @@ transform:translateY(0);
 
 }
 
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-        transform:translateY(30px);
-
-    }
-
-    to{
-
-        opacity:1;
-        transform:translateY(0);
-
-    }
-
-}
 .floating-heart{
 
     position:fixed;
@@ -944,9 +873,6 @@ transform:translateY(0);
 
     }
 
-}
-#app{
-    transition:opacity .3s ease, transform .3s ease;
 }
 
 .fade-out{
@@ -1131,8 +1057,8 @@ transform:translateY(0);
 
     color:#8d8d8d;
 
-    font-size:14px;
-
+font-size:clamp(.75rem,1.5vw,.9rem);
+   
     letter-spacing:1px;
 
     text-transform:uppercase;
@@ -1148,17 +1074,6 @@ transform:translateY(0);
 
 }
 
-.guest-card:hover{
-
-    transform:translateY(-2px);
-
-}
-
-.guest-card:active{
-
-    transform:scale(.99);
-
-}
 /* ===========================
    RSVP Card Animation
 =========================== */
@@ -1183,6 +1098,9 @@ transform:translateY(0);
 
     box-shadow:
         0 12px 28px rgba(126,142,101,.18);
+
+   animation:cardPulse .35s ease;
+
 
 }
 
@@ -1227,11 +1145,6 @@ transform:translateY(0);
 
 }
 
-.guest-card.selected{
-
-    animation:cardPulse .35s ease;
-
-}
 input,
 textarea,
 select{
