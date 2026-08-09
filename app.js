@@ -363,23 +363,29 @@ function renderContactPage() {
         </p>
 
         <input
-            id="mobile"
-            type="tel"
-            placeholder="Mobile Number">
+    id="mobile"
+    type="tel"
+    inputmode="numeric"
+    autocomplete="tel"
+    placeholder="Mobile Number">
 
-        <input
-            id="email"
-            type="email"
-            placeholder="Email Address (Optional)">
+      <input
+    id="email"
+    type="email"
+    autocomplete="email"
+    autocapitalize="off"
+    spellcheck="false"
+    placeholder="Email Address (Optional)">
 
         <label class="field-label">
-            Leave a Message (Optional)
+            Leave a Message
         </label>
 
-        <textarea
-            id="message"
-            rows="4"
-            placeholder="Share a note with the couple..."></textarea>
+      <textarea
+    id="message"
+    rows="4"
+    autocapitalize="sentences"
+    placeholder="Share your well wishes with us...">
 
         <button
             id="submitBtn"
