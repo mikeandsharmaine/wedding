@@ -11,6 +11,8 @@ const App = {
     apiUrl: "https://script.google.com/macros/s/AKfycbyZNzIYT8Vp1zopvc_PANgV5XBeINll9oBiK4FA83tUeutjj6EpvJJhwMxdO6TjH0di/exec"
 
 };
+
+let pendingParty = [];
 async function searchGuest(name) {
 
     const response = await fetch(
@@ -169,6 +171,7 @@ console.log("API Response:", result);
 const guests = result.guests;
 
 App.party = guests;          // <-- THIS IS MISSING
+        pendingParty = guests;
 App.editMode = result.editMode;
 
 console.log("Guests:");
@@ -180,21 +183,9 @@ console.log(App.editMode);
 // Check if already submitted
 if (App.editMode) {
 
-    const update = confirm(
-`We've already received your RSVP.
+    showUpdateModal();
 
-Would you like to update it?`
-    );
-
-    if (!update) {
-
-        App.party = [];
-        App.editMode = false;
-
-transitionTo(renderWelcomePage);
-        
-        return;
-    }
+return;
 }
 
 transitionTo(renderInvitationSummary);
@@ -916,5 +907,46 @@ See you there ❤️`
 "_blank"
 
     );
+
+}
+function showUpdateModal(){
+
+    document
+        .getElementById("updateModal")
+        .classList.add("show");
+
+}
+
+function hideUpdateModal(){
+
+    document
+        .getElementById("updateModal")
+        .classList.remove("show");
+
+}
+
+function cancelUpdate(){
+
+    hideUpdateModal();
+
+    App.party = [];
+
+    pendingParty = [];
+
+    App.editMode = false;
+
+    transitionTo(renderWelcomePage);
+
+}
+
+function confirmUpdate(){
+
+    hideUpdateModal();
+
+    App.party = pendingParty;
+
+    App.editMode = true;
+
+    transitionTo(renderInvitationSummary);
 
 }
