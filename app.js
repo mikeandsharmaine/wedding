@@ -571,12 +571,28 @@ function renderThankYouPage() {
             </h2>
 
             <p>
-                ${
-                    isUpdate
-                        ? "Your RSVP has been successfully updated. We can't wait to celebrate with you!"
-                        : "Your RSVP has been received. We can't wait to celebrate with you!"
-                }
-            </p>
+
+    ${
+        isUpdate
+        ? `Thank you, <strong>${App.party[0].FirstName}</strong>! Your RSVP has been successfully updated.`
+        : `Thank you, <strong>${App.party[0].FirstName}</strong>! We've received your RSVP.`
+    }
+
+</p>
+
+<p class="thank-you-message">
+
+    We can't wait to celebrate this special day with you.
+
+    <br><br>
+
+    With love,
+
+    <br>
+
+    <strong>Mike & Sharmaine 💚</strong>
+
+</p>
 
             <div class="divider"></div>
 
