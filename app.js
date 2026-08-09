@@ -28,6 +28,40 @@ async function searchGuest(name) {
 // -------------------------------
 // Initial Page
 // -------------------------------
+function renderProgress(step){
+
+    const labels = [
+        "Search",
+        "RSVP",
+        "Contact",
+        "Complete"
+    ];
+
+    return `
+        <div class="progress-container">
+
+            <div class="progress-line">
+
+                ${labels.map((label,index)=>`
+
+                    <div class="progress-step">
+
+                        <div class="progress-circle ${
+                            index <= step ? "active" : ""
+                        }"></div>
+
+                        <span>${label}</span>
+
+                    </div>
+
+                `).join("")}
+
+            </div>
+
+        </div>
+    `;
+
+}
 
 function renderWelcomePage() {
 
