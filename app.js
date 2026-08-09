@@ -183,10 +183,16 @@ console.log(App.editMode);
 // Check if already submitted
 if (App.editMode) {
 
-    showUpdateModal();
+    console.log("About to show modal...");
+
+btn.disabled = false;
+btn.innerHTML = "View My Invitation";
+
+showUpdateModal();
+
+console.log("Modal shown.");
 
 return;
-}
 
 transitionTo(renderInvitationSummary);
         
@@ -911,17 +917,15 @@ See you there ❤️`
 }
 function showUpdateModal(){
 
-    document
-        .getElementById("updateModal")
-        .classList.add("show");
+    console.log("showUpdateModal() called");
 
-}
+    const modal = document.getElementById("updateModal");
 
-function hideUpdateModal(){
+    console.log("Modal element:", modal);
 
-    document
-        .getElementById("updateModal")
-        .classList.remove("show");
+    modal.classList.add("show");
+
+    console.log("Modal classes:", modal.className);
 
 }
 
