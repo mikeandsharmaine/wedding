@@ -314,9 +314,9 @@ button:disabled{
 
 .guest-card:hover{
 
-    transform:translateY(-2px);
+    transform:translateY(-3px);
 
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    box-shadow: 0 16px 30px rgba(126,142,101,.10);
 
 }
 
@@ -333,6 +333,12 @@ button:disabled{
 .guest-details{
 
     flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
 
 }
 
@@ -905,20 +911,26 @@ font-size:clamp(3rem,9vw,5rem);
 
 }
 
-.calendar-btn:hover{
+.calendar-btn{
 
-    background:#C5C69E;
+    background:white;
 
-    color:white;
+    border:2px solid #D8D2C6;
 
 }
 .rsvp-summary{
 
-    text-align:left;
+    max-width:460px;
 
-    margin:25px auto;
+    margin:32px auto;
 
-    max-width:420px;
+    padding:24px;
+
+    background:#FCFCFB;
+
+    border:1px solid #ECE7DF;
+
+    border-radius:24px;
 
 }
 
@@ -936,8 +948,8 @@ font-size:clamp(3rem,9vw,5rem);
 
     background:#faf9f7;
 
-    border-radius:14px;
-
+border-radius:18px;
+   
 }
 
 .summary-icon{
@@ -955,7 +967,7 @@ font-size:clamp(3rem,9vw,5rem);
 
     background:#f7f7f4;
     border:1px solid #e7e7df;
-    border-radius:12px;
+    border-radius:18px;
 
     color:#666;
     font-size:14px;
@@ -1049,46 +1061,9 @@ font-size:clamp(3rem,9vw,5rem);
 
 }
 
-.progress-text{
-
-    margin-top:14px;
-
-    text-align:center;
-
-    color:#8d8d8d;
-
-font-size:clamp(.75rem,1.5vw,.9rem);
-   
-    letter-spacing:1px;
-
-    text-transform:uppercase;
-
-}
-.guest-card{
-
-    cursor:pointer;
-
-    transition:
-        transform .2s ease,
-        box-shadow .25s ease;
-
-}
-
 /* ===========================
    RSVP Card Animation
 =========================== */
-
-.guest-card{
-
-    transition:
-        transform .25s ease,
-        box-shadow .30s ease,
-        border-color .30s ease,
-        background .30s ease;
-
-    border:2px solid transparent;
-
-}
 
 .guest-card.selected{
 
@@ -1150,5 +1125,31 @@ textarea,
 select{
 
     font-size:16px;
+
+}
+.progress-text{
+
+    margin-top:14px;
+
+    text-align:center;
+
+    width:100%;
+
+    color:#8d8d8d;
+
+    font-size:clamp(.75rem,1.5vw,.9rem);
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+input,
+textarea{
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
 
 }
