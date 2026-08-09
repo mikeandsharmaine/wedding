@@ -562,13 +562,6 @@ function renderThankYouPage() {
                 ${isUpdate ? "RSVP Updated!" : "Thank You!"}
             </h1>
 
-            <h2>
-                ${
-                    App.party && App.party.length
-                        ? App.party[0].FirstName
-                        : ""
-                }
-            </h2>
 
             <p>
 
