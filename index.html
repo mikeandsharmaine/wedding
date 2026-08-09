@@ -46,8 +46,38 @@
         <p>Just a moment while we personalize your RSVP.</p>
 
     </div>
+<!-- RSVP Update Modal -->
+<div id="updateModal" class="modal-overlay">
 
-</div>
+    <div class="modal-card">
+
+        <h2>May naitala na kaming RSVP.</h2>
+
+        <p>
+            Nais mo ba itong baguhin?
+        </p>
+
+        <div class="modal-buttons">
+
+            <button
+                class="secondary-btn"
+                onclick="cancelUpdate()">
+
+                Hindi
+
+            </button>
+
+            <button
+                class="primary-btn"
+                onclick="confirmUpdate()">
+
+                Oo
+
+            </button>
+
+        </div>
+
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script src="app.js"></script>
