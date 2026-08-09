@@ -580,13 +580,20 @@ function renderThankYouPage() {
 
             <div class="divider"></div>
 
-<h3>
-    ${isUpdate ? "Your Updated RSVP" : "Your RSVP"}
-</h3>
-
 <div class="rsvp-summary">
 
+<h3>
+    ${isUpdate ? "Your Updated Response" : "Your RSVP"}
+</h3>
+
     ${rsvpSummary}
+
+    ${isUpdate ? `
+    <p class="update-note">
+        Only your RSVP has been updated.<br>
+        Other family members' responses remain unchanged.
+    </p>
+` : ""}
 
 </div>
 
