@@ -116,18 +116,18 @@ function renderWelcomePage() {
             </p>
 
             <div class="divider"></div>
+            
+<p class="contact-intro">
+    Kung kailangan ninyo ng tulong, maaari pong makipag-ugnayan kay
+</p>
 
-            <p class="info-text">
-                Kung kailangan ninyo ng tulong, maaari pong makipag-ugnayan kay
-            </p>
+<p class="contact-name">
+    Sharmaine Fernandez
+</p>
 
-            <p class="contact-name">
-                Sharmaine Fernandez
-            </p>
-
-            <p class="contact-phone">
-                0917 804 5576
-            </p>
+<p class="contact-phone">
+    0917 804 5576
+</p>
 
         </div>
 
