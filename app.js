@@ -1,5 +1,5 @@
 // ========================================
-// Mike at Sharmaine Wedding RSVP
+// Mike & Sharmaine Wedding RSVP
 // ========================================
 
 const App = {
@@ -81,7 +81,7 @@ App.editMode = false;
     
 ${renderProgress(0)}
 
-        <h1>Mike at Sharmaine</h1>
+        <h1>Mike & Sharmaine</h1>
 
         <h2>Wedding RSVP</h2>
 
