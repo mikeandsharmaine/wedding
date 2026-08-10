@@ -578,127 +578,151 @@ function renderThankYouPage() {
     const isUpdate = App.editMode;
 
     const calendarLink =
-"https://calendar.google.com/calendar/render?action=TEMPLATE"
-+ "&text=" + encodeURIComponent("Mike & Sharmaine's Wedding")
-+ "&dates=20270115T073000Z/20270115T150000Z"
-+ "&details=" + encodeURIComponent(
-    "We're excited to celebrate with you! See you at Fruella's Events Place."
-)
-+ "&location=" + encodeURIComponent(
-    "Fruella's Events Place, Tagaytay"
-);
+        "https://calendar.google.com/calendar/render?action=TEMPLATE"
+        + "&text=" + encodeURIComponent("Mike & Sharmaine's Wedding")
+        + "&dates=20270115T073000Z/20270115T150000Z"
+        + "&details=" + encodeURIComponent(
+            "We're excited to celebrate with you! See you at Fruella's Events Place."
+        )
+        + "&location=" + encodeURIComponent(
+            "Fruella's Events Place, Tagaytay"
+        );
 
-    const rsvpSummary = App.party.map(guest => `
+    // --------------------------------
+    // RSVP Summary
+    // --------------------------------
 
-    <div class="summary-row">
+    const rsvpSummary = App.party.map(guest => {
 
-        <span class="summary-icon">
-            ${
-                guest.RSVP === "Joyfully Attending"
-                    ? "✓"
-                    : "✗"
-            }
-        </span>
+        const status =
+            guest.RSVP === "Joyfully Attending"
+                ? "Makakadalo 💚"
+                : "Hindi Makakadalo 🤍";
 
-        <span>
+        return `
+            <div class="summary-row">
 
-            <strong>${guest.GuestName}</strong>
+                <span class="summary-icon">
+                    ${
+                        guest.RSVP === "Joyfully Attending"
+                            ? "✓"
+                            : "✗"
+                    }
+                </span>
 
-            — ${guest.RSVP}
+                <span>
+                    <strong>${guest.GuestName}</strong>
+                    — ${status}
+                </span>
 
-        </span>
+            </div>
+        `;
 
-    </div>
+    }).join("");
 
-`).join("");
+
+    // --------------------------------
+    // Page
+    // --------------------------------
 
     document.getElementById("app").innerHTML = `
 
-    ${renderProgress(3)}
+        ${renderProgress(3)}
 
         <div class="thank-you-page">
 
             <h1>
-                ${isUpdate ? "RSVP Updated!" : "Maraming Salamat!"}
+                ${isUpdate ? "Na-update na!" : "Maraming Salamat!"}
             </h1>
-
 
             <p>
 
-    ${
-        isUpdate
-        ? `Thank you, <strong>${App.party[0].FirstName}</strong>! Your RSVP has been successfully updated.`
-        :    Natanggap na namin ang inyong RSVP, <strong>${name}</strong>.
-    }
+                ${
+                    isUpdate
+                    ? `Natanggap na namin ang iyong na-update na RSVP,
+                       <strong>${App.party[0].GuestName}</strong>.`
+                    : `Natanggap na namin ang inyong RSVP,
+                       <strong>${App.party[0].GuestName}</strong>.`
+                }
 
-</p>
+            </p>
 
-<p class="thank-you-message">
 
-   Hindi na kami makapaghintay na makasama kayo sa
-    pagdiriwang ng isa sa pinakamahalagang araw ng aming buhay.
+            <p class="thank-you-message">
 
-    <br><br>
+                Hindi na kami makapaghintay na makasama kayo sa
+                pagdiriwang ng isa sa pinakamahalagang araw ng aming buhay.
 
-    With love,
+                <br><br>
 
-    <br>
+                With love,
 
-    <strong>Mike & Sharmaine 💚</strong>
+                <br>
 
-</p>
+                <strong>Mike & Sharmaine 💚</strong>
+
+            </p>
+
 
             <div class="divider"></div>
 
-<div class="rsvp-summary">
 
-<h3>
-    ${isUpdate ? "Your Updated Response" : "Ang Inyong RSVP"}
-</h3>
+            <div class="rsvp-summary">
 
-    ${rsvpSummary}
+                <h3>
+                    Ang Inyong RSVP
+                </h3>
 
-    ${isUpdate ? `
-    <p class="update-note">
-        Only your RSVP has been updated.<br>
-        Other family members' responses remain unchanged.
-    </p>
-` : ""}
+                ${rsvpSummary}
 
-</div>
+                ${
+                    isUpdate
+                    ? `
+                        <p class="update-note">
+                            Na-update lamang ang iyong RSVP.
+                            <br>
+                            Ang mga sagot ng ibang miyembro ng pamilya ay nananatiling pareho.
+                        </p>
+                    `
+                    : ""
+                }
 
-<div class="divider"></div>
+            </div>
 
-            <h3>Enero 15, 2027</h3>
 
-<p>
-    <strong>Fruella’s Events Place</strong><br>
-    Tagaytay
-</p>
+            <div class="divider"></div>
 
-<button onclick="finishRSVP()">
-Tapos 
-         <button
-class="calendar-btn"
-onclick="addToCalendar()">
 
-📅 Idagdag to Google Calendar
+            <p>
+                Magkita-kita tayo sa
+            </p>
 
-</button>
+            <h3>
+                Enero 15, 2027
+            </h3>
+
+            <p>
+                <strong>Fruella’s Events Place</strong><br>
+                Tagaytay
+            </p>
+
+
+            <button onclick="finishRSVP()">
+                Tapos
+            </button>
+
+
+            <button
+                class="calendar-btn"
+                onclick="addToCalendar()">
+
+                📅 Idagdag sa Google Calendar
+
+            </button>
 
         </div>
 
     `;
-
-    // Floating hearts
-
-}
-function finishRSVP(){
-
-    App.party = [];
-    App.editMode = false;
-
-    transitionTo(renderWelcomePage);
 
 }
 function showLoading(message = "Please wait...") {
