@@ -325,14 +325,14 @@ function renderContactPage() {
 
     ${renderProgress(2)}
 
-        <h1>${App.editMode ? "Update Contact Details" : "Almost Done"}</h1>
+        <h1>${App.editMode ? "Update Contact Details" : "Malapit na!"}</h1>
 
         <p>
 
             ${
                 App.editMode
                 ? "Please confirm or update your contact details before saving your updated RSVP."
-                : "Please provide your contact details."
+                : "Pakibigay ang inyong mga detalye sa pakikipag-ugnayan."
             }
 
         </p>
@@ -342,7 +342,7 @@ function renderContactPage() {
     type="tel"
     inputmode="numeric"
     autocomplete="tel"
-    placeholder="Mobile Number">
+    placeholder="Numero ng Mobile">
 
       <input
     id="email"
@@ -350,17 +350,17 @@ function renderContactPage() {
     autocomplete="email"
     autocapitalize="off"
     spellcheck="false"
-    placeholder="Email Address (Optional)">
+    placeholder="Email Address (Opsyonal)">
 
         <label class="field-label">
-            Leave a Message
+            Mag-iwan ng Mensahe 
         </label>
 
       <textarea
     id="message"
     rows="4"
     autocapitalize="sentences"
-    placeholder="Share your well wishes with us..."></textarea>
+    placeholder="Ibahagi ang inyong pagbati at mensahe para kina Mike at Sharmaine…"></textarea>
 
         <button
             id="submitBtn"
@@ -369,7 +369,7 @@ function renderContactPage() {
             ${
                 App.editMode
                 ? "Update RSVP"
-                : "Confirm RSVP"
+                : "Kumpirmahin ang RSVP"
             }
 
         </button>
