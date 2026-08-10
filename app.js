@@ -720,13 +720,12 @@ function renderThankYouPage() {
                 Tagaytay
             </p>
 
-
-           <div class="thank-you-buttons">
+<div class="thank-you-buttons">
 
     <button
         type="button"
-        class="done-btn"
-        onclick="finishRSVP()">
+        id="doneButton"
+        class="done-btn">
 
         Tapos
 
@@ -743,7 +742,22 @@ function renderThankYouPage() {
 
 </div>
 
-    `;
+        </div>
+
+
+`;
+
+
+    const doneButton = document.getElementById("doneButton");
+
+    doneButton.addEventListener("click", function () {
+
+        App.party = [];
+        App.editMode = false;
+
+        transitionTo(renderWelcomePage);
+
+    });
 
 }
 function showLoading(message = "Please wait...") {
