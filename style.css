@@ -1379,9 +1379,11 @@ textarea{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
 
-    padding: 20px 24px;
+    width: 100%;
+    min-height: 76px;
+
+    padding: 18px 22px;
     margin-bottom: 16px;
 
     background: #fff;
@@ -1389,23 +1391,47 @@ textarea{
     border-radius: 20px;
 
     box-sizing: border-box;
+
+    /* Makes the entire card clickable */
+    cursor: pointer;
+
+    transition: background 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.guest-card:hover {
+    background: #fcfbf8;
+}
+
+.guest-card:active {
+    transform: scale(0.99);
 }
 
 .guest-details {
     flex: 1;
     min-width: 0;
+
+    /* Guest name stays on the LEFT */
+    text-align: left;
 }
 
 .guest-details h3 {
     margin: 0;
-    font-size: 1rem;
+
+    font-family: 'Cardo', serif;
+    font-size: 1.15rem;
     font-weight: 600;
+
     color: #555;
+    text-align: left;
 }
 
 .attendance-toggle {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+
     gap: 10px;
     flex-shrink: 0;
 }
