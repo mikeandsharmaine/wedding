@@ -382,7 +382,7 @@ async function submitRSVP() {
     const btn = document.getElementById("submitBtn");
 
     btn.disabled = true;
-    btn.innerHTML = "♡ Saving your RSVP...";
+    btn.innerHTML = "♡ Sine-save ang inyong RSVP…";
 
     const mobile = document.getElementById("mobile").value.trim();
     const email = document.getElementById("email").value.trim();
