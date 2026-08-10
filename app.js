@@ -655,7 +655,7 @@ function renderThankYouPage() {
 
                 <br><br>
 
-                With love,
+                Nagmamahal,
 
                 <br>
 
