@@ -730,14 +730,17 @@ function renderThankYouPage() {
 
     </button>
 
+    const hasAttendingGuest = App.party.some(
+    guest => guest.RSVP === "Joyfully Attending"
+);
+
+    ${hasAttendingGuest ? `
     <button
-        type="button"
         class="calendar-btn"
-        onclick="addToCalendar()">
-
+        onclick="addToGoogleCalendar()">
         📅 Idagdag sa Google Calendar
-
     </button>
+` : ""}
 
 </div>
 
