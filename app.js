@@ -619,7 +619,7 @@ function renderThankYouPage() {
         <div class="thank-you-page">
 
             <h1>
-                ${isUpdate ? "RSVP Updated!" : "Thank You!"}
+                ${isUpdate ? "RSVP Updated!" : "Maraming Salamat!"}
             </h1>
 
 
@@ -628,14 +628,15 @@ function renderThankYouPage() {
     ${
         isUpdate
         ? `Thank you, <strong>${App.party[0].FirstName}</strong>! Your RSVP has been successfully updated.`
-        : `Thank you, <strong>${App.party[0].FirstName}</strong>! We've received your RSVP.`
+        :    Natanggap na namin ang inyong RSVP, <strong>${name}</strong>.
     }
 
 </p>
 
 <p class="thank-you-message">
 
-    We can't wait to celebrate this special day with you.
+   Hindi na kami makapaghintay na makasama kayo sa
+    pagdiriwang ng isa sa pinakamahalagang araw ng aming buhay.
 
     <br><br>
 
@@ -652,7 +653,7 @@ function renderThankYouPage() {
 <div class="rsvp-summary">
 
 <h3>
-    ${isUpdate ? "Your Updated Response" : "Your RSVP"}
+    ${isUpdate ? "Your Updated Response" : "Ang Inyong RSVP"}
 </h3>
 
     ${rsvpSummary}
@@ -668,17 +669,20 @@ function renderThankYouPage() {
 
 <div class="divider"></div>
 
-            <p class="thank-you-note">
-                January 15, 2027 • Tagaytay
-            </p>
+            <h3>Enero 15, 2027</h3>
+
+<p>
+    <strong>Fruella’s Events Place</strong><br>
+    Tagaytay
+</p>
 
 <button onclick="finishRSVP()">
-Done
+Tapos 
          <button
 class="calendar-btn"
 onclick="addToCalendar()">
 
-📅 Add to Google Calendar
+📅 Idagdag to Google Calendar
 
 </button>
 
