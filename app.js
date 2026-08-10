@@ -721,17 +721,27 @@ function renderThankYouPage() {
             </p>
 
 
-            <button onclick="finishRSVP()">
-    Tapos
-</button>
+           <div class="thank-you-buttons">
 
-<button
-    class="calendar-btn"
-    onclick="addToCalendar()">
+    <button
+        type="button"
+        class="done-btn"
+        onclick="finishRSVP()">
 
-    📅 Idagdag sa Google Calendar
+        Tapos
 
-</button>
+    </button>
+
+    <button
+        type="button"
+        class="calendar-btn"
+        onclick="addToCalendar()">
+
+        📅 Idagdag sa Google Calendar
+
+    </button>
+
+</div>
 
     `;
 
