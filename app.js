@@ -223,34 +223,76 @@ function renderInvitationSummary() {
         return;
     }
 
-    const pageTitle = App.editMode
-        ? `I-update ang Iyong RSVP, ${party[0].FirstName}`
-        : "Para sa Inyo";
+    // --------------------------------
+    // Determine if this is a family
+    // or a single guest
+    // --------------------------------
 
-    const heading = App.editMode
-        ? ""
-        : party[0].PartyName;
+    const isFamily = party.length >= 2;
 
-    const introText = App.editMode
-        ? "Maaari mong baguhin ang iyong sagot kung nagbago ang iyong mga plano."
-        : "Isang malaking karangalan para sa amin na makasama kayo sa aming espesyal na araw.";
+    const firstGuest = party[0];
+
+    const guestName = firstGuest.GuestName || firstGuest.FirstName || "";
+    const partyName = firstGuest.PartyName || "";
+
+    // --------------------------------
+    // Dynamic heading
+    // --------------------------------
+
+    let pageTitle;
+    let introText;
+
+    if (App.editMode) {
+
+        if (isFamily) {
+            pageTitle = `I-update ang Inyong RSVP, ${partyName}`;
+            introText = `
+                <p>
+                    Maaari ninyong baguhin ang inyong mga sagot kung nagbago ang inyong mga plano.
+                </p>
+            `;
+        } else {
+            pageTitle = `I-update ang Iyong RSVP, ${guestName}`;
+            introText = `
+                <p>
+                    Maaari mong baguhin ang iyong sagot kung nagbago ang iyong mga plano.
+                </p>
+            `;
+        }
+
+    } else {
+
+        if (isFamily) {
+            pageTitle = `Para sa Inyo, ${partyName}`;
+            introText = `
+                <p>
+                    Isang malaking karangalan para sa amin na makasama kayo sa aming espesyal na araw.
+                </p>
+            `;
+        } else {
+            pageTitle = `Para sa Iyo, ${guestName}`;
+            introText = `
+                <p>
+                    Isang malaking karangalan para sa amin na makasama ka sa aming espesyal na araw.
+                </p>
+            `;
+        }
+    }
 
     document.getElementById("app").innerHTML = `
 
         ${renderProgress(1)}
 
-        <h1 class="${App.editMode ? "update-rsvp-title" : ""}">
-    ${pageTitle}
-</h1>
+        <h1>${pageTitle}</h1>
 
-${heading ? `<h2>${heading}</h2>` : ""}
-
-<p class="${App.editMode ? "update-description" : ""}">
-    ${introText}
-</p>
+        ${introText}
 
         <p class="guest-instruction">
-            Mangyaring piliin ang tugon ng bawat inaanyayahan.
+            ${
+                isFamily
+                ? "Mangyaring piliin ang tugon ng bawat inaanyayahan."
+                : "Mangyaring piliin ang iyong tugon."
+            }
         </p>
 
         <div class="guest-list">
@@ -261,48 +303,47 @@ ${heading ? `<h2>${heading}</h2>` : ""}
                     guest.RSVP === "Joyfully Attending";
 
                 return `
-    <div
-        class="guest-card"
-        onclick="toggleGuest(${index})"
-    >
+                    <div
+                        class="guest-card"
+                        onclick="toggleGuest(${index})"
+                    >
 
-        <!-- Guest Name -->
-        <div class="guest-details">
-            <h3>${guest.GuestName}</h3>
-        </div>
+                        <div class="guest-details">
+                            <h3>${guest.GuestName}</h3>
+                        </div>
 
-        <!-- Toggle -->
-        <div class="attendance-toggle">
+                        <div class="attendance-toggle">
 
-            <label
-                class="switch"
-                onclick="event.stopPropagation()"
-            >
-                <input
-                    type="checkbox"
-                    id="guest${index}"
-                    ${guest.RSVP === "Joyfully Attending" ? "checked" : ""}
-                    onchange="toggleAttendance(${index})"
-                >
+                            <label
+                                class="switch"
+                                onclick="event.stopPropagation()"
+                            >
+                                <input
+                                    type="checkbox"
+                                    id="guest${index}"
+                                    ${attending ? "checked" : ""}
+                                    onchange="toggleAttendance(${index})"
+                                >
 
-                <span class="slider"></span>
-            </label>
+                                <span class="slider"></span>
+                            </label>
 
-            <span
-                class="attendance-text"
-                id="status${index}"
-            >
-                ${
-                    guest.RSVP === "Joyfully Attending"
-                        ? "Masayang Makakadalo 💚"
-                        : "Hindi Makakadalo 🤍"
-                }
-            </span>
+                            <span
+                                class="attendance-text"
+                                id="status${index}"
+                            >
+                                ${
+                                    attending
+                                    ? "Masayang Makakadalo 💚"
+                                    : "Hindi Makakadalo 🤍"
+                                }
+                            </span>
 
-        </div>
+                        </div>
 
-    </div>
-`;
+                    </div>
+                `;
+
             }).join("")}
 
         </div>
@@ -316,7 +357,6 @@ ${heading ? `<h2>${heading}</h2>` : ""}
         </div>
 
     `;
-
 }
 function renderContactPage() {
 
