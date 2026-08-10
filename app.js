@@ -225,7 +225,7 @@ function renderInvitationSummary() {
 
     const pageTitle = App.editMode
         ? `I-update ang Iyong RSVP, ${party[0].FirstName}`
-        : "Para sa Iyo";
+        : "Para sa Inyo";
 
     const heading = App.editMode
         ? ""
