@@ -1610,3 +1610,8 @@ textarea{
     cursor:pointer;
     pointer-events:auto;
 }
+.contact-update-title {
+    font-size: 48px;
+    line-height: 1.08;
+    margin-bottom: 12px;
+}
