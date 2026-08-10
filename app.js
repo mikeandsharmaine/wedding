@@ -262,8 +262,10 @@ function renderInvitationSummary() {
                     guest.RSVP === "Joyfully Attending";
 
                 return `
-                    <div class="guest-card">
-
+<div
+    class="guest-card"
+    onclick="toggleGuest(${index})"
+>
                         <div class="guest-details">
                             <h3>${guest.GuestName}</h3>
                         </div>
