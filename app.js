@@ -722,19 +722,16 @@ function renderThankYouPage() {
 
 
             <button onclick="finishRSVP()">
-                Tapos
-            </button>
+    Tapos
+</button>
 
+<button
+    class="calendar-btn"
+    onclick="addToCalendar()">
 
-            <button
-                class="calendar-btn"
-                onclick="addToCalendar()">
+    📅 Idagdag sa Google Calendar
 
-                📅 Idagdag sa Google Calendar
-
-            </button>
-
-        </div>
+</button>
 
     `;
 
