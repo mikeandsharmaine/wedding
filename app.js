@@ -323,44 +323,46 @@ function renderContactPage() {
 
     document.getElementById("app").innerHTML = `
 
-    ${renderProgress(2)}
+        ${renderProgress(2)}
 
-        <h1>${App.editMode ? "Update Contact Details" : "Malapit na!"}</h1>
+        <h1>
+            ${App.editMode ? "I-update ang Detalye sa Pakikipag-ugnayan" : "Malapit na!"}
+        </h1>
 
         <p>
 
             ${
                 App.editMode
-                ? "Please confirm or update your contact details before saving your updated RSVP."
+                ? "Pakikumpirma o i-update ang inyong mga detalye sa pakikipag-ugnayan bago i-save ang inyong na-update na RSVP."
                 : "Pakibigay ang inyong mga detalye sa pakikipag-ugnayan."
             }
 
         </p>
 
         <input
-    id="mobile"
-    type="tel"
-    inputmode="numeric"
-    autocomplete="tel"
-    placeholder="Numero ng Mobile">
+            id="mobile"
+            type="tel"
+            inputmode="numeric"
+            autocomplete="tel"
+            placeholder="Numero ng Mobile">
 
-      <input
-    id="email"
-    type="email"
-    autocomplete="email"
-    autocapitalize="off"
-    spellcheck="false"
-    placeholder="Email Address (Opsyonal)">
+        <input
+            id="email"
+            type="email"
+            autocomplete="email"
+            autocapitalize="off"
+            spellcheck="false"
+            placeholder="Email Address (Opsyonal)">
 
         <label class="field-label">
-            Mag-iwan ng Mensahe 
+            Mag-iwan ng Mensahe
         </label>
 
-      <textarea
-    id="message"
-    rows="4"
-    autocapitalize="sentences"
-    placeholder="Ibahagi ang inyong pagbati at mensahe para kina Mike at Sharmaine…"></textarea>
+        <textarea
+            id="message"
+            rows="4"
+            autocapitalize="sentences"
+            placeholder="Ibahagi ang inyong pagbati at mensahe para kina Mike at Sharmaine…"></textarea>
 
         <button
             id="submitBtn"
@@ -368,7 +370,7 @@ function renderContactPage() {
 
             ${
                 App.editMode
-                ? "Update RSVP"
+                ? "I-update ang RSVP"
                 : "Kumpirmahin ang RSVP"
             }
 
@@ -709,9 +711,9 @@ function renderThankYouPage() {
                 Magkita-kita tayo sa
             </p>
 
-            <h3>
-                Enero 15, 2027
-            </h3>
+            <p class="wedding-date">
+    Enero 15, 2027
+</p>
 
             <p>
                 <strong>Fruella’s Events Place</strong><br>
