@@ -1415,3 +1415,139 @@ textarea{
     color: #666;
     white-space: nowrap;
 }
+/* ================================
+   STEP 2 - GUEST CARDS
+================================ */
+
+.guest-list {
+    width: 100%;
+}
+
+.guest-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    min-height: 76px;
+
+    padding: 18px 22px;
+    margin-bottom: 16px;
+
+    background: #fff;
+
+    border: 1px solid #e5dfd3;
+    border-radius: 20px;
+
+    box-sizing: border-box;
+}
+
+.guest-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.guest-details h3 {
+    margin: 0;
+
+    font-family: 'Cardo', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+
+    color: #555;
+}
+
+.attendance-toggle {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.attendance-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.attendance-text.attending {
+    color: #7E8E65;
+}
+
+.attendance-text.declined {
+    color: #999;
+}
+
+
+/* ================================
+   APPLE-STYLE TOGGLE
+================================ */
+
+.switch {
+    position: relative;
+
+    display: inline-block;
+
+    width: 52px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    cursor: pointer;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+
+    inset: 0;
+
+    background: #d1d1d1;
+
+    border-radius: 30px;
+
+    transition: 0.25s;
+}
+
+.slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 24px;
+    height: 24px;
+
+    left: 3px;
+    top: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+
+    transition: 0.25s;
+}
+
+.switch input:checked + .slider {
+    background: #9CAF7A;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(22px);
+}
+
+
+/* ================================
+   INSTRUCTION
+================================ */
+
+.guest-instruction {
+    margin-bottom: 24px;
+}
