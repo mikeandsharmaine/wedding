@@ -302,7 +302,7 @@ button:disabled{
 
     border:2px solid transparent;
 
-    cursor:pointer;
+    cursor:default;
 
     transition:
         transform .25s ease,
@@ -314,7 +314,7 @@ button:disabled{
 
 .guest-card:hover{
 
-    transform:translateY(-3px);
+    transform:none;
 
     box-shadow: 0 16px 30px rgba(126,142,101,.10);
 
