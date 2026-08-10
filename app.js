@@ -325,9 +325,9 @@ function renderContactPage() {
 
         ${renderProgress(2)}
 
-        <h1>
-            ${App.editMode ? "I-update ang Detalye sa Pakikipag-ugnayan" : "Malapit na!"}
-        </h1>
+        <h1 class="contact-update-title">
+    I-update ang Detalye sa Pakikipag-ugnayan
+</h1>
 
         <p>
 
