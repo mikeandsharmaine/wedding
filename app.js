@@ -262,48 +262,48 @@ function renderInvitationSummary() {
                     guest.RSVP === "Joyfully Attending";
 
                 return `
-<div
-    class="guest-card"
-    onclick="toggleGuest(${index})"
->
-                        <div class="guest-details">
-                            <h3>${guest.GuestName}</h3>
-                        </div>
+    <div
+        class="guest-card"
+        onclick="toggleGuest(${index})"
+    >
 
-                        <div class="attendance-toggle">
+        <!-- Guest Name -->
+        <div class="guest-details">
+            <h3>${guest.GuestName}</h3>
+        </div>
 
-                            <label
-                                class="switch"
-                                onclick="event.stopPropagation()"
-                            >
+        <!-- Toggle -->
+        <div class="attendance-toggle">
 
-                                <input
-                                    type="checkbox"
-                                    id="guest${index}"
-                                    ${attending ? "checked" : ""}
-                                    onchange="toggleAttendance(${index})"
-                                >
+            <label
+                class="switch"
+                onclick="event.stopPropagation()"
+            >
+                <input
+                    type="checkbox"
+                    id="guest${index}"
+                    ${guest.RSVP === "Joyfully Attending" ? "checked" : ""}
+                    onchange="toggleAttendance(${index})"
+                >
 
-                                <span class="slider"></span>
+                <span class="slider"></span>
+            </label>
 
-                            </label>
+            <span
+                class="attendance-text"
+                id="status${index}"
+            >
+                ${
+                    guest.RSVP === "Joyfully Attending"
+                        ? "Masayang Makakadalo 💚"
+                        : "Hindi Makakadalo 🤍"
+                }
+            </span>
 
-                            <span
-                                class="attendance-text ${attending ? "attending" : "declined"}"
-                                id="status${index}"
-                            >
-                                ${
-                                    attending
-                                        ? "Masayang Makakadalo 💚"
-                                        : "Hindi Makakadalo 🤍"
-                                }
-                            </span>
+        </div>
 
-                        </div>
-
-                    </div>
-                `;
-
+    </div>
+`;
             }).join("")}
 
         </div>
