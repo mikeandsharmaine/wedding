@@ -897,6 +897,11 @@ font-size:clamp(3rem,9vw,5rem);
     font-weight:600;
 
     transition:.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
 
 }
 
