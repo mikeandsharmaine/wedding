@@ -102,7 +102,7 @@ Pakilagay ang inyong pangalan tulad ng nakasulat sa inyong imbitasyon.
         <input
             id="guestName"
             type="text"
-            placeholder="Enter your name">
+            placeholder="Ilagay ang inyong pangalan">
 
         <button onclick="findGuest()">
 Tingnan ang Aking Imbitasyon
