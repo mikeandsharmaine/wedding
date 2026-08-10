@@ -114,25 +114,30 @@ Tingnan ang Aking Imbitasyon
 
     <div class="deadline">
 
-       <p class="deadline-text">
-    Mangyaring mag-RSVP bago o sa
-    <strong>Disyembre 15, 2026</strong>.
+       <p class="info-text">
+    Pakilagay ang inyong pangalan nang eksakto tulad ng nakalagay sa inyong imbitasyon.
 </p>
 
-    </div>
+...
 
-    <div class="contact">
+<p class="info-text">
+    Mangyaring mag-RSVP bago o sa
+    <strong>Disyembre 15, 2026.</strong>
+</p>
 
-        <p class="contact-label">
-            Kung kailangan ninyo ng tulong,
-            maaari pong makipag-ugnayan kay
-        </p>
+...
 
-        <h4>Sharmaine Fernandez</h4>
+<p class="info-text">
+    Kung kailangan ninyo ng tulong, maaari pong makipag-ugnayan kay
+</p>
 
-        <a href="tel:09178045576">
-            0917 804 5576
-        </a>
+<p class="contact-name">
+    Sharmaine Fernandez
+</p>
+
+<p class="contact-phone">
+    0917 804 5576
+</p>
 
     </div>
 
