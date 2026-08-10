@@ -602,6 +602,14 @@ function renderThankYouPage() {
         );
 
     // --------------------------------
+    // Check if at least one guest is attending
+    // --------------------------------
+
+    const hasAttendingGuest = App.party.some(
+        guest => guest.RSVP === "Joyfully Attending"
+    );
+
+    // --------------------------------
     // RSVP Summary
     // --------------------------------
 
@@ -633,7 +641,6 @@ function renderThankYouPage() {
 
     }).join("");
 
-
     // --------------------------------
     // Page
     // --------------------------------
@@ -649,7 +656,6 @@ function renderThankYouPage() {
             </h1>
 
             <p>
-
                 ${
                     isUpdate
                     ? `Natanggap na namin ang iyong na-update na RSVP,
@@ -657,9 +663,7 @@ function renderThankYouPage() {
                     : `Natanggap na namin ang inyong RSVP,
                        <strong>${App.party[0].GuestName}</strong>.`
                 }
-
             </p>
-
 
             <p class="thank-you-message">
 
@@ -676,9 +680,7 @@ function renderThankYouPage() {
 
             </p>
 
-
             <div class="divider"></div>
-
 
             <div class="rsvp-summary">
 
@@ -702,53 +704,53 @@ function renderThankYouPage() {
 
             </div>
 
-
             <div class="divider"></div>
-
 
             <p>
                 Magkita-kita tayo sa
             </p>
 
             <p class="wedding-date">
-    Enero 15, 2027
-</p>
+                Enero 15, 2027
+            </p>
 
             <p>
                 <strong>Fruella’s Events Place</strong><br>
                 Tagaytay
             </p>
 
-<div class="thank-you-buttons">
+            <button
+                type="button"
+                id="doneButton"
+                class="done-btn">
 
-    <button
-        type="button"
-        id="doneButton"
-        class="done-btn">
+                Tapos
 
-        Tapos
+            </button>
 
-    </button>
+            ${
+                hasAttendingGuest
+                ? `
+                    <a
+                        href="${calendarLink}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="calendar-btn">
 
-    const hasAttendingGuest = App.party.some(
-    guest => guest.RSVP === "Joyfully Attending"
-);
+                        📅 Idagdag sa Google Calendar
 
-    ${hasAttendingGuest ? `
-    <button
-        class="calendar-btn"
-        onclick="addToGoogleCalendar()">
-        📅 Idagdag sa Google Calendar
-    </button>
-` : ""}
-
-</div>
+                    </a>
+                `
+                : ""
+            }
 
         </div>
 
+    `;
 
-`;
-
+    // --------------------------------
+    // Done Button
+    // --------------------------------
 
     const doneButton = document.getElementById("doneButton");
 
