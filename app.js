@@ -119,10 +119,6 @@ Tingnan ang Aking Imbitasyon
     <strong>Disyembre 15, 2026</strong>.
 </p>
 
-        <h3 class="deadline-date">
-            Disyembre 15, 2026
-        </h3>
-
     </div>
 
     <div class="contact">
