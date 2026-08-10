@@ -224,22 +224,22 @@ function renderInvitationSummary() {
     }
 
     const pageTitle = App.editMode
-        ? "Update Your RSVP"
-        : "Welcome!";
+    ? "I-update ang RSVP"
+    : "Para sa Inyo";
 
     const heading = App.editMode
         ? party[0].FirstName
         : party[0].PartyName;
 
     const introText = App.editMode
-        ? `
-            <strong>You're updating your RSVP.</strong><br>
-            Feel free to review and update your response below if your plans have changed.
-        `
-        : `
-            We're so honored to celebrate with your family.
-            Please let us know who will be joining us.
-        `;
+    ? `
+        Natanggap na namin ang inyong RSVP.<br><br>
+        Maaari pa rin ninyo itong baguhin kung nagbago ang inyong mga plano.
+    `
+    : `
+        Isang malaking karangalan para sa amin na makasama kayo sa aming espesyal na araw.<br><br>
+        Mangyaring piliin ang tugon ng bawat inanyayahan.
+    `;
 
     document.getElementById("app").innerHTML = `
 
@@ -262,9 +262,7 @@ function renderInvitationSummary() {
 
             return `
 
-                <div
-    class="guest-card"
-    onclick="toggleGuest(${index})">
+       <div class="guest-card">
 
                     <div class="guest-icon">
                         ${initials}
@@ -278,12 +276,11 @@ function renderInvitationSummary() {
 
                             <label class="switch">
 
-                                <input
-                                    type="checkbox"
-                                    id="guest${index}"
-                                    onclick="event.stopPropagation()"
-                                    ${guest.RSVP === "Joyfully Attending" ? "checked" : ""}
-                                    onchange="toggleAttendance(${index})">
+                              <input
+    type="checkbox"
+    id="guest${index}"
+    ${guest.RSVP === "Joyfully Attending" ? "checked" : ""}
+    onchange="toggleAttendance(${index})">
 
                                 <span class="slider"></span>
 
@@ -494,16 +491,7 @@ function toggleAttendance(index) {
     }
 
 }
-function toggleGuest(index){
 
-    const checkbox =
-        document.getElementById(`guest${index}`);
-
-    checkbox.checked = !checkbox.checked;
-
-    toggleAttendance(index);
-
-}
 function transitionTo(nextPage) {
 
     const app = document.getElementById("app");
