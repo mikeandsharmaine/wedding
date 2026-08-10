@@ -930,3 +930,13 @@ function hideUpdateModal(){
         .classList.remove("show");
 
 }
+function toggleGuest(index) {
+
+    const checkbox = document.getElementById(`guest${index}`);
+
+    if (!checkbox) return;
+
+    checkbox.checked = !checkbox.checked;
+
+    toggleAttendance(index);
+}
