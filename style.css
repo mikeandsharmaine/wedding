@@ -1275,10 +1275,14 @@ textarea{
     margin-bottom:42px;
 }
 
-.deadline-label{
-    color:#666;
-    font-size:1rem;
-    margin-bottom:12px;
+.deadline-label {
+    text-align: center;
+    letter-spacing: 0.28em;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .deadline-date{
@@ -1650,4 +1654,12 @@ textarea{
         line-height: 1.5;
         margin-bottom: 22px;
     }
+}
+.invitation-instruction {
+    text-align: center;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
