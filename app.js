@@ -88,14 +88,14 @@ function renderWelcomePage() {
         <div class="countdown">
             <div id="daysRemaining" class="count-number">...</div>
 
-            <div class="count-label">
-                ARAW BAGO ANG AMING PAG-IISANG DIBDIB
-            </div>
+            <p class="deadline-label">
+    ARAW BAGO ANG AMING PAG-IISANG DIBDIB
+</p>
         </div>
 
-        <p class="welcome-text">
-            Pakilagay ang inyong pangalan nang eksakto tulad ng nakalagay sa inyong imbitasyon.
-        </p>
+        <p class="invitation-instruction">
+    Pakilagay ang inyong pangalan nang eksakto tulad ng nakalagay sa inyong imbitasyon.
+</p>
 
         <input
             id="guestName"
