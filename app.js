@@ -233,9 +233,13 @@ function renderInvitationSummary() {
 
     const introText = App.editMode
         ? `
-            <strong>I-update ang iyong RSVP.</strong><br>
-            Maaari mong baguhin ang iyong sagot kung nagbago ang iyong mga plano.
-        `
+        <h1 class="update-rsvp-title">
+    I-update ang Iyong RSVP, ${guestName}
+</h1>
+
+<p class="update-description">
+    Maaari mong baguhin ang iyong sagot kung nagbago ang iyong mga plano.
+</p>
         : `
             Isang malaking karangalan para sa amin na makasama kayo sa aming espesyal na araw.
         `;
