@@ -385,10 +385,22 @@ async function submitRSVP() {
     btn.innerHTML = "♡ Sine-save ang inyong RSVP…";
 
     const mobile = document.getElementById("mobile").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+const email = document.getElementById("email").value.trim();
+const message = document.getElementById("message").value.trim();
 
-    const guests = App.party.map(guest => ({
+if (message === "") {
+
+    alert("Mag-iwan ng mensahe bago kumpirmahin ang inyong RSVP.");
+
+    btn.disabled = false;
+    btn.innerHTML = "Kumpirmahin ang RSVP";
+
+    document.getElementById("message").focus();
+
+    return;
+}
+
+const guests = App.party.map(guest => ({
         GuestName: guest.GuestName,
         RSVP: guest.RSVP
     }));
