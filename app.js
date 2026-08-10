@@ -83,20 +83,20 @@ ${renderProgress(0)}
 
         <h1>Mike & Sharmaine</h1>
 
-        <h2>Wedding RSVP</h2>
+        <h2>Kumpirmasyon ng Pagdalo</h2>
 
         <div class="countdown">
 
     <div id="daysRemaining" class="count-number">...</div>
 
     <div class="count-label">
-        Days Until We Say "I Do"
-    </div>
+ARAW BAGO ANG AMING PAG-IISANG DIBDIB
+</div>
 
 </div>
 
 <p class="welcome-text">
-    Please enter your name exactly as it appears on your invitation.
+Pakilagay ang inyong pangalan tulad ng nakasulat sa inyong imbitasyon.
 </p>
 
         <input
@@ -105,14 +105,14 @@ ${renderProgress(0)}
             placeholder="Enter your name">
 
         <button onclick="findGuest()">
-    View My Invitation
+Tingnan ang Aking Imbitasyon
 </button>
 
         <div class="divider"></div>
 
         <div class="footer">
 
-            Kindly respond on or before
+Mangyaring kumpirmahin ang inyong pagdalo bago o sa
 
             <br><br>
 
@@ -120,7 +120,7 @@ ${renderProgress(0)}
 
             <br><br>
 
-            For assistance, please contact
+Kung may katanungan, makipag-ugnayan kay
 
             <br>
 
@@ -145,14 +145,14 @@ async function findGuest() {
     const btn = document.querySelector("button");
 
     btn.disabled = true;
-    btn.innerHTML = "⏳ Searching...";
+    btn.innerHTML = "⏳ Hinahanap...";
 
     const name = document.getElementById("guestName").value.trim();
 
     if (name === "") {
 
-    alert("Please enter your name.");
-
+alert("Pakilagay ang inyong pangalan.");
+        
     btn.disabled = false;
 btn.innerHTML = "View My Invitation";
 
