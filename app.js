@@ -253,20 +253,10 @@ function renderInvitationSummary() {
 
         ${party.map((guest, index) => {
 
-            const initials = guest.GuestName
-                .split(" ")
-                .map(n => n[0])
-                .join("")
-                .substring(0,2)
-                .toUpperCase();
-
-            return `
+        
+     return `
 
        <div class="guest-card">
-
-                    <div class="guest-icon">
-                        ${initials}
-                    </div>
 
                     <div class="guest-details">
 
@@ -292,8 +282,8 @@ function renderInvitationSummary() {
 
                                 ${
                                     guest.RSVP === "Joyfully Attending"
-                                    ? "Joyfully Attending 💚"
-                                    : "Unable to Attend 🤍"
+    ? "Masayang Makakadalo 💚"
+    : "Hindi Makakadalo 🤍"
                                 }
 
                             </span>
@@ -474,7 +464,7 @@ function toggleAttendance(index) {
 
     if (checkbox.checked) {
 
-        status.textContent = "Joyfully Attending 💚";
+        status.textContent = "Masayang Makakadalo 💚";
         status.style.color = "#7E8E65";
 
         card.classList.remove("declined");
@@ -482,7 +472,7 @@ function toggleAttendance(index) {
 
     } else {
 
-        status.textContent = "Unable to Attend 🤍";
+        status.textContent = "Hindi Makakadalo 🤍";
         status.style.color = "#999";
 
         card.classList.remove("selected");
