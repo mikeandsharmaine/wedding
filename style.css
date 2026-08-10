@@ -1311,3 +1311,14 @@ textarea{
 .contact a:hover{
     color:#6E7D58;
 }
+.deadline-text{
+    font-size:1rem;
+    color:#666;
+    line-height:1.8;
+    margin:0;
+}
+
+.deadline-text strong{
+    color:#666;
+    font-weight:700;
+}
