@@ -224,26 +224,25 @@ function renderInvitationSummary() {
     }
 
     const pageTitle = App.editMode
-    ? "I-update ang RSVP"
-    : "Para sa Inyo";
+        ? "I-update ang Iyong RSVP"
+        : "Para sa Iyo";
 
     const heading = App.editMode
         ? party[0].FirstName
         : party[0].PartyName;
 
     const introText = App.editMode
-    ? `
-        Natanggap na namin ang inyong RSVP.<br><br>
-        Maaari pa rin ninyo itong baguhin kung nagbago ang inyong mga plano.
-    `
-    : `
-        Isang malaking karangalan para sa amin na makasama kayo sa aming espesyal na araw.<br><br>
-        Mangyaring piliin ang tugon ng bawat inanyayahan.
-    `;
+        ? `
+            <strong>I-update ang iyong RSVP.</strong><br>
+            Maaari mong baguhin ang iyong sagot kung nagbago ang iyong mga plano.
+        `
+        : `
+            Isang malaking karangalan para sa amin na makasama kayo sa aming espesyal na araw.
+        `;
 
     document.getElementById("app").innerHTML = `
 
-    ${renderProgress(1)}
+        ${renderProgress(1)}
 
         <h1>${pageTitle}</h1>
 
@@ -251,63 +250,71 @@ function renderInvitationSummary() {
 
         <p>${introText}</p>
 
-        ${party.map((guest, index) => {
+        <p class="guest-instruction">
+            Mangyaring piliin ang tugon ng bawat inaanyayahan.
+        </p>
 
-        
-     return `
+        <div class="guest-list">
 
-    <div class="guest-card">
+            ${party.map((guest, index) => {
 
-        <div class="guest-details">
+                const attending =
+                    guest.RSVP === "Joyfully Attending";
 
-            <h3>${guest.GuestName}</h3>
+                return `
+                    <div class="guest-card">
+
+                        <div class="guest-details">
+                            <h3>${guest.GuestName}</h3>
+                        </div>
+
+                        <div class="attendance-toggle">
+
+                            <label
+                                class="switch"
+                                onclick="event.stopPropagation()"
+                            >
+
+                                <input
+                                    type="checkbox"
+                                    id="guest${index}"
+                                    ${attending ? "checked" : ""}
+                                    onchange="toggleAttendance(${index})"
+                                >
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                            <span
+                                class="attendance-text ${attending ? "attending" : "declined"}"
+                                id="status${index}"
+                            >
+                                ${
+                                    attending
+                                        ? "Masayang Makakadalo 💚"
+                                        : "Hindi Makakadalo 🤍"
+                                }
+                            </span>
+
+                        </div>
+
+                    </div>
+                `;
+
+            }).join("")}
 
         </div>
 
-        <div class="attendance-toggle">
+        <div class="submit-area">
 
-            <label class="switch" onclick="event.stopPropagation()">
-
-                <input
-                    type="checkbox"
-                    id="guest${index}"
-                    ${guest.RSVP === "Joyfully Attending" ? "checked" : ""}
-                    onchange="toggleAttendance(${index})">
-
-                <span class="slider"></span>
-
-            </label>
-
-            <span
-                class="attendance-text"
-                id="status${index}">
-
-                ${
-                    guest.RSVP === "Joyfully Attending"
-                    ? "Masayang Makakadalo 💚"
-                    : "Hindi Makakadalo 🤍"
-                }
-
-            </span>
+            <button onclick="continueToContact()">
+                ${App.editMode ? "I-update ang RSVP" : "Magpatuloy"}
+            </button>
 
         </div>
 
-    </div>
-`;
-
-    document.querySelectorAll(".guest-card").forEach((card, index) => {
-
-    if(App.party[index].RSVP === "Joyfully Attending"){
-
-        card.classList.add("selected");
-
-    }else{
-
-        card.classList.add("declined");
-
-    }
-
-});
+    `;
 
 }
 function renderContactPage() {
