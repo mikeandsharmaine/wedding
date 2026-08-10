@@ -1583,3 +1583,30 @@ textarea{
     color:#666;
     margin:0;
 }
+/* ===========================
+   Thank You Page Buttons
+=========================== */
+
+.thank-you-buttons{
+    position:relative;
+    z-index:10000;
+    width:100%;
+    margin-top:20px;
+}
+
+.thank-you-buttons button{
+    position:relative;
+    z-index:10001;
+    pointer-events:auto;
+}
+
+.done-btn{
+    width:100%;
+}
+
+.calendar-btn{
+    width:100%;
+    box-sizing:border-box;
+    cursor:pointer;
+    pointer-events:auto;
+}
