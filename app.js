@@ -977,12 +977,19 @@ function cancelUpdate(){
 
 function confirmUpdate(){
 
+    // Hide the modal
     hideUpdateModal();
 
+    // Keep the guests that were found
     App.party = pendingParty;
 
+    // Tell the app this is an RSVP update
     App.editMode = true;
 
+    // Clear the old Step 1 screen immediately
+    document.getElementById("app").innerHTML = "";
+
+    // Go directly to Step 2
     transitionTo(renderInvitationSummary);
 
 }
