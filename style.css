@@ -1322,22 +1322,29 @@ textarea{
     color:#666;
     font-weight:700;
 }
-.info-text{
-    font-size:1rem;
-    line-height:1.7;
+.contact-intro{
+    font-size:17px;
+    line-height:1.6;
     color:#666;
+    text-align:center;
+    white-space:nowrap;
+    margin:0 auto 18px;
 }
 
 .contact-name{
-    font-size:1.15rem;
-    font-weight:700;
+    font-size:18px;
+    font-weight:600;
     color:#6E7D58;
+    text-align:center;
+    margin:0 0 6px;
 }
 
 .contact-phone{
-    font-size:1rem;
-    color:#666;
-    font-weight:600;
+    font-size:18px;
+    font-weight:500;
+    color:#555;
+    text-align:center;
+    margin:0;
 }
 .welcome-text,
 .info-text{
