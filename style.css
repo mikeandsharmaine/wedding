@@ -1322,3 +1322,20 @@ textarea{
     color:#666;
     font-weight:700;
 }
+.info-text{
+    font-size:1rem;
+    line-height:1.7;
+    color:#666;
+}
+
+.contact-name{
+    font-size:1.15rem;
+    font-weight:700;
+    color:#6E7D58;
+}
+
+.contact-phone{
+    font-size:1rem;
+    color:#666;
+    font-weight:600;
+}
