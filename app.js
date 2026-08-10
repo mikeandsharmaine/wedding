@@ -114,9 +114,10 @@ Tingnan ang Aking Imbitasyon
 
     <div class="deadline">
 
-        <p class="deadline-label">
-            Mangyaring mag-RSVP bago o sa
-        </p>
+       <p class="deadline-text">
+    Mangyaring mag-RSVP bago o sa
+    <strong>Disyembre 15, 2026</strong>.
+</p>
 
         <h3 class="deadline-date">
             Disyembre 15, 2026
