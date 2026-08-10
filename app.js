@@ -1,5 +1,5 @@
 // ========================================
-// Mike & Sharmaine Wedding RSVP
+// Mike at Sharmaine Wedding RSVP
 // ========================================
 
 const App = {
@@ -81,9 +81,9 @@ App.editMode = false;
     
 ${renderProgress(0)}
 
-        <h1>Mike & Sharmaine</h1>
+        <h1>Mike at Sharmaine</h1>
 
-        <h2>Kumpirmasyon ng Pagdalo</h2>
+        <h2>Wedding RSVP</h2>
 
         <div class="countdown">
 
@@ -96,7 +96,7 @@ ARAW BAGO ANG AMING PAG-IISANG DIBDIB
 </div>
 
 <p class="welcome-text">
-Pakilagay ang inyong pangalan tulad ng nakasulat sa inyong imbitasyon.
+Pakilagay ang inyong pangalan nang eksakto tulad ng nakalagay sa inyong imbitasyon.
 </p>
 
         <input
@@ -112,15 +112,14 @@ Tingnan ang Aking Imbitasyon
 
         <div class="footer">
 
-Mangyaring kumpirmahin ang inyong pagdalo bago o sa
-
+Mangyaring mag-RSVP bago o sa 
             <br><br>
 
             <strong>December 15, 2026</strong>
 
             <br><br>
 
-Kung may katanungan, makipag-ugnayan kay
+Kung kailangan ninyo ng tulong, maaari pong makipag-ugnayan kay
 
             <br>
 
