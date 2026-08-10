@@ -74,30 +74,28 @@ function renderProgress(step){
 
 function renderWelcomePage() {
 
-App.party = [];
-App.editMode = false;
+    App.party = [];
+    App.editMode = false;
 
     document.getElementById("app").innerHTML = `
-    
-${renderProgress(0)}
+
+        ${renderProgress(0)}
 
         <h1>Mike & Sharmaine</h1>
 
         <h2>Wedding RSVP</h2>
 
         <div class="countdown">
+            <div id="daysRemaining" class="count-number">...</div>
 
-    <div id="daysRemaining" class="count-number">...</div>
+            <div class="count-label">
+                ARAW BAGO ANG AMING PAG-IISANG DIBDIB
+            </div>
+        </div>
 
-    <div class="count-label">
-ARAW BAGO ANG AMING PAG-IISANG DIBDIB
-</div>
-
-</div>
-
-<p class="welcome-text">
-Pakilagay ang inyong pangalan nang eksakto tulad ng nakalagay sa inyong imbitasyon.
-</p>
+        <p class="welcome-text">
+            Pakilagay ang inyong pangalan nang eksakto tulad ng nakalagay sa inyong imbitasyon.
+        </p>
 
         <input
             id="guestName"
@@ -105,46 +103,37 @@ Pakilagay ang inyong pangalan nang eksakto tulad ng nakalagay sa inyong imbitasy
             placeholder="Ilagay ang inyong pangalan">
 
         <button onclick="findGuest()">
-Tingnan ang Aking Imbitasyon
-</button>
+            Tingnan ang Aking Imbitasyon
+        </button>
 
         <div class="divider"></div>
 
-       <div class="rsvp-footer">
+        <div class="rsvp-footer">
 
-    <div class="deadline">
+            <p class="info-text">
+                Mangyaring mag-RSVP bago o sa
+                <strong>Disyembre 15, 2026.</strong>
+            </p>
 
-       <p class="info-text">
-    Pakilagay ang inyong pangalan nang eksakto tulad ng nakalagay sa inyong imbitasyon.
-</p>
+            <div class="divider"></div>
 
-...
+            <p class="info-text">
+                Kung kailangan ninyo ng tulong, maaari pong makipag-ugnayan kay
+            </p>
 
-<p class="info-text">
-    Mangyaring mag-RSVP bago o sa
-    <strong>Disyembre 15, 2026.</strong>
-</p>
+            <p class="contact-name">
+                Sharmaine Fernandez
+            </p>
 
-...
+            <p class="contact-phone">
+                0917 804 5576
+            </p>
 
-<p class="info-text">
-    Kung kailangan ninyo ng tulong, maaari pong makipag-ugnayan kay
-</p>
-
-<p class="contact-name">
-    Sharmaine Fernandez
-</p>
-
-<p class="contact-phone">
-    0917 804 5576
-</p>
-
-    </div>
-
-</div>
+        </div>
 
     `;
-updateCountdown();
+
+    updateCountdown();
 }
 
 // -------------------------------
