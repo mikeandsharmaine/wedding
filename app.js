@@ -256,59 +256,44 @@ function renderInvitationSummary() {
         
      return `
 
-       <div class="guest-card">
+    <div class="guest-card">
 
-                    <div class="guest-details">
+        <div class="guest-details">
 
-                        <h3>${guest.GuestName}</h3>
-
-                        <div class="attendance-toggle">
-
-                            <label class="switch">
-
-                              <input
-    type="checkbox"
-    id="guest${index}"
-    ${guest.RSVP === "Joyfully Attending" ? "checked" : ""}
-    onchange="toggleAttendance(${index})">
-
-                                <span class="slider"></span>
-
-                            </label>
-
-                            <span
-                                class="attendance-text"
-                                id="status${index}">
-
-                                ${
-                                    guest.RSVP === "Joyfully Attending"
-    ? "Masayang Makakadalo 💚"
-    : "Hindi Makakadalo 🤍"
-                                }
-
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            `;
-
-        }).join("")}
-
-        <div class="submit-area">
-
-            <button onclick="continueToContact()">
-
-                ${App.editMode ? "Update RSVP" : "Continue"}
-
-            </button>
+            <h3>${guest.GuestName}</h3>
 
         </div>
 
-    `;
+        <div class="attendance-toggle">
+
+            <label class="switch" onclick="event.stopPropagation()">
+
+                <input
+                    type="checkbox"
+                    id="guest${index}"
+                    ${guest.RSVP === "Joyfully Attending" ? "checked" : ""}
+                    onchange="toggleAttendance(${index})">
+
+                <span class="slider"></span>
+
+            </label>
+
+            <span
+                class="attendance-text"
+                id="status${index}">
+
+                ${
+                    guest.RSVP === "Joyfully Attending"
+                    ? "Masayang Makakadalo 💚"
+                    : "Hindi Makakadalo 🤍"
+                }
+
+            </span>
+
+        </div>
+
+    </div>
+`;
 
     document.querySelectorAll(".guest-card").forEach((card, index) => {
 
