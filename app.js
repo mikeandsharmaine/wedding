@@ -224,35 +224,30 @@ function renderInvitationSummary() {
     }
 
     const pageTitle = App.editMode
-        ? "I-update ang Iyong RSVP"
+        ? `I-update ang Iyong RSVP, ${party[0].FirstName}`
         : "Para sa Iyo";
 
     const heading = App.editMode
-        ? party[0].FirstName
+        ? ""
         : party[0].PartyName;
 
     const introText = App.editMode
-        ? `
-        <h1 class="update-rsvp-title">
-    I-update ang Iyong RSVP, ${guestName}
-</h1>
-
-<p class="update-description">
-    Maaari mong baguhin ang iyong sagot kung nagbago ang iyong mga plano.
-</p>
-        : `
-            Isang malaking karangalan para sa amin na makasama kayo sa aming espesyal na araw.
-        `;
+        ? "Maaari mong baguhin ang iyong sagot kung nagbago ang iyong mga plano."
+        : "Isang malaking karangalan para sa amin na makasama kayo sa aming espesyal na araw.";
 
     document.getElementById("app").innerHTML = `
 
         ${renderProgress(1)}
 
-        <h1>${pageTitle}</h1>
+        <h1 class="${App.editMode ? "update-rsvp-title" : ""}">
+    ${pageTitle}
+</h1>
 
-        <h2>${heading}</h2>
+${heading ? `<h2>${heading}</h2>` : ""}
 
-        <p>${introText}</p>
+<p class="${App.editMode ? "update-description" : ""}">
+    ${introText}
+</p>
 
         <p class="guest-instruction">
             Mangyaring piliin ang tugon ng bawat inaanyayahan.
