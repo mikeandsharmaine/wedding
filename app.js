@@ -211,7 +211,7 @@ btn.innerHTML = "View My Invitation";
 
 // -------------------------------
 
-window.onload = renderWelcomePage;
+window.onload = renderWebsiteHome;
 
 console.log("Edit Mode:", App.editMode);
 console.log("App.party:", App.party);
@@ -1055,4 +1055,92 @@ function toggleGuest(index) {
     checkbox.checked = !checkbox.checked;
 
     toggleAttendance(index);
+}
+/* =========================================================
+   WEDDING WEBSITE
+   ========================================================= */
+
+
+/* ==============================
+   WEBSITE HOME
+============================== */
+
+function renderWebsiteHome() {
+
+    const website = document.getElementById("website");
+    const rsvpApp = document.getElementById("rsvpApp");
+
+    if (website) {
+        website.style.display = "block";
+    }
+
+    if (rsvpApp) {
+        rsvpApp.classList.remove("rsvp-visible");
+        rsvpApp.classList.add("rsvp-hidden");
+    }
+
+}
+
+
+/* ==============================
+   OPEN RSVP
+============================== */
+
+function openRSVP(event) {
+
+    if (event) {
+        event.preventDefault();
+    }
+
+    const website = document.getElementById("website");
+    const rsvpApp = document.getElementById("rsvpApp");
+
+    if (website) {
+        website.style.display = "none";
+    }
+
+    if (rsvpApp) {
+
+        rsvpApp.classList.remove("rsvp-hidden");
+
+        rsvpApp.classList.add("rsvp-visible");
+
+    }
+
+    renderWelcomePage();
+
+    window.scrollTo({
+        top:0,
+        behavior:"instant"
+    });
+
+}
+
+
+/* ==============================
+   RETURN TO WEBSITE
+============================== */
+
+function returnToWebsite() {
+
+    const website = document.getElementById("website");
+    const rsvpApp = document.getElementById("rsvpApp");
+
+    if (rsvpApp) {
+
+        rsvpApp.classList.remove("rsvp-visible");
+
+        rsvpApp.classList.add("rsvp-hidden");
+
+    }
+
+    if (website) {
+        website.style.display = "block";
+    }
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
 }
