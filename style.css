@@ -1677,3 +1677,82 @@ textarea{
         white-space: normal;
     }
 }
+/* =========================================
+   MOBILE WELCOME PAGE - FINAL TEXT FIX
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    /* -----------------------------------------
+       Countdown label
+       ----------------------------------------- */
+
+    .deadline-label {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 auto 24px auto !important;
+        padding: 0 10px !important;
+
+        box-sizing: border-box !important;
+
+        text-align: center !important;
+
+        font-size: 16px !important;
+        line-height: 1.55 !important;
+
+        /* Reduce the huge spacing */
+        letter-spacing: 0.16em !important;
+
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow: visible !important;
+    }
+
+
+    /* -----------------------------------------
+       Contact / Help text
+       ----------------------------------------- */
+
+    .contact-help {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 auto 24px auto !important;
+        padding: 0 20px !important;
+
+        box-sizing: border-box !important;
+
+        text-align: center !important;
+
+        font-size: 18px !important;
+        line-height: 1.5 !important;
+
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+
+        overflow: visible !important;
+    }
+
+
+    /* -----------------------------------------
+       Contact name
+       ----------------------------------------- */
+
+    .contact-name {
+        margin: 0 0 12px 0 !important;
+        text-align: center !important;
+    }
+
+
+    /* -----------------------------------------
+       Contact number
+       ----------------------------------------- */
+
+    .contact-number {
+        margin: 0 !important;
+        text-align: center !important;
+    }
+
+}
