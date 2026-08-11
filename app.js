@@ -91,6 +91,7 @@ function renderWelcomePage() {
             <p class="deadline-label">
     ARAW BAGO ANG AMING PAG-IISANG DIBDIB
 </p>
+
         </div>
 
         <p class="invitation-instruction">
