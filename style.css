@@ -3520,3 +3520,438 @@ textarea{
     }
 
 }
+/* =========================================================
+   ANG AMING KWENTO
+   ========================================================= */
+
+.story-page {
+    min-height: 100vh;
+    padding-top: 120px;
+
+    background:
+        linear-gradient(
+            rgba(255, 248, 238, 0.78),
+            rgba(255, 248, 238, 0.90)
+        ),
+        url("https://drive.google.com/thumbnail?id=1UcI9t8dui6gu9zDNdLLfxR3sNdBYcSqt&sz=w2000")
+        center center / cover fixed no-repeat;
+
+    color: #555;
+}
+
+
+/* =========================
+   STORY HERO
+========================= */
+
+.story-hero {
+    width: min(850px, 90%);
+    margin: 0 auto;
+    padding: 70px 30px 90px;
+    text-align: center;
+}
+
+.story-eyebrow {
+    margin-bottom: 24px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: #8A8A70;
+}
+
+.story-title {
+    margin: 0;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(
+        3rem,
+        7vw,
+        6rem
+    );
+
+    line-height: 1;
+    font-weight: 600;
+
+    color: #6F7D57;
+
+    text-shadow:
+        0 3px 18px rgba(126, 142, 101, .10);
+}
+
+
+/* =========================
+   STORY INTRO
+========================= */
+
+.story-intro {
+    width: min(680px, 100%);
+    margin: 0 auto;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(
+        1.5rem,
+        3vw,
+        2.2rem
+    );
+
+    font-style: italic;
+    line-height: 1.45;
+
+    color: #A98257;
+}
+
+
+/* =========================
+   STORY CONTENT
+========================= */
+
+.story-content {
+
+    width: min(760px, 90%);
+
+    margin: 0 auto;
+
+    padding:
+        30px
+        30px
+        100px;
+}
+
+
+.story-block {
+
+    max-width: 650px;
+
+    margin:
+        0 auto;
+
+    padding:
+        45px 30px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 252, 247, .68);
+
+    border:
+        1px solid
+        rgba(184, 145, 92, .18);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(90, 75, 40, .06);
+
+    backdrop-filter: blur(3px);
+}
+
+
+.story-number {
+
+    margin-bottom: 10px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color: #B38B59;
+}
+
+
+.story-block h2 {
+
+    margin-bottom: 20px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3rem
+        );
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    color: #6F7D57;
+}
+
+
+.story-block p:not(.story-number) {
+
+    max-width: 580px;
+
+    margin:
+        0 auto;
+
+    font-size:
+        clamp(
+            1rem,
+            2vw,
+            1.1rem
+        );
+
+    line-height: 1.9;
+
+    color: #666;
+}
+
+
+/* =========================
+   STORY DIVIDER
+========================= */
+
+.story-divider {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: min(500px, 80%);
+
+    margin:
+        38px auto;
+
+    color: #B38B59;
+
+    font-size: 18px;
+}
+
+.story-divider::before,
+.story-divider::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    margin: 0 18px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #C8A66D
+        );
+}
+
+.story-divider::after {
+
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            #C8A66D
+        );
+}
+
+
+/* =========================
+   STORY CLOSING
+========================= */
+
+.story-closing {
+
+    width: min(700px, 90%);
+
+    margin:
+        0 auto;
+
+    padding:
+        40px 30px
+        130px;
+
+    text-align: center;
+}
+
+
+.story-monogram {
+
+    width:
+        clamp(
+            100px,
+            18vw,
+            170px
+        );
+
+    height: auto;
+
+    margin-bottom: 25px;
+
+    filter:
+        drop-shadow(
+            0 6px 12px
+            rgba(179, 139, 89, .15)
+        );
+}
+
+
+.story-closing h2 {
+
+    margin-bottom: 8px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(
+            2.2rem,
+            5vw,
+            3.5rem
+        );
+
+    font-weight: 500;
+
+    color: #6F7D57;
+}
+
+
+.story-closing p {
+
+    margin-bottom: 30px;
+
+    color: #A98257;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 1.4rem;
+}
+
+
+/* =========================
+   STORY MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .story-page {
+
+        padding-top: 90px;
+
+        background-attachment:
+            scroll;
+    }
+
+
+    .story-hero {
+
+        width: 100%;
+
+        padding:
+            55px
+            22px
+            65px;
+    }
+
+
+    .story-eyebrow {
+
+        font-size: 10px;
+
+        letter-spacing: 2.5px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .story-title {
+
+        font-size:
+            clamp(
+                2.7rem,
+                13vw,
+                4rem
+            );
+
+        line-height: 1.05;
+    }
+
+
+    .story-intro {
+
+        font-size: 1.5rem;
+
+        line-height: 1.45;
+    }
+
+
+    .story-content {
+
+        width: 100%;
+
+        padding:
+            10px
+            18px
+            70px;
+    }
+
+
+    .story-block {
+
+        padding:
+            35px
+            22px;
+
+        border-radius: 24px;
+    }
+
+
+    .story-block h2 {
+
+        font-size: 2rem;
+
+        line-height: 1.1;
+    }
+
+
+    .story-block p:not(.story-number) {
+
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+
+    .story-divider {
+
+        margin:
+            30px auto;
+    }
+
+
+    .story-closing {
+
+        padding:
+            20px
+            20px
+            90px;
+    }
+
+
+    .story-monogram {
+
+        width: 110px;
+    }
+
+}
