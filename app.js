@@ -95,8 +95,9 @@ function renderWelcomePage() {
 
         </div>
 
-        <p class="instruction-text">
-    Pakilagay ang inyong pangalan nang eksakto tulad ng nakalagay sa inyong imbitasyon.
+       <p class="instruction-text">
+    <span>Pakilagay ang inyong pangalan nang</span>
+    <span>eksakto tulad ng nakalagay sa inyong imbitasyon.</span>
 </p>
 
         <input
