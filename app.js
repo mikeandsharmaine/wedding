@@ -88,8 +88,9 @@ function renderWelcomePage() {
         <div class="countdown">
             <div id="daysRemaining" class="count-number">...</div>
 
-            <p class="deadline-label">
-    ARAW BAGO ANG AMING PAG-IISANG DIBDIB
+          <p class="deadline-label">
+    ARAW BAGO ANG AMING<br>
+    PAG-IISANG DIBDIB
 </p>
 
         </div>
@@ -118,15 +119,15 @@ function renderWelcomePage() {
 
             <div class="divider"></div>
             
-<p class="contact-intro">
+<p class="contact-help">
     Kung kailangan ninyo ng tulong, maaari pong makipag-ugnayan kay
 </p>
 
 <p class="contact-name">
-    Sharmaine Fernandez
+    <strong>Sharmaine Fernandez</strong>
 </p>
 
-<p class="contact-phone">
+<p class="contact-number">
     0917 804 5576
 </p>
 
