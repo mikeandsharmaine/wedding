@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>RSVP | Mike & Sharmaine</title>
+
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Existing Wedding Styles -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Floating Watercolor Petals -->
+
+    <div id="petals"></div>
+
+
+    <!-- ==============================
+         RSVP APPLICATION
+    =============================== -->
+
+    <div
+        id="rsvpApp"
+        class="rsvp-visible"
+    >
+
+        <div class="background">
+
+            <div class="card">
+
+                <div id="app"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         LOADING OVERLAY
+    =============================== -->
+
+    <div
+        id="loadingOverlay"
+        class="loading-overlay"
+    >
+
+        <div class="loading-card">
+
+            <div class="ring"></div>
+
+            <h2>
+                Sandali lang...
+            </h2>
+
+            <p>
+                Inihahanda namin ang inyong RSVP.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         RSVP UPDATE MODAL
+    =============================== -->
+
+    <div
+        id="updateModal"
+        class="modal-overlay"
+    >
+
+        <div class="modal-card">
+
+            <h2>
+                May naitala na kaming RSVP.
+            </h2>
+
+            <p>
+
+                Natanggap na namin ang iyong RSVP.
+
+                <br><br>
+
+                Nais mo ba itong baguhin?
+
+            </p>
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    onclick="cancelUpdate()"
+                >
+                    Hindi
+                </button>
+
+                <button
+                    type="button"
+                    onclick="confirmUpdate()"
+                >
+                    Oo
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         CONFETTI
+    =============================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"
+    ></script>
+
+
+    <!-- ==============================
+         EXISTING RSVP JAVASCRIPT
+    =============================== -->
+
+    <script src="app.js"></script>
+
+
+    <!-- ==============================
+         START RSVP PAGE
+    =============================== -->
+
+    <script>
+
+        window.onload = function () {
+
+            renderWelcomePage();
+
+            window.scrollTo({
+                top: 0,
+                behavior: "instant"
+            });
+
+        };
+
+    </script>
+
+
+</body>
+
+</html>
