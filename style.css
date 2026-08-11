@@ -1995,3 +1995,28 @@ textarea{
     }
 
 }
+/* =========================================
+   DESKTOP WELCOME PAGE REFINEMENT
+   Mobile remains unchanged
+   ========================================= */
+
+@media (min-width: 601px) {
+
+    .name-instruction {
+        max-width: 600px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        line-height: 1.65 !important;
+    }
+
+    .rsvp-footer {
+        margin-top: 55px !important;
+    }
+
+    .rsvp-deadline {
+        max-width: 600px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+}
