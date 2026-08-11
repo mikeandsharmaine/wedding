@@ -1656,6 +1656,8 @@ textarea{
     max-width: 600px;
 }
 
+}
+
 @media (max-width: 600px) {
     .update-rsvp-title {
         font-size: 38px;
@@ -1680,6 +1682,8 @@ textarea{
      margin-top: 0;
         margin-bottom: 22px;
     box-sizing: border-box;
+}
+
 }
 
 @media (max-width: 600px) {
