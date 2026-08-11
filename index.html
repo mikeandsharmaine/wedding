@@ -1,86 +1,397 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tl">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>Mike & Sharmaine Wedding RSVP</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Mike & Sharmaine | Wedding</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
+
 <body>
 
+    <!-- Floating watercolor petals -->
     <div id="petals"></div>
 
-    <div class="background">
-        <div class="card">
 
-            <div id="app"></div>
+    <!-- ==============================
+         WEDDING WEBSITE
+    =============================== -->
+
+    <div id="website">
+
+
+        <!-- ==============================
+             NAVIGATION
+        =============================== -->
+
+        <header class="website-nav">
+
+            <nav>
+
+                <a
+                    href="#home"
+                    class="nav-link active"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="#story"
+                    class="nav-link"
+                >
+                    Ang Aming Kwento
+                </a>
+
+                <a
+                    href="#details"
+                    class="nav-link"
+                >
+                    Detalye ng Kasal
+                </a>
+
+                <a
+                    href="#program"
+                    class="nav-link"
+                >
+                    Daloy ng Pagdiriwang
+                </a>
+
+                <a
+                    href="#dress-code"
+                    class="nav-link"
+                >
+                    Dress Code
+                </a>
+
+                <a
+                    href="#rsvp"
+                    class="nav-link"
+                    onclick="openRSVP(event)"
+                >
+                    RSVP
+                </a>
+
+            </nav>
+
+        </header>
+
+
+
+        <!-- ==============================
+             HERO / LANDING PAGE
+        =============================== -->
+
+        <main id="home">
+
+            <section class="hero-section">
+
+                <div class="hero-content">
+
+
+                    <p class="hero-eyebrow">
+                        MALUGOD NAMIN KAYONG INAANYAYAHAN
+                    </p>
+
+
+                    <h1 class="hero-title">
+
+                        MIKE
+
+                        <span>&</span>
+
+                        SHARMAINE
+
+                    </h1>
+
+
+                    <div class="hero-divider">
+
+                        <span>✦</span>
+
+                    </div>
+
+
+                    <p class="hero-quote">
+
+                        “Sa bawat kuwento ng pag-ibig,
+                        may isang tahanang pinipiling buuin.”
+
+                    </p>
+
+
+                    <p class="hero-description">
+
+                        Bago ang mga sumpaan, bago ang “I Do,”
+                        may dalawang pusong piniling sabayan ang
+                        isa’t isa sa bawat yugto ng buhay.
+
+                        <br><br>
+
+                        Mula sa simpleng tawanan, mahahabang
+                        kwentuhan, at mga pangarap na sabay naming
+                        hinabi — narito kami ngayon, handang piliin
+                        ang isa’t isa araw-araw at habang buhay.
+
+                        <br><br>
+
+                        Kasama ng aming mga pamilya at mga mahal
+                        sa buhay, malugod namin kayong inaanyayahan
+                        na maging bahagi ng pinakasimulang kabanata
+                        ng aming forever.
+
+                    </p>
+
+
+                    <div class="hero-names">
+
+                        <h2>
+                            MIKE & SHARMAINE
+                        </h2>
+
+                        <p>
+                            SAVE THE DATE ✨
+                        </p>
+
+                    </div>
+
+
+                    <div class="hero-date">
+
+                        <strong>
+                            ENERO 15, 2027
+                        </strong>
+
+                        <span>
+                            FRUELLA’S EVENTS PLACE, TAGAYTAY
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="#story"
+                        class="hero-button"
+                    >
+                        Tuklasin ang Aming Kwento
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================
+                 TEMPORARY SECTION MARKERS
+                 We'll build these one by one.
+            =============================== -->
+
+            <section
+                id="story"
+                class="website-placeholder"
+            >
+
+                <p>
+                    Ang Aming Kwento
+                </p>
+
+            </section>
+
+
+            <section
+                id="details"
+                class="website-placeholder"
+            >
+
+                <p>
+                    Detalye ng Kasal
+                </p>
+
+            </section>
+
+
+            <section
+                id="program"
+                class="website-placeholder"
+            >
+
+                <p>
+                    Daloy ng Pagdiriwang
+                </p>
+
+            </section>
+
+
+            <section
+                id="dress-code"
+                class="website-placeholder"
+            >
+
+                <p>
+                    Dress Code
+                </p>
+
+            </section>
+
+
+            <section
+                id="rsvp"
+                class="website-placeholder"
+            >
+
+                <p>
+                    RSVP
+                </p>
+
+                <button
+                    onclick="openRSVP()"
+                >
+                    Mag-RSVP
+                </button>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- ==============================
+         EXISTING RSVP APPLICATION
+    =============================== -->
+
+    <div
+        id="rsvpApp"
+        class="rsvp-hidden"
+    >
+
+        <div class="background">
+
+            <div class="card">
+
+                <div id="app"></div>
+
+            </div>
 
         </div>
+
     </div>
+
+
 
     <!-- Loading Overlay -->
 
-    <div id="loadingOverlay" class="loading-overlay">
+    <div
+        id="loadingOverlay"
+        class="loading-overlay"
+    >
 
         <div class="loading-card">
 
-            ...
+            <div class="ring"></div>
+
+            <h2>
+                Sandali lang...
+            </h2>
+
+            <p>
+                Inihahanda namin ang inyong RSVP.
+            </p>
 
         </div>
 
     </div>
 
-    <!-- RSVP Update Modal -->
-<div id="updateModal" class="modal-overlay">
 
-    <div class="modal-card">
 
-        <h2>
-            May naitala na kaming RSVP.
-        </h2>
+    <!-- RSVP Update Confirmation Modal -->
 
-        <p>
-            Natanggap na namin ang iyong RSVP.
-            <br><br>
-            Nais mo ba itong baguhin?
-        </p>
+    <div
+        id="updateModal"
+        class="modal-overlay"
+    >
 
-        <div class="modal-buttons">
+        <div class="modal-card">
 
-            <button
-                type="button"
-                class="secondary-btn"
-                onclick="cancelUpdate()">
+            <h2>
+                May naitala na kaming RSVP.
+            </h2>
 
-                Hindi
+            <p>
 
-            </button>
+                Natanggap na namin ang iyong RSVP.
 
-            <button
-                type="button"
-                onclick="confirmUpdate()">
+                <br><br>
 
-                Oo
+                Nais mo ba itong baguhin?
 
-            </button>
+            </p>
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    onclick="cancelUpdate()"
+                >
+                    Hindi
+                </button>
+
+                <button
+                    type="button"
+                    onclick="confirmUpdate()"
+                >
+                    Oo
+                </button>
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <!-- Confetti -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"
+    ></script>
+
+
+    <!-- Main JS -->
 
     <script src="app.js"></script>
 
 </body>
+
+</html>
