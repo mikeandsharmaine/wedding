@@ -95,9 +95,8 @@ function renderWelcomePage() {
 
         </div>
 
-       <p class="instruction-text">
-    <span>Pakilagay ang inyong pangalan nang</span>
-    <span>eksakto tulad ng nakalagay sa inyong imbitasyon.</span>
+       <p class="name-instruction">
+    Pakilagay ang inyong pangalan nang eksakto tulad ng nakalagay sa inyong imbitasyon.
 </p>
 
         <input
@@ -113,10 +112,10 @@ function renderWelcomePage() {
 
         <div class="rsvp-footer">
 
-            <p class="info-text">
-                Mangyaring mag-RSVP bago o sa
-                <strong>Disyembre 15, 2026.</strong>
-            </p>
+           <p class="rsvp-deadline">
+    Mangyaring mag-RSVP bago o sa
+    <strong>Disyembre 15, 2026.</strong>
+</p>
 
             <div class="divider"></div>
             
