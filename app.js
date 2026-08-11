@@ -88,14 +88,14 @@ function renderWelcomePage() {
         <div class="countdown">
             <div id="daysRemaining" class="count-number">...</div>
 
-          <p class="deadline-label">
+        <p class="deadline-label">
     ARAW BAGO ANG AMING<br>
     PAG-IISANG DIBDIB
 </p>
 
         </div>
 
-        <p class="invitation-instruction">
+        <p class="instruction-text">
     Pakilagay ang inyong pangalan nang eksakto tulad ng nakalagay sa inyong imbitasyon.
 </p>
 
@@ -119,7 +119,7 @@ function renderWelcomePage() {
 
             <div class="divider"></div>
             
-<p class="contact-help">
+<p class="help-text">
     Kung kailangan ninyo ng tulong, maaari pong makipag-ugnayan kay
 </p>
 
