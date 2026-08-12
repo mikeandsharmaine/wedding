@@ -6954,3 +6954,310 @@ body.kwento-page {
     }
 
 }
+
+
+/* =========================================================
+   FINAL MOBILE KWENTO LAYOUT
+   STORIES LEFT — ALL PHOTOS RIGHT
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* Main Kwento layout */
+    .kwento-board {
+        position: relative !important;
+        display: grid !important;
+        grid-template-columns: 58% 42% !important;
+        width: calc(100% - 14px) !important;
+        margin: 0 auto !important;
+        align-items: start !important;
+    }
+
+    /* Story paper stays on the LEFT */
+    .kwento-paper {
+        position: relative !important;
+        width: 100% !important;
+        min-height: 1500px !important;
+        padding: 20px 8px 35px 10px !important;
+        box-sizing: border-box !important;
+        z-index: 5 !important;
+    }
+
+    /* Stories */
+    .story-row {
+        display: grid !important;
+        grid-template-columns: 34px minmax(0, 1fr) !important;
+        gap: 7px !important;
+        padding: 18px 0 !important;
+    }
+
+    .story-icon {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .story-content h2 {
+        font-size: 13px !important;
+        line-height: 1.15 !important;
+    }
+
+    .story-content p {
+        font-size: 11.5px !important;
+        line-height: 1.52 !important;
+        text-align: left !important;
+    }
+
+
+    /* =====================================================
+       RIGHT-SIDE SCRAPBOOK
+    ===================================================== */
+
+    .kwento-visuals {
+        position: relative !important;
+        width: 100% !important;
+        height: 1500px !important;
+        min-height: 1500px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        z-index: 10 !important;
+
+        background:
+            #d8c092 !important;
+    }
+
+
+    /* Old letter texture */
+    .kwento-visuals::before {
+        content: "" !important;
+        position: absolute !important;
+        inset: 0 !important;
+
+        background:
+            repeating-linear-gradient(
+                0deg,
+                rgba(93,70,40,.05) 0,
+                rgba(93,70,40,.05) 1px,
+                transparent 1px,
+                transparent 5px
+            ) !important;
+
+        opacity: .7 !important;
+        z-index: -2 !important;
+    }
+
+
+    /* =====================================================
+       PHOTO 1
+    ===================================================== */
+
+    .photo-one {
+        position: absolute !important;
+
+        top: 45px !important;
+        right: -5px !important;
+
+        width: 145px !important;
+
+        padding:
+            7px 7px 48px !important;
+
+        box-sizing: border-box !important;
+
+        background:
+            #fbf5e9 !important;
+
+        transform:
+            rotate(4deg) !important;
+
+        box-shadow:
+            0 12px 25px rgba(67,48,28,.28) !important;
+
+        z-index: 20 !important;
+    }
+
+
+    /* =====================================================
+       PHOTO 2
+    ===================================================== */
+
+    .photo-two {
+        position: absolute !important;
+
+        top: 620px !important;
+        right: -8px !important;
+
+        width: 145px !important;
+
+        padding:
+            7px 7px 48px !important;
+
+        box-sizing: border-box !important;
+
+        background:
+            #fbf5e9 !important;
+
+        transform:
+            rotate(-5deg) !important;
+
+        box-shadow:
+            0 12px 25px rgba(67,48,28,.28) !important;
+
+        z-index: 20 !important;
+    }
+
+
+    /* Photo itself */
+    .polaroid-image {
+        width: 100% !important;
+        aspect-ratio: 1 / 1 !important;
+        overflow: hidden !important;
+    }
+
+    .polaroid-image img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+
+    /* =====================================================
+       POLAROID CAPTIONS
+    ===================================================== */
+
+    .kwento-polaroid figcaption {
+        position: absolute !important;
+
+        left: 5px !important;
+        right: 5px !important;
+        bottom: 8px !important;
+
+        min-height: 32px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        text-align: center !important;
+
+        padding: 0 3px !important;
+
+        font-family:
+            "Allura",
+            cursive !important;
+
+        font-size: 18px !important;
+        line-height: 1.05 !important;
+
+        color:
+            #514b40 !important;
+
+        opacity: 1 !important;
+    }
+
+
+    /* =====================================================
+       TAPE
+    ===================================================== */
+
+    .photo-one::before,
+    .photo-two::before {
+        content: "" !important;
+
+        position: absolute !important;
+
+        top: -11px !important;
+        left: 50% !important;
+
+        width: 62px !important;
+        height: 19px !important;
+
+        transform:
+            translateX(-50%) rotate(-2deg) !important;
+
+        background:
+            rgba(188,153,102,.72) !important;
+
+        z-index: 30 !important;
+    }
+
+
+    /* =====================================================
+       FILM STRIP — RIGHT SIDE
+    ===================================================== */
+
+    .kwento-film-strip {
+        position: absolute !important;
+
+        top: 930px !important;
+        right: -8px !important;
+
+        width: 170px !important;
+
+        padding: 7px !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 5px !important;
+
+        box-sizing: border-box !important;
+
+        background:
+            #292821 !important;
+
+        transform:
+            rotate(-2deg) !important;
+
+        z-index: 25 !important;
+    }
+
+
+    .film-photo {
+        height: 55px !important;
+        overflow: hidden !important;
+        position: relative !important;
+    }
+
+
+    .film-photo img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+
+    /* =====================================================
+       SMALL PHONES
+    ===================================================== */
+
+    @media (max-width: 390px) {
+
+        .kwento-board {
+            grid-template-columns:
+                59% 41% !important;
+        }
+
+        .story-content h2 {
+            font-size: 12px !important;
+        }
+
+        .story-content p {
+            font-size: 10.8px !important;
+        }
+
+        .photo-one,
+        .photo-two {
+            width: 132px !important;
+        }
+
+        .photo-two {
+            top: 600px !important;
+        }
+
+        .kwento-film-strip {
+            width: 155px !important;
+        }
+    }
+}
