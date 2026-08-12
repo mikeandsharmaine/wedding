@@ -12,8 +12,14 @@
 
     <title>Ang Aming Kwento | Mike & Sharmaine</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- =====================================
+         FONTS
+    ====================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
     <link
         rel="preconnect"
@@ -93,17 +99,10 @@
 
 
 <!-- =========================================
-     SCRAPBOOK PAGE
+     STORY PAGE
 ========================================= -->
 
 <main class="kwento-scrapbook">
-
-
-    <!-- Decorative torn paper layers -->
-
-    <div class="paper-corner paper-corner-left"></div>
-
-    <div class="paper-corner paper-corner-right"></div>
 
 
     <!-- =====================================
@@ -127,25 +126,25 @@
         </h1>
 
         <div class="kwento-small-divider">
-            ❧
+            ♡
         </div>
 
         <p class="kwento-subtitle">
-            Old love letters meets modern romance
+            Mga Lumang Liham, Makabagong Pagmamahalan
         </p>
 
     </section>
 
 
     <!-- =====================================
-         STORY AREA
+         MAIN CONTENT
     ====================================== -->
 
     <section class="kwento-layout">
 
 
         <!-- =================================
-             LEFT — STORY
+             LEFT STORY COLUMN
         ================================== -->
 
         <div class="kwento-story">
@@ -395,11 +394,6 @@
                                s9 4 9 10"
                         />
 
-                        <path
-                            d="M27 53
-                               c3-4 7-4 10 0"
-                        />
-
                     </svg>
 
                 </div>
@@ -433,7 +427,7 @@
 
 
         <!-- =================================
-             RIGHT — PHOTO SCRAPBOOK
+             RIGHT SCRAPBOOK AREA
         ================================== -->
 
         <aside class="kwento-gallery">
@@ -447,13 +441,14 @@
 
                     <img
                         src="images/kwento-photo-1.jpg"
-                        alt="Mike and Sharmaine"
+                        alt="Mike at Sharmaine"
+                        onerror="this.parentElement.classList.add('photo-missing')"
                     >
 
                 </div>
 
                 <figcaption>
-                    It started with a simple “Hi.”
+                    Nagsimula sa isang simpleng “Hi.”
                 </figcaption>
 
             </figure>
@@ -467,27 +462,27 @@
 
                     <img
                         src="images/kwento-photo-2.jpg"
-                        alt="Mike and Sharmaine"
+                        alt="Mike at Sharmaine"
                     >
 
                 </div>
 
                 <figcaption>
-                    You, always.
+                    Ikaw, palagi.
                 </figcaption>
 
             </figure>
 
 
-            <!-- HANDWRITTEN NOTE -->
+            <!-- LOVE NOTE -->
 
             <div class="love-note">
 
-                Every chapter
+                Bawat kabanata
                 <br>
-                with you is
+                na kasama ka
                 <br>
-                my favorite.
+                ay paborito ko.
 
                 <span>
                     ♡
@@ -496,15 +491,39 @@
             </div>
 
 
-            <!-- FILM STRIP DECORATION -->
+            <!-- FILM STRIP -->
 
             <div class="film-strip">
 
-                <span></span>
-                <span></span>
-                <span></span>
+                <div class="film-frame">
+
+                    <img
+                        src="images/kwento-photo-1.jpg"
+                        alt=""
+                    >
+
+                </div>
+
+                <div class="film-frame">
+
+                    <img
+                        src="images/kwento-photo-2.jpg"
+                        alt=""
+                    >
+
+                </div>
+
+                <div class="film-frame">
+
+                    <img
+                        src="images/kwento-photo-1.jpg"
+                        alt=""
+                    >
+
+                </div>
 
             </div>
+
 
         </aside>
 
