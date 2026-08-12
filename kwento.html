@@ -2308,61 +2308,65 @@
 
 <style>
 
-    /* ================================================
-       KWENTO PAGE BACKGROUND
-    ================================================ */
+/* =====================================================
+   ANG AMING KWENTO — RESPONSIVE BACKGROUND
+   ===================================================== */
 
-    body.kwento-page .kwento-page-content {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
+/* -----------------------------------------
+   KWENTO PAGE ONLY
+   ----------------------------------------- */
 
-        background-color: #ead8b8;
+body.kwento-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
-        background-image:
-            url("images/kwento-background.png");
+body.kwento-page .kwento-page-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
 
-        background-position:
-            center top;
+    background-color: #ead8b8;
 
-        background-repeat:
-            no-repeat;
+    /* DESKTOP BACKGROUND */
+    background-image: url("images/kwento-background.png");
 
-        background-size:
-            100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
 
-        background-attachment:
-            scroll;
+    /*
+       Desktop keeps the original artwork.
+    */
+    background-size: cover;
 
-        overflow-x: hidden;
-    }
+    background-attachment: scroll;
 
-
-    /* ================================================
-       REMOVE OLD KWENTO BACKGROUND DECORATIONS
-    ================================================ */
-
-    body.kwento-page .kwento-page-content::before {
-        content: none !important;
-        display: none !important;
-    }
+    overflow-x: hidden;
+}
 
 
-    body.kwento-page .kwento-page-content::after {
-        content: none !important;
-        display: none !important;
-    }
+/* -----------------------------------------
+   REMOVE OLD GENERATED DECORATIONS
+   ----------------------------------------- */
+
+body.kwento-page .kwento-page-content::before,
+body.kwento-page .kwento-page-content::after {
+    content: none !important;
+    display: none !important;
+}
+
+body.kwento-page .kwento-leaf,
+body.kwento-page .kwento-flower {
+    display: none !important;
+}
 
 
-    body.kwento-page .kwento-leaf,
-    body.kwento-page .kwento-flower {
-        display: none !important;
-    }
+/* =====================================================
+   MOBILE BACKGROUND
+   ===================================================== */
 
-
-    /* ================================================
-       PREVENT HORIZONTAL SCROLL
-    ================================================ */
+@media (max-width: 700px) {
 
     body.kwento-page {
         width: 100%;
@@ -2370,65 +2374,57 @@
         overflow-x: hidden;
     }
 
+    body.kwento-page .kwento-page-content {
 
-    /* ================================================
-       MOBILE
-    ================================================ */
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
 
-    @media (max-width: 700px) {
+        /*
+         * USE THE NEW PORTRAIT BACKGROUND
+         * ONLY ON MOBILE.
+         */
+        background-image:
+            url("images/kwento-mobile-bg.png");
 
-        body.kwento-page {
-            width: 100%;
-            max-width: 100%;
-            overflow-x: hidden;
-        }
+        /*
+         * Keep the portrait artwork proportional.
+         */
+        background-size: 100% auto;
+
+        background-position: center top;
+
+        background-repeat: no-repeat;
+
+        background-attachment: scroll;
+
+        overflow-x: hidden;
+    }
+}
 
 
-        body.kwento-page .kwento-page-content {
-            width: 100%;
-            max-width: 100%;
-            min-width: 0;
+/* =====================================================
+   SMALL PHONES
+   ===================================================== */
 
-            /*
-             * IMPORTANT:
-             * Stretch the ONE background artwork
-             * across the entire Kwento page.
-             */
-            background-size: 100% 100%;
+@media (max-width: 390px) {
 
-            background-position: center top;
+    body.kwento-page .kwento-page-content {
 
-            background-repeat: no-repeat;
+        background-image:
+            url("images/kwento-mobile-bg.png");
 
-            background-attachment: scroll;
+        background-size:
+            100% auto;
 
-            overflow-x: hidden;
-        }
+        background-position:
+            center top;
+
+        background-repeat:
+            no-repeat;
 
     }
-
-
-    /* ================================================
-       SMALL PHONES
-    ================================================ */
-
-    @media (max-width: 390px) {
-
-        body.kwento-page .kwento-page-content {
-
-            background-size:
-                100% 100%;
-
-            background-position:
-                center top;
-
-            background-repeat:
-                no-repeat;
-
-        }
-
-    }
-
+}
 </style>
 </head>
 
