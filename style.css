@@ -7789,3 +7789,92 @@ body.kwento-page .kwento-page-content {
         background-size: 100% auto;
     }
 }
+/* =========================================================
+   ANG AMING KWENTO - NEW BACKGROUND
+   This affects KWENTO only.
+   RSVP and all other pages are untouched.
+   ========================================================= */
+
+body.kwento-page {
+    background-color: #ead8b8;
+    overflow-x: hidden;
+}
+
+
+/* Main Kwento background */
+body.kwento-page .kwento-page-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    background-color: #ead8b8;
+
+    background-image: url("images/kwento-background.png");
+
+    background-repeat: repeat-y;
+
+    background-position: center top;
+
+    /*
+       Keep the artwork proportional.
+       Do NOT use cover or 100% 100%.
+    */
+    background-size: 100% auto;
+
+    background-attachment: scroll;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 700px) {
+
+    body.kwento-page {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+
+        background-color: #ead8b8;
+    }
+
+    body.kwento-page .kwento-page-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        background-image: url("images/kwento-background.png");
+
+        background-repeat: repeat-y;
+
+        background-position: center top;
+
+        /*
+           The PNG gets smaller on mobile,
+           so it should remain sharp.
+        */
+        background-size: 100% auto;
+
+        background-attachment: scroll;
+
+        overflow-x: hidden;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 390px) {
+
+    body.kwento-page .kwento-page-content {
+        background-size: 100% auto;
+        background-position: center top;
+    }
+}
