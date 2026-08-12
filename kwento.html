@@ -43,30 +43,23 @@
 
     <!-- =====================================================
          KWENTO PAGE ONLY
-         
-         IMPORTANT:
          This CSS is scoped to body.kwento-page.
-         It will NOT affect RSVP.
+         RSVP and other pages are NOT affected.
     ====================================================== -->
 
     <style>
 
         /* =====================================================
-           RESET — KWENTO ONLY
+           BASIC RESET — KWENTO ONLY
         ====================================================== */
 
         body.kwento-page {
-
             margin: 0;
             padding: 0;
-
             width: 100%;
             max-width: 100%;
-
             overflow-x: hidden;
-
             background: #ead8b8;
-
             color: #596247;
         }
 
@@ -78,18 +71,14 @@
         body.kwento-page .website-nav {
 
             position: sticky;
-
             top: 0;
-
             z-index: 1000;
 
             width: 100%;
 
-            background:
-                rgba(249,241,224,.96);
+            background: rgba(249,241,224,.96);
 
-            backdrop-filter:
-                blur(10px);
+            backdrop-filter: blur(10px);
 
             border-bottom:
                 1px solid rgba(126,142,101,.18);
@@ -101,16 +90,13 @@
             display: flex;
 
             justify-content: center;
-
             align-items: center;
 
             gap: 38px;
 
-            padding:
-                20px 24px;
+            padding: 20px 24px;
 
             overflow-x: auto;
-
             overflow-y: hidden;
 
             white-space: nowrap;
@@ -132,9 +118,7 @@
 
             text-decoration: none;
 
-            font-family:
-                "Cardo",
-                serif;
+            font-family: "Cardo", serif;
 
             font-size: 15px;
 
@@ -160,10 +144,16 @@
 
         /* =====================================================
            MAIN KWENTO PAGE
-           
-           The PNG is used as ONE background.
-           It is not stretched.
-           It is not repeated.
+
+           IMPORTANT:
+           DO NOT USE "cover".
+
+           The original PNG is 1536 × 1024.
+           We keep its natural aspect ratio and allow the
+           background to repeat vertically.
+
+           This prevents the browser from stretching one
+           small image over the entire long page.
         ====================================================== */
 
         body.kwento-page .kwento-page-content {
@@ -171,7 +161,6 @@
             position: relative;
 
             width: 100%;
-
             max-width: 100%;
 
             min-height: 100vh;
@@ -185,14 +174,24 @@
             background-image:
                 url("images/kwento-background.png");
 
+            /*
+             * IMPORTANT:
+             * Width follows the page.
+             * Height is calculated automatically.
+             * This preserves the PNG's aspect ratio.
+             */
+            background-size:
+                100% auto;
+
             background-position:
                 center top;
 
+            /*
+             * Repeat vertically so the long page
+             * continues to have the artwork.
+             */
             background-repeat:
-                no-repeat;
-
-            background-size:
-                cover;
+                repeat-y;
 
             background-attachment:
                 scroll;
@@ -200,7 +199,7 @@
 
 
         /* =====================================================
-           REMOVE ALL OLD GENERATED DECORATIONS
+           REMOVE OLD GENERATED DECORATIONS
         ====================================================== */
 
         body.kwento-page
@@ -210,7 +209,6 @@
         .kwento-page-content::after {
 
             content: none !important;
-
             display: none !important;
         }
 
@@ -234,77 +232,61 @@
             position: relative;
 
             width: 100%;
-
             max-width: 1000px;
 
-            margin:
-                0 auto;
+            margin: 0 auto;
 
             padding:
                 90px 25px 65px;
 
-            box-sizing:
-                border-box;
+            box-sizing: border-box;
 
-            text-align:
-                center;
+            text-align: center;
         }
 
 
         body.kwento-page .section-number {
 
-            font-family:
-                "Cardo",
-                serif;
+            font-family: "Cardo", serif;
 
-            font-size:
-                13px;
+            font-size: 13px;
 
-            letter-spacing:
-                5px;
+            letter-spacing: 5px;
 
-            color:
-                #7c705d;
+            color: #7c705d;
 
-            margin-bottom:
-                22px;
+            margin-bottom: 22px;
         }
 
 
         body.kwento-page .kwento-title h1 {
 
-            margin:
-                0;
+            margin: 0;
 
-            line-height:
-                .9;
+            line-height: .9;
 
             font-family:
                 "Playfair Display",
                 serif;
 
-            font-weight:
-                500;
+            font-weight: 500;
         }
 
 
         body.kwento-page .kwento-title h1 span {
 
-            display:
-                block;
+            display: block;
 
             font-size:
                 clamp(48px, 8vw, 90px);
 
-            color:
-                #69785a;
+            color: #69785a;
         }
 
 
         body.kwento-page .kwento-title h1 strong {
 
-            display:
-                block;
+            display: block;
 
             font-family:
                 "Allura",
@@ -313,14 +295,11 @@
             font-size:
                 clamp(70px, 10vw, 120px);
 
-            font-weight:
-                400;
+            font-weight: 400;
 
-            color:
-                #d66b4b;
+            color: #d66b4b;
 
-            margin-top:
-                -12px;
+            margin-top: -12px;
         }
 
 
@@ -333,14 +312,11 @@
                 "Cormorant Garamond",
                 serif;
 
-            font-size:
-                58px;
+            font-size: 58px;
 
-            line-height:
-                1;
+            line-height: 1;
 
-            color:
-                #8c7858;
+            color: #8c7858;
         }
 
 
@@ -350,49 +326,36 @@
                 "Cardo",
                 serif;
 
-            font-size:
-                13px;
+            font-size: 13px;
 
-            letter-spacing:
-                6px;
+            letter-spacing: 6px;
 
-            color:
-                #756957;
+            color: #756957;
 
-            margin-bottom:
-                25px;
+            margin-bottom: 25px;
         }
 
 
         body.kwento-page .kwento-subtitle {
 
-            margin:
-                0;
+            margin: 0;
 
             font-family:
                 "Cormorant Garamond",
                 serif;
 
-            font-style:
-                italic;
+            font-style: italic;
 
-            font-size:
-                26px;
+            font-size: 26px;
 
-            line-height:
-                1.35;
+            line-height: 1.35;
 
-            color:
-                #756957;
+            color: #756957;
         }
 
 
         /* =====================================================
            MAIN SCRAPBOOK BOARD
-           
-           DESKTOP:
-           STORIES LEFT
-           PHOTOS RIGHT
         ====================================================== */
 
         body.kwento-page .kwento-board {
@@ -405,24 +368,19 @@
             margin:
                 0 auto 60px;
 
-            display:
-                grid;
+            display: grid;
 
             grid-template-columns:
                 minmax(0, 61%)
                 minmax(0, 39%);
 
-            align-items:
-                stretch;
+            align-items: stretch;
 
-            gap:
-                0;
+            gap: 0;
 
-            box-sizing:
-                border-box;
+            box-sizing: border-box;
 
-            overflow:
-                hidden;
+            overflow: hidden;
         }
 
 
@@ -432,11 +390,9 @@
 
         body.kwento-page .kwento-paper {
 
-            position:
-                relative;
+            position: relative;
 
-            z-index:
-                2;
+            z-index: 2;
 
             background:
                 rgba(249,241,224,.94);
@@ -444,11 +400,9 @@
             padding:
                 65px 70px 80px;
 
-            box-sizing:
-                border-box;
+            box-sizing: border-box;
 
-            min-width:
-                0;
+            min-width: 0;
 
             box-shadow:
                 8px 0 30px
@@ -462,51 +416,40 @@
 
         body.kwento-page .story-row {
 
-            position:
-                relative;
+            position: relative;
 
-            display:
-                grid;
+            display: grid;
 
             grid-template-columns:
                 58px minmax(0,1fr);
 
-            column-gap:
-                22px;
+            column-gap: 22px;
 
             padding:
                 5px 0 70px;
 
-            margin:
-                0;
+            margin: 0;
 
-            box-sizing:
-                border-box;
+            box-sizing: border-box;
         }
 
 
-        /* vertical timeline */
+        /* Timeline */
 
         body.kwento-page
         .story-row:not(:last-of-type)::after {
 
-            content:
-                "";
+            content: "";
 
-            position:
-                absolute;
+            position: absolute;
 
-            left:
-                28px;
+            left: 28px;
 
-            top:
-                65px;
+            top: 65px;
 
-            bottom:
-                20px;
+            bottom: 20px;
 
-            width:
-                1px;
+            width: 1px;
 
             background:
                 repeating-linear-gradient(
@@ -515,8 +458,7 @@
                     transparent 5px 10px
                 );
 
-            opacity:
-                .8;
+            opacity: .8;
         }
 
 
@@ -526,32 +468,21 @@
 
         body.kwento-page .story-icon {
 
-            position:
-                relative;
+            position: relative;
 
-            z-index:
-                3;
+            z-index: 3;
 
-            width:
-                58px;
+            width: 58px;
+            height: 58px;
 
-            height:
-                58px;
+            border-radius: 50%;
 
-            border-radius:
-                50%;
+            display: flex;
 
-            display:
-                flex;
+            align-items: center;
+            justify-content: center;
 
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            box-sizing:
-                border-box;
+            box-sizing: border-box;
 
             border:
                 3px solid
@@ -565,40 +496,27 @@
 
         body.kwento-page .story-icon svg {
 
-            width:
-                30px;
+            width: 30px;
+            height: 30px;
 
-            height:
-                30px;
+            fill: none;
 
-            fill:
-                none;
+            stroke: white;
 
-            stroke:
-                white;
+            stroke-width: 2;
 
-            stroke-width:
-                2;
-
-            stroke-linecap:
-                round;
-
-            stroke-linejoin:
-                round;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
 
         body.kwento-page .icon-green {
-
-            background:
-                #71855c;
+            background: #71855c;
         }
 
 
         body.kwento-page .icon-orange {
-
-            background:
-                #d47749;
+            background: #d47749;
         }
 
 
@@ -612,17 +530,13 @@
                 "Cardo",
                 serif;
 
-            font-size:
-                12px;
+            font-size: 12px;
 
-            letter-spacing:
-                4px;
+            letter-spacing: 4px;
 
-            color:
-                #9b8367;
+            color: #9b8367;
 
-            margin-bottom:
-                8px;
+            margin-bottom: 8px;
         }
 
 
@@ -638,34 +552,27 @@
             font-size:
                 clamp(24px, 2.2vw, 34px);
 
-            line-height:
-                1.1;
+            line-height: 1.1;
 
-            letter-spacing:
-                1px;
+            letter-spacing: 1px;
 
-            color:
-                #596247;
+            color: #596247;
         }
 
 
         body.kwento-page .story-content p {
 
-            margin:
-                0;
+            margin: 0;
 
             font-family:
                 "Cormorant Garamond",
                 serif;
 
-            font-size:
-                22px;
+            font-size: 22px;
 
-            line-height:
-                1.65;
+            line-height: 1.65;
 
-            color:
-                #6e6558;
+            color: #6e6558;
         }
 
 
@@ -678,38 +585,31 @@
             padding:
                 20px 20px 0;
 
-            text-align:
-                center;
+            text-align: center;
 
             font-family:
                 "Allura",
                 cursive;
 
-            font-size:
-                42px;
+            font-size: 42px;
 
-            line-height:
-                1.25;
+            line-height: 1.25;
 
-            color:
-                #71604d;
+            color: #71604d;
         }
 
 
         body.kwento-page .kwento-closing span {
 
-            display:
-                block;
+            display: block;
 
-            margin-top:
-                15px;
+            margin-top: 15px;
 
             font-family:
                 "Cormorant Garamond",
                 serif;
 
-            font-size:
-                38px;
+            font-size: 38px;
         }
 
 
@@ -719,20 +619,16 @@
 
         body.kwento-page .kwento-visuals {
 
-            position:
-                relative;
+            position: relative;
 
-            z-index:
-                3;
+            z-index: 3;
 
-            min-height:
-                1550px;
+            min-height: 1550px;
 
             background:
                 rgba(207,179,128,.78);
 
-            overflow:
-                hidden;
+            overflow: hidden;
         }
 
 
@@ -742,23 +638,18 @@
 
         body.kwento-page .kwento-polaroid {
 
-            position:
-                absolute;
+            position: absolute;
 
-            width:
-                78%;
+            width: 78%;
 
-            margin:
-                0;
+            margin: 0;
 
             padding:
                 10px 10px 18px;
 
-            box-sizing:
-                border-box;
+            box-sizing: border-box;
 
-            background:
-                #fffaf0;
+            background: #fffaf0;
 
             box-shadow:
                 0 15px 30px
@@ -768,75 +659,58 @@
 
         body.kwento-page .polaroid-image {
 
-            width:
-                100%;
+            width: 100%;
 
             aspect-ratio:
                 1 / .82;
 
-            overflow:
-                hidden;
+            overflow: hidden;
         }
 
 
         body.kwento-page .polaroid-image img {
 
-            display:
-                block;
+            display: block;
 
-            width:
-                100%;
+            width: 100%;
+            height: 100%;
 
-            height:
-                100%;
-
-            object-fit:
-                cover;
+            object-fit: cover;
         }
 
 
         body.kwento-page .kwento-polaroid figcaption {
 
-            display:
-                block;
+            display: block;
 
-            width:
-                100%;
+            width: 100%;
 
-            min-height:
-                45px;
+            min-height: 45px;
 
             padding:
                 10px 3px 0;
 
-            box-sizing:
-                border-box;
+            box-sizing: border-box;
 
-            text-align:
-                center;
+            text-align: center;
 
             font-family:
                 "Allura",
                 cursive;
 
-            font-size:
-                25px;
+            font-size: 25px;
 
-            line-height:
-                1.05;
+            line-height: 1.05;
 
-            color:
-                #625748;
+            color: #625748;
         }
 
 
         body.kwento-page .photo-one {
 
-            top:
-                65px;
+            top: 65px;
 
-            right:
-                8%;
+            right: 8%;
 
             transform:
                 rotate(3deg);
@@ -845,11 +719,9 @@
 
         body.kwento-page .photo-two {
 
-            top:
-                820px;
+            top: 820px;
 
-            right:
-                8%;
+            right: 8%;
 
             transform:
                 rotate(-4deg);
@@ -862,42 +734,33 @@
 
         body.kwento-page .letter-note {
 
-            position:
-                absolute;
+            position: absolute;
 
-            top:
-                470px;
+            top: 470px;
 
-            left:
-                12%;
+            left: 12%;
 
-            width:
-                70%;
+            width: 70%;
 
             padding:
                 35px 20px;
 
-            box-sizing:
-                border-box;
+            box-sizing: border-box;
 
             background:
                 rgba(232,198,143,.92);
 
-            text-align:
-                center;
+            text-align: center;
 
             font-family:
                 "Allura",
                 cursive;
 
-            font-size:
-                31px;
+            font-size: 31px;
 
-            line-height:
-                1.15;
+            line-height: 1.15;
 
-            color:
-                #665846;
+            color: #665846;
 
             box-shadow:
                 0 10px 22px
@@ -906,25 +769,21 @@
             transform:
                 rotate(2deg);
 
-            z-index:
-                4;
+            z-index: 4;
         }
 
 
         body.kwento-page .letter-note span {
 
-            display:
-                block;
+            display: block;
 
-            margin-top:
-                15px;
+            margin-top: 15px;
 
             font-family:
                 "Cormorant Garamond",
                 serif;
 
-            font-size:
-                40px;
+            font-size: 40px;
         }
 
 
@@ -934,55 +793,43 @@
 
         body.kwento-page .kwento-next {
 
-            width:
-                100%;
+            width: 100%;
 
             padding:
                 25px 20px 70px;
 
-            text-align:
-                center;
+            text-align: center;
 
-            box-sizing:
-                border-box;
+            box-sizing: border-box;
         }
 
 
         body.kwento-page .kwento-next a {
 
-            display:
-                inline-flex;
+            display: inline-flex;
 
-            align-items:
-                center;
+            align-items: center;
 
-            gap:
-                12px;
+            gap: 12px;
 
             padding:
                 15px 30px;
 
-            border-radius:
-                40px;
+            border-radius: 40px;
 
-            background:
-                #71855c;
+            background: #71855c;
 
-            color:
-                white;
+            color: white;
 
-            text-decoration:
-                none;
+            text-decoration: none;
 
             font-family:
                 "Poppins",
                 sans-serif;
 
-            font-size:
-                14px;
+            font-size: 14px;
 
-            letter-spacing:
-                .5px;
+            letter-spacing: .5px;
 
             transition:
                 transform .2s ease;
@@ -990,31 +837,21 @@
 
 
         body.kwento-page .kwento-next a:hover {
-
-            transform:
-                translateY(-2px);
+            transform: translateY(-2px);
         }
 
 
         /* =====================================================
            MOBILE
-           
-           IMPORTANT:
-           STORIES = LEFT
-           PHOTOS = RIGHT
-           
-           They remain beside each other.
         ====================================================== */
 
         @media screen and (max-width: 700px) {
 
             body.kwento-page .website-nav nav {
 
-                justify-content:
-                    flex-start;
+                justify-content: flex-start;
 
-                gap:
-                    28px;
+                gap: 28px;
 
                 padding:
                     16px 20px;
@@ -1023,39 +860,41 @@
 
             body.kwento-page .website-nav a {
 
-                font-size:
-                    12px;
+                font-size: 12px;
 
-                letter-spacing:
-                    1.5px;
+                letter-spacing: 1.5px;
             }
 
 
-            /* ---------------------------------------------
+            /* =================================================
                MOBILE BACKGROUND
-            --------------------------------------------- */
+
+               IMPORTANT:
+               Do NOT use cover.
+
+               The image scales to the phone width while
+               preserving its original aspect ratio.
+
+               It is repeated vertically rather than stretched
+               over the entire page.
+            ================================================= */
 
             body.kwento-page .kwento-page-content {
 
-                /*
-                   Keep the original PNG sharp.
-                   Cover the phone viewport instead of
-                   stretching the image.
-                */
                 background-size:
-                    cover;
+                    100% auto;
 
                 background-position:
                     center top;
 
                 background-repeat:
-                    no-repeat;
+                    repeat-y;
             }
 
 
-            /* ---------------------------------------------
+            /* =================================================
                MOBILE TITLE
-            --------------------------------------------- */
+            ================================================= */
 
             body.kwento-page .kwento-title {
 
@@ -1066,31 +905,24 @@
 
             body.kwento-page .section-number {
 
-                font-size:
-                    11px;
+                font-size: 11px;
 
-                letter-spacing:
-                    4px;
+                letter-spacing: 4px;
 
-                margin-bottom:
-                    18px;
+                margin-bottom: 18px;
             }
 
 
             body.kwento-page .kwento-title h1 span {
-
-                font-size:
-                    48px;
+                font-size: 48px;
             }
 
 
             body.kwento-page .kwento-title h1 strong {
 
-                font-size:
-                    78px;
+                font-size: 78px;
 
-                margin-top:
-                    -8px;
+                margin-top: -8px;
             }
 
 
@@ -1099,36 +931,30 @@
                 margin:
                     25px auto;
 
-                font-size:
-                    48px;
+                font-size: 48px;
             }
 
 
             body.kwento-page .our-story {
 
-                font-size:
-                    11px;
+                font-size: 11px;
 
-                letter-spacing:
-                    4px;
+                letter-spacing: 4px;
             }
 
 
             body.kwento-page .kwento-subtitle {
-
-                font-size:
-                    20px;
+                font-size: 20px;
             }
 
 
-            /* ---------------------------------------------
+            /* =================================================
                MOBILE BOARD
-            --------------------------------------------- */
+            ================================================= */
 
             body.kwento-page .kwento-board {
 
-                width:
-                    100%;
+                width: 100%;
 
                 margin:
                     0 0 40px;
@@ -1136,28 +962,24 @@
                 grid-template-columns:
                     62% 38%;
 
-                gap:
-                    0;
+                gap: 0;
 
-                overflow:
-                    hidden;
+                overflow: hidden;
             }
 
 
-            /* ---------------------------------------------
-               MOBILE STORIES — LEFT
-            --------------------------------------------- */
+            /* =================================================
+               MOBILE STORIES
+            ================================================= */
 
             body.kwento-page .kwento-paper {
 
                 padding:
                     32px 10px 60px 14px;
 
-                min-width:
-                    0;
+                min-width: 0;
 
-                overflow:
-                    hidden;
+                overflow: hidden;
 
                 background:
                     rgba(249,241,224,.95);
@@ -1169,8 +991,7 @@
                 grid-template-columns:
                     32px minmax(0,1fr);
 
-                column-gap:
-                    7px;
+                column-gap: 7px;
 
                 padding:
                     8px 0 35px;
@@ -1180,125 +1001,96 @@
             body.kwento-page
             .story-row:not(:last-of-type)::after {
 
-                left:
-                    15px;
+                left: 15px;
 
-                top:
-                    46px;
+                top: 46px;
 
-                bottom:
-                    10px;
+                bottom: 10px;
             }
 
 
             body.kwento-page .story-icon {
 
-                width:
-                    32px;
+                width: 32px;
+                height: 32px;
 
-                height:
-                    32px;
+                min-width: 32px;
+                min-height: 32px;
 
-                min-width:
-                    32px;
-
-                min-height:
-                    32px;
-
-                border-width:
-                    2px;
+                border-width: 2px;
             }
 
 
             body.kwento-page .story-icon svg {
 
-                width:
-                    17px;
-
-                height:
-                    17px;
+                width: 17px;
+                height: 17px;
             }
 
 
             body.kwento-page .story-label {
 
-                font-size:
-                    9px;
+                font-size: 9px;
 
-                letter-spacing:
-                    2.5px;
+                letter-spacing: 2.5px;
             }
 
 
             body.kwento-page .story-content h2 {
 
-                font-size:
-                    14px;
+                font-size: 14px;
 
-                line-height:
-                    1.15;
+                line-height: 1.15;
 
-                letter-spacing:
-                    .5px;
+                letter-spacing: .5px;
 
-                margin-bottom:
-                    9px;
+                margin-bottom: 9px;
 
-                overflow-wrap:
-                    break-word;
+                overflow-wrap: break-word;
             }
 
 
             body.kwento-page .story-content p {
 
-                font-size:
-                    12px;
+                font-size: 12px;
 
-                line-height:
-                    1.5;
+                line-height: 1.5;
 
-                overflow-wrap:
-                    break-word;
+                overflow-wrap: break-word;
             }
 
 
             body.kwento-page .kwento-closing {
 
-                font-size:
-                    25px;
+                font-size: 25px;
 
                 padding:
                     10px 5px 0;
             }
 
 
-            /* ---------------------------------------------
-               MOBILE PHOTOS — RIGHT
-            --------------------------------------------- */
+            /* =================================================
+               MOBILE PHOTOS
+            ================================================= */
 
             body.kwento-page .kwento-visuals {
 
-                min-width:
-                    0;
+                min-width: 0;
 
-                min-height:
-                    1500px;
+                min-height: 1500px;
 
-                height:
-                    100%;
+                height: 100%;
 
                 background:
                     rgba(207,179,128,.80);
 
-                overflow:
-                    hidden;
+                overflow: hidden;
             }
 
 
             body.kwento-page .kwento-polaroid {
 
-                width:
-                    94%;
+                width: 94%;
 
                 padding:
                     6px 6px 11px;
@@ -1307,11 +1099,9 @@
 
             body.kwento-page .photo-one {
 
-                top:
-                    45px;
+                top: 45px;
 
-                right:
-                    2%;
+                right: 2%;
 
                 transform:
                     rotate(3deg);
@@ -1320,11 +1110,9 @@
 
             body.kwento-page .photo-two {
 
-                top:
-                    780px;
+                top: 780px;
 
-                right:
-                    2%;
+                right: 2%;
 
                 transform:
                     rotate(-4deg);
@@ -1333,59 +1121,49 @@
 
             body.kwento-page .kwento-polaroid figcaption {
 
-                min-height:
-                    28px;
+                min-height: 28px;
 
                 padding:
                     6px 1px 0;
 
-                font-size:
-                    13px;
+                font-size: 13px;
 
-                line-height:
-                    1.05;
+                line-height: 1.05;
             }
 
 
-            /* ---------------------------------------------
+            /* =================================================
                MOBILE NOTE
-            --------------------------------------------- */
+            ================================================= */
 
             body.kwento-page .letter-note {
 
-                top:
-                    390px;
+                top: 390px;
 
-                left:
-                    4%;
+                left: 4%;
 
-                width:
-                    92%;
+                width: 92%;
 
                 padding:
                     22px 6px 18px;
 
-                font-size:
-                    15px;
+                font-size: 15px;
 
-                line-height:
-                    1.15;
+                line-height: 1.15;
             }
 
 
             body.kwento-page .letter-note span {
 
-                font-size:
-                    28px;
+                font-size: 28px;
 
-                margin-top:
-                    8px;
+                margin-top: 8px;
             }
 
 
-            /* ---------------------------------------------
+            /* =================================================
                MOBILE NEXT BUTTON
-            --------------------------------------------- */
+            ================================================= */
 
             body.kwento-page .kwento-next {
 
@@ -1417,57 +1195,43 @@
 
 
             body.kwento-page .kwento-title h1 span {
-
-                font-size:
-                    43px;
+                font-size: 43px;
             }
 
 
             body.kwento-page .kwento-title h1 strong {
-
-                font-size:
-                    70px;
+                font-size: 70px;
             }
 
 
             body.kwento-page .kwento-subtitle {
-
-                font-size:
-                    18px;
+                font-size: 18px;
             }
 
 
             body.kwento-page .kwento-paper {
 
-                padding-left:
-                    11px;
+                padding-left: 11px;
 
-                padding-right:
-                    8px;
+                padding-right: 8px;
             }
 
 
             body.kwento-page .story-content h2 {
-
-                font-size:
-                    13px;
+                font-size: 13px;
             }
 
 
             body.kwento-page .story-content p {
 
-                font-size:
-                    11.5px;
+                font-size: 11.5px;
 
-                line-height:
-                    1.45;
+                line-height: 1.45;
             }
 
 
             body.kwento-page .kwento-polaroid figcaption {
-
-                font-size:
-                    12px;
+                font-size: 12px;
             }
 
         }
