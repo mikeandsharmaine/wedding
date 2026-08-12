@@ -7771,3 +7771,21 @@ body.kwento-page {
     }
 
 }
+/* DESKTOP */
+body.kwento-page .kwento-page-content {
+    background-image: url("images/kwento-background.png");
+    background-repeat: repeat-y;
+    background-position: center top;
+    background-size: 100% auto;
+}
+
+
+/* MOBILE */
+@media screen and (max-width: 700px) {
+    body.kwento-page .kwento-page-content {
+        background-image: url("images/kwento-background-mobile.png");
+        background-repeat: repeat-y;
+        background-position: center top;
+        background-size: 100% auto;
+    }
+}
