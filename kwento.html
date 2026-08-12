@@ -1212,6 +1212,41 @@ body.kwento-page .kwento-page-content {
 
     </style>
 
+    /* =========================================================
+   KWENTO — REMOVE BACKGROUND ARTWORK
+   ========================================================= */
+
+body.kwento-page,
+body.kwento-page .kwento-page-content {
+    background-color: #ead8b8 !important;
+    background-image: none !important;
+    background: #ead8b8 !important;
+}
+
+/* Remove old decorative background elements */
+body.kwento-page .kwento-page-content::before,
+body.kwento-page .kwento-page-content::after {
+    content: none !important;
+    display: none !important;
+}
+
+body.kwento-page .kwento-leaf,
+body.kwento-page .kwento-flower {
+    display: none !important;
+}
+
+/* Prevent horizontal scrolling on mobile */
+body.kwento-page {
+    overflow-x: hidden !important;
+}
+
+body.kwento-page .kwento-page-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden !important;
+}
+
 </head>
 
 
