@@ -7261,3 +7261,84 @@ body.kwento-page {
         }
     }
 }
+
+
+/* =========================================================
+   KWENTO MOBILE — FINAL COLUMN CORRECTION
+   STORIES LEFT / PHOTOS RIGHT
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* LEFT = STORIES */
+    .kwento-paper {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+    }
+
+    /* RIGHT = ALL SCRAPBOOK PHOTOS */
+    .kwento-visuals {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+    }
+
+
+    /* PHOTO 1 — upper right */
+    .photo-one {
+        left: auto !important;
+        right: -4px !important;
+        top: 55px !important;
+
+        width: 145px !important;
+    }
+
+
+    /* NOTE — below photo 1 */
+    .letter-note {
+        left: auto !important;
+        right: 3px !important;
+        top: 355px !important;
+
+        width: 115px !important;
+    }
+
+
+    /* PHOTO 2 — lower right */
+    .photo-two {
+        left: auto !important;
+        right: -5px !important;
+        top: 650px !important;
+
+        width: 145px !important;
+    }
+
+
+    /* FILM STRIP — keep entirely inside photo column */
+    .kwento-film-strip {
+        left: auto !important;
+        right: -3px !important;
+
+        top: 1040px !important;
+
+        width: 145px !important;
+
+        grid-template-columns:
+            1fr 1fr !important;
+
+        transform:
+            rotate(-2deg) !important;
+    }
+
+
+    .film-photo {
+        height: 48px !important;
+    }
+
+
+    /* WAX SEAL — also stay on photo side */
+    .wax-seal {
+        left: auto !important;
+        right: 5px !important;
+    }
+
+}
