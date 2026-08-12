@@ -2313,29 +2313,96 @@
        MAIN KWENTO BACKGROUND
     ===================================================== */
 
-    body.kwento-page .kwento-page-content {
+    <style>
 
-        background-color: #ead8b8 !important;
+/* =====================================================
+   ANG AMING KWENTO
+   FULL-PAGE BACKGROUND
+   Does NOT affect RSVP
+===================================================== */
 
-        background-image:
-            url("images/kwento-background.png") !important;
+body.kwento-page .kwento-page-content {
+    background-color: #ead8b8 !important;
 
-        background-size: 100% auto !important;
+    background-image: url("images/kwento-background.png") !important;
 
-        background-position:
-            center top !important;
+    /* Make ONE background fill the entire Kwento page */
+    background-size: 100% 100% !important;
 
-        background-repeat:
-            repeat-y !important;
+    background-position: center top !important;
 
-        background-attachment:
-            scroll !important;
+    /* IMPORTANT: do not repeat the artwork */
+    background-repeat: no-repeat !important;
 
-        position: relative;
+    background-attachment: scroll !important;
 
-        overflow-x: hidden;
+    width: 100% !important;
+    max-width: 100% !important;
 
+    overflow-x: hidden !important;
+}
+
+
+/* Remove the old decorative background elements */
+body.kwento-page .kwento-page-content > .kwento-leaf,
+body.kwento-page .kwento-page-content > .kwento-flower {
+    display: none !important;
+}
+
+
+/* Remove old generated background texture */
+body.kwento-page .kwento-page-content::before {
+    content: none !important;
+    display: none !important;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    body.kwento-page {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
     }
+
+    body.kwento-page .kwento-page-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        /* SAME SINGLE BACKGROUND */
+        background-size: 100% 100% !important;
+
+        background-position: center top !important;
+
+        background-repeat: no-repeat !important;
+
+        background-attachment: scroll !important;
+
+        overflow-x: hidden !important;
+    }
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 390px) {
+
+    body.kwento-page .kwento-page-content {
+        background-size: 100% 100% !important;
+        background-position: center top !important;
+        background-repeat: no-repeat !important;
+    }
+
+}
+
+</style>
 
 
     /* =====================================================
