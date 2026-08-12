@@ -5231,3 +5231,1726 @@ body.kwento-page .polaroid-two::before {
     }
 
 }
+/* =========================================================
+   ANG AMING KWENTO — FINAL SCRAPBOOK DESIGN
+   MOBILE FIRST
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+body.kwento-page {
+
+    margin: 0;
+
+    background:
+        #d4bd96;
+
+    color:
+        #5b5547;
+
+}
+
+
+/* =========================================================
+   SCRAPBOOK BACKGROUND
+========================================================= */
+
+.kwento-page-content {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    padding:
+        135px 18px 70px;
+
+    background:
+
+        /* old parchment */
+
+        radial-gradient(
+            ellipse at center,
+            #f5e7ce 0%,
+            #ead8b7 58%,
+            #d0b486 100%
+        );
+
+}
+
+
+/* =========================================================
+   PAPER GRAIN
+========================================================= */
+
+.kwento-page-content::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .30;
+
+    background:
+
+        repeating-linear-gradient(
+            0deg,
+            rgba(95,70,40,.045) 0px,
+            rgba(95,70,40,.045) 1px,
+            transparent 1px,
+            transparent 5px
+        ),
+
+        repeating-linear-gradient(
+            90deg,
+            rgba(95,70,40,.025) 0px,
+            rgba(95,70,40,.025) 1px,
+            transparent 1px,
+            transparent 8px
+        );
+
+}
+
+
+/* =========================================================
+   WOVEN BANIG EDGE
+========================================================= */
+
+.kwento-page-content::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .32;
+
+    background:
+
+        repeating-linear-gradient(
+            45deg,
+            rgba(111,82,45,.13) 0px,
+            rgba(111,82,45,.13) 2px,
+            transparent 2px,
+            transparent 10px
+        ),
+
+        repeating-linear-gradient(
+            -45deg,
+            rgba(111,82,45,.09) 0px,
+            rgba(111,82,45,.09) 2px,
+            transparent 2px,
+            transparent 10px
+        );
+
+    mask-image:
+
+        linear-gradient(
+            to right,
+            black 0%,
+            transparent 17%,
+            transparent 83%,
+            black 100%
+        );
+
+}
+
+
+/* =========================================================
+   DECORATIVE LEAVES
+========================================================= */
+
+.kwento-leaf {
+
+    position: absolute;
+
+    z-index: 1;
+
+    width: 160px;
+
+    height: 280px;
+
+    opacity: .65;
+
+    pointer-events: none;
+
+}
+
+
+.leaf-left {
+
+    left: -80px;
+
+    top: 220px;
+
+    transform:
+        rotate(-25deg);
+
+    background:
+
+        radial-gradient(
+            ellipse at 60% 10%,
+            #596846 0 10%,
+            transparent 11%
+        ),
+
+        radial-gradient(
+            ellipse at 35% 25%,
+            #667451 0 12%,
+            transparent 13%
+        ),
+
+        radial-gradient(
+            ellipse at 70% 40%,
+            #74805d 0 11%,
+            transparent 12%
+        ),
+
+        radial-gradient(
+            ellipse at 35% 57%,
+            #596846 0 12%,
+            transparent 13%
+        ),
+
+        radial-gradient(
+            ellipse at 65% 73%,
+            #6f7b59 0 12%,
+            transparent 13%
+        );
+
+}
+
+
+.leaf-right {
+
+    right: -80px;
+
+    top: 80px;
+
+    transform:
+        rotate(25deg)
+        scaleX(-1);
+
+    background:
+
+        radial-gradient(
+            ellipse at 60% 10%,
+            #596846 0 10%,
+            transparent 11%
+        ),
+
+        radial-gradient(
+            ellipse at 35% 25%,
+            #667451 0 12%,
+            transparent 13%
+        ),
+
+        radial-gradient(
+            ellipse at 70% 40%,
+            #74805d 0 11%,
+            transparent 12%
+        ),
+
+        radial-gradient(
+            ellipse at 35% 57%,
+            #596846 0 12%,
+            transparent 13%
+        ),
+
+        radial-gradient(
+            ellipse at 65% 73%,
+            #6f7b59 0 12%,
+            transparent 13%
+        );
+
+}
+
+
+/* =========================================================
+   FLOWERS
+========================================================= */
+
+.kwento-flower {
+
+    position: absolute;
+
+    z-index: 1;
+
+    width: 180px;
+
+    height: 180px;
+
+    pointer-events: none;
+
+    opacity: .75;
+
+}
+
+
+.flower-left {
+
+    left: -65px;
+
+    bottom: 160px;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #b89b69 0 5%,
+            transparent 6%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 20%,
+            #f3e6ce 0 13%,
+            transparent 14%
+        ),
+
+        radial-gradient(
+            ellipse at 80% 50%,
+            #f3e6ce 0 13%,
+            transparent 14%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 80%,
+            #f3e6ce 0 13%,
+            transparent 14%
+        ),
+
+        radial-gradient(
+            ellipse at 20% 50%,
+            #f3e6ce 0 13%,
+            transparent 14%
+        );
+
+}
+
+
+.flower-right {
+
+    right: -75px;
+
+    bottom: 40px;
+
+    transform:
+        scale(.85);
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #b89b69 0 5%,
+            transparent 6%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 20%,
+            #f3e6ce 0 13%,
+            transparent 14%
+        ),
+
+        radial-gradient(
+            ellipse at 80% 50%,
+            #f3e6ce 0 13%,
+            transparent 14%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 80%,
+            #f3e6ce 0 13%,
+            transparent 14%
+        ),
+
+        radial-gradient(
+            ellipse at 20% 50%,
+            #f3e6ce 0 13%,
+            transparent 14%
+        );
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.kwento-title {
+
+    position: relative;
+
+    z-index: 5;
+
+    width:
+        min(720px, 100%);
+
+    margin:
+        0 auto 40px;
+
+    text-align: center;
+
+}
+
+
+.section-number {
+
+    font-family:
+        'Cardo',
+        serif;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        5px;
+
+    color:
+        #75674e;
+
+}
+
+
+.kwento-title h1 {
+
+    margin:
+        10px 0 0;
+
+    line-height:
+        .82;
+
+}
+
+
+.kwento-title h1 span {
+
+    display: block;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(
+            2.9rem,
+            10vw,
+            5.6rem
+        );
+
+    font-weight:
+        500;
+
+    color:
+        #606b4f;
+
+}
+
+
+.kwento-title h1 strong {
+
+    display: block;
+
+    font-family:
+        'Allura',
+        cursive;
+
+    font-size:
+        clamp(
+            4.4rem,
+            16vw,
+            7.4rem
+        );
+
+    font-weight:
+        400;
+
+    color:
+        #c46d49;
+
+    transform:
+        rotate(-3deg);
+
+}
+
+
+.title-heart {
+
+    margin:
+        8px auto 2px;
+
+    color:
+        #89764f;
+
+    font-size:
+        23px;
+
+}
+
+
+.our-story {
+
+    font-family:
+        'Cardo',
+        serif;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        4px;
+
+    color:
+        #74654d;
+
+}
+
+
+.kwento-subtitle {
+
+    margin:
+        12px 0 0;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        21px;
+
+    font-style:
+        italic;
+
+    line-height:
+        1.25;
+
+    color:
+        #6d604c;
+
+}
+
+
+/* =========================================================
+   MAIN BOARD
+========================================================= */
+
+.kwento-board {
+
+    position: relative;
+
+    z-index: 4;
+
+    width:
+        min(1100px, 100%);
+
+    margin:
+        0 auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(300px, .65fr);
+
+    gap:
+        35px;
+
+    align-items:
+        start;
+
+}
+
+
+/* =========================================================
+   LEFT STORY PAPER
+========================================================= */
+
+.kwento-paper {
+
+    position: relative;
+
+    padding:
+        35px 30px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7ecd8,
+            #f1dfc1
+        );
+
+    border:
+        1px solid
+        rgba(120,95,57,.15);
+
+    box-shadow:
+        0 20px 45px
+        rgba(76,55,31,.16);
+
+}
+
+
+/* torn top */
+
+.kwento-paper::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -2px;
+
+    right: -2px;
+
+    top: -14px;
+
+    height: 28px;
+
+    background:
+        #f7ecd8;
+
+    clip-path:
+        polygon(
+            0 55%,
+            5% 25%,
+            10% 60%,
+            16% 30%,
+            22% 65%,
+            29% 28%,
+            37% 60%,
+            44% 25%,
+            52% 62%,
+            60% 30%,
+            68% 64%,
+            76% 27%,
+            84% 60%,
+            92% 30%,
+            100% 55%,
+            100% 100%,
+            0 100%
+        );
+
+}
+
+
+/* =========================================================
+   STORY ROW
+========================================================= */
+
+.story-row {
+
+    position: relative;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        58px 1fr;
+
+    gap:
+        16px;
+
+    padding:
+        18px 0;
+
+}
+
+
+.story-row:not(:last-of-type)::after {
+
+    content: "";
+
+    position: absolute;
+
+    left:
+        28px;
+
+    top:
+        82px;
+
+    bottom:
+        -5px;
+
+    border-left:
+        1px dashed
+        rgba(185,102,64,.55);
+
+}
+
+
+/* =========================================================
+   ICONS
+========================================================= */
+
+.story-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        52px;
+
+    height:
+        52px;
+
+    border-radius:
+        50%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        2px solid
+        #f6ead5;
+
+    box-shadow:
+        0 7px 18px
+        rgba(70,50,30,.18);
+
+}
+
+
+.story-icon svg {
+
+    width:
+        28px;
+
+    height:
+        28px;
+
+    fill:
+        none;
+
+    stroke:
+        #fff7e7;
+
+    stroke-width:
+        2;
+
+    stroke-linecap:
+        round;
+
+    stroke-linejoin:
+        round;
+
+}
+
+
+.icon-green {
+
+    background:
+        #74845c;
+
+}
+
+
+.icon-orange {
+
+    background:
+        #ca7548;
+
+}
+
+
+/* =========================================================
+   STORY TEXT
+========================================================= */
+
+.story-label {
+
+    margin-bottom:
+        2px;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        3px;
+
+    color:
+        #9a8058;
+
+}
+
+
+.story-content h2 {
+
+    margin:
+        0 0 7px;
+
+    font-family:
+        'Cardo',
+        serif;
+
+    font-size:
+        16px;
+
+    letter-spacing:
+        1px;
+
+    font-weight:
+        700;
+
+    color:
+        #606a50;
+
+}
+
+
+.story-content p {
+
+    margin:
+        0;
+
+    font-family:
+        'Cardo',
+        serif;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.72;
+
+    color:
+        #5d5648;
+
+}
+
+
+/* =========================================================
+   CLOSING
+========================================================= */
+
+.kwento-closing {
+
+    margin:
+        25px 0 5px;
+
+    padding:
+        20px 15px;
+
+    text-align:
+        center;
+
+    font-family:
+        'Allura',
+        cursive;
+
+    font-size:
+        31px;
+
+    line-height:
+        1.05;
+
+    color:
+        #665f4f;
+
+}
+
+
+.kwento-closing span {
+
+    display:
+        block;
+
+    margin-top:
+        8px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        28px;
+
+    color:
+        #bd704d;
+
+}
+
+
+/* =========================================================
+   RIGHT VISUALS
+========================================================= */
+
+.kwento-visuals {
+
+    position:
+        relative;
+
+    min-height:
+        780px;
+
+}
+
+
+/* old letter behind photos */
+
+.kwento-visuals::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset:
+        15px -20px 70px -20px;
+
+    background:
+
+        repeating-linear-gradient(
+            0deg,
+            rgba(88,69,43,.05) 0,
+            rgba(88,69,43,.05) 1px,
+            transparent 1px,
+            transparent 5px
+        ),
+
+        #dfc79e;
+
+    transform:
+        rotate(2deg);
+
+    box-shadow:
+        0 15px 35px
+        rgba(80,60,35,.10);
+
+    z-index:
+        -1;
+
+}
+
+
+/* =========================================================
+   POLAROIDS
+========================================================= */
+
+.kwento-polaroid {
+
+    position:
+        absolute;
+
+    margin:
+        0;
+
+    width:
+        min(300px, 100%);
+
+    padding:
+        11px 11px 52px;
+
+    background:
+        #faf3e6;
+
+    box-shadow:
+        0 18px 35px
+        rgba(70,50,30,.22);
+
+}
+
+
+.polaroid-image {
+
+    width:
+        100%;
+
+    aspect-ratio:
+        1 / 1;
+
+    overflow:
+        hidden;
+
+    background:
+        #d3c0a0;
+
+}
+
+
+.polaroid-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        block;
+
+    object-fit:
+        cover;
+
+    filter:
+        sepia(.10)
+        saturate(.92);
+
+}
+
+
+.kwento-polaroid figcaption {
+
+    position:
+        absolute;
+
+    left:
+        10px;
+
+    right:
+        10px;
+
+    bottom:
+        12px;
+
+    text-align:
+        center;
+
+    font-family:
+        'Allura',
+        cursive;
+
+    font-size:
+        24px;
+
+    line-height:
+        1.05;
+
+    color:
+        #61594a;
+
+}
+
+
+/* PHOTO 1 — top right */
+
+.photo-one {
+
+    top:
+        20px;
+
+    right:
+        5%;
+
+    transform:
+        rotate(4deg);
+
+}
+
+
+/* PHOTO 2 — lower right */
+
+.photo-two {
+
+    top:
+        410px;
+
+    right:
+        17%;
+
+    transform:
+        rotate(-5deg);
+
+}
+
+
+/* =========================================================
+   HANDWRITTEN LETTER
+========================================================= */
+
+.letter-note {
+
+    position:
+        absolute;
+
+    top:
+        285px;
+
+    right:
+        -2px;
+
+    width:
+        175px;
+
+    min-height:
+        155px;
+
+    padding:
+        25px 15px;
+
+    box-sizing:
+        border-box;
+
+    background:
+        #dfc397;
+
+    font-family:
+        'Allura',
+        cursive;
+
+    font-size:
+        25px;
+
+    line-height:
+        1.15;
+
+    text-align:
+        center;
+
+    color:
+        #655a48;
+
+    transform:
+        rotate(3deg);
+
+    box-shadow:
+        0 12px 25px
+        rgba(70,50,30,.14);
+
+}
+
+
+.letter-note span {
+
+    display:
+        block;
+
+    margin-top:
+        7px;
+
+    font-size:
+        28px;
+
+}
+
+
+/* paper clip */
+
+.letter-note::before {
+
+    content: "";
+
+    position: absolute;
+
+    right:
+        10px;
+
+    top:
+        -15px;
+
+    width:
+        13px;
+
+    height:
+        48px;
+
+    border:
+        2px solid
+        #947b52;
+
+    border-radius:
+        10px;
+
+    transform:
+        rotate(8deg);
+
+}
+
+
+/* =========================================================
+   WAX SEAL
+========================================================= */
+
+.wax-seal {
+
+    position:
+        absolute;
+
+    right:
+        0;
+
+    top:
+        610px;
+
+    width:
+        65px;
+
+    height:
+        65px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        #737b45;
+
+    border:
+        5px solid
+        #9a9b64;
+
+    box-shadow:
+        0 8px 20px
+        rgba(60,50,30,.20);
+
+    color:
+        #ddd4a4;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        27px;
+
+}
+
+
+/* =========================================================
+   FILM STRIP
+========================================================= */
+
+.kwento-film-strip {
+
+    position:
+        relative;
+
+    z-index:
+        6;
+
+    width:
+        min(620px, 94%);
+
+    margin:
+        -10px auto 0;
+
+    padding:
+        14px 16px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        12px;
+
+    background:
+        #272720;
+
+    box-shadow:
+        0 14px 28px
+        rgba(40,30,20,.25);
+
+    transform:
+        rotate(-2deg);
+
+}
+
+
+/* film photo */
+
+.film-photo {
+
+    position:
+        relative;
+
+    height:
+        125px;
+
+    overflow:
+        hidden;
+
+}
+
+
+.film-photo img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    display:
+        block;
+
+}
+
+
+/* film holes */
+
+.film-photo::before,
+.film-photo::after {
+
+    content: "";
+
+    position:
+        absolute;
+
+    left: 0;
+
+    right: 0;
+
+    height: 9px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #eee1ca 0 8px,
+            transparent 8px 17px
+        );
+
+    z-index:
+        2;
+
+}
+
+
+.film-photo::before {
+    top: 0;
+}
+
+
+.film-photo::after {
+    bottom: 0;
+}
+
+
+/* =========================================================
+   NEXT PAGE
+========================================================= */
+
+.kwento-next {
+
+    position:
+        relative;
+
+    z-index:
+        6;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    margin-top:
+        45px;
+
+}
+
+
+.kwento-next a {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    padding:
+        12px 25px;
+
+    border-radius:
+        30px;
+
+    text-decoration:
+        none;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size:
+        12px;
+
+    color:
+        white;
+
+    background:
+        #7e8e65;
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 901px) {
+
+    .kwento-page-content {
+
+        padding:
+            150px 5vw 90px;
+
+    }
+
+    .kwento-title {
+
+        margin-bottom:
+            45px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .kwento-page-content {
+
+        padding:
+            125px 14px 65px;
+
+    }
+
+
+    .kwento-board {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            30px;
+
+    }
+
+
+    /*
+     * On mobile:
+     *
+     * Title
+     * ↓
+     * Photo 1
+     * ↓
+     * Letter
+     * ↓
+     * Story
+     * ↓
+     * Photo 2
+     * ↓
+     * Film strip
+     */
+
+    .kwento-visuals {
+
+        min-height:
+            690px;
+
+        order:
+            -1;
+
+    }
+
+
+    .kwento-paper {
+
+        order:
+            2;
+
+    }
+
+
+    .photo-one {
+
+        left:
+            3%;
+
+        right:
+            auto;
+
+        top:
+            10px;
+
+    }
+
+
+    .photo-two {
+
+        right:
+            3%;
+
+        top:
+            355px;
+
+    }
+
+
+    .letter-note {
+
+        top:
+            250px;
+
+        right:
+            2%;
+
+    }
+
+
+    .wax-seal {
+
+        display:
+            none;
+
+    }
+
+
+    .kwento-film-strip {
+
+        width:
+            92%;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .kwento-page-content {
+
+        padding:
+            115px 10px 55px;
+
+    }
+
+
+    .kwento-title h1 span {
+
+        font-size:
+            3.15rem;
+
+    }
+
+
+    .kwento-title h1 strong {
+
+        font-size:
+            4.8rem;
+
+    }
+
+
+    .kwento-subtitle {
+
+        font-size:
+            19px;
+
+    }
+
+
+    .kwento-paper {
+
+        padding:
+            30px 18px 20px;
+
+    }
+
+
+    .story-row {
+
+        grid-template-columns:
+            48px 1fr;
+
+        gap:
+            11px;
+
+    }
+
+
+    .story-icon {
+
+        width:
+            44px;
+
+        height:
+            44px;
+
+    }
+
+
+    .story-icon svg {
+
+        width:
+            24px;
+
+        height:
+            24px;
+
+    }
+
+
+    .story-row:not(:last-of-type)::after {
+
+        left:
+            23px;
+
+        top:
+            70px;
+
+    }
+
+
+    .story-content h2 {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .story-content p {
+
+        font-size:
+            13px;
+
+        line-height:
+            1.68;
+
+    }
+
+
+    .kwento-closing {
+
+        font-size:
+            28px;
+
+    }
+
+
+    .kwento-visuals {
+
+        min-height:
+            600px;
+
+    }
+
+
+    .kwento-polaroid {
+
+        width:
+            235px;
+
+        padding:
+            9px 9px 45px;
+
+    }
+
+
+    .photo-one {
+
+        left:
+            0;
+
+    }
+
+
+    .photo-two {
+
+        top:
+            310px;
+
+        right:
+            0;
+
+    }
+
+
+    .kwento-polaroid figcaption {
+
+        font-size:
+            20px;
+
+    }
+
+
+    .letter-note {
+
+        top:
+            215px;
+
+        right:
+            0;
+
+        width:
+            145px;
+
+        min-height:
+            125px;
+
+        padding:
+            20px 10px;
+
+        font-size:
+            21px;
+
+    }
+
+
+    .kwento-film-strip {
+
+        width:
+            96%;
+
+        padding:
+            10px;
+
+        gap:
+            7px;
+
+    }
+
+
+    .film-photo {
+
+        height:
+            95px;
+
+    }
+
+}
