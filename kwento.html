@@ -12,6 +12,20 @@
 
     <title>Ang Aming Kwento | Mike & Sharmaine</title>
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&family=Allura&display=swap"
+        rel="stylesheet"
+    >
+
     <link
         rel="stylesheet"
         href="style.css"
@@ -20,193 +34,519 @@
 </head>
 
 
-<body>
-
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
-
-    <header class="website-nav">
-
-        <nav>
-
-            <a href="index.html" class="nav-link">
-                Home
-            </a>
-
-            <a href="kwento.html" class="nav-link active">
-                Ang Aming Kwento
-            </a>
-
-            <a href="detalye.html" class="nav-link">
-                Detalye ng Kasal
-            </a>
-
-            <a href="daloy.html" class="nav-link">
-                Daloy ng Pagdiriwang
-            </a>
-
-            <a href="dress-code.html" class="nav-link">
-                Dress Code
-            </a>
-
-            <a href="rsvp.html" class="nav-link">
-                RSVP
-            </a>
-
-        </nav>
-
-    </header>
+<body class="kwento-page">
 
 
-    <!-- =========================
-         STORY PAGE
-    ========================== -->
+<!-- =========================================
+     NAVIGATION
+========================================= -->
 
-    <main class="story-page">
+<header class="website-nav">
 
-        <section class="story-hero">
+    <nav>
 
-            <p class="story-eyebrow">
-                ANG AMING KWENTO
-            </p>
+        <a
+            href="index.html"
+            class="nav-link"
+        >
+            Home
+        </a>
 
-            <h1 class="story-title">
-                Dalawang Puso,
+        <a
+            href="kwento.html"
+            class="nav-link active"
+        >
+            Ang Aming Kwento
+        </a>
+
+        <a
+            href="detalye.html"
+            class="nav-link"
+        >
+            Detalye ng Kasal
+        </a>
+
+        <a
+            href="daloy.html"
+            class="nav-link"
+        >
+            Daloy ng Pagdiriwang
+        </a>
+
+        <a
+            href="dress-code.html"
+            class="nav-link"
+        >
+            Dress Code
+        </a>
+
+        <a
+            href="rsvp.html"
+            class="nav-link"
+        >
+            RSVP
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================================
+     SCRAPBOOK PAGE
+========================================= -->
+
+<main class="kwento-scrapbook">
+
+
+    <!-- Decorative torn paper layers -->
+
+    <div class="paper-corner paper-corner-left"></div>
+
+    <div class="paper-corner paper-corner-right"></div>
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <section class="kwento-header">
+
+        <p class="kwento-section-number">
+            + SECTION 2 +
+        </p>
+
+        <h1>
+
+            <span>ANG AMING</span>
+
+            <strong>
+                Kwento
+            </strong>
+
+        </h1>
+
+        <div class="kwento-small-divider">
+            ❧
+        </div>
+
+        <p class="kwento-subtitle">
+            Old love letters meets modern romance
+        </p>
+
+    </section>
+
+
+    <!-- =====================================
+         STORY AREA
+    ====================================== -->
+
+    <section class="kwento-layout">
+
+
+        <!-- =================================
+             LEFT — STORY
+        ================================== -->
+
+        <div class="kwento-story">
+
+
+            <!-- STORY 01 -->
+
+            <article class="story-item">
+
+                <div class="story-icon icon-swipe">
+
+                    <svg
+                        viewBox="0 0 64 64"
+                        aria-hidden="true"
+                    >
+
+                        <rect
+                            x="20"
+                            y="9"
+                            width="24"
+                            height="46"
+                            rx="5"
+                        />
+
+                        <path
+                            d="M27 45h10"
+                        />
+
+                        <path
+                            d="M32 18
+                               c-4-6-12-2-9 4
+                               c3 5 9 8 9 8
+                               s6-3 9-8
+                               c3-6-5-10-9-4z"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <div class="story-copy">
+
+                    <span class="story-number">
+                        01
+                    </span>
+
+                    <h2>
+                        Kung Paano Nagsimula
+                    </h2>
+
+                    <p>
+                        Sa panahon ng mga swipe, notifications,
+                        at simpleng “Hi,” may mga kwentong
+                        nagsisimula sa hindi inaasahang paraan.
+                        Para kina Sharmaine at Mike, isang simpleng
+                        pag-match sa dating app ang naging simula
+                        ng isang pag-iibigang hindi nila akalaing
+                        hahantong sa habang-buhay.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- STORY 02 -->
+
+            <article class="story-item">
+
+                <div class="story-icon icon-chat">
+
+                    <svg
+                        viewBox="0 0 64 64"
+                        aria-hidden="true"
+                    >
+
+                        <path
+                            d="M11 15
+                               h42
+                               a5 5 0 0 1 5 5
+                               v22
+                               a5 5 0 0 1-5 5
+                               H31
+                               L20 55
+                               v-8
+                               h-9
+                               a5 5 0 0 1-5-5
+                               V20
+                               a5 5 0 0 1 5-5z"
+                        />
+
+                        <path
+                            d="M19 29h26"
+                        />
+
+                        <path
+                            d="M19 37h17"
+                        />
+
+                        <path
+                            d="M42 41
+                               c-4-5-11 0-7 5
+                               c3 4 7 6 7 6
+                               s4-2 7-6
+                               c4-5-3-10-7-5z"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <div class="story-copy">
+
+                    <span class="story-number">
+                        02
+                    </span>
+
+                    <h2>
+                        Sa Likod ng Screen
+                    </h2>
+
+                    <p>
+                        Mula sa magdamagang kwentuhan at walang
+                        sawang tawanan, unti-unting nakilala nila
+                        ang isa’t isa — hindi lamang sa likod ng
+                        screen, kundi sa mga pangarap, takot, at
+                        mga bagay na tunay na mahalaga. Sa bawat
+                        mensahe, tawag, at pagkikita, mas lalong
+                        naging malinaw na ang kanilang pagtatagpo
+                        ay hindi basta pagkakataon lamang.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- STORY 03 -->
+
+            <article class="story-item">
+
+                <div class="story-icon icon-leaf">
+
+                    <svg
+                        viewBox="0 0 64 64"
+                        aria-hidden="true"
+                    >
+
+                        <path
+                            d="M32 53V21"
+                        />
+
+                        <path
+                            d="M32 34
+                               C21 34 14 27 14 18
+                               C24 18 32 24 32 34z"
+                        />
+
+                        <path
+                            d="M32 42
+                               C43 42 50 35 50 26
+                               C40 26 32 32 32 42z"
+                        />
+
+                        <path
+                            d="M32 25
+                               C25 25 20 20 20 13
+                               C27 13 32 17 32 25z"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <div class="story-copy">
+
+                    <span class="story-number">
+                        03
+                    </span>
+
+                    <h2>
+                        Ang Pagpili sa Isa’t Isa
+                    </h2>
+
+                    <p>
+                        Magkaiba man ang kanilang personalidad,
+                        iisa naman ang direksyong piniling
+                        tahakin: ang buhay na binuo sa pagmamahal,
+                        pag-unawa, at pagpili sa isa’t isa
+                        araw-araw. Sa kanilang pagkakaiba,
+                        natagpuan nila ang balanse. Sa kanilang
+                        pagkakatugma, natagpuan nila ang tahanan.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- STORY 04 -->
+
+            <article class="story-item">
+
+                <div class="story-icon icon-family">
+
+                    <svg
+                        viewBox="0 0 64 64"
+                        aria-hidden="true"
+                    >
+
+                        <circle
+                            cx="32"
+                            cy="18"
+                            r="6"
+                        />
+
+                        <circle
+                            cx="18"
+                            cy="25"
+                            r="5"
+                        />
+
+                        <circle
+                            cx="46"
+                            cy="25"
+                            r="5"
+                        />
+
+                        <path
+                            d="M22 45
+                               c0-8 5-13 10-13
+                               s10 5 10 13"
+                        />
+
+                        <path
+                            d="M9 45
+                               c0-6 4-10 9-10
+                               s9 4 9 10"
+                        />
+
+                        <path
+                            d="M37 45
+                               c0-6 4-10 9-10
+                               s9 4 9 10"
+                        />
+
+                        <path
+                            d="M27 53
+                               c3-4 7-4 10 0"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <div class="story-copy">
+
+                    <span class="story-number">
+                        04
+                    </span>
+
+                    <h2>
+                        At Nauwi sa Forever
+                    </h2>
+
+                    <p>
+                        Ngayon, sa harap ng kanilang mga mahal
+                        sa buhay, pinipili nilang simulan ang
+                        panibagong yugto ng kanilang kwento —
+                        isang kwentong nagsimula sa isang simpleng
+                        swipe, ngunit nauwi sa isang pag-ibig
+                        na panghabambuhay.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- =================================
+             RIGHT — PHOTO SCRAPBOOK
+        ================================== -->
+
+        <aside class="kwento-gallery">
+
+
+            <!-- PHOTO 1 -->
+
+            <figure class="polaroid polaroid-one">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="images/kwento-photo-1.jpg"
+                        alt="Mike and Sharmaine"
+                    >
+
+                </div>
+
+                <figcaption>
+                    It started with a simple “Hi.”
+                </figcaption>
+
+            </figure>
+
+
+            <!-- PHOTO 2 -->
+
+            <figure class="polaroid polaroid-two">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="images/kwento-photo-2.jpg"
+                        alt="Mike and Sharmaine"
+                    >
+
+                </div>
+
+                <figcaption>
+                    You, always.
+                </figcaption>
+
+            </figure>
+
+
+            <!-- HANDWRITTEN NOTE -->
+
+            <div class="love-note">
+
+                Every chapter
                 <br>
-                Isang Tahanan
-            </h1>
+                with you is
+                <br>
+                my favorite.
 
-            <div class="hero-divider">
-
-                <span>✦</span>
-
-            </div>
-
-            <p class="story-intro">
-
-                “Sa bawat kuwento ng pag-ibig,
-                may isang tahanang pinipiling buuin.”
-
-            </p>
-
-        </section>
-
-
-        <!-- =========================
-             STORY CONTENT
-        ========================== -->
-
-        <section class="story-content">
-
-            <div class="story-block">
-
-                <p class="story-number">
-                    01
-                </p>
-
-                <h2>
-                    Bago ang “I Do”
-                </h2>
-
-                <p>
-
-                    Bago ang mga sumpaan, bago ang “I Do,”
-                    may dalawang pusong piniling sabayan ang
-                    isa’t isa sa bawat yugto ng buhay.
-
-                </p>
+                <span>
+                    ♡
+                </span>
 
             </div>
 
 
-            <div class="story-divider">
-                ✦
-            </div>
+            <!-- FILM STRIP DECORATION -->
 
+            <div class="film-strip">
 
-            <div class="story-block">
-
-                <p class="story-number">
-                    02
-                </p>
-
-                <h2>
-                    Mga Kuwentong Sabay Naming Hinabi
-                </h2>
-
-                <p>
-
-                    Mula sa simpleng tawanan, mahahabang
-                    kwentuhan, at mga pangarap na sabay naming
-                    hinabi — narito kami ngayon, handang piliin
-                    ang isa’t isa araw-araw at habang buhay.
-
-                </p>
+                <span></span>
+                <span></span>
+                <span></span>
 
             </div>
 
+        </aside>
 
-            <div class="story-divider">
-                ✦
-            </div>
-
-
-            <div class="story-block">
-
-                <p class="story-number">
-                    03
-                </p>
-
-                <h2>
-                    At Ngayon...
-                </h2>
-
-                <p>
-
-                    Kasama ng aming mga pamilya at mga mahal
-                    sa buhay, malugod namin kayong inaanyayahan
-                    na maging bahagi ng pinakasimulang kabanata
-                    ng aming forever.
-
-                </p>
-
-            </div>
-
-        </section>
+    </section>
 
 
-        <!-- =========================
-             CLOSING
-        ========================== -->
+    <!-- =====================================
+         CLOSING
+    ====================================== -->
 
-        <section class="story-closing">
+    <section class="kwento-ending">
 
-            <img
-                src="images/monogram.svg"
-                alt="Mike & Sharmaine Monogram"
-                class="story-monogram"
-            >
+        <p>
+            Dahil minsan, ang forever ay nagsisimula rin
+            sa isang “Hi.”
+        </p>
 
-            <h2>
-                Mike & Sharmaine
-            </h2>
+        <span>
+            ♡
+        </span>
 
-            <p>
-                Enero 15, 2027
-            </p>
+    </section>
 
-            <a
-                href="detalye.html"
-                class="hero-button"
-            >
-                Detalye ng Kasal
-            </a>
 
-        </section>
+    <!-- =====================================
+         NEXT PAGE
+    ====================================== -->
 
-    </main>
+    <div class="kwento-next">
 
+        <a
+            href="detalye.html"
+            class="kwento-next-button"
+        >
+            Detalye ng Kasal
+            <span>→</span>
+        </a>
+
+    </div>
+
+
+</main>
 
 </body>
 
