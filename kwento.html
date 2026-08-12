@@ -155,47 +155,22 @@
            This prevents the browser from stretching one
            small image over the entire long page.
         ====================================================== */
+body.kwento-page .kwento-page-content {
 
-        body.kwento-page .kwento-page-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
 
-            position: relative;
+    background-color: #ead8b8;
 
-            width: 100%;
-            max-width: 100%;
+    background-image: url("images/kwento-background.png");
 
-            min-height: 100vh;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-attachment: scroll;
 
-            overflow-x: hidden;
-
-            isolation: isolate;
-
-            background-color: #ead8b8;
-
-            background-image:
-                url("images/kwento-background.png");
-
-            /*
-             * IMPORTANT:
-             * Width follows the page.
-             * Height is calculated automatically.
-             * This preserves the PNG's aspect ratio.
-             */
-            background-size:
-                100% auto;
-
-            background-position:
-                center top;
-
-            /*
-             * Repeat vertically so the long page
-             * continues to have the artwork.
-             */
-            background-repeat:
-                repeat-y;
-
-            background-attachment:
-                scroll;
-        }
+}
 
 
         /* =====================================================
