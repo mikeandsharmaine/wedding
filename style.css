@@ -4035,3 +4035,1118 @@ textarea{
     }
 
 }
+/* =========================================================
+   ANG AMING KWENTO — SCRAPBOOK EDITION
+   ========================================================= */
+
+.kwento-page {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(239, 222, 205, 0.90),
+            rgba(239, 222, 205, 0.96)
+        );
+
+    color: #5f5a4c;
+}
+
+
+/* =========================================================
+   SCRAPBOOK BACKGROUND
+   ========================================================= */
+
+.kwento-scrapbook {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    padding:
+        150px
+        5vw
+        100px;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(126, 142, 101, 0.15),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 88% 25%,
+            rgba(216, 89, 47, 0.10),
+            transparent 22%
+        ),
+
+        linear-gradient(
+            135deg,
+            #efe0ca,
+            #f4e7d5 45%,
+            #e8dcc6
+        );
+
+}
+
+
+/* Paper texture */
+
+.kwento-scrapbook::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .28;
+
+    pointer-events: none;
+
+    background-image:
+
+        radial-gradient(
+            rgba(100, 80, 50, .12) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        7px 7px;
+
+}
+
+
+/* =========================================================
+   DECORATIVE PAPER CORNERS
+   ========================================================= */
+
+.paper-corner {
+
+    position: absolute;
+
+    width: 280px;
+    height: 180px;
+
+    opacity: .75;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(126,142,101,.45),
+            rgba(239,222,205,.05)
+        );
+
+}
+
+
+.paper-corner-left {
+
+    top: 0;
+    left: -90px;
+
+    transform:
+        rotate(-12deg);
+}
+
+
+.paper-corner-right {
+
+    top: 20px;
+    right: -90px;
+
+    transform:
+        rotate(12deg);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.kwento-header {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(900px, 100%);
+
+    margin:
+        0 auto
+        55px;
+
+    text-align: center;
+}
+
+
+.kwento-section-number {
+
+    margin: 0 0 10px;
+
+    font-family:
+        'Cardo',
+        serif;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    color: #766b55;
+}
+
+
+.kwento-header h1 {
+
+    margin: 0;
+
+    line-height: .88;
+
+}
+
+
+.kwento-header h1 span {
+
+    display: block;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(
+            3rem,
+            7vw,
+            6.2rem
+        );
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+
+    color:
+        #687655;
+}
+
+
+.kwento-header h1 strong {
+
+    display: block;
+
+    margin-top: -8px;
+
+    font-family:
+        'Allura',
+        cursive;
+
+    font-size:
+        clamp(
+            4rem,
+            9vw,
+            7.5rem
+        );
+
+    font-weight: 400;
+
+    color:
+        #c66f48;
+
+    transform:
+        rotate(-3deg);
+}
+
+
+.kwento-small-divider {
+
+    margin:
+        15px auto 5px;
+
+    color:
+        #9b8b67;
+
+    font-size: 22px;
+}
+
+
+.kwento-subtitle {
+
+    margin: 0;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    color:
+        #776f5b;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+.kwento-layout {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(1280px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(350px, .85fr);
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   STORY COLUMN
+   ========================================================= */
+
+.kwento-story {
+
+    padding:
+        35px 10px 20px;
+}
+
+
+/* Each story item */
+
+.story-item {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        72px
+        1fr;
+
+    gap: 20px;
+
+    padding:
+        24px
+        0;
+
+}
+
+
+/* Dotted line */
+
+.story-item:not(:last-child)::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 35px;
+
+    top: 100px;
+
+    bottom: 0;
+
+    width: 1px;
+
+    border-left:
+        1px dashed
+        rgba(126, 142, 101, .45);
+
+}
+
+
+/* =========================================================
+   STORY ICONS
+   ========================================================= */
+
+.story-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.55);
+
+    box-shadow:
+        0 8px 20px
+        rgba(72,60,35,.12);
+
+}
+
+
+.story-icon svg {
+
+    width: 34px;
+    height: 34px;
+
+    fill: none;
+
+    stroke:
+        #f8efe2;
+
+    stroke-width: 2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+}
+
+
+.icon-swipe {
+
+    background:
+        #7e8e65;
+}
+
+
+.icon-chat {
+
+    background:
+        #d58a58;
+}
+
+
+.icon-leaf {
+
+    background:
+        #788462;
+}
+
+
+.icon-family {
+
+    background:
+        #c77650;
+}
+
+
+/* =========================================================
+   STORY COPY
+   ========================================================= */
+
+.story-copy {
+
+    padding-right: 10px;
+
+}
+
+
+.story-number {
+
+    display: block;
+
+    margin-bottom: 2px;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color:
+        #a1845c;
+}
+
+
+.story-copy h2 {
+
+    margin:
+        0 0 9px;
+
+    font-family:
+        'Cardo',
+        serif;
+
+    font-size:
+        clamp(
+            1.45rem,
+            2.4vw,
+            2rem
+        );
+
+    font-weight: 700;
+
+    color:
+        #606b4d;
+}
+
+
+.story-copy p {
+
+    margin: 0;
+
+    font-family:
+        'Cardo',
+        serif;
+
+    font-size:
+        16px;
+
+    line-height:
+        1.75;
+
+    color:
+        #655e50;
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.kwento-gallery {
+
+    position: relative;
+
+    min-height: 750px;
+
+}
+
+
+/* =========================================================
+   POLAROIDS
+   ========================================================= */
+
+.polaroid {
+
+    position: absolute;
+
+    margin: 0;
+
+    width:
+        min(330px, 75%);
+
+    padding:
+        13px
+        13px
+        55px;
+
+    background:
+        #f8f2e8;
+
+    box-shadow:
+        0 18px 35px
+        rgba(70,55,35,.18);
+
+}
+
+
+.photo-frame {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    background:
+        #d9cbb6;
+
+}
+
+
+.photo-frame img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter:
+        sepia(.16)
+        saturate(.88)
+        contrast(.95);
+
+}
+
+
+.polaroid figcaption {
+
+    position: absolute;
+
+    left: 15px;
+    right: 15px;
+    bottom: 12px;
+
+    text-align: center;
+
+    font-family:
+        'Allura',
+        cursive;
+
+    font-size: 27px;
+
+    line-height: 1;
+
+    color:
+        #635b4d;
+}
+
+
+/* First photo */
+
+.polaroid-one {
+
+    top: 10px;
+    right: 5%;
+
+    transform:
+        rotate(4deg);
+}
+
+
+/* Second photo */
+
+.polaroid-two {
+
+    top: 390px;
+    right: 25%;
+
+    transform:
+        rotate(-6deg);
+
+}
+
+
+/* =========================================================
+   LOVE NOTE
+   ========================================================= */
+
+.love-note {
+
+    position: absolute;
+
+    top: 230px;
+    right: -5px;
+
+    width: 190px;
+
+    padding:
+        25px 18px;
+
+    font-family:
+        'Allura',
+        cursive;
+
+    font-size: 26px;
+
+    line-height: 1.1;
+
+    text-align: center;
+
+    color:
+        #5f5a4c;
+
+    background:
+        rgba(247, 235, 207, .88);
+
+    transform:
+        rotate(-3deg);
+
+    box-shadow:
+        0 10px 25px
+        rgba(80,60,40,.10);
+}
+
+
+.love-note span {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color:
+        #c66f48;
+
+    font-size: 28px;
+}
+
+
+/* =========================================================
+   FILM STRIP
+   ========================================================= */
+
+.film-strip {
+
+    position: absolute;
+
+    bottom: 35px;
+    right: 3%;
+
+    width: 330px;
+
+    height: 100px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+    padding:
+        12px 10px;
+
+    background:
+        #292922;
+
+    transform:
+        rotate(-2deg);
+
+    box-shadow:
+        0 10px 25px
+        rgba(40,30,20,.18);
+}
+
+
+.film-strip span {
+
+    position: relative;
+
+    display: block;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8d7757,
+            #c8a875
+        );
+
+    overflow: hidden;
+}
+
+
+.film-strip span::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.30);
+
+}
+
+
+/* =========================================================
+   ENDING
+   ========================================================= */
+
+.kwento-ending {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(850px, 90%);
+
+    margin:
+        35px auto 0;
+
+    padding:
+        40px 20px 10px;
+
+    text-align: center;
+}
+
+
+.kwento-ending p {
+
+    margin: 0;
+
+    font-family:
+        'Allura',
+        cursive;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.2rem
+        );
+
+    color:
+        #687655;
+
+}
+
+
+.kwento-ending span {
+
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 30px;
+
+    color:
+        #c66f48;
+}
+
+
+/* =========================================================
+   NEXT PAGE BUTTON
+   ========================================================= */
+
+.kwento-next {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: center;
+
+    padding:
+        30px 0 20px;
+}
+
+
+.kwento-next-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        13px 28px;
+
+    border-radius: 40px;
+
+    text-decoration: none;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: .5px;
+
+    color:
+        #fff;
+
+    background:
+        #7e8e65;
+
+    box-shadow:
+        0 10px 25px
+        rgba(80,90,60,.18);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.kwento-next-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(80,90,60,.25);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .kwento-scrapbook {
+
+        padding:
+            125px
+            22px
+            70px;
+
+    }
+
+
+    .kwento-layout {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 30px;
+
+    }
+
+
+    .kwento-gallery {
+
+        min-height:
+            650px;
+
+        order: -1;
+
+    }
+
+
+    .polaroid {
+
+        width:
+            280px;
+
+    }
+
+
+    .polaroid-one {
+
+        left: 5%;
+        right: auto;
+
+    }
+
+
+    .polaroid-two {
+
+        right: 4%;
+        top: 320px;
+
+    }
+
+
+    .love-note {
+
+        display: none;
+
+    }
+
+
+    .film-strip {
+
+        bottom: 5px;
+
+        right: 50%;
+
+        transform:
+            translateX(50%)
+            rotate(-2deg);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .kwento-scrapbook {
+
+        padding:
+            110px
+            16px
+            60px;
+
+    }
+
+
+    .kwento-header {
+
+        margin-bottom:
+            25px;
+
+    }
+
+
+    .kwento-header h1 span {
+
+        font-size:
+            3rem;
+
+    }
+
+
+    .kwento-header h1 strong {
+
+        font-size:
+            4.5rem;
+
+    }
+
+
+    .kwento-subtitle {
+
+        font-size:
+            17px;
+
+    }
+
+
+    .kwento-story {
+
+        padding:
+            10px 0;
+
+    }
+
+
+    .story-item {
+
+        grid-template-columns:
+            54px
+            1fr;
+
+        gap: 14px;
+
+        padding:
+            22px 0;
+
+    }
+
+
+    .story-icon {
+
+        width: 48px;
+        height: 48px;
+
+    }
+
+
+    .story-icon svg {
+
+        width: 26px;
+        height: 26px;
+
+    }
+
+
+    .story-item:not(:last-child)::after {
+
+        left: 24px;
+
+        top: 80px;
+
+    }
+
+
+    .story-copy h2 {
+
+        font-size:
+            1.35rem;
+
+    }
+
+
+    .story-copy p {
+
+        font-size:
+            15px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    .kwento-gallery {
+
+        min-height:
+            560px;
+
+    }
+
+
+    .polaroid {
+
+        width:
+            230px;
+
+        padding:
+            9px
+            9px
+            42px;
+
+    }
+
+
+    .polaroid-one {
+
+        left: 0;
+
+    }
+
+
+    .polaroid-two {
+
+        top: 275px;
+
+        right: 0;
+
+    }
+
+
+    .polaroid figcaption {
+
+        bottom: 8px;
+
+        font-size:
+            21px;
+
+    }
+
+
+    .film-strip {
+
+        width:
+            240px;
+
+        height:
+            75px;
+
+    }
+
+
+    .kwento-ending {
+
+        padding-top:
+            25px;
+
+    }
+
+}
