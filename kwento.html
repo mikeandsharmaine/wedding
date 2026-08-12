@@ -2300,242 +2300,130 @@
 
 </style>
 
-    <!-- =====================================================
+   <!-- =====================================================
      ANG AMING KWENTO - FLORAL PAPER BACKGROUND
-     
      KWENTO PAGE ONLY
-     This does NOT affect RSVP or other pages.
+     DOES NOT AFFECT RSVP
 ===================================================== -->
 
 <style>
 
-    /* =====================================================
-       MAIN KWENTO BACKGROUND
-    ===================================================== */
-
-    <style>
-
-/* =====================================================
-   ANG AMING KWENTO
-   FULL-PAGE BACKGROUND
-   Does NOT affect RSVP
-===================================================== */
-
-body.kwento-page .kwento-page-content {
-    background-color: #ead8b8 !important;
-
-    background-image: url("images/kwento-background.png") !important;
-
-    /* Make ONE background fill the entire Kwento page */
-    background-size: 100% 100% !important;
-
-    background-position: center top !important;
-
-    /* IMPORTANT: do not repeat the artwork */
-    background-repeat: no-repeat !important;
-
-    background-attachment: scroll !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-
-    overflow-x: hidden !important;
-}
-
-
-/* Remove the old decorative background elements */
-body.kwento-page .kwento-page-content > .kwento-leaf,
-body.kwento-page .kwento-page-content > .kwento-flower {
-    display: none !important;
-}
-
-
-/* Remove old generated background texture */
-body.kwento-page .kwento-page-content::before {
-    content: none !important;
-    display: none !important;
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 700px) {
-
-    body.kwento-page {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-    }
+    /* ================================================
+       KWENTO PAGE BACKGROUND
+    ================================================ */
 
     body.kwento-page .kwento-page-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
 
-        /* SAME SINGLE BACKGROUND */
-        background-size: 100% 100% !important;
+        background-color: #ead8b8;
 
-        background-position: center top !important;
+        background-image:
+            url("images/kwento-background.png");
 
-        background-repeat: no-repeat !important;
+        background-position:
+            center top;
 
-        background-attachment: scroll !important;
+        background-repeat:
+            no-repeat;
 
-        overflow-x: hidden !important;
-    }
-}
+        background-size:
+            100% 100%;
 
+        background-attachment:
+            scroll;
 
-/* =====================================================
-   SMALL PHONES
-===================================================== */
-
-@media (max-width: 390px) {
-
-    body.kwento-page .kwento-page-content {
-        background-size: 100% 100% !important;
-        background-position: center top !important;
-        background-repeat: no-repeat !important;
-    }
-
-}
-
-</style>
-
-
-    /* =====================================================
-       REMOVE THE OLD ARTIFICIAL LEAVES/FLOWERS
-       
-       The new background image already contains:
-       - leaves
-       - flowers
-       - old paper
-       - torn paper
-       - lace
-    ===================================================== */
-
-    body.kwento-page .kwento-page-content > .kwento-leaf,
-    body.kwento-page .kwento-page-content > .kwento-flower {
-
-        display: none !important;
-
+        overflow-x: hidden;
     }
 
 
-    /* =====================================================
-       REMOVE THE OLD FAINT TEXT BACKGROUND
-       
-       We don't want the old generated text competing
-       with the new background artwork.
-    ===================================================== */
+    /* ================================================
+       REMOVE OLD KWENTO BACKGROUND DECORATIONS
+    ================================================ */
 
     body.kwento-page .kwento-page-content::before {
-
         content: none !important;
-
         display: none !important;
-
     }
 
-
-    /* =====================================================
-       KEEP ONLY A VERY SUBTLE PAPER TEXTURE
-    ===================================================== */
 
     body.kwento-page .kwento-page-content::after {
-
-        opacity: 0.10 !important;
-
-        pointer-events: none;
-
+        content: none !important;
+        display: none !important;
     }
 
 
-    /* =====================================================
-       DESKTOP
-    ===================================================== */
-
-    @media (min-width: 701px) {
-
-        body.kwento-page .kwento-page-content {
-
-            background-size:
-                100% auto !important;
-
-            background-position:
-                center top !important;
-
-            background-repeat:
-                repeat-y !important;
-
-        }
-
+    body.kwento-page .kwento-leaf,
+    body.kwento-page .kwento-flower {
+        display: none !important;
     }
 
 
-    /* =====================================================
+    /* ================================================
+       PREVENT HORIZONTAL SCROLL
+    ================================================ */
+
+    body.kwento-page {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* ================================================
        MOBILE
-       
-       IMPORTANT:
-       The background scales to the phone width.
-       It does NOT create horizontal scrolling.
-    ===================================================== */
+    ================================================ */
 
     @media (max-width: 700px) {
 
         body.kwento-page {
-
-            width: 100% !important;
-
-            max-width: 100% !important;
-
-            overflow-x: hidden !important;
-
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
 
         body.kwento-page .kwento-page-content {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
 
-            width: 100% !important;
+            /*
+             * IMPORTANT:
+             * Stretch the ONE background artwork
+             * across the entire Kwento page.
+             */
+            background-size: 100% 100%;
 
-            max-width: 100% !important;
+            background-position: center top;
 
-            min-width: 0 !important;
+            background-repeat: no-repeat;
 
-            overflow-x: hidden !important;
+            background-attachment: scroll;
 
-            background-size:
-                100% auto !important;
-
-            background-position:
-                center top !important;
-
-            background-repeat:
-                repeat-y !important;
-
-            background-attachment:
-                scroll !important;
-
+            overflow-x: hidden;
         }
 
     }
 
 
-    /* =====================================================
+    /* ================================================
        SMALL PHONES
-    ===================================================== */
+    ================================================ */
 
     @media (max-width: 390px) {
 
         body.kwento-page .kwento-page-content {
 
             background-size:
-                100% auto !important;
+                100% 100%;
 
             background-position:
-                center top !important;
+                center top;
+
+            background-repeat:
+                no-repeat;
 
         }
 
