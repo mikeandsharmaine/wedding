@@ -156,7 +156,6 @@
            small image over the entire long page.
         ====================================================== */
 body.kwento-page .kwento-page-content {
-
     width: 100%;
     max-width: 100%;
     min-width: 0;
@@ -165,10 +164,11 @@ body.kwento-page .kwento-page-content {
 
     background-image: url("images/kwento-background.png");
 
+    background-size: 100% auto;
     background-position: center top;
     background-repeat: no-repeat;
-    background-attachment: scroll;
 
+    overflow-x: hidden;
 }
 
 
