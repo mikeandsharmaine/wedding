@@ -12,9 +12,8 @@
 
     <title>Ang Aming Kwento | Mike & Sharmaine</title>
 
-    <!-- =====================================
-         FONTS
-    ====================================== -->
+
+    <!-- Fonts -->
 
     <link
         rel="preconnect"
@@ -28,7 +27,7 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&family=Allura&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Allura&family=Cardo:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap"
         rel="stylesheet"
     >
 
@@ -43,53 +42,38 @@
 <body class="kwento-page">
 
 
-<!-- =========================================
+<!-- =====================================================
      NAVIGATION
-========================================= -->
+===================================================== -->
 
 <header class="website-nav">
 
     <nav>
 
-        <a
-            href="index.html"
-            class="nav-link"
-        >
-            Home
+        <a href="index.html">
+            HOME
         </a>
 
         <a
             href="kwento.html"
-            class="nav-link active"
+            class="active"
         >
-            Ang Aming Kwento
+            ANG AMING KWENTO
         </a>
 
-        <a
-            href="detalye.html"
-            class="nav-link"
-        >
-            Detalye ng Kasal
+        <a href="detalye.html">
+            DETALYE NG KASAL
         </a>
 
-        <a
-            href="daloy.html"
-            class="nav-link"
-        >
-            Daloy ng Pagdiriwang
+        <a href="daloy.html">
+            DALOY NG PAGDIRIWANG
         </a>
 
-        <a
-            href="dress-code.html"
-            class="nav-link"
-        >
-            Dress Code
+        <a href="dress-code.html">
+            DRESS CODE
         </a>
 
-        <a
-            href="rsvp.html"
-            class="nav-link"
-        >
+        <a href="rsvp.html">
             RSVP
         </a>
 
@@ -98,26 +82,40 @@
 </header>
 
 
-<!-- =========================================
-     STORY PAGE
-========================================= -->
 
-<main class="kwento-scrapbook">
+<!-- =====================================================
+     PAGE
+===================================================== -->
+
+<main class="kwento-page-content">
 
 
-    <!-- =====================================
+    <!-- Decorative scrapbook background -->
+
+    <div class="kwento-leaf leaf-left"></div>
+
+    <div class="kwento-leaf leaf-right"></div>
+
+    <div class="kwento-flower flower-left"></div>
+
+    <div class="kwento-flower flower-right"></div>
+
+
+    <!-- =================================================
          HEADER
-    ====================================== -->
+    ================================================= -->
 
-    <section class="kwento-header">
+    <section class="kwento-title">
 
-        <p class="kwento-section-number">
+        <div class="section-number">
             + SECTION 2 +
-        </p>
+        </div>
 
         <h1>
 
-            <span>ANG AMING</span>
+            <span>
+                ANG AMING
+            </span>
 
             <strong>
                 Kwento
@@ -125,60 +123,71 @@
 
         </h1>
 
-        <div class="kwento-small-divider">
+
+        <div class="title-heart">
             ♡
         </div>
 
+
+        <div class="our-story">
+            + OUR STORY +
+        </div>
+
+
         <p class="kwento-subtitle">
-            Mga Lumang Liham, Makabagong Pagmamahalan
+
+            Mga Lumang Liham,
+            <br>
+            Makabagong Pagmamahalan
+
         </p>
 
     </section>
 
 
-    <!-- =====================================
-         MAIN CONTENT
-    ====================================== -->
 
-    <section class="kwento-layout">
+    <!-- =================================================
+         MAIN SCRAPBOOK
+    ================================================= -->
+
+    <section class="kwento-board">
 
 
-        <!-- =================================
-             LEFT STORY COLUMN
-        ================================== -->
+        <!-- =================================================
+             LEFT STORY PAPER
+        ================================================= -->
 
-        <div class="kwento-story">
+        <div class="kwento-paper">
 
 
             <!-- STORY 01 -->
 
-            <article class="story-item">
+            <article class="story-row">
 
-                <div class="story-icon icon-swipe">
+                <div class="story-icon icon-green">
 
                     <svg
                         viewBox="0 0 64 64"
-                        aria-hidden="true"
                     >
 
                         <rect
                             x="20"
-                            y="9"
+                            y="8"
                             width="24"
-                            height="46"
+                            height="48"
                             rx="5"
                         />
 
                         <path
-                            d="M27 45h10"
+                            d="M28 46h8"
                         />
 
                         <path
-                            d="M32 18
-                               c-4-6-12-2-9 4
-                               c3 5 9 8 9 8
-                               s6-3 9-8
-                               c3-6-5-10-9-4z"
+                            d="M32 19
+                            c-4-6-12-2-9 4
+                            c2 5 9 8 9 8
+                            s7-3 9-8
+                            c3-6-5-10-9-4z"
                         />
 
                     </svg>
@@ -186,14 +195,14 @@
                 </div>
 
 
-                <div class="story-copy">
+                <div class="story-content">
 
-                    <span class="story-number">
+                    <div class="story-label">
                         01
-                    </span>
+                    </div>
 
                     <h2>
-                        Kung Paano Nagsimula
+                        KUNG PAANO NAGSIMULA
                     </h2>
 
                     <p>
@@ -211,46 +220,46 @@
             </article>
 
 
+
             <!-- STORY 02 -->
 
-            <article class="story-item">
+            <article class="story-row">
 
-                <div class="story-icon icon-chat">
+                <div class="story-icon icon-orange">
 
                     <svg
                         viewBox="0 0 64 64"
-                        aria-hidden="true"
                     >
 
                         <path
-                            d="M11 15
-                               h42
-                               a5 5 0 0 1 5 5
-                               v22
-                               a5 5 0 0 1-5 5
-                               H31
-                               L20 55
-                               v-8
-                               h-9
-                               a5 5 0 0 1-5-5
-                               V20
-                               a5 5 0 0 1 5-5z"
+                            d="M10 14
+                            h44
+                            a5 5 0 0 1 5 5
+                            v22
+                            a5 5 0 0 1-5 5
+                            H31
+                            L20 55
+                            v-9
+                            h-10
+                            a5 5 0 0 1-5-5
+                            V19
+                            a5 5 0 0 1 5-5z"
                         />
 
                         <path
-                            d="M19 29h26"
+                            d="M19 28h25"
                         />
 
                         <path
-                            d="M19 37h17"
+                            d="M19 36h16"
                         />
 
                         <path
-                            d="M42 41
-                               c-4-5-11 0-7 5
-                               c3 4 7 6 7 6
-                               s4-2 7-6
-                               c4-5-3-10-7-5z"
+                            d="M44 40
+                            c-4-5-11 0-7 5
+                            c3 4 7 6 7 6
+                            s4-2 7-6
+                            c4-5-3-10-7-5z"
                         />
 
                     </svg>
@@ -258,14 +267,14 @@
                 </div>
 
 
-                <div class="story-copy">
+                <div class="story-content">
 
-                    <span class="story-number">
+                    <div class="story-label">
                         02
-                    </span>
+                    </div>
 
                     <h2>
-                        Sa Likod ng Screen
+                        SA LIKOD NG SCREEN
                     </h2>
 
                     <p>
@@ -284,37 +293,37 @@
             </article>
 
 
+
             <!-- STORY 03 -->
 
-            <article class="story-item">
+            <article class="story-row">
 
-                <div class="story-icon icon-leaf">
+                <div class="story-icon icon-green">
 
                     <svg
                         viewBox="0 0 64 64"
-                        aria-hidden="true"
                     >
 
                         <path
-                            d="M32 53V21"
+                            d="M32 54V20"
                         />
 
                         <path
                             d="M32 34
-                               C21 34 14 27 14 18
-                               C24 18 32 24 32 34z"
+                            C21 34 14 27 14 18
+                            C24 18 32 24 32 34z"
                         />
 
                         <path
-                            d="M32 42
-                               C43 42 50 35 50 26
-                               C40 26 32 32 32 42z"
+                            d="M32 43
+                            C43 43 50 36 50 27
+                            C40 27 32 33 32 43z"
                         />
 
                         <path
                             d="M32 25
-                               C25 25 20 20 20 13
-                               C27 13 32 17 32 25z"
+                            C25 25 20 20 20 13
+                            C27 13 32 17 32 25z"
                         />
 
                     </svg>
@@ -322,24 +331,24 @@
                 </div>
 
 
-                <div class="story-copy">
+                <div class="story-content">
 
-                    <span class="story-number">
+                    <div class="story-label">
                         03
-                    </span>
+                    </div>
 
                     <h2>
-                        Ang Pagpili sa Isa’t Isa
+                        ANG PAGPILI SA ISA’T ISA
                     </h2>
 
                     <p>
                         Magkaiba man ang kanilang personalidad,
-                        iisa naman ang direksyong piniling
-                        tahakin: ang buhay na binuo sa pagmamahal,
-                        pag-unawa, at pagpili sa isa’t isa
-                        araw-araw. Sa kanilang pagkakaiba,
-                        natagpuan nila ang balanse. Sa kanilang
-                        pagkakatugma, natagpuan nila ang tahanan.
+                        iisa naman ang direksyong piniling tahakin:
+                        ang buhay na binuo sa pagmamahal, pag-unawa,
+                        at pagpili sa isa’t isa araw-araw. Sa kanilang
+                        pagkakaiba, natagpuan nila ang balanse.
+                        Sa kanilang pagkakatugma, natagpuan nila
+                        ang tahanan.
                     </p>
 
                 </div>
@@ -347,51 +356,56 @@
             </article>
 
 
+
             <!-- STORY 04 -->
 
-            <article class="story-item">
+            <article class="story-row">
 
-                <div class="story-icon icon-family">
+                <div class="story-icon icon-orange">
 
                     <svg
                         viewBox="0 0 64 64"
-                        aria-hidden="true"
                     >
 
                         <circle
                             cx="32"
-                            cy="18"
+                            cy="17"
                             r="6"
                         />
 
                         <circle
-                            cx="18"
+                            cx="17"
                             cy="25"
                             r="5"
                         />
 
                         <circle
-                            cx="46"
+                            cx="47"
                             cy="25"
                             r="5"
                         />
 
                         <path
                             d="M22 45
-                               c0-8 5-13 10-13
-                               s10 5 10 13"
+                            c0-8 5-13 10-13
+                            s10 5 10 13"
                         />
 
                         <path
                             d="M9 45
-                               c0-6 4-10 9-10
-                               s9 4 9 10"
+                            c0-6 4-10 9-10
+                            s9 4 9 10"
                         />
 
                         <path
                             d="M37 45
-                               c0-6 4-10 9-10
-                               s9 4 9 10"
+                            c0-6 4-10 9-10
+                            s9 4 9 10"
+                        />
+
+                        <path
+                            d="M27 52
+                            c3-4 7-4 10 0"
                         />
 
                     </svg>
@@ -399,14 +413,14 @@
                 </div>
 
 
-                <div class="story-copy">
+                <div class="story-content">
 
-                    <span class="story-number">
+                    <div class="story-label">
                         04
-                    </span>
+                    </div>
 
                     <h2>
-                        At Nauwi sa Forever
+                        AT NAUWI SA FOREVER
                     </h2>
 
                     <p>
@@ -423,60 +437,59 @@
             </article>
 
 
+
+            <!-- CLOSING -->
+
+            <div class="kwento-closing">
+
+                Dahil minsan, ang forever ay nagsisimula
+                <br>
+                rin sa isang “Hi.”
+
+                <span>
+                    ♡
+                </span>
+
+            </div>
+
+
         </div>
 
 
-        <!-- =================================
-             RIGHT SCRAPBOOK AREA
-        ================================== -->
 
-        <aside class="kwento-gallery">
+        <!-- =================================================
+             RIGHT PHOTO / LETTER COLLAGE
+        ================================================= -->
+
+        <aside class="kwento-visuals">
 
 
             <!-- PHOTO 1 -->
 
-            <figure class="polaroid polaroid-one">
+            <figure class="kwento-polaroid photo-one">
 
-                <div class="photo-frame">
+                <div class="polaroid-image">
 
                     <img
                         src="images/kwento-photo-1.jpg"
                         alt="Mike at Sharmaine"
-                        onerror="this.parentElement.classList.add('photo-missing')"
                     >
 
                 </div>
 
                 <figcaption>
-                    Nagsimula sa isang simpleng “Hi.”
+                    Nagsimula sa isang
+                    <br>
+                    simpleng “Hi.” ♡
                 </figcaption>
 
             </figure>
 
 
-            <!-- PHOTO 2 -->
 
-            <figure class="polaroid polaroid-two">
+            <!-- HANDWRITTEN LETTER -->
 
-                <div class="photo-frame">
-
-                    <img
-                        src="images/kwento-photo-2.jpg"
-                        alt="Mike at Sharmaine"
-                    >
-
-                </div>
-
-                <figcaption>
-                    Ikaw, palagi.
-                </figcaption>
-
-            </figure>
-
-
-            <!-- LOVE NOTE -->
-
-            <div class="love-note">
+            <div class="letter-note">
 
                 Bawat kabanata
                 <br>
@@ -491,75 +504,87 @@
             </div>
 
 
-            <!-- FILM STRIP -->
 
-            <div class="film-strip">
+            <!-- PHOTO 2 -->
 
-                <div class="film-frame">
+            <figure class="kwento-polaroid photo-two">
 
-                    <img
-                        src="images/kwento-photo-1.jpg"
-                        alt=""
-                    >
-
-                </div>
-
-                <div class="film-frame">
+                <div class="polaroid-image">
 
                     <img
                         src="images/kwento-photo-2.jpg"
-                        alt=""
+                        alt="Mike at Sharmaine"
                     >
 
                 </div>
 
-                <div class="film-frame">
+                <figcaption>
+                    Ikaw, palagi. ♡
+                </figcaption>
 
-                    <img
-                        src="images/kwento-photo-1.jpg"
-                        alt=""
-                    >
+            </figure>
 
-                </div>
 
+
+            <!-- WAX SEAL -->
+
+            <div class="wax-seal">
+                ♡
             </div>
 
 
         </aside>
 
-    </section>
-
-
-    <!-- =====================================
-         CLOSING
-    ====================================== -->
-
-    <section class="kwento-ending">
-
-        <p>
-            Dahil minsan, ang forever ay nagsisimula rin
-            sa isang “Hi.”
-        </p>
-
-        <span>
-            ♡
-        </span>
 
     </section>
 
 
-    <!-- =====================================
+
+    <!-- =================================================
+         FILM STRIP
+    ================================================= -->
+
+    <div class="kwento-film-strip">
+
+
+        <div class="film-photo">
+
+            <img
+                src="images/kwento-photo-1.jpg"
+                alt=""
+            >
+
+        </div>
+
+
+        <div class="film-photo">
+
+            <img
+                src="images/kwento-photo-2.jpg"
+                alt=""
+            >
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
          NEXT PAGE
-    ====================================== -->
+    ================================================= -->
 
     <div class="kwento-next">
 
-        <a
-            href="detalye.html"
-            class="kwento-next-button"
-        >
+        <a href="detalye.html">
+
             Detalye ng Kasal
-            <span>→</span>
+
+            <span>
+                →
+            </span>
+
         </a>
 
     </div>
