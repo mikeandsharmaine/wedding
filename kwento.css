@@ -10,10 +10,6 @@
    Page-specific only. RSVP/other pages are not affected.
    ========================================================= */
 
-body.kwento-page {
-    background: red !important;
-}
-
 body.kwento-page .website-nav{
     position:sticky;
     top:0;
