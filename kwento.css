@@ -10,14 +10,8 @@
    Page-specific only. RSVP/other pages are not affected.
    ========================================================= */
 
-body.kwento-page{
-    margin:0;
-    padding:0;
-    width:100%;
-    max-width:100%;
-    overflow-x:hidden;
-    background:#ead8b8;
-    color:#596247;
+body.kwento-page {
+    background: red !important;
 }
 
 body.kwento-page .website-nav{
