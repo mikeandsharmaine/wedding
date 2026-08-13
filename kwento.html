@@ -1144,7 +1144,162 @@ body.kwento-page .kwento-page-content {
         }
 
 
+        
         /* =====================================================
+           FINAL MOBILE FIX 2
+           1) STORY MUST SIT ABOVE THE BROWN PHOTO PAPER
+           2) POLAROID PHOTO TEXT MUST REMAIN VISIBLE
+           ===================================================== */
+
+        @media screen and (max-width: 700px) {
+
+            /* Keep the two-column structure */
+            body.kwento-page .kwento-board {
+                position: relative !important;
+                grid-template-columns: minmax(0, 60%) minmax(0, 40%) !important;
+                grid-template-areas: "story photos" !important;
+                overflow: visible !important;
+            }
+
+            /* STORY: place it above the visual paper so text is NEVER hidden */
+            body.kwento-page .kwento-board > .kwento-paper {
+                grid-area: story !important;
+                position: relative !important;
+                z-index: 20 !important;
+                width: 100% !important;
+                min-width: 0 !important;
+                max-width: 100% !important;
+                overflow: visible !important;
+            }
+
+            /* Give story text enough room inside the left column */
+            body.kwento-page .kwento-paper .story-row {
+                position: relative !important;
+                z-index: 21 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            body.kwento-page .kwento-paper .story-content {
+                position: relative !important;
+                z-index: 22 !important;
+                width: 100% !important;
+                min-width: 0 !important;
+                max-width: 100% !important;
+                overflow: visible !important;
+                box-sizing: border-box !important;
+            }
+
+            body.kwento-page .kwento-paper .story-content h2,
+            body.kwento-page .kwento-paper .story-content p {
+                position: relative !important;
+                z-index: 23 !important;
+                max-width: 100% !important;
+                overflow: visible !important;
+            }
+
+            /* PHOTO COLUMN stays behind the story column */
+            body.kwento-page .kwento-board > .kwento-visuals {
+                grid-area: photos !important;
+                order: 2 !important;
+                position: relative !important;
+                z-index: 1 !important;
+                min-width: 0 !important;
+                overflow: visible !important;
+            }
+
+            /* Make the brown paper stop at its own column */
+            body.kwento-page .kwento-visuals {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                overflow: hidden !important;
+            }
+
+            /* POLAROIDS */
+            body.kwento-page .kwento-polaroid {
+                position: relative !important;
+                z-index: 5 !important;
+                width: 94% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                background: #fffaf0 !important;
+                color: #625748 !important;
+            }
+
+            /* Show the complete photo instead of cropping its lower text */
+            body.kwento-page .polaroid-image {
+                width: 100% !important;
+                height: auto !important;
+                aspect-ratio: auto !important;
+                overflow: visible !important;
+            }
+
+            body.kwento-page .polaroid-image img {
+                display: block !important;
+                width: 100% !important;
+                height: auto !important;
+                max-width: 100% !important;
+                object-fit: contain !important;
+            }
+
+            /* Make the caption underneath the photo clearly readable */
+            body.kwento-page .kwento-polaroid figcaption {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                position: relative !important;
+                z-index: 10 !important;
+                width: 100% !important;
+                min-height: 38px !important;
+                padding: 7px 2px 2px !important;
+                margin: 0 !important;
+                box-sizing: border-box !important;
+                text-align: center !important;
+                font-family: "Allura", cursive !important;
+                font-size: 14px !important;
+                line-height: 1.08 !important;
+                color: #51483d !important;
+                background: #fffaf0 !important;
+            }
+
+            /* Keep the handwritten note readable */
+            body.kwento-page .letter-note {
+                position: relative !important;
+                z-index: 6 !important;
+                width: 94% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                color: #665846 !important;
+                opacity: 1 !important;
+            }
+        }
+
+        @media screen and (max-width: 390px) {
+
+            body.kwento-page .kwento-board {
+                grid-template-columns: minmax(0, 60%) minmax(0, 40%) !important;
+                grid-template-areas: "story photos" !important;
+            }
+
+            body.kwento-page .kwento-board > .kwento-paper {
+                grid-area: story !important;
+                z-index: 20 !important;
+            }
+
+            body.kwento-page .kwento-board > .kwento-visuals {
+                grid-area: photos !important;
+                z-index: 1 !important;
+            }
+
+            body.kwento-page .kwento-polaroid figcaption {
+                font-size: 13px !important;
+                min-height: 36px !important;
+            }
+        }
+
+/* =====================================================
            FINAL MOBILE COLUMN OVERRIDE
            STORY = LEFT / PHOTOS = RIGHT
            ===================================================== */
