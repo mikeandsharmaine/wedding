@@ -664,6 +664,413 @@ body.kwento-page .kwento-next a{
 }
 </style>
 
+
+<style id="kwento-v2-mobile-fix">
+/*
+=========================================================
+ KWENTO V2 — MOBILE LAYOUT
+ LEFT  = STORIES (65%)
+ RIGHT = PHOTOS / SCRAPBOOK (35%)
+
+ This is the FINAL mobile override.
+ It intentionally overrides the older mobile rules.
+=========================================================
+*/
+
+@media screen and (max-width: 700px) {
+
+    /* Keep the entire Kwento page inside the viewport */
+    html,
+    body.kwento-page,
+    body.kwento-page .kwento-page-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /*
+     * IMPORTANT:
+     * Explicit grid areas prevent the two columns from
+     * accidentally swapping because of older order rules.
+     */
+    body.kwento-page .kwento-board {
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 65%)
+            minmax(0, 35%) !important;
+
+        grid-template-areas:
+            "story photos" !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 0 35px !important;
+        padding: 0 !important;
+        gap: 0 !important;
+
+        align-items: stretch !important;
+        position: relative !important;
+        overflow: visible !important;
+    }
+
+    /* =====================================================
+       LEFT COLUMN — STORIES
+    ===================================================== */
+
+    body.kwento-page .kwento-board > .kwento-paper {
+        grid-area: story !important;
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        order: 1 !important;
+
+        position: relative !important;
+        z-index: 20 !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 34px 14px 60px 16px !important;
+
+        box-sizing: border-box !important;
+
+        background: #f9f1e0 !important;
+        box-shadow: 5px 0 16px rgba(76,55,30,.08) !important;
+
+        overflow: visible !important;
+        clip-path: none !important;
+    }
+
+    /* Story rows must use the available 65% width */
+    body.kwento-page .kwento-board > .kwento-paper .story-row {
+        display: grid !important;
+
+        grid-template-columns:
+            40px minmax(0, 1fr) !important;
+
+        column-gap: 10px !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        padding: 5px 0 58px !important;
+        margin: 0 !important;
+
+        box-sizing: border-box !important;
+
+        position: relative !important;
+        overflow: visible !important;
+    }
+
+    /* Timeline */
+    body.kwento-page .kwento-board > .kwento-paper
+    .story-row:not(:last-of-type)::after {
+        left: 19px !important;
+        top: 50px !important;
+        bottom: 18px !important;
+        z-index: 1 !important;
+    }
+
+    /* Icons */
+    body.kwento-page .kwento-board > .kwento-paper .story-icon {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        min-height: 40px !important;
+
+        margin: 0 !important;
+        z-index: 30 !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-paper .story-icon svg {
+        width: 21px !important;
+        height: 21px !important;
+    }
+
+    /* Story text */
+    body.kwento-page .kwento-board > .kwento-paper .story-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        position: relative !important;
+        z-index: 25 !important;
+
+        overflow: visible !important;
+        box-sizing: border-box !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-paper .story-label {
+        font-size: 9px !important;
+        letter-spacing: 2.5px !important;
+        margin-bottom: 6px !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-paper .story-content h2 {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 0 10px !important;
+
+        font-size: 20px !important;
+        line-height: 1.12 !important;
+        letter-spacing: .2px !important;
+
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-paper .story-content p {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+
+        font-size: 14px !important;
+        line-height: 1.55 !important;
+
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        text-align: left !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-paper .kwento-closing {
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+        padding: 10px 4px 0 !important;
+    }
+
+    /* =====================================================
+       RIGHT COLUMN — SCRAPBOOK / PHOTOS
+    ===================================================== */
+
+    body.kwento-page .kwento-board > .kwento-visuals {
+        grid-area: photos !important;
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        order: 2 !important;
+
+        position: relative !important;
+        z-index: 5 !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        min-height: 1500px !important;
+        height: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+
+        background:
+            linear-gradient(
+                rgba(207,179,128,.86),
+                rgba(201,173,121,.86)
+            ) !important;
+
+        overflow: hidden !important;
+    }
+
+    /* Prevent decorative pseudo-elements from spilling into stories */
+    body.kwento-page .kwento-board > .kwento-visuals::before,
+    body.kwento-page .kwento-board > .kwento-visuals::after {
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    /* =====================================================
+       POLAROIDS
+    ===================================================== */
+
+    body.kwento-page .kwento-board > .kwento-visuals .kwento-polaroid {
+        position: absolute !important;
+
+        width: calc(100% - 10px) !important;
+        max-width: calc(100% - 10px) !important;
+
+        margin: 0 !important;
+
+        padding: 5px 5px 8px !important;
+
+        box-sizing: border-box !important;
+
+        background: #fffaf0 !important;
+
+        box-shadow: 0 8px 16px rgba(70,50,25,.18) !important;
+
+        z-index: 10 !important;
+    }
+
+    /* Photo 1 — aligned with Story 01 */
+    body.kwento-page .kwento-board > .kwento-visuals .photo-one {
+        top: 38px !important;
+        left: 5px !important;
+        right: auto !important;
+
+        transform: rotate(3deg) !important;
+    }
+
+    /* Note — below Photo 1 */
+    body.kwento-page .kwento-board > .kwento-visuals .letter-note {
+        position: absolute !important;
+
+        top: 390px !important;
+        left: 5px !important;
+        right: auto !important;
+
+        width: calc(100% - 10px) !important;
+        max-width: calc(100% - 10px) !important;
+
+        min-height: 130px !important;
+
+        padding: 20px 5px !important;
+
+        box-sizing: border-box !important;
+
+        font-size: 16px !important;
+        line-height: 1.15 !important;
+
+        z-index: 11 !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-visuals .letter-note span {
+        margin-top: 8px !important;
+        font-size: 25px !important;
+    }
+
+    /* Photo 2 — lower in the scrapbook column */
+    body.kwento-page .kwento-board > .kwento-visuals .photo-two {
+        top: 720px !important;
+        left: 5px !important;
+        right: auto !important;
+
+        transform: rotate(-3deg) !important;
+    }
+
+    /* =====================================================
+       PHOTO IMAGE + CAPTION
+       Caption is part of the polaroid, not hidden underneath.
+    ===================================================== */
+
+    body.kwento-page .kwento-board > .kwento-visuals .polaroid-image {
+        width: 100% !important;
+        height: auto !important;
+
+        overflow: visible !important;
+        aspect-ratio: auto !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-visuals
+    .polaroid-image img {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+
+        object-fit: contain !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-visuals
+    .kwento-polaroid figcaption {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        position: relative !important;
+        z-index: 20 !important;
+
+        width: 100% !important;
+        min-height: 30px !important;
+
+        margin: 0 !important;
+        padding: 5px 1px 2px !important;
+
+        box-sizing: border-box !important;
+
+        text-align: center !important;
+
+        font-family: "Allura", cursive !important;
+        font-size: 12px !important;
+        line-height: 1.05 !important;
+
+        color: #51483d !important;
+        background: #fffaf0 !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   Keep the same 65/35 structure.
+========================================================= */
+
+@media screen and (max-width: 390px) {
+
+    body.kwento-page .kwento-board {
+        grid-template-columns:
+            minmax(0, 65%)
+            minmax(0, 35%) !important;
+
+        grid-template-areas:
+            "story photos" !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-paper {
+        padding-left: 12px !important;
+        padding-right: 10px !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-paper .story-row {
+        grid-template-columns:
+            34px minmax(0,1fr) !important;
+
+        column-gap: 7px !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-paper .story-icon {
+        width: 34px !important;
+        height: 34px !important;
+        min-width: 34px !important;
+        min-height: 34px !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-paper .story-icon svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-paper
+    .story-content h2 {
+        font-size: 18px !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-paper
+    .story-content p {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-visuals
+    .kwento-polaroid figcaption {
+        font-size: 11px !important;
+    }
+
+    body.kwento-page .kwento-board > .kwento-visuals
+    .letter-note {
+        font-size: 14px !important;
+    }
+}
+</style>
+
 </head>
 
 
