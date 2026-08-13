@@ -1211,7 +1211,172 @@ body.kwento-page .kwento-page-content {
         }
 
     </style>
+/* =========================================================
+   KWENTO — MOBILE LAYOUT FIX
+   Desktop remains unchanged.
+   ========================================================= */
 
+@media screen and (max-width: 700px) {
+
+    /* Prevent the desktop two-column layout from squeezing content */
+    body.kwento-page {
+        overflow-x: hidden !important;
+    }
+
+    body.kwento-page .kwento-page-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    /* Make the main story layout ONE COLUMN on mobile */
+    body.kwento-page .kwento-page-content > section {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        gap: 0 !important;
+    }
+
+    /* STORY CONTENT */
+    body.kwento-page .story-row {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+
+        box-sizing: border-box !important;
+
+        padding: 35px 24px !important;
+        margin: 0 !important;
+    }
+
+    /* Story icon */
+    body.kwento-page .story-icon {
+        flex: 0 0 48px !important;
+        width: 48px !important;
+        height: 48px !important;
+
+        margin: 0 16px 0 0 !important;
+    }
+
+    body.kwento-page .story-icon svg {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* Text area */
+    body.kwento-page .story-content {
+        flex: 1 1 auto !important;
+        width: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        text-align: left !important;
+    }
+
+    body.kwento-page .story-label {
+        margin-bottom: 8px !important;
+    }
+
+    body.kwento-page .story-content h2 {
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 0 16px !important;
+
+        font-size: 25px !important;
+        line-height: 1.15 !important;
+
+        text-align: left !important;
+    }
+
+    body.kwento-page .story-content p {
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+
+        font-size: 17px !important;
+        line-height: 1.8 !important;
+
+        text-align: left !important;
+    }
+
+    /* =====================================================
+       PHOTOS
+       ===================================================== */
+
+    body.kwento-page .kwento-visuals {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+
+        box-sizing: border-box !important;
+
+        padding: 30px 24px 50px !important;
+        margin: 0 !important;
+    }
+
+    body.kwento-page .kwento-polaroid {
+        width: min(88vw, 360px) !important;
+        max-width: 360px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        box-sizing: border-box !important;
+    }
+
+    body.kwento-page .kwento-polaroid img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    body.kwento-page .letter-note {
+        width: min(80vw, 320px) !important;
+        max-width: 320px !important;
+
+        box-sizing: border-box !important;
+
+        margin: 35px auto !important;
+    }
+
+    /* Remove desktop positioning that causes overlap */
+    body.kwento-page .photo-one,
+    body.kwento-page .photo-two,
+    body.kwento-page .letter-note {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+    }
+
+    /* Closing text */
+    body.kwento-page .kwento-closing {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        padding: 40px 24px !important;
+
+        text-align: center !important;
+    }
+
+}
 </style>
 </head>
 
