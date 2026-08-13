@@ -827,8 +827,9 @@ body.kwento-page .kwento-page-content {
         ====================================================== */
 
 /* =====================================================
-           FINAL MOBILE LAYOUT
-           Desktop layout above remains unchanged.
+           FINAL MOBILE LAYOUT — TWO COLUMNS
+           Left: story / Right: photos
+           Desktop remains unchanged.
         ====================================================== */
 
         @media screen and (max-width: 700px) {
@@ -837,18 +838,30 @@ body.kwento-page .kwento-page-content {
                 overflow-x: hidden;
             }
 
+            body.kwento-page .website-nav {
+                width: 100% !important;
+                overflow-x: auto !important;
+                overflow-y: hidden !important;
+            }
+
             body.kwento-page .website-nav nav {
-                justify-content: flex-start;
-                gap: 28px;
-                padding: 16px 20px;
+                width: max-content !important;
+                min-width: 100% !important;
+                justify-content: flex-start !important;
+                gap: 28px !important;
+                padding: 16px 20px !important;
+                box-sizing: border-box !important;
             }
 
             body.kwento-page .website-nav a {
-                font-size: 12px;
-                letter-spacing: 1.5px;
+                flex: 0 0 auto !important;
+                white-space: nowrap !important;
+                font-size: 12px !important;
+                letter-spacing: 1.5px !important;
             }
 
-            /* Clean mobile title */
+            /* ---------------- TITLE ---------------- */
+
             body.kwento-page .kwento-title {
                 width: 100%;
                 padding: 55px 18px 42px;
@@ -883,98 +896,111 @@ body.kwento-page .kwento-page-content {
                 line-height: 1.35;
             }
 
-            /* IMPORTANT:
-               The desktop board is 61% stories / 39% photos.
-               On mobile it becomes ONE readable column. */
+            /* =================================================
+               TWO-COLUMN MOBILE BOARD
+               LEFT  = STORY
+               RIGHT = PHOTOS
+            ================================================== */
+
             body.kwento-page .kwento-board {
-                display: block !important;
+                display: grid !important;
+                grid-template-columns: minmax(0, 60%) minmax(0, 40%) !important;
                 width: 100% !important;
                 max-width: 100% !important;
                 margin: 0 0 35px !important;
+                gap: 0 !important;
                 overflow: visible !important;
+                align-items: stretch !important;
             }
+
+            /* LEFT — STORIES */
 
             body.kwento-page .kwento-paper {
                 width: 100% !important;
-                padding: 30px 20px 45px !important;
+                min-width: 0 !important;
+                padding: 30px 14px 45px !important;
                 box-sizing: border-box !important;
                 background: rgba(249,241,224,.96) !important;
-                box-shadow: none !important;
+                box-shadow: 3px 0 15px rgba(76,55,30,.08) !important;
+                overflow: visible !important;
             }
 
-            /* Story rows: full width, readable text */
             body.kwento-page .story-row {
                 display: grid !important;
-                grid-template-columns: 42px minmax(0, 1fr) !important;
-                column-gap: 14px !important;
+                grid-template-columns: 34px minmax(0,1fr) !important;
+                column-gap: 9px !important;
                 width: 100% !important;
                 padding: 8px 0 42px !important;
+                margin: 0 !important;
                 box-sizing: border-box !important;
             }
 
             body.kwento-page .story-icon {
-                width: 42px !important;
-                height: 42px !important;
-                min-width: 42px !important;
-                min-height: 42px !important;
+                width: 34px !important;
+                height: 34px !important;
+                min-width: 34px !important;
+                min-height: 34px !important;
                 border-width: 2px !important;
             }
 
             body.kwento-page .story-icon svg {
-                width: 22px !important;
-                height: 22px !important;
+                width: 18px !important;
+                height: 18px !important;
             }
 
             body.kwento-page .story-row:not(:last-of-type)::after {
-                left: 20px !important;
-                top: 52px !important;
-                bottom: 14px !important;
+                left: 16px !important;
+                top: 46px !important;
+                bottom: 12px !important;
             }
 
             body.kwento-page .story-label {
-                font-size: 9px !important;
-                letter-spacing: 2px !important;
-                margin-bottom: 7px !important;
+                font-size: 8px !important;
+                letter-spacing: 1.8px !important;
+                margin-bottom: 6px !important;
             }
 
             body.kwento-page .story-content {
                 width: 100% !important;
                 min-width: 0 !important;
+                overflow-wrap: anywhere !important;
             }
 
             body.kwento-page .story-content h2 {
-                margin: 0 0 12px !important;
-                font-size: clamp(19px, 5.4vw, 25px) !important;
-                line-height: 1.18 !important;
-                letter-spacing: .4px !important;
+                margin: 0 0 10px !important;
+                font-size: clamp(16px, 4.7vw, 22px) !important;
+                line-height: 1.15 !important;
+                letter-spacing: .2px !important;
                 overflow-wrap: anywhere !important;
             }
 
             body.kwento-page .story-content p {
                 margin: 0 !important;
-                font-size: 16px !important;
-                line-height: 1.65 !important;
+                font-size: 13px !important;
+                line-height: 1.55 !important;
                 overflow-wrap: anywhere !important;
+                word-break: normal !important;
             }
 
             body.kwento-page .kwento-closing {
-                padding: 25px 10px 10px !important;
-                font-size: 30px !important;
+                padding: 20px 5px 5px !important;
+                font-size: 21px !important;
                 line-height: 1.25 !important;
             }
 
-            /* Photos become a normal full-width section below stories.
-               No absolute positioning on mobile. */
+            /* RIGHT — PHOTOS */
+
             body.kwento-page .kwento-visuals {
                 position: relative !important;
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: center !important;
+                justify-content: flex-start !important;
                 width: 100% !important;
                 min-width: 0 !important;
-                min-height: 0 !important;
+                min-height: 100% !important;
                 height: auto !important;
-                padding: 35px 20px 50px !important;
+                padding: 18px 7px 35px !important;
                 box-sizing: border-box !important;
                 background: rgba(207,179,128,.80) !important;
                 overflow: visible !important;
@@ -986,20 +1012,20 @@ body.kwento-page .kwento-page-content {
                 right: auto !important;
                 left: auto !important;
                 bottom: auto !important;
-                width: min(88vw, 350px) !important;
-                max-width: 350px !important;
-                margin: 18px auto !important;
-                padding: 8px 8px 15px !important;
+                width: 94% !important;
+                max-width: none !important;
+                margin: 10px auto 24px !important;
+                padding: 5px 5px 9px !important;
                 box-sizing: border-box !important;
+                flex: 0 0 auto !important;
             }
 
-            body.kwento-page .photo-one,
-            body.kwento-page .photo-two {
+            body.kwento-page .photo-one {
                 transform: rotate(2deg) !important;
             }
 
             body.kwento-page .photo-two {
-                transform: rotate(-2deg) !important;
+                transform: rotate(-3deg) !important;
             }
 
             body.kwento-page .polaroid-image {
@@ -1008,28 +1034,33 @@ body.kwento-page .kwento-page-content {
             }
 
             body.kwento-page .kwento-polaroid figcaption {
-                min-height: 38px !important;
-                padding: 8px 3px 0 !important;
-                font-size: 21px !important;
+                min-height: 28px !important;
+                padding: 5px 1px 0 !important;
+                font-size: 12px !important;
+                line-height: 1.05 !important;
             }
+
+            /* HANDWRITTEN NOTE */
 
             body.kwento-page .letter-note {
                 position: relative !important;
                 top: auto !important;
                 left: auto !important;
                 right: auto !important;
-                width: min(82vw, 315px) !important;
-                max-width: 315px !important;
-                margin: 28px auto !important;
-                padding: 25px 15px !important;
-                font-size: 25px !important;
+                width: 94% !important;
+                max-width: none !important;
+                margin: 12px auto 25px !important;
+                padding: 14px 5px !important;
                 box-sizing: border-box !important;
+                font-size: 14px !important;
+                line-height: 1.25 !important;
                 transform: rotate(2deg) !important;
+                flex: 0 0 auto !important;
             }
 
             body.kwento-page .letter-note span {
-                font-size: 34px !important;
-                margin-top: 8px !important;
+                font-size: 22px !important;
+                margin-top: 6px !important;
             }
 
             body.kwento-page .kwento-next {
@@ -1041,38 +1072,54 @@ body.kwento-page .kwento-page-content {
 
         @media screen and (max-width: 390px) {
 
-            body.kwento-page .kwento-title {
-                padding-left: 14px;
-                padding-right: 14px;
+            body.kwento-page .kwento-board {
+                grid-template-columns: minmax(0, 60%) minmax(0, 40%) !important;
             }
 
             body.kwento-page .kwento-paper {
-                padding-left: 15px !important;
-                padding-right: 15px !important;
+                padding-left: 11px !important;
+                padding-right: 11px !important;
             }
 
             body.kwento-page .story-row {
-                grid-template-columns: 38px minmax(0, 1fr) !important;
-                column-gap: 12px !important;
+                grid-template-columns: 30px minmax(0,1fr) !important;
+                column-gap: 7px !important;
             }
 
             body.kwento-page .story-icon {
-                width: 38px !important;
-                height: 38px !important;
-                min-width: 38px !important;
-                min-height: 38px !important;
+                width: 30px !important;
+                height: 30px !important;
+                min-width: 30px !important;
+                min-height: 30px !important;
             }
 
             body.kwento-page .story-icon svg {
-                width: 20px !important;
-                height: 20px !important;
+                width: 16px !important;
+                height: 16px !important;
+            }
+
+            body.kwento-page .story-row:not(:last-of-type)::after {
+                left: 14px !important;
+            }
+
+            body.kwento-page .story-content h2 {
+                font-size: 15px !important;
             }
 
             body.kwento-page .story-content p {
-                font-size: 15px !important;
-                line-height: 1.6 !important;
+                font-size: 12px !important;
+                line-height: 1.5 !important;
+            }
+
+            body.kwento-page .kwento-polaroid figcaption {
+                font-size: 11px !important;
+            }
+
+            body.kwento-page .letter-note {
+                font-size: 13px !important;
             }
         }
+
 </style>
 
 </head>
