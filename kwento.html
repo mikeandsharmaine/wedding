@@ -1071,6 +1071,530 @@ body.kwento-page .kwento-next a{
 }
 </style>
 
+
+    KWENTO V5 — ELEGANT SCRAPBOOK POLISH
+=====================================
+
+IMPORTANT:
+This is a PATCH for your CURRENT kwento.html.
+Do not replace the whole kwento.html.
+Do not remove the working mobile two-column CSS.
+
+PART 1 — HTML CHANGE
+--------------------
+
+A. FIND the current CLOSING inside .kwento-paper:
+
+    <!-- CLOSING -->
+
+    <div class="kwento-closing">
+
+        Dahil minsan, ang forever ay nagsisimula
+        <br>
+        rin sa isang “Hi.”
+
+        <span>
+            ♡
+        </span>
+
+    </div>
+
+DELETE that block.
+
+B. After the closing </div> of .kwento-paper, but BEFORE the
+   <aside class="kwento-visuals">, do NOT add the closing.
+
+The structure should remain:
+
+    <section class="kwento-board">
+
+        <div class="kwento-paper">
+            ... STORY 01 ...
+            ... STORY 02 ...
+            ... STORY 03 ...
+            ... STORY 04 ...
+        </div>
+
+        <aside class="kwento-visuals">
+            ...
+        </aside>
+
+    </section>
+
+C. ADD this small note INSIDE the .kwento-visuals,
+   AFTER PHOTO 2:
+
+    <!-- STORY 04 MEMORY NOTE -->
+
+    <div class="story-four-note">
+
+        <span class="story-four-note-main">
+            And then, there was us.
+        </span>
+
+        <span class="story-four-note-small">
+            One “Hi.” · One forever. ♡
+        </span>
+
+    </div>
+
+So the bottom part of your right column becomes:
+
+    <figure class="kwento-polaroid photo-two">
+        ...
+    </figure>
+
+    <div class="story-four-note">
+        <span class="story-four-note-main">
+            And then, there was us.
+        </span>
+
+        <span class="story-four-note-small">
+            One “Hi.” · One forever. ♡
+        </span>
+    </div>
+
+D. AFTER the closing </section> of .kwento-board,
+   add the closing card:
+
+    <!-- CENTERED KWENTO CLOSING -->
+
+    <div class="kwento-closing">
+
+        <div class="closing-line"></div>
+
+        <p>
+            Dahil minsan, ang forever ay nagsisimula
+            <br>
+            rin sa isang “Hi.”
+        </p>
+
+        <span>♡</span>
+
+    </div>
+
+
+PART 2 — CSS
+------------
+
+Paste the following CSS at the VERY END of the CSS in kwento.html,
+immediately before </head>.
+
+============================================================
+KWENTO V5 — FINAL ELEGANT SCRAPBOOK POLISH
+============================================================ */
+
+<style>
+
+    /* =========================================================
+       V5 — STORY 04 MEMORY NOTE
+       ========================================================= */
+
+    body.kwento-page .story-four-note {
+
+        position: absolute;
+
+        top: 940px;
+
+        left: 7%;
+
+        width: 86%;
+
+        box-sizing: border-box;
+
+        padding: 22px 12px 20px;
+
+        text-align: center;
+
+        background:
+            rgba(245,232,202,.94);
+
+        border:
+            1px solid rgba(145,116,72,.20);
+
+        box-shadow:
+            0 10px 22px
+            rgba(92,70,39,.10);
+
+        transform:
+            rotate(2deg);
+
+        z-index: 8;
+
+    }
+
+
+    body.kwento-page .story-four-note::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 30px;
+
+        height: 8px;
+
+        top: -6px;
+
+        left: 50%;
+
+        transform:
+            translateX(-50%)
+            rotate(-3deg);
+
+        background:
+            rgba(194,157,99,.65);
+
+    }
+
+
+    body.kwento-page .story-four-note-main {
+
+        display: block;
+
+        font-family:
+            "Allura",
+            cursive;
+
+        font-size: 22px;
+
+        line-height: 1.15;
+
+        color:
+            #665846;
+
+    }
+
+
+    body.kwento-page .story-four-note-small {
+
+        display: block;
+
+        margin-top: 8px;
+
+        font-family:
+            "Cormorant Garamond",
+            serif;
+
+        font-size: 11px;
+
+        letter-spacing: 1.5px;
+
+        color:
+            #8a755b;
+
+    }
+
+
+    /* =========================================================
+       V5 — CENTERED CLOSING CARD
+       This replaces the old closing that sat inside the story
+       column.
+       ========================================================= */
+
+    body.kwento-page > main .kwento-closing {
+
+        position: relative;
+
+        width: min(760px, 88%);
+
+        margin: 5px auto 0;
+
+        padding:
+            42px 20px 38px;
+
+        box-sizing: border-box;
+
+        text-align: center;
+
+        color:
+            #80684e;
+
+    }
+
+
+    body.kwento-page > main .kwento-closing::before {
+
+        content:
+            "♡";
+
+        display: block;
+
+        margin-bottom: 14px;
+
+        font-family:
+            "Cormorant Garamond",
+            serif;
+
+        font-size: 20px;
+
+        color:
+            #c97855;
+
+    }
+
+
+    body.kwento-page > main .kwento-closing .closing-line {
+
+        width: 80px;
+
+        height: 1px;
+
+        margin:
+            0 auto 22px;
+
+        background:
+            rgba(128,104,78,.35);
+
+    }
+
+
+    body.kwento-page > main .kwento-closing p {
+
+        margin: 0;
+
+        font-family:
+            "Allura",
+            cursive;
+
+        font-size:
+            clamp(28px, 4vw, 42px);
+
+        line-height: 1.22;
+
+        color:
+            #80684e;
+
+    }
+
+
+    body.kwento-page > main .kwento-closing > span {
+
+        display: block;
+
+        margin-top: 18px;
+
+        font-family:
+            "Cormorant Garamond",
+            serif;
+
+        font-size: 38px;
+
+        line-height: 1;
+
+        color:
+            #cf7350;
+
+    }
+
+
+    /* =========================================================
+       V5 — RIGHT COLUMN BALANCE
+       ========================================================= */
+
+    @media screen and (max-width: 700px) {
+
+        body.kwento-page .kwento-visuals {
+
+            position: relative !important;
+
+            min-height: 1180px !important;
+
+            background:
+                linear-gradient(
+                    rgba(208,181,132,.78),
+                    rgba(201,173,121,.72)
+                ) !important;
+
+        }
+
+
+        /* Photo 1 */
+
+        body.kwento-page .photo-one {
+
+            top: 45px !important;
+
+            right: 4px !important;
+
+            width:
+                calc(100% - 8px) !important;
+
+            transform:
+                rotate(3deg) !important;
+
+        }
+
+
+        /* Existing handwritten note */
+
+        body.kwento-page .letter-note {
+
+            top: 360px !important;
+
+            left: 5% !important;
+
+            width: 90% !important;
+
+            padding:
+                23px 7px 19px !important;
+
+            font-size: 14px !important;
+
+            line-height: 1.15 !important;
+
+            transform:
+                rotate(-1deg);
+
+        }
+
+
+        /* Photo 2 */
+
+        body.kwento-page .photo-two {
+
+            top: 625px !important;
+
+            right: 4px !important;
+
+            width:
+                calc(100% - 8px) !important;
+
+            transform:
+                rotate(-4deg) !important;
+
+        }
+
+
+        /* Story 04 note */
+
+        body.kwento-page .story-four-note {
+
+            top: 900px !important;
+
+            left: 5% !important;
+
+            width: 90% !important;
+
+            padding:
+                18px 7px 16px !important;
+
+            transform:
+                rotate(2deg);
+
+        }
+
+
+        body.kwento-page .story-four-note-main {
+
+            font-size: 17px !important;
+
+        }
+
+
+        body.kwento-page .story-four-note-small {
+
+            font-size: 8px !important;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* Centered closing */
+
+        body.kwento-page > main .kwento-closing {
+
+            width: 90% !important;
+
+            margin:
+                0 auto !important;
+
+            padding:
+                34px 12px 38px !important;
+
+            text-align: center !important;
+
+        }
+
+
+        body.kwento-page > main .kwento-closing p {
+
+            font-size:
+                clamp(25px, 7vw, 34px) !important;
+
+            line-height: 1.25 !important;
+
+        }
+
+
+        body.kwento-page > main .kwento-closing > span {
+
+            font-size: 34px !important;
+
+            margin-top: 14px !important;
+
+        }
+
+    }
+
+
+    /* =========================================================
+       VERY SMALL PHONES
+       ========================================================= */
+
+    @media screen and (max-width: 390px) {
+
+        body.kwento-page .story-four-note {
+
+            top: 885px !important;
+
+        }
+
+
+        body.kwento-page .story-four-note-main {
+
+            font-size: 16px !important;
+
+        }
+
+
+        body.kwento-page > main .kwento-closing {
+
+            padding:
+                30px 10px 35px !important;
+
+        }
+
+
+        body.kwento-page > main .kwento-closing p {
+
+            font-size:
+                25px !important;
+
+        }
+
+    }
+
+</style>
+
+
+RESULT WE ARE AIMING FOR
+------------------------
+
+1. Story 01–04 stay on the LEFT.
+2. Photos stay on the RIGHT.
+3. Existing Polaroid captions remain visible.
+4. The right column no longer feels completely empty at the bottom.
+5. Story 04 gets a small elegant handwritten memory card.
+6. “Dahil minsan...” becomes a separate centered closing card BELOW
+   the complete story/photo board.
+7. Desktop layout remains essentially unchanged.
+8. RSVP is not touched.
+9. Home page is not touched.
+10. No new large images are introduced.
+
+    
 </head>
 
 
@@ -1435,24 +1959,6 @@ body.kwento-page .kwento-next a{
 
                 </article>
 
-
-                <!-- CLOSING -->
-
-                <div class="kwento-closing">
-
-                    Dahil minsan, ang forever ay nagsisimula
-                    <br>
-                    rin sa isang “Hi.”
-
-                    <span>
-                        ♡
-                    </span>
-
-                </div>
-
-            </div>
-
-
             <!-- =================================================
                  RIGHT — PHOTOS
             ================================================== -->
@@ -1521,12 +2027,38 @@ body.kwento-page .kwento-next a{
                     </figcaption>
 
                 </figure>
+<!-- STORY 04 MEMORY NOTE -->
 
+<div class="story-four-note">
+
+    <span class="story-four-note-main">
+        And then, there was us.
+    </span>
+
+    <span class="story-four-note-small">
+        One “Hi.” · One forever. ♡
+    </span>
+
+</div>
 
             </aside>
 
         </section>
+<!-- CENTERED KWENTO CLOSING -->
 
+<div class="kwento-closing">
+
+    <div class="closing-line"></div>
+
+    <p>
+        Dahil minsan, ang forever ay nagsisimula
+        <br>
+        rin sa isang “Hi.”
+    </p>
+
+    <span>♡</span>
+
+</div>
 
         <!-- =================================================
              NEXT PAGE
