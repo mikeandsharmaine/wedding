@@ -1072,121 +1072,7 @@ body.kwento-page .kwento-next a{
 </style>
 
 
-    KWENTO V5 — ELEGANT SCRAPBOOK POLISH
-=====================================
-
-IMPORTANT:
-This is a PATCH for your CURRENT kwento.html.
-Do not replace the whole kwento.html.
-Do not remove the working mobile two-column CSS.
-
-PART 1 — HTML CHANGE
---------------------
-
-A. FIND the current CLOSING inside .kwento-paper:
-
-    <!-- CLOSING -->
-
-    <div class="kwento-closing">
-
-        Dahil minsan, ang forever ay nagsisimula
-        <br>
-        rin sa isang “Hi.”
-
-        <span>
-            ♡
-        </span>
-
-    </div>
-
-DELETE that block.
-
-B. After the closing </div> of .kwento-paper, but BEFORE the
-   <aside class="kwento-visuals">, do NOT add the closing.
-
-The structure should remain:
-
-    <section class="kwento-board">
-
-        <div class="kwento-paper">
-            ... STORY 01 ...
-            ... STORY 02 ...
-            ... STORY 03 ...
-            ... STORY 04 ...
-        </div>
-
-        <aside class="kwento-visuals">
-            ...
-        </aside>
-
-    </section>
-
-C. ADD this small note INSIDE the .kwento-visuals,
-   AFTER PHOTO 2:
-
-    <!-- STORY 04 MEMORY NOTE -->
-
-    <div class="story-four-note">
-
-        <span class="story-four-note-main">
-            And then, there was us.
-        </span>
-
-        <span class="story-four-note-small">
-            One “Hi.” · One forever. ♡
-        </span>
-
-    </div>
-
-So the bottom part of your right column becomes:
-
-    <figure class="kwento-polaroid photo-two">
-        ...
-    </figure>
-
-    <div class="story-four-note">
-        <span class="story-four-note-main">
-            And then, there was us.
-        </span>
-
-        <span class="story-four-note-small">
-            One “Hi.” · One forever. ♡
-        </span>
-    </div>
-
-D. AFTER the closing </section> of .kwento-board,
-   add the closing card:
-
-    <!-- CENTERED KWENTO CLOSING -->
-
-    <div class="kwento-closing">
-
-        <div class="closing-line"></div>
-
-        <p>
-            Dahil minsan, ang forever ay nagsisimula
-            <br>
-            rin sa isang “Hi.”
-        </p>
-
-        <span>♡</span>
-
-    </div>
-
-
-PART 2 — CSS
-------------
-
-Paste the following CSS at the VERY END of the CSS in kwento.html,
-immediately before </head>.
-
-============================================================
-KWENTO V5 — FINAL ELEGANT SCRAPBOOK POLISH
-============================================================ */
-
-<style>
-
-    /* =========================================================
+/* =========================================================
        V5 — STORY 04 MEMORY NOTE
        ========================================================= */
 
@@ -1958,6 +1844,8 @@ RESULT WE ARE AIMING FOR
                     </div>
 
                 </article>
+
+            </div>
 
             <!-- =================================================
                  RIGHT — PHOTOS
