@@ -7878,3 +7878,192 @@ body.kwento-page .kwento-page-content {
         background-position: center top;
     }
 }
+/* =========================================================
+   KWENTO — FINAL POLISH
+   1) Move the handwritten note beside Story 4
+   2) Center the closing message across the FULL mobile page
+   3) Keep the two-column story/photo layout
+   Paste at the VERY BOTTOM of style.css
+   ========================================================= */
+
+@media screen and (max-width: 700px) {
+
+  /* Keep the two-column layout */
+  body.kwento-page .kwento-board {
+    display: grid !important;
+    grid-template-columns: 56% 44% !important;
+    grid-template-areas: "stories photos" !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
+    overflow: visible !important;
+  }
+
+  body.kwento-page .kwento-board > .kwento-paper {
+    grid-area: stories !important;
+    position: relative !important;
+    z-index: 20 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  body.kwento-page .kwento-board > .kwento-visuals {
+    grid-area: photos !important;
+    position: relative !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 1550px !important;
+    overflow: hidden !important;
+  }
+
+  /* ---------------------------------------------------------
+     RIGHT COLUMN — NOTE BESIDE STORY 4
+     --------------------------------------------------------- */
+
+  body.kwento-page .kwento-board > .kwento-visuals .letter-note {
+    position: absolute !important;
+
+    /*
+      Story 4 is near the lower part of the story column.
+      Put the note beside it rather than between Photo 1 and Photo 2.
+    */
+    top: 1120px !important;
+    left: 5% !important;
+
+    width: 90% !important;
+    max-width: 90% !important;
+    min-height: 135px !important;
+
+    margin: 0 !important;
+    padding: 20px 8px !important;
+
+    box-sizing: border-box !important;
+
+    background: #e9c985 !important;
+    color: #66533c !important;
+
+    text-align: center !important;
+
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+
+    transform: rotate(-2deg) !important;
+
+    box-shadow: 0 8px 18px rgba(75,55,30,.13) !important;
+
+    z-index: 25 !important;
+  }
+
+  body.kwento-page .kwento-board > .kwento-visuals
+  .letter-note::before {
+    content: "" !important;
+    position: absolute !important;
+
+    width: 20px !important;
+    height: 7px !important;
+
+    top: -4px !important;
+    left: 50% !important;
+
+    transform: translateX(-50%) rotate(-4deg) !important;
+
+    background: rgba(239,222,205,.75) !important;
+    border-radius: 2px !important;
+  }
+
+  body.kwento-page .kwento-board > .kwento-visuals
+  .letter-note span {
+    display: block !important;
+    margin-top: 10px !important;
+    font-size: 27px !important;
+    line-height: 1 !important;
+  }
+
+  /* Move Photo 2 slightly upward so it doesn't compete with
+     the Story 4 note. */
+  body.kwento-page .kwento-board > .kwento-visuals .photo-two {
+    top: 690px !important;
+  }
+
+  /* ---------------------------------------------------------
+     CLOSING MESSAGE — CENTER OF THE WHOLE PAGE
+     --------------------------------------------------------- */
+
+  body.kwento-page .kwento-board > .kwento-paper .kwento-closing {
+    position: relative !important;
+
+    /*
+      Escape the 56% story column and occupy the full viewport.
+      This makes the closing visually centered between the two
+      columns instead of centered only inside the story column.
+    */
+    width: 100vw !important;
+    max-width: 100vw !important;
+
+    margin-left: -14px !important;
+    margin-right: 0 !important;
+
+    padding: 55px 28px 45px !important;
+
+    box-sizing: border-box !important;
+
+    text-align: center !important;
+
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+
+    color: #75604a !important;
+
+    z-index: 40 !important;
+
+    /*
+      Keep it in the visual middle, not pushed into the far-left
+      story column.
+    */
+    left: 0 !important;
+  }
+
+  body.kwento-page .kwento-board > .kwento-paper
+  .kwento-closing span {
+    display: block !important;
+
+    margin: 16px auto 0 !important;
+
+    font-size: 38px !important;
+    line-height: 1 !important;
+
+    text-align: center !important;
+  }
+}
+
+
+/* Small phones */
+@media screen and (max-width: 390px) {
+
+  body.kwento-page .kwento-board > .kwento-visuals
+  .letter-note {
+    top: 1120px !important;
+    left: 4% !important;
+    width: 92% !important;
+    max-width: 92% !important;
+    font-size: 14px !important;
+  }
+
+  body.kwento-page .kwento-board > .kwento-paper
+  .kwento-closing {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: -11px !important;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+
+    font-size: 21px !important;
+  }
+}
