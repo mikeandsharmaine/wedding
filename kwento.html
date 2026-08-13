@@ -1303,6 +1303,430 @@ body.kwento-page .kwento-page-content {
            FINAL MOBILE COLUMN OVERRIDE
            STORY = LEFT / PHOTOS = RIGHT
            ===================================================== */
+
+        /* ============================================================
+   KWENTO — MOBILE REFERENCE LAYOUT
+   Target:
+   - Story 01–04 = LEFT column
+   - Photos / note = RIGHT column
+   - Remove the large brown-paper block
+   - Position the visuals beside the corresponding stories
+   - Keep the desktop layout untouched
+   ============================================================ */
+
+@media screen and (max-width: 700px) {
+
+    /* ---------------------------------------------------------
+       1. TWO-COLUMN PAGE
+       --------------------------------------------------------- */
+
+    body.kwento-page .kwento-board {
+        display: grid !important;
+
+        /* Similar proportion to the reference artwork */
+        grid-template-columns: 58% 42% !important;
+
+        grid-template-areas:
+            "story photos" !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        gap: 0 !important;
+
+        overflow: visible !important;
+
+        align-items: stretch !important;
+    }
+
+
+    /* ---------------------------------------------------------
+       2. LEFT — STORY PAPER
+       --------------------------------------------------------- */
+
+    body.kwento-page .kwento-board > .kwento-paper {
+        grid-area: story !important;
+
+        position: relative !important;
+        z-index: 20 !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+
+        padding:
+            38px 14px 70px 18px !important;
+
+        box-sizing: border-box !important;
+
+        /*
+         * Cream paper, like the reference.
+         * No brown visual layer is allowed to sit above it.
+         */
+        background: #f9f1e0 !important;
+
+        box-shadow:
+            5px 0 18px rgba(76,55,30,.08) !important;
+
+        overflow: visible !important;
+    }
+
+
+    /* ---------------------------------------------------------
+       3. STORY ROWS
+       --------------------------------------------------------- */
+
+    body.kwento-page .story-row {
+        display: grid !important;
+
+        grid-template-columns:
+            42px minmax(0,1fr) !important;
+
+        column-gap: 12px !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        padding:
+            4px 0 72px !important;
+
+        margin: 0 !important;
+
+        box-sizing: border-box !important;
+
+        position: relative !important;
+    }
+
+
+    body.kwento-page .story-icon {
+        width: 42px !important;
+        height: 42px !important;
+
+        margin: 0 !important;
+
+        z-index: 30 !important;
+    }
+
+
+    body.kwento-page .story-icon svg {
+        width: 23px !important;
+        height: 23px !important;
+    }
+
+
+    body.kwento-page .story-label {
+        font-size: 10px !important;
+        letter-spacing: 3px !important;
+        margin-bottom: 7px !important;
+    }
+
+
+    body.kwento-page .story-content {
+        min-width: 0 !important;
+        width: 100% !important;
+
+        position: relative !important;
+        z-index: 25 !important;
+
+        overflow: visible !important;
+    }
+
+
+    body.kwento-page .story-content h2 {
+        font-size: 25px !important;
+        line-height: 1.08 !important;
+
+        margin:
+            0 0 16px !important;
+
+        letter-spacing: .5px !important;
+
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+    }
+
+
+    body.kwento-page .story-content p {
+        font-size: 18px !important;
+        line-height: 1.58 !important;
+
+        margin: 0 !important;
+
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+    }
+
+
+    /* Keep the timeline inside the story side */
+    body.kwento-page
+    .story-row:not(:last-of-type)::after {
+
+        left: 20px !important;
+
+        top: 48px !important;
+        bottom: 20px !important;
+
+        z-index: 21 !important;
+    }
+
+
+    /* ---------------------------------------------------------
+       4. RIGHT — VISUAL COLUMN
+       --------------------------------------------------------- */
+
+    body.kwento-page .kwento-board > .kwento-visuals {
+        grid-area: photos !important;
+
+        position: relative !important;
+
+        z-index: 5 !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+
+        /*
+         * IMPORTANT:
+         * Remove the giant brown paper block.
+         */
+        background: #ead8b8 !important;
+
+        overflow: visible !important;
+
+        min-height: 0 !important;
+    }
+
+
+    /*
+     * Do NOT let the visual column cover the story column.
+     */
+    body.kwento-page .kwento-visuals,
+    body.kwento-page .kwento-visuals * {
+        max-width: 100% !important;
+    }
+
+
+    /* ---------------------------------------------------------
+       5. PHOTO 1 — beside STORY 01
+       --------------------------------------------------------- */
+
+    body.kwento-page .photo-one {
+        position: absolute !important;
+
+        top: 42px !important;
+        left: 7% !important;
+        right: auto !important;
+
+        width: 88% !important;
+
+        margin: 0 !important;
+
+        transform: rotate(2deg) !important;
+
+        z-index: 12 !important;
+    }
+
+
+    /* ---------------------------------------------------------
+       6. HANDWRITTEN NOTE — between STORY 01 and 02
+       --------------------------------------------------------- */
+
+    body.kwento-page .letter-note {
+        position: absolute !important;
+
+        top: 465px !important;
+        left: 7% !important;
+
+        width: 88% !important;
+
+        margin: 0 !important;
+
+        padding:
+            28px 10px !important;
+
+        box-sizing: border-box !important;
+
+        z-index: 13 !important;
+
+        font-size: 22px !important;
+        line-height: 1.15 !important;
+
+        background: #e8c68f !important;
+
+        box-shadow:
+            0 10px 22px rgba(70,50,25,.12) !important;
+    }
+
+
+    body.kwento-page .letter-note span {
+        display: block !important;
+        margin-top: 12px !important;
+    }
+
+
+    /* ---------------------------------------------------------
+       7. PHOTO 2 — beside STORY 02
+       --------------------------------------------------------- */
+
+    body.kwento-page .photo-two {
+        position: absolute !important;
+
+        top: 850px !important;
+        left: 7% !important;
+        right: auto !important;
+
+        width: 88% !important;
+
+        margin: 0 !important;
+
+        transform: rotate(-3deg) !important;
+
+        z-index: 12 !important;
+    }
+
+
+    /* ---------------------------------------------------------
+       8. POLAROID — preserve the caption/text
+       --------------------------------------------------------- */
+
+    body.kwento-page .kwento-polaroid {
+        position: absolute !important;
+
+        padding:
+            8px 8px 12px !important;
+
+        box-sizing: border-box !important;
+
+        background: #fffaf0 !important;
+
+        overflow: visible !important;
+
+        box-shadow:
+            0 10px 22px rgba(70,50,25,.18) !important;
+    }
+
+
+    body.kwento-page .polaroid-image {
+        width: 100% !important;
+
+        /*
+         * Do not crop the photo vertically.
+         */
+        height: auto !important;
+        aspect-ratio: auto !important;
+
+        overflow: hidden !important;
+    }
+
+
+    body.kwento-page .polaroid-image img {
+        display: block !important;
+
+        width: 100% !important;
+        height: auto !important;
+
+        /*
+         * The words/caption already belong to the photo.
+         * Showing the full image prevents them from being cut off.
+         */
+        object-fit: contain !important;
+        object-position: center !important;
+    }
+
+
+    body.kwento-page .kwento-polaroid figcaption {
+        display: block !important;
+
+        min-height: 42px !important;
+
+        padding:
+            8px 2px 0 !important;
+
+        font-size: 19px !important;
+        line-height: 1.05 !important;
+
+        color: #625748 !important;
+
+        overflow: visible !important;
+    }
+
+
+    /* ---------------------------------------------------------
+       9. CLOSING
+       --------------------------------------------------------- */
+
+    body.kwento-page .kwento-closing {
+        padding:
+            10px 5px 20px !important;
+
+        font-size: 31px !important;
+        line-height: 1.25 !important;
+    }
+
+
+    /* ---------------------------------------------------------
+       10. VERY SMALL PHONES
+       --------------------------------------------------------- */
+
+    @media screen and (max-width: 390px) {
+
+        body.kwento-page .kwento-board {
+            grid-template-columns: 58% 42% !important;
+            grid-template-areas:
+                "story photos" !important;
+        }
+
+        body.kwento-page .kwento-board > .kwento-paper {
+            padding:
+                32px 10px 60px 14px !important;
+        }
+
+        body.kwento-page .story-row {
+            grid-template-columns:
+                38px minmax(0,1fr) !important;
+
+            column-gap: 9px !important;
+        }
+
+        body.kwento-page .story-icon {
+            width: 38px !important;
+            height: 38px !important;
+        }
+
+        body.kwento-page
+        .story-row:not(:last-of-type)::after {
+            left: 18px !important;
+        }
+
+        body.kwento-page .story-content h2 {
+            font-size: 22px !important;
+        }
+
+        body.kwento-page .story-content p {
+            font-size: 16px !important;
+            line-height: 1.55 !important;
+        }
+
+        body.kwento-page .photo-one,
+        body.kwento-page .photo-two {
+            width: 90% !important;
+            left: 5% !important;
+        }
+
+        body.kwento-page .letter-note {
+            width: 90% !important;
+            left: 5% !important;
+            font-size: 19px !important;
+        }
+    }
+}
 </style>
 
 </head>
