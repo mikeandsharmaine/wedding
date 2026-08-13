@@ -8067,3 +8067,177 @@ body.kwento-page .kwento-page-content {
     font-size: 21px !important;
   }
 }
+/* =========================================================
+   KWENTO — V4 FINAL POLISH
+   Paste at the VERY BOTTOM of style.css
+   ========================================================= */
+
+@media screen and (max-width: 700px) {
+
+  /* Keep the working 2-column layout */
+  body.kwento-page .kwento-board {
+    display: grid !important;
+    grid-template-columns: 56% 44% !important;
+    grid-template-areas: "stories photos" !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    align-items: stretch !important;
+    overflow: visible !important;
+  }
+
+  /* RIGHT SIDE SCRAPBOOK */
+  body.kwento-page .kwento-board > .kwento-visuals {
+    grid-area: photos !important;
+    position: relative !important;
+    min-height: 1800px !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Photo 1 */
+  body.kwento-page .kwento-board > .kwento-visuals .photo-one {
+    top: 28px !important;
+    left: 6px !important;
+    right: auto !important;
+    transform: rotate(3deg) !important;
+  }
+
+  /* Photo 2 stays in the upper/middle scrapbook area */
+  body.kwento-page .kwento-board > .kwento-visuals .photo-two {
+    top: 720px !important;
+    left: 6px !important;
+    right: auto !important;
+    transform: rotate(-3deg) !important;
+  }
+
+  /* =======================================================
+     MOVE THE HANDWRITTEN NOTE DOWN BESIDE STORY 4
+     ======================================================= */
+
+  body.kwento-page .kwento-board > .kwento-visuals .letter-note {
+    top: 1060px !important;
+    left: 6px !important;
+    right: auto !important;
+
+    width: calc(100% - 12px) !important;
+    max-width: calc(100% - 12px) !important;
+
+    min-height: 125px !important;
+
+    margin: 0 !important;
+    padding: 20px 5px !important;
+
+    box-sizing: border-box !important;
+
+    z-index: 20 !important;
+
+    font-size: 16px !important;
+    line-height: 1.18 !important;
+  }
+
+  body.kwento-page .kwento-board > .kwento-visuals .letter-note span {
+    display: block !important;
+    margin-top: 8px !important;
+    font-size: 27px !important;
+  }
+
+  /* =======================================================
+     STORY 4 — give it enough bottom space so the closing
+     can sit naturally underneath it
+     ======================================================= */
+
+  body.kwento-page .kwento-board > .kwento-paper .story-row:last-of-type {
+    padding-bottom: 70px !important;
+  }
+
+  /* =======================================================
+     CLOSING — CENTER ACROSS BOTH COLUMNS
+     ======================================================= */
+
+  body.kwento-page .kwento-board > .kwento-paper .kwento-closing {
+    position: relative !important;
+
+    /* Paper column is 56% wide.
+       178.57% makes the closing span approximately 100% of
+       the entire two-column board. */
+    width: 178.57% !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding: 35px 18px 55px !important;
+
+    box-sizing: border-box !important;
+
+    background: transparent !important;
+
+    text-align: center !important;
+
+    z-index: 50 !important;
+
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+  }
+
+  body.kwento-page .kwento-board > .kwento-paper .kwento-closing span {
+    display: block !important;
+    margin-top: 12px !important;
+    text-align: center !important;
+    font-size: 38px !important;
+  }
+
+  /* =======================================================
+     POLAROID CAPTIONS — KEEP VISIBLE
+     ======================================================= */
+
+  body.kwento-page .kwento-board > .kwento-visuals
+  .kwento-polaroid figcaption {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 30 !important;
+
+    width: 100% !important;
+    min-height: 34px !important;
+
+    margin: 0 !important;
+    padding: 6px 1px 2px !important;
+
+    box-sizing: border-box !important;
+
+    background: #fffaf0 !important;
+    color: #51483d !important;
+
+    text-align: center !important;
+
+    font-family: "Allura", cursive !important;
+    font-size: 13px !important;
+    line-height: 1.05 !important;
+  }
+}
+
+@media screen and (max-width: 390px) {
+
+  body.kwento-page .kwento-board {
+    grid-template-columns: 56% 44% !important;
+    grid-template-areas: "stories photos" !important;
+  }
+
+  body.kwento-page .kwento-board > .kwento-visuals .letter-note {
+    top: 1030px !important;
+  }
+
+  body.kwento-page .kwento-board > .kwento-paper .kwento-closing {
+    width: 178.57% !important;
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
