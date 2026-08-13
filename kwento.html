@@ -905,24 +905,36 @@ body.kwento-page .kwento-page-content {
             body.kwento-page .kwento-board {
                 display: grid !important;
                 grid-template-columns: minmax(0, 60%) minmax(0, 40%) !important;
+                grid-template-areas: "story photos" !important;
                 width: 100% !important;
                 max-width: 100% !important;
                 margin: 0 0 35px !important;
+                padding: 0 !important;
                 gap: 0 !important;
                 overflow: visible !important;
                 align-items: stretch !important;
+                direction: ltr !important;
             }
 
-            /* LEFT — STORIES */
-
-            body.kwento-page .kwento-paper {
+            /* FORCE THE STORY COLUMN TO THE LEFT */
+            body.kwento-page .kwento-board > .kwento-paper {
+                grid-area: story !important;
+                order: 1 !important;
                 width: 100% !important;
                 min-width: 0 !important;
+                max-width: none !important;
                 padding: 30px 14px 45px !important;
+                margin: 0 !important;
                 box-sizing: border-box !important;
                 background: rgba(249,241,224,.96) !important;
                 box-shadow: 3px 0 15px rgba(76,55,30,.08) !important;
                 overflow: visible !important;
+            }
+
+            /* FORCE THE PHOTO COLUMN TO THE RIGHT */
+            body.kwento-page .kwento-board > .kwento-visuals {
+                grid-area: photos !important;
+                order: 2 !important;
             }
 
             body.kwento-page .story-row {
@@ -1074,6 +1086,17 @@ body.kwento-page .kwento-page-content {
 
             body.kwento-page .kwento-board {
                 grid-template-columns: minmax(0, 60%) minmax(0, 40%) !important;
+                grid-template-areas: "story photos" !important;
+            }
+
+            body.kwento-page .kwento-board > .kwento-paper {
+                grid-area: story !important;
+                order: 1 !important;
+            }
+
+            body.kwento-page .kwento-board > .kwento-visuals {
+                grid-area: photos !important;
+                order: 2 !important;
             }
 
             body.kwento-page .kwento-paper {
@@ -1120,6 +1143,11 @@ body.kwento-page .kwento-page-content {
             }
         }
 
+
+        /* =====================================================
+           FINAL MOBILE COLUMN OVERRIDE
+           STORY = LEFT / PHOTOS = RIGHT
+           ===================================================== */
 </style>
 
 </head>
