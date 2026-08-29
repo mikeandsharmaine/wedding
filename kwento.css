@@ -315,44 +315,77 @@ body.kwento-page {
 
 
 /* =========================================================
-   FLORAL DECORATIONS
+   ELEGANT FLORAL DECORATIONS
    ========================================================= */
 
 .hero-flower {
   position: absolute;
-
   z-index: 1;
 
-  width: 170px;
-  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  opacity: 0.55;
+  width: 150px;
+  height: 150px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 105px;
+  line-height: 1;
+
+  opacity: 0.38;
 
   pointer-events: none;
 }
 
 
-/* LEFT FLOWER */
+/* LEFT FLORAL MOTIF */
 
 .flower-left {
-  left: 2%;
-  top: 18%;
+  left: 3%;
+  top: 20%;
+
+  color: #7e8e65;
 
   transform: rotate(-12deg);
-
-  color: rgba(126, 142, 101, 0.32);
 }
 
 
-/* RIGHT FLOWER */
+/* RIGHT FLORAL MOTIF */
 
 .flower-right {
-  right: 2%;
-  bottom: 15%;
+  right: 3%;
+  bottom: 16%;
 
-  transform: rotate(15deg);
+  color: #d85d38;
 
-  color: rgba(216, 89, 47, 0.20);
+  transform: rotate(12deg);
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 700px) {
+
+  .hero-flower {
+    width: 100px;
+    height: 100px;
+
+    font-size: 70px;
+
+    opacity: 0.28;
+  }
+
+  .flower-left {
+    left: -20px;
+    top: 18%;
+  }
+
+  .flower-right {
+    right: -20px;
+    bottom: 18%;
+  }
+
 }
 
 
