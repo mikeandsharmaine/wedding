@@ -1144,3 +1144,159 @@ function returnToWebsite() {
     });
 
 }
+/* =========================================================
+   WEDDING SIDEBAR NAVIGATION
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+    const sidebar =
+        document.getElementById("weddingSidebar");
+
+    const overlay =
+        document.getElementById("sidebarOverlay");
+
+    const sidebarLinks =
+        document.querySelectorAll(".sidebar-link");
+
+
+    if (
+        !menuToggle ||
+        !sidebar ||
+        !overlay
+    ) {
+        return;
+    }
+
+
+    function openSidebar() {
+
+        sidebar.classList.add("is-open");
+
+        overlay.classList.add("is-open");
+
+        menuToggle.classList.add("is-open");
+
+        document.body.classList.add("sidebar-open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Close navigation menu"
+        );
+
+        sidebar.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        overlay.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+    }
+
+
+    function closeSidebar() {
+
+        sidebar.classList.remove("is-open");
+
+        overlay.classList.remove("is-open");
+
+        menuToggle.classList.remove("is-open");
+
+        document.body.classList.remove("sidebar-open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
+
+        sidebar.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        overlay.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+    }
+
+
+    function toggleSidebar() {
+
+        if (
+            sidebar.classList.contains("is-open")
+        ) {
+
+            closeSidebar();
+
+        } else {
+
+            openSidebar();
+
+        }
+
+    }
+
+
+    /* Hamburger */
+
+    menuToggle.addEventListener(
+        "click",
+        toggleSidebar
+    );
+
+
+    /* Click outside */
+
+    overlay.addEventListener(
+        "click",
+        closeSidebar
+    );
+
+
+    /* Close after selecting a page */
+
+    sidebarLinks.forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            closeSidebar
+        );
+
+    });
+
+
+    /* ESC closes sidebar */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                sidebar.classList.contains("is-open")
+            ) {
+
+                closeSidebar();
+
+            }
+
+        }
+    );
+
+});
