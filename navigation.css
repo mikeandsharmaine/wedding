@@ -1,0 +1,551 @@
+/* =========================================================
+   MIKE & SHARMAINE
+   UNIVERSAL WEDDING SIDEBAR
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.website-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 70px;
+
+    z-index: 9000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(250, 245, 232, 0.92);
+
+    border-bottom: 1px solid rgba(111, 118, 91, 0.10);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.menu-toggle {
+    position: absolute;
+
+    left: 22px;
+    top: 50%;
+
+    width: 42px;
+    height: 42px;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 5px;
+
+    padding: 9px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    cursor: pointer;
+
+    z-index: 9100;
+}
+
+.menu-toggle:hover {
+    background: rgba(111, 118, 91, 0.08);
+    transform: translateY(-50%);
+    box-shadow: none;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 23px;
+    height: 1.5px;
+
+    background: #687058;
+
+    border-radius: 2px;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease,
+        width 0.3s ease;
+}
+
+.menu-toggle span:nth-child(2) {
+    width: 17px;
+}
+
+
+/* Hamburger → X */
+
+.menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+    width: 0;
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+    width: 23px;
+    transform: translateY(-6.5px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   CENTER MONOGRAM
+========================================================= */
+
+.nav-monogram {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #687058;
+
+    text-decoration: none;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    line-height: 1;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.nav-monogram:hover {
+    color: #B96848;
+    transform: scale(1.03);
+}
+
+.nav-monogram::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -8px;
+
+    width: 22px;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background: #C5A067;
+
+    opacity: 0.6;
+}
+
+
+/* Hide old page navigation */
+
+.website-nav > nav {
+    display: none !important;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.wedding-sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: min(390px, 88vw);
+    height: 100vh;
+
+    z-index: 10000;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 20%,
+            rgba(255, 251, 241, 0.99),
+            rgba(247, 237, 218, 0.99)
+        );
+
+    box-shadow:
+        20px 0 60px rgba(72, 57, 37, 0.14);
+
+    transform: translateX(-105%);
+
+    transition:
+        transform 0.5s cubic-bezier(.77, 0, .18, 1);
+
+    overflow-y: auto;
+
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* Open */
+
+.wedding-sidebar.is-open {
+    transform: translateX(0);
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   SIDEBAR TEXTURE
+========================================================= */
+
+.wedding-sidebar::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.35;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(111, 90, 55, 0.025) 0,
+            rgba(111, 90, 55, 0.025) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+}
+
+
+/* =========================================================
+   INNER
+========================================================= */
+
+.sidebar-inner {
+    position: relative;
+
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding:
+        78px
+        40px
+        32px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.sidebar-header {
+    text-align: center;
+
+    padding-bottom: 34px;
+}
+
+.sidebar-eyebrow {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    letter-spacing: 3.5px;
+
+    color: #9A8B70;
+}
+
+.sidebar-monogram {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 39px;
+    font-weight: 500;
+
+    letter-spacing: 5px;
+
+    line-height: 1;
+
+    color: #6F7D57;
+}
+
+.sidebar-subtitle {
+    margin: 8px 0 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    color: #8A7A62;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   MENU LINKS
+========================================================= */
+
+.sidebar-link {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 34px 1fr;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 12px;
+
+    border-radius: 8px;
+
+    color: #625D50;
+
+    text-decoration: none;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 19px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+.sidebar-link:hover {
+    color: #B96848;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    padding-left: 17px;
+}
+
+.sidebar-link.active {
+    color: #B96848;
+
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.sidebar-link.active::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 9px;
+    bottom: 9px;
+
+    width: 2px;
+
+    background: #C87553;
+
+    border-radius: 2px;
+}
+
+
+/* =========================================================
+   NUMBERS
+========================================================= */
+
+.sidebar-number {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    color: #A79676;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.sidebar-footer {
+    margin-top: auto;
+
+    padding-top: 40px;
+
+    text-align: center;
+
+    color: #8C806B;
+}
+
+.sidebar-footer > span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    color: #C5A067;
+}
+
+.sidebar-footer p {
+    margin: 0 0 2px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 16px;
+
+    font-style: italic;
+
+    color: #8A7A62;
+}
+
+.sidebar-footer strong {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    color: #6F765B;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.sidebar-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9500;
+
+    background: rgba(63, 54, 39, 0.20);
+
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.sidebar-overlay.is-open {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   LOCK PAGE WHEN MENU IS OPEN
+========================================================= */
+
+body.sidebar-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .website-nav {
+        height: 64px;
+    }
+
+    .menu-toggle {
+        left: 12px;
+    }
+
+    .nav-monogram {
+        font-size: 23px;
+        letter-spacing: 3px;
+    }
+
+    .wedding-sidebar {
+        width: min(340px, 88vw);
+    }
+
+    .sidebar-inner {
+        padding:
+            68px
+            28px
+            28px;
+    }
+
+    .sidebar-link {
+        font-size: 18px;
+    }
+}
