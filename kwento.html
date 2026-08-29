@@ -19,45 +19,139 @@
 
 <body class="kwento-page">
 
-  <!-- =========================================================
-       NAVIGATION
-       ========================================================= -->
+ <!-- =========================================================
+     WEDDING SIDEBAR NAVIGATION
+     ========================================================= -->
 
-  <header class="kw-nav">
+<header class="site-header">
 
-    <a class="kw-brand" href="index.html">
-      M &amp; S
+    <!-- Hamburger -->
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        type="button"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
+    <!-- Center Monogram -->
+    <a href="index.html" class="site-monogram">
+        M <span>&amp;</span> S
     </a>
 
-    <nav aria-label="Wedding navigation">
+</header>
 
-      <a href="index.html">
-        Home
-      </a>
 
-      <a href="kwento.html" class="active">
-        Ang Aming Kwento
-      </a>
+<!-- =========================================================
+     SIDEBAR
+     ========================================================= -->
 
-      <a href="detalye.html">
-        Detalye ng Kasal
-      </a>
+<aside
+    class="site-sidebar"
+    id="siteSidebar"
+    aria-hidden="true"
+>
 
-      <a href="daloy.html">
-        Daloy ng Pagdiriwang
-      </a>
+    <div class="sidebar-inner">
 
-      <a href="dress-code.html">
-        Dress Code
-      </a>
+        <!-- Sidebar top -->
+        <div class="sidebar-top">
 
-      <a href="rsvp.html">
-        RSVP
-      </a>
+            <div class="sidebar-monogram">
+                M <span>&amp;</span> S
+            </div>
 
-    </nav>
+            <button
+                class="menu-close"
+                id="menuClose"
+                aria-label="Close navigation"
+                type="button"
+            >
+                ×
+            </button>
 
-  </header>
+        </div>
+
+
+        <!-- Small introduction -->
+        <div class="sidebar-intro">
+
+            <span>MIKE &amp; SHARMAINE</span>
+
+            <p>
+                Our wedding story
+            </p>
+
+        </div>
+
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav" aria-label="Wedding navigation">
+
+            <a href="index.html">
+                <span class="nav-number">01</span>
+                <span>Home</span>
+            </a>
+
+            <a href="kwento.html">
+                <span class="nav-number">02</span>
+                <span>Ang Aming Kwento</span>
+            </a>
+
+            <a href="detalye.html">
+                <span class="nav-number">03</span>
+                <span>Detalye ng Kasal</span>
+            </a>
+
+            <a href="daloy.html">
+                <span class="nav-number">04</span>
+                <span>Daloy ng Pagdiriwang</span>
+            </a>
+
+            <a href="dress-code.html">
+                <span class="nav-number">05</span>
+                <span>Dress Code</span>
+            </a>
+
+            <a href="rsvp.html" class="nav-rsvp">
+                <span class="nav-number">06</span>
+                <span>RSVP</span>
+                <span class="nav-heart">♡</span>
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar bottom -->
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-flower">
+                ❋
+            </div>
+
+            <p>
+                With love,<br>
+                <span>Mike &amp; Sharmaine</span>
+            </p>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- Dark overlay -->
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    aria-hidden="true"
+></div>
 
 
   <main>
