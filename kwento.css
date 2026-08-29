@@ -3243,3 +3243,614 @@ body.kwento-page {
     font-size: 40px;
   }
 }
+/* =========================================================
+   FIX — ANG AMING KWENTO FLORAL CHAPTER SECTION
+   ========================================================= */
+
+/* Remove the old giant floral frame treatment */
+.story-section::before,
+.story-section::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN CHAPTER BACKGROUND
+   ========================================================= */
+
+.story-section {
+  position: relative;
+  overflow: hidden;
+
+  padding: 105px 6% 150px;
+
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      rgba(255, 255, 255, 0.55),
+      transparent 42%
+    ),
+    linear-gradient(
+      180deg,
+      #faf3e5 0%,
+      #f7eddd 100%
+    );
+}
+
+
+/* =========================================================
+   FLORAL FRAME — USE THE IMAGE ONCE
+   ========================================================= */
+
+.story-section::before {
+  inset: 0;
+
+  background-image: url("floral-frame.png");
+  background-repeat: no-repeat;
+
+  /*
+    Stretch the full floral artwork across the section.
+    This allows the flowers to sit naturally around
+    the outer edges instead of appearing as separate boxes.
+  */
+  background-size: 100% 100%;
+  background-position: center;
+
+  opacity: 0.72;
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   SOFT CREAM OVERLAY
+   Keeps the flowers delicate and prevents them
+   from overpowering the text.
+   ========================================================= */
+
+.story-section::after {
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(250, 243, 229, 0.12),
+      rgba(250, 243, 229, 0.32)
+    );
+
+  z-index: 1;
+}
+
+
+/* Everything inside stays above the floral artwork */
+
+.story-heading,
+.story-grid {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.story-heading {
+  width: min(1050px, 100%);
+
+  margin: 0 auto 75px;
+
+  text-align: left;
+}
+
+
+.story-heading > span {
+  display: block;
+
+  margin-bottom: 14px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 4px;
+
+  color: #d85e39;
+}
+
+
+.story-heading h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 7vw, 88px);
+
+  line-height: 0.88;
+
+  font-weight: 500;
+
+  color: #7d9169;
+}
+
+
+.story-heading h2 em {
+  color: #71685b;
+  font-style: italic;
+}
+
+
+/* =========================================================
+   SMALL FLOATING FLOWERS
+   These are separate from the large floral frame.
+   ========================================================= */
+
+.story-heading::after {
+  content: "✿     ✧     ✿";
+
+  position: absolute;
+
+  right: 9%;
+  bottom: -35px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 24px;
+
+  letter-spacing: 12px;
+
+  color: rgba(211, 157, 79, 0.62);
+
+  z-index: 6;
+}
+
+
+/* =========================================================
+   STORY GRID
+   ========================================================= */
+
+.story-grid {
+  width: min(1180px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 1fr)
+    minmax(260px, 0.82fr)
+    minmax(280px, 1fr);
+
+  align-items: start;
+
+  gap: 32px;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.story-card {
+  position: relative;
+
+  min-height: 560px;
+
+  padding: 48px 42px;
+
+  border: 1px solid rgba(105, 91, 69, 0.14);
+
+  box-shadow:
+    0 18px 38px rgba(84, 68, 45, 0.10);
+
+  overflow: hidden;
+}
+
+
+/* subtle inner frame */
+
+.story-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 8px;
+
+  border: 1px solid rgba(105, 91, 69, 0.12);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD COLORS
+   ========================================================= */
+
+.story-card-green {
+  background:
+    linear-gradient(
+      145deg,
+      #e9ead9,
+      #e2e5d0
+    );
+}
+
+
+.story-card-peach {
+  background:
+    linear-gradient(
+      145deg,
+      #f3c7a4,
+      #efbd98
+    );
+}
+
+
+.story-card-sage {
+  background:
+    linear-gradient(
+      145deg,
+      #dfe5d1,
+      #d8dfc8
+    );
+}
+
+
+.story-card-cream {
+  background:
+    linear-gradient(
+      145deg,
+      #faf2df,
+      #f4e8d1
+    );
+}
+
+
+/* =========================================================
+   CARD NUMBER
+   ========================================================= */
+
+.story-number {
+  position: absolute;
+
+  top: 28px;
+  right: 30px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 13px;
+
+  letter-spacing: 2px;
+
+  color: rgba(91, 84, 68, 0.48);
+}
+
+
+/* =========================================================
+   CARD ICON
+   ========================================================= */
+
+.story-icon {
+  position: relative;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 30px;
+
+  border: 1px solid rgba(104, 91, 69, 0.30);
+
+  border-radius: 50%;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 27px;
+
+  color: #716856;
+}
+
+
+/* =========================================================
+   CARD TEXT
+   ========================================================= */
+
+.story-kicker {
+  margin: 0 0 16px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 3px;
+
+  color: #817661;
+}
+
+
+.story-card h3 {
+  margin: 0 0 25px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(30px, 3vw, 38px);
+
+  line-height: 1.02;
+
+  font-weight: 600;
+
+  color: #5d6552;
+}
+
+
+.story-text {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 20px;
+
+  line-height: 1.52;
+
+  color: #71685c;
+}
+
+
+/* =========================================================
+   POLAROID
+   ========================================================= */
+
+.story-photo {
+  position: relative;
+
+  z-index: 8;
+
+  width: 100%;
+  max-width: 335px;
+
+  margin: 25px auto 0;
+
+  padding: 12px 12px 28px;
+
+  background: #fffdf8;
+
+  box-shadow:
+    0 18px 35px rgba(78, 63, 43, 0.17);
+
+  transform: rotate(1.5deg);
+}
+
+
+.story-photo img {
+  display: block;
+
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+}
+
+
+.story-photo figcaption {
+  padding: 17px 8px 0;
+
+  text-align: center;
+
+  font-family: "Allura", cursive;
+
+  font-size: 27px;
+
+  line-height: 1.05;
+
+  color: #665b4f;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   REMOVE THE OLD FLORAL BLOCK UNDER THE PHOTO
+   ========================================================= */
+
+.photo-main::after {
+  content: none !important;
+}
+
+
+/* =========================================================
+   SMALL BOTANICAL UNDER PHOTO
+   Instead of the giant floral frame.
+   ========================================================= */
+
+.photo-main {
+  margin-bottom: 40px;
+}
+
+
+/* =========================================================
+   MEMORY NOTE
+   ========================================================= */
+
+.memory-note {
+  position: relative;
+
+  z-index: 8;
+
+  grid-column: 2;
+
+  width: 250px;
+
+  margin: 20px auto 0;
+
+  padding: 45px 25px 30px;
+
+  text-align: center;
+
+  background: #f5d29f;
+
+  box-shadow:
+    0 12px 25px rgba(86, 66, 41, 0.12);
+
+  transform: rotate(2deg);
+}
+
+
+.memory-note p {
+  margin: 0;
+
+  font-family: "Allura", cursive;
+
+  font-size: 29px;
+
+  line-height: 1.05;
+
+  color: #75634d;
+}
+
+
+.memory-note strong {
+  display: block;
+
+  margin-top: 15px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 25px;
+
+  font-weight: 400;
+
+  color: #d65c39;
+}
+
+
+/* =========================================================
+   TAPE
+   ========================================================= */
+
+.memory-note .tape {
+  position: absolute;
+
+  top: -9px;
+  left: 50%;
+
+  width: 65px;
+  height: 19px;
+
+  transform:
+    translateX(-50%)
+    rotate(-2deg);
+
+  background: rgba(209, 174, 111, 0.48);
+}
+
+
+/* =========================================================
+   MINI MEMORY
+   ========================================================= */
+
+.mini-memory {
+  margin-top: 35px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid rgba(103, 91, 71, 0.20);
+
+  text-align: center;
+}
+
+
+.mini-memory span {
+  display: block;
+
+  font-family: "Allura", cursive;
+
+  font-size: 26px;
+
+  color: #d65d39;
+}
+
+
+.mini-memory small {
+  display: block;
+
+  margin-top: 5px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 16px;
+
+  color: #776c5c;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 800px) {
+
+  .story-section {
+    padding: 75px 20px 100px;
+  }
+
+
+  .story-section::before {
+    background-size: auto 100%;
+    background-position: center;
+    opacity: 0.45;
+  }
+
+
+  .story-heading {
+    text-align: center;
+    margin-bottom: 55px;
+  }
+
+
+  .story-heading h2 {
+    font-size: 55px;
+  }
+
+
+  .story-heading::after {
+    display: none;
+  }
+
+
+  .story-grid {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 45px;
+  }
+
+
+  .story-card {
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 40px 30px;
+  }
+
+
+  .story-photo {
+    max-width: 310px;
+  }
+
+
+  .memory-note {
+    width: 240px;
+  }
+}
