@@ -48,58 +48,199 @@
 
 
         <!-- ==============================
-             NAVIGATION
-        =============================== -->
+     GLOBAL WEDDING NAVIGATION
+============================== -->
 
-        <header class="website-nav">
+<header class="website-nav">
 
-           <nav>
+    <!-- Hamburger button — LEFT -->
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open wedding navigation"
+        aria-expanded="false"
+        aria-controls="weddingSidebar"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
+    <!-- Monogram — CENTER -->
     <a
         href="index.html"
-        class="nav-link active"
+        class="nav-monogram"
+        aria-label="Mike & Sharmaine Home"
     >
-        Home
+        <span>M</span>
+        <span class="monogram-and">&amp;</span>
+        <span>S</span>
     </a>
 
-    <a
-        href="kwento.html"
-        class="nav-link"
-    >
-        Ang Aming Kwento
-    </a>
+</header>
 
-    <a
-        href="detalye.html"
-        class="nav-link"
-    >
-        Detalye ng Kasal
-    </a>
 
-    <a
-        href="daloy.html"
-        class="nav-link"
-    >
-        Daloy ng Pagdiriwang
-    </a>
+<!-- ==============================
+     WEDDING SIDEBAR
+============================== -->
 
-    <a
-        href="dress-code.html"
-        class="nav-link"
-    >
-        Dress Code
-    </a>
+<aside
+    class="wedding-sidebar"
+    id="weddingSidebar"
+    aria-hidden="true"
+>
 
-    <a
-        href="rsvp.html"
-        class="nav-link"
-    >
-        RSVP
-    </a>
+    <div class="sidebar-inner">
 
-</nav>
+        <!-- Sidebar header -->
+        <div class="sidebar-top">
 
-        </header>
+            <span class="sidebar-label">
+                OUR WEDDING
+            </span>
+
+            <button
+                class="sidebar-close"
+                id="sidebarClose"
+                type="button"
+                aria-label="Close navigation"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- Couple -->
+        <div class="sidebar-intro">
+
+            <div
+                class="sidebar-floral"
+                aria-hidden="true"
+            >
+                ❋
+            </div>
+
+            <div class="sidebar-couple">
+                Mike <span>&amp;</span> Sharmaine
+            </div>
+
+            <p>
+                Our wedding story
+            </p>
+
+        </div>
+
+
+        <!-- Navigation -->
+        <nav
+            class="sidebar-navigation"
+            aria-label="Wedding navigation"
+        >
+
+            <a
+                href="index.html"
+                class="sidebar-link sidebar-link-active"
+            >
+                <span class="sidebar-number">01</span>
+                <span class="sidebar-text">Home</span>
+            </a>
+
+
+            <a
+                href="kwento.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-number">02</span>
+                <span class="sidebar-text">
+                    Ang Aming Kwento
+                </span>
+            </a>
+
+
+            <a
+                href="detalye.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-number">03</span>
+                <span class="sidebar-text">
+                    Detalye ng Kasal
+                </span>
+            </a>
+
+
+            <a
+                href="daloy.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-number">04</span>
+                <span class="sidebar-text">
+                    Daloy ng Pagdiriwang
+                </span>
+            </a>
+
+
+            <a
+                href="dress-code.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-number">05</span>
+                <span class="sidebar-text">
+                    Dress Code
+                </span>
+            </a>
+
+
+            <a
+                href="rsvp.html"
+                class="sidebar-link sidebar-link-rsvp"
+            >
+                <span class="sidebar-number">06</span>
+                <span class="sidebar-text">
+                    RSVP
+                </span>
+
+                <span
+                    class="sidebar-heart"
+                    aria-hidden="true"
+                >
+                    ♡
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar footer -->
+        <div class="sidebar-bottom">
+
+            <div
+                class="sidebar-bottom-flower"
+                aria-hidden="true"
+            >
+                ✧
+            </div>
+
+            <p>
+                With love,<br>
+                <span>Mike &amp; Sharmaine</span>
+            </p>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- Sidebar overlay -->
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    aria-hidden="true"
+></div>
 
 
 
