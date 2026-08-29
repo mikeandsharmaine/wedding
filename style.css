@@ -8241,3 +8241,781 @@ body.kwento-page .kwento-page-content {
     padding-right: 14px !important;
   }
 }
+/* =========================================================
+   MIKE & SHARMAINE
+   GLOBAL SIDEBAR NAVIGATION
+   ========================================================= */
+
+
+/* =========================================================
+   TOP NAVIGATION BAR
+   ========================================================= */
+
+.website-nav {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    height: 72px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 24px !important;
+
+    z-index: 5000 !important;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,248,238,.97),
+            rgba(255,248,238,.88),
+            rgba(255,248,238,.15)
+        ) !important;
+
+    backdrop-filter: blur(7px) !important;
+    -webkit-backdrop-filter: blur(7px) !important;
+}
+
+
+/* REMOVE OLD HORIZONTAL NAVIGATION */
+
+.website-nav nav {
+    display: none !important;
+}
+
+
+/* =========================================================
+   HAMBURGER
+   ========================================================= */
+
+.menu-toggle {
+    position: absolute !important;
+
+    left: 18px !important;
+    top: 50% !important;
+
+    width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: flex-start !important;
+    justify-content: center !important;
+
+    gap: 5px !important;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    transform: translateY(-50%) !important;
+
+    cursor: pointer !important;
+}
+
+
+.menu-toggle:hover,
+.menu-toggle:focus,
+.menu-toggle:active {
+    background: transparent !important;
+
+    box-shadow: none !important;
+
+    transform: translateY(-50%) !important;
+}
+
+
+.menu-toggle span {
+    display: block !important;
+
+    width: 23px !important;
+    height: 1.5px !important;
+
+    background: #6F765B !important;
+
+    transition: width .25s ease !important;
+}
+
+
+.menu-toggle span:nth-child(2) {
+    width: 17px !important;
+}
+
+
+.menu-toggle:hover span:nth-child(2) {
+    width: 23px !important;
+}
+
+
+/* =========================================================
+   CENTER MONOGRAM
+   ========================================================= */
+
+.nav-monogram {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 4px !important;
+
+    text-decoration: none !important;
+
+    font-family:
+        'Cormorant Garamond',
+        serif !important;
+
+    font-size: 29px !important;
+
+    font-weight: 500 !important;
+
+    letter-spacing: 4px !important;
+
+    line-height: 1 !important;
+
+    color: #6F7D57 !important;
+}
+
+
+.nav-monogram:hover {
+    color: #6F7D57 !important;
+
+    transform: none !important;
+}
+
+
+.nav-monogram .monogram-and {
+    color: #B38B59 !important;
+
+    font-size: .85em !important;
+
+    letter-spacing: 0 !important;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+#weddingSidebar {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: min(390px, 88vw) !important;
+
+    height: 100vh !important;
+    height: 100dvh !important;
+
+    z-index: 10000 !important;
+
+    overflow: hidden !important;
+
+    background:
+
+        radial-gradient(
+            circle at 8% 10%,
+            rgba(126,142,101,.14),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 92% 88%,
+            rgba(189,105,72,.10),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            145deg,
+            #FBF6EA 0%,
+            #F7EDDB 52%,
+            #F1E4CD 100%
+        ) !important;
+
+    box-shadow:
+        18px 0 55px
+        rgba(76,61,42,.18) !important;
+
+    transform:
+        translateX(-105%) !important;
+
+    transition:
+        transform .45s
+        cubic-bezier(.77,0,.18,1) !important;
+}
+
+
+#weddingSidebar.is-open {
+    transform:
+        translateX(0) !important;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTANICAL DECOR
+   ========================================================= */
+
+#weddingSidebar::before {
+    content: "❧";
+
+    position: absolute;
+
+    left: -65px;
+    top: 95px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 175px;
+
+    color:
+        rgba(111,125,87,.10);
+
+    transform:
+        rotate(-25deg);
+
+    pointer-events: none;
+}
+
+
+#weddingSidebar::after {
+    content: "✿";
+
+    position: absolute;
+
+    right: 15px;
+    bottom: 10px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 105px;
+
+    color:
+        rgba(179,139,89,.09);
+
+    transform:
+        rotate(12deg);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SIDEBAR INNER
+   ========================================================= */
+
+.sidebar-inner {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    padding:
+        28px
+        34px
+        25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   SIDEBAR HEADER
+   ========================================================= */
+
+.sidebar-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 19px;
+
+    border-bottom:
+        1px solid
+        rgba(111,118,91,.13);
+}
+
+
+.sidebar-label {
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    letter-spacing: 3px;
+
+    color: #8A806D;
+}
+
+
+/* CLOSE BUTTON */
+
+.sidebar-close {
+    width: 38px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    border:
+        1px solid
+        rgba(111,118,91,.22) !important;
+
+    border-radius: 50% !important;
+
+    background:
+        transparent !important;
+
+    color:
+        #756A5B !important;
+
+    font-family:
+        'Cormorant Garamond',
+        serif !important;
+
+    font-size: 26px !important;
+
+    font-weight: 300 !important;
+
+    box-shadow: none !important;
+
+    cursor: pointer !important;
+}
+
+
+.sidebar-close:hover {
+    background:
+        #B38B59 !important;
+
+    border-color:
+        #B38B59 !important;
+
+    color:
+        white !important;
+
+    transform:
+        none !important;
+}
+
+
+/* =========================================================
+   SIDEBAR COUPLE INTRO
+   ========================================================= */
+
+.sidebar-intro {
+    padding:
+        32px
+        0
+        25px;
+
+    text-align: center;
+}
+
+
+.sidebar-floral {
+    margin-bottom: 9px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 24px;
+
+    color: #B38B59;
+}
+
+
+.sidebar-couple {
+    font-family:
+        'Allura',
+        cursive;
+
+    font-size: 40px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #BD6948;
+}
+
+
+.sidebar-couple span {
+    color: #B38B59;
+}
+
+
+.sidebar-intro p {
+    margin: 8px 0 0;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 16px;
+
+    font-style: italic;
+
+    color: #8B806D;
+}
+
+
+/* =========================================================
+   SIDEBAR LINKS
+   ========================================================= */
+
+.sidebar-navigation {
+    display: flex;
+
+    flex-direction: column;
+
+    border-top:
+        1px solid
+        rgba(111,118,91,.13);
+}
+
+
+.sidebar-link {
+    position: relative;
+
+    min-height: 56px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding:
+        0 8px;
+
+    color: #686255;
+
+    text-decoration: none;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 19px;
+
+    font-weight: 500;
+
+    border-bottom:
+        1px solid
+        rgba(111,118,91,.11);
+
+    transition:
+        color .25s ease,
+        padding-left .25s ease,
+        background .25s ease;
+}
+
+
+.sidebar-link::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -1px;
+
+    width: 0;
+
+    height: 1px;
+
+    background:
+        #BD6948;
+
+    transition:
+        width .28s ease;
+}
+
+
+.sidebar-link:hover,
+.sidebar-link:focus,
+.sidebar-link-active {
+    color:
+        #BD6948;
+
+    padding-left:
+        14px;
+
+    background:
+        rgba(255,255,255,.22);
+}
+
+
+.sidebar-link:hover::before,
+.sidebar-link:focus::before,
+.sidebar-link-active::before {
+    width:
+        42px;
+}
+
+
+/* NUMBER */
+
+.sidebar-number {
+    width: 25px;
+
+    flex: 0 0 25px;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    color: #A3947E;
+}
+
+
+/* TEXT */
+
+.sidebar-text {
+    min-width: 0;
+}
+
+
+/* RSVP */
+
+.sidebar-link-rsvp {
+    margin-top: 9px;
+
+    border:
+        1px solid
+        rgba(126,142,101,.22);
+
+    background:
+        rgba(126,142,101,.08);
+}
+
+
+.sidebar-link-rsvp:hover {
+    background:
+        rgba(126,142,101,.14);
+}
+
+
+/* HEART */
+
+.sidebar-heart {
+    margin-left: auto;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 24px;
+
+    color:
+        #BD6948;
+}
+
+
+/* =========================================================
+   SIDEBAR FOOTER
+   ========================================================= */
+
+.sidebar-bottom {
+    margin-top: auto;
+
+    padding-top: 21px;
+
+    text-align: center;
+}
+
+
+.sidebar-bottom-flower {
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 20px;
+
+    color:
+        #B38B59;
+}
+
+
+.sidebar-bottom p {
+    margin: 6px 0 0;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 14px;
+
+    line-height: 1.35;
+
+    color:
+        #988A76;
+}
+
+
+.sidebar-bottom p span {
+    font-family:
+        'Allura',
+        cursive;
+
+    font-size: 25px;
+
+    color:
+        #BD6948;
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+   ========================================================= */
+
+.sidebar-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9500;
+
+    background:
+        rgba(55,46,36,.30);
+
+    backdrop-filter:
+        blur(2px);
+
+    -webkit-backdrop-filter:
+        blur(2px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity .35s ease,
+        visibility .35s ease;
+}
+
+
+.sidebar-overlay.is-visible {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+body.sidebar-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .website-nav {
+        height: 64px !important;
+
+        padding:
+            0 14px !important;
+
+        overflow: visible !important;
+
+        justify-content: center !important;
+    }
+
+
+    .menu-toggle {
+        left: 9px !important;
+    }
+
+
+    .nav-monogram {
+        font-size: 25px !important;
+
+        letter-spacing: 3px !important;
+    }
+
+
+    #weddingSidebar {
+        width:
+            min(350px, 88vw) !important;
+    }
+
+
+    .sidebar-inner {
+        padding:
+            24px
+            25px
+            22px;
+    }
+
+
+    .sidebar-intro {
+        padding:
+            28px
+            0
+            23px;
+    }
+
+
+    .sidebar-couple {
+        font-size: 36px;
+    }
+
+
+    .sidebar-link {
+        min-height: 54px;
+
+        font-size: 18px;
+    }
+
+
+    .sidebar-bottom {
+        padding-top: 14px;
+    }
+
+}
