@@ -1163,3 +1163,310 @@ body.kwento-page .kw-hero .flower-right {
     bottom: 18% !important;
   }
 }
+/* =========================================================
+   ANG AMING KWENTO — ELEGANT BOTANICAL HERO
+   ========================================================= */
+
+/* Main hero background */
+
+body.kwento-page .kw-hero {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 590px;
+
+  background:
+    radial-gradient(
+      circle at 18% 38%,
+      rgba(239, 199, 112, 0.18),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 82% 55%,
+      rgba(216, 89, 47, 0.08),
+      transparent 26%
+    ),
+    linear-gradient(
+      135deg,
+      #f8eddd 0%,
+      #f4e3d2 50%,
+      #f6e5d8 100%
+    ) !important;
+}
+
+
+/* =========================================================
+   BOTANICAL FRAME
+   Uses your existing floral-frame.png
+   ========================================================= */
+
+body.kwento-page .hero-floral-frame {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background-image: url("floral-frame.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  pointer-events: none;
+
+  opacity: 0.92;
+}
+
+
+/* =========================================================
+   KEEP CONTENT ABOVE FLOWERS
+   ========================================================= */
+
+body.kwento-page .kw-hero .eyebrow,
+body.kwento-page .kw-hero h1,
+body.kwento-page .kw-hero .hero-ornament,
+body.kwento-page .kw-hero .hero-subtitle {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* =========================================================
+   ELEGANT ARCH
+   ========================================================= */
+
+body.kwento-page .kw-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: min(760px, 82vw);
+  height: 520px;
+
+  left: 50%;
+  bottom: -165px;
+
+  transform: translateX(-50%);
+
+  border: 1px solid rgba(126, 142, 101, 0.22);
+  border-bottom: none;
+
+  border-radius: 400px 400px 0 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BOTTOM DECORATION
+   ========================================================= */
+
+body.kwento-page .kw-hero::after {
+  content: "✦   ❋   ✦";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 30px;
+
+  transform: translateX(-50%);
+
+  z-index: 5;
+
+  color: rgba(126, 142, 101, 0.38);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+  letter-spacing: 8px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+body.kwento-page .kw-hero h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(58px, 9vw, 112px);
+
+  line-height: 0.86;
+
+  font-weight: 500;
+
+  letter-spacing: -2px;
+
+  color: #7e8e65;
+}
+
+
+body.kwento-page .kw-hero h1 span {
+  display: block;
+
+  margin-top: -3px;
+
+  font-family: "Allura", cursive;
+
+  font-size: clamp(90px, 13vw, 160px);
+
+  line-height: 0.9;
+
+  font-weight: 400;
+
+  letter-spacing: 0;
+
+  color: #d85d38;
+}
+
+
+/* =========================================================
+   SUBTITLE
+   ========================================================= */
+
+body.kwento-page .kw-hero .hero-subtitle {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(22px, 3vw, 29px);
+
+  line-height: 1.25;
+
+  font-style: italic;
+
+  color: #756853;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+body.kwento-page .kw-hero .eyebrow {
+  margin-bottom: 22px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 5px;
+
+  color: #756853;
+}
+
+
+/* =========================================================
+   HEART ORNAMENT
+   ========================================================= */
+
+body.kwento-page .kw-hero .hero-ornament {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 17px;
+
+  margin: 28px 0 18px;
+
+  color: #d9ad4f;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 28px;
+}
+
+
+body.kwento-page .kw-hero .hero-ornament span {
+  display: block;
+
+  width: 64px;
+  height: 1px;
+
+  background: rgba(117, 102, 83, 0.35);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 700px) {
+
+  body.kwento-page .kw-hero {
+    min-height: 560px;
+
+    padding: 80px 20px 70px;
+  }
+
+
+  body.kwento-page .hero-floral-frame {
+    background-size: auto 100%;
+    background-position: center center;
+
+    opacity: 0.72;
+  }
+
+
+  body.kwento-page .kw-hero h1 {
+    font-size: clamp(48px, 15vw, 72px);
+
+    letter-spacing: -1px;
+  }
+
+
+  body.kwento-page .kw-hero h1 span {
+    font-size: clamp(78px, 23vw, 110px);
+  }
+
+
+  body.kwento-page .kw-hero .eyebrow {
+    font-size: 8px;
+    letter-spacing: 3.5px;
+  }
+
+
+  body.kwento-page .kw-hero .hero-ornament {
+    margin: 22px 0 15px;
+
+    gap: 12px;
+
+    font-size: 25px;
+  }
+
+
+  body.kwento-page .kw-hero .hero-ornament span {
+    width: 48px;
+  }
+
+
+  body.kwento-page .kw-hero .hero-subtitle {
+    font-size: 21px;
+  }
+
+
+  body.kwento-page .kw-hero::before {
+    width: 110vw;
+    height: 390px;
+
+    bottom: -155px;
+
+    border-radius: 55% 55% 0 0;
+  }
+
+
+  body.kwento-page .kw-hero::after {
+    bottom: 22px;
+
+    font-size: 12px;
+    letter-spacing: 6px;
+  }
+
+}
