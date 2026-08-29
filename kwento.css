@@ -1108,3 +1108,58 @@ body.kwento-page {
     font-size: 32px;
   }
 }
+/* =========================================================
+   FORCE ELEGANT HERO FLOWERS — TEST
+   ========================================================= */
+
+body.kwento-page .kw-hero .hero-flower {
+  position: absolute !important;
+  z-index: 10 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 150px !important;
+  height: 150px !important;
+
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 110px !important;
+  line-height: 1 !important;
+
+  opacity: 0.45 !important;
+
+  pointer-events: none !important;
+}
+
+body.kwento-page .kw-hero .flower-left {
+  left: 3% !important;
+  top: 20% !important;
+  color: #7e8e65 !important;
+  transform: rotate(-12deg) !important;
+}
+
+body.kwento-page .kw-hero .flower-right {
+  right: 3% !important;
+  bottom: 16% !important;
+  color: #d85d38 !important;
+  transform: rotate(12deg) !important;
+}
+
+@media screen and (max-width: 700px) {
+  body.kwento-page .kw-hero .hero-flower {
+    width: 100px !important;
+    height: 100px !important;
+    font-size: 75px !important;
+  }
+
+  body.kwento-page .kw-hero .flower-left {
+    left: -15px !important;
+    top: 18% !important;
+  }
+
+  body.kwento-page .kw-hero .flower-right {
+    right: -15px !important;
+    bottom: 18% !important;
+  }
+}
