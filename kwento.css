@@ -1,47 +1,39 @@
 /* ==========================================================
    MIKE & SHARMAINE — ANG AMING KWENTO
-   ELEGANT BOTANICAL / CREAM WEDDING THEME
+   CLEAN / CONSOLIDATED VERSION
+   Replace the contents of kwento.css with this file.
+   No HTML changes are required.
    ========================================================== */
 
 :root {
-  --olive: #7E8E65;
-  --sage: #C5C69E;
-  --gold: #D9AD4F;
-  --cream: #F6EBDD;
-  --cream-light: #FBF4E7;
-  --paper: #F9F1E0;
-  --peach: #DFA37C;
-  --burnt: #D85D38;
-  --ink: #5E6250;
-  --brown: #756653;
-  --soft-brown: #9A866D;
-  --white: #FFFDF7;
+  --olive: #7f9168;
+  --sage: #dfe4d0;
+  --gold: #d7a85a;
+  --cream: #f8f0df;
+  --cream-light: #fbf5e8;
+  --paper: #fffaf0;
+  --peach: #efc3a0;
+  --burnt: #d85d38;
+  --ink: #5f6554;
+  --brown: #71675a;
+  --soft-brown: #9a876c;
+  --white: #fffdf7;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body.kwento-page {
   margin: 0;
+  overflow-x: hidden;
   background: var(--cream-light);
   color: var(--ink);
-  overflow-x: hidden;
   font-family: "Poppins", sans-serif;
 }
 
-.kwento-page a {
-  color: inherit;
-}
-
-.kwento-page img {
-  display: block;
-  max-width: 100%;
-}
+.kwento-page a { color: inherit; }
+.kwento-page img { display: block; max-width: 100%; }
 
 
 /* ==========================================================
@@ -52,32 +44,28 @@ body.kwento-page {
   position: sticky;
   top: 0;
   z-index: 100;
-
   min-height: 68px;
+  padding: 10px 24px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 10px 24px;
-
-  background: rgba(249, 241, 224, 0.97);
-
-  border-bottom: 1px solid rgba(126, 142, 101, 0.15);
+  background: rgba(251, 245, 232, 0.96);
+  border-bottom: 1px solid rgba(117, 102, 83, 0.12);
 
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .kw-brand {
   position: absolute;
   left: 24px;
-
   text-decoration: none;
 
   font-family: "Cormorant Garamond", serif;
   font-size: 21px;
   letter-spacing: 2px;
-
   color: var(--olive);
 }
 
@@ -90,49 +78,38 @@ body.kwento-page {
 
 .kw-nav nav a {
   position: relative;
-
   padding: 8px 0;
 
   text-decoration: none;
+  white-space: nowrap;
 
   font-family: "Cardo", serif;
   font-size: 13px;
   letter-spacing: 1.2px;
-
-  color: #6E745F;
-
-  white-space: nowrap;
+  color: #6e745f;
 
   transition: color 0.25s ease;
 }
 
 .kw-nav nav a::after {
   content: "";
-
   position: absolute;
-
   left: 50%;
   bottom: 1px;
 
   width: 0;
   height: 1px;
-
   background: var(--burnt);
 
   transform: translateX(-50%);
-
   transition: width 0.25s ease;
 }
 
 .kw-nav nav a:hover,
-.kw-nav nav a.active {
-  color: var(--burnt);
-}
+.kw-nav nav a.active { color: var(--burnt); }
 
 .kw-nav nav a:hover::after,
-.kw-nav nav a.active::after {
-  width: 100%;
-}
+.kw-nav nav a.active::after { width: 100%; }
 
 
 /* ==========================================================
@@ -141,103 +118,70 @@ body.kwento-page {
 
 .kw-hero {
   position: relative;
+  isolation: isolate;
 
-  min-height: 590px;
+  min-height: 610px;
+  padding: 90px 24px 80px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  padding: 90px 24px 80px;
-
-  text-align: center;
-
   overflow: hidden;
-
-  /*
-    SOFT CREAM / BEIGE BACKGROUND
-    Similar to the Home section
-  */
+  text-align: center;
 
   background:
     radial-gradient(
       circle at 50% 45%,
-      rgba(255, 248, 235, 0.72),
-      transparent 45%
+      rgba(255, 252, 242, 0.96) 0%,
+      rgba(255, 248, 235, 0.72) 38%,
+      transparent 68%
     ),
     linear-gradient(
       135deg,
-      #F8EEDF 0%,
-      #F5E5D5 48%,
-      #F4E0D2 100%
+      #f8f0df 0%,
+      #f6e9d8 50%,
+      #f4e5d6 100%
     );
 }
 
-
-/* ==========================================================
-   WATERCOLOUR FLORAL FRAME
-
-   IMPORTANT:
-   This creates the floral frame directly from your
-   existing floral-frame.png.
-
-   No HTML change is required.
-   ========================================================== */
-
+/* One continuous floral artwork.
+   It is blended into the cream background to avoid harsh boxes. */
 .kw-hero::before {
   content: "";
-
   position: absolute;
   inset: 0;
-
-  z-index: 1;
+  z-index: 0;
 
   background-image: url("floral-frame.png");
-
   background-repeat: no-repeat;
-
-  background-position: center center;
-
+  background-position: center;
   background-size: cover;
 
-  opacity: 0.78;
-
+  opacity: 0.72;
+  mix-blend-mode: multiply;
   pointer-events: none;
 }
 
-
-/* ==========================================================
-   SOFT CENTER VEIL
-
-   Keeps the middle clean so the title remains readable.
-   ========================================================== */
-
+/* Clean center for the heading while keeping flowers visible. */
 .kw-hero::after {
   content: "";
-
   position: absolute;
-
   inset: 0;
-
-  z-index: 2;
+  z-index: 1;
 
   background:
     radial-gradient(
       ellipse at center,
-      rgba(248, 237, 221, 0.90) 0%,
-      rgba(248, 237, 221, 0.62) 38%,
-      rgba(248, 237, 221, 0.18) 67%,
-      transparent 82%
+      rgba(249, 241, 226, 0.94) 0%,
+      rgba(249, 241, 226, 0.72) 35%,
+      rgba(249, 241, 226, 0.25) 61%,
+      transparent 78%
     );
 
   pointer-events: none;
 }
-
-
-/* ==========================================================
-   HERO CONTENT
-   ========================================================== */
 
 .kw-hero .eyebrow,
 .kw-hero h1,
@@ -247,276 +191,207 @@ body.kwento-page {
   z-index: 5;
 }
 
-
-/* ==========================================================
-   EYEBROW
-   ========================================================== */
-
 .kw-hero .eyebrow {
-  margin: 0 0 22px;
+  margin: 0 0 20px;
 
   font-family: "Poppins", sans-serif;
-
   font-size: 10px;
   font-weight: 500;
-
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   text-transform: uppercase;
 
-  color: #756853;
+  color: #786b58;
 }
-
-
-/* ==========================================================
-   MAIN HEADING
-   ========================================================== */
 
 .kw-hero h1 {
   margin: 0;
 
   font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(58px, 9vw, 112px);
-
-  line-height: 0.86;
-
+  font-size: clamp(64px, 8.5vw, 112px);
+  line-height: 0.84;
   font-weight: 500;
-
   letter-spacing: -2px;
 
   color: var(--olive);
 }
 
-
-/* ==========================================================
-   KWENTO SCRIPT
-   ========================================================== */
-
 .kw-hero h1 span {
   display: block;
-
-  margin-top: -3px;
+  margin-top: 4px;
 
   font-family: "Allura", cursive;
-
-  font-size: clamp(90px, 13vw, 160px);
-
+  font-size: clamp(92px, 12vw, 160px);
   line-height: 0.9;
-
   font-weight: 400;
-
-  letter-spacing: 0;
 
   color: var(--burnt);
 }
 
-
-/* ==========================================================
-   HEART ORNAMENT
-   ========================================================== */
-
 .hero-ornament {
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   gap: 17px;
 
-  margin: 28px 0 18px;
+  margin: 30px 0 18px;
 
   color: var(--gold);
-
   font-family: "Cormorant Garamond", serif;
-
-  font-size: 28px;
+  font-size: 29px;
 }
 
 .hero-ornament span {
   display: block;
-
-  width: 64px;
+  width: 65px;
   height: 1px;
-
-  background: rgba(117, 102, 83, 0.30);
+  background: rgba(117, 102, 83, 0.32);
 }
-
-
-/* ==========================================================
-   SUBTITLE
-   ========================================================== */
 
 .kw-hero .hero-subtitle {
   margin: 0;
 
   font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(22px, 3vw, 29px);
-
+  font-size: clamp(22px, 2.6vw, 30px);
   line-height: 1.25;
-
   font-style: italic;
 
-  color: #756853;
+  color: #756a5a;
 }
+
+/* Prevent the old HTML flower divs from creating duplicates. */
+.kw-hero .hero-flower { display: none !important; }
 
 
 /* ==========================================================
-   OLD HERO FLOWERS
-   Hide these because floral-frame.png is now used.
-   ========================================================== */
-
-.kw-hero .hero-flower {
-  display: none !important;
-}
-
-
-/* ==========================================================
-   INTRODUCTION
+   INTRODUCTION — CREAM PAPER
    ========================================================== */
 
 .kw-intro {
   position: relative;
+  isolation: isolate;
 
-  padding: 95px 20px 110px;
+  min-height: 470px;
+  padding: 85px 20px 110px;
 
-  background:
-    linear-gradient(
-      180deg,
-      #F6EBDD 0%,
-      #F8EEDF 100%
-    );
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(255, 255, 255, 0.34),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 85% 50%,
+      rgba(255, 255, 255, 0.30),
+      transparent 24%
+    ),
+    linear-gradient(
+      180deg,
+      #f8f1e3 0%,
+      #f7eddd 100%
+    );
 }
 
-
-/*
-  Very subtle botanical atmosphere
-*/
-
+/* IMPORTANT:
+   No floral-frame image here.
+   This removes the rectangular floral blocks that appeared
+   around the introduction paper. */
 .kw-intro::before {
   content: "";
-
   position: absolute;
-
   inset: 0;
 
-  background-image: url("floral-frame.png");
-
-  background-repeat: no-repeat;
-
-  background-position: center;
-
-  background-size: cover;
-
-  opacity: 0.07;
+  background:
+    radial-gradient(
+      circle at 8% 65%,
+      rgba(126, 145, 104, 0.12),
+      transparent 16%
+    ),
+    radial-gradient(
+      circle at 92% 35%,
+      rgba(216, 93, 56, 0.09),
+      transparent 17%
+    );
 
   pointer-events: none;
 }
 
-
-/* ==========================================================
-   INTRO PAPER
-   ========================================================== */
-
 .intro-paper {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 
   width: min(760px, 92%);
-
-  margin: 0 auto;
-
-  padding: 58px 75px 62px;
-
-  background: rgba(249, 241, 224, 0.96);
+  padding: 60px 72px 58px;
 
   text-align: center;
 
-  border: 1px solid rgba(117, 102, 83, 0.08);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 250, 240, 0.98),
+      rgba(249, 240, 222, 0.98)
+    );
+
+  border: 1px solid rgba(117, 102, 83, 0.10);
 
   box-shadow:
     0 20px 45px rgba(82, 69, 50, 0.10);
 }
-
-
-/* Tape */
 
 .intro-paper::before,
 .intro-paper::after {
   content: "";
 
   position: absolute;
+  top: -8px;
 
-  top: -7px;
+  width: 62px;
+  height: 18px;
 
-  width: 48px;
-  height: 14px;
-
-  background: rgba(194, 157, 99, 0.42);
+  background: rgba(202, 168, 106, 0.38);
 }
 
 .intro-paper::before {
   left: 22%;
-
   transform: rotate(-3deg);
 }
 
 .intro-paper::after {
   right: 22%;
-
   transform: rotate(3deg);
 }
 
-
-/* ==========================================================
-   PAPER LABEL
-   ========================================================== */
-
 .paper-label {
   display: block;
-
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 
   font-family: "Poppins", sans-serif;
-
   font-size: 9px;
+  letter-spacing: 4px;
 
-  letter-spacing: 3px;
-
-  color: var(--soft-brown);
+  color: #9a8364;
 }
-
-
-/* ==========================================================
-   INTRO TEXT
-   ========================================================== */
 
 .intro-paper p {
   margin: 0;
 
   font-family: "Cormorant Garamond", serif;
+  font-size: clamp(21px, 2.4vw, 28px);
+  line-height: 1.52;
 
-  font-size: clamp(21px, 2.4vw, 27px);
-
-  line-height: 1.55;
-
-  color: #6D6457;
+  color: #6f6659;
 }
-
-
-/* ==========================================================
-   SIGNATURE
-   ========================================================== */
 
 .paper-signature {
   display: block;
-
-  margin-top: 27px;
+  margin-top: 28px;
 
   font-family: "Allura", cursive;
-
   font-size: 37px;
 
   color: var(--burnt);
@@ -524,2807 +399,68 @@ body.kwento-page {
 
 
 /* ==========================================================
-   STORY SECTION
+   CHAPTERS / STORY SECTION
    ========================================================== */
 
 .story-section {
   position: relative;
+  isolation: isolate;
 
-  padding: 110px 24px 125px;
-
-  background:
-    linear-gradient(
-      180deg,
-      #FBF4E7 0%,
-      #F8EDDD 100%
-    );
-
-  overflow: hidden;
-}
-
-
-/* ==========================================================
-   SUBTLE FLORAL EDGE
-   ========================================================== */
-
-.story-section::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background-image: url("floral-frame.png");
-
-  background-repeat: no-repeat;
-
-  background-position: center;
-
-  background-size: cover;
-
-  opacity: 0.055;
-
-  pointer-events: none;
-}
-
-
-/* ==========================================================
-   STORY HEADING
-   ========================================================== */
-
-.story-heading {
-  position: relative;
-  z-index: 2;
-
-  width: min(1160px, 100%);
-
-  margin: 0 auto 70px;
-}
-
-.story-heading > span {
-  display: block;
-
-  margin-bottom: 12px;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 10px;
-
-  letter-spacing: 4px;
-
-  color: var(--burnt);
-}
-
-.story-heading h2 {
-  margin: 0;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(38px, 5vw, 66px);
-
-  line-height: 0.98;
-
-  font-weight: 500;
-
-  color: var(--olive);
-}
-
-.story-heading em {
-  font-family: "Cormorant Garamond", serif;
-
-  font-weight: 400;
-
-  color: var(--brown);
-}
-
-
-/* ==========================================================
-   STORY GRID
-   ========================================================== */
-
-.story-grid {
-  position: relative;
-  z-index: 2;
-
-  width: min(1160px, 100%);
-
-  margin: 0 auto;
-
-  display: grid;
-
-  grid-template-columns: 1fr 0.82fr 1fr;
-
-  gap: 54px 38px;
-
-  align-items: start;
-}
-
-
-/* ==========================================================
-   STORY CARDS
-   ========================================================== */
-
-.story-card {
-  position: relative;
-
-  min-height: 420px;
-
-  padding: 48px 40px 42px;
-
-  border: 1px solid rgba(117, 102, 83, 0.10);
-
-  box-shadow:
-    0 14px 35px rgba(82, 69, 50, 0.06);
-}
-
-
-/*
-   Keep the colors soft and elegant.
-*/
-
-.story-card-green {
-  background: #E8EAD9;
-}
-
-.story-card-peach {
-  background: #F0C8A9;
-}
-
-.story-card-sage {
-  background: #D9DDC3;
-}
-
-.story-card-cream {
-  background: #F4E7D5;
-}
-
-
-/* ==========================================================
-   STORY NUMBER
-   ========================================================== */
-
-.story-number {
-  position: absolute;
-
-  top: 22px;
-  right: 25px;
-
-  font-family: "Cardo", serif;
-
-  font-size: 12px;
-
-  letter-spacing: 2px;
-
-  color: rgba(94, 98, 80, 0.55);
-}
-
-
-/* ==========================================================
-   STORY ICON
-   ========================================================== */
-
-.story-icon {
-  width: 53px;
-  height: 53px;
-
-  display: grid;
-  place-items: center;
-
-  margin-bottom: 28px;
-
-  border: 1px solid rgba(94, 98, 80, 0.30);
-
-  border-radius: 50%;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 24px;
-
-  color: var(--brown);
-}
-
-
-/* ==========================================================
-   STORY KICKER
-   ========================================================== */
-
-.story-kicker {
-  margin: 0 0 10px;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 8px;
-
-  letter-spacing: 2.5px;
-
-  color: rgba(94, 98, 80, 0.72);
-}
-
-
-/* ==========================================================
-   STORY TITLE
-   ========================================================== */
-
-.story-card h3 {
-  margin: 0 0 20px;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(25px, 2.4vw, 34px);
-
-  line-height: 1.08;
-
-  font-weight: 600;
-
-  color: var(--ink);
-}
-
-
-/* ==========================================================
-   STORY TEXT
-   ========================================================== */
-
-.story-text {
-  margin: 0;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 20px;
-
-  line-height: 1.55;
-
-  color: #6D6457;
-}
-
-
-/* ==========================================================
-   PHOTOS
-   ========================================================== */
-
-.story-photo {
-  margin: 0;
-
-  padding: 10px 10px 16px;
-
-  background: #FFFDF7;
-
-  box-shadow:
-    0 16px 35px rgba(72, 58, 40, 0.13);
-}
-
-.story-photo img {
-  width: 100%;
-  height: auto;
-
-  object-fit: cover;
-}
-
-.story-photo figcaption {
-  padding: 13px 5px 2px;
-
-  text-align: center;
-
-  font-family: "Allura", cursive;
-
-  font-size: 25px;
-
-  line-height: 1.05;
-
-  color: #625748;
-}
-
-
-/* ==========================================================
-   GRID POSITIONS
-   ========================================================== */
-
-.photo-main {
-  grid-column: 2;
-
-  margin-top: 34px;
-
-  transform: rotate(3deg);
-}
-
-.photo-secondary {
-  grid-column: 2;
-
-  margin-top: 20px;
-
-  transform: rotate(-3deg);
-}
-
-.story-grid > .story-card:nth-of-type(1) {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.story-grid > .story-card:nth-of-type(2) {
-  grid-column: 3;
-  grid-row: 1;
-}
-
-.story-grid > .story-card:nth-of-type(3) {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-.story-grid > .story-card:nth-of-type(4) {
-  grid-column: 3;
-  grid-row: 3;
-}
-
-.story-grid > .photo-main {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.story-grid > .memory-note {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.story-grid > .photo-secondary {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-
-/* ==========================================================
-   MEMORY NOTE
-   ========================================================== */
-
-.memory-note {
-  position: relative;
-
-  margin: -18px 14px 10px;
-
-  padding: 35px 22px 30px;
-
-  background: #F2E4C6;
-
-  text-align: center;
-
-  box-shadow:
-    0 12px 25px rgba(82, 69, 50, 0.09);
-
-  transform: rotate(2deg);
-}
-
-.memory-note .tape {
-  position: absolute;
-
-  top: -6px;
-
-  left: 50%;
-
-  width: 55px;
-  height: 13px;
-
-  background: rgba(194, 157, 99, 0.45);
-
-  transform: translateX(-50%) rotate(-3deg);
-}
-
-.memory-note p {
-  margin: 0;
-
-  font-family: "Allura", cursive;
-
-  font-size: 31px;
-
-  line-height: 1.12;
-
-  color: #665846;
-}
-
-.memory-note strong {
-  display: block;
-
-  margin-top: 10px;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 24px;
-
-  font-weight: 400;
-
-  color: var(--burnt);
-}
-
-
-/* ==========================================================
-   MINI MEMORY
-   ========================================================== */
-
-.mini-memory {
-  margin-top: 25px;
-
-  padding-top: 19px;
-
-  border-top: 1px solid rgba(117, 102, 83, 0.25);
-
-  text-align: center;
-}
-
-.mini-memory span {
-  display: block;
-
-  font-family: "Allura", cursive;
-
-  font-size: 27px;
-
-  color: #665846;
-}
-
-.mini-memory small {
-  display: block;
-
-  margin-top: 5px;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 8px;
-
-  letter-spacing: 1.5px;
-
-  color: var(--soft-brown);
-}
-
-
-/* ==========================================================
-   CLOSING SECTION
-   ========================================================== */
-
-/*
-   IMPORTANT:
-   NO MORE ORANGE BACKGROUND.
-*/
-
-.kw-closing {
-  position: relative;
-
-  padding: 125px 24px 115px;
-
-  text-align: center;
+  padding: 105px 6% 145px;
 
   overflow: hidden;
 
   background:
     radial-gradient(
-      ellipse at center,
-      rgba(255, 250, 239, 0.95) 0%,
-      rgba(248, 237, 221, 0.95) 55%,
-      rgba(243, 224, 208, 0.98) 100%
-    );
-}
-
-
-/* ==========================================================
-   FLORAL BACKGROUND FOR CLOSING
-   ========================================================== */
-
-.kw-closing::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background-image: url("floral-frame.png");
-
-  background-repeat: no-repeat;
-
-  background-position: center;
-
-  background-size: cover;
-
-  opacity: 0.15;
-
-  pointer-events: none;
-}
-
-
-/* ==========================================================
-   SOFT CENTER OVERLAY
-   ========================================================== */
-
-.kw-closing::after {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(250, 243, 231, 0.88) 0%,
-      rgba(250, 243, 231, 0.52) 45%,
-      transparent 78%
-    );
-
-  pointer-events: none;
-}
-
-
-/* ==========================================================
-   CLOSING CONTENT
-   ========================================================== */
-
-.kw-closing > * {
-  position: relative;
-  z-index: 3;
-}
-
-
-/* ==========================================================
-   CLOSING BOTANICAL
-   ========================================================== */
-
-.closing-botanical {
-  margin-bottom: 18px;
-
-  font-size: 31px;
-
-  color: var(--olive);
-}
-
-
-/* ==========================================================
-   CLOSING LABEL
-   ========================================================== */
-
-.closing-label {
-  margin: 0 0 22px;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 8px;
-
-  letter-spacing: 3px;
-
-  color: var(--soft-brown);
-}
-
-
-/* ==========================================================
-   CLOSING TITLE
-   ========================================================== */
-
-.kw-closing h2 {
-  max-width: 850px;
-
-  margin: 0 auto;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(34px, 5vw, 58px);
-
-  line-height: 1.08;
-
-  font-weight: 400;
-
-  color: var(--brown);
-}
-
-.kw-closing h2 em {
-  display: block;
-
-  margin-top: 4px;
-
-  font-family: "Allura", cursive;
-
-  font-size: 1.18em;
-
-  color: var(--burnt);
-}
-
-
-/* ==========================================================
-   CLOSING LINE
-   ========================================================== */
-
-.closing-line {
-  width: 75px;
-
-  height: 1px;
-
-  margin: 35px auto 18px;
-
-  background: rgba(117, 102, 83, 0.35);
-}
-
-
-/* ==========================================================
-   NAMES
-   ========================================================== */
-
-.closing-names {
-  margin: 0 0 32px;
-
-  font-family: "Allura", cursive;
-
-  font-size: 38px;
-
-  color: var(--burnt);
-}
-
-
-/* ==========================================================
-   NEXT BUTTON
-   ========================================================== */
-
-.next-button {
-  position: relative;
-  z-index: 4;
-
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 14px;
-
-  padding: 14px 25px;
-
-  border: 1px solid rgba(126, 142, 101, 0.50);
-
-  border-radius: 999px;
-
-  background: rgba(126, 142, 101, 0.08);
-
-  text-decoration: none;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 11px;
-
-  letter-spacing: 1px;
-
-  color: var(--olive);
-
-  transition: 0.25s ease;
-}
-
-.next-button:hover {
-  background: rgba(126, 142, 101, 0.15);
-
-  transform: translateY(-2px);
-}
-
-
-/* ==========================================================
-   TABLET
-   ========================================================== */
-
-@media (max-width: 820px) {
-
-  .kw-nav {
-    justify-content: flex-start;
-
-    padding: 10px 18px;
-  }
-
-  .kw-brand {
-    display: none;
-  }
-
-  .kw-nav nav {
-    width: 100%;
-
-    justify-content: flex-start;
-
-    gap: 25px;
-
-    overflow-x: auto;
-
-    scrollbar-width: none;
-  }
-
-  .kw-nav nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .kw-nav nav a {
-    font-size: 11px;
-  }
-
-
-  /* HERO */
-
-  .kw-hero {
-    min-height: 540px;
-
-    padding: 75px 20px 65px;
-  }
-
-  .kw-hero::before {
-    background-size: cover;
-
-    background-position: center;
-
-    opacity: 0.60;
-  }
-
-  .kw-hero::after {
-    background:
-      radial-gradient(
-        ellipse at center,
-        rgba(248, 237, 221, 0.92) 0%,
-        rgba(248, 237, 221, 0.65) 45%,
-        rgba(248, 237, 221, 0.15) 75%
-      );
-  }
-
-
-  /* INTRO */
-
-  .kw-intro {
-    padding: 70px 15px 80px;
-  }
-
-  .intro-paper {
-    width: 94%;
-
-    padding: 42px 25px 46px;
-  }
-
-  .intro-paper p {
-    font-size: 19px;
-  }
-
-
-  /* STORY */
-
-  .story-section {
-    padding: 80px 16px 90px;
-  }
-
-  .story-heading {
-    margin-bottom: 48px;
-  }
-
-  .story-grid {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 34px;
-  }
-
-  .story-card {
-    width: 100%;
-
-    min-height: 0;
-
-    padding: 38px 27px 34px;
-  }
-
-  .story-photo {
-    width: 82%;
-
-    align-self: center;
-
-    margin-top: -8px;
-  }
-
-  .memory-note {
-    width: 78%;
-
-    align-self: center;
-
-    margin: -12px auto 4px;
-  }
-
-  .story-card h3 {
-    font-size: 29px;
-  }
-
-  .story-text {
-    font-size: 18px;
-
-    line-height: 1.55;
-  }
-
-  .story-photo figcaption {
-    font-size: 22px;
-  }
-
-
-  /* CLOSING */
-
-  .kw-closing {
-    padding: 95px 22px 90px;
-  }
-}
-
-
-/* ==========================================================
-   MOBILE
-   ========================================================== */
-
-@media (max-width: 430px) {
-
-  .kw-nav nav {
-    gap: 21px;
-  }
-
-  .kw-nav nav a {
-    font-size: 10px;
-
-    letter-spacing: 1px;
-  }
-
-
-  /* HERO */
-
-  .kw-hero {
-    min-height: 500px;
-
-    padding:
-      75px 18px
-      65px;
-  }
-
-  .kw-hero::before {
-    background-size: auto 100%;
-
-    background-position: center;
-
-    opacity: 0.55;
-  }
-
-  .kw-hero .eyebrow {
-    font-size: 8px;
-
-    letter-spacing: 3px;
-  }
-
-  .kw-hero h1 {
-    font-size: 48px;
-  }
-
-  .kw-hero h1 span {
-    font-size: 79px;
-  }
-
-  .hero-ornament span {
-    width: 42px;
-  }
-
-  .kw-hero .hero-subtitle {
-    font-size: 20px;
-  }
-
-
-  /* INTRO */
-
-  .intro-paper {
-    padding: 36px 20px 40px;
-  }
-
-  .intro-paper p {
-    font-size: 18px;
-  }
-
-
-  /* STORY */
-
-  .story-card {
-    padding: 34px 22px 31px;
-  }
-
-  .story-card h3 {
-    font-size: 27px;
-  }
-
-  .story-text {
-    font-size: 17px;
-  }
-
-  .story-photo {
-    width: 90%;
-  }
-
-  .memory-note {
-    width: 88%;
-  }
-
-  .memory-note p {
-    font-size: 27px;
-  }
-
-
-  /* CLOSING */
-
-  .kw-closing {
-    padding: 80px 18px 75px;
-  }
-
-  .kw-closing h2 {
-    font-size: 32px;
-  }
-
-  .closing-names {
-    font-size: 34px;
-  }
-
-  .next-button {
-    padding: 13px 22px;
-
-    font-size: 10px;
-  }
-}
-/* =========================================================
-   ANG AMING KWENTO — ELEGANT FLORAL THEME
-   ========================================================= */
-
-/* ---------- MAIN HERO ---------- */
-
-.kw-hero {
-  position: relative;
-  min-height: 570px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 90px 24px 80px;
-  text-align: center;
-  overflow: hidden;
-
-  /* Warm cream / beige like the Home section */
-  background:
-    linear-gradient(
-      90deg,
-      rgba(250, 244, 228, 0.96),
-      rgba(248, 232, 214, 0.92),
-      rgba(250, 239, 224, 0.96)
-    );
-}
-
-
-/* ---------- SUBTLE PAPER TEXTURE ---------- */
-
-.kw-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background:
-    radial-gradient(
-      circle at 50% 45%,
-      rgba(255,255,255,0.38),
-      transparent 45%
+      circle at 50% 28%,
+      rgba(255, 255, 255, 0.70),
+      transparent 46%
     ),
     linear-gradient(
       180deg,
-      rgba(255,255,255,0.12),
-      rgba(236,216,191,0.10)
-    );
-
-  pointer-events: none;
-  z-index: 0;
-}
-
-
-/* ---------- ARCH ---------- */
-
-.kw-hero::after {
-  content: "";
-  position: absolute;
-
-  width: min(780px, 78vw);
-  height: 520px;
-
-  left: 50%;
-  bottom: -235px;
-
-  transform: translateX(-50%);
-
-  border: 1px solid rgba(126, 142, 101, 0.23);
-  border-bottom: none;
-
-  border-radius: 400px 400px 0 0;
-
-  pointer-events: none;
-  z-index: 1;
-}
-
-
-/* ---------- HERO TEXT ---------- */
-
-.kw-hero .eyebrow {
-  position: relative;
-  z-index: 5;
-
-  margin: 0 0 22px;
-
-  font-family: "Poppins", sans-serif;
-  font-size: 10px;
-  font-weight: 500;
-
-  letter-spacing: 4px;
-
-  color: #786c59;
-}
-
-
-.kw-hero h1 {
-  position: relative;
-  z-index: 5;
-
-  margin: 0;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(58px, 9vw, 112px);
-  line-height: 0.88;
-
-  font-weight: 500;
-  letter-spacing: -2px;
-
-  color: #7f9167;
-}
-
-
-.kw-hero h1 span {
-  display: block;
-
-  margin-top: -4px;
-
-  font-family: "Allura", cursive;
-
-  font-size: clamp(90px, 13vw, 160px);
-  line-height: 0.9;
-
-  font-weight: 400;
-  letter-spacing: 0;
-
-  color: #d85d38;
-}
-
-
-/* ---------- HEART ORNAMENT ---------- */
-
-.hero-ornament {
-  position: relative;
-  z-index: 5;
-
-  display: flex;
-  align-items: center;
-  gap: 16px;
-
-  margin: 25px 0 17px;
-
-  color: #dcae45;
-
-  font-family: "Cormorant Garamond", serif;
-  font-size: 28px;
-}
-
-
-.hero-ornament span {
-  width: 65px;
-  height: 1px;
-
-  background: rgba(117, 102, 83, 0.35);
-}
-
-
-/* ---------- SUBTITLE ---------- */
-
-.hero-subtitle {
-  position: relative;
-  z-index: 5;
-
-  margin: 0;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(22px, 3vw, 29px);
-  line-height: 1.25;
-
-  font-style: italic;
-
-  color: #756b5d;
-}
-
-
-/* =========================================================
-   WATERCOLOUR FLOWERS
-   ========================================================= */
-
-.hero-flower {
-  position: absolute;
-
-  width: 330px;
-  height: 430px;
-
-  z-index: 3;
-
-  pointer-events: none;
-
-  background-image: url("floral-frame.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-
-/* LEFT FLORAL ARRANGEMENT */
-
-.flower-left {
-  left: -55px;
-  top: -15px;
-
-  width: 380px;
-  height: 520px;
-
-  background-position: left top;
-
-  transform: rotate(-2deg);
-}
-
-
-/* RIGHT FLORAL ARRANGEMENT */
-
-.flower-right {
-  right: -55px;
-  top: -15px;
-
-  width: 380px;
-  height: 520px;
-
-  background-position: right top;
-
-  transform: scaleX(-1) rotate(-2deg);
-}
-
-
-/* =========================================================
-   CHAPTERS / STORY BOARD
-   ========================================================= */
-
-.kw-intro {
-  position: relative;
-
-  background:
-    linear-gradient(
-      180deg,
-      #f8f1e2 0%,
-      #f6eddd 100%
-    );
-
-  overflow: hidden;
-}
-
-
-/* Add very subtle floral atmosphere */
-
-.kw-intro::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background:
-    radial-gradient(
-      circle at 10% 45%,
-      rgba(213, 183, 142, 0.12),
-      transparent 22%
-    ),
-    radial-gradient(
-      circle at 90% 55%,
-      rgba(213, 183, 142, 0.12),
-      transparent 22%
-    );
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   STORY CARDS
-   ========================================================= */
-
-.kw-story-board {
-  position: relative;
-  z-index: 2;
-}
-
-
-/* Keep the original elegant card colors */
-
-.story-one {
-  background: #e9ead5;
-}
-
-
-.story-two {
-  background: #efc09d;
-}
-
-
-/* Softer borders */
-
-.story-card {
-  border: 1px solid rgba(117, 102, 83, 0.12);
-
-  box-shadow:
-    0 18px 45px rgba(91, 73, 49, 0.08);
-}
-
-
-/* =========================================================
-   FLORAL DECORATIONS AROUND STORY SECTION
-   ========================================================= */
-
-/* If your story board contains the existing cards,
-   these create little decorative flowers around them. */
-
-.kw-story-board::before {
-  content: "✿";
-
-  position: absolute;
-
-  left: 3%;
-  top: 18%;
-
-  font-size: 42px;
-
-  color: rgba(126, 142, 101, 0.42);
-
-  transform: rotate(-12deg);
-}
-
-
-.kw-story-board::after {
-  content: "✿";
-
-  position: absolute;
-
-  right: 4%;
-  bottom: 15%;
-
-  font-size: 48px;
-
-  color: rgba(216, 89, 47, 0.32);
-
-  transform: rotate(15deg);
-}
-
-
-/* =========================================================
-   SMALL FLOATING FLOWERS
-   ========================================================= */
-
-.kw-intro .intro-paper {
-  position: relative;
-  z-index: 3;
-}
-
-
-/* Decorative flowers behind content */
-
-.kw-intro .intro-paper::before {
-  content: "✿";
-
-  position: absolute;
-
-  left: -80px;
-  top: 80px;
-
-  font-size: 65px;
-
-  color: rgba(126, 142, 101, 0.20);
-
-  transform: rotate(-18deg);
-
-  pointer-events: none;
-}
-
-
-.kw-intro .intro-paper::after {
-  content: "✿";
-
-  position: absolute;
-
-  right: -80px;
-  bottom: 70px;
-
-  font-size: 65px;
-
-  color: rgba(216, 89, 47, 0.18);
-
-  transform: rotate(18deg);
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media screen and (max-width: 700px) {
-
-  .kw-hero {
-    min-height: 540px;
-    padding: 80px 20px 70px;
-  }
-
-  .kw-hero h1 {
-    font-size: clamp(52px, 15vw, 78px);
-  }
-
-  .kw-hero h1 span {
-    font-size: clamp(76px, 20vw, 115px);
-  }
-
-
-  /* Smaller flowers on phones */
-
-  .hero-flower {
-    width: 220px;
-    height: 330px;
-  }
-
-  .flower-left {
-    left: -90px;
-    top: -15px;
-  }
-
-  .flower-right {
-    right: -90px;
-    top: -15px;
-  }
-
-
-  .kw-hero::after {
-    width: 90vw;
-    height: 430px;
-    bottom: -220px;
-  }
-
-
-  .kw-story-board::before {
-    left: 1%;
-    top: 10%;
-    font-size: 28px;
-  }
-
-  .kw-story-board::after {
-    right: 1%;
-    bottom: 10%;
-    font-size: 32px;
-  }
-}
-/* =========================================================
-   ANG AMING KWENTO — FINAL WATERCOLOUR / FLORAL DESIGN
-   ========================================================= */
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.kw-hero {
-  position: relative;
-  min-height: 620px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-
-  padding: 90px 24px 70px;
-
-  text-align: center;
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at 50% 45%,
-      rgba(255, 250, 239, 0.72),
-      transparent 48%
-    ),
-    linear-gradient(
-      135deg,
-      #f8f0df 0%,
-      #f6e9d8 52%,
-      #f4e4d6 100%
-    );
-}
-
-
-/* Soft paper texture */
-
-.kw-hero::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background:
-    radial-gradient(
-      circle at 20% 25%,
-      rgba(255,255,255,.40),
-      transparent 25%
-    ),
-    radial-gradient(
-      circle at 80% 70%,
-      rgba(255,255,255,.35),
-      transparent 28%
-    );
-
-  pointer-events: none;
-  z-index: 0;
-}
-
-
-/* Large arch */
-
-.kw-hero::after {
-  content: "";
-
-  position: absolute;
-
-  width: min(760px, 80vw);
-  height: 540px;
-
-  left: 50%;
-  bottom: -315px;
-
-  transform: translateX(-50%);
-
-  border: 1px solid rgba(126, 142, 101, .23);
-  border-bottom: 0;
-
-  border-radius: 50% 50% 0 0;
-
-  z-index: 1;
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   HERO FLOWERS
-   ========================================================= */
-
-.hero-flower {
-  position: absolute;
-
-  width: 430px;
-  height: 560px;
-
-  background-image: url("floral-frame.png");
-
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  z-index: 3;
-
-  pointer-events: none;
-
-  opacity: .92;
-}
-
-
-/* LEFT FLOWERS */
-
-.flower-left {
-  left: -115px;
-  top: -65px;
-
-  background-position: left top;
-
-  transform: rotate(-2deg);
-}
-
-
-/* RIGHT FLOWERS */
-
-.flower-right {
-  right: -115px;
-  top: -65px;
-
-  background-position: right top;
-
-  transform:
-    scaleX(-1)
-    rotate(-2deg);
-}
-
-
-/* =========================================================
-   HERO TEXT
-   ========================================================= */
-
-.kw-hero .eyebrow {
-  position: relative;
-  z-index: 6;
-
-  margin: 0 0 20px;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 10px;
-  font-weight: 500;
-
-  letter-spacing: 4px;
-
-  color: #776b59;
-}
-
-
-.kw-hero h1 {
-  position: relative;
-  z-index: 6;
-
-  margin: 0;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(70px, 8vw, 112px);
-
-  line-height: .82;
-
-  font-weight: 500;
-
-  letter-spacing: -2px;
-
-  color: #7f9168;
-}
-
-
-.kw-hero h1 span {
-  display: block;
-
-  margin-top: 5px;
-
-  font-family: "Allura", cursive;
-
-  font-size: clamp(95px, 12vw, 160px);
-
-  line-height: .88;
-
-  color: #d95c36;
-}
-
-
-.hero-ornament {
-  position: relative;
-  z-index: 6;
-
-  display: flex;
-  align-items: center;
-
-  gap: 18px;
-
-  margin: 35px 0 20px;
-
-  color: #d9a83e;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 30px;
-}
-
-
-.hero-ornament span {
-  width: 70px;
-  height: 1px;
-
-  background: rgba(117, 102, 83, .32);
-}
-
-
-.hero-subtitle {
-  position: relative;
-  z-index: 6;
-
-  margin: 0;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(22px, 2.5vw, 30px);
-
-  line-height: 1.25;
-
-  font-style: italic;
-
-  color: #756a5a;
-}
-
-
-/* =========================================================
-   INTRO PAPER
-   ========================================================= */
-
-.kw-intro {
-  position: relative;
-
-  min-height: 430px;
-
-  padding: 85px 24px 100px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      180deg,
-      #f7eddd 0%,
-      #f8f0e2 100%
-    );
-}
-
-
-/* soft watercolor corners */
-
-.kw-intro::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background-image: url("floral-frame.png");
-
-  background-repeat: no-repeat;
-  background-size: 390px auto;
-  background-position: left bottom;
-
-  opacity: .45;
-
-  pointer-events: none;
-}
-
-
-.kw-intro::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background-image: url("floral-frame.png");
-
-  background-repeat: no-repeat;
-  background-size: 390px auto;
-  background-position: right bottom;
-
-  transform: scaleX(-1);
-
-  opacity: .45;
-
-  pointer-events: none;
-}
-
-
-/* Paper */
-
-.intro-paper {
-  position: relative;
-
-  z-index: 5;
-
-  width: min(760px, 90%);
-
-  padding: 65px 75px 60px;
-
-  text-align: center;
-
-  background:
-    linear-gradient(
-      135deg,
-      #fff9ed,
-      #f9efdc
-    );
-
-  border: 1px solid rgba(126, 112, 87, .13);
-
-  box-shadow:
-    0 18px 40px rgba(91, 73, 45, .10);
-}
-
-
-/* subtle tape */
-
-.intro-paper::before,
-.intro-paper::after {
-  content: "";
-
-  position: absolute;
-
-  top: -8px;
-
-  width: 65px;
-  height: 20px;
-
-  background: rgba(210, 176, 112, .38);
-
-  transform: rotate(-2deg);
-}
-
-
-.intro-paper::before {
-  left: 22%;
-}
-
-
-.intro-paper::after {
-  right: 22%;
-
-  transform: rotate(2deg);
-}
-
-
-.paper-label {
-  display: block;
-
-  margin-bottom: 25px;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 9px;
-
-  letter-spacing: 4px;
-
-  color: #9a8364;
-}
-
-
-.intro-paper p {
-  margin: 0;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(22px, 2.4vw, 29px);
-
-  line-height: 1.5;
-
-  color: #6f6659;
-}
-
-
-.paper-signature {
-  display: block;
-
-  margin-top: 30px;
-
-  font-family: "Allura", cursive;
-
-  font-size: 34px;
-
-  color: #d85e39;
-}
-
-
-/* =========================================================
-   CHAPTERS SECTION
-   ========================================================= */
-
-.story-section {
-  position: relative;
-
-  padding: 100px 6% 140px;
-
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at 50% 35%,
-      rgba(255,255,255,.60),
-      transparent 48%
-    ),
-    linear-gradient(
-      180deg,
-      #f9f1e2 0%,
+      #fbf5e9 0%,
       #f7eddd 100%
     );
 }
 
-
-/* =========================================================
-   FLORAL CORNERS OF CHAPTER SECTION
-   ========================================================= */
-
+/* Flowers around the section edges.
+   mix-blend-mode helps prevent a visible rectangular PNG background. */
 .story-section::before {
   content: "";
 
   position: absolute;
-
-  top: -25px;
-  left: -110px;
-
-  width: 470px;
-  height: 620px;
-
-  background-image: url("floral-frame.png");
-
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  background-position: left top;
-
-  opacity: .78;
-
-  pointer-events: none;
-
-  z-index: 1;
-}
-
-
-.story-section::after {
-  content: "";
-
-  position: absolute;
-
-  top: -25px;
-  right: -110px;
-
-  width: 470px;
-  height: 620px;
-
-  background-image: url("floral-frame.png");
-
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  background-position: right top;
-
-  transform: scaleX(-1);
-
-  opacity: .78;
-
-  pointer-events: none;
-
-  z-index: 1;
-}
-
-
-/* =========================================================
-   CHAPTER HEADING
-   ========================================================= */
-
-.story-heading {
-  position: relative;
-
-  z-index: 5;
-
-  width: min(1050px, 100%);
-
-  margin: 0 auto 75px;
-
-  text-align: left;
-}
-
-
-.story-heading > span {
-  display: block;
-
-  margin-bottom: 15px;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 10px;
-
-  font-weight: 500;
-
-  letter-spacing: 4px;
-
-  color: #d85e39;
-}
-
-
-.story-heading h2 {
-  margin: 0;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(55px, 7vw, 88px);
-
-  line-height: .88;
-
-  font-weight: 500;
-
-  color: #7f9168;
-}
-
-
-.story-heading h2 em {
-  color: #71685b;
-
-  font-style: italic;
-}
-
-
-/* =========================================================
-   LITTLE DECORATIVE FLOWERS AROUND CHAPTERS
-   ========================================================= */
-
-.story-heading::after {
-  content: "✿        ✧              ✿";
-
-  position: absolute;
-
-  right: 10%;
-  bottom: -35px;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 25px;
-
-  letter-spacing: 15px;
-
-  color: rgba(208, 157, 79, .55);
-}
-
-
-/* =========================================================
-   STORY GRID
-   ========================================================= */
-
-.story-grid {
-  position: relative;
-
-  z-index: 5;
-
-  width: min(1180px, 100%);
-
-  margin: 0 auto;
-
-  display: grid;
-
-  grid-template-columns:
-    minmax(280px, 1fr)
-    minmax(260px, .85fr)
-    minmax(280px, 1fr);
-
-  align-items: start;
-
-  gap: 30px;
-}
-
-
-/* =========================================================
-   STORY CARDS
-   ========================================================= */
-
-.story-card {
-  position: relative;
-
-  padding: 48px 42px;
-
-  min-height: 560px;
-
-  border: 1px solid rgba(104, 91, 69, .14);
-
-  box-shadow:
-    0 18px 38px rgba(84, 68, 45, .11);
-
-  overflow: hidden;
-}
-
-
-/* Card inner border */
-
-.story-card::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 8px;
-
-  border: 1px solid rgba(105, 91, 69, .12);
-
-  pointer-events: none;
-}
-
-
-/* GREEN CARD */
-
-.story-card-green {
-  background:
-    linear-gradient(
-      145deg,
-      #e9ead9,
-      #e2e5d0
-    );
-}
-
-
-/* PEACH CARD */
-
-.story-card-peach {
-  background:
-    linear-gradient(
-      145deg,
-      #f3c7a4,
-      #efbd98
-    );
-}
-
-
-/* SAGE CARD */
-
-.story-card-sage {
-  background:
-    linear-gradient(
-      145deg,
-      #dfe5d1,
-      #d8dfc8
-    );
-}
-
-
-/* CREAM CARD */
-
-.story-card-cream {
-  background:
-    linear-gradient(
-      145deg,
-      #faf2df,
-      #f4e8d1
-    );
-}
-
-
-/* =========================================================
-   CARD NUMBER
-   ========================================================= */
-
-.story-number {
-  position: absolute;
-
-  top: 28px;
-  right: 30px;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 13px;
-
-  letter-spacing: 2px;
-
-  color: rgba(91, 84, 68, .48);
-}
-
-
-/* =========================================================
-   CARD ICON
-   ========================================================= */
-
-.story-icon {
-  position: relative;
-
-  width: 58px;
-  height: 58px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 30px;
-
-  border: 1px solid rgba(104, 91, 69, .30);
-
-  border-radius: 50%;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 27px;
-
-  color: #716856;
-}
-
-
-/* =========================================================
-   CARD TEXT
-   ========================================================= */
-
-.story-kicker {
-  margin: 0 0 16px;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 9px;
-
-  font-weight: 500;
-
-  letter-spacing: 3px;
-
-  color: #817661;
-}
-
-
-.story-card h3 {
-  margin: 0 0 25px;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(30px, 3vw, 38px);
-
-  line-height: 1.02;
-
-  font-weight: 600;
-
-  color: #5d6552;
-}
-
-
-.story-text {
-  margin: 0;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 20px;
-
-  line-height: 1.52;
-
-  color: #71685c;
-}
-
-
-/* =========================================================
-   CENTER PHOTO
-   ========================================================= */
-
-.story-photo {
-  position: relative;
-
-  z-index: 7;
-
-  width: 100%;
-
-  max-width: 335px;
-
-  margin: 25px auto 0;
-
-  padding: 12px 12px 28px;
-
-  background: #fffdf8;
-
-  box-shadow:
-    0 18px 35px rgba(78, 63, 43, .17);
-
-  transform: rotate(1.5deg);
-}
-
-
-.story-photo img {
-  display: block;
-
-  width: 100%;
-
-  height: 220px;
-
-  object-fit: cover;
-}
-
-
-.story-photo figcaption {
-  padding: 17px 8px 0;
-
-  text-align: center;
-
-  font-family: "Allura", cursive;
-
-  font-size: 27px;
-
-  line-height: 1.05;
-
-  color: #665b4f;
-}
-
-
-/* =========================================================
-   FLOWERS UNDER MAIN PHOTO
-   ========================================================= */
-
-.photo-main::after {
-  content: "";
-
-  position: absolute;
-
-  width: 330px;
-  height: 170px;
-
-  left: 50%;
-  bottom: -145px;
-
-  transform: translateX(-50%);
-
-  background-image: url("floral-frame.png");
-
-  background-repeat: no-repeat;
-
-  background-size: contain;
-
-  background-position: center bottom;
-
-  opacity: .78;
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   SECOND PHOTO
-   ========================================================= */
-
-.photo-secondary {
-  transform: rotate(-2deg);
-}
-
-
-/* =========================================================
-   MEMORY NOTE
-   ========================================================= */
-
-.memory-note {
-  position: relative;
-
-  z-index: 8;
-
-  grid-column: 2;
-
-  width: 250px;
-
-  margin: 20px auto 0;
-
-  padding: 45px 25px 30px;
-
-  text-align: center;
-
-  background: #f5d29f;
-
-  box-shadow:
-    0 12px 25px rgba(86, 66, 41, .12);
-
-  transform: rotate(2deg);
-}
-
-
-.memory-note p {
-  margin: 0;
-
-  font-family: "Allura", cursive;
-
-  font-size: 29px;
-
-  line-height: 1.05;
-
-  color: #75634d;
-}
-
-
-.memory-note strong {
-  display: block;
-
-  margin-top: 15px;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 25px;
-
-  font-weight: 400;
-
-  color: #d65c39;
-}
-
-
-/* Tape */
-
-.memory-note .tape {
-  position: absolute;
-
-  top: -9px;
-  left: 50%;
-
-  width: 65px;
-  height: 19px;
-
-  transform:
-    translateX(-50%)
-    rotate(-2deg);
-
-  background: rgba(209, 174, 111, .48);
-}
-
-
-/* =========================================================
-   MINI MEMORY
-   ========================================================= */
-
-.mini-memory {
-  margin-top: 35px;
-
-  padding-top: 22px;
-
-  border-top: 1px solid rgba(103, 91, 71, .20);
-
-  text-align: center;
-}
-
-
-.mini-memory span {
-  display: block;
-
-  font-family: "Allura", cursive;
-
-  font-size: 26px;
-
-  color: #d65d39;
-}
-
-
-.mini-memory small {
-  display: block;
-
-  margin-top: 5px;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 16px;
-
-  color: #776c5c;
-}
-
-
-/* =========================================================
-   CLOSING
-   ========================================================= */
-
-.kw-closing {
-  position: relative;
-
-  min-height: 620px;
-
-  padding: 100px 25px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at 50% 40%,
-      rgba(255,255,255,.40),
-      transparent 50%
-    ),
-    linear-gradient(
-      135deg,
-      #f4e6d4,
-      #eed9c4
-    );
-}
-
-
-/* Elegant border */
-
-.kw-closing::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 35px;
-
-  border: 1px solid rgba(255,255,255,.50);
-
-  pointer-events: none;
-}
-
-
-/* Flowers in closing */
-
-.kw-closing::after {
-  content: "";
-
-  position: absolute;
-
   inset: 0;
-
-  background-image:
-    url("floral-frame.png");
-
-  background-repeat: no-repeat;
-
-  background-size: 400px auto;
-
-  background-position:
-    left bottom;
-
-  opacity: .40;
-
-  pointer-events: none;
-}
-
-
-.closing-botanical,
-.closing-label,
-.kw-closing h2,
-.closing-line,
-.closing-names,
-.next-button {
-  position: relative;
-
-  z-index: 5;
-}
-
-
-.closing-botanical {
-  font-size: 32px;
-
-  color: #fff9ed;
-
-  margin-bottom: 25px;
-}
-
-
-.closing-label {
-  margin: 0 0 25px;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 9px;
-
-  letter-spacing: 4px;
-
-  color: #fff9ed;
-}
-
-
-.kw-closing h2 {
-  max-width: 850px;
-
-  margin: 0;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(40px, 5vw, 65px);
-
-  line-height: 1.05;
-
-  font-weight: 400;
-
-  color: #fffaf0;
-}
-
-
-.kw-closing h2 em {
-  display: block;
-
-  margin-top: 10px;
-
-  font-family: "Allura", cursive;
-
-  font-size: 1.25em;
-
-  font-style: normal;
-}
-
-
-.closing-line {
-  width: 80px;
-
-  height: 1px;
-
-  margin: 35px 0 20px;
-
-  background: rgba(255,255,255,.65);
-}
-
-
-.closing-names {
-  margin: 0 0 35px;
-
-  font-family: "Allura", cursive;
-
-  font-size: 34px;
-
-  color: #fffaf0;
-}
-
-
-.next-button {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 14px;
-
-  padding: 15px 28px;
-
-  border: 1px solid rgba(255,255,255,.65);
-
-  border-radius: 40px;
-
-  text-decoration: none;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 11px;
-
-  letter-spacing: 1px;
-
-  color: #fffaf0;
-
-  background: rgba(255,255,255,.08);
-
-  transition:
-    background .3s ease,
-    transform .3s ease;
-}
-
-
-.next-button:hover {
-  background: rgba(255,255,255,.18);
-
-  transform: translateY(-2px);
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media screen and (max-width: 800px) {
-
-  .kw-hero {
-    min-height: 570px;
-
-    padding:
-      80px
-      25px
-      65px;
-
-    align-items: center;
-
-    text-align: center;
-  }
-
-
-  .kw-hero h1 {
-    font-size: 64px;
-  }
-
-
-  .kw-hero h1 span {
-    font-size: 100px;
-  }
-
-
-  .hero-flower {
-    width: 280px;
-    height: 380px;
-
-    opacity: .65;
-  }
-
-
-  .flower-left {
-    left: -120px;
-    top: -35px;
-  }
-
-
-  .flower-right {
-    right: -120px;
-    top: -35px;
-  }
-
-
-  .kw-intro {
-    padding:
-      70px
-      20px
-      85px;
-  }
-
-
-  .intro-paper {
-    width: 92%;
-
-    padding:
-      45px
-      28px
-      45px;
-  }
-
-
-  .intro-paper p {
-    font-size: 21px;
-  }
-
-
-  .story-section {
-    padding:
-      75px
-      20px
-      100px;
-  }
-
-
-  .story-heading {
-    margin-bottom: 55px;
-
-    text-align: center;
-  }
-
-
-  .story-heading h2 {
-    font-size: 55px;
-  }
-
-
-  .story-heading::after {
-    display: none;
-  }
-
-
-  .story-section::before {
-    width: 300px;
-    height: 400px;
-
-    left: -130px;
-  }
-
-
-  .story-section::after {
-    width: 300px;
-    height: 400px;
-
-    right: -130px;
-  }
-
-
-  .story-grid {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 45px;
-  }
-
-
-  .story-card {
-    width: 100%;
-
-    min-height: auto;
-
-    padding:
-      40px
-      30px;
-  }
-
-
-  .story-photo {
-    order: 0;
-
-    max-width: 310px;
-  }
-
-
-  .memory-note {
-    width: 240px;
-
-    order: 5;
-  }
-
-
-  .photo-main::after {
-    width: 280px;
-  }
-
-
-  .kw-closing {
-    min-height: 570px;
-
-    padding:
-      80px
-      25px;
-  }
-
-
-  .kw-closing::before {
-    inset: 20px;
-  }
-
-
-  .kw-closing h2 {
-    font-size: 40px;
-  }
-}
-/* =========================================================
-   FIX — ANG AMING KWENTO FLORAL CHAPTER SECTION
-   ========================================================= */
-
-/* Remove the old giant floral frame treatment */
-.story-section::before,
-.story-section::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   MAIN CHAPTER BACKGROUND
-   ========================================================= */
-
-.story-section {
-  position: relative;
-  overflow: hidden;
-
-  padding: 105px 6% 150px;
-
-  background:
-    radial-gradient(
-      circle at 50% 25%,
-      rgba(255, 255, 255, 0.55),
-      transparent 42%
-    ),
-    linear-gradient(
-      180deg,
-      #faf3e5 0%,
-      #f7eddd 100%
-    );
-}
-
-
-/* =========================================================
-   FLORAL FRAME — USE THE IMAGE ONCE
-   ========================================================= */
-
-.story-section::before {
-  inset: 0;
-
-  background-image: url("floral-frame.png");
-  background-repeat: no-repeat;
-
-  /*
-    Stretch the full floral artwork across the section.
-    This allows the flowers to sit naturally around
-    the outer edges instead of appearing as separate boxes.
-  */
-  background-size: 100% 100%;
-  background-position: center;
-
-  opacity: 0.72;
-
   z-index: 0;
+
+  background-image: url("floral-frame.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  opacity: 0.58;
+  mix-blend-mode: multiply;
+
+  pointer-events: none;
 }
 
-
-/* =========================================================
-   SOFT CREAM OVERLAY
-   Keeps the flowers delicate and prevents them
-   from overpowering the text.
-   ========================================================= */
-
+/* Soft center fade */
 .story-section::after {
+  content: "";
+
+  position: absolute;
   inset: 0;
+  z-index: 1;
 
   background:
     radial-gradient(
-      circle at center,
-      rgba(250, 243, 229, 0.12),
-      rgba(250, 243, 229, 0.32)
+      ellipse at center,
+      rgba(251, 245, 233, 0.72) 0%,
+      rgba(251, 245, 233, 0.30) 47%,
+      transparent 76%
     );
 
-  z-index: 1;
+  pointer-events: none;
 }
-
-
-/* Everything inside stays above the floral artwork */
 
 .story-heading,
 .story-grid {
@@ -3333,112 +469,93 @@ body.kwento-page {
 }
 
 
-/* =========================================================
-   HEADING
-   ========================================================= */
+/* ==========================================================
+   CHAPTER HEADING
+   ========================================================== */
 
 .story-heading {
   width: min(1050px, 100%);
-
-  margin: 0 auto 75px;
-
+  margin: 0 auto 72px;
   text-align: left;
 }
 
-
 .story-heading > span {
   display: block;
-
-  margin-bottom: 14px;
+  margin-bottom: 13px;
 
   font-family: "Poppins", sans-serif;
-
   font-size: 10px;
   font-weight: 500;
-
   letter-spacing: 4px;
 
-  color: #d85e39;
+  color: var(--burnt);
 }
-
 
 .story-heading h2 {
   margin: 0;
 
   font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(55px, 7vw, 88px);
-
+  font-size: clamp(52px, 7vw, 88px);
   line-height: 0.88;
-
   font-weight: 500;
 
-  color: #7d9169;
+  color: var(--olive);
 }
-
 
 .story-heading h2 em {
-  color: #71685b;
   font-style: italic;
+  font-weight: 400;
+  color: var(--brown);
 }
 
-
-/* =========================================================
-   SMALL FLOATING FLOWERS
-   These are separate from the large floral frame.
-   ========================================================= */
-
+/* Small floral ornaments like the generated reference. */
 .story-heading::after {
   content: "✿     ✧     ✿";
 
   position: absolute;
-
-  right: 9%;
-  bottom: -35px;
+  right: 8%;
+  bottom: -34px;
 
   font-family: "Cormorant Garamond", serif;
-
-  font-size: 24px;
-
+  font-size: 25px;
   letter-spacing: 12px;
 
   color: rgba(211, 157, 79, 0.62);
-
-  z-index: 6;
 }
 
 
-/* =========================================================
+/* ==========================================================
    STORY GRID
-   ========================================================= */
+   ========================================================== */
 
 .story-grid {
   width: min(1180px, 100%);
-
   margin: 0 auto;
 
   display: grid;
 
   grid-template-columns:
     minmax(280px, 1fr)
-    minmax(260px, 0.82fr)
+    minmax(250px, 0.82fr)
     minmax(280px, 1fr);
+
+  grid-template-rows: auto auto auto;
 
   align-items: start;
 
-  gap: 32px;
+  column-gap: 32px;
+  row-gap: 42px;
 }
 
 
-/* =========================================================
-   CARDS
-   ========================================================= */
+/* ==========================================================
+   STORY CARDS
+   ========================================================== */
 
 .story-card {
   position: relative;
 
   min-height: 560px;
-
   padding: 48px 42px;
 
   border: 1px solid rgba(105, 91, 69, 0.14);
@@ -3449,14 +566,10 @@ body.kwento-page {
   overflow: hidden;
 }
 
-
-/* subtle inner frame */
-
 .story-card::before {
   content: "";
 
   position: absolute;
-
   inset: 8px;
 
   border: 1px solid rgba(105, 91, 69, 0.12);
@@ -3464,12 +577,10 @@ body.kwento-page {
   pointer-events: none;
 }
 
-
-/* =========================================================
-   CARD COLORS
-   ========================================================= */
-
 .story-card-green {
+  grid-column: 1;
+  grid-row: 1;
+
   background:
     linear-gradient(
       145deg,
@@ -3478,8 +589,10 @@ body.kwento-page {
     );
 }
 
-
 .story-card-peach {
+  grid-column: 3;
+  grid-row: 1;
+
   background:
     linear-gradient(
       145deg,
@@ -3488,8 +601,10 @@ body.kwento-page {
     );
 }
 
-
 .story-card-sage {
+  grid-column: 1;
+  grid-row: 3;
+
   background:
     linear-gradient(
       145deg,
@@ -3498,8 +613,10 @@ body.kwento-page {
     );
 }
 
-
 .story-card-cream {
+  grid-column: 3;
+  grid-row: 3;
+
   background:
     linear-gradient(
       145deg,
@@ -3509,29 +626,21 @@ body.kwento-page {
 }
 
 
-/* =========================================================
-   CARD NUMBER
-   ========================================================= */
+/* ==========================================================
+   CARD DETAILS
+   ========================================================== */
 
 .story-number {
   position: absolute;
-
-  top: 28px;
-  right: 30px;
+  top: 27px;
+  right: 29px;
 
   font-family: "Cormorant Garamond", serif;
-
   font-size: 13px;
-
   letter-spacing: 2px;
 
   color: rgba(91, 84, 68, 0.48);
 }
-
-
-/* =========================================================
-   CARD ICON
-   ========================================================= */
 
 .story-icon {
   position: relative;
@@ -3540,85 +649,65 @@ body.kwento-page {
   height: 58px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 30px;
+  margin-bottom: 29px;
 
   border: 1px solid rgba(104, 91, 69, 0.30);
-
   border-radius: 50%;
 
   font-family: "Cormorant Garamond", serif;
-
   font-size: 27px;
 
   color: #716856;
 }
 
-
-/* =========================================================
-   CARD TEXT
-   ========================================================= */
-
 .story-kicker {
-  margin: 0 0 16px;
+  margin: 0 0 15px;
 
   font-family: "Poppins", sans-serif;
-
   font-size: 9px;
-
   font-weight: 500;
-
   letter-spacing: 3px;
 
   color: #817661;
 }
 
-
 .story-card h3 {
-  margin: 0 0 25px;
+  margin: 0 0 24px;
 
   font-family: "Cormorant Garamond", serif;
-
   font-size: clamp(30px, 3vw, 38px);
-
   line-height: 1.02;
-
   font-weight: 600;
 
   color: #5d6552;
 }
 
-
 .story-text {
   margin: 0;
 
   font-family: "Cormorant Garamond", serif;
-
   font-size: 20px;
-
   line-height: 1.52;
 
   color: #71685c;
 }
 
 
-/* =========================================================
-   POLAROID
-   ========================================================= */
+/* ==========================================================
+   POLAROID PHOTO
+   ========================================================== */
 
 .story-photo {
   position: relative;
-
   z-index: 8;
 
   width: 100%;
   max-width: 335px;
 
   margin: 25px auto 0;
-
   padding: 12px 12px 28px;
 
   background: #fffdf8;
@@ -3629,16 +718,24 @@ body.kwento-page {
   transform: rotate(1.5deg);
 }
 
-
-.story-photo img {
-  display: block;
-
-  width: 100%;
-  height: 220px;
-
-  object-fit: cover;
+.photo-main {
+  grid-column: 2;
+  grid-row: 1;
 }
 
+.photo-secondary {
+  grid-column: 2;
+  grid-row: 3;
+
+  margin-top: 20px;
+  transform: rotate(-2deg);
+}
+
+.story-photo img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
 
 .story-photo figcaption {
   padding: 17px 8px 0;
@@ -3646,50 +743,45 @@ body.kwento-page {
   text-align: center;
 
   font-family: "Allura", cursive;
-
   font-size: 27px;
-
   line-height: 1.05;
 
   color: #665b4f;
 }
 
-
-/* =========================================================
-   IMPORTANT:
-   REMOVE THE OLD FLORAL BLOCK UNDER THE PHOTO
-   ========================================================= */
-
+/* Small flower instead of the old large rectangular frame. */
 .photo-main::after {
-  content: none !important;
+  content: "❋";
+
+  position: absolute;
+  left: 50%;
+  bottom: -42px;
+
+  transform: translateX(-50%);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+
+  color: rgba(126, 145, 104, 0.50);
+
+  pointer-events: none;
 }
 
 
-/* =========================================================
-   SMALL BOTANICAL UNDER PHOTO
-   Instead of the giant floral frame.
-   ========================================================= */
-
-.photo-main {
-  margin-bottom: 40px;
-}
-
-
-/* =========================================================
+/* ==========================================================
    MEMORY NOTE
-   ========================================================= */
+   ========================================================== */
 
 .memory-note {
   position: relative;
-
   z-index: 8;
 
   grid-column: 2;
+  grid-row: 2;
 
   width: 250px;
 
-  margin: 20px auto 0;
-
+  margin: 10px auto 0;
   padding: 45px 25px 30px;
 
   text-align: center;
@@ -3702,39 +794,6 @@ body.kwento-page {
   transform: rotate(2deg);
 }
 
-
-.memory-note p {
-  margin: 0;
-
-  font-family: "Allura", cursive;
-
-  font-size: 29px;
-
-  line-height: 1.05;
-
-  color: #75634d;
-}
-
-
-.memory-note strong {
-  display: block;
-
-  margin-top: 15px;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 25px;
-
-  font-weight: 400;
-
-  color: #d65c39;
-}
-
-
-/* =========================================================
-   TAPE
-   ========================================================= */
-
 .memory-note .tape {
   position: absolute;
 
@@ -3744,21 +803,42 @@ body.kwento-page {
   width: 65px;
   height: 19px;
 
+  background: rgba(209, 174, 111, 0.48);
+
   transform:
     translateX(-50%)
     rotate(-2deg);
+}
 
-  background: rgba(209, 174, 111, 0.48);
+.memory-note p {
+  margin: 0;
+
+  font-family: "Allura", cursive;
+  font-size: 29px;
+  line-height: 1.05;
+
+  color: #75634d;
+}
+
+.memory-note strong {
+  display: block;
+
+  margin-top: 15px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  font-weight: 400;
+
+  color: var(--burnt);
 }
 
 
-/* =========================================================
-   MINI MEMORY
-   ========================================================= */
+/* ==========================================================
+   FINAL CARD MEMORY
+   ========================================================== */
 
 .mini-memory {
   margin-top: 35px;
-
   padding-top: 22px;
 
   border-top: 1px solid rgba(103, 91, 71, 0.20);
@@ -3766,17 +846,14 @@ body.kwento-page {
   text-align: center;
 }
 
-
 .mini-memory span {
   display: block;
 
   font-family: "Allura", cursive;
-
   font-size: 26px;
 
-  color: #d65d39;
+  color: var(--burnt);
 }
-
 
 .mini-memory small {
   display: block;
@@ -3784,73 +861,370 @@ body.kwento-page {
   margin-top: 5px;
 
   font-family: "Cormorant Garamond", serif;
-
   font-size: 16px;
 
   color: #776c5c;
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/* ==========================================================
+   CLOSING — CREAM / BEIGE, NOT ORANGE
+   ========================================================== */
 
-@media screen and (max-width: 800px) {
+.kw-closing {
+  position: relative;
+  isolation: isolate;
 
-  .story-section {
-    padding: 75px 20px 100px;
+  min-height: 620px;
+  padding: 110px 25px 115px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  text-align: center;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255, 252, 242, 0.96) 0%,
+      rgba(249, 240, 224, 0.92) 48%,
+      rgba(244, 228, 211, 0.96) 100%
+    );
+}
+
+.kw-closing::before {
+  content: "";
+
+  position: absolute;
+  inset: 35px;
+
+  border: 1px solid rgba(117, 102, 83, 0.18);
+
+  pointer-events: none;
+}
+
+.kw-closing::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: url("floral-frame.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  opacity: 0.52;
+  mix-blend-mode: multiply;
+
+  pointer-events: none;
+}
+
+.kw-closing > * {
+  position: relative;
+  z-index: 5;
+}
+
+.closing-botanical {
+  margin-bottom: 22px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+
+  color: var(--olive);
+}
+
+.closing-label {
+  margin: 0 0 24px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 9px;
+  letter-spacing: 4px;
+
+  color: var(--soft-brown);
+}
+
+.kw-closing h2 {
+  max-width: 850px;
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: 1.06;
+  font-weight: 400;
+
+  color: var(--brown);
+}
+
+.kw-closing h2 em {
+  display: block;
+
+  margin-top: 7px;
+
+  font-family: "Allura", cursive;
+  font-size: 1.2em;
+  font-style: normal;
+
+  color: var(--burnt);
+}
+
+.closing-line {
+  width: 80px;
+  height: 1px;
+
+  margin: 34px 0 18px;
+
+  background: rgba(117, 102, 83, 0.35);
+}
+
+.closing-names {
+  margin: 0 0 32px;
+
+  font-family: "Allura", cursive;
+  font-size: 38px;
+
+  color: var(--burnt);
+}
+
+.next-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 27px;
+
+  border: 1px solid rgba(126, 142, 101, 0.50);
+  border-radius: 999px;
+
+  background: rgba(126, 142, 101, 0.08);
+
+  text-decoration: none;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  color: var(--olive);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.next-button:hover {
+  background: rgba(126, 142, 101, 0.16);
+  transform: translateY(-2px);
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 820px) {
+
+  .kw-nav {
+    justify-content: flex-start;
+    padding: 10px 18px;
   }
 
+  .kw-brand { display: none; }
+
+  .kw-nav nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 25px;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .kw-nav nav::-webkit-scrollbar { display: none; }
+
+  .kw-nav nav a { font-size: 11px; }
+
+  .kw-hero {
+    min-height: 560px;
+    padding: 80px 20px 70px;
+  }
+
+  .kw-hero::before {
+    background-size: cover;
+    opacity: 0.58;
+  }
+
+  .intro-paper {
+    width: 94%;
+    padding: 48px 32px 50px;
+  }
+
+  .story-section {
+    padding: 85px 20px 110px;
+  }
+
+  .story-section::before {
+    background-size: cover;
+    opacity: 0.42;
+  }
+
+  .story-heading {
+    margin-bottom: 58px;
+    text-align: center;
+  }
+
+  .story-heading::after { display: none; }
+
+  .story-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 42px;
+  }
+
+  .story-card {
+    width: 100%;
+    min-height: auto;
+    padding: 40px 30px;
+  }
+
+  .story-photo {
+    width: 82%;
+    max-width: 330px;
+    margin: -5px auto 0;
+  }
+
+  .memory-note {
+    width: 250px;
+    margin: -8px auto 0;
+  }
+
+  .photo-main::after { bottom: -38px; }
+
+  .kw-closing {
+    min-height: 560px;
+    padding: 90px 22px;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 430px) {
+
+  .kw-nav nav { gap: 21px; }
+
+  .kw-nav nav a {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .kw-hero {
+    min-height: 510px;
+    padding: 70px 18px 60px;
+  }
+
+  .kw-hero::before {
+    background-size: auto 100%;
+    background-position: center;
+    opacity: 0.48;
+  }
+
+  .kw-hero .eyebrow {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .kw-hero h1 { font-size: 49px; }
+
+  .kw-hero h1 span { font-size: 80px; }
+
+  .hero-ornament {
+    gap: 12px;
+    margin: 25px 0 15px;
+  }
+
+  .hero-ornament span { width: 42px; }
+
+  .kw-hero .hero-subtitle { font-size: 20px; }
+
+  .kw-intro {
+    min-height: 0;
+    padding: 60px 15px 75px;
+  }
+
+  .intro-paper {
+    width: 94%;
+    padding: 38px 20px 42px;
+  }
+
+  .intro-paper p {
+    font-size: 18px;
+    line-height: 1.52;
+  }
+
+  .paper-signature { font-size: 34px; }
+
+  .story-section {
+    padding: 70px 16px 85px;
+  }
 
   .story-section::before {
     background-size: auto 100%;
     background-position: center;
-    opacity: 0.45;
+    opacity: 0.32;
   }
 
+  .story-heading { margin-bottom: 48px; }
 
-  .story-heading {
-    text-align: center;
-    margin-bottom: 55px;
+  .story-heading > span {
+    font-size: 9px;
+    letter-spacing: 3px;
   }
 
-
-  .story-heading h2 {
-    font-size: 55px;
-  }
-
-
-  .story-heading::after {
-    display: none;
-  }
-
-
-  .story-grid {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 45px;
-  }
-
+  .story-heading h2 { font-size: 49px; }
 
   .story-card {
-    width: 100%;
-
-    min-height: auto;
-
-    padding: 40px 30px;
+    padding: 35px 22px 32px;
   }
 
+  .story-card h3 { font-size: 27px; }
+
+  .story-text {
+    font-size: 17px;
+    line-height: 1.55;
+  }
 
   .story-photo {
-    max-width: 310px;
+    width: 90%;
+    padding: 10px 10px 24px;
   }
 
+  .story-photo img { height: 205px; }
 
-  .memory-note {
-    width: 240px;
+  .story-photo figcaption { font-size: 23px; }
+
+  .memory-note { width: 88%; }
+
+  .memory-note p { font-size: 27px; }
+
+  .kw-closing {
+    min-height: 520px;
+    padding: 75px 18px;
+  }
+
+  .kw-closing::before { inset: 20px; }
+
+  .kw-closing h2 { font-size: 32px; }
+
+  .closing-names { font-size: 34px; }
+
+  .next-button {
+    padding: 13px 22px;
+    font-size: 10px;
   }
 }
