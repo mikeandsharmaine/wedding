@@ -12,7 +12,11 @@
 
     <title>Mike & Sharmaine | Wedding</title>
 
-    <!-- Google Fonts -->
+
+    <!-- ==============================
+         GOOGLE FONTS
+    =============================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
@@ -22,9 +26,14 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Allura&family=Cardo:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet"
     >
+
+
+    <!-- ==============================
+         MAIN STYLESHEET
+    =============================== -->
 
     <link
         rel="stylesheet"
@@ -33,161 +42,16 @@
 
 </head>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
 
-    const menuToggle =
-        document.getElementById("menuToggle");
-
-    const sidebar =
-        document.getElementById("weddingSidebar");
-
-    const sidebarClose =
-        document.getElementById("sidebarClose");
-
-    const sidebarOverlay =
-        document.getElementById("sidebarOverlay");
-
-
-    if (
-        !menuToggle ||
-        !sidebar ||
-        !sidebarClose ||
-        !sidebarOverlay
-    ) {
-        return;
-    }
-
-
-    function openSidebar() {
-
-        sidebar.classList.add("is-open");
-
-        sidebarOverlay.classList.add("is-visible");
-
-        document.body.classList.add("sidebar-open");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "true"
-        );
-
-        menuToggle.setAttribute(
-            "aria-label",
-            "Close wedding navigation"
-        );
-
-        sidebar.setAttribute(
-            "aria-hidden",
-            "false"
-        );
-
-        sidebarOverlay.setAttribute(
-            "aria-hidden",
-            "false"
-        );
-    }
-
-
-    function closeSidebar() {
-
-        sidebar.classList.remove("is-open");
-
-        sidebarOverlay.classList.remove("is-visible");
-
-        document.body.classList.remove(
-            "sidebar-open"
-        );
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-        menuToggle.setAttribute(
-            "aria-label",
-            "Open wedding navigation"
-        );
-
-        sidebar.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
-        sidebarOverlay.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-    }
-
-
-    menuToggle.addEventListener(
-        "click",
-        function () {
-
-            if (
-                sidebar.classList.contains(
-                    "is-open"
-                )
-            ) {
-
-                closeSidebar();
-
-            } else {
-
-                openSidebar();
-
-            }
-
-        }
-    );
-
-
-    sidebarClose.addEventListener(
-        "click",
-        closeSidebar
-    );
-
-
-    sidebarOverlay.addEventListener(
-        "click",
-        closeSidebar
-    );
-
-
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (
-                event.key === "Escape"
-            ) {
-
-                closeSidebar();
-
-            }
-
-        }
-    );
-
-
-    sidebar
-        .querySelectorAll(".sidebar-link")
-        .forEach(function (link) {
-
-            link.addEventListener(
-                "click",
-                closeSidebar
-            );
-
-        });
-
-});
-</script>
 <body>
 
-    <!-- Floating watercolor petals -->
+
+    <!-- ==============================
+         FLOATING WATERCOLOUR PETALS
+    =============================== -->
+
     <div id="petals"></div>
+
 
 
     <!-- ==============================
@@ -197,235 +61,341 @@ document.addEventListener("DOMContentLoaded", function () {
     <div id="website">
 
 
+
         <!-- ==============================
-     GLOBAL WEDDING NAVIGATION
-============================== -->
+             GLOBAL WEDDING NAVIGATION
+        =============================== -->
 
-<header class="website-nav">
-
-    <!-- Hamburger button — LEFT -->
-    <button
-        class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Open wedding navigation"
-        aria-expanded="false"
-        aria-controls="weddingSidebar"
-    >
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <!-- Monogram — CENTER -->
-    <a
-        href="index.html"
-        class="nav-monogram"
-        aria-label="Mike & Sharmaine Home"
-    >
-        <span>M</span>
-        <span class="monogram-and">&amp;</span>
-        <span>S</span>
-    </a>
-
-</header>
+        <header class="website-nav">
 
 
-<!-- ==============================
-     WEDDING SIDEBAR
-============================== -->
-
-<aside
-    class="wedding-sidebar"
-    id="weddingSidebar"
-    aria-hidden="true"
->
-
-    <div class="sidebar-inner">
-
-        <!-- Sidebar header -->
-        <div class="sidebar-top">
-
-            <span class="sidebar-label">
-                OUR WEDDING
-            </span>
+            <!-- HAMBURGER — LEFT -->
 
             <button
-                class="sidebar-close"
-                id="sidebarClose"
+                class="menu-toggle"
+                id="menuToggle"
                 type="button"
-                aria-label="Close navigation"
+                aria-label="Open wedding navigation"
+                aria-expanded="false"
+                aria-controls="weddingSidebar"
             >
-                ×
+
+                <span></span>
+                <span></span>
+                <span></span>
+
             </button>
 
-        </div>
 
 
-        <!-- Couple -->
-        <div class="sidebar-intro">
-
-            <div
-                class="sidebar-floral"
-                aria-hidden="true"
-            >
-                ❋
-            </div>
-
-            <div class="sidebar-couple">
-                Mike <span>&amp;</span> Sharmaine
-            </div>
-
-            <p>
-                Our wedding story
-            </p>
-
-        </div>
-
-
-        <!-- Navigation -->
-        <nav
-            class="sidebar-navigation"
-            aria-label="Wedding navigation"
-        >
+            <!-- MONOGRAM — CENTER -->
 
             <a
                 href="index.html"
-                class="sidebar-link sidebar-link-active"
+                class="nav-monogram"
+                aria-label="Mike & Sharmaine Home"
             >
-                <span class="sidebar-number">01</span>
-                <span class="sidebar-text">Home</span>
+
+                <span>M</span>
+
+                <span class="monogram-and">
+                    &amp;
+                </span>
+
+                <span>S</span>
+
             </a>
 
 
-            <a
-                href="kwento.html"
-                class="sidebar-link"
-            >
-                <span class="sidebar-number">02</span>
-                <span class="sidebar-text">
-                    Ang Aming Kwento
-                </span>
-            </a>
-
-
-            <a
-                href="detalye.html"
-                class="sidebar-link"
-            >
-                <span class="sidebar-number">03</span>
-                <span class="sidebar-text">
-                    Detalye ng Kasal
-                </span>
-            </a>
-
-
-            <a
-                href="daloy.html"
-                class="sidebar-link"
-            >
-                <span class="sidebar-number">04</span>
-                <span class="sidebar-text">
-                    Daloy ng Pagdiriwang
-                </span>
-            </a>
-
-
-            <a
-                href="dress-code.html"
-                class="sidebar-link"
-            >
-                <span class="sidebar-number">05</span>
-                <span class="sidebar-text">
-                    Dress Code
-                </span>
-            </a>
-
-
-            <a
-                href="rsvp.html"
-                class="sidebar-link sidebar-link-rsvp"
-            >
-                <span class="sidebar-number">06</span>
-                <span class="sidebar-text">
-                    RSVP
-                </span>
-
-                <span
-                    class="sidebar-heart"
-                    aria-hidden="true"
-                >
-                    ♡
-                </span>
-
-            </a>
-
-        </nav>
-
-
-        <!-- Sidebar footer -->
-        <div class="sidebar-bottom">
-
-            <div
-                class="sidebar-bottom-flower"
-                aria-hidden="true"
-            >
-                ✧
-            </div>
-
-            <p>
-                With love,<br>
-                <span>Mike &amp; Sharmaine</span>
-            </p>
-
-        </div>
-
-    </div>
-
-</aside>
-
-
-<!-- Sidebar overlay -->
-<div
-    class="sidebar-overlay"
-    id="sidebarOverlay"
-    aria-hidden="true"
-></div>
+        </header>
 
 
 
         <!-- ==============================
-             HERO / LANDING PAGE
+             WEDDING SIDEBAR
+        =============================== -->
+
+        <aside
+            class="wedding-sidebar"
+            id="weddingSidebar"
+            aria-hidden="true"
+        >
+
+            <div class="sidebar-inner">
+
+
+                <!-- SIDEBAR HEADER -->
+
+                <div class="sidebar-top">
+
+                    <span class="sidebar-label">
+                        OUR WEDDING
+                    </span>
+
+
+                    <button
+                        class="sidebar-close"
+                        id="sidebarClose"
+                        type="button"
+                        aria-label="Close navigation"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+
+                <!-- COUPLE INTRO -->
+
+                <div class="sidebar-intro">
+
+                    <div
+                        class="sidebar-floral"
+                        aria-hidden="true"
+                    >
+                        ❋
+                    </div>
+
+
+                    <div class="sidebar-couple">
+
+                        Mike
+                        <span>&amp;</span>
+                        Sharmaine
+
+                    </div>
+
+
+                    <p>
+                        Our wedding story
+                    </p>
+
+                </div>
+
+
+
+                <!-- SIDEBAR NAVIGATION -->
+
+                <nav
+                    class="sidebar-navigation"
+                    aria-label="Wedding navigation"
+                >
+
+
+                    <!-- HOME -->
+
+                    <a
+                        href="index.html"
+                        class="sidebar-link sidebar-link-active"
+                    >
+
+                        <span class="sidebar-number">
+                            01
+                        </span>
+
+                        <span class="sidebar-text">
+                            Home
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- ANG AMING KWENTO -->
+
+                    <a
+                        href="kwento.html"
+                        class="sidebar-link"
+                    >
+
+                        <span class="sidebar-number">
+                            02
+                        </span>
+
+                        <span class="sidebar-text">
+                            Ang Aming Kwento
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- DETALYE NG KASAL -->
+
+                    <a
+                        href="detalye.html"
+                        class="sidebar-link"
+                    >
+
+                        <span class="sidebar-number">
+                            03
+                        </span>
+
+                        <span class="sidebar-text">
+                            Detalye ng Kasal
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- DALOY NG PAGDIRIWANG -->
+
+                    <a
+                        href="daloy.html"
+                        class="sidebar-link"
+                    >
+
+                        <span class="sidebar-number">
+                            04
+                        </span>
+
+                        <span class="sidebar-text">
+                            Daloy ng Pagdiriwang
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- DRESS CODE -->
+
+                    <a
+                        href="dress-code.html"
+                        class="sidebar-link"
+                    >
+
+                        <span class="sidebar-number">
+                            05
+                        </span>
+
+                        <span class="sidebar-text">
+                            Dress Code
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- RSVP -->
+
+                    <a
+                        href="rsvp.html"
+                        class="sidebar-link sidebar-link-rsvp"
+                    >
+
+                        <span class="sidebar-number">
+                            06
+                        </span>
+
+                        <span class="sidebar-text">
+                            RSVP
+                        </span>
+
+                        <span
+                            class="sidebar-heart"
+                            aria-hidden="true"
+                        >
+                            ♡
+                        </span>
+
+                    </a>
+
+
+                </nav>
+
+
+
+                <!-- SIDEBAR FOOTER -->
+
+                <div class="sidebar-bottom">
+
+                    <div
+                        class="sidebar-bottom-flower"
+                        aria-hidden="true"
+                    >
+                        ✧
+                    </div>
+
+
+                    <p>
+
+                        With love,<br>
+
+                        <span>
+                            Mike &amp; Sharmaine
+                        </span>
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ==============================
+             SIDEBAR OVERLAY
+        =============================== -->
+
+        <div
+            class="sidebar-overlay"
+            id="sidebarOverlay"
+            aria-hidden="true"
+        ></div>
+
+
+
+
+        <!-- ==============================
+             HOME
         =============================== -->
 
         <main id="home">
 
+
+            <!-- ==============================
+                 HERO / LANDING PAGE
+            =============================== -->
+
             <section class="hero-section">
+
 
                 <div class="hero-content">
 
 
                     <p class="hero-eyebrow">
+
                         MALUGOD NAMIN KAYONG INAANYAYAHAN
+
                     </p>
+
 
 
                     <h1 class="hero-title">
 
                         MIKE
 
-                        <span>&</span>
+                        <span>&amp;</span>
 
                         SHARMAINE
 
                     </h1>
 
 
+
                     <div class="hero-divider">
 
-                        <span>✦</span>
+                        <span>
+                            ✦
+                        </span>
 
                     </div>
+
 
 
                     <p class="hero-quote">
@@ -434,6 +404,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         may isang tahanang pinipiling buuin.”
 
                     </p>
+
 
 
                     <p class="hero-description">
@@ -459,10 +430,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     </p>
 
 
+
+                    <!-- COUPLE NAMES -->
+
                     <div class="hero-names">
 
                         <h2>
-                            MIKE & SHARMAINE
+                            MIKE &amp; SHARMAINE
                         </h2>
 
                         <p>
@@ -471,6 +445,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     </div>
 
+
+
+                    <!-- WEDDING DATE -->
 
                     <div class="hero-date">
 
@@ -485,12 +462,275 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
 
 
+
+                    <!-- STORY BUTTON -->
+
                     <a
-    href="kwento.html"
-    class="hero-button"
->
-    Tuklasin ang Aming Kwento
-</a>
+                        href="kwento.html"
+                        class="hero-button"
+                    >
+                        Tuklasin ang Aming Kwento
+                    </a>
+
+
                 </div>
 
+
             </section>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- ==============================
+         SIDEBAR JAVASCRIPT
+    =============================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                const menuToggle =
+                    document.getElementById(
+                        "menuToggle"
+                    );
+
+
+                const sidebar =
+                    document.getElementById(
+                        "weddingSidebar"
+                    );
+
+
+                const sidebarClose =
+                    document.getElementById(
+                        "sidebarClose"
+                    );
+
+
+                const sidebarOverlay =
+                    document.getElementById(
+                        "sidebarOverlay"
+                    );
+
+
+
+                /*
+                 * Make sure all required
+                 * navigation elements exist.
+                 */
+
+                if (
+                    !menuToggle ||
+                    !sidebar ||
+                    !sidebarClose ||
+                    !sidebarOverlay
+                ) {
+                    return;
+                }
+
+
+
+                /* ==========================
+                   OPEN SIDEBAR
+                ========================== */
+
+                function openSidebar() {
+
+                    sidebar.classList.add(
+                        "is-open"
+                    );
+
+
+                    sidebarOverlay.classList.add(
+                        "is-visible"
+                    );
+
+
+                    document.body.classList.add(
+                        "sidebar-open"
+                    );
+
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+
+
+                    menuToggle.setAttribute(
+                        "aria-label",
+                        "Close wedding navigation"
+                    );
+
+
+                    sidebar.setAttribute(
+                        "aria-hidden",
+                        "false"
+                    );
+
+
+                    sidebarOverlay.setAttribute(
+                        "aria-hidden",
+                        "false"
+                    );
+
+                }
+
+
+
+                /* ==========================
+                   CLOSE SIDEBAR
+                ========================== */
+
+                function closeSidebar() {
+
+                    sidebar.classList.remove(
+                        "is-open"
+                    );
+
+
+                    sidebarOverlay.classList.remove(
+                        "is-visible"
+                    );
+
+
+                    document.body.classList.remove(
+                        "sidebar-open"
+                    );
+
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+
+                    menuToggle.setAttribute(
+                        "aria-label",
+                        "Open wedding navigation"
+                    );
+
+
+                    sidebar.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+
+                    sidebarOverlay.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+                }
+
+
+
+                /* ==========================
+                   HAMBURGER CLICK
+                ========================== */
+
+                menuToggle.addEventListener(
+                    "click",
+                    function () {
+
+
+                        if (
+                            sidebar.classList.contains(
+                                "is-open"
+                            )
+                        ) {
+
+                            closeSidebar();
+
+                        } else {
+
+                            openSidebar();
+
+                        }
+
+                    }
+                );
+
+
+
+                /* ==========================
+                   CLOSE BUTTON
+                ========================== */
+
+                sidebarClose.addEventListener(
+                    "click",
+                    closeSidebar
+                );
+
+
+
+                /* ==========================
+                   OVERLAY CLICK
+                ========================== */
+
+                sidebarOverlay.addEventListener(
+                    "click",
+                    closeSidebar
+                );
+
+
+
+                /* ==========================
+                   ESCAPE KEY
+                ========================== */
+
+                document.addEventListener(
+                    "keydown",
+                    function (event) {
+
+                        if (
+                            event.key === "Escape"
+                        ) {
+
+                            closeSidebar();
+
+                        }
+
+                    }
+                );
+
+
+
+                /* ==========================
+                   CLOSE AFTER NAVIGATION
+                ========================== */
+
+                sidebar
+                    .querySelectorAll(
+                        ".sidebar-link"
+                    )
+                    .forEach(
+                        function (link) {
+
+                            link.addEventListener(
+                                "click",
+                                closeSidebar
+                            );
+
+                        }
+                    );
+
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
