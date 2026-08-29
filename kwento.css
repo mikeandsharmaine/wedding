@@ -1898,3 +1898,1348 @@ body.kwento-page {
     font-size: 32px;
   }
 }
+/* =========================================================
+   ANG AMING KWENTO — FINAL WATERCOLOUR / FLORAL DESIGN
+   ========================================================= */
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.kw-hero {
+  position: relative;
+  min-height: 620px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 90px 24px 70px;
+
+  text-align: center;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(255, 250, 239, 0.72),
+      transparent 48%
+    ),
+    linear-gradient(
+      135deg,
+      #f8f0df 0%,
+      #f6e9d8 52%,
+      #f4e4d6 100%
+    );
+}
+
+
+/* Soft paper texture */
+
+.kw-hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 20% 25%,
+      rgba(255,255,255,.40),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(255,255,255,.35),
+      transparent 28%
+    );
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* Large arch */
+
+.kw-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: min(760px, 80vw);
+  height: 540px;
+
+  left: 50%;
+  bottom: -315px;
+
+  transform: translateX(-50%);
+
+  border: 1px solid rgba(126, 142, 101, .23);
+  border-bottom: 0;
+
+  border-radius: 50% 50% 0 0;
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO FLOWERS
+   ========================================================= */
+
+.hero-flower {
+  position: absolute;
+
+  width: 430px;
+  height: 560px;
+
+  background-image: url("floral-frame.png");
+
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  opacity: .92;
+}
+
+
+/* LEFT FLOWERS */
+
+.flower-left {
+  left: -115px;
+  top: -65px;
+
+  background-position: left top;
+
+  transform: rotate(-2deg);
+}
+
+
+/* RIGHT FLOWERS */
+
+.flower-right {
+  right: -115px;
+  top: -65px;
+
+  background-position: right top;
+
+  transform:
+    scaleX(-1)
+    rotate(-2deg);
+}
+
+
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
+.kw-hero .eyebrow {
+  position: relative;
+  z-index: 6;
+
+  margin: 0 0 20px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 4px;
+
+  color: #776b59;
+}
+
+
+.kw-hero h1 {
+  position: relative;
+  z-index: 6;
+
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(70px, 8vw, 112px);
+
+  line-height: .82;
+
+  font-weight: 500;
+
+  letter-spacing: -2px;
+
+  color: #7f9168;
+}
+
+
+.kw-hero h1 span {
+  display: block;
+
+  margin-top: 5px;
+
+  font-family: "Allura", cursive;
+
+  font-size: clamp(95px, 12vw, 160px);
+
+  line-height: .88;
+
+  color: #d95c36;
+}
+
+
+.hero-ornament {
+  position: relative;
+  z-index: 6;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin: 35px 0 20px;
+
+  color: #d9a83e;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 30px;
+}
+
+
+.hero-ornament span {
+  width: 70px;
+  height: 1px;
+
+  background: rgba(117, 102, 83, .32);
+}
+
+
+.hero-subtitle {
+  position: relative;
+  z-index: 6;
+
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(22px, 2.5vw, 30px);
+
+  line-height: 1.25;
+
+  font-style: italic;
+
+  color: #756a5a;
+}
+
+
+/* =========================================================
+   INTRO PAPER
+   ========================================================= */
+
+.kw-intro {
+  position: relative;
+
+  min-height: 430px;
+
+  padding: 85px 24px 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7eddd 0%,
+      #f8f0e2 100%
+    );
+}
+
+
+/* soft watercolor corners */
+
+.kw-intro::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: url("floral-frame.png");
+
+  background-repeat: no-repeat;
+  background-size: 390px auto;
+  background-position: left bottom;
+
+  opacity: .45;
+
+  pointer-events: none;
+}
+
+
+.kw-intro::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: url("floral-frame.png");
+
+  background-repeat: no-repeat;
+  background-size: 390px auto;
+  background-position: right bottom;
+
+  transform: scaleX(-1);
+
+  opacity: .45;
+
+  pointer-events: none;
+}
+
+
+/* Paper */
+
+.intro-paper {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(760px, 90%);
+
+  padding: 65px 75px 60px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff9ed,
+      #f9efdc
+    );
+
+  border: 1px solid rgba(126, 112, 87, .13);
+
+  box-shadow:
+    0 18px 40px rgba(91, 73, 45, .10);
+}
+
+
+/* subtle tape */
+
+.intro-paper::before,
+.intro-paper::after {
+  content: "";
+
+  position: absolute;
+
+  top: -8px;
+
+  width: 65px;
+  height: 20px;
+
+  background: rgba(210, 176, 112, .38);
+
+  transform: rotate(-2deg);
+}
+
+
+.intro-paper::before {
+  left: 22%;
+}
+
+
+.intro-paper::after {
+  right: 22%;
+
+  transform: rotate(2deg);
+}
+
+
+.paper-label {
+  display: block;
+
+  margin-bottom: 25px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+
+  color: #9a8364;
+}
+
+
+.intro-paper p {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(22px, 2.4vw, 29px);
+
+  line-height: 1.5;
+
+  color: #6f6659;
+}
+
+
+.paper-signature {
+  display: block;
+
+  margin-top: 30px;
+
+  font-family: "Allura", cursive;
+
+  font-size: 34px;
+
+  color: #d85e39;
+}
+
+
+/* =========================================================
+   CHAPTERS SECTION
+   ========================================================= */
+
+.story-section {
+  position: relative;
+
+  padding: 100px 6% 140px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(255,255,255,.60),
+      transparent 48%
+    ),
+    linear-gradient(
+      180deg,
+      #f9f1e2 0%,
+      #f7eddd 100%
+    );
+}
+
+
+/* =========================================================
+   FLORAL CORNERS OF CHAPTER SECTION
+   ========================================================= */
+
+.story-section::before {
+  content: "";
+
+  position: absolute;
+
+  top: -25px;
+  left: -110px;
+
+  width: 470px;
+  height: 620px;
+
+  background-image: url("floral-frame.png");
+
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  background-position: left top;
+
+  opacity: .78;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+.story-section::after {
+  content: "";
+
+  position: absolute;
+
+  top: -25px;
+  right: -110px;
+
+  width: 470px;
+  height: 620px;
+
+  background-image: url("floral-frame.png");
+
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  background-position: right top;
+
+  transform: scaleX(-1);
+
+  opacity: .78;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   CHAPTER HEADING
+   ========================================================= */
+
+.story-heading {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(1050px, 100%);
+
+  margin: 0 auto 75px;
+
+  text-align: left;
+}
+
+
+.story-heading > span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 4px;
+
+  color: #d85e39;
+}
+
+
+.story-heading h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 7vw, 88px);
+
+  line-height: .88;
+
+  font-weight: 500;
+
+  color: #7f9168;
+}
+
+
+.story-heading h2 em {
+  color: #71685b;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   LITTLE DECORATIVE FLOWERS AROUND CHAPTERS
+   ========================================================= */
+
+.story-heading::after {
+  content: "✿        ✧              ✿";
+
+  position: absolute;
+
+  right: 10%;
+  bottom: -35px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 25px;
+
+  letter-spacing: 15px;
+
+  color: rgba(208, 157, 79, .55);
+}
+
+
+/* =========================================================
+   STORY GRID
+   ========================================================= */
+
+.story-grid {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(1180px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 1fr)
+    minmax(260px, .85fr)
+    minmax(280px, 1fr);
+
+  align-items: start;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   STORY CARDS
+   ========================================================= */
+
+.story-card {
+  position: relative;
+
+  padding: 48px 42px;
+
+  min-height: 560px;
+
+  border: 1px solid rgba(104, 91, 69, .14);
+
+  box-shadow:
+    0 18px 38px rgba(84, 68, 45, .11);
+
+  overflow: hidden;
+}
+
+
+/* Card inner border */
+
+.story-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 8px;
+
+  border: 1px solid rgba(105, 91, 69, .12);
+
+  pointer-events: none;
+}
+
+
+/* GREEN CARD */
+
+.story-card-green {
+  background:
+    linear-gradient(
+      145deg,
+      #e9ead9,
+      #e2e5d0
+    );
+}
+
+
+/* PEACH CARD */
+
+.story-card-peach {
+  background:
+    linear-gradient(
+      145deg,
+      #f3c7a4,
+      #efbd98
+    );
+}
+
+
+/* SAGE CARD */
+
+.story-card-sage {
+  background:
+    linear-gradient(
+      145deg,
+      #dfe5d1,
+      #d8dfc8
+    );
+}
+
+
+/* CREAM CARD */
+
+.story-card-cream {
+  background:
+    linear-gradient(
+      145deg,
+      #faf2df,
+      #f4e8d1
+    );
+}
+
+
+/* =========================================================
+   CARD NUMBER
+   ========================================================= */
+
+.story-number {
+  position: absolute;
+
+  top: 28px;
+  right: 30px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 13px;
+
+  letter-spacing: 2px;
+
+  color: rgba(91, 84, 68, .48);
+}
+
+
+/* =========================================================
+   CARD ICON
+   ========================================================= */
+
+.story-icon {
+  position: relative;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 30px;
+
+  border: 1px solid rgba(104, 91, 69, .30);
+
+  border-radius: 50%;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 27px;
+
+  color: #716856;
+}
+
+
+/* =========================================================
+   CARD TEXT
+   ========================================================= */
+
+.story-kicker {
+  margin: 0 0 16px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 3px;
+
+  color: #817661;
+}
+
+
+.story-card h3 {
+  margin: 0 0 25px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(30px, 3vw, 38px);
+
+  line-height: 1.02;
+
+  font-weight: 600;
+
+  color: #5d6552;
+}
+
+
+.story-text {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 20px;
+
+  line-height: 1.52;
+
+  color: #71685c;
+}
+
+
+/* =========================================================
+   CENTER PHOTO
+   ========================================================= */
+
+.story-photo {
+  position: relative;
+
+  z-index: 7;
+
+  width: 100%;
+
+  max-width: 335px;
+
+  margin: 25px auto 0;
+
+  padding: 12px 12px 28px;
+
+  background: #fffdf8;
+
+  box-shadow:
+    0 18px 35px rgba(78, 63, 43, .17);
+
+  transform: rotate(1.5deg);
+}
+
+
+.story-photo img {
+  display: block;
+
+  width: 100%;
+
+  height: 220px;
+
+  object-fit: cover;
+}
+
+
+.story-photo figcaption {
+  padding: 17px 8px 0;
+
+  text-align: center;
+
+  font-family: "Allura", cursive;
+
+  font-size: 27px;
+
+  line-height: 1.05;
+
+  color: #665b4f;
+}
+
+
+/* =========================================================
+   FLOWERS UNDER MAIN PHOTO
+   ========================================================= */
+
+.photo-main::after {
+  content: "";
+
+  position: absolute;
+
+  width: 330px;
+  height: 170px;
+
+  left: 50%;
+  bottom: -145px;
+
+  transform: translateX(-50%);
+
+  background-image: url("floral-frame.png");
+
+  background-repeat: no-repeat;
+
+  background-size: contain;
+
+  background-position: center bottom;
+
+  opacity: .78;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SECOND PHOTO
+   ========================================================= */
+
+.photo-secondary {
+  transform: rotate(-2deg);
+}
+
+
+/* =========================================================
+   MEMORY NOTE
+   ========================================================= */
+
+.memory-note {
+  position: relative;
+
+  z-index: 8;
+
+  grid-column: 2;
+
+  width: 250px;
+
+  margin: 20px auto 0;
+
+  padding: 45px 25px 30px;
+
+  text-align: center;
+
+  background: #f5d29f;
+
+  box-shadow:
+    0 12px 25px rgba(86, 66, 41, .12);
+
+  transform: rotate(2deg);
+}
+
+
+.memory-note p {
+  margin: 0;
+
+  font-family: "Allura", cursive;
+
+  font-size: 29px;
+
+  line-height: 1.05;
+
+  color: #75634d;
+}
+
+
+.memory-note strong {
+  display: block;
+
+  margin-top: 15px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 25px;
+
+  font-weight: 400;
+
+  color: #d65c39;
+}
+
+
+/* Tape */
+
+.memory-note .tape {
+  position: absolute;
+
+  top: -9px;
+  left: 50%;
+
+  width: 65px;
+  height: 19px;
+
+  transform:
+    translateX(-50%)
+    rotate(-2deg);
+
+  background: rgba(209, 174, 111, .48);
+}
+
+
+/* =========================================================
+   MINI MEMORY
+   ========================================================= */
+
+.mini-memory {
+  margin-top: 35px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid rgba(103, 91, 71, .20);
+
+  text-align: center;
+}
+
+
+.mini-memory span {
+  display: block;
+
+  font-family: "Allura", cursive;
+
+  font-size: 26px;
+
+  color: #d65d39;
+}
+
+
+.mini-memory small {
+  display: block;
+
+  margin-top: 5px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 16px;
+
+  color: #776c5c;
+}
+
+
+/* =========================================================
+   CLOSING
+   ========================================================= */
+
+.kw-closing {
+  position: relative;
+
+  min-height: 620px;
+
+  padding: 100px 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(255,255,255,.40),
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      #f4e6d4,
+      #eed9c4
+    );
+}
+
+
+/* Elegant border */
+
+.kw-closing::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 35px;
+
+  border: 1px solid rgba(255,255,255,.50);
+
+  pointer-events: none;
+}
+
+
+/* Flowers in closing */
+
+.kw-closing::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    url("floral-frame.png");
+
+  background-repeat: no-repeat;
+
+  background-size: 400px auto;
+
+  background-position:
+    left bottom;
+
+  opacity: .40;
+
+  pointer-events: none;
+}
+
+
+.closing-botanical,
+.closing-label,
+.kw-closing h2,
+.closing-line,
+.closing-names,
+.next-button {
+  position: relative;
+
+  z-index: 5;
+}
+
+
+.closing-botanical {
+  font-size: 32px;
+
+  color: #fff9ed;
+
+  margin-bottom: 25px;
+}
+
+
+.closing-label {
+  margin: 0 0 25px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+
+  color: #fff9ed;
+}
+
+
+.kw-closing h2 {
+  max-width: 850px;
+
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(40px, 5vw, 65px);
+
+  line-height: 1.05;
+
+  font-weight: 400;
+
+  color: #fffaf0;
+}
+
+
+.kw-closing h2 em {
+  display: block;
+
+  margin-top: 10px;
+
+  font-family: "Allura", cursive;
+
+  font-size: 1.25em;
+
+  font-style: normal;
+}
+
+
+.closing-line {
+  width: 80px;
+
+  height: 1px;
+
+  margin: 35px 0 20px;
+
+  background: rgba(255,255,255,.65);
+}
+
+
+.closing-names {
+  margin: 0 0 35px;
+
+  font-family: "Allura", cursive;
+
+  font-size: 34px;
+
+  color: #fffaf0;
+}
+
+
+.next-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 15px 28px;
+
+  border: 1px solid rgba(255,255,255,.65);
+
+  border-radius: 40px;
+
+  text-decoration: none;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  color: #fffaf0;
+
+  background: rgba(255,255,255,.08);
+
+  transition:
+    background .3s ease,
+    transform .3s ease;
+}
+
+
+.next-button:hover {
+  background: rgba(255,255,255,.18);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 800px) {
+
+  .kw-hero {
+    min-height: 570px;
+
+    padding:
+      80px
+      25px
+      65px;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+
+  .kw-hero h1 {
+    font-size: 64px;
+  }
+
+
+  .kw-hero h1 span {
+    font-size: 100px;
+  }
+
+
+  .hero-flower {
+    width: 280px;
+    height: 380px;
+
+    opacity: .65;
+  }
+
+
+  .flower-left {
+    left: -120px;
+    top: -35px;
+  }
+
+
+  .flower-right {
+    right: -120px;
+    top: -35px;
+  }
+
+
+  .kw-intro {
+    padding:
+      70px
+      20px
+      85px;
+  }
+
+
+  .intro-paper {
+    width: 92%;
+
+    padding:
+      45px
+      28px
+      45px;
+  }
+
+
+  .intro-paper p {
+    font-size: 21px;
+  }
+
+
+  .story-section {
+    padding:
+      75px
+      20px
+      100px;
+  }
+
+
+  .story-heading {
+    margin-bottom: 55px;
+
+    text-align: center;
+  }
+
+
+  .story-heading h2 {
+    font-size: 55px;
+  }
+
+
+  .story-heading::after {
+    display: none;
+  }
+
+
+  .story-section::before {
+    width: 300px;
+    height: 400px;
+
+    left: -130px;
+  }
+
+
+  .story-section::after {
+    width: 300px;
+    height: 400px;
+
+    right: -130px;
+  }
+
+
+  .story-grid {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 45px;
+  }
+
+
+  .story-card {
+    width: 100%;
+
+    min-height: auto;
+
+    padding:
+      40px
+      30px;
+  }
+
+
+  .story-photo {
+    order: 0;
+
+    max-width: 310px;
+  }
+
+
+  .memory-note {
+    width: 240px;
+
+    order: 5;
+  }
+
+
+  .photo-main::after {
+    width: 280px;
+  }
+
+
+  .kw-closing {
+    min-height: 570px;
+
+    padding:
+      80px
+      25px;
+  }
+
+
+  .kw-closing::before {
+    inset: 20px;
+  }
+
+
+  .kw-closing h2 {
+    font-size: 40px;
+  }
+}
