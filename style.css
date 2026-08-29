@@ -9019,3 +9019,761 @@ body.sidebar-open {
     }
 
 }
+/* =========================================================
+   WEDDING SIDEBAR NAVIGATION
+   MIKE & SHARMAINE
+========================================================= */
+
+
+/* =========================================================
+   TOP NAVIGATION BAR
+========================================================= */
+
+.website-nav {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 72px;
+
+    z-index: 9000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 30px;
+
+    background:
+        rgba(255, 249, 237, 0.88);
+
+    border-bottom:
+        1px solid
+        rgba(185, 157, 111, 0.12);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+}
+
+
+/* =========================================================
+   HAMBURGER BUTTON
+========================================================= */
+
+.menu-toggle {
+
+    position: absolute;
+
+    left: 24px;
+    top: 50%;
+
+    width: 42px;
+    height: 42px;
+
+    transform: translateY(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 5px;
+
+    padding: 9px;
+
+    margin: 0;
+
+    border: none;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    z-index: 9100;
+}
+
+
+.menu-toggle:hover {
+
+    transform:
+        translateY(-50%);
+
+    background:
+        rgba(126, 142, 101, 0.08);
+
+    box-shadow: none;
+}
+
+
+.menu-toggle:active {
+
+    transform:
+        translateY(-50%)
+        scale(.95);
+}
+
+
+.menu-toggle span {
+
+    display: block;
+
+    width: 23px;
+    height: 1.5px;
+
+    background: #6F765B;
+
+    border-radius: 2px;
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease,
+        width .3s ease;
+}
+
+
+.menu-toggle span:nth-child(2) {
+
+    width: 17px;
+}
+
+
+/* Hamburger → X */
+
+.menu-toggle.is-open span:nth-child(1) {
+
+    transform:
+        translateY(6.5px)
+        rotate(45deg);
+
+}
+
+
+.menu-toggle.is-open span:nth-child(2) {
+
+    opacity: 0;
+
+    width: 0;
+}
+
+
+.menu-toggle.is-open span:nth-child(3) {
+
+    width: 23px;
+
+    transform:
+        translateY(-6.5px)
+        rotate(-45deg);
+}
+
+
+/* =========================================================
+   CENTER MONOGRAM
+========================================================= */
+
+.nav-monogram {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    color: #626B50;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    line-height: 1;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+
+.nav-monogram:hover {
+
+    color: #B38B59;
+
+    transform:
+        scale(1.03);
+}
+
+
+/* Small decorative line underneath */
+
+.nav-monogram::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -8px;
+
+    width: 24px;
+    height: 1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        #C5A067;
+
+    opacity: .65;
+}
+
+
+/* Hide old nav */
+
+.website-nav > nav {
+
+    display: none !important;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.wedding-sidebar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: min(390px, 88vw);
+    height: 100vh;
+
+    z-index: 10000;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 20%,
+            rgba(255, 251, 241, .98),
+            rgba(247, 237, 218, .98)
+        );
+
+    box-shadow:
+        20px 0 60px
+        rgba(72, 57, 37, .12);
+
+    transform:
+        translateX(-105%);
+
+    transition:
+        transform .5s
+        cubic-bezier(.77,0,.18,1);
+
+    overflow-y: auto;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+.wedding-sidebar.is-open {
+
+    transform:
+        translateX(0);
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   SUBTLE PAPER TEXTURE
+========================================================= */
+
+.wedding-sidebar::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .35;
+
+    background:
+
+        repeating-linear-gradient(
+            0deg,
+            rgba(111, 90, 55, .025) 0,
+            rgba(111, 90, 55, .025) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+}
+
+
+/* =========================================================
+   SIDEBAR INNER
+========================================================= */
+
+.sidebar-inner {
+
+    position: relative;
+
+    min-height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding:
+        75px
+        42px
+        35px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SIDEBAR HEADER
+========================================================= */
+
+.sidebar-header {
+
+    text-align: center;
+
+    padding-bottom: 38px;
+
+}
+
+
+.sidebar-eyebrow {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 3.5px;
+
+    color: #9A8B70;
+
+}
+
+
+.sidebar-monogram {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 38px;
+
+    font-weight: 500;
+
+    letter-spacing: 5px;
+
+    line-height: 1;
+
+    color: #6F7D57;
+}
+
+
+.sidebar-subtitle {
+
+    margin:
+        8px 0 0;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    color: #8A7A62;
+}
+
+
+/* =========================================================
+   SIDEBAR MENU
+========================================================= */
+
+.sidebar-menu {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+/* =========================================================
+   SIDEBAR LINK
+========================================================= */
+
+.sidebar-link {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 34px 1fr;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        15px 12px;
+
+    color: #625D50;
+
+    text-decoration: none;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 19px;
+
+    font-weight: 500;
+
+    letter-spacing: .6px;
+
+    border-radius: 8px;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        padding-left .3s ease;
+}
+
+
+.sidebar-link:hover {
+
+    color: #B96848;
+
+    background:
+        rgba(255,255,255,.45);
+
+    padding-left: 17px;
+}
+
+
+.sidebar-link.active {
+
+    color: #B96848;
+
+    background:
+        rgba(255,255,255,.55);
+}
+
+
+.sidebar-link.active::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+
+    width: 2px;
+
+    background:
+        #C87553;
+
+    border-radius: 2px;
+}
+
+
+/* =========================================================
+   SIDEBAR NUMBERS
+========================================================= */
+
+.sidebar-number {
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    color: #A79676;
+
+}
+
+
+/* =========================================================
+   SIDEBAR FOOTER
+========================================================= */
+
+.sidebar-footer {
+
+    margin-top: auto;
+
+    padding-top: 45px;
+
+    text-align: center;
+
+    color: #8C806B;
+
+}
+
+
+.sidebar-footer > span {
+
+    display: block;
+
+    margin-bottom: 13px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 25px;
+
+    color: #C5A067;
+}
+
+
+.sidebar-footer p {
+
+    margin: 0 0 2px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 16px;
+
+    font-style: italic;
+
+    color: #8A7A62;
+}
+
+
+.sidebar-footer strong {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    color: #6F765B;
+}
+
+
+/* =========================================================
+   SIDEBAR OVERLAY
+========================================================= */
+
+.sidebar-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9500;
+
+    background:
+        rgba(63, 54, 39, .20);
+
+    backdrop-filter:
+        blur(3px);
+
+    -webkit-backdrop-filter:
+        blur(3px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .35s ease,
+        visibility .35s ease;
+}
+
+
+.sidebar-overlay.is-open {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   PREVENT PAGE SCROLL WHEN SIDEBAR OPEN
+========================================================= */
+
+body.sidebar-open {
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .website-nav {
+
+        height: 64px;
+
+        padding: 0 18px;
+
+    }
+
+
+    .menu-toggle {
+
+        left: 12px;
+
+        width: 40px;
+        height: 40px;
+
+    }
+
+
+    .nav-monogram {
+
+        font-size: 22px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .wedding-sidebar {
+
+        width: min(340px, 88vw);
+
+    }
+
+
+    .sidebar-inner {
+
+        padding:
+            65px
+            30px
+            28px;
+
+    }
+
+
+    .sidebar-header {
+
+        padding-bottom: 30px;
+
+    }
+
+
+    .sidebar-monogram {
+
+        font-size: 34px;
+
+    }
+
+
+    .sidebar-link {
+
+        font-size: 18px;
+
+        padding:
+            14px 10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .wedding-sidebar {
+
+        width: 88vw;
+
+    }
+
+
+    .sidebar-inner {
+
+        padding:
+            60px
+            22px
+            24px;
+
+    }
+
+
+    .sidebar-link {
+
+        font-size: 17px;
+
+    }
+
+}
