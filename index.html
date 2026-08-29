@@ -33,7 +33,157 @@
 
 </head>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+    const sidebar =
+        document.getElementById("weddingSidebar");
+
+    const sidebarClose =
+        document.getElementById("sidebarClose");
+
+    const sidebarOverlay =
+        document.getElementById("sidebarOverlay");
+
+
+    if (
+        !menuToggle ||
+        !sidebar ||
+        !sidebarClose ||
+        !sidebarOverlay
+    ) {
+        return;
+    }
+
+
+    function openSidebar() {
+
+        sidebar.classList.add("is-open");
+
+        sidebarOverlay.classList.add("is-visible");
+
+        document.body.classList.add("sidebar-open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Close wedding navigation"
+        );
+
+        sidebar.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        sidebarOverlay.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+    }
+
+
+    function closeSidebar() {
+
+        sidebar.classList.remove("is-open");
+
+        sidebarOverlay.classList.remove("is-visible");
+
+        document.body.classList.remove(
+            "sidebar-open"
+        );
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Open wedding navigation"
+        );
+
+        sidebar.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        sidebarOverlay.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+    }
+
+
+    menuToggle.addEventListener(
+        "click",
+        function () {
+
+            if (
+                sidebar.classList.contains(
+                    "is-open"
+                )
+            ) {
+
+                closeSidebar();
+
+            } else {
+
+                openSidebar();
+
+            }
+
+        }
+    );
+
+
+    sidebarClose.addEventListener(
+        "click",
+        closeSidebar
+    );
+
+
+    sidebarOverlay.addEventListener(
+        "click",
+        closeSidebar
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                closeSidebar();
+
+            }
+
+        }
+    );
+
+
+    sidebar
+        .querySelectorAll(".sidebar-link")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                closeSidebar
+            );
+
+        });
+
+});
+</script>
 <body>
 
     <!-- Floating watercolor petals -->
