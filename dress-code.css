@@ -1,11 +1,7 @@
 /* ==========================================================
    MIKE & SHARMAINE
    SECTION 5 — DRESS CODE
-   ========================================================== */
-
-
-/* ==========================================================
-   COLORS
+   Complete replacement CSS
    ========================================================== */
 
 :root {
@@ -23,14 +19,8 @@
     --brown: #71675a;
     --soft-brown: #9a876c;
     --ink: #5f6554;
-
     --white: #fffdf7;
 }
-
-
-/* ==========================================================
-   GLOBAL
-   ========================================================== */
 
 * {
     box-sizing: border-box;
@@ -43,14 +33,11 @@ html {
 body.dress-code-page {
     margin: 0;
     min-height: 100vh;
-
     overflow-x: hidden;
 
     color: var(--ink);
-
     font-family: "Poppins", sans-serif;
 
-    /* Same background used by the other wedding sections */
     background-color: var(--cream);
     background-image: url("floral-frame.png");
     background-repeat: no-repeat;
@@ -104,14 +91,14 @@ body.dress-code-page {
 
     padding: 8px 0;
 
-    text-decoration: none;
-    white-space: nowrap;
-
     color: #6e745f;
 
     font-family: "Cardo", serif;
     font-size: 13px;
     letter-spacing: 1.2px;
+
+    text-decoration: none;
+    white-space: nowrap;
 
     transition: color 0.25s ease;
 }
@@ -129,7 +116,6 @@ body.dress-code-page {
     background: var(--burnt);
 
     transform: translateX(-50%);
-
     transition: width 0.25s ease;
 }
 
@@ -152,10 +138,11 @@ body.dress-code-page {
     position: relative;
 
     width: min(1500px, 94vw);
+    min-height: calc(100vh - 68px);
 
     margin: 0 auto;
 
-    padding: 55px 0 90px;
+    padding: 48px 0 72px;
 }
 
 .dress-code-content::before {
@@ -175,8 +162,8 @@ body.dress-code-page {
     background:
         linear-gradient(
             to bottom,
-            rgba(255, 250, 240, 0.62),
-            rgba(255, 250, 240, 0.38)
+            rgba(255, 250, 240, 0.72),
+            rgba(255, 250, 240, 0.46)
         );
 
     pointer-events: none;
@@ -184,17 +171,17 @@ body.dress-code-page {
 
 
 /* ==========================================================
-   HEADER
+   SECTION TITLE
    ========================================================== */
 
-.dress-header {
+.dress-code-title {
     text-align: center;
 
-    padding: 4px 20px 18px;
+    padding: 0 20px 8px;
 }
 
 .section-number {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 
     color: var(--soft-brown);
 
@@ -203,7 +190,7 @@ body.dress-code-page {
     letter-spacing: 4px;
 }
 
-.dress-header h1 {
+.dress-code-title h1 {
     margin: 0;
 
     color: var(--olive);
@@ -216,8 +203,17 @@ body.dress-code-page {
     letter-spacing: 5px;
 }
 
-.script-title {
-    margin: 18px 0 13px;
+.dress-code-title h1 span,
+.dress-code-title h1 strong {
+    font: inherit;
+}
+
+.dress-code-title h1 strong {
+    font-weight: 500;
+}
+
+.dress-code-script {
+    margin: 17px 0 10px;
 
     color: var(--burnt);
 
@@ -227,68 +223,57 @@ body.dress-code-page {
     line-height: 1;
 }
 
-.script-title span {
+.dress-code-script span {
     padding: 0 8px;
 }
 
-.gold-heart {
+.title-heart {
     color: var(--gold);
 
     font-family: "Cormorant Garamond", serif;
-    font-size: 30px;
-
+    font-size: 32px;
     line-height: 1;
 }
 
 
 /* ==========================================================
-   INTRO AREA
+   INTRO + COLOR PALETTE
    ========================================================== */
 
-.intro-area {
+.dress-code-intro {
     position: relative;
 
     display: grid;
-
     grid-template-columns: 330px minmax(0, 720px);
 
     align-items: center;
-
     justify-content: center;
 
     gap: 48px;
 
-    width: 100%;
+    width: min(1120px, 92vw);
 
-    max-width: 1120px;
-
-    /* Keep the introduction visually close to the outfit guide */
-    margin: 15px auto 8px;
+    margin: 18px auto 6px;
 }
 
-
-/* ==========================================================
-   COLOR PALETTE
-   ========================================================== */
-
-.palette-box {
+.palette-card {
     position: relative;
 
-    width: 100%;
-    max-width: 330px;
+    width: 330px;
+    max-width: 100%;
 
     padding: 28px 25px 24px;
 
     border: 1px solid rgba(215, 168, 90, 0.75);
 
-    background: rgba(255, 250, 240, 0.38);
+    background: rgba(255, 250, 240, 0.40);
 
     outline: 1px solid rgba(215, 168, 90, 0.28);
     outline-offset: -7px;
 }
 
-.palette-box::before,
-.palette-box::after {
+.palette-card::before,
+.palette-card::after {
     content: "";
 
     position: absolute;
@@ -299,7 +284,7 @@ body.dress-code-page {
     border: 1px solid var(--gold);
 }
 
-.palette-box::before {
+.palette-card::before {
     top: 6px;
     left: 6px;
 
@@ -307,7 +292,7 @@ body.dress-code-page {
     border-bottom: 0;
 }
 
-.palette-box::after {
+.palette-card::after {
     right: 6px;
     bottom: 6px;
 
@@ -327,7 +312,7 @@ body.dress-code-page {
     letter-spacing: 1.5px;
 }
 
-.palette-colors {
+.palette-swatches {
     display: flex;
 
     justify-content: center;
@@ -336,40 +321,41 @@ body.dress-code-page {
     gap: 12px;
 }
 
-.color {
+.swatch {
     width: 45px;
     height: 45px;
+
+    flex: 0 0 45px;
 
     border-radius: 50%;
 
     border: 1px solid rgba(95, 101, 84, 0.16);
 
     box-shadow:
-        inset 0 0 0 1px
-        rgba(255, 255, 255, 0.25);
+        inset 0 0 0 1px rgba(255, 255, 255, 0.25);
 }
 
-.color.gold {
+.swatch-gold {
     background: #e5b957;
 }
 
-.color.olive {
+.swatch-olive {
     background: #71845c;
 }
 
-.color.terracotta {
+.swatch-terracotta {
     background: #c9572e;
 }
 
-.color.caramel {
+.swatch-caramel {
     background: #c4874c;
 }
 
-.color.beige {
+.swatch-beige {
     background: #e8dcc5;
 }
 
-.palette-decoration {
+.palette-ornament {
     display: flex;
 
     align-items: center;
@@ -382,25 +368,20 @@ body.dress-code-page {
     color: var(--gold);
 }
 
-.palette-decoration span {
+.palette-ornament span {
     width: 65px;
     height: 1px;
 
     background: rgba(215, 168, 90, 0.55);
 }
 
-.palette-decoration b {
+.palette-ornament b {
     font-family: "Cormorant Garamond", serif;
     font-size: 20px;
     font-weight: 400;
 }
 
-
-/* ==========================================================
-   INTRO TEXT
-   ========================================================== */
-
-.intro-text {
+.intro-copy {
     width: 100%;
     max-width: 720px;
 
@@ -414,166 +395,62 @@ body.dress-code-page {
 
     font-family: "Cormorant Garamond", serif;
     font-size: 26px;
-
     font-style: italic;
     font-weight: 600;
 }
 
-.intro-text p {
+.intro-copy > p:not(.intro-quote) {
     margin: 0 auto 11px;
 
     color: var(--brown);
 
     font-family: "Cardo", serif;
     font-size: 16px;
-
     line-height: 1.5;
 }
 
 .intro-note {
     margin-top: 14px !important;
+    margin-bottom: 0 !important;
 
     font-size: 15px !important;
 }
 
 
 /* ==========================================================
-   OUTFIT GUIDE
-   ========================================================== */
-
-.outfit-guide {
-    position: relative;
-
-    width: min(1180px, 88vw);
-
-    /* Pull the entire outfit composition upward */
-    margin: -28px auto 0;
-
-    /* Dedicated but compact space for the labels */
-    padding: 0 20px 52px;
-}
-
-
-/* ==========================================================
    OUTFIT ARTWORK
    IMPORTANT:
-   dress-code-outfits.png should be the transparent
-   people-only artwork.
+   dress-code-outfits.png already contains the outfit labels.
+   DO NOT recreate labels with HTML/CSS.
    ========================================================== */
 
-.outfit-image {
-    position: relative;
-
+.outfit-section {
     width: 100%;
 
-    z-index: 1;
+    margin: 10px auto 0;
 
-    /* Position is controlled by the outfit-guide so labels move with it */
-    transform: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.outfit-image img {
+.outfit-artwork-wrap {
+    width: min(1280px, 88vw);
+
+    margin: 0 auto;
+
+    overflow: visible;
+}
+
+.outfit-artwork {
     display: block;
 
     width: 100%;
     height: auto;
 
+    margin: 0 auto;
+
     object-fit: contain;
-}
-
-
-/* ==========================================================
-   OUTFIT LABELS
-   ========================================================== */
-
-.outfit-labels {
-    position: absolute;
-
-    z-index: 5;
-
-    left: 0;
-    right: 0;
-
-    bottom: 0;
-
-    height: 58px;
-
-    pointer-events: none;
-}
-
-.outfit-label {
-    position: absolute;
-
-    transform: translateX(-50%);
-
-    text-align: center;
-
-    color: #625d51;
-
-    font-family: "Cardo", serif;
-
-    font-size: clamp(12px, 0.82vw, 15px);
-
-    font-weight: 400;
-
-    line-height: 1.12;
-
-    white-space: normal;
-}
-
-.outfit-label span {
-    display: block;
-}
-
-
-/* ==========================================================
-   LABEL ALIGNMENT
-   Matched to the actual groups in the artwork
-   ========================================================== */
-
-.label-mother {
-    left: 8.6%;
-    width: 92px;
-}
-
-.label-father {
-    left: 18.0%;
-    width: 92px;
-}
-
-.label-secondary {
-    left: 29.9%;
-    width: 82px;
-}
-
-.label-maid {
-    left: 36.8%;
-    width: 100px;
-}
-
-.label-groomsmen {
-    left: 45.9%;
-    width: 105px;
-}
-
-.label-couple {
-    left: 54.8%;
-    width: 125px;
-}
-
-.label-ninong {
-    left: 65.2%;
-    width: 78px;
-}
-
-.label-ring {
-    left: 75.5%;
-    width: 120px;
-}
-
-.label-guests {
-    left: 90.5%;
-    width: 80px;
 }
 
 
@@ -583,13 +460,12 @@ body.dress-code-page {
 
 .palette-guide {
     display: flex;
-
     justify-content: center;
 
-    margin: -4px auto 0;
+    margin: 18px auto 0;
 }
 
-.palette-guide-box {
+.palette-guide-inner {
     width: min(580px, 90vw);
 
     padding: 21px 35px 22px;
@@ -614,18 +490,17 @@ body.dress-code-page {
     letter-spacing: 2px;
 }
 
-.palette-guide-box p {
+.palette-guide-inner p {
     margin: 0 0 4px;
 
     color: var(--brown);
 
     font-family: "Cormorant Garamond", serif;
     font-size: 20px;
-
     font-style: italic;
 }
 
-.palette-guide-box em {
+.palette-guide-inner em {
     color: var(--brown);
 
     font-family: "Cormorant Garamond", serif;
@@ -634,12 +509,11 @@ body.dress-code-page {
 
 
 /* ==========================================================
-   RSVP BUTTON
+   RSVP
    ========================================================== */
 
 .next-page {
     display: flex;
-
     justify-content: center;
 
     margin-top: 26px;
@@ -662,12 +536,12 @@ body.dress-code-page {
 
     background: rgba(255, 252, 242, 0.55);
 
-    text-decoration: none;
-
     color: var(--brown);
 
     font-family: "Cardo", serif;
     font-size: 17px;
+
+    text-decoration: none;
 
     transition:
         background 0.25s ease,
@@ -679,14 +553,14 @@ body.dress-code-page {
 .next-button span {
     color: var(--burnt);
 
-    font-size: 21px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    line-height: 1;
 }
 
 .next-button:hover {
     background: var(--burnt);
-
     border-color: var(--burnt);
-
     color: #fff;
 
     transform: translateY(-2px);
@@ -704,22 +578,22 @@ body.dress-code-page {
 @media (max-width: 1000px) {
 
     .website-nav nav {
-        gap: 18px;
+        gap: 20px;
     }
 
-    .website-nav a {
-        font-size: 11px;
-        letter-spacing: 0.9px;
+    .dress-code-intro {
+        grid-template-columns: 290px minmax(0, 1fr);
+        gap: 28px;
+
+        width: min(900px, 92vw);
     }
 
-    .intro-area {
-        grid-template-columns: 270px minmax(0, 1fr);
-
-        gap: 25px;
+    .palette-card {
+        width: 290px;
     }
 
-    .outfit-labels {
-        height: 75px;
+    .outfit-artwork-wrap {
+        width: min(1120px, 92vw);
     }
 }
 
@@ -735,32 +609,35 @@ body.dress-code-page {
     }
 
     .website-nav {
-        min-height: 60px;
-
-        padding: 8px 12px;
+        min-height: 58px;
+        padding: 8px 14px;
 
         overflow-x: auto;
+        justify-content: flex-start;
     }
 
     .website-nav nav {
         width: max-content;
-
         gap: 18px;
+        margin: 0 auto;
     }
 
     .website-nav a {
         font-size: 10px;
-        letter-spacing: 0.7px;
+        letter-spacing: 0.8px;
     }
 
     .dress-code-content {
-        width: 94vw;
-
-        padding: 40px 0 65px;
+        width: 100%;
+        padding: 34px 0 55px;
     }
 
     .dress-code-content::before {
-        width: 100%;
+        width: 94vw;
+    }
+
+    .dress-code-title {
+        padding: 0 15px 8px;
     }
 
     .section-number {
@@ -768,107 +645,110 @@ body.dress-code-page {
         letter-spacing: 3px;
     }
 
-    .dress-header h1 {
-        font-size: clamp(45px, 13vw, 70px);
-
+    .dress-code-title h1 {
+        font-size: clamp(45px, 13vw, 68px);
         letter-spacing: 3px;
     }
 
-    .script-title {
+    .dress-code-script {
+        margin-top: 13px;
         font-size: clamp(27px, 8vw, 38px);
-
-        line-height: 1.05;
     }
 
-    .intro-area {
+    .title-heart {
+        font-size: 28px;
+    }
+
+    .dress-code-intro {
         display: flex;
         flex-direction: column;
 
-        width: 94%;
-        max-width: none;
+        width: 92vw;
 
-        gap: 25px;
+        gap: 24px;
+
+        margin-top: 16px;
     }
 
-    .palette-box {
-        width: min(340px, 100%);
+    .palette-card {
+        width: min(330px, 92vw);
     }
 
-    .intro-text {
-        width: 100%;
+    .intro-copy {
+        max-width: 680px;
     }
 
     .intro-quote {
         font-size: 23px;
     }
 
-    .intro-text p {
+    .intro-copy > p:not(.intro-quote) {
         font-size: 14px;
-
-        line-height: 1.55;
+        line-height: 1.5;
     }
 
+    .intro-note {
+        font-size: 13px !important;
+    }
 
-    /* ------------------------------------------------------
-       MOBILE OUTFIT GUIDE
-
-       Keep the artwork and labels in the same 900px
-       coordinate system so their alignment does not change.
-       ------------------------------------------------------ */
-
-    .outfit-guide {
-        width: 100%;
-
-        margin: -18px 0 0;
-
-        padding: 0 0 72px;
+    /*
+       The artwork contains its own labels, so keep it as one
+       proportional image. No horizontal squeezing.
+    */
+    .outfit-section {
+        margin-top: 12px;
 
         overflow-x: auto;
         overflow-y: hidden;
+
+        justify-content: flex-start;
+
+        -webkit-overflow-scrolling: touch;
     }
 
-    .outfit-image {
+    .outfit-artwork-wrap {
         width: 900px;
         min-width: 900px;
 
-        transform: none;
+        margin: 0 auto;
+        padding: 0 12px;
     }
 
-    .outfit-labels {
-        left: 0;
-        right: auto;
-
-        width: 900px;
-        min-width: 900px;
-
-        height: 64px;
-
-        bottom: 0;
+    .outfit-artwork {
+        width: 100%;
+        height: auto;
     }
 
-    .outfit-label {
-        font-size: 14px;
+    .palette-guide {
+        margin-top: 16px;
     }
 
+    .palette-guide-inner {
+        width: 90vw;
 
-    .palette-guide-box {
-        padding: 18px 20px;
+        padding: 18px 20px 19px;
     }
 
-    .palette-guide-box p {
-        font-size: 18px;
-
-        line-height: 1.25;
+    .guide-title {
+        font-size: 15px;
     }
 
-    .palette-guide-box em {
+    .palette-guide-inner p {
+        font-size: 17px;
+    }
+
+    .palette-guide-inner em {
         font-size: 16px;
     }
 
-    .next-button {
-        width: 250px;
+    .next-page {
+        margin-top: 22px;
+    }
 
-        min-height: 58px;
+    .next-button {
+        min-width: 210px;
+        padding: 12px 25px;
+        font-size: 16px;
     }
 }
 
@@ -877,26 +757,28 @@ body.dress-code-page {
    SMALL PHONES
    ========================================================== */
 
-@media (max-width: 430px) {
+@media (max-width: 420px) {
 
-    .website-nav nav {
-        gap: 14px;
+    .dress-code-title h1 {
+        font-size: 43px;
     }
 
-    .website-nav a {
-        font-size: 9px;
+    .dress-code-script {
+        font-size: 27px;
     }
 
-    .dress-code-content {
-        padding-top: 32px;
-    }
-
-    .palette-colors {
+    .palette-swatches {
         gap: 8px;
     }
 
-    .color {
-        width: 38px;
-        height: 38px;
+    .swatch {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+    }
+
+    .outfit-artwork-wrap {
+        width: 820px;
+        min-width: 820px;
     }
 }
