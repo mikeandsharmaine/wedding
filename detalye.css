@@ -1,1079 +1,469 @@
-/* =========================================================
-   MIKE & SHARMAINE
+/* =========================================
    DETALYE NG KASAL
-   ========================================================= */
-
-
-/* =========================================================
-   ROOT
-   ========================================================= */
+   ========================================= */
 
 :root {
-
     --cream: #f7f0df;
-    --cream-light: #fbf7ec;
-    --paper: #f4ead5;
-
-    --sage: #75845c;
-    --sage-dark: #596547;
-
-    --olive: #6b7350;
-
-    --gold: #b99955;
-    --gold-light: #d5bd82;
-
-    --brown: #776b58;
-    --brown-dark: #5e5547;
-
-    --terracotta: #d9653d;
-
-    --white: #fffdf6;
-
-    --shadow:
-        0 22px 50px rgba(100, 83, 53, 0.12);
-
+    --cream-light: #fbf6e9;
+    --paper: #f9f2df;
+    --sage: #7c8d68;
+    --sage-dark: #657353;
+    --olive: #697357;
+    --peach: #d96b43;
+    --gold: #c9a15b;
+    --gold-light: #dfc78f;
+    --brown: #746756;
+    --text: #706756;
 }
 
 
-/* =========================================================
-   RESET
-   ========================================================= */
+/* =========================================
+   BASE
+   ========================================= */
 
-* {
-    box-sizing: border-box;
+.detalye-page {
     margin: 0;
-    padding: 0;
+    background: var(--cream);
+    color: var(--text);
+    font-family: "Cormorant Garamond", serif;
+}
+
+.detalye-page *,
+.detalye-page *::before,
+.detalye-page *::after {
+    box-sizing: border-box;
+}
+
+.detalye-page main {
+    overflow: hidden;
 }
 
 
-html {
-    scroll-behavior: smooth;
-}
+/* =========================================
+   HERO
+   ========================================= */
 
+.details-hero {
+    position: relative;
 
-body {
+    min-height: 570px;
 
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 120px 30px 80px;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(255,255,255,0.58),
-            transparent 65%
-        ),
-        var(--cream);
+            rgba(255, 252, 242, 0.95) 0%,
+            rgba(247, 240, 223, 0.88) 55%,
+            rgba(239, 226, 200, 0.92) 100%
+        );
 
-    color: var(--brown);
-
-    font-family:
-        "Cardo",
-        Georgia,
-        serif;
-
-    overflow-x: hidden;
-}
-
-
-body.menu-open {
     overflow: hidden;
 }
 
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-
-button {
-    font: inherit;
-}
-
-
-
-/* =========================================================
-   TOP BAR
-   ========================================================= */
-
-.detail-topbar {
-
-    height: 70px;
-
-    width: 100%;
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 1000;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        rgba(250,246,235,0.94);
-
-    border-bottom:
-        1px solid
-        rgba(117,132,92,0.12);
-
-    backdrop-filter:
-        blur(10px);
-}
-
-
-.detail-monogram {
-
-    position: relative;
-
-    font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-    font-size: 27px;
-
-    letter-spacing: 7px;
-
-    color: var(--sage-dark);
-
-    padding-left: 7px;
-}
-
-
-.detail-monogram::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-
-    bottom: -7px;
-
-    transform: translateX(-50%);
-
-    width: 22px;
-
-    height: 1px;
-
-    background: var(--gold);
-}
-
-
-
-/* =========================================================
-   HAMBURGER
-   ========================================================= */
-
-.menu-toggle {
-
-    position: absolute;
-
-    left: 28px;
-
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 30px;
-
-    height: 30px;
-
-    border: 0;
-
-    background: transparent;
-
-    cursor: pointer;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    gap: 5px;
-
-    padding: 3px;
-}
-
-
-.menu-toggle span {
-
-    display: block;
-
-    width: 23px;
-
-    height: 1.5px;
-
-    background: var(--sage-dark);
-
-    transition:
-        transform 0.3s ease,
-        width 0.3s ease;
-}
-
-
-.menu-toggle span:nth-child(2) {
-    width: 16px;
-}
-
-
-.menu-toggle:hover span:nth-child(2) {
-    width: 23px;
-}
-
-
-
-/* =========================================================
-   SIDEBAR
-   ========================================================= */
-
-.side-menu {
-
-    position: fixed;
-
-    top: 0;
-
-    left: 0;
-
-    width: min(390px, 88vw);
-
-    height: 100vh;
-
-    z-index: 2000;
-
-    background:
-        linear-gradient(
-            145deg,
-            #f9f3e4,
-            #f1e8d3
-        );
-
-    box-shadow:
-        20px 0 50px rgba(68,56,38,0.12);
-
-    transform:
-        translateX(-105%);
-
-    transition:
-        transform 0.45s
-        cubic-bezier(.77,0,.18,1);
-
-    overflow-y: auto;
-}
-
-
-.side-menu.open {
-    transform: translateX(0);
-}
-
-
-.side-menu-inner {
-
-    min-height: 100%;
-
-    padding:
-        70px 48px 45px;
-
-    position: relative;
-}
-
-
-.menu-close {
-
-    position: absolute;
-
-    top: 24px;
-
-    right: 27px;
-
-    width: 36px;
-
-    height: 36px;
-
-    border:
-        1px solid
-        rgba(89,101,71,0.25);
-
-    border-radius: 50%;
-
-    background: transparent;
-
-    color: var(--sage-dark);
-
-    font-size: 25px;
-
-    line-height: 1;
-
-    cursor: pointer;
-}
-
-
-.side-monogram {
-
-    font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-    font-size: 45px;
-
-    letter-spacing: 9px;
-
-    color: var(--sage-dark);
-
-    padding-left: 9px;
-}
-
-
-.side-names {
-
-    margin-top: 7px;
-
-    font-family:
-        "Poppins",
-        sans-serif;
-
-    font-size: 11px;
-
-    letter-spacing: 3px;
-
-    color: var(--sage-dark);
-}
-
-
-.side-tagline {
-
-    margin-top: 65px;
-
-    font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-    font-style: italic;
-
-    font-size: 24px;
-
-    color: var(--brown);
-}
-
-
-.side-navigation {
-
-    display: flex;
-
-    flex-direction: column;
-
-    margin-top: 35px;
-}
-
-
-.side-navigation a {
-
-    position: relative;
-
-    display: flex;
-
-    align-items: baseline;
-
-    gap: 12px;
-
-    padding: 13px 0;
-
-    border-bottom:
-        1px solid
-        rgba(117,132,92,0.14);
-
-    font-family:
-        "Poppins",
-        sans-serif;
-
-    font-size: 13px;
-
-    letter-spacing: 0.7px;
-
-    color: var(--brown);
-
-    transition:
-        color 0.25s ease,
-        padding-left 0.25s ease;
-}
-
-
-.side-navigation a span {
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 14px;
-
-    color: var(--gold);
-}
-
-
-.side-navigation a:hover,
-.side-navigation a.active {
-
-    color: var(--terracotta);
-
-    padding-left: 7px;
-}
-
-
-.side-heart {
-
-    margin-top: 35px;
-
-    color: var(--gold);
-
-    font-size: 24px;
-}
-
-
-.side-footer {
-
-    margin-top: 55px;
-
-    font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-    font-style: italic;
-
-    font-size: 17px;
-
-    line-height: 1.5;
-
-    color: var(--brown);
-}
-
-
-.side-footer strong {
-
-    font-family:
-        "Cardo",
-        serif;
-
-    font-style: normal;
-
-    color: var(--sage-dark);
-}
-
-
-/* Overlay */
-
-.menu-overlay {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 1500;
-
-    background:
-        rgba(54,45,31,0.27);
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition:
-        opacity 0.35s ease;
-
-    backdrop-filter:
-        blur(2px);
-}
-
-
-.menu-overlay.show {
-
-    opacity: 1;
-
-    pointer-events: auto;
-}
-
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.details-hero {
-
-    position: relative;
-
-    min-height: 520px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    overflow: hidden;
-
-    background:
-
-        radial-gradient(
-            ellipse at center,
-            rgba(255,250,234,0.98) 0%,
-            rgba(246,235,209,0.94) 52%,
-            rgba(225,207,167,0.80) 100%
-        );
-
-}
-
+/* watercolor background */
 
 .details-hero::before {
-
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     background:
-        linear-gradient(
-            90deg,
-            rgba(106,118,82,0.10),
-            transparent 24%,
-            transparent 76%,
-            rgba(106,118,82,0.10)
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(255,255,255,0.5),
+            transparent 60%
         );
 
     pointer-events: none;
 }
 
 
-/* Botanical side decoration */
+/* =========================================
+   FLOWER BACKGROUND
+   ========================================= */
 
-.hero-botanical {
-
+.hero-flower {
     position: absolute;
 
-    width: 360px;
+    width: 470px;
+    height: 470px;
 
-    height: 360px;
-
-    opacity: 0.48;
+    opacity: 0.65;
 
     pointer-events: none;
+
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 
-.hero-botanical-left {
+/* left floral */
 
-    left: -130px;
+.hero-flower-left {
+    left: -110px;
+    top: -40px;
 
-    top: -80px;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(111,126,83,0.35),
-            transparent 65%
-        );
-
-    transform: rotate(-20deg);
+    background-image:
+        url("images/detalye-flower-left.png");
 }
 
 
-.hero-botanical-right {
+/* right floral */
 
-    right: -130px;
+.hero-flower-right {
+    right: -110px;
+    top: -40px;
 
-    bottom: -100px;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(171,132,67,0.26),
-            transparent 65%
-        );
-
-    transform: rotate(20deg);
+    background-image:
+        url("images/detalye-flower-right.png");
 }
 
 
-.details-hero-content {
+/* =========================================
+   TEXT
+   ========================================= */
 
+.details-eyebrow {
     position: relative;
-
     z-index: 2;
 
-    width: min(900px, 90%);
+    margin: 0 0 18px;
 
-    padding-top: 40px;
-}
-
-
-.section-number {
-
-    font-family:
-        "Poppins",
-        sans-serif;
+    font-family: "Poppins", sans-serif;
 
     font-size: 11px;
+    font-weight: 500;
 
     letter-spacing: 6px;
 
-    text-transform: uppercase;
-
-    color: var(--gold);
-
-    margin-bottom: 18px;
+    color: var(--brown);
 }
 
 
-.details-hero h1 {
+.details-title {
+    position: relative;
+    z-index: 2;
 
-    font-family:
-        "Cardo",
-        Georgia,
-        serif;
+    margin: 0;
+
+    font-family: "Cardo", serif;
+
+    font-size: clamp(58px, 7vw, 105px);
+
+    line-height: 0.9;
 
     font-weight: 400;
 
-    font-size:
-        clamp(55px, 8vw, 105px);
-
-    line-height: 0.95;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    color: var(--sage-dark);
+    color: var(--sage);
 }
 
 
-.details-hero h1 span {
+.details-title span {
+    font-family: "Allura", cursive;
 
-    display: block;
+    font-size: 1.15em;
 
-    color: var(--brown-dark);
+    color: var(--peach);
+
+    margin-left: 8px;
 }
 
 
-.gold-ornament {
+.details-ornament {
+    position: relative;
+    z-index: 2;
 
     display: flex;
-
-    justify-content: center;
-
     align-items: center;
+    gap: 20px;
 
-    gap: 13px;
-
-    margin: 27px auto;
-}
-
-
-.gold-ornament span {
-
-    width: 95px;
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--gold)
-        );
-}
-
-
-.gold-ornament span:last-child {
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--gold),
-            transparent
-        );
-}
-
-
-.gold-ornament {
+    margin: 28px 0 18px;
 
     color: var(--gold);
 
-    font-size: 18px;
+    font-size: 20px;
 }
 
 
-.hero-subtitle {
+.details-ornament span {
+    width: 120px;
+    height: 1px;
 
-    max-width: 560px;
+    background: rgba(181, 145, 78, 0.55);
+}
 
-    margin: auto;
 
-    font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
+.details-subtitle {
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
 
     font-size: 22px;
 
     font-style: italic;
 
-    line-height: 1.45;
+    line-height: 1.35;
 
     color: var(--brown);
 }
 
 
+/* =========================================
+   CONTENT
+   ========================================= */
 
-/* =========================================================
-   DETAILS SECTION
-   ========================================================= */
-
-.wedding-details {
-
+.details-content {
     position: relative;
 
-    padding:
-        100px 6vw 130px;
+    padding: 80px 7vw 120px;
 
     background:
-
-        radial-gradient(
-            circle at center,
-            rgba(255,253,246,0.72),
-            transparent 67%
+        linear-gradient(
+            rgba(247, 240, 223, 0.88),
+            rgba(247, 240, 223, 0.88)
         ),
+        url("images/linen-texture.jpg");
 
-        var(--cream);
-}
-
-
-.details-heading {
-
-    text-align: center;
-
-    max-width: 750px;
-
-    margin:
-        0 auto 65px;
-}
-
-
-.details-heading p {
-
-    font-family:
-        "Poppins",
-        sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing: 4px;
-
-    color: var(--terracotta);
-
-    margin-bottom: 14px;
-}
-
-
-.details-heading h2 {
-
-    font-family:
-        "Cardo",
-        Georgia,
-        serif;
-
-    font-weight: 400;
-
-    font-size:
-        clamp(38px, 5vw, 64px);
-
-    line-height: 1.05;
-
-    color: var(--sage-dark);
-}
-
-
-.details-heading em {
-
-    color: var(--brown);
-
-    font-weight: 400;
-}
-
-
-
-/* =========================================================
-   ARCH GRID
-   ========================================================= */
-
-.arch-grid {
-
-    width: min(1150px, 100%);
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 55px;
-
-    align-items: stretch;
-}
-
-
-
-/* =========================================================
-   ARCH CARD
-   ========================================================= */
-
-.arch-card {
-
-    position: relative;
-
-    min-height: 720px;
-
-    padding: 13px;
-
-    background:
-        rgba(255,252,242,0.80);
-
-    border:
-        1px solid
-        rgba(185,153,85,0.48);
-
-    border-radius:
-        310px 310px 12px 12px;
-
-    box-shadow:
-        var(--shadow);
-}
-
-
-.arch-inner {
-
-    position: relative;
-
-    height: 100%;
-
-    min-height: 690px;
+    background-size: cover;
 
     overflow: hidden;
-
-    border:
-        1px solid
-        rgba(185,153,85,0.34);
-
-    border-radius:
-        300px 300px 8px 8px;
-
-    padding:
-        70px 65px 80px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    text-align: center;
-
-    background:
-
-        radial-gradient(
-            circle at center top,
-            rgba(255,255,255,0.65),
-            transparent 65%
-        ),
-
-        #f5ecd9;
 }
 
 
-.ceremony-card .arch-inner {
+/* background botanical glow */
 
-    background:
-        linear-gradient(
-            180deg,
-            #f8f0df,
-            #f0e5cc
-        );
-}
-
-
-.reception-card .arch-inner {
-
-    background:
-        linear-gradient(
-            180deg,
-            #faf4e7,
-            #f2e7d2
-        );
-}
-
-
-
-/* =========================================================
-   ARCH DECORATIONS
-   ========================================================= */
-
-.arch-decoration {
+.details-content::before,
+.details-content::after {
+    content: "";
 
     position: absolute;
 
-    color:
-        rgba(117,132,92,0.45);
+    width: 360px;
+    height: 600px;
 
-    font-size: 25px;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    opacity: 0.35;
+
+    pointer-events: none;
+}
+
+.details-content::before {
+    left: -100px;
+    bottom: 0;
+
+    background-image:
+        url("images/detalye-flower-bottom-left.png");
+}
+
+.details-content::after {
+    right: -100px;
+    bottom: 0;
+
+    background-image:
+        url("images/detalye-flower-bottom-right.png");
 }
 
 
-.arch-decoration.top-left {
+/* =========================================
+   CARDS GRID
+   ========================================= */
 
-    top: 75px;
+.details-grid {
+    position: relative;
+    z-index: 2;
 
-    left: 38px;
+    max-width: 1120px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 50px;
 }
 
 
-.arch-decoration.top-right {
+/* =========================================
+   ARCH CARDS
+   ========================================= */
 
-    top: 75px;
+.event-card {
+    position: relative;
 
-    right: 38px;
+    min-height: 700px;
+
+    padding: 80px 65px 65px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 252, 242, 0.97),
+            rgba(249, 241, 220, 0.97)
+        );
+
+    border: 1px solid rgba(183, 151, 92, 0.45);
+
+    border-radius: 250px 250px 0 0;
+
+    box-shadow:
+        0 20px 50px rgba(110, 91, 59, 0.10);
+
+    text-align: center;
+
+    overflow: hidden;
 }
 
 
-.card-icon {
+.event-card::before {
+    content: "";
 
-    width: 70px;
+    position: absolute;
 
-    height: 70px;
+    inset: 10px;
+
+    border: 1px solid rgba(194, 160, 96, 0.45);
+
+    border-radius: 240px 240px 0 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   ICON
+   ========================================= */
+
+.event-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 72px;
+    height: 72px;
+
+    margin: 0 auto 24px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    border:
-        1px solid
-        rgba(185,153,85,0.48);
+    border: 1px solid rgba(194, 160, 96, 0.45);
 
     border-radius: 50%;
 
+    font-size: 34px;
+
     color: var(--gold);
-
-    font-size: 32px;
-
-    margin-bottom: 22px;
-
-    background:
-        rgba(255,252,242,0.45);
 }
 
 
-.card-kicker {
+.event-label {
+    position: relative;
+    z-index: 2;
 
-    font-family:
-        "Poppins",
-        sans-serif;
+    margin: 0 0 12px;
+
+    font-family: "Poppins", sans-serif;
 
     font-size: 9px;
 
     letter-spacing: 4px;
 
-    color: var(--gold);
-
-    margin-bottom: 9px;
+    color: #938368;
 }
 
 
-.arch-card h3 {
+.event-card h2 {
+    position: relative;
+    z-index: 2;
 
-    font-family:
-        "Cardo",
-        Georgia,
-        serif;
+    margin: 0;
 
-    font-size: 43px;
+    font-family: "Cardo", serif;
+
+    font-size: 44px;
 
     font-weight: 400;
 
-    text-transform: uppercase;
-
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 
     color: var(--sage-dark);
 }
 
 
-.card-divider {
+/* =========================================
+   GOLD DIVIDER
+   ========================================= */
+
+.gold-line {
+    position: relative;
+    z-index: 2;
 
     display: flex;
 
     align-items: center;
+    justify-content: center;
 
-    gap: 10px;
+    gap: 12px;
+
+    margin: 15px 0 25px;
 
     color: var(--gold);
-
-    margin: 17px 0 24px;
 }
 
+.gold-line::before,
+.gold-line::after {
+    content: "";
 
-.card-divider span {
-
-    width: 65px;
-
+    width: 70px;
     height: 1px;
 
-    background:
-        var(--gold-light);
+    background: rgba(194, 160, 96, 0.5);
 }
 
 
-.card-quote {
+/* =========================================
+   QUOTE
+   ========================================= */
 
-    max-width: 470px;
+.event-quote {
+    position: relative;
+    z-index: 2;
 
-    font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
+    max-width: 430px;
 
-    font-size: 20px;
+    margin: 0 auto 40px;
 
-    font-style: italic;
+    font-size: 19px;
 
     line-height: 1.45;
 
-    color: var(--brown);
+    font-style: italic;
 
-    margin-bottom: 30px;
+    color: var(--brown);
 }
 
 
+/* =========================================
+   EVENT DETAILS
+   ========================================= */
 
-/* =========================================================
-   EVENT INFORMATION
-   ========================================================= */
-
-.event-information {
-
-    width: 100%;
-
-    max-width: 400px;
+.event-details {
+    position: relative;
+    z-index: 2;
 
     display: flex;
 
@@ -1081,153 +471,215 @@ button {
 
     gap: 24px;
 
-    margin-top: 5px;
+    max-width: 360px;
+
+    margin: 0 auto;
 
     text-align: left;
 }
 
 
-.event-item {
-
-    display: grid;
-
-    grid-template-columns: 48px 1fr;
-
-    align-items: center;
-
-    gap: 12px;
-}
-
-
-.event-icon {
-
-    width: 43px;
-
-    height: 43px;
-
+.detail-item {
     display: flex;
 
     align-items: center;
 
-    justify-content: center;
-
-    border:
-        1px solid
-        rgba(185,153,85,0.5);
-
-    border-radius: 50%;
-
-    color: var(--gold);
-
-    font-size: 22px;
+    gap: 18px;
 }
 
 
-.event-item small {
+.detail-icon {
+    flex: 0 0 48px;
 
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(194, 160, 96, 0.4);
+
+    border-radius: 50%;
+
+    font-size: 23px;
+
+    color: var(--gold);
+}
+
+
+.detail-item small {
     display: block;
 
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    margin-bottom: 3px;
 
-    font-size: 17px;
+    font-size: 15px;
 
     font-style: italic;
+
+    color: #93836b;
+}
+
+
+.detail-item strong {
+    display: block;
+
+    font-family: "Cardo", serif;
+
+    font-size: 19px;
+
+    font-weight: 400;
+
+    line-height: 1.25;
 
     color: var(--brown);
 }
 
 
-.event-item strong {
+/* =========================================
+   FLOWERS INSIDE CARDS
+   ========================================= */
 
-    display: block;
+.card-flower {
+    position: absolute;
 
-    margin-top: 1px;
+    width: 210px;
+    height: 210px;
 
-    font-family:
-        "Cardo",
-        serif;
+    background-size: contain;
+    background-repeat: no-repeat;
 
-    font-size: 19px;
+    opacity: 0.7;
 
-    line-height: 1.25;
-
-    font-weight: 400;
-
-    color: var(--sage-dark);
+    pointer-events: none;
 }
 
 
+.card-flower-top {
+    top: 0;
+    left: -25px;
 
-/* =========================================================
+    background-image:
+        url("images/detalye-card-flower.png");
+}
+
+
+.card-flower-bottom {
+    bottom: -30px;
+    right: -20px;
+
+    transform: rotate(180deg);
+
+    background-image:
+        url("images/detalye-card-flower.png");
+}
+
+
+/* =========================================
    MAP
-   ========================================================= */
+   ========================================= */
 
 .map-wrapper {
+    position: relative;
+    z-index: 2;
 
     width: 100%;
 
-    margin-top: 8px;
+    margin: 10px auto 20px;
 
-    border:
-        7px solid
-        rgba(255,252,242,0.8);
-
-    box-shadow:
-        0 10px 30px rgba(80,65,40,0.12);
+    border: 1px solid rgba(194, 160, 96, 0.45);
 
     overflow: hidden;
 
-    border-radius: 5px;
+    background: #e9dfc8;
 }
 
 
-.map-wrapper iframe {
-
-    display: block;
-
-    width: 100%;
-
-    height: 210px;
-
-    border: 0;
-
-    filter:
-        sepia(12%)
-        saturate(75%);
-}
-
-
-.map-button {
-
-    width: 100%;
+.map-placeholder {
+    min-height: 180px;
 
     display: flex;
+
+    flex-direction: column;
 
     align-items: center;
 
     justify-content: center;
 
-    gap: 9px;
+    background:
+        linear-gradient(
+            rgba(228, 220, 193, 0.8),
+            rgba(232, 223, 199, 0.8)
+        );
 
-    margin-top: 16px;
+    color: var(--brown);
+}
 
-    padding: 14px 20px;
 
-    border-radius: 40px;
+.map-pin {
+    font-size: 30px;
 
-    background: var(--sage-dark);
+    color: var(--peach);
 
-    color: white;
+    margin-bottom: 5px;
+}
 
-    font-family:
-        "Poppins",
-        sans-serif;
+
+.map-placeholder p {
+    margin: 0;
+
+    font-family: "Cardo", serif;
+
+    font-size: 20px;
+}
+
+
+.map-placeholder span {
+    margin-top: 3px;
+
+    font-size: 15px;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   MAP BUTTON
+   ========================================= */
+
+.map-button {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    margin: 20px auto 0;
+
+    padding: 13px 26px;
+
+    border: 1px solid var(--sage);
+
+    border-radius: 50px;
+
+    background: var(--sage);
+
+    color: #fffdf4;
+
+    font-family: "Poppins", sans-serif;
 
     font-size: 11px;
 
-    letter-spacing: 1px;
+    text-decoration: none;
+
+    letter-spacing: 0.5px;
 
     transition:
         transform 0.25s ease,
@@ -1235,485 +687,207 @@ button {
 }
 
 
-.map-button strong {
-
-    font-size: 15px;
-
-    font-weight: 400;
-}
-
-
 .map-button:hover {
+    transform: translateY(-2px);
 
-    background: var(--olive);
-
-    transform:
-        translateY(-2px);
+    background: var(--sage-dark);
 }
 
 
-
-/* =========================================================
-   CARD FLOWERS
-   ========================================================= */
-
-.arch-flower {
-
-    position: absolute;
-
-    color:
-        rgba(117,132,92,0.45);
-
-    font-size: 42px;
-
-    opacity: 0.75;
+.map-button strong {
+    font-size: 15px;
 }
 
 
-.arch-flower-left {
-
-    bottom: 70px;
-
-    left: 25px;
-
-    transform: rotate(-20deg);
-}
-
-
-.arch-flower-right {
-
-    right: 25px;
-
-    bottom: 70px;
-
-    transform: rotate(20deg);
-}
-
-
-.arch-flower-bottom {
-
-    bottom: 22px;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    color:
-        rgba(185,153,85,0.55);
-}
-
-
-
-/* =========================================================
+/* =========================================
    CLOSING
-   ========================================================= */
+   ========================================= */
 
 .details-closing {
-
     position: relative;
 
-    min-height: 570px;
+    min-height: 480px;
 
     display: flex;
 
-    justify-content: center;
+    flex-direction: column;
 
     align-items: center;
 
+    justify-content: center;
+
     text-align: center;
 
-    overflow: hidden;
+    padding: 80px 30px;
 
     background:
-
         radial-gradient(
-            ellipse at center,
-            #fbf6e8 0%,
-            #eee1c5 100%
+            circle at center,
+            #fcf7e9,
+            #f2e6cd
         );
+
+    overflow: hidden;
 }
 
 
-.details-closing::before {
-
-    content: "";
-
+.closing-flower {
     position: absolute;
 
-    inset: 30px;
+    inset: 0;
 
-    border:
-        1px solid
-        rgba(185,153,85,0.20);
+    background:
+        url("images/detalye-closing-flower.png")
+        center / cover no-repeat;
+
+    opacity: 0.35;
 
     pointer-events: none;
 }
 
 
-.closing-content {
-
+.details-closing p,
+.details-closing h2,
+.closing-names {
     position: relative;
-
     z-index: 2;
-
-    max-width: 850px;
-
-    padding: 70px 25px;
 }
 
 
-.closing-symbol {
+.details-closing p {
+    margin: 0 0 20px;
 
-    color: var(--gold);
-
-    font-size: 28px;
-
-    margin-bottom: 22px;
-}
-
-
-.closing-content > p {
-
-    font-family:
-        "Poppins",
-        sans-serif;
+    font-family: "Poppins", sans-serif;
 
     font-size: 9px;
 
     letter-spacing: 4px;
 
-    color: var(--sage-dark);
-
-    margin-bottom: 22px;
+    color: #8c795c;
 }
 
 
-.closing-content h2 {
+.details-closing h2 {
+    max-width: 700px;
 
-    font-family:
-        "Cardo",
-        Georgia,
-        serif;
+    margin: 0;
+
+    font-family: "Cardo", serif;
+
+    font-size: clamp(35px, 5vw, 58px);
+
+    line-height: 1.1;
 
     font-weight: 400;
 
-    font-size:
-        clamp(38px, 5vw, 63px);
-
-    line-height: 1.05;
-
-    color: var(--brown-dark);
+    color: var(--brown);
 }
 
 
-.closing-content h2 em {
+.details-closing h2 em {
+    color: var(--peach);
 
-    display: block;
-
-    margin-top: 8px;
-
-    font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-    font-style: italic;
-
-    color: var(--sage-dark);
-}
-
-
-.closing-line {
-
-    display: block;
-
-    width: 100px;
-
-    height: 1px;
-
-    background: var(--gold-light);
-
-    margin: 30px auto;
-}
-
-
-.closing-content h3 {
-
-    font-family:
-        "Allura",
-        cursive;
-
-    font-size: 37px;
+    font-family: "Allura", cursive;
 
     font-weight: 400;
-
-    color: var(--terracotta);
-
-    margin-bottom: 30px;
 }
 
 
-.next-section-button {
+.closing-names {
+    margin-top: 30px;
 
-    display: inline-flex;
+    font-family: "Allura", cursive;
 
-    align-items: center;
+    font-size: 42px;
 
-    gap: 15px;
-
-    padding: 13px 25px;
-
-    border:
-        1px solid
-        rgba(117,132,92,0.4);
-
-    border-radius: 30px;
-
-    font-family:
-        "Poppins",
-        sans-serif;
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
-
-    color: var(--sage-dark);
-
-    background:
-        rgba(255,255,255,0.30);
-
-    transition:
-        all 0.25s ease;
+    color: var(--peach);
 }
 
 
-.next-section-button span {
-
-    font-size: 18px;
-}
-
-
-.next-section-button:hover {
-
-    background: var(--sage-dark);
-
-    color: white;
-
-    transform:
-        translateY(-2px);
-}
-
-
-
-/* =========================================================
+/* =========================================
    RESPONSIVE
-   ========================================================= */
+   ========================================= */
 
 @media (max-width: 900px) {
 
     .details-hero {
+        min-height: 500px;
 
-        min-height: 460px;
+        padding-top: 100px;
     }
 
+    .hero-flower {
+        width: 350px;
+        height: 350px;
+    }
 
-    .arch-grid {
-
+    .details-grid {
         grid-template-columns: 1fr;
 
         max-width: 650px;
-
-        gap: 50px;
     }
 
-
-    .arch-card {
-
+    .event-card {
         min-height: auto;
+
+        padding: 75px 45px 70px;
     }
-
-
-    .arch-inner {
-
-        min-height: 650px;
-    }
-
 }
 
 
 @media (max-width: 600px) {
 
-    .detail-topbar {
-
-        height: 62px;
-    }
-
-
-    .menu-toggle {
-
-        left: 18px;
-    }
-
-
-    .detail-monogram {
-
-        font-size: 24px;
-
-        letter-spacing: 6px;
-    }
-
-
-    .side-menu-inner {
-
-        padding:
-            65px 30px 35px;
-    }
-
-
-    .side-monogram {
-
-        font-size: 39px;
-    }
-
-
     .details-hero {
+        min-height: 470px;
 
-        min-height: 440px;
+        padding: 100px 20px 60px;
     }
 
-
-    .details-hero-content {
-
-        padding:
-            50px 20px 30px;
+    .details-title {
+        font-size: 55px;
     }
 
+    .details-title span {
+        display: block;
 
-    .section-number {
-
-        font-size: 9px;
-
-        letter-spacing: 4px;
+        margin-top: 5px;
     }
 
-
-    .details-hero h1 {
-
-        font-size:
-            clamp(48px, 15vw, 72px);
+    .details-ornament span {
+        width: 65px;
     }
 
-
-    .hero-subtitle {
-
+    .details-subtitle {
         font-size: 19px;
     }
 
-
-    .wedding-details {
-
-        padding:
-            75px 18px 90px;
+    .details-content {
+        padding: 60px 20px 80px;
     }
 
+    .event-card {
+        padding: 70px 30px 60px;
 
-    .details-heading {
-
-        margin-bottom: 45px;
+        border-radius: 180px 180px 0 0;
     }
 
-
-    .details-heading h2 {
-
-        font-size: 39px;
+    .event-card h2 {
+        font-size: 38px;
     }
 
-
-    .arch-card {
-
-        padding: 9px;
-
-        border-radius:
-            220px 220px 10px 10px;
-    }
-
-
-    .arch-inner {
-
-        min-height: auto;
-
-        padding:
-            60px 28px 75px;
-
-        border-radius:
-            210px 210px 7px 7px;
-    }
-
-
-    .arch-card h3 {
-
-        font-size: 34px;
-    }
-
-
-    .card-quote {
-
+    .event-quote {
         font-size: 18px;
     }
 
-
-    .event-item {
-
-        grid-template-columns:
-            43px 1fr;
-    }
-
-
-    .event-item strong {
-
+    .detail-item strong {
         font-size: 17px;
     }
 
-
-    .map-wrapper iframe {
-
-        height: 190px;
+    .hero-flower-left {
+        left: -180px;
     }
 
-
-    .details-closing {
-
-        min-height: 500px;
+    .hero-flower-right {
+        right: -180px;
     }
-
-
-    .details-closing::before {
-
-        inset: 18px;
-    }
-
-
-    .closing-content h2 {
-
-        font-size: 40px;
-    }
-
-}
-
-
-@media (max-width: 380px) {
-
-    .arch-inner {
-
-        padding-left: 22px;
-        padding-right: 22px;
-    }
-
-
-    .arch-card h3 {
-
-        font-size: 30px;
-    }
-
 }
