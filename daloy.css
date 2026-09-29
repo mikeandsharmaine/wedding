@@ -1,0 +1,1814 @@
+/* =========================================================
+   DALOY NG PAGDIRIWANG
+   Mike & Sharmaine Wedding Website
+   SECTION 04
+   ========================================================= */
+
+
+:root {
+
+    --cream: #f7f0df;
+    --cream-light: #fbf6e9;
+    --paper: #faf4e4;
+
+    --sage: #7c8d68;
+    --sage-dark: #657353;
+    --olive: #697357;
+
+    --peach: #d96b43;
+    --peach-soft: #df8968;
+
+    --gold: #c9a15b;
+    --gold-light: #dfc78f;
+
+    --brown: #746756;
+    --text: #706756;
+
+    --header-height: 68px;
+}
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body.daloy-page {
+
+    margin: 0;
+    padding: 0;
+
+    color: var(--text);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    /*
+       IMPORTANT:
+
+       The floral background belongs to the PAGE,
+       not to individual sections.
+
+       This prevents the horizontal divider/
+       background-ending problem from Detalye.
+    */
+
+    background-color: var(--cream);
+
+    background-image:
+        url("floral-frame.png");
+
+    background-repeat: no-repeat;
+
+    background-position:
+        center top;
+
+    background-size:
+        cover;
+
+    background-attachment:
+        fixed;
+
+    overflow-x: hidden;
+}
+
+
+.daloy-page *,
+.daloy-page *::before,
+.daloy-page *::after {
+
+    box-sizing: border-box;
+}
+
+
+.daloy-page a {
+    color: inherit;
+}
+
+
+.daloy-page button {
+    font: inherit;
+}
+
+
+.daloy-page main {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.daloy-page .website-nav {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: var(--header-height);
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(
+            250,
+            246,
+            234,
+            0.94
+        );
+
+    border-bottom: none;
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+}
+
+
+/* =========================================================
+   HEADER MENU BUTTON
+   ========================================================= */
+
+.daloy-page .menu-toggle {
+
+    position: absolute;
+
+    left: 28px;
+    top: 50%;
+
+    width: 28px;
+    height: 24px;
+
+    padding: 0;
+    margin: 0;
+
+    transform:
+        translateY(-50%);
+
+    border: 0;
+
+    background:
+        transparent;
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content:
+        space-between;
+
+    z-index: 1002;
+}
+
+
+.daloy-page .menu-toggle span {
+
+    display: block;
+
+    width: 23px;
+    height: 1.5px;
+
+    background:
+        var(--sage-dark);
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+/* =========================================================
+   MONOGRAM
+   ========================================================= */
+
+.daloy-page .nav-monogram {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    color:
+        var(--sage-dark);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    letter-spacing: 7px;
+
+    text-decoration: none;
+}
+
+
+.daloy-page .nav-monogram::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+    height: 1px;
+
+    left: 50%;
+    bottom: -8px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        var(--gold-light);
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.daloy-page .wedding-sidebar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width:
+        min(420px, 88vw);
+
+    height: 100vh;
+
+    z-index: 1200;
+
+    padding:
+        70px
+        42px
+        40px;
+
+    background:
+        linear-gradient(
+            rgba(250,246,234,0.97),
+            rgba(247,240,223,0.98)
+        );
+
+    box-shadow:
+        20px 0 50px
+        rgba(76,67,51,0.12);
+
+    transform:
+        translateX(-105%);
+
+    transition:
+        transform
+        0.4s
+        cubic-bezier(.77,0,.18,1);
+
+    overflow-y: auto;
+}
+
+
+.daloy-page .wedding-sidebar.is-open {
+
+    transform:
+        translateX(0);
+}
+
+
+/* Sidebar floral detail */
+
+.daloy-page .wedding-sidebar::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -70px;
+    bottom: -30px;
+
+    width: 300px;
+    height: 400px;
+
+    background:
+        url("floral-frame.png")
+        left bottom /
+        contain
+        no-repeat;
+
+    opacity: 0.12;
+
+    pointer-events: none;
+}
+
+
+.daloy-page .sidebar-inner {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* Sidebar header */
+
+.daloy-page .sidebar-header {
+
+    margin-bottom: 42px;
+}
+
+
+.daloy-page .sidebar-eyebrow {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color:
+        var(--peach);
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+}
+
+
+.daloy-page .sidebar-monogram {
+
+    color:
+        var(--sage-dark);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 42px;
+
+    font-weight: 600;
+
+    letter-spacing: 8px;
+}
+
+
+.daloy-page .sidebar-subtitle {
+
+    margin: 5px 0 0;
+
+    color:
+        var(--brown);
+
+    font-size: 18px;
+
+    font-style: italic;
+}
+
+
+/* Sidebar menu */
+
+.daloy-page .sidebar-menu {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+}
+
+
+.daloy-page .sidebar-link {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 14px 0;
+
+    color:
+        var(--brown);
+
+    font-size: 20px;
+
+    text-decoration: none;
+
+    border-bottom:
+        1px solid
+        rgba(116,103,86,0.12);
+
+    transition:
+        color 0.2s ease,
+        padding-left 0.25s ease;
+}
+
+
+.daloy-page .sidebar-number {
+
+    width: 25px;
+
+    color:
+        var(--gold);
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+.daloy-page .sidebar-link:hover {
+
+    padding-left: 8px;
+
+    color:
+        var(--peach);
+}
+
+
+.daloy-page .sidebar-link.active {
+
+    color:
+        var(--peach);
+}
+
+
+/* Sidebar footer */
+
+.daloy-page .sidebar-footer {
+
+    margin-top: auto;
+
+    padding-top: 35px;
+
+    text-align: center;
+
+    color:
+        var(--brown);
+}
+
+
+.daloy-page .sidebar-footer span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color:
+        var(--gold);
+
+    font-size: 24px;
+}
+
+
+.daloy-page .sidebar-footer p {
+
+    margin: 0;
+
+    font-size: 16px;
+}
+
+
+.daloy-page .sidebar-footer strong {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 20px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   OVERLAY
+   ========================================================= */
+
+.daloy-page .sidebar-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1100;
+
+    background:
+        rgba(70,64,50,0.28);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+.daloy-page .sidebar-overlay.is-visible {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+body.sidebar-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.daloy-page .daloy-hero {
+
+    position: relative;
+
+    min-height: 590px;
+
+    padding:
+        calc(var(--header-height) + 65px)
+        30px
+        75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        transparent;
+}
+
+
+/*
+   Soft center light.
+
+   Very subtle so the floral artwork remains visible
+   and there is NO rectangular section background.
+*/
+
+.daloy-page .daloy-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center 45%,
+            rgba(255,255,255,0.38),
+            rgba(255,255,255,0.12) 45%,
+            transparent 75%
+        );
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.daloy-page .daloy-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1100px;
+
+    width: 100%;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO EYEBROW
+   ========================================================= */
+
+.daloy-page .daloy-eyebrow {
+
+    margin: 0 0 18px;
+
+    color:
+        var(--peach);
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 6px;
+}
+
+
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
+
+.daloy-page .daloy-title {
+
+    margin: 0;
+
+    color:
+        var(--sage-dark);
+
+    font-family:
+        "Cardo",
+        serif;
+
+    font-size:
+        clamp(
+            58px,
+            8vw,
+            110px
+        );
+
+    font-weight: 400;
+
+    line-height: 0.92;
+
+    text-transform: uppercase;
+}
+
+
+.daloy-page .daloy-title span {
+
+    display: block;
+}
+
+
+.daloy-page .daloy-title em {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color:
+        var(--peach);
+
+    font-family:
+        "Allura",
+        cursive;
+
+    font-size:
+        clamp(
+            70px,
+            8vw,
+            125px
+        );
+
+    font-style: normal;
+
+    font-weight: 400;
+
+    text-transform: none;
+
+    line-height: 0.9;
+}
+
+
+/* =========================================================
+   HERO ORNAMENT
+   ========================================================= */
+
+.daloy-page .daloy-ornament {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin:
+        30px
+        0
+        20px;
+
+    color:
+        var(--gold);
+
+    font-size: 21px;
+}
+
+
+.daloy-page .daloy-ornament span {
+
+    display: block;
+
+    width: 90px;
+    height: 1px;
+
+    background:
+        rgba(194,160,96,0.55);
+}
+
+
+.daloy-page .daloy-ornament i {
+
+    font-style: normal;
+}
+
+
+/* =========================================================
+   HERO SUBTITLE
+   ========================================================= */
+
+.daloy-page .daloy-subtitle {
+
+    margin: 0;
+
+    color:
+        var(--brown);
+
+    font-size: 21px;
+
+    font-style: italic;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   TIMELINE SECTION
+   ========================================================= */
+
+.daloy-page .timeline-section {
+
+    position: relative;
+
+    padding:
+        15px
+        5vw
+        130px;
+
+    background:
+        transparent;
+
+    overflow: hidden;
+}
+
+
+.daloy-page .timeline-inner {
+
+    position: relative;
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   TOP ORNAMENT
+   ========================================================= */
+
+.daloy-page .timeline-top-ornament {
+
+    margin:
+        0
+        auto
+        50px;
+
+    text-align: center;
+
+    color:
+        var(--gold);
+
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.daloy-page .timeline {
+
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 80px;
+
+    padding:
+        20px
+        0;
+}
+
+
+/*
+   Central organic line.
+
+   It is intentionally subtle.
+*/
+
+.daloy-page .timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 35px;
+    bottom: 35px;
+
+    left: 50%;
+
+    width: 1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(124,141,104,0.40) 5%,
+            rgba(124,141,104,0.40) 95%,
+            transparent
+        );
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   TIMELINE ITEM
+   ========================================================= */
+
+.daloy-page .timeline-item {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 180px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        150px
+        1fr;
+
+    align-items: center;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   LEFT / RIGHT POSITIONING
+   ========================================================= */
+
+.daloy-page .timeline-left
+.timeline-content {
+
+    grid-column: 1;
+
+    text-align: right;
+
+    padding-right: 45px;
+}
+
+
+.daloy-page .timeline-left
+.timeline-visual {
+
+    grid-column: 2;
+
+    grid-row: 1;
+}
+
+
+.daloy-page .timeline-right
+.timeline-content {
+
+    grid-column: 3;
+
+    text-align: left;
+
+    padding-left: 45px;
+}
+
+
+.daloy-page .timeline-right
+.timeline-visual {
+
+    grid-column: 2;
+
+    grid-row: 1;
+}
+
+
+/* =========================================================
+   VISUAL ICON
+   ========================================================= */
+
+.daloy-page .timeline-visual {
+
+    position: relative;
+
+    width: 150px;
+
+    height: 150px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.daloy-page .timeline-icon {
+
+    position: relative;
+
+    width: 112px;
+    height: 112px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(194,160,96,0.60);
+
+    border-radius: 50%;
+
+    background:
+        rgba(251,246,233,0.76);
+
+    color:
+        var(--gold);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 39px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(110,91,59,0.07);
+}
+
+
+.daloy-page .timeline-icon::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border:
+        1px solid
+        rgba(194,160,96,0.38);
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   SMALL TIMELINE DOT
+   ========================================================= */
+
+.daloy-page .timeline-visual::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background:
+        var(--sage);
+
+    border:
+        2px solid
+        var(--cream);
+
+    z-index: 4;
+}
+
+
+.daloy-page .timeline-left
+.timeline-visual::after {
+
+    right: 9px;
+}
+
+
+.daloy-page .timeline-right
+.timeline-visual::after {
+
+    left: 9px;
+}
+
+
+/* =========================================================
+   CONNECTOR
+   ========================================================= */
+
+.daloy-page .timeline-connector {
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 42px;
+    height: 1px;
+
+    background:
+        rgba(124,141,104,0.42);
+
+    z-index: 1;
+}
+
+
+.daloy-page .timeline-left
+.timeline-connector {
+
+    left:
+        calc(50% - 75px);
+
+    transform:
+        translateX(-100%);
+}
+
+
+.daloy-page .timeline-right
+.timeline-connector {
+
+    left:
+        calc(50% + 75px);
+}
+
+
+/* =========================================================
+   NUMBER
+   ========================================================= */
+
+.daloy-page .timeline-number {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color:
+        var(--peach);
+
+    font-family:
+        "Cardo",
+        serif;
+
+    font-size: 46px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   KICKER
+   ========================================================= */
+
+.daloy-page .timeline-kicker {
+
+    margin: 0 0 8px;
+
+    color:
+        #95866d;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.daloy-page .timeline-content h2 {
+
+    margin: 0;
+
+    color:
+        var(--sage-dark);
+
+    font-family:
+        "Cardo",
+        serif;
+
+    font-size: 39px;
+
+    font-weight: 400;
+
+    line-height: 1.02;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.daloy-page .timeline-description {
+
+    max-width: 360px;
+
+    margin:
+        13px
+        0
+        0;
+
+    color:
+        var(--brown);
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    line-height: 1.4;
+}
+
+
+.daloy-page .timeline-left
+.timeline-description {
+
+    margin-left: auto;
+}
+
+
+.daloy-page .timeline-right
+.timeline-description {
+
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   CLOSING ORNAMENT
+   ========================================================= */
+
+.daloy-page .timeline-closing-ornament {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin:
+        70px
+        auto
+        45px;
+
+    color:
+        var(--gold);
+
+    font-size: 21px;
+}
+
+
+.daloy-page .timeline-closing-ornament span {
+
+    width: 130px;
+
+    height: 1px;
+
+    background:
+        rgba(194,160,96,0.48);
+}
+
+
+.daloy-page .timeline-closing-ornament i {
+
+    font-style: normal;
+}
+
+
+/* =========================================================
+   CLOSING MESSAGE
+   ========================================================= */
+
+.daloy-page .timeline-closing {
+
+    text-align: center;
+}
+
+
+.daloy-page .timeline-closing p {
+
+    margin: 0 0 12px;
+
+    color:
+        #95866d;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+}
+
+
+.daloy-page .timeline-closing h2 {
+
+    margin: 0;
+
+    color:
+        var(--brown);
+
+    font-family:
+        "Cardo",
+        serif;
+
+    font-size:
+        clamp(
+            36px,
+            5vw,
+            65px
+        );
+
+    font-weight: 400;
+
+    line-height: 1.05;
+}
+
+
+.daloy-page .timeline-closing h2 em {
+
+    color:
+        var(--peach);
+
+    font-family:
+        "Allura",
+        cursive;
+
+    font-size: 1.05em;
+
+    font-style: normal;
+}
+
+
+.daloy-page .timeline-closing > span {
+
+    display: block;
+
+    margin-top: 25px;
+
+    color:
+        var(--sage-dark);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 22px;
+
+    font-style: italic;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   SOFT REVEAL ANIMATION
+   ========================================================= */
+
+@keyframes timelineReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.daloy-page .timeline-item {
+
+    animation:
+        timelineReveal
+        0.8s
+        ease both;
+}
+
+
+.daloy-page .timeline-item:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.daloy-page .timeline-item:nth-child(3) {
+    animation-delay: 0.10s;
+}
+
+.daloy-page .timeline-item:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.daloy-page .timeline-item:nth-child(5) {
+    animation-delay: 0.20s;
+}
+
+.daloy-page .timeline-item:nth-child(6) {
+    animation-delay: 0.25s;
+}
+
+.daloy-page .timeline-item:nth-child(7) {
+    animation-delay: 0.30s;
+}
+
+.daloy-page .timeline-item:nth-child(8) {
+    animation-delay: 0.35s;
+}
+
+.daloy-page .timeline-item:nth-child(9) {
+    animation-delay: 0.40s;
+}
+
+.daloy-page .timeline-item:nth-child(10) {
+    animation-delay: 0.45s;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .daloy-page .timeline-item {
+
+        grid-template-columns:
+            1fr
+            120px
+            1fr;
+    }
+
+
+    .daloy-page .timeline-visual {
+
+        width: 120px;
+        height: 120px;
+    }
+
+
+    .daloy-page .timeline-icon {
+
+        width: 92px;
+        height: 92px;
+
+        font-size: 33px;
+    }
+
+
+    .daloy-page .timeline-content h2 {
+
+        font-size: 33px;
+    }
+
+
+    .daloy-page .timeline-description {
+
+        font-size: 16px;
+    }
+
+
+    .daloy-page .timeline-connector {
+
+        width: 28px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+
+    body.daloy-page {
+
+        background-color:
+            var(--cream);
+
+        background-image:
+            url("floral-frame.png");
+
+        background-repeat:
+            no-repeat;
+
+        background-position:
+            center top;
+
+        background-size:
+            auto 100%;
+
+        background-attachment:
+            scroll;
+    }
+
+
+    .daloy-page .website-nav {
+
+        height:
+            var(--header-height);
+    }
+
+
+    .daloy-page .menu-toggle {
+
+        left: 20px;
+    }
+
+
+    .daloy-page .nav-monogram {
+
+        font-size: 21px;
+
+        letter-spacing: 5px;
+    }
+
+
+    .daloy-page .daloy-hero {
+
+        min-height: 510px;
+
+        padding:
+            calc(var(--header-height) + 60px)
+            20px
+            55px;
+    }
+
+
+    .daloy-page .daloy-eyebrow {
+
+        font-size: 8px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .daloy-page .daloy-title {
+
+        font-size:
+            clamp(
+                48px,
+                14vw,
+                75px
+            );
+    }
+
+
+    .daloy-page .daloy-title em {
+
+        font-size:
+            clamp(
+                60px,
+                15vw,
+                90px
+            );
+    }
+
+
+    .daloy-page .daloy-subtitle {
+
+        font-size: 18px;
+    }
+
+
+    .daloy-page .daloy-ornament span {
+
+        width: 60px;
+    }
+
+
+    /* Timeline */
+
+    .daloy-page .timeline-section {
+
+        padding:
+            10px
+            20px
+            90px;
+    }
+
+
+    .daloy-page .timeline {
+
+        gap: 45px;
+
+        padding:
+            10px
+            0;
+    }
+
+
+    /*
+       Mobile timeline becomes a single
+       vertical editorial column.
+    */
+
+    .daloy-page .timeline::before {
+
+        left: 46px;
+
+        transform:
+            translateX(-50%);
+    }
+
+
+    .daloy-page .timeline-item {
+
+        min-height: 150px;
+
+        display: grid;
+
+        grid-template-columns:
+            92px
+            1fr;
+
+        align-items: center;
+    }
+
+
+    .daloy-page .timeline-visual {
+
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+
+        width: 92px;
+        height: 110px;
+    }
+
+
+    .daloy-page .timeline-icon {
+
+        width: 78px;
+        height: 78px;
+
+        font-size: 29px;
+    }
+
+
+    .daloy-page .timeline-visual::after {
+
+        right: 1px !important;
+        left: auto !important;
+    }
+
+
+    .daloy-page .timeline-connector {
+
+        left: 80px !important;
+
+        width: 20px;
+
+        transform: none;
+    }
+
+
+    .daloy-page .timeline-left
+    .timeline-content,
+
+    .daloy-page .timeline-right
+    .timeline-content {
+
+        grid-column: 2;
+
+        grid-row: 1;
+
+        text-align: left;
+
+        padding:
+            0
+            0
+            0
+            18px;
+    }
+
+
+    .daloy-page .timeline-number {
+
+        font-size: 37px;
+    }
+
+
+    .daloy-page .timeline-kicker {
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .daloy-page .timeline-content h2 {
+
+        font-size: 31px;
+    }
+
+
+    .daloy-page .timeline-description,
+
+    .daloy-page .timeline-left
+    .timeline-description,
+
+    .daloy-page .timeline-right
+    .timeline-description {
+
+        max-width: 280px;
+
+        margin:
+            10px
+            0
+            0;
+
+        font-size: 16px;
+    }
+
+
+    .daloy-page .timeline-closing-ornament {
+
+        margin-top: 55px;
+    }
+
+
+    .daloy-page .timeline-closing-ornament span {
+
+        width: 60px;
+    }
+
+
+    .daloy-page .timeline-closing h2 {
+
+        font-size: 39px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .daloy-page .daloy-title {
+
+        font-size: 43px;
+    }
+
+
+    .daloy-page .daloy-title em {
+
+        font-size: 62px;
+    }
+
+
+    .daloy-page .timeline-item {
+
+        grid-template-columns:
+            78px
+            1fr;
+    }
+
+
+    .daloy-page .timeline-visual {
+
+        width: 78px;
+    }
+
+
+    .daloy-page .timeline-icon {
+
+        width: 68px;
+        height: 68px;
+
+        font-size: 25px;
+    }
+
+
+    .daloy-page .timeline::before {
+
+        left: 39px;
+    }
+
+
+    .daloy-page .timeline-connector {
+
+        left: 68px !important;
+    }
+
+
+    .daloy-page .timeline-content h2 {
+
+        font-size: 28px;
+    }
+
+
+    .daloy-page .timeline-description {
+
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .daloy-page .timeline-item {
+
+        animation: none;
+    }
+
+}
