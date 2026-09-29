@@ -167,7 +167,7 @@ body.dress-code-page {
     top: 0;
     left: 50%;
 
-    width: min(1180px, 82vw);
+    width: min(1280px, 90vw);
     height: 100%;
 
     transform: translateX(-50%);
@@ -443,9 +443,11 @@ body.dress-code-page {
 .outfit-guide {
     position: relative;
 
-    width: min(1450px, 100%);
+    width: min(1180px, 88vw);
 
-    margin: 5px auto 0;
+    margin: 10px auto 0;
+
+    padding: 0 20px;
 }
 
 
@@ -465,6 +467,8 @@ body.dress-code-page {
 }
 
 .outfit-image img {
+    display: block;
+
     width: 100%;
     height: auto;
 
@@ -801,6 +805,8 @@ body.dress-code-page {
 
     .outfit-guide {
         width: 100%;
+
+        padding: 0;
 
         overflow-x: auto;
         overflow-y: hidden;
