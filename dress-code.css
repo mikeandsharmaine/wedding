@@ -799,7 +799,7 @@ body.dress-code-page {
 
 .outfit-artwork-wrap {
     position: relative;
-    padding-bottom: 72px;
+    padding-bottom: 24px;
     overflow: visible;
 }
 
@@ -808,7 +808,7 @@ body.dress-code-page {
 
     left: 0;
     right: 0;
-    bottom: 12px;
+    bottom: 2px;
 
     height: 64px;
 
@@ -890,12 +890,12 @@ body.dress-code-page {
 @media (max-width: 760px) {
 
     .outfit-artwork-wrap {
-        padding-bottom: 68px;
+        padding-bottom: 22px;
     }
 
     .outfit-labels {
         height: 60px;
-        bottom: 10px;
+        bottom: 2px;
     }
 
     .outfit-label {
@@ -906,5 +906,385 @@ body.dress-code-page {
     .label-couple,
     .label-ring {
         width: 90px;
+    }
+}
+
+
+/* ==========================================================
+   SHARED WEDDING HEADER — MATCHES DALOY / OTHER SECTIONS
+   ========================================================== */
+
+.dress-code-page .wedding-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 68px;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(250, 246, 234, 0.94);
+
+    border-bottom: 1px solid rgba(116, 103, 86, 0.08);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.dress-code-page .menu-toggle {
+    position: absolute;
+
+    left: 28px;
+    top: 50%;
+
+    width: 28px;
+    height: 24px;
+
+    padding: 0;
+    margin: 0;
+
+    transform: translateY(-50%);
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    z-index: 1002;
+}
+
+.dress-code-page .menu-toggle span {
+    display: block;
+
+    width: 23px;
+    height: 1.5px;
+
+    background: #657353;
+}
+
+.dress-code-page .monogram {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #657353;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 25px;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    text-decoration: none;
+}
+
+.dress-code-page .monogram span {
+    color: #d96b43;
+
+    font-family: "Allura", cursive;
+
+    font-size: 29px;
+
+    margin-top: -2px;
+}
+
+
+/* ==========================================================
+   SIDEBAR
+   ========================================================== */
+
+.dress-code-page .site-sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 370px;
+    height: 100vh;
+
+    z-index: 2000;
+
+    background: linear-gradient(135deg, #f8f0df 0%, #f4ead7 100%);
+
+    box-shadow: 15px 0 50px rgba(74, 62, 45, 0.12);
+
+    transform: translateX(-105%);
+
+    transition: transform 0.45s cubic-bezier(.77,0,.18,1);
+
+    overflow-y: auto;
+}
+
+.dress-code-page .site-sidebar.open {
+    transform: translateX(0);
+}
+
+.dress-code-page .sidebar-inner {
+    min-height: 100%;
+
+    padding: 32px 34px 35px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.dress-code-page .sidebar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 55px;
+}
+
+.dress-code-page .sidebar-monogram {
+    color: #657353;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.dress-code-page .sidebar-monogram span {
+    color: #d96b43;
+
+    font-family: "Allura", cursive;
+
+    font-size: 32px;
+}
+
+.dress-code-page .menu-close {
+    width: 35px;
+    height: 35px;
+
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    color: #657353;
+
+    font-size: 31px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.dress-code-page .sidebar-intro {
+    margin-bottom: 38px;
+}
+
+.dress-code-page .sidebar-intro span {
+    display: block;
+
+    color: #c9a15b;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 0.28em;
+}
+
+.dress-code-page .sidebar-intro p {
+    margin: 8px 0 0;
+
+    color: #746756;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 19px;
+    font-style: italic;
+}
+
+.dress-code-page .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dress-code-page .sidebar-nav a {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 38px 1fr;
+
+    align-items: center;
+
+    min-height: 55px;
+
+    padding: 8px 12px;
+
+    color: #746756;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid rgba(116, 103, 86, 0.12);
+
+    transition: color 0.25s ease, background 0.25s ease, padding 0.25s ease;
+}
+
+.dress-code-page .sidebar-nav a:hover,
+.dress-code-page .sidebar-nav a.active {
+    color: #d96b43;
+
+    background: rgba(217, 107, 67, 0.055);
+
+    padding-left: 17px;
+}
+
+.dress-code-page .nav-number {
+    color: #c9a15b;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.12em;
+}
+
+.dress-code-page .sidebar-nav a > span:nth-child(2) {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+}
+
+.dress-code-page .nav-heart {
+    position: absolute;
+    right: 13px;
+
+    color: #d96b43;
+    font-size: 18px;
+}
+
+.dress-code-page .sidebar-bottom {
+    margin-top: auto;
+
+    padding-top: 45px;
+
+    text-align: center;
+}
+
+.dress-code-page .sidebar-flower {
+    margin-bottom: 12px;
+
+    color: #c9a15b;
+
+    font-size: 23px;
+}
+
+.dress-code-page .sidebar-bottom p {
+    margin: 0;
+
+    color: #746756;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.35;
+}
+
+.dress-code-page .sidebar-bottom p span {
+    color: #657353;
+
+    font-size: 20px;
+    font-style: normal;
+}
+
+.dress-code-page .sidebar-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1900;
+
+    background: rgba(67, 57, 44, 0.30);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.dress-code-page .sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dress-code-page.menu-open {
+    overflow: hidden;
+}
+
+
+/* ==========================================================
+   HERO POSITION — SAME VISUAL RHYTHM AS DALOY
+   ========================================================== */
+
+.dress-code-page .dress-code-content {
+    padding-top: 0;
+}
+
+.dress-code-page .dress-code-title {
+    min-height: 640px;
+
+    padding:
+        150px
+        20px
+        55px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dress-code-page .dress-code-intro {
+    margin-top: -5px;
+}
+
+
+/* ==========================================================
+   RESPONSIVE HEADER
+   ========================================================== */
+
+@media (max-width: 760px) {
+
+    .dress-code-page .wedding-header {
+        height: 60px;
+    }
+
+    .dress-code-page .menu-toggle {
+        left: 20px;
+    }
+
+    .dress-code-page .monogram {
+        font-size: 23px;
+    }
+
+    .dress-code-page .dress-code-title {
+        min-height: 570px;
+
+        padding:
+            120px
+            15px
+            45px;
+    }
+
+    .dress-code-page .site-sidebar {
+        width: min(370px, 88vw);
     }
 }
