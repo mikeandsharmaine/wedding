@@ -1,6 +1,6 @@
 /* =========================================================
    DETALYE NG KASAL
-   Wedding Website
+   Mike & Sharmaine Wedding Website
    ========================================================= */
 
 :root {
@@ -38,16 +38,25 @@
 
     /*
        IMPORTANT:
-       The entire page now uses ONE continuous base background.
-       This prevents the horizontal divider between sections.
+       The floral background belongs to the PAGE itself,
+       not separately to the hero and content sections.
+
+       This creates the same continuous feeling as
+       Ang Aming Kwento.
     */
-    background:
-        radial-gradient(
-            ellipse at center top,
-            #fffaf0 0%,
-            #f7f0df 52%,
-            #eee2c7 100%
-        );
+    background-color: var(--cream);
+
+    background-image:
+        url("floral-frame.png");
+
+    background-position:
+        center top;
+
+    background-size:
+        100% auto;
+
+    background-repeat:
+        no-repeat;
 }
 
 .detalye-page *,
@@ -216,7 +225,8 @@
             rgba(247, 240, 223, 0.97)
         );
 
-    box-shadow: 20px 0 50px rgba(76, 67, 51, 0.12);
+    box-shadow:
+        20px 0 50px rgba(76, 67, 51, 0.12);
 
     transform: translateX(-105%);
 
@@ -265,7 +275,9 @@
     width: 35px;
     height: 35px;
 
-    border: 1px solid rgba(116, 103, 86, 0.25);
+    border:
+        1px solid rgba(116, 103, 86, 0.25);
+
     border-radius: 50%;
 
     background: transparent;
@@ -382,7 +394,8 @@
 
     text-decoration: none;
 
-    border-bottom: 1px solid rgba(116, 103, 86, 0.12);
+    border-bottom:
+        1px solid rgba(116, 103, 86, 0.12);
 
     transition:
         color 0.2s ease,
@@ -397,6 +410,7 @@
     font-family: "Poppins", sans-serif;
 
     font-size: 9px;
+
     letter-spacing: 1px;
 }
 
@@ -474,7 +488,8 @@
 
     z-index: 1100;
 
-    background: rgba(70, 64, 50, 0.28);
+    background:
+        rgba(70, 64, 50, 0.28);
 
     opacity: 0;
     visibility: hidden;
@@ -521,25 +536,16 @@
     overflow: hidden;
 
     /*
-       FLORAL BACKGROUND
-       Kept only in the hero.
+       NO background here.
 
-       The bottom fades naturally into the page background,
-       preventing the hard horizontal divider.
+       The page background underneath is continuous,
+       just like Ang Aming Kwento.
     */
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(248, 241, 225, 0.58) 0%,
-            rgba(248, 241, 225, 0.62) 58%,
-            rgba(248, 241, 225, 0.90) 88%,
-            var(--cream) 100%
-        ),
-        url("floral-frame.png") center top / cover no-repeat;
+    background: transparent;
 }
 
 
-/* soft center */
+/* soft center glow */
 
 .detalye-page .details-hero::after {
     content: "";
@@ -551,12 +557,14 @@
     background:
         radial-gradient(
             ellipse at center 42%,
-            rgba(255,255,255,0.66) 0%,
-            rgba(255,255,255,0.25) 42%,
-            transparent 75%
+            rgba(255,255,255,0.62) 0%,
+            rgba(255,255,255,0.22) 45%,
+            transparent 76%
         );
 
     pointer-events: none;
+
+    z-index: 0;
 }
 
 
@@ -573,7 +581,7 @@
     background-repeat: no-repeat;
     background-size: contain;
 
-    opacity: 0.42;
+    opacity: 0.30;
 
     pointer-events: none;
 
@@ -629,7 +637,8 @@
 
     font-family: "Cardo", serif;
 
-    font-size: clamp(60px, 8vw, 110px);
+    font-size:
+        clamp(60px, 8vw, 110px);
 
     font-weight: 400;
 
@@ -675,7 +684,8 @@
     width: 90px;
     height: 1px;
 
-    background: rgba(194, 160, 96, 0.55);
+    background:
+        rgba(194, 160, 96, 0.55);
 }
 
 
@@ -704,41 +714,26 @@
     position: relative;
 
     /*
-       Slight overlap removes the visual seam between hero
-       and content.
+       NO separate background.
+
+       This is the important part.
+       It allows the floral artwork from the page background
+       to visually continue behind the cards.
     */
-    margin-top: -70px;
 
     padding:
-        165px
+        35px
         7vw
         120px;
 
     overflow: hidden;
 
-    /*
-       IMPORTANT:
-       No second floral-frame.png here.
-
-       The content continues the same cream background.
-    */
-    background:
-        radial-gradient(
-            ellipse at center top,
-            rgba(255, 250, 240, 0.96) 0%,
-            rgba(249, 243, 228, 0.94) 50%,
-            rgba(247, 240, 223, 0.98) 100%
-        );
-
-    /*
-       Rounded upper edge is removed so the sections visually
-       flow together.
-    */
+    background: transparent;
 }
 
 
 /* =========================================================
-   CONTINUOUS BOTANICAL TRANSITION
+   VERY SOFT CENTER LIGHT
    ========================================================= */
 
 .detalye-page .details-content::before {
@@ -746,27 +741,14 @@
 
     position: absolute;
 
-    top: 0;
-    left: 0;
+    inset: 0;
 
-    width: 100%;
-    height: 300px;
-
-    /*
-       The same floral artwork is used as a soft transition,
-       but only at low opacity so it doesn't create another
-       obvious horizontal section.
-    */
     background:
-        linear-gradient(
-            to bottom,
-            rgba(247, 240, 223, 0.15),
-            rgba(247, 240, 223, 0.92) 82%,
-            transparent
-        ),
-        url("floral-frame.png") center top / cover no-repeat;
-
-    opacity: 0.24;
+        radial-gradient(
+            ellipse at center 20%,
+            rgba(255,255,255,0.34),
+            transparent 65%
+        );
 
     pointer-events: none;
 
@@ -786,12 +768,12 @@
     background:
         radial-gradient(
             circle at 15% 30%,
-            rgba(124, 141, 104, 0.055),
+            rgba(124, 141, 104, 0.035),
             transparent 25%
         ),
         radial-gradient(
             circle at 85% 65%,
-            rgba(217, 107, 67, 0.035),
+            rgba(217, 107, 67, 0.025),
             transparent 28%
         );
 
@@ -845,13 +827,15 @@
             rgba(249, 241, 220, 0.97)
         );
 
-    border: 1px solid rgba(183, 151, 92, 0.45);
+    border:
+        1px solid rgba(183, 151, 92, 0.45);
 
     border-radius:
         270px 270px 0 0;
 
     box-shadow:
-        0 25px 55px rgba(110, 91, 59, 0.10);
+        0 25px 55px
+        rgba(110, 91, 59, 0.10);
 }
 
 
@@ -1040,7 +1024,8 @@
 }
 
 .detalye-page .detail-icon {
-    flex: 0 0 48px;
+    flex:
+        0 0 48px;
 
     width: 48px;
     height: 48px;
@@ -1261,17 +1246,11 @@
 
     overflow: hidden;
 
-    background:
-        linear-gradient(
-            rgba(249, 243, 228, 0.72),
-            rgba(249, 243, 228, 0.72)
-        ),
-        url("floral-frame.png") center / cover no-repeat,
-        radial-gradient(
-            circle at center,
-            #fcf7e9,
-            #f2e6cd
-        );
+    /*
+       Keep the closing section connected to the page
+       background instead of creating another hard section.
+    */
+    background: transparent;
 }
 
 .detalye-page .closing-flower {
@@ -1316,7 +1295,8 @@
 
     font-family: "Cardo", serif;
 
-    font-size: clamp(35px, 5vw, 58px);
+    font-size:
+        clamp(35px, 5vw, 58px);
 
     font-weight: 400;
 
@@ -1355,13 +1335,15 @@
     }
 
     .detalye-page .details-title {
-        font-size: clamp(55px, 10vw, 85px);
+        font-size:
+            clamp(55px, 10vw, 85px);
     }
 
     .detalye-page .details-content {
-        margin-top: -55px;
-
-        padding-top: 135px;
+        padding:
+            35px
+            7vw
+            100px;
     }
 
     .detalye-page .details-grid {
@@ -1373,7 +1355,10 @@
     .detalye-page .event-card {
         min-height: auto;
 
-        padding: 75px 45px 70px;
+        padding:
+            75px
+            45px
+            70px;
     }
 }
 
@@ -1401,7 +1386,9 @@
         width: min(360px, 90vw);
 
         padding:
-            70px 30px 35px;
+            70px
+            30px
+            35px;
     }
 
     .detalye-page .side-brand {
@@ -1423,6 +1410,7 @@
 
     .detalye-page .details-eyebrow {
         font-size: 8px;
+
         letter-spacing: 4px;
     }
 
@@ -1439,27 +1427,31 @@
     }
 
     .detalye-page .details-content {
-        /*
-           Larger overlap on mobile because the hero is shorter.
-        */
-        margin-top: -45px;
-
         padding:
-            120px
+            30px
             20px
             85px;
     }
 
     .detalye-page .event-card {
-        padding: 70px 30px 60px;
+        padding:
+            70px
+            30px
+            60px;
 
         border-radius:
-            190px 190px 0 0;
+            190px
+            190px
+            0
+            0;
     }
 
     .detalye-page .event-card::before {
         border-radius:
-            180px 180px 0 0;
+            180px
+            180px
+            0
+            0;
     }
 
     .detalye-page .event-card h2 {
@@ -1478,7 +1470,7 @@
         width: 350px;
         height: 350px;
 
-        opacity: 0.3;
+        opacity: 0.25;
     }
 
     .detalye-page .hero-flower-left {
