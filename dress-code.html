@@ -2,7 +2,6 @@
 <html lang="tl">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -12,13 +11,8 @@
 
     <title>Dress Code | Mike & Sharmaine</title>
 
-
-    <!-- =====================================================
-         GOOGLE FONTS
-    ====================================================== -->
-
+    <!-- Same wedding website font family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link
         rel="preconnect"
         href="https://fonts.gstatic.com"
@@ -30,11 +24,7 @@
         rel="stylesheet"
     >
 
-    <link
-        rel="stylesheet"
-        href="dress-code.css"
-    >
-
+    <link rel="stylesheet" href="dress-code.css">
 </head>
 
 
@@ -42,60 +32,241 @@
 
 
     <!-- =====================================================
-         NAVIGATION
+         SHARED WEDDING HEADER
     ====================================================== -->
 
-    <header class="website-nav">
+    <header class="wedding-header">
 
-        <nav aria-label="Wedding website navigation">
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-            <a href="index.html">
-                HOME
-            </a>
 
-            <a href="kwento.html">
-                ANG AMING KWENTO
-            </a>
+        <!-- CENTER MONOGRAM -->
 
-            <a href="detalye.html">
-                DETALYE NG KASAL
-            </a>
-
-            <a href="daloy.html">
-                DALOY NG PAGDIRIWANG
-            </a>
-
-            <a
-                href="dress-code.html"
-                class="active"
-            >
-                DRESS CODE
-            </a>
-
-            <a href="rsvp.html">
-                RSVP
-            </a>
-
-        </nav>
+        <a
+            href="index.html"
+            class="monogram"
+            aria-label="Mike and Sharmaine"
+        >
+            M <span>&amp;</span> S
+        </a>
 
     </header>
 
 
+
     <!-- =====================================================
-         PAGE
+         SIDEBAR NAVIGATION
+    ====================================================== -->
+
+    <aside
+        class="site-sidebar"
+        id="siteSidebar"
+        aria-hidden="true"
+    >
+
+        <div class="sidebar-inner">
+
+
+            <!-- SIDEBAR TOP -->
+
+            <div class="sidebar-top">
+
+                <div class="sidebar-monogram">
+                    M <span>&amp;</span> S
+                </div>
+
+                <button
+                    class="menu-close"
+                    id="menuClose"
+                    type="button"
+                    aria-label="Close navigation"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <!-- SIDEBAR INTRO -->
+
+            <div class="sidebar-intro">
+
+                <span>
+                    MIKE &amp; SHARMAINE
+                </span>
+
+                <p>
+                    Our wedding story
+                </p>
+
+            </div>
+
+
+
+            <!-- SIDEBAR NAVIGATION -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Wedding navigation"
+            >
+
+                <a href="index.html">
+
+                    <span class="nav-number">
+                        01
+                    </span>
+
+                    <span>
+                        Home
+                    </span>
+
+                </a>
+
+
+                <a href="kwento.html">
+
+                    <span class="nav-number">
+                        02
+                    </span>
+
+                    <span>
+                        Ang Aming Kwento
+                    </span>
+
+                </a>
+
+
+                <a href="detalye.html">
+
+                    <span class="nav-number">
+                        03
+                    </span>
+
+                    <span>
+                        Detalye ng Kasal
+                    </span>
+
+                </a>
+
+
+                <a href="daloy.html">
+
+                    <span class="nav-number">
+                        04
+                    </span>
+
+                    <span>
+                        Daloy ng Pagdiriwang
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="dress-code.html"
+                    class="active"
+                >
+
+                    <span class="nav-number">
+                        05
+                    </span>
+
+                    <span>
+                        Dress Code
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="rsvp.html"
+                    class="nav-rsvp"
+                >
+
+                    <span class="nav-number">
+                        06
+                    </span>
+
+                    <span>
+                        RSVP
+                    </span>
+
+                    <span class="nav-heart">
+                        ♡
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- SIDEBAR FOOTER -->
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-flower">
+                    ❋
+                </div>
+
+                <p>
+
+                    With love,<br>
+
+                    <span>
+                        Mike &amp; Sharmaine
+                    </span>
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- SIDEBAR OVERLAY -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         PAGE CONTENT
     ====================================================== -->
 
     <main class="dress-code-content">
 
 
         <!-- =================================================
-             HEADER
+             DRESS CODE HEADER
         ================================================== -->
 
         <section class="dress-code-title">
 
+
             <div class="section-number">
+
                 + SECTION 5 +
+
             </div>
 
 
@@ -113,17 +284,23 @@
 
 
             <p class="dress-code-script">
+
                 Modern Filipiniana
                 <span>•</span>
                 Earth Tone Palette
+
             </p>
 
 
             <div class="title-heart">
+
                 ♡
+
             </div>
 
+
         </section>
+
 
 
         <!-- =================================================
@@ -137,8 +314,11 @@
 
             <div class="palette-card">
 
+
                 <div class="palette-title">
+
                     COLOR PALETTE
+
                 </div>
 
 
@@ -152,20 +332,24 @@
                         title="Warm Gold"
                     ></span>
 
+
                     <span
                         class="swatch swatch-olive"
                         title="Olive Green"
                     ></span>
+
 
                     <span
                         class="swatch swatch-terracotta"
                         title="Terracotta"
                     ></span>
 
+
                     <span
                         class="swatch swatch-caramel"
                         title="Caramel"
                     ></span>
+
 
                     <span
                         class="swatch swatch-beige"
@@ -187,58 +371,68 @@
 
                 </div>
 
+
             </div>
 
 
-            <!-- INTRODUCTION -->
+
+            <!-- INTRODUCTION TEXT -->
 
             <div class="intro-copy">
 
+
                 <p class="intro-quote">
+
                     “Makiisa sa kulay ng aming pagdiriwang.”
+
                 </p>
 
 
                 <p>
+
                     Bilang pakikiisa sa tema ng aming kasal,
                     malugod naming hinihikayat ang aming mga
                     minamahal na bisita na magsuot ng kasuotang
                     naaayon sa aming color palette — mga kulay
                     na sumisimbolo sa init, pag-iibigan, at
                     klasikong ganda ng kulturang Pilipino.
+
                 </p>
 
 
                 <p>
+
                     Isang gabi ng eleganteng Filipiniana,
                     romantikong hardin, at makalumang alindog
                     na bibigyang-buhay ng inyong presensya
                     at pakikiisa.
+
                 </p>
 
 
                 <p class="intro-note">
+
                     Para sa aming entourage at bisita,
                     mangyaring i-refer sa larawan sa ibaba
                     ang naka-assign na kulay para sa inyong
                     kasuotan. ✨
+
                 </p>
 
+
             </div>
+
 
         </section>
 
 
+
         <!-- =================================================
              OUTFIT ARTWORK
-             
-             IMPORTANT:
-             The original outfit image stays unchanged.
-             The labels are HTML overlays so their spacing
-             can be controlled independently.
         ================================================== -->
 
         <section class="outfit-section">
+
 
             <div class="outfit-artwork-wrap">
 
@@ -253,7 +447,7 @@
 
 
                 <!-- =================================================
-                     OUTFIT LABELS
+                     HTML LABELS
                 ================================================== -->
 
                 <div
@@ -262,96 +456,99 @@
                 >
 
 
-                    <!-- 01 — MOTHER OF THE COUPLE -->
+                    <!-- MOTHER -->
 
-                    <div
-                        class="outfit-label label-mother"
-                    >
+                    <div class="outfit-label label-mother">
+
                         Mother of the<br>
                         Couple
+
                     </div>
 
 
-                    <!-- 02 — FATHER OF THE COUPLE -->
+                    <!-- FATHER -->
 
-                    <div
-                        class="outfit-label label-father"
-                    >
+                    <div class="outfit-label label-father">
+
                         Father of the<br>
                         Couple
+
                     </div>
 
 
-                    <!-- 03 — SECONDARY -->
+                    <!-- SECONDARY -->
 
-                    <div
-                        class="outfit-label label-secondary"
-                    >
+                    <div class="outfit-label label-secondary">
+
                         Secondary
+
                     </div>
 
 
-                    <!-- 04 — MAID OF HONOR -->
+                    <!-- MAID -->
 
-                    <div
-                        class="outfit-label label-maid"
-                    >
+                    <div class="outfit-label label-maid">
+
                         Maid of Honor
+
                     </div>
 
 
-                    <!-- 05 — BESTMAN / GROOMSMEN -->
+                    <!-- BESTMAN -->
 
-                    <div
-                        class="outfit-label label-bestman"
-                    >
+                    <div class="outfit-label label-bestman">
+
                         Bestman<br>
                         Groomsmen
+
                     </div>
 
 
-                    <!-- 06 — BRIDE AND GROOM -->
+                    <!-- COUPLE -->
 
-                    <div
-                        class="outfit-label label-couple"
-                    >
+                    <div class="outfit-label label-couple">
+
                         Bride and Groom
+
                     </div>
 
 
-                    <!-- 07 — NINONG / NINANG -->
+                    <!-- NINONG / NINANG -->
 
-                    <div
-                        class="outfit-label label-ninong"
-                    >
+                    <div class="outfit-label label-ninong">
+
                         Ninong Ninang
+
                     </div>
 
 
-                    <!-- 08 — RING BEARER -->
+                    <!-- RING BEARER -->
 
-                    <div
-                        class="outfit-label label-ring"
-                    >
+                    <div class="outfit-label label-ring">
+
                         Ring Bearer &amp;<br>
                         Ring Bearer
+
                     </div>
 
 
-                    <!-- 09 — GUESTS -->
+                    <!-- GUESTS -->
 
-                    <div
-                        class="outfit-label label-guests"
-                    >
+                    <div class="outfit-label label-guests">
+
                         Guests
+
                     </div>
 
 
                 </div>
 
+
             </div>
 
+
         </section>
+
 
 
         <!-- =================================================
@@ -360,26 +557,37 @@
 
         <section class="palette-guide">
 
+
             <div class="palette-guide-inner">
 
+
                 <div class="guide-title">
+
                     PALETTE GUIDE
+
                 </div>
 
 
                 <p>
-                    Warm Gold, Olive Green, Terracotta,
-                    Caramel, Beige
+
+                    Warm Gold, Olive Green,
+                    Terracotta, Caramel, Beige
+
                 </p>
 
 
                 <em>
+
                     Earthy. Elegant. Timeless.
+
                 </em>
+
 
             </div>
 
+
         </section>
+
 
 
         <!-- =================================================
@@ -387,6 +595,7 @@
         ================================================== -->
 
         <div class="next-page">
+
 
             <a
                 href="rsvp.html"
@@ -401,10 +610,114 @@
 
             </a>
 
+
         </div>
 
 
     </main>
+
+
+
+    <!-- =====================================================
+         SIDEBAR JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const menuClose =
+            document.getElementById("menuClose");
+
+        const siteSidebar =
+            document.getElementById("siteSidebar");
+
+        const sidebarOverlay =
+            document.getElementById("sidebarOverlay");
+
+
+
+        function openMenu() {
+
+            siteSidebar.classList.add("open");
+
+            sidebarOverlay.classList.add("active");
+
+            siteSidebar.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+            document.body.classList.add(
+                "menu-open"
+            );
+
+        }
+
+
+
+        function closeMenu() {
+
+            siteSidebar.classList.remove("open");
+
+            sidebarOverlay.classList.remove("active");
+
+            siteSidebar.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            document.body.classList.remove(
+                "menu-open"
+            );
+
+        }
+
+
+
+        menuToggle.addEventListener(
+            "click",
+            openMenu
+        );
+
+
+        menuClose.addEventListener(
+            "click",
+            closeMenu
+        );
+
+
+        sidebarOverlay.addEventListener(
+            "click",
+            closeMenu
+        );
+
+
+
+        document
+            .querySelectorAll(".sidebar-nav a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    closeMenu
+                );
+
+            });
+
+    </script>
+
 
 </body>
 
