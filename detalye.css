@@ -39,21 +39,13 @@ body.detalye-page {
     color: var(--text);
     font-family: "Cormorant Garamond", serif;
 
-    background-color: #ead8b8;
-
-    /*
-       IMPORTANT:
-       Use the SAME background behavior as
-       ANG AMING KWENTO.
-
-       The artwork repeats vertically instead of being
-       stretched over the entire page.
-    */
-    background-image: url("images/kwento-background.png");
+    /* SAME CONTINUOUS FLORAL BACKGROUND AS ANG AMING KWENTO */
+    background-color: var(--cream);
+    background-image: url("floral-frame.png");
+    background-repeat: no-repeat;
     background-position: center top;
-    background-repeat: repeat-y;
-    background-size: 100% auto;
-    background-attachment: scroll;
+    background-size: cover;
+    background-attachment: fixed;
 
     overflow-x: hidden;
 }
@@ -101,7 +93,7 @@ body.detalye-page {
 
     background: rgba(250, 246, 234, 0.94);
 
-    border-bottom: 1px solid rgba(116, 103, 86, 0.08);
+    border-bottom: none;
 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -563,19 +555,7 @@ body.detalye-page {
    ========================================================= */
 
 .detalye-page .hero-flower {
-    position: absolute;
-
-    width: 480px;
-    height: 480px;
-
-    background-repeat: no-repeat;
-    background-size: contain;
-
-    opacity: 0.30;
-
-    pointer-events: none;
-
-    z-index: 1;
+    display: none !important;
 }
 
 .detalye-page .hero-flower-left {
@@ -1238,17 +1218,7 @@ body.detalye-page {
 }
 
 .detalye-page .closing-flower {
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        url("images/detalye-closing-flower.png")
-        center / cover no-repeat;
-
-    opacity: 0.28;
-
-    pointer-events: none;
+    display: none !important;
 }
 
 .detalye-page .details-closing p,
@@ -1483,17 +1453,11 @@ body.detalye-page {
 @media (max-width: 820px) {
 
     body.detalye-page {
-        background-color: #ead8b8;
-
-        background-image:
-            url("images/kwento-background-mobile.png");
-
+        background-color: var(--cream);
+        background-image: url("floral-frame.png");
+        background-repeat: no-repeat;
         background-position: center top;
-
-        background-repeat: repeat-y;
-
-        background-size: 100% auto;
-
+        background-size: auto 100%;
         background-attachment: scroll;
     }
 }
@@ -1534,3 +1498,25 @@ body.detalye-page .details-content::after {
 body.detalye-page .closing-flower {
     pointer-events: none;
 }
+
+/* =========================================================
+   FINAL CONTINUOUS BACKGROUND
+   ========================================================= */
+
+/*
+   Keep the entire Detalye page on one continuous floral
+   background, matching Ang Aming Kwento.
+*/
+
+body.detalye-page .details-hero,
+body.detalye-page .details-content,
+body.detalye-page .details-closing {
+    background: transparent !important;
+}
+
+/* Prevent separate floral overlays from creating seams. */
+body.detalye-page .hero-flower,
+body.detalye-page .closing-flower {
+    display: none !important;
+}
+
