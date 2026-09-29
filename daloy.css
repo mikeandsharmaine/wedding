@@ -690,23 +690,23 @@ body.menu-open { overflow: hidden; }
         transition-duration:.01ms !important;
     }
 /* =========================================================
-   CLOSING
+   CLOSING SECTION
 ========================================================= */
 
 .daloy-closing {
     position: relative;
 
-    padding: 70px 30px 100px;
+    padding: 55px 30px 80px;
 
     text-align: center;
 
-    background: transparent;
+    background: transparent !important;
 }
 
 .closing-label {
     display: block;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 
     color: var(--gold);
 
@@ -736,7 +736,7 @@ body.menu-open { overflow: hidden; }
 
     font-weight: 500;
 
-    line-height: 1.2;
+    line-height: 1.15;
 }
 
 .daloy-closing h2 em {
@@ -744,14 +744,16 @@ body.menu-open { overflow: hidden; }
 }
 
 .closing-ornament {
-    margin: 20px auto 15px;
+    margin: 15px auto 12px;
 
     color: var(--gold);
 
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .closing-names {
+    margin: 0;
+
     color: var(--peach);
 
     font-family: "Allura", cursive;
@@ -787,19 +789,19 @@ body.menu-open { overflow: hidden; }
 
     justify-content: center;
 
-    gap: 24px;
+    gap: 22px;
 
-    width: 380px;
+    width: 360px;
 
     max-width: 85vw;
 
-    min-height: 76px;
+    min-height: 68px;
 
-    margin: 30px auto 0;
+    margin: 24px auto 0;
 
-    padding: 16px 32px;
+    padding: 14px 28px;
 
-    border: 2px solid rgba(126, 142, 101, 0.55);
+    border: 1.5px solid rgba(126, 142, 101, 0.55);
 
     border-radius: 50px;
 
@@ -809,13 +811,15 @@ body.menu-open { overflow: hidden; }
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 16px;
+    font-size: 15px;
 
     font-weight: 400;
 
     letter-spacing: .04em;
 
     text-decoration: none;
+
+    box-sizing: border-box;
 
     transition:
         background .3s ease,
@@ -829,7 +833,7 @@ body.menu-open { overflow: hidden; }
 }
 
 .next-button strong {
-    font-size: 24px;
+    font-size: 23px;
 
     font-weight: 400;
 
@@ -861,11 +865,15 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 700px) {
 
     .daloy-closing {
-        padding: 55px 20px 75px;
+        padding: 45px 20px 70px;
     }
 
     .daloy-closing h2 {
         font-size: 31px;
+    }
+
+    .closing-ornament {
+        margin: 13px auto 10px;
     }
 
     .closing-names {
@@ -877,17 +885,13 @@ body.menu-open { overflow: hidden; }
 
         max-width: 88vw;
 
-        min-height: 64px;
+        min-height: 62px;
 
-        margin-top: 28px;
+        margin-top: 22px;
 
-        padding: 14px 24px;
+        padding: 13px 22px;
 
         font-size: 14px;
-    }
-
-    .next-button strong {
-        font-size: 22px;
     }
 
 }
