@@ -620,15 +620,21 @@ body.detalye-page {
 .detalye-page .details-title span {
     display: block;
 
-    margin-top: 5px;
+    margin-top: 7px;
 
     color: var(--peach);
 
-    font-family: "Cardo", serif;
+    font-family: "Allura", cursive;
 
-    font-size: 0.88em;
+    font-size: clamp(80px, 9vw, 125px);
 
-    font-style: italic;
+    font-weight: 400;
+
+    font-style: normal;
+
+    line-height: 0.8;
+
+    letter-spacing: 0;
 }
 
 
