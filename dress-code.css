@@ -250,15 +250,19 @@ body.dress-code-page {
 
     display: grid;
 
-    grid-template-columns: 320px minmax(0, 1fr);
+    grid-template-columns: 330px minmax(0, 720px);
 
     align-items: center;
 
-    gap: 42px;
+    justify-content: center;
 
-    width: min(1180px, 92%);
+    gap: 48px;
 
-    margin: 15px auto 20px;
+    width: 100%;
+
+    max-width: 1120px;
+
+    margin: 15px auto 25px;
 }
 
 
@@ -268,6 +272,9 @@ body.dress-code-page {
 
 .palette-box {
     position: relative;
+
+    width: 100%;
+    max-width: 330px;
 
     padding: 28px 25px 24px;
 
@@ -393,7 +400,8 @@ body.dress-code-page {
    ========================================================== */
 
 .intro-text {
-    max-width: 760px;
+    width: 100%;
+    max-width: 720px;
 
     text-align: center;
 }
@@ -760,6 +768,7 @@ body.dress-code-page {
         flex-direction: column;
 
         width: 94%;
+        max-width: none;
 
         gap: 25px;
     }
