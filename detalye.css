@@ -1,0 +1,1719 @@
+/* =========================================================
+   MIKE & SHARMAINE
+   DETALYE NG KASAL
+   ========================================================= */
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+:root {
+
+    --cream: #f7f0df;
+    --cream-light: #fbf7ec;
+    --paper: #f4ead5;
+
+    --sage: #75845c;
+    --sage-dark: #596547;
+
+    --olive: #6b7350;
+
+    --gold: #b99955;
+    --gold-light: #d5bd82;
+
+    --brown: #776b58;
+    --brown-dark: #5e5547;
+
+    --terracotta: #d9653d;
+
+    --white: #fffdf6;
+
+    --shadow:
+        0 22px 50px rgba(100, 83, 53, 0.12);
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,0.58),
+            transparent 65%
+        ),
+        var(--cream);
+
+    color: var(--brown);
+
+    font-family:
+        "Cardo",
+        Georgia,
+        serif;
+
+    overflow-x: hidden;
+}
+
+
+body.menu-open {
+    overflow: hidden;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button {
+    font: inherit;
+}
+
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.detail-topbar {
+
+    height: 70px;
+
+    width: 100%;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(250,246,235,0.94);
+
+    border-bottom:
+        1px solid
+        rgba(117,132,92,0.12);
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+.detail-monogram {
+
+    position: relative;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 27px;
+
+    letter-spacing: 7px;
+
+    color: var(--sage-dark);
+
+    padding-left: 7px;
+}
+
+
+.detail-monogram::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -7px;
+
+    transform: translateX(-50%);
+
+    width: 22px;
+
+    height: 1px;
+
+    background: var(--gold);
+}
+
+
+
+/* =========================================================
+   HAMBURGER
+   ========================================================= */
+
+.menu-toggle {
+
+    position: absolute;
+
+    left: 28px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 30px;
+
+    height: 30px;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 3px;
+}
+
+
+.menu-toggle span {
+
+    display: block;
+
+    width: 23px;
+
+    height: 1.5px;
+
+    background: var(--sage-dark);
+
+    transition:
+        transform 0.3s ease,
+        width 0.3s ease;
+}
+
+
+.menu-toggle span:nth-child(2) {
+    width: 16px;
+}
+
+
+.menu-toggle:hover span:nth-child(2) {
+    width: 23px;
+}
+
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.side-menu {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: min(390px, 88vw);
+
+    height: 100vh;
+
+    z-index: 2000;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f9f3e4,
+            #f1e8d3
+        );
+
+    box-shadow:
+        20px 0 50px rgba(68,56,38,0.12);
+
+    transform:
+        translateX(-105%);
+
+    transition:
+        transform 0.45s
+        cubic-bezier(.77,0,.18,1);
+
+    overflow-y: auto;
+}
+
+
+.side-menu.open {
+    transform: translateX(0);
+}
+
+
+.side-menu-inner {
+
+    min-height: 100%;
+
+    padding:
+        70px 48px 45px;
+
+    position: relative;
+}
+
+
+.menu-close {
+
+    position: absolute;
+
+    top: 24px;
+
+    right: 27px;
+
+    width: 36px;
+
+    height: 36px;
+
+    border:
+        1px solid
+        rgba(89,101,71,0.25);
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: var(--sage-dark);
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+.side-monogram {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 45px;
+
+    letter-spacing: 9px;
+
+    color: var(--sage-dark);
+
+    padding-left: 9px;
+}
+
+
+.side-names {
+
+    margin-top: 7px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: var(--sage-dark);
+}
+
+
+.side-tagline {
+
+    margin-top: 65px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-style: italic;
+
+    font-size: 24px;
+
+    color: var(--brown);
+}
+
+
+.side-navigation {
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin-top: 35px;
+}
+
+
+.side-navigation a {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 12px;
+
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid
+        rgba(117,132,92,0.14);
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 0.7px;
+
+    color: var(--brown);
+
+    transition:
+        color 0.25s ease,
+        padding-left 0.25s ease;
+}
+
+
+.side-navigation a span {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 14px;
+
+    color: var(--gold);
+}
+
+
+.side-navigation a:hover,
+.side-navigation a.active {
+
+    color: var(--terracotta);
+
+    padding-left: 7px;
+}
+
+
+.side-heart {
+
+    margin-top: 35px;
+
+    color: var(--gold);
+
+    font-size: 24px;
+}
+
+
+.side-footer {
+
+    margin-top: 55px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-style: italic;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    color: var(--brown);
+}
+
+
+.side-footer strong {
+
+    font-family:
+        "Cardo",
+        serif;
+
+    font-style: normal;
+
+    color: var(--sage-dark);
+}
+
+
+/* Overlay */
+
+.menu-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1500;
+
+    background:
+        rgba(54,45,31,0.27);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.35s ease;
+
+    backdrop-filter:
+        blur(2px);
+}
+
+
+.menu-overlay.show {
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.details-hero {
+
+    position: relative;
+
+    min-height: 520px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(255,250,234,0.98) 0%,
+            rgba(246,235,209,0.94) 52%,
+            rgba(225,207,167,0.80) 100%
+        );
+
+}
+
+
+.details-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(106,118,82,0.10),
+            transparent 24%,
+            transparent 76%,
+            rgba(106,118,82,0.10)
+        );
+
+    pointer-events: none;
+}
+
+
+/* Botanical side decoration */
+
+.hero-botanical {
+
+    position: absolute;
+
+    width: 360px;
+
+    height: 360px;
+
+    opacity: 0.48;
+
+    pointer-events: none;
+}
+
+
+.hero-botanical-left {
+
+    left: -130px;
+
+    top: -80px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(111,126,83,0.35),
+            transparent 65%
+        );
+
+    transform: rotate(-20deg);
+}
+
+
+.hero-botanical-right {
+
+    right: -130px;
+
+    bottom: -100px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(171,132,67,0.26),
+            transparent 65%
+        );
+
+    transform: rotate(20deg);
+}
+
+
+.details-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(900px, 90%);
+
+    padding-top: 40px;
+}
+
+
+.section-number {
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    color: var(--gold);
+
+    margin-bottom: 18px;
+}
+
+
+.details-hero h1 {
+
+    font-family:
+        "Cardo",
+        Georgia,
+        serif;
+
+    font-weight: 400;
+
+    font-size:
+        clamp(55px, 8vw, 105px);
+
+    line-height: 0.95;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: var(--sage-dark);
+}
+
+
+.details-hero h1 span {
+
+    display: block;
+
+    color: var(--brown-dark);
+}
+
+
+.gold-ornament {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin: 27px auto;
+}
+
+
+.gold-ornament span {
+
+    width: 95px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold)
+        );
+}
+
+
+.gold-ornament span:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            transparent
+        );
+}
+
+
+.gold-ornament {
+
+    color: var(--gold);
+
+    font-size: 18px;
+}
+
+
+.hero-subtitle {
+
+    max-width: 560px;
+
+    margin: auto;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 22px;
+
+    font-style: italic;
+
+    line-height: 1.45;
+
+    color: var(--brown);
+}
+
+
+
+/* =========================================================
+   DETAILS SECTION
+   ========================================================= */
+
+.wedding-details {
+
+    position: relative;
+
+    padding:
+        100px 6vw 130px;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(255,253,246,0.72),
+            transparent 67%
+        ),
+
+        var(--cream);
+}
+
+
+.details-heading {
+
+    text-align: center;
+
+    max-width: 750px;
+
+    margin:
+        0 auto 65px;
+}
+
+
+.details-heading p {
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: var(--terracotta);
+
+    margin-bottom: 14px;
+}
+
+
+.details-heading h2 {
+
+    font-family:
+        "Cardo",
+        Georgia,
+        serif;
+
+    font-weight: 400;
+
+    font-size:
+        clamp(38px, 5vw, 64px);
+
+    line-height: 1.05;
+
+    color: var(--sage-dark);
+}
+
+
+.details-heading em {
+
+    color: var(--brown);
+
+    font-weight: 400;
+}
+
+
+
+/* =========================================================
+   ARCH GRID
+   ========================================================= */
+
+.arch-grid {
+
+    width: min(1150px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 55px;
+
+    align-items: stretch;
+}
+
+
+
+/* =========================================================
+   ARCH CARD
+   ========================================================= */
+
+.arch-card {
+
+    position: relative;
+
+    min-height: 720px;
+
+    padding: 13px;
+
+    background:
+        rgba(255,252,242,0.80);
+
+    border:
+        1px solid
+        rgba(185,153,85,0.48);
+
+    border-radius:
+        310px 310px 12px 12px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+
+.arch-inner {
+
+    position: relative;
+
+    height: 100%;
+
+    min-height: 690px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(185,153,85,0.34);
+
+    border-radius:
+        300px 300px 8px 8px;
+
+    padding:
+        70px 65px 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at center top,
+            rgba(255,255,255,0.65),
+            transparent 65%
+        ),
+
+        #f5ecd9;
+}
+
+
+.ceremony-card .arch-inner {
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8f0df,
+            #f0e5cc
+        );
+}
+
+
+.reception-card .arch-inner {
+
+    background:
+        linear-gradient(
+            180deg,
+            #faf4e7,
+            #f2e7d2
+        );
+}
+
+
+
+/* =========================================================
+   ARCH DECORATIONS
+   ========================================================= */
+
+.arch-decoration {
+
+    position: absolute;
+
+    color:
+        rgba(117,132,92,0.45);
+
+    font-size: 25px;
+}
+
+
+.arch-decoration.top-left {
+
+    top: 75px;
+
+    left: 38px;
+}
+
+
+.arch-decoration.top-right {
+
+    top: 75px;
+
+    right: 38px;
+}
+
+
+.card-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(185,153,85,0.48);
+
+    border-radius: 50%;
+
+    color: var(--gold);
+
+    font-size: 32px;
+
+    margin-bottom: 22px;
+
+    background:
+        rgba(255,252,242,0.45);
+}
+
+
+.card-kicker {
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color: var(--gold);
+
+    margin-bottom: 9px;
+}
+
+
+.arch-card h3 {
+
+    font-family:
+        "Cardo",
+        Georgia,
+        serif;
+
+    font-size: 43px;
+
+    font-weight: 400;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: var(--sage-dark);
+}
+
+
+.card-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--gold);
+
+    margin: 17px 0 24px;
+}
+
+
+.card-divider span {
+
+    width: 65px;
+
+    height: 1px;
+
+    background:
+        var(--gold-light);
+}
+
+
+.card-quote {
+
+    max-width: 470px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    line-height: 1.45;
+
+    color: var(--brown);
+
+    margin-bottom: 30px;
+}
+
+
+
+/* =========================================================
+   EVENT INFORMATION
+   ========================================================= */
+
+.event-information {
+
+    width: 100%;
+
+    max-width: 400px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+
+    margin-top: 5px;
+
+    text-align: left;
+}
+
+
+.event-item {
+
+    display: grid;
+
+    grid-template-columns: 48px 1fr;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.event-icon {
+
+    width: 43px;
+
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(185,153,85,0.5);
+
+    border-radius: 50%;
+
+    color: var(--gold);
+
+    font-size: 22px;
+}
+
+
+.event-item small {
+
+    display: block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    color: var(--brown);
+}
+
+
+.event-item strong {
+
+    display: block;
+
+    margin-top: 1px;
+
+    font-family:
+        "Cardo",
+        serif;
+
+    font-size: 19px;
+
+    line-height: 1.25;
+
+    font-weight: 400;
+
+    color: var(--sage-dark);
+}
+
+
+
+/* =========================================================
+   MAP
+   ========================================================= */
+
+.map-wrapper {
+
+    width: 100%;
+
+    margin-top: 8px;
+
+    border:
+        7px solid
+        rgba(255,252,242,0.8);
+
+    box-shadow:
+        0 10px 30px rgba(80,65,40,0.12);
+
+    overflow: hidden;
+
+    border-radius: 5px;
+}
+
+
+.map-wrapper iframe {
+
+    display: block;
+
+    width: 100%;
+
+    height: 210px;
+
+    border: 0;
+
+    filter:
+        sepia(12%)
+        saturate(75%);
+}
+
+
+.map-button {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 16px;
+
+    padding: 14px 20px;
+
+    border-radius: 40px;
+
+    background: var(--sage-dark);
+
+    color: white;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.map-button strong {
+
+    font-size: 15px;
+
+    font-weight: 400;
+}
+
+
+.map-button:hover {
+
+    background: var(--olive);
+
+    transform:
+        translateY(-2px);
+}
+
+
+
+/* =========================================================
+   CARD FLOWERS
+   ========================================================= */
+
+.arch-flower {
+
+    position: absolute;
+
+    color:
+        rgba(117,132,92,0.45);
+
+    font-size: 42px;
+
+    opacity: 0.75;
+}
+
+
+.arch-flower-left {
+
+    bottom: 70px;
+
+    left: 25px;
+
+    transform: rotate(-20deg);
+}
+
+
+.arch-flower-right {
+
+    right: 25px;
+
+    bottom: 70px;
+
+    transform: rotate(20deg);
+}
+
+
+.arch-flower-bottom {
+
+    bottom: 22px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    color:
+        rgba(185,153,85,0.55);
+}
+
+
+
+/* =========================================================
+   CLOSING
+   ========================================================= */
+
+.details-closing {
+
+    position: relative;
+
+    min-height: 570px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            #fbf6e8 0%,
+            #eee1c5 100%
+        );
+}
+
+
+.details-closing::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 30px;
+
+    border:
+        1px solid
+        rgba(185,153,85,0.20);
+
+    pointer-events: none;
+}
+
+
+.closing-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    padding: 70px 25px;
+}
+
+
+.closing-symbol {
+
+    color: var(--gold);
+
+    font-size: 28px;
+
+    margin-bottom: 22px;
+}
+
+
+.closing-content > p {
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color: var(--sage-dark);
+
+    margin-bottom: 22px;
+}
+
+
+.closing-content h2 {
+
+    font-family:
+        "Cardo",
+        Georgia,
+        serif;
+
+    font-weight: 400;
+
+    font-size:
+        clamp(38px, 5vw, 63px);
+
+    line-height: 1.05;
+
+    color: var(--brown-dark);
+}
+
+
+.closing-content h2 em {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-style: italic;
+
+    color: var(--sage-dark);
+}
+
+
+.closing-line {
+
+    display: block;
+
+    width: 100px;
+
+    height: 1px;
+
+    background: var(--gold-light);
+
+    margin: 30px auto;
+}
+
+
+.closing-content h3 {
+
+    font-family:
+        "Allura",
+        cursive;
+
+    font-size: 37px;
+
+    font-weight: 400;
+
+    color: var(--terracotta);
+
+    margin-bottom: 30px;
+}
+
+
+.next-section-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 13px 25px;
+
+    border:
+        1px solid
+        rgba(117,132,92,0.4);
+
+    border-radius: 30px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: var(--sage-dark);
+
+    background:
+        rgba(255,255,255,0.30);
+
+    transition:
+        all 0.25s ease;
+}
+
+
+.next-section-button span {
+
+    font-size: 18px;
+}
+
+
+.next-section-button:hover {
+
+    background: var(--sage-dark);
+
+    color: white;
+
+    transform:
+        translateY(-2px);
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .details-hero {
+
+        min-height: 460px;
+    }
+
+
+    .arch-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
+
+        gap: 50px;
+    }
+
+
+    .arch-card {
+
+        min-height: auto;
+    }
+
+
+    .arch-inner {
+
+        min-height: 650px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .detail-topbar {
+
+        height: 62px;
+    }
+
+
+    .menu-toggle {
+
+        left: 18px;
+    }
+
+
+    .detail-monogram {
+
+        font-size: 24px;
+
+        letter-spacing: 6px;
+    }
+
+
+    .side-menu-inner {
+
+        padding:
+            65px 30px 35px;
+    }
+
+
+    .side-monogram {
+
+        font-size: 39px;
+    }
+
+
+    .details-hero {
+
+        min-height: 440px;
+    }
+
+
+    .details-hero-content {
+
+        padding:
+            50px 20px 30px;
+    }
+
+
+    .section-number {
+
+        font-size: 9px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .details-hero h1 {
+
+        font-size:
+            clamp(48px, 15vw, 72px);
+    }
+
+
+    .hero-subtitle {
+
+        font-size: 19px;
+    }
+
+
+    .wedding-details {
+
+        padding:
+            75px 18px 90px;
+    }
+
+
+    .details-heading {
+
+        margin-bottom: 45px;
+    }
+
+
+    .details-heading h2 {
+
+        font-size: 39px;
+    }
+
+
+    .arch-card {
+
+        padding: 9px;
+
+        border-radius:
+            220px 220px 10px 10px;
+    }
+
+
+    .arch-inner {
+
+        min-height: auto;
+
+        padding:
+            60px 28px 75px;
+
+        border-radius:
+            210px 210px 7px 7px;
+    }
+
+
+    .arch-card h3 {
+
+        font-size: 34px;
+    }
+
+
+    .card-quote {
+
+        font-size: 18px;
+    }
+
+
+    .event-item {
+
+        grid-template-columns:
+            43px 1fr;
+    }
+
+
+    .event-item strong {
+
+        font-size: 17px;
+    }
+
+
+    .map-wrapper iframe {
+
+        height: 190px;
+    }
+
+
+    .details-closing {
+
+        min-height: 500px;
+    }
+
+
+    .details-closing::before {
+
+        inset: 18px;
+    }
+
+
+    .closing-content h2 {
+
+        font-size: 40px;
+    }
+
+}
+
+
+@media (max-width: 380px) {
+
+    .arch-inner {
+
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+
+    .arch-card h3 {
+
+        font-size: 30px;
+    }
+
+}
