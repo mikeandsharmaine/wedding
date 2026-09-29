@@ -9,27 +9,19 @@
    ========================================================== */
 
 :root {
-
     --olive: #7f9168;
-
     --sage: #dfe4d0;
-
     --gold: #d7a85a;
 
     --cream: #f7efdf;
-
     --cream-light: #faf4e7;
-
     --paper: #fffaf0;
 
     --peach: #efc3a0;
-
     --burnt: #d85d38;
 
     --brown: #71675a;
-
     --soft-brown: #9a876c;
-
     --ink: #5f6554;
 
     --white: #fffdf7;
@@ -49,9 +41,7 @@ html {
 }
 
 body.dress-code-page {
-
     margin: 0;
-
     min-height: 100vh;
 
     overflow-x: hidden;
@@ -60,29 +50,17 @@ body.dress-code-page {
 
     font-family: "Poppins", sans-serif;
 
+    /* Same background used by the other wedding sections */
     background-color: var(--cream);
-
-    /*
-     * SAME BACKGROUND AS THE OTHER SECTIONS
-     */
-    background-image:
-        url("floral-frame.png");
-
+    background-image: url("floral-frame.png");
     background-repeat: no-repeat;
-
-    background-position:
-        center top;
-
-    background-size:
-        cover;
-
-    background-attachment:
-        fixed;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .dress-code-page img {
     display: block;
-
     max-width: 100%;
 }
 
@@ -96,104 +74,73 @@ body.dress-code-page {
    ========================================================== */
 
 .website-nav {
-
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
 
     min-height: 68px;
-
     padding: 10px 24px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    background:
-        rgba(250, 244, 231, 0.96);
+    background: rgba(250, 244, 231, 0.96);
 
-    backdrop-filter:
-        blur(10px);
-
-    -webkit-backdrop-filter:
-        blur(10px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .website-nav nav {
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     gap: 30px;
 }
 
 .website-nav a {
-
     position: relative;
 
     padding: 8px 0;
 
     text-decoration: none;
-
     white-space: nowrap;
 
     color: #6e745f;
 
-    font-family:
-        "Cardo",
-        serif;
-
+    font-family: "Cardo", serif;
     font-size: 13px;
-
     letter-spacing: 1.2px;
 
-    transition:
-        color 0.25s ease;
+    transition: color 0.25s ease;
 }
 
 .website-nav a::after {
-
     content: "";
 
     position: absolute;
-
     left: 50%;
-
     bottom: 0;
 
     width: 0;
-
     height: 1px;
 
-    background:
-        var(--burnt);
+    background: var(--burnt);
 
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
-    transition:
-        width 0.25s ease;
+    transition: width 0.25s ease;
 }
 
 .website-nav a:hover,
 .website-nav a.active {
-
-    color:
-        var(--burnt);
+    color: var(--burnt);
 }
 
 .website-nav a:hover::after,
 .website-nav a.active::after {
-
-    width:
-        100%;
+    width: 100%;
 }
 
 
@@ -202,45 +149,28 @@ body.dress-code-page {
    ========================================================== */
 
 .dress-code-content {
-
     position: relative;
 
-    width:
-        min(1500px, 94vw);
+    width: min(1500px, 94vw);
 
-    margin:
-        0 auto;
+    margin: 0 auto;
 
-    padding:
-        55px 0 90px;
+    padding: 55px 0 90px;
 }
 
-
-/*
- * Soft parchment wash behind the content.
- * This keeps the floral background visible.
- */
-
 .dress-code-content::before {
-
     content: "";
 
     position: absolute;
-
     z-index: -1;
 
     top: 0;
-
     left: 50%;
 
-    width:
-        min(1180px, 82vw);
+    width: min(1180px, 82vw);
+    height: 100%;
 
-    height:
-        100%;
-
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
     background:
         linear-gradient(
@@ -258,97 +188,56 @@ body.dress-code-page {
    ========================================================== */
 
 .dress-header {
+    text-align: center;
 
-    text-align:
-        center;
-
-    padding:
-        4px 20px 18px;
+    padding: 4px 20px 18px;
 }
 
 .section-number {
+    margin-bottom: 10px;
 
-    margin-bottom:
-        10px;
+    color: var(--soft-brown);
 
-    color:
-        var(--soft-brown);
-
-    font-family:
-        "Cardo",
-        serif;
-
-    font-size:
-        15px;
-
-    letter-spacing:
-        4px;
+    font-family: "Cardo", serif;
+    font-size: 15px;
+    letter-spacing: 4px;
 }
 
 .dress-header h1 {
+    margin: 0;
 
-    margin:
-        0;
+    color: var(--olive);
 
-    color:
-        var(--olive);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(58px, 7vw, 94px);
+    font-weight: 500;
 
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        clamp(58px, 7vw, 94px);
-
-    font-weight:
-        500;
-
-    line-height:
-        0.9;
-
-    letter-spacing:
-        5px;
+    line-height: 0.9;
+    letter-spacing: 5px;
 }
 
 .script-title {
+    margin: 18px 0 13px;
 
-    margin:
-        18px 0 13px;
+    color: var(--burnt);
 
-    color:
-        var(--burnt);
+    font-family: "Allura", cursive;
+    font-size: clamp(32px, 3.4vw, 48px);
 
-    font-family:
-        "Allura",
-        cursive;
-
-    font-size:
-        clamp(32px, 3.4vw, 48px);
-
-    line-height:
-        1;
+    line-height: 1;
 }
 
 .script-title span {
-
-    padding:
-        0 8px;
+    padding: 0 8px;
 }
 
 .gold-heart {
+    color: var(--gold);
 
-    color:
-        var(--gold);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
 
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        30px;
-
-    line-height:
-        1;
+    line-height: 1;
 }
 
 
@@ -357,27 +246,19 @@ body.dress-code-page {
    ========================================================== */
 
 .intro-area {
+    position: relative;
 
-    position:
-        relative;
+    display: grid;
 
-    display:
-        grid;
+    grid-template-columns: 320px minmax(0, 1fr);
 
-    grid-template-columns:
-        320px minmax(0, 1fr);
+    align-items: center;
 
-    align-items:
-        center;
+    gap: 42px;
 
-    gap:
-        42px;
+    width: min(1180px, 92%);
 
-    width:
-        min(1180px, 92%);
-
-    margin:
-        15px auto 20px;
+    margin: 15px auto 20px;
 }
 
 
@@ -386,204 +267,124 @@ body.dress-code-page {
    ========================================================== */
 
 .palette-box {
+    position: relative;
 
-    position:
-        relative;
+    padding: 28px 25px 24px;
 
-    padding:
-        28px 25px 24px;
+    border: 1px solid rgba(215, 168, 90, 0.75);
 
-    border:
-        1px solid
-        rgba(215, 168, 90, 0.75);
+    background: rgba(255, 250, 240, 0.38);
 
-    background:
-        rgba(255, 250, 240, 0.38);
-
-    outline:
-        1px solid
-        rgba(215, 168, 90, 0.28);
-
-    outline-offset:
-        -7px;
+    outline: 1px solid rgba(215, 168, 90, 0.28);
+    outline-offset: -7px;
 }
 
 .palette-box::before,
 .palette-box::after {
+    content: "";
 
-    content:
-        "";
+    position: absolute;
 
-    position:
-        absolute;
+    width: 18px;
+    height: 18px;
 
-    width:
-        18px;
-
-    height:
-        18px;
-
-    border:
-        1px solid
-        var(--gold);
+    border: 1px solid var(--gold);
 }
 
 .palette-box::before {
+    top: 6px;
+    left: 6px;
 
-    top:
-        6px;
-
-    left:
-        6px;
-
-    border-right:
-        0;
-
-    border-bottom:
-        0;
+    border-right: 0;
+    border-bottom: 0;
 }
 
 .palette-box::after {
+    right: 6px;
+    bottom: 6px;
 
-    right:
-        6px;
-
-    bottom:
-        6px;
-
-    border-left:
-        0;
-
-    border-top:
-        0;
+    border-left: 0;
+    border-top: 0;
 }
 
 .palette-title {
+    margin-bottom: 20px;
 
-    margin-bottom:
-        20px;
+    text-align: center;
 
-    text-align:
-        center;
+    color: var(--olive);
 
-    color:
-        var(--olive);
-
-    font-family:
-        "Cardo",
-        serif;
-
-    font-size:
-        19px;
-
-    letter-spacing:
-        1.5px;
+    font-family: "Cardo", serif;
+    font-size: 19px;
+    letter-spacing: 1.5px;
 }
 
 .palette-colors {
+    display: flex;
 
-    display:
-        flex;
+    justify-content: center;
+    align-items: center;
 
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-    gap:
-        12px;
+    gap: 12px;
 }
 
 .color {
+    width: 45px;
+    height: 45px;
 
-    width:
-        45px;
+    border-radius: 50%;
 
-    height:
-        45px;
-
-    border-radius:
-        50%;
-
-    border:
-        1px solid
-        rgba(95, 101, 84, 0.16);
+    border: 1px solid rgba(95, 101, 84, 0.16);
 
     box-shadow:
         inset 0 0 0 1px
-        rgba(255,255,255,0.25);
+        rgba(255, 255, 255, 0.25);
 }
 
 .color.gold {
-    background:
-        #e5b957;
+    background: #e5b957;
 }
 
 .color.olive {
-    background:
-        #71845c;
+    background: #71845c;
 }
 
 .color.terracotta {
-    background:
-        #c9572e;
+    background: #c9572e;
 }
 
 .color.caramel {
-    background:
-        #c4874c;
+    background: #c4874c;
 }
 
 .color.beige {
-    background:
-        #e8dcc5;
+    background: #e8dcc5;
 }
 
 .palette-decoration {
+    display: flex;
 
-    display:
-        flex;
+    align-items: center;
+    justify-content: center;
 
-    align-items:
-        center;
+    gap: 9px;
 
-    justify-content:
-        center;
+    margin-top: 18px;
 
-    gap:
-        9px;
-
-    margin-top:
-        18px;
-
-    color:
-        var(--gold);
+    color: var(--gold);
 }
 
 .palette-decoration span {
+    width: 65px;
+    height: 1px;
 
-    width:
-        65px;
-
-    height:
-        1px;
-
-    background:
-        rgba(215,168,90,0.55);
+    background: rgba(215, 168, 90, 0.55);
 }
 
 .palette-decoration b {
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        20px;
-
-    font-weight:
-        400;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 
@@ -592,62 +393,38 @@ body.dress-code-page {
    ========================================================== */
 
 .intro-text {
+    max-width: 760px;
 
-    max-width:
-        760px;
-
-    text-align:
-        center;
+    text-align: center;
 }
 
 .intro-quote {
+    margin: 0 0 12px;
 
-    margin:
-        0 0 12px;
+    color: var(--olive);
 
-    color:
-        var(--olive);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 26px;
 
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        26px;
-
-    font-style:
-        italic;
-
-    font-weight:
-        600;
+    font-style: italic;
+    font-weight: 600;
 }
 
 .intro-text p {
+    margin: 0 auto 11px;
 
-    margin:
-        0 auto 11px;
+    color: var(--brown);
 
-    color:
-        var(--brown);
+    font-family: "Cardo", serif;
+    font-size: 16px;
 
-    font-family:
-        "Cardo",
-        serif;
-
-    font-size:
-        16px;
-
-    line-height:
-        1.5;
+    line-height: 1.5;
 }
 
 .intro-note {
+    margin-top: 14px !important;
 
-    margin-top:
-        14px !important;
-
-    font-size:
-        15px !important;
+    font-size: 15px !important;
 }
 
 
@@ -656,183 +433,120 @@ body.dress-code-page {
    ========================================================== */
 
 .outfit-guide {
+    position: relative;
 
-    position:
-        relative;
+    width: min(1450px, 100%);
 
-    width:
-        min(1450px, 100%);
-
-    margin:
-        5px auto 0;
+    margin: 5px auto 0;
 }
 
 
-/*
- * The transparent artwork is the ONLY image.
- *
- * No background.
- * No text.
- * No labels.
- */
+/* ==========================================================
+   OUTFIT ARTWORK
+   IMPORTANT:
+   dress-code-outfits.png should be the transparent
+   people-only artwork.
+   ========================================================== */
 
 .outfit-image {
+    position: relative;
 
-    position:
-        relative;
+    width: 100%;
 
-    width:
-        100%;
-
-    z-index:
-        1;
+    z-index: 1;
 }
 
 .outfit-image img {
+    width: 100%;
+    height: auto;
 
-    width:
-        100%;
-
-    height:
-        auto;
-
-    object-fit:
-        contain;
+    object-fit: contain;
 }
 
 
 /* ==========================================================
-   LABELS
+   OUTFIT LABELS
    ========================================================== */
 
 .outfit-labels {
+    position: absolute;
 
-    position:
-        absolute;
+    z-index: 5;
 
-    z-index:
-        5;
+    left: 0;
+    right: 0;
 
-    left:
-        0;
+    bottom: 0;
 
-    right:
-        0;
+    height: 82px;
 
-    /*
-     * This places the labels underneath
-     * the people.
-     */
-    bottom:
-        -3px;
-
-    height:
-        92px;
-
-    pointer-events:
-        none;
+    pointer-events: none;
 }
 
 .outfit-label {
+    position: absolute;
 
-    position:
-        absolute;
+    transform: translateX(-50%);
 
-    transform:
-        translateX(-50%);
+    text-align: center;
 
-    text-align:
-        center;
+    color: #625d51;
 
-    color:
-        #625d51;
+    font-family: "Cardo", serif;
 
-    font-family:
-        "Cardo",
-        serif;
+    font-size: clamp(13px, 1.05vw, 17px);
 
-    font-size:
-        clamp(12px, 1.05vw, 17px);
+    font-weight: 400;
 
-    line-height:
-        1.15;
+    line-height: 1.15;
 
-    white-space:
-        nowrap;
+    white-space: nowrap;
 }
 
 .outfit-label span {
-    display:
-        block;
+    display: block;
 }
 
 
 /* ==========================================================
-   INDIVIDUAL LABEL POSITIONS
+   LABEL ALIGNMENT
+   Matched to the actual groups in the artwork
    ========================================================== */
 
-/*
- * These percentages correspond to the groups
- * in the transparent outfit artwork.
- */
-
 .label-mother {
-    left: 7%;
+    left: 7.2%;
 }
 
 .label-father {
-    left: 17%;
+    left: 15.7%;
 }
 
 .label-secondary {
-    left: 28%;
+    left: 24.5%;
 }
 
 .label-maid {
-    left: 37%;
+    left: 33.4%;
 }
 
 .label-groomsmen {
-    left: 48%;
+    left: 44.1%;
 }
 
 .label-couple {
-    left: 58%;
+    left: 55.1%;
 }
 
 .label-ninong {
-    left: 69%;
+    left: 63.7%;
 }
 
 .label-ring {
-    left: 80%;
+    left: 75.1%;
 }
 
 .label-guests {
-    left: 92%;
-}
-
-
-/* ==========================================================
-   SMALL GOLD ORNAMENT UNDER EACH LABEL
-   ========================================================== */
-
-.outfit-label::after {
-
-    content:
-        "✦";
-
-    display:
-        block;
-
-    margin-top:
-        7px;
-
-    color:
-        var(--gold);
-
-    font-size:
-        12px;
+    left: 88.4%;
 }
 
 
@@ -841,92 +555,54 @@ body.dress-code-page {
    ========================================================== */
 
 .palette-guide {
+    display: flex;
 
-    display:
-        flex;
+    justify-content: center;
 
-    justify-content:
-        center;
-
-    margin:
-        0 auto;
+    margin: 0 auto;
 }
 
 .palette-guide-box {
+    width: min(580px, 90vw);
 
-    width:
-        min(580px, 90vw);
+    padding: 21px 35px 22px;
 
-    padding:
-        21px 35px 22px;
+    text-align: center;
 
-    text-align:
-        center;
+    border: 1px solid rgba(215, 168, 90, 0.72);
 
-    border:
-        1px solid
-        rgba(215,168,90,0.72);
+    background: rgba(255, 250, 240, 0.52);
 
-    background:
-        rgba(255,250,240,0.52);
-
-    outline:
-        1px solid
-        rgba(215,168,90,0.28);
-
-    outline-offset:
-        -6px;
+    outline: 1px solid rgba(215, 168, 90, 0.28);
+    outline-offset: -6px;
 }
 
 .guide-title {
+    margin-bottom: 8px;
 
-    margin-bottom:
-        8px;
+    color: var(--soft-brown);
 
-    color:
-        var(--soft-brown);
-
-    font-family:
-        "Cardo",
-        serif;
-
-    font-size:
-        17px;
-
-    letter-spacing:
-        2px;
+    font-family: "Cardo", serif;
+    font-size: 17px;
+    letter-spacing: 2px;
 }
 
 .palette-guide-box p {
+    margin: 0 0 4px;
 
-    margin:
-        0 0 4px;
+    color: var(--brown);
 
-    color:
-        var(--brown);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
 
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        20px;
-
-    font-style:
-        italic;
+    font-style: italic;
 }
 
 .palette-guide-box em {
+    color: var(--brown);
 
-    color:
-        var(--brown);
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        18px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
 }
 
 
@@ -935,92 +611,62 @@ body.dress-code-page {
    ========================================================== */
 
 .next-page {
+    display: flex;
 
-    display:
-        flex;
+    justify-content: center;
 
-    justify-content:
-        center;
-
-    margin-top:
-        40px;
+    margin-top: 40px;
 }
 
 .next-button {
+    display: inline-flex;
 
-    display:
-        inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    align-items:
-        center;
+    gap: 12px;
 
-    justify-content:
-        center;
+    min-width: 230px;
 
-    gap:
-        12px;
+    padding: 13px 30px;
 
-    min-width:
-        230px;
+    border: 1px solid var(--gold);
+    border-radius: 50px;
 
-    padding:
-        13px 30px;
+    background: rgba(255, 252, 242, 0.55);
 
-    border:
-        1px solid
-        var(--gold);
+    text-decoration: none;
 
-    border-radius:
-        50px;
+    color: var(--brown);
 
-    background:
-        rgba(255,252,242,0.55);
-
-    text-decoration:
-        none;
-
-    color:
-        var(--brown);
-
-    font-family:
-        "Cardo",
-        serif;
-
-    font-size:
-        17px;
+    font-family: "Cardo", serif;
+    font-size: 17px;
 
     transition:
-        all 0.25s ease;
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .next-button span {
+    color: var(--burnt);
 
-    color:
-        var(--burnt);
-
-    font-size:
-        21px;
+    font-size: 21px;
 }
 
 .next-button:hover {
+    background: var(--burnt);
 
-    background:
-        var(--burnt);
+    border-color: var(--burnt);
 
-    border-color:
-        var(--burnt);
+    color: #fff;
 
-    color:
-        #fff;
-
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 }
 
 .next-button:hover span {
-
-    color:
-        #fff;
+    color: #fff;
 }
 
 
@@ -1031,33 +677,22 @@ body.dress-code-page {
 @media (max-width: 1000px) {
 
     .website-nav nav {
-
-        gap:
-            18px;
+        gap: 18px;
     }
 
     .website-nav a {
-
-        font-size:
-            11px;
-
-        letter-spacing:
-            0.9px;
+        font-size: 11px;
+        letter-spacing: 0.9px;
     }
 
     .intro-area {
+        grid-template-columns: 270px minmax(0, 1fr);
 
-        grid-template-columns:
-            270px minmax(0,1fr);
-
-        gap:
-            25px;
+        gap: 25px;
     }
 
     .outfit-labels {
-
-        height:
-            75px;
+        height: 75px;
     }
 }
 
@@ -1069,204 +704,137 @@ body.dress-code-page {
 @media (max-width: 760px) {
 
     body.dress-code-page {
-
-        background-attachment:
-            scroll;
+        background-attachment: scroll;
     }
 
     .website-nav {
+        min-height: 60px;
 
-        min-height:
-            60px;
+        padding: 8px 12px;
 
-        padding:
-            8px 12px;
-
-        overflow-x:
-            auto;
+        overflow-x: auto;
     }
 
     .website-nav nav {
+        width: max-content;
 
-        width:
-            max-content;
-
-        gap:
-            18px;
+        gap: 18px;
     }
 
     .website-nav a {
-
-        font-size:
-            10px;
-
-        letter-spacing:
-            0.7px;
+        font-size: 10px;
+        letter-spacing: 0.7px;
     }
 
     .dress-code-content {
+        width: 94vw;
 
-        width:
-            94vw;
-
-        padding:
-            40px 0 65px;
+        padding: 40px 0 65px;
     }
 
     .dress-code-content::before {
-
-        width:
-            100%;
+        width: 100%;
     }
 
     .section-number {
-
-        font-size:
-            12px;
-
-        letter-spacing:
-            3px;
+        font-size: 12px;
+        letter-spacing: 3px;
     }
 
     .dress-header h1 {
+        font-size: clamp(45px, 13vw, 70px);
 
-        font-size:
-            clamp(45px, 13vw, 70px);
-
-        letter-spacing:
-            3px;
+        letter-spacing: 3px;
     }
 
     .script-title {
+        font-size: clamp(27px, 8vw, 38px);
 
-        font-size:
-            clamp(27px, 8vw, 38px);
-
-        line-height:
-            1.05;
+        line-height: 1.05;
     }
 
     .intro-area {
+        display: flex;
+        flex-direction: column;
 
-        display:
-            flex;
+        width: 94%;
 
-        flex-direction:
-            column;
-
-        width:
-            94%;
-
-        gap:
-            25px;
+        gap: 25px;
     }
 
     .palette-box {
-
-        width:
-            min(340px, 100%);
+        width: min(340px, 100%);
     }
 
     .intro-text {
-
-        width:
-            100%;
+        width: 100%;
     }
 
     .intro-quote {
-
-        font-size:
-            23px;
+        font-size: 23px;
     }
 
     .intro-text p {
+        font-size: 14px;
 
-        font-size:
-            14px;
-
-        line-height:
-            1.55;
+        line-height: 1.55;
     }
 
 
-    /*
-     * Keep artwork wide on phones so the
-     * individual people remain recognizable.
-     */
+    /* ------------------------------------------------------
+       MOBILE OUTFIT GUIDE
+
+       Keep the artwork and labels in the same 900px
+       coordinate system so their alignment does not change.
+       ------------------------------------------------------ */
 
     .outfit-guide {
+        width: 100%;
 
-        width:
-            100%;
-
-        overflow-x:
-            auto;
-
-        overflow-y:
-            hidden;
+        overflow-x: auto;
+        overflow-y: hidden;
     }
 
     .outfit-image {
-
-        width:
-            900px;
-
-        min-width:
-            900px;
+        width: 900px;
+        min-width: 900px;
     }
 
     .outfit-labels {
+        left: 0;
+        right: auto;
 
-        left:
-            0;
+        width: 900px;
+        min-width: 900px;
 
-        width:
-            900px;
+        height: 80px;
 
-        min-width:
-            900px;
-
-        height:
-            80px;
-
-        bottom:
-            0;
+        bottom: 0;
     }
 
     .outfit-label {
-
-        font-size:
-            14px;
+        font-size: 14px;
     }
 
-    .palette-guide-box {
 
-        padding:
-            18px 20px;
+    .palette-guide-box {
+        padding: 18px 20px;
     }
 
     .palette-guide-box p {
+        font-size: 18px;
 
-        font-size:
-            18px;
-
-        line-height:
-            1.25;
+        line-height: 1.25;
     }
 
     .palette-guide-box em {
-
-        font-size:
-            16px;
+        font-size: 16px;
     }
 
     .next-button {
+        width: 250px;
 
-        width:
-            250px;
-
-        min-height:
-            58px;
+        min-height: 58px;
     }
 }
 
@@ -1278,35 +846,23 @@ body.dress-code-page {
 @media (max-width: 430px) {
 
     .website-nav nav {
-
-        gap:
-            14px;
+        gap: 14px;
     }
 
     .website-nav a {
-
-        font-size:
-            9px;
+        font-size: 9px;
     }
 
     .dress-code-content {
-
-        padding-top:
-            32px;
+        padding-top: 32px;
     }
 
     .palette-colors {
-
-        gap:
-            8px;
+        gap: 8px;
     }
 
     .color {
-
-        width:
-            38px;
-
-        height:
-            38px;
+        width: 38px;
+        height: 38px;
     }
 }
