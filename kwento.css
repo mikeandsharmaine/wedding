@@ -46,7 +46,12 @@ body.kwento-page {
   margin: 0;
   overflow-x: hidden;
 
-  background: var(--cream);
+  background-color: var(--cream);
+  background-image: url("floral-frame.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
   color: var(--ink);
 
   font-family: "Poppins", sans-serif;
@@ -177,47 +182,13 @@ body.kwento-page {
     Same base cream as the rest of the section.
     No green/orange block.
   */
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(255, 250, 239, 0.96) 0%,
-      rgba(249, 240, 223, 0.88) 52%,
-      rgba(247, 237, 220, 0.96) 100%
-    );
+  background: transparent;
 }
 
 
 /* ----------------------------------------------------------
    HERO FLORAL FRAME
    ---------------------------------------------------------- */
-
-.kw-hero::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  z-index: 0;
-
-  background-image: url("floral-frame.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  /*
-    Lower opacity prevents the rectangular image area
-    from becoming visually obvious.
-  */
-  opacity: 0.70;
-
-  /*
-    This makes the light portions of the artwork blend
-    naturally into the cream background.
-  */
-  mix-blend-mode: multiply;
-
-  pointer-events: none;
-}
 
 
 /*
@@ -374,13 +345,7 @@ body.kwento-page {
     EXACT SAME FAMILY OF BACKGROUND
     AS HERO + STORY + CLOSING.
   */
-  background:
-    radial-gradient(
-      ellipse at center,
-      #faf3e4 0%,
-      #f8efdf 60%,
-      #f7eddd 100%
-    );
+  background: transparent;
 }
 
 
@@ -520,13 +485,7 @@ body.kwento-page {
     This makes Intro → Chapters feel continuous.
   */
 
-  background:
-    radial-gradient(
-      ellipse at center,
-      #faf3e4 0%,
-      #f8efdf 58%,
-      #f7eddd 100%
-    );
+  background: transparent;
 }
 
 
@@ -541,26 +500,6 @@ body.kwento-page {
    the artwork melts into the page rather than appearing
    as rectangular boxes.
 */
-
-.story-section::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  z-index: 0;
-
-  background-image: url("floral-frame.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  opacity: 0.63;
-
-  mix-blend-mode: multiply;
-
-  pointer-events: none;
-}
 
 
 /*
@@ -1085,40 +1024,13 @@ body.kwento-page {
     NO ORANGE BLOCK.
   */
 
-  background:
-    radial-gradient(
-      ellipse at center,
-      #faf3e4 0%,
-      #f8efdf 58%,
-      #f6ead9 100%
-    );
+  background: transparent;
 }
 
 
 /* ----------------------------------------------------------
    CLOSING FLOWERS
    ---------------------------------------------------------- */
-
-.kw-closing::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  z-index: 0;
-
-  background-image: url("floral-frame.png");
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  opacity: 0.60;
-
-  mix-blend-mode: multiply;
-
-  pointer-events: none;
-}
 
 
 /*
@@ -1273,6 +1185,12 @@ body.kwento-page {
 
 @media (max-width: 820px) {
 
+  body.kwento-page {
+    background-attachment: scroll;
+    background-size: auto 100%;
+    background-position: center top;
+  }
+
   .kw-nav {
     justify-content: flex-start;
     padding: 10px 18px;
@@ -1311,11 +1229,6 @@ body.kwento-page {
     padding: 80px 20px 70px;
   }
 
-  .kw-hero::before {
-    background-size: cover;
-    opacity: 0.62;
-  }
-
 
   /* INTRO */
 
@@ -1330,12 +1243,6 @@ body.kwento-page {
 
   .story-section {
     padding: 85px 20px 110px;
-  }
-
-  .story-section::before {
-    background-size: cover;
-
-    opacity: 0.48;
   }
 
   .story-heading {
@@ -1392,12 +1299,6 @@ body.kwento-page {
 
     padding: 90px 22px;
   }
-
-  .kw-closing::before {
-    background-size: cover;
-
-    opacity: 0.50;
-  }
 }
 
 
@@ -1424,14 +1325,6 @@ body.kwento-page {
     min-height: 510px;
 
     padding: 70px 18px 60px;
-  }
-
-  .kw-hero::before {
-    background-size: auto 100%;
-
-    background-position: center;
-
-    opacity: 0.52;
   }
 
   .kw-hero .eyebrow {
@@ -1486,14 +1379,6 @@ body.kwento-page {
 
   .story-section {
     padding: 70px 16px 85px;
-  }
-
-  .story-section::before {
-    background-size: auto 100%;
-
-    background-position: center;
-
-    opacity: 0.40;
   }
 
   .story-heading {
@@ -1553,14 +1438,6 @@ body.kwento-page {
     min-height: 520px;
 
     padding: 75px 18px;
-  }
-
-  .kw-closing::before {
-    background-size: auto 100%;
-
-    background-position: center;
-
-    opacity: 0.40;
   }
 
   .kw-closing h2 {
