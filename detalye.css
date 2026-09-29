@@ -28,41 +28,40 @@
    BASE
    ========================================================= */
 
-/* =========================================================
-   BASE
-   ========================================================= */
+html {
+    scroll-behavior: smooth;
+}
 
-.detalye-page {
+body.detalye-page {
     margin: 0;
     padding: 0;
 
     color: var(--text);
     font-family: "Cormorant Garamond", serif;
 
+    background-color: #ead8b8;
+
     /*
-     * SAME BACKGROUND BEHAVIOR AS
-     * "ANG AMING KWENTO"
-     *
-     * The floral artwork stays fixed to the viewport
-     * and fills the available screen without creating
-     * a horizontal image-ending divider.
-     */
-    background-color: var(--cream);
-    background-image: url("floral-frame.png");
+       IMPORTANT:
+       Use the SAME background behavior as
+       ANG AMING KWENTO.
+
+       The artwork repeats vertically instead of being
+       stretched over the entire page.
+    */
+    background-image: url("images/kwento-background.png");
     background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-attachment: scroll;
+
+    overflow-x: hidden;
 }
 
 .detalye-page *,
 .detalye-page *::before,
 .detalye-page *::after {
     box-sizing: border-box;
-}
-
-.detalye-page html {
-    scroll-behavior: smooth;
 }
 
 .detalye-page body {
@@ -531,12 +530,7 @@
 
     overflow: hidden;
 
-    /*
-       NO background here.
-
-       The page background underneath is continuous,
-       just like Ang Aming Kwento.
-    */
+    /* IMPORTANT: transparent */
     background: transparent;
 }
 
@@ -709,14 +703,6 @@
 .detalye-page .details-content {
     position: relative;
 
-    /*
-       NO separate background.
-
-       This is the important part.
-       It allows the floral artwork from the page background
-       to visually continue behind the cards.
-    */
-
     padding:
         35px
         7vw
@@ -724,6 +710,12 @@
 
     overflow: hidden;
 
+    /*
+       NO BACKGROUND HERE.
+
+       The floral background belongs to the page itself,
+       just like ANG AMING KWENTO.
+    */
     background: transparent;
 }
 
@@ -940,7 +932,7 @@
 
 
 /* =========================================================
-   GOLD DIVIDER
+   GOLD DIVIDER INSIDE CARD
    ========================================================= */
 
 .detalye-page .gold-line {
@@ -1242,10 +1234,6 @@
 
     overflow: hidden;
 
-    /*
-       Keep the closing section connected to the page
-       background instead of creating another hard section.
-    */
     background: transparent;
 }
 
@@ -1358,6 +1346,10 @@
     }
 }
 
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 600px) {
 
@@ -1480,140 +1472,65 @@
     .detalye-page .closing-names {
         font-size: 36px;
     }
+}
+
+
 /* =========================================================
    MOBILE BACKGROUND
-   Match Ang Aming Kwento behavior
+   SAME BEHAVIOR AS ANG AMING KWENTO
    ========================================================= */
 
 @media (max-width: 820px) {
 
-    .detalye-page {
-        background-attachment: scroll;
-        background-size: auto 100%;
+    body.detalye-page {
+        background-color: #ead8b8;
+
+        background-image:
+            url("images/kwento-background-mobile.png");
+
         background-position: center top;
+
+        background-repeat: repeat-y;
+
+        background-size: 100% auto;
+
+        background-attachment: scroll;
     }
-
-   /* =========================================================
-   FINAL DETALYE BACKGROUND
-   Same continuous floral background treatment as KWENTO
-   ========================================================= */
-
-.detalye-page {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    overflow-x: hidden;
-
-    background-color: #ead8b8;
-
-    /*
-     * USE THE SAME BACKGROUND ARTWORK
-     * AS ANG AMING KWENTO
-     */
-    background-image: url("images/kwento-background.png");
-
-    background-position: center top;
-    background-repeat: no-repeat;
-
-    /*
-     * Keep the artwork proportional.
-     * Do NOT stretch it vertically.
-     */
-    background-size: 100% auto;
-
-    background-attachment: scroll;
 }
 
 
 /* =========================================================
-   REMOVE HERO'S SEPARATE BACKGROUND
-   This is what was creating the divider.
+   FINAL BACKGROUND SAFETY
    ========================================================= */
 
-.detalye-page .details-hero {
-    background: transparent !important;
+/*
+   Make sure no individual section paints a solid rectangle
+   over the continuous floral artwork.
+*/
+
+body.detalye-page .details-hero,
+body.detalye-page .details-content,
+body.detalye-page .details-closing {
+    background-color: transparent !important;
 }
 
 
-/* =========================================================
-   CONTENT MUST ALSO STAY TRANSPARENT
-   So the single page background continues behind it.
-   ========================================================= */
+/*
+   Remove the large section-wide light overlays.
+   These can visually create a horizontal transition
+   even when the actual background is continuous.
+*/
 
-.detalye-page .details-content {
-    background: transparent !important;
-}
-
-
-/* =========================================================
-   CLOSING SECTION
-   Keep the same continuous background.
-   ========================================================= */
-
-.detalye-page .details-closing {
-    background: transparent !important;
-}
-/* =========================================================
-   DETALYE — ONE CONTINUOUS FLORAL BACKGROUND
-   ========================================================= */
-
-/* The entire page owns the background */
-body.detalye-page {
-    background-color: #f7f0df !important;
-
-    background-image: url("images/kwento-background.png") !important;
-
-    background-position: center top !important;
-
-    background-repeat: no-repeat !important;
-
-    /*
-       Stretch ONE artwork over the entire page.
-       This prevents any section-to-section divider.
-    */
-    background-size: 100% 100% !important;
-
-    background-attachment: scroll !important;
-}
-
-
-/* =========================================================
-   REMOVE HERO BACKGROUND
-   ========================================================= */
-
-body.detalye-page .details-hero {
-    background: transparent !important;
-}
-
-
-/* =========================================================
-   REMOVE CONTENT BACKGROUND
-   THIS WAS THE OTHER SOURCE OF THE DIVIDER
-   ========================================================= */
-
-body.detalye-page .details-content {
-    background: transparent !important;
-}
-
-
-/* Remove any background created by the content overlays */
 body.detalye-page .details-content::before,
 body.detalye-page .details-content::after {
-    background: none !important;
+    display: none !important;
 }
 
 
-/* =========================================================
-   KEEP CLOSING SECTION CONTINUOUS
-   ========================================================= */
+/*
+   Keep the closing flower decoration only.
+*/
 
-body.detalye-page .details-closing {
-    background: transparent !important;
-}
-
-
-/* Remove any closing-section background overlay */
-body.detalye-page .details-closing::before,
-body.detalye-page .details-closing::after {
-    background: none !important;
+body.detalye-page .closing-flower {
+    pointer-events: none;
 }
