@@ -2,6 +2,7 @@
 <html lang="tl">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -11,7 +12,11 @@
 
     <title>Dress Code | Mike & Sharmaine</title>
 
-    <!-- WEDDING WEBSITE FONTS -->
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
@@ -42,7 +47,7 @@
 
     <header class="website-nav">
 
-        <nav>
+        <nav aria-label="Wedding website navigation">
 
             <a href="index.html">
                 HOME
@@ -77,74 +82,106 @@
 
 
     <!-- =====================================================
-         MAIN CONTENT
+         PAGE
     ====================================================== -->
 
     <main class="dress-code-content">
 
 
         <!-- =================================================
-             TITLE
+             HEADER
         ================================================== -->
 
-        <section class="dress-header">
+        <section class="dress-code-title">
 
             <div class="section-number">
                 + SECTION 5 +
             </div>
 
+
             <h1>
-                DRESS CODE
+
+                <span>
+                    DRESS
+                </span>
+
+                <strong>
+                    CODE
+                </strong>
+
             </h1>
 
-            <div class="script-title">
+
+            <p class="dress-code-script">
                 Modern Filipiniana
                 <span>•</span>
                 Earth Tone Palette
-            </div>
+            </p>
 
-            <div class="gold-heart">
+
+            <div class="title-heart">
                 ♡
             </div>
 
         </section>
 
 
-
         <!-- =================================================
-             INTRO AREA
+             INTRO + COLOR PALETTE
         ================================================== -->
 
-        <section class="intro-area">
+        <section class="dress-code-intro">
 
 
             <!-- COLOR PALETTE -->
 
-            <div class="palette-box">
+            <div class="palette-card">
 
                 <div class="palette-title">
                     COLOR PALETTE
                 </div>
 
-                <div class="palette-colors">
 
-                    <span class="color gold"></span>
+                <div
+                    class="palette-swatches"
+                    aria-label="Wedding color palette"
+                >
 
-                    <span class="color olive"></span>
+                    <span
+                        class="swatch swatch-gold"
+                        title="Warm Gold"
+                    ></span>
 
-                    <span class="color terracotta"></span>
+                    <span
+                        class="swatch swatch-olive"
+                        title="Olive Green"
+                    ></span>
 
-                    <span class="color caramel"></span>
+                    <span
+                        class="swatch swatch-terracotta"
+                        title="Terracotta"
+                    ></span>
 
-                    <span class="color beige"></span>
+                    <span
+                        class="swatch swatch-caramel"
+                        title="Caramel"
+                    ></span>
+
+                    <span
+                        class="swatch swatch-beige"
+                        title="Beige"
+                    ></span>
 
                 </div>
 
-                <div class="palette-decoration">
+
+                <div class="palette-ornament">
 
                     <span></span>
 
-                    <b>❧</b>
+                    <b>
+                        ❧
+                    </b>
 
                     <span></span>
 
@@ -153,14 +190,14 @@
             </div>
 
 
-
             <!-- INTRODUCTION -->
 
-            <div class="intro-text">
+            <div class="intro-copy">
 
-                <div class="intro-quote">
+                <p class="intro-quote">
                     “Makiisa sa kulay ng aming pagdiriwang.”
-                </div>
+                </p>
+
 
                 <p>
                     Bilang pakikiisa sa tema ng aming kasal,
@@ -171,12 +208,14 @@
                     klasikong ganda ng kulturang Pilipino.
                 </p>
 
+
                 <p>
                     Isang gabi ng eleganteng Filipiniana,
                     romantikong hardin, at makalumang alindog
                     na bibigyang-buhay ng inyong presensya
                     at pakikiisa.
                 </p>
+
 
                 <p class="intro-note">
                     Para sa aming entourage at bisita,
@@ -190,85 +229,129 @@
         </section>
 
 
-
         <!-- =================================================
-             OUTFIT GUIDE
+             OUTFIT ARTWORK
+             
+             IMPORTANT:
+             The original outfit image stays unchanged.
+             The labels are HTML overlays so their spacing
+             can be controlled independently.
         ================================================== -->
 
-        <section class="outfit-guide">
+        <section class="outfit-section">
+
+            <div class="outfit-artwork-wrap">
 
 
-            <!-- ARTWORK -->
-
-            <div class="outfit-image">
+                <!-- ORIGINAL OUTFIT IMAGE -->
 
                 <img
                     src="dress-code-outfits.png"
-                    alt="Wedding dress code outfit guide"
+                    class="outfit-artwork"
+                    alt="Dress code outfit guide for the wedding entourage and guests"
                 >
 
-            </div>
+
+                <!-- =================================================
+                     OUTFIT LABELS
+                ================================================== -->
+
+                <div
+                    class="outfit-labels"
+                    aria-label="Dress code assignments"
+                >
 
 
+                    <!-- 01 — MOTHER OF THE COUPLE -->
 
-            <!-- LABELS -->
+                    <div
+                        class="outfit-label label-mother"
+                    >
+                        Mother of the<br>
+                        Couple
+                    </div>
 
-            <div class="outfit-labels">
+
+                    <!-- 02 — FATHER OF THE COUPLE -->
+
+                    <div
+                        class="outfit-label label-father"
+                    >
+                        Father of the<br>
+                        Couple
+                    </div>
 
 
-                <div class="outfit-label label-mother">
-                    <span>Mother of the</span>
-                    <span>Couple</span>
+                    <!-- 03 — SECONDARY -->
+
+                    <div
+                        class="outfit-label label-secondary"
+                    >
+                        Secondary
+                    </div>
+
+
+                    <!-- 04 — MAID OF HONOR -->
+
+                    <div
+                        class="outfit-label label-maid"
+                    >
+                        Maid of Honor
+                    </div>
+
+
+                    <!-- 05 — BESTMAN / GROOMSMEN -->
+
+                    <div
+                        class="outfit-label label-bestman"
+                    >
+                        Bestman<br>
+                        Groomsmen
+                    </div>
+
+
+                    <!-- 06 — BRIDE AND GROOM -->
+
+                    <div
+                        class="outfit-label label-couple"
+                    >
+                        Bride and Groom
+                    </div>
+
+
+                    <!-- 07 — NINONG / NINANG -->
+
+                    <div
+                        class="outfit-label label-ninong"
+                    >
+                        Ninong Ninang
+                    </div>
+
+
+                    <!-- 08 — RING BEARER -->
+
+                    <div
+                        class="outfit-label label-ring"
+                    >
+                        Ring Bearer &amp;<br>
+                        Ring Bearer
+                    </div>
+
+
+                    <!-- 09 — GUESTS -->
+
+                    <div
+                        class="outfit-label label-guests"
+                    >
+                        Guests
+                    </div>
+
+
                 </div>
-
-
-                <div class="outfit-label label-father">
-                    <span>Father of the</span>
-                    <span>Couple</span>
-                </div>
-
-
-                <div class="outfit-label label-secondary">
-                    <span>Secondary</span>
-                </div>
-
-
-                <div class="outfit-label label-maid">
-                    <span>Maid of Honor</span>
-                </div>
-
-
-                <div class="outfit-label label-groomsmen">
-                    <span>Bestman</span>
-                    <span>Groomsmen</span>
-                </div>
-
-
-                <div class="outfit-label label-couple">
-                    <span>Bride and Groom</span>
-                </div>
-
-
-                <div class="outfit-label label-ninong">
-                    <span>Ninong Ninang</span>
-                </div>
-
-
-                <div class="outfit-label label-ring">
-                    <span>Ring Bearer &amp;</span>
-                    <span>Ring Bearer</span>
-                </div>
-
-
-                <div class="outfit-label label-guests">
-                    <span>Guests</span>
-                </div>
-
 
             </div>
 
         </section>
-
 
 
         <!-- =================================================
@@ -277,16 +360,18 @@
 
         <section class="palette-guide">
 
-            <div class="palette-guide-box">
+            <div class="palette-guide-inner">
 
                 <div class="guide-title">
                     PALETTE GUIDE
                 </div>
 
+
                 <p>
                     Warm Gold, Olive Green, Terracotta,
                     Caramel, Beige
                 </p>
+
 
                 <em>
                     Earthy. Elegant. Timeless.
@@ -295,7 +380,6 @@
             </div>
 
         </section>
-
 
 
         <!-- =================================================
@@ -308,8 +392,13 @@
                 href="rsvp.html"
                 class="next-button"
             >
-                <span>♡</span>
+
+                <span>
+                    ♡
+                </span>
+
                 RSVP
+
             </a>
 
         </div>
