@@ -601,14 +601,14 @@ body.detalye-page {
 
     margin: 0;
 
-    max-width: 1100px;
+    max-width: 900px;
 
     color: var(--sage-dark);
 
     font-family: "Cardo", serif;
 
     font-size:
-        clamp(60px, 8vw, 110px);
+        clamp(52px, 6vw, 82px);
 
     font-weight: 400;
 
@@ -620,7 +620,7 @@ body.detalye-page {
 .detalye-page .details-title span {
     display: block;
 
-    margin-top: 8px;
+    margin-top: 5px;
 
     color: var(--brown);
 
@@ -641,7 +641,7 @@ body.detalye-page {
 
     gap: 18px;
 
-    margin: 32px 0 20px;
+    margin: 25px 0 18px;
 
     color: var(--gold);
 
@@ -669,7 +669,7 @@ body.detalye-page {
 
     color: var(--brown);
 
-    font-size: 22px;
+    font-size: 20px;
     font-style: italic;
 
     line-height: 1.4;
@@ -1290,7 +1290,7 @@ body.detalye-page {
 
     .detalye-page .details-title {
         font-size:
-            clamp(55px, 10vw, 85px);
+            clamp(50px, 8vw, 74px);
     }
 
     .detalye-page .details-content {
