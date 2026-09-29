@@ -3,45 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Detalye ng Kasal | Mike & Sharmaine</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Allura&family=Cardo:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet"
     >
 
-    <link
-        rel="stylesheet"
-        href="detalye.css"
-    >
-</head>
+    <!-- Shared navigation -->
+    <link rel="stylesheet" href="navigation.css">
 
+    <!-- Wedding Details -->
+    <link rel="stylesheet" href="detalye.css">
+</head>
 
 <body class="detalye-page">
 
+    <!-- ==============================
+         TOP NAVIGATION
+    =============================== -->
 
-    <!-- =================================
-         TOP BAR
-    ================================== -->
+    <header class="wedding-header">
 
-    <header class="detail-topbar">
-
-        <!-- Hamburger -->
         <button
             class="menu-toggle"
             id="menuToggle"
@@ -53,28 +42,18 @@
             <span></span>
         </button>
 
-
-        <!-- Center Monogram -->
-        <a
-            href="index.html"
-            class="detail-monogram"
-        >
-            M &amp; S
+        <a href="index.html" class="monogram">
+            M <span>&amp;</span> S
         </a>
 
     </header>
 
 
-
-    <!-- =================================
+    <!-- ==============================
          SIDEBAR
-    ================================== -->
+    =============================== -->
 
-    <aside
-        class="side-menu"
-        id="sideMenu"
-        aria-hidden="true"
-    >
+    <aside class="side-menu" id="sideMenu">
 
         <button
             class="menu-close"
@@ -84,12 +63,11 @@
             ×
         </button>
 
-
         <div class="side-menu-inner">
 
-            <p class="side-monogram">
-                M &amp; S
-            </p>
+            <div class="side-brand">
+                M <span>&amp;</span> S
+            </div>
 
             <p class="side-names">
                 MIKE &amp; SHARMAINE
@@ -98,7 +76,6 @@
             <p class="side-tagline">
                 Our wedding story
             </p>
-
 
             <nav class="side-navigation">
 
@@ -112,10 +89,7 @@
                     Ang Aming Kwento
                 </a>
 
-                <a
-                    href="detalye.html"
-                    class="active"
-                >
+                <a href="detalye.html" class="active">
                     <span>03</span>
                     Detalye ng Kasal
                 </a>
@@ -137,14 +111,10 @@
 
             </nav>
 
-
-            <div class="side-heart">
-                ♡
-            </div>
-
+            <div class="side-divider">♡</div>
 
             <div class="side-footer">
-                With love,<br>
+                <em>With love,</em>
                 <strong>Mike &amp; Sharmaine</strong>
             </div>
 
@@ -152,297 +122,204 @@
 
     </aside>
 
-
-    <div
-        class="menu-overlay"
-        id="menuOverlay"
-    ></div>
+    <div class="menu-overlay" id="menuOverlay"></div>
 
 
-
-    <!-- =================================
+    <!-- ==============================
          MAIN
-    ================================== -->
+    =============================== -->
 
     <main>
 
-
-        <!-- =================================
-             HERO
-        ================================== -->
+        <!-- HERO -->
 
         <section class="details-hero">
 
-            <div class="hero-botanical hero-botanical-left"></div>
+            <div class="hero-flower hero-flower-left"></div>
+            <div class="hero-flower hero-flower-right"></div>
 
-            <div class="hero-botanical hero-botanical-right"></div>
+            <p class="details-eyebrow">
+                SECTION 03
+            </p>
 
+            <h1 class="details-title">
+                Detalye ng
+                <span>Kasal</span>
+            </h1>
 
-            <div class="details-hero-content">
-
-                <p class="section-number">
-                    ✦ &nbsp; SECTION 03 &nbsp; ✦
-                </p>
-
-                <h1>
-                    Detalye ng
-                    <span>Kasal</span>
-                </h1>
-
-                <div class="gold-ornament">
-                    <span></span>
-                    ✦
-                    <span></span>
-                </div>
-
-                <p class="hero-subtitle">
-                    Ang mga sandali,
-                    lugar, at detalye ng aming
-                    espesyal na araw.
-                </p>
-
+            <div class="details-ornament">
+                <span></span>
+                ❋
+                <span></span>
             </div>
+
+            <p class="details-subtitle">
+                Ang mga sandali, lugar, at detalye
+                <br>
+                ng aming espesyal na araw.
+            </p>
 
         </section>
 
 
+        <!-- ==============================
+             EVENT DETAILS
+        =============================== -->
 
-        <!-- =================================
-             DETAILS CONTENT
-        ================================== -->
+        <section class="details-content">
 
-        <section class="wedding-details">
+            <div class="details-grid">
 
-            <div class="details-heading">
+                <!-- SERMONYA -->
 
-                <p>
-                    ISANG ARAW NA PUNO NG PAGMAMAHAL
-                </p>
+                <article class="event-card ceremony-card">
 
-                <h2>
-                    Dalawang sandali,
-                    <em>isang pagdiriwang.</em>
-                </h2>
+                    <div class="card-flower card-flower-top"></div>
 
-            </div>
+                    <div class="event-icon">
+                        ♱
+                    </div>
 
+                    <p class="event-label">
+                        ANG BANAL NA PAG-IISANG DIBDIB
+                    </p>
 
+                    <h2>
+                        SERMONYA
+                    </h2>
 
-            <!-- =================================
-                 ARCH CARDS
-            ================================== -->
+                    <div class="gold-line">
+                        <span>❋</span>
+                    </div>
 
-            <div class="arch-grid">
-
-
-                <!-- =============================
-                     SERMONYA
-                ============================== -->
-
-                <article class="arch-card ceremony-card">
-
-                    <div class="arch-inner">
-
-                        <div class="arch-decoration top-left">
-                            ❋
-                        </div>
-
-                        <div class="arch-decoration top-right">
-                            ❋
-                        </div>
+                    <p class="event-quote">
+                        “Isang banal na pag-iisang dibdib
+                        na nakaugat sa pananampalataya,
+                        pagmamahal, at pangakong walang hanggan.”
+                    </p>
 
 
-                        <div class="card-icon">
-                            ♰
-                        </div>
+                    <div class="event-details">
 
+                        <div class="detail-item">
 
-                        <p class="card-kicker">
-                            ANG BANAL NA SEREMONYA
-                        </p>
-
-
-                        <h3>
-                            Sermonya
-                        </h3>
-
-
-                        <div class="card-divider">
-                            <span></span>
-                            ✦
-                            <span></span>
-                        </div>
-
-
-                        <p class="card-quote">
-                            “Isang banal na pag-iisang dibdib
-                            na nakaugat sa pananampalataya,
-                            pagmamahal, at pangakong
-                            walang hanggan.”
-                        </p>
-
-
-                        <div class="event-information">
-
-
-                            <div class="event-item">
-
-                                <div class="event-icon">
-                                    ◷
-                                </div>
-
-                                <div>
-                                    <small>
-                                        Oras
-                                    </small>
-
-                                    <strong>
-                                        3:00 PM
-                                    </strong>
-                                </div>
-
+                            <div class="detail-icon">
+                                ◷
                             </div>
 
-
-
-                            <div class="event-item">
-
-                                <div class="event-icon">
-                                    ⌖
-                                </div>
-
-                                <div>
-                                    <small>
-                                        Lugar
-                                    </small>
-
-                                    <strong>
-                                        Fruella’s Events Place
-                                        <br>
-                                        Tagaytay
-                                    </strong>
-                                </div>
-
-                            </div>
-
-
-
-                            <div class="event-item">
-
-                                <div class="event-icon">
-                                    ▣
-                                </div>
-
-                                <div>
-                                    <small>
-                                        Petsa
-                                    </small>
-
-                                    <strong>
-                                        Enero 15, 2027
-                                    </strong>
-                                </div>
-
+                            <div>
+                                <small>Oras</small>
+                                <strong>3:00 PM</strong>
                             </div>
 
                         </div>
 
 
-                        <div class="arch-flower arch-flower-left">
-                            ❋
+                        <div class="detail-item">
+
+                            <div class="detail-icon">
+                                ♧
+                            </div>
+
+                            <div>
+                                <small>Lugar</small>
+                                <strong>
+                                    Fruella’s Events Place
+                                    <br>
+                                    Tagaytay
+                                </strong>
+                            </div>
+
                         </div>
 
-                        <div class="arch-flower arch-flower-bottom">
-                            ❋
+
+                        <div class="detail-item">
+
+                            <div class="detail-icon">
+                                ▣
+                            </div>
+
+                            <div>
+                                <small>Petsa</small>
+                                <strong>
+                                    Enero 15, 2027
+                                </strong>
+                            </div>
+
                         </div>
 
                     </div>
+
+                    <div class="card-flower card-flower-bottom"></div>
 
                 </article>
 
 
+                <!-- RESEPSYON -->
 
-                <!-- =============================
-                     RESEPSYON
-                ============================== -->
+                <article class="event-card reception-card">
 
-                <article class="arch-card reception-card">
+                    <div class="card-flower card-flower-top"></div>
 
-                    <div class="arch-inner">
+                    <div class="event-icon">
+                        ♡
+                    </div>
 
-                        <div class="arch-decoration top-left">
-                            ❋
-                        </div>
+                    <p class="event-label">
+                        PAGDIRIWANG NG AMING PAG-IBIG
+                    </p>
 
-                        <div class="arch-decoration top-right">
-                            ❋
-                        </div>
+                    <h2>
+                        RESEPSYON
+                    </h2>
 
+                    <div class="gold-line">
+                        <span>❋</span>
+                    </div>
 
-                        <div class="card-icon">
-                            ♡
-                        </div>
-
-
-                        <p class="card-kicker">
-                            ANG PAGDIRIWANG
-                        </p>
-
-
-                        <h3>
-                            Resepsyon
-                        </h3>
+                    <p class="event-quote">
+                        Kaagad na susundan ang seremonya
+                        ng isang masayang salu-salo
+                        at pagdiriwang ng aming pag-ibig.
+                    </p>
 
 
-                        <div class="card-divider">
-                            <span></span>
-                            ✦
-                            <span></span>
-                        </div>
+                    <!-- MAP -->
 
+                    <div class="map-wrapper">
 
-                        <p class="card-quote">
-                            Kaagad na susundan ang seremonya
-                            ng isang masayang salu-salo
-                            at pagdiriwang ng aming pag-ibig.
-                        </p>
+                        <div class="map-placeholder">
 
+                            <div class="map-pin">
+                                ●
+                            </div>
 
-                        <!-- MAP -->
+                            <p>
+                                Fruella’s Events Place
+                            </p>
 
-                        <div class="map-wrapper">
+                            <span>
+                                Tagaytay
+                            </span>
 
-                            <iframe
-                                src="https://www.google.com/maps?q=Fruella%27s%20Events%20Place%20Tagaytay&output=embed"
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                                title="Fruella's Events Place Tagaytay map"
-                            ></iframe>
-
-                        </div>
-
-
-                        <a
-                            href="https://www.google.com/maps/search/?api=1&query=Fruella%27s+Events+Place+Tagaytay"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="map-button"
-                        >
-                            <span>⌖</span>
-                            Buksan sa Google Maps
-                            <strong>→</strong>
-                        </a>
-
-
-                        <div class="arch-flower arch-flower-right">
-                            ❋
-                        </div>
-
-                        <div class="arch-flower arch-flower-bottom">
-                            ❋
                         </div>
 
                     </div>
+
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=Fruella's+Events+Place+Tagaytay"
+                        target="_blank"
+                        rel="noopener"
+                        class="map-button"
+                    >
+                        <span>⌖</span>
+                        Buksan sa Google Maps
+                        <strong>→</strong>
+                    </a>
+
+
+                    <div class="card-flower card-flower-bottom"></div>
 
                 </article>
 
@@ -451,46 +328,25 @@
         </section>
 
 
-
-        <!-- =================================
+        <!-- ==============================
              CLOSING
-        ================================== -->
+        =============================== -->
 
         <section class="details-closing">
 
-            <div class="closing-botanical left"></div>
-            <div class="closing-botanical right"></div>
+            <div class="closing-flower"></div>
 
+            <p>
+                ISANG ARAW NA PUNO NG PAGMAMAHAL
+            </p>
 
-            <div class="closing-content">
+            <h2>
+                At bawat sandali,
+                <em>mas espesyal dahil kasama ka.</em>
+            </h2>
 
-                <div class="closing-symbol">
-                    ✦
-                </div>
-
-                <p>
-                    ISANG ARAW NA HINDI MALILIMUTAN
-                </p>
-
-                <h2>
-                    Mula sa sumpaan
-                    <em>hanggang sa salu-salo.</em>
-                </h2>
-
-                <span class="closing-line"></span>
-
-                <h3>
-                    Enero 15, 2027
-                </h3>
-
-                <a
-                    href="daloy.html"
-                    class="next-section-button"
-                >
-                    Daloy ng Pagdiriwang
-                    <span>→</span>
-                </a>
-
+            <div class="closing-names">
+                Mike &amp; Sharmaine
             </div>
 
         </section>
@@ -498,101 +354,42 @@
     </main>
 
 
-
-    <!-- =================================
-         SIDEBAR SCRIPT
-    ================================== -->
+    <!-- ==============================
+         NAVIGATION SCRIPT
+    =============================== -->
 
     <script>
 
-        const menuToggle =
-            document.getElementById("menuToggle");
-
-        const menuClose =
-            document.getElementById("menuClose");
-
-        const sideMenu =
-            document.getElementById("sideMenu");
-
-        const menuOverlay =
-            document.getElementById("menuOverlay");
-
+        const menuToggle = document.getElementById("menuToggle");
+        const menuClose = document.getElementById("menuClose");
+        const sideMenu = document.getElementById("sideMenu");
+        const menuOverlay = document.getElementById("menuOverlay");
 
         function openMenu() {
-
             sideMenu.classList.add("open");
             menuOverlay.classList.add("show");
-
-            sideMenu.setAttribute(
-                "aria-hidden",
-                "false"
-            );
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "true"
-            );
-
-            document.body.classList.add(
-                "menu-open"
-            );
+            menuToggle.setAttribute("aria-expanded", "true");
+            document.body.classList.add("menu-open");
         }
-
 
         function closeMenu() {
-
             sideMenu.classList.remove("open");
             menuOverlay.classList.remove("show");
-
-            sideMenu.setAttribute(
-                "aria-hidden",
-                "true"
-            );
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            document.body.classList.remove(
-                "menu-open"
-            );
+            menuToggle.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("menu-open");
         }
 
+        menuToggle.addEventListener("click", openMenu);
 
-        menuToggle.addEventListener(
-            "click",
-            openMenu
-        );
+        menuClose.addEventListener("click", closeMenu);
 
+        menuOverlay.addEventListener("click", closeMenu);
 
-        menuClose.addEventListener(
-            "click",
-            closeMenu
-        );
-
-
-        menuOverlay.addEventListener(
-            "click",
-            closeMenu
-        );
-
-
-        document.addEventListener(
-            "keydown",
-            function(event) {
-
-                if (
-                    event.key === "Escape"
-                ) {
-                    closeMenu();
-                }
-
-            }
-        );
+        document.querySelectorAll(".side-navigation a").forEach(link => {
+            link.addEventListener("click", closeMenu);
+        });
 
     </script>
 
 </body>
-
 </html>
