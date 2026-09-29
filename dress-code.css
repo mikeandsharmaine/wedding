@@ -445,9 +445,10 @@ body.dress-code-page {
 
     width: min(1180px, 88vw);
 
-    margin: 10px auto 0;
+    margin: 0 auto;
 
-    padding: 0 20px;
+    /* Extra room separates the artwork from the HTML labels */
+    padding: 0 20px 105px;
 }
 
 
@@ -464,6 +465,9 @@ body.dress-code-page {
     width: 100%;
 
     z-index: 1;
+
+    /* Slightly higher for a more balanced composition */
+    transform: translateY(-22px);
 }
 
 .outfit-image img {
@@ -488,9 +492,9 @@ body.dress-code-page {
     left: 0;
     right: 0;
 
-    bottom: -2px;
+    bottom: 0;
 
-    height: 86px;
+    height: 82px;
 
     pointer-events: none;
 }
@@ -506,7 +510,7 @@ body.dress-code-page {
 
     font-family: "Cardo", serif;
 
-    font-size: clamp(12px, 0.95vw, 16px);
+    font-size: clamp(12px, 0.92vw, 16px);
 
     font-weight: 400;
 
@@ -536,38 +540,38 @@ body.dress-code-page {
 }
 
 .label-secondary {
-    left: 30.5%;
-    width: 110px;
-}
-
-.label-maid {
-    left: 39.0%;
-    width: 145px;
-}
-
-.label-groomsmen {
-    left: 44.5%;
-    width: 145px;
-}
-
-.label-couple {
-    left: 54.8%;
-    width: 175px;
-}
-
-.label-ninong {
-    left: 64.0%;
+    left: 30.0%;
     width: 105px;
 }
 
+.label-maid {
+    left: 38.2%;
+    width: 125px;
+}
+
+.label-groomsmen {
+    left: 45.0%;
+    width: 120px;
+}
+
+.label-couple {
+    left: 55.2%;
+    width: 155px;
+}
+
+.label-ninong {
+    left: 65.0%;
+    width: 90px;
+}
+
 .label-ring {
-    left: 75.0%;
-    width: 150px;
+    left: 75.5%;
+    width: 135px;
 }
 
 .label-guests {
-    left: 91.0%;
-    width: 110px;
+    left: 90.8%;
+    width: 95px;
 }
 
 
@@ -813,7 +817,7 @@ body.dress-code-page {
     .outfit-guide {
         width: 100%;
 
-        padding: 0;
+        padding: 0 0 100px;
 
         overflow-x: auto;
         overflow-y: hidden;
@@ -822,6 +826,8 @@ body.dress-code-page {
     .outfit-image {
         width: 900px;
         min-width: 900px;
+
+        transform: translateY(-18px);
     }
 
     .outfit-labels {
