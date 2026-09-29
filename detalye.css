@@ -35,12 +35,25 @@
     color: var(--text);
     font-family: "Cormorant Garamond", serif;
 
-    /* Continuous background */
+    /*
+     * CONTINUOUS FLORAL BACKGROUND
+     * Keep the original proportions of the artwork.
+     * Do NOT stretch it to the full page height.
+     */
     background-color: var(--cream);
+
     background-image: url("floral-frame.png");
+
     background-position: center top;
-    background-size: 100% 100%;
+
+    /*
+     * Preserve the artwork's natural proportions.
+     * This prevents the floral texture from becoming pixelated.
+     */
+    background-size: 100% auto;
+
     background-repeat: no-repeat;
+
     background-attachment: scroll;
 }
 
