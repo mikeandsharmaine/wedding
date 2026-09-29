@@ -500,7 +500,7 @@ body.dress-code-page {
 
     line-height: 1.15;
 
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .outfit-label span {
@@ -534,11 +534,13 @@ body.dress-code-page {
 }
 
 .label-couple {
-    left: 55.1%;
+    left: 55.2%;
+    width: 150px;
 }
 
 .label-ninong {
-    left: 63.7%;
+    left: 65.2%;
+    width: 115px;
 }
 
 .label-ring {
