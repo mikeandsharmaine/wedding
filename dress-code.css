@@ -808,7 +808,7 @@ body.dress-code-page {
 
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 12px;
 
     height: 64px;
 
@@ -895,6 +895,7 @@ body.dress-code-page {
 
     .outfit-labels {
         height: 60px;
+        bottom: 10px;
     }
 
     .outfit-label {
