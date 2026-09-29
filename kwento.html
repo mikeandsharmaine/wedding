@@ -1,647 +1,839 @@
 <!DOCTYPE html>
 <html lang="tl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ang Aming Kwento | Mike & Sharmaine</title>
+    <meta charset="UTF-8">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Allura&family=Cardo:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap"
-    rel="stylesheet"
-  >
-<link rel="stylesheet" href="navigation.css">
-  <link rel="stylesheet" href="kwento.css">
+    <title>Ang Aming Kwento | Mike & Sharmaine</title>
+
+
+    <!-- ==============================
+         GOOGLE FONTS
+    =============================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Allura&family=Cardo:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- ==============================
+         STYLES
+    ============================== -->
+
+    <link
+        rel="stylesheet"
+        href="kwento.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="navigation.css"
+    >
+
 </head>
+
 
 <body class="kwento-page">
 
-<!-- ==============================
-     UNIVERSAL WEDDING NAVIGATION
-============================== -->
 
-<header class="website-nav">
+    <!-- =====================================================
+         UNIVERSAL WEDDING NAVIGATION
+    ====================================================== -->
 
-    <button
-        class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="weddingSidebar"
-    >
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+    <header class="website-nav">
 
-    <a
-        href="index.html"
-        class="nav-monogram"
-        aria-label="Mike and Sharmaine Home"
-    >
-        M &amp; S
-    </a>
+        <!-- Hamburger Button -->
 
-</header>
-
-
-<!-- ==============================
-     SIDEBAR
-============================== -->
-
-<aside
-    class="wedding-sidebar"
-    id="weddingSidebar"
-    aria-hidden="true"
->
-
-    <div class="sidebar-inner">
-
-        <div class="sidebar-header">
-
-            <span class="sidebar-eyebrow">
-                OUR WEDDING
-            </span>
-
-            <div class="sidebar-monogram">
-                M &amp; S
-            </div>
-
-            <p class="sidebar-subtitle">
-                Mike &amp; Sharmaine
-            </p>
-
-        </div>
-
-
-        <nav
-            class="sidebar-menu"
-            aria-label="Wedding navigation"
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="weddingSidebar"
         >
 
-            <a
-                href="index.html"
-                class="sidebar-link"
-            >
-                <span class="sidebar-number">01</span>
-                <span>Home</span>
-            </a>
+            <span></span>
+            <span></span>
+            <span></span>
 
-            <a
-                href="kwento.html"
-                class="sidebar-link active"
-            >
-                <span class="sidebar-number">02</span>
-                <span>Ang Aming Kwento</span>
-            </a>
+        </button>
 
-            <a
-                href="detalye.html"
-                class="sidebar-link"
-            >
-                <span class="sidebar-number">03</span>
-                <span>Detalye ng Kasal</span>
-            </a>
 
-            <a
-                href="daloy.html"
-                class="sidebar-link"
-            >
-                <span class="sidebar-number">04</span>
-                <span>Daloy ng Pagdiriwang</span>
-            </a>
-
-            <a
-                href="dress-code.html"
-                class="sidebar-link"
-            >
-                <span class="sidebar-number">05</span>
-                <span>Dress Code</span>
-            </a>
-
-            <a
-                href="rsvp.html"
-                class="sidebar-link"
-            >
-                <span class="sidebar-number">06</span>
-                <span>RSVP</span>
-            </a>
-
-        </nav>
-
-
-        <div class="sidebar-footer">
-
-            <span>♡</span>
-
-            <p>With love,</p>
-
-            <strong>
-                Mike &amp; Sharmaine
-            </strong>
-
-        </div>
-
-    </div>
-
-</aside>
-
-
-<div
-    class="sidebar-overlay"
-    id="sidebarOverlay"
-    aria-hidden="true"
-></div>
-
-        <div class="sidebar-footer">
-
-            <span>♡</span>
-
-            <p>With love,</p>
-
-            <strong>
-                Mike &amp; Sharmaine
-            </strong>
-
-        </div>
-
-    </div>
-
-</aside>
-
-
-<div
-    class="sidebar-overlay"
-    id="sidebarOverlay"
-    aria-hidden="true"
-></div>
-
-
-<!-- =========================================================
-     SIDEBAR
-     ========================================================= -->
-
-<aside
-    class="site-sidebar"
-    id="siteSidebar"
-    aria-hidden="true"
->
-
-    <div class="sidebar-inner">
-
-        <!-- Sidebar top -->
-        <div class="sidebar-top">
-
-            <div class="sidebar-monogram">
-                M <span>&amp;</span> S
-            </div>
-
-            <button
-                class="menu-close"
-                id="menuClose"
-                aria-label="Close navigation"
-                type="button"
-            >
-                ×
-            </button>
-
-        </div>
-
-
-        <!-- Small introduction -->
-        <div class="sidebar-intro">
-
-            <span>MIKE &amp; SHARMAINE</span>
-
-            <p>
-                Our wedding story
-            </p>
-
-        </div>
-
-
-        <!-- Navigation -->
-        <nav class="sidebar-nav" aria-label="Wedding navigation">
-
-            <a href="index.html">
-                <span class="nav-number">01</span>
-                <span>Home</span>
-            </a>
-
-            <a href="kwento.html">
-                <span class="nav-number">02</span>
-                <span>Ang Aming Kwento</span>
-            </a>
-
-            <a href="detalye.html">
-                <span class="nav-number">03</span>
-                <span>Detalye ng Kasal</span>
-            </a>
-
-            <a href="daloy.html">
-                <span class="nav-number">04</span>
-                <span>Daloy ng Pagdiriwang</span>
-            </a>
-
-            <a href="dress-code.html">
-                <span class="nav-number">05</span>
-                <span>Dress Code</span>
-            </a>
-
-            <a href="rsvp.html" class="nav-rsvp">
-                <span class="nav-number">06</span>
-                <span>RSVP</span>
-                <span class="nav-heart">♡</span>
-            </a>
-
-        </nav>
-
-
-        <!-- Sidebar bottom -->
-        <div class="sidebar-bottom">
-
-            <div class="sidebar-flower">
-                ❋
-            </div>
-
-            <p>
-                With love,<br>
-                <span>Mike &amp; Sharmaine</span>
-            </p>
-
-        </div>
-
-    </div>
-
-</aside>
-
-
-<!-- Dark overlay -->
-<div
-    class="sidebar-overlay"
-    id="sidebarOverlay"
-    aria-hidden="true"
-></div>
-
-
-  <main>
-
-    <!-- =========================================================
-         HERO — ANG AMING KWENTO
-         ========================================================= -->
-
-    <section class="kw-hero">
-
-      <div class="hero-floral hero-floral-left" aria-hidden="true"></div>
-      <div class="hero-floral hero-floral-right" aria-hidden="true"></div>
-
-      <div class="hero-content">
-
-        <p class="eyebrow">
-          SECTION 02 · OUR STORY
-        </p>
-
-        <h1>
-          Ang Aming
-          <span>Kwento</span>
-        </h1>
-
-        <div class="hero-heart" aria-hidden="true">
-          ♡
-        </div>
-
-        <p class="hero-subtitle">
-          Mga Lumang Liham,<br>
-          Makabagong Pagmamahalan
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         STORY / CHAPTERS
-         ========================================================= -->
-
-    <section class="story-section">
-
-      <!-- Watercolor floral decorations -->
-      <div class="story-floral story-floral-top-left" aria-hidden="true"></div>
-      <div class="story-floral story-floral-top-right" aria-hidden="true"></div>
-      <div class="story-floral story-floral-bottom-left" aria-hidden="true"></div>
-      <div class="story-floral story-floral-bottom-right" aria-hidden="true"></div>
-
-
-      <div class="story-inner">
-
-        <!-- =====================================================
-             STORY HEADING
-             ===================================================== -->
-
-        <div class="story-heading">
-
-          <span>
-            THE CHAPTERS
-          </span>
-
-          <h2>
-            <strong>A love story,</strong>
-            <em>one chapter at a time.</em>
-          </h2>
-
-        </div>
-
-
-        <!-- =====================================================
-             DECORATIVE FLOWERS
-             ===================================================== -->
-
-        <div class="floating-flower flower-one" aria-hidden="true">
-          ✿
-        </div>
-
-        <div class="floating-flower flower-two" aria-hidden="true">
-          ❋
-        </div>
-
-        <div class="floating-flower flower-three" aria-hidden="true">
-          ✿
-        </div>
-
-
-        <!-- =====================================================
-             CHAPTER GRID
-             ===================================================== -->
-
-        <div class="story-grid">
-
-
-          <!-- ===================================================
-               CHAPTER 01
-               =================================================== -->
-
-          <article class="story-card story-card-green">
-
-            <div class="story-number">
-              01
-            </div>
-
-            <div class="story-icon">
-              ♡
-            </div>
-
-            <p class="story-kicker">
-              KUNG PAANO NAGSIMULA
-            </p>
-
-            <h3>
-              Isang simpleng “Hi.”
-            </h3>
-
-            <p class="story-text">
-              Sa panahon ng mga swipe, notifications, at simpleng “Hi,”
-              may mga kwentong nagsisimula sa hindi inaasahang paraan.
-              Para kina Sharmaine at Mike, isang simpleng pag-match sa dating app
-              ang naging simula ng isang pag-iibigang hindi nila akalaing
-              hahantong sa habang-buhay.
-            </p>
-
-          </article>
-
-
-          <!-- ===================================================
-               PHOTO 01
-               =================================================== -->
-
-          <figure class="story-photo photo-main">
-
-            <div class="photo-frame">
-
-              <img
-                src="images/kwento-photo-1.jpg"
-                alt="Mike at Sharmaine"
-              >
-
-              <figcaption>
-                Nagsimula sa isang<br>
-                simpleng “Hi.” ♡
-              </figcaption>
-
-            </div>
-
-          </figure>
-
-
-          <!-- ===================================================
-               CHAPTER 02
-               =================================================== -->
-
-          <article class="story-card story-card-peach">
-
-            <div class="story-number">
-              02
-            </div>
-
-            <div class="story-icon">
-              ✦
-            </div>
-
-            <p class="story-kicker">
-              SA LIKOD NG SCREEN
-            </p>
-
-            <h3>
-              Unti-unting nakilala ang isa’t isa.
-            </h3>
-
-            <p class="story-text">
-              Mula sa magdamagang kwentuhan at walang sawang tawanan,
-              unti-unting nakilala nila ang isa’t isa — hindi lamang sa likod
-              ng screen, kundi sa mga pangarap, takot, at mga bagay na tunay
-              na mahalaga. Sa bawat mensahe, tawag, at pagkikita, mas lalong
-              naging malinaw na ang kanilang pagtatagpo ay hindi basta
-              pagkakataon lamang.
-            </p>
-
-          </article>
-
-
-          <!-- ===================================================
-               MEMORY NOTE
-               =================================================== -->
-
-          <aside class="memory-note">
-
-            <span class="tape tape-left"></span>
-            <span class="tape tape-right"></span>
-
-            <p>
-              Bawat kabanata<br>
-              na kasama ka<br>
-              ay paborito ko.
-            </p>
-
-            <strong>
-              ♡
-            </strong>
-
-          </aside>
-
-
-          <!-- ===================================================
-               CHAPTER 03
-               =================================================== -->
-
-          <article class="story-card story-card-sage">
-
-            <div class="story-number">
-              03
-            </div>
-
-            <div class="story-icon">
-              ❋
-            </div>
-
-            <p class="story-kicker">
-              ANG PAGPILI SA ISA’T ISA
-            </p>
-
-            <h3>
-              Sa pagkakaiba, natagpuan ang balanse.
-            </h3>
-
-            <p class="story-text">
-              Magkaiba man ang kanilang personalidad, iisa naman ang
-              direksyong piniling tahakin: ang buhay na binuo sa pagmamahal,
-              pag-unawa, at pagpili sa isa’t isa araw-araw. Sa kanilang
-              pagkakaiba, natagpuan nila ang balanse. Sa kanilang
-              pagkakatugma, natagpuan nila ang tahanan.
-            </p>
-
-          </article>
-
-
-          <!-- ===================================================
-               PHOTO 02
-               =================================================== -->
-
-          <figure class="story-photo photo-secondary">
-
-            <div class="photo-frame">
-
-              <img
-                src="images/kwento-photo-2.jpg"
-                alt="Mike at Sharmaine"
-              >
-
-              <figcaption>
-                Ikaw, palagi. ♡
-              </figcaption>
-
-            </div>
-
-          </figure>
-
-
-          <!-- ===================================================
-               CHAPTER 04
-               =================================================== -->
-
-          <article class="story-card story-card-cream">
-
-            <div class="story-number">
-              04
-            </div>
-
-            <div class="story-icon">
-              ∞
-            </div>
-
-            <p class="story-kicker">
-              AT NAUWI SA FOREVER
-            </p>
-
-            <h3>
-              Isang pag-ibig na panghabambuhay.
-            </h3>
-
-            <p class="story-text">
-              Ngayon, sa harap ng kanilang mga mahal sa buhay, pinipili nilang
-              simulan ang panibagong yugto ng kanilang kwento — isang kwentong
-              nagsimula sa isang simpleng swipe, ngunit nauwi sa isang pag-ibig
-              na panghabambuhay.
-            </p>
-
-            <div class="mini-memory">
-
-              <span>
-                And then, there was us.
-              </span>
-
-              <small>
-                One “Hi.” · One forever. ♡
-              </small>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         CLOSING
-         ========================================================= -->
-
-    <section class="kw-closing">
-
-      <div class="closing-floral closing-floral-left" aria-hidden="true"></div>
-      <div class="closing-floral closing-floral-right" aria-hidden="true"></div>
-
-      <div class="closing-content">
-
-        <div class="closing-botanical" aria-hidden="true">
-          ❋
-        </div>
-
-        <p class="closing-label">
-          AT DITO NAGSISIMULA ANG SUSUNOD NA KABANATA
-        </p>
-
-        <h2>
-          “Dahil minsan, ang forever ay nagsisimula
-          <em>rin sa isang “Hi.”</em>”
-        </h2>
-
-        <div class="closing-line"></div>
-
-        <p class="closing-names">
-          Mike &amp; Sharmaine
-        </p>
+        <!-- Center Monogram -->
 
         <a
-          href="detalye.html"
-          class="next-button"
+            href="index.html"
+            class="nav-monogram"
+            aria-label="Mike and Sharmaine Home"
         >
-          Detalye ng Kasal
-          <span>→</span>
+            M &amp; S
         </a>
 
-      </div>
+    </header>
 
-    </section>
 
-  </main>
+
+    <!-- =====================================================
+         SIDEBAR NAVIGATION
+    ====================================================== -->
+
+    <aside
+        class="wedding-sidebar"
+        id="weddingSidebar"
+        aria-hidden="true"
+    >
+
+        <div class="sidebar-inner">
+
+
+            <!-- SIDEBAR HEADER -->
+
+            <div class="sidebar-header">
+
+                <span class="sidebar-eyebrow">
+                    OUR WEDDING
+                </span>
+
+
+                <div class="sidebar-monogram">
+                    M &amp; S
+                </div>
+
+
+                <p class="sidebar-subtitle">
+                    Mike &amp; Sharmaine
+                </p>
+
+            </div>
+
+
+
+            <!-- SIDEBAR MENU -->
+
+            <nav
+                class="sidebar-menu"
+                aria-label="Wedding navigation"
+            >
+
+
+                <!-- HOME -->
+
+                <a
+                    href="index.html"
+                    class="sidebar-link"
+                >
+
+                    <span class="sidebar-number">
+                        01
+                    </span>
+
+                    <span>
+                        Home
+                    </span>
+
+                </a>
+
+
+
+                <!-- ANG AMING KWENTO -->
+
+                <a
+                    href="kwento.html"
+                    class="sidebar-link active"
+                >
+
+                    <span class="sidebar-number">
+                        02
+                    </span>
+
+                    <span>
+                        Ang Aming Kwento
+                    </span>
+
+                </a>
+
+
+
+                <!-- DETALYE NG KASAL -->
+
+                <a
+                    href="detalye.html"
+                    class="sidebar-link"
+                >
+
+                    <span class="sidebar-number">
+                        03
+                    </span>
+
+                    <span>
+                        Detalye ng Kasal
+                    </span>
+
+                </a>
+
+
+
+                <!-- DALOY NG PAGDIRIWANG -->
+
+                <a
+                    href="daloy.html"
+                    class="sidebar-link"
+                >
+
+                    <span class="sidebar-number">
+                        04
+                    </span>
+
+                    <span>
+                        Daloy ng Pagdiriwang
+                    </span>
+
+                </a>
+
+
+
+                <!-- DRESS CODE -->
+
+                <a
+                    href="dress-code.html"
+                    class="sidebar-link"
+                >
+
+                    <span class="sidebar-number">
+                        05
+                    </span>
+
+                    <span>
+                        Dress Code
+                    </span>
+
+                </a>
+
+
+
+                <!-- RSVP -->
+
+                <a
+                    href="rsvp.html"
+                    class="sidebar-link"
+                >
+
+                    <span class="sidebar-number">
+                        06
+                    </span>
+
+                    <span>
+                        RSVP
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+
+
+            <!-- SIDEBAR FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <span>
+                    ♡
+                </span>
+
+                <p>
+                    With love,
+                </p>
+
+                <strong>
+                    Mike &amp; Sharmaine
+                </strong>
+
+            </div>
+
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- SIDEBAR OVERLAY -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO — ANG AMING KWENTO
+        ================================================== -->
+
+        <section class="kw-hero">
+
+
+            <div
+                class="hero-floral hero-floral-left"
+                aria-hidden="true"
+            ></div>
+
+
+            <div
+                class="hero-floral hero-floral-right"
+                aria-hidden="true"
+            ></div>
+
+
+            <div class="hero-content">
+
+
+                <p class="eyebrow">
+                    SECTION 02 · OUR STORY
+                </p>
+
+
+                <h1>
+
+                    Ang Aming
+
+                    <span>
+                        Kwento
+                    </span>
+
+                </h1>
+
+
+                <div
+                    class="hero-heart"
+                    aria-hidden="true"
+                >
+                    ♡
+                </div>
+
+
+                <p class="hero-subtitle">
+
+                    Mga Lumang Liham,<br>
+                    Makabagong Pagmamahalan
+
+                </p>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             STORY / CHAPTERS
+        ================================================== -->
+
+        <section class="story-section">
+
+
+            <!-- WATERCOLOUR FLORALS -->
+
+            <div
+                class="story-floral story-floral-top-left"
+                aria-hidden="true"
+            ></div>
+
+
+            <div
+                class="story-floral story-floral-top-right"
+                aria-hidden="true"
+            ></div>
+
+
+            <div
+                class="story-floral story-floral-bottom-left"
+                aria-hidden="true"
+            ></div>
+
+
+            <div
+                class="story-floral story-floral-bottom-right"
+                aria-hidden="true"
+            ></div>
+
+
+
+            <div class="story-inner">
+
+
+                <!-- STORY HEADING -->
+
+                <div class="story-heading">
+
+
+                    <span>
+                        THE CHAPTERS
+                    </span>
+
+
+                    <h2>
+
+                        <strong>
+                            A love story,
+                        </strong>
+
+                        <em>
+                            one chapter at a time.
+                        </em>
+
+                    </h2>
+
+
+                </div>
+
+
+
+                <!-- DECORATIVE FLOWERS -->
+
+                <div
+                    class="floating-flower flower-one"
+                    aria-hidden="true"
+                >
+                    ✿
+                </div>
+
+
+                <div
+                    class="floating-flower flower-two"
+                    aria-hidden="true"
+                >
+                    ❋
+                </div>
+
+
+                <div
+                    class="floating-flower flower-three"
+                    aria-hidden="true"
+                >
+                    ✿
+                </div>
+
+
+
+                <!-- =================================================
+                     CHAPTER GRID
+                ================================================== -->
+
+                <div class="story-grid">
+
+
+                    <!-- ==========================
+                         CHAPTER 01
+                    =========================== -->
+
+                    <article class="story-card story-card-green">
+
+
+                        <div class="story-number">
+                            01
+                        </div>
+
+
+                        <div class="story-icon">
+                            ♡
+                        </div>
+
+
+                        <p class="story-kicker">
+                            KUNG PAANO NAGSIMULA
+                        </p>
+
+
+                        <h3>
+                            Isang simpleng “Hi.”
+                        </h3>
+
+
+                        <p class="story-text">
+
+                            Sa panahon ng mga swipe,
+                            notifications, at simpleng “Hi,”
+                            may mga kwentong nagsisimula
+                            sa hindi inaasahang paraan.
+
+                            Para kina Sharmaine at Mike,
+                            isang simpleng pag-match sa dating
+                            app ang naging simula ng isang
+                            pag-iibigang hindi nila akalaing
+                            hahantong sa habang-buhay.
+
+                        </p>
+
+
+                    </article>
+
+
+
+                    <!-- ==========================
+                         PHOTO 01
+                    =========================== -->
+
+                    <figure class="story-photo photo-main">
+
+
+                        <div class="photo-frame">
+
+
+                            <img
+                                src="images/kwento-photo-1.jpg"
+                                alt="Mike at Sharmaine"
+                            >
+
+
+                            <figcaption>
+
+                                Nagsimula sa isang<br>
+                                simpleng “Hi.” ♡
+
+                            </figcaption>
+
+
+                        </div>
+
+
+                    </figure>
+
+
+
+                    <!-- ==========================
+                         CHAPTER 02
+                    =========================== -->
+
+                    <article class="story-card story-card-peach">
+
+
+                        <div class="story-number">
+                            02
+                        </div>
+
+
+                        <div class="story-icon">
+                            ✦
+                        </div>
+
+
+                        <p class="story-kicker">
+                            SA LIKOD NG SCREEN
+                        </p>
+
+
+                        <h3>
+                            Unti-unting nakilala ang isa’t isa.
+                        </h3>
+
+
+                        <p class="story-text">
+
+                            Mula sa magdamagang kwentuhan
+                            at walang sawang tawanan,
+                            unti-unting nakilala nila ang isa’t isa —
+                            hindi lamang sa likod ng screen,
+                            kundi sa mga pangarap, takot,
+                            at mga bagay na tunay na mahalaga.
+
+                            Sa bawat mensahe, tawag, at pagkikita,
+                            mas lalong naging malinaw na ang
+                            kanilang pagtatagpo ay hindi basta
+                            pagkakataon lamang.
+
+                        </p>
+
+
+                    </article>
+
+
+
+                    <!-- ==========================
+                         MEMORY NOTE
+                    =========================== -->
+
+                    <aside class="memory-note">
+
+
+                        <span class="tape tape-left"></span>
+
+                        <span class="tape tape-right"></span>
+
+
+                        <p>
+
+                            Bawat kabanata<br>
+                            na kasama ka<br>
+                            ay paborito ko.
+
+                        </p>
+
+
+                        <strong>
+                            ♡
+                        </strong>
+
+
+                    </aside>
+
+
+
+                    <!-- ==========================
+                         CHAPTER 03
+                    =========================== -->
+
+                    <article class="story-card story-card-sage">
+
+
+                        <div class="story-number">
+                            03
+                        </div>
+
+
+                        <div class="story-icon">
+                            ❋
+                        </div>
+
+
+                        <p class="story-kicker">
+                            ANG PAGPILI SA ISA’T ISA
+                        </p>
+
+
+                        <h3>
+                            Sa pagkakaiba, natagpuan ang balanse.
+                        </h3>
+
+
+                        <p class="story-text">
+
+                            Magkaiba man ang kanilang
+                            personalidad, iisa naman ang
+                            direksyong piniling tahakin:
+                            ang buhay na binuo sa pagmamahal,
+                            pag-unawa, at pagpili sa isa’t isa
+                            araw-araw.
+
+                            Sa kanilang pagkakaiba,
+                            natagpuan nila ang balanse.
+
+                            Sa kanilang pagkakatugma,
+                            natagpuan nila ang tahanan.
+
+                        </p>
+
+
+                    </article>
+
+
+
+                    <!-- ==========================
+                         PHOTO 02
+                    =========================== -->
+
+                    <figure class="story-photo photo-secondary">
+
+
+                        <div class="photo-frame">
+
+
+                            <img
+                                src="images/kwento-photo-2.jpg"
+                                alt="Mike at Sharmaine"
+                            >
+
+
+                            <figcaption>
+                                Ikaw, palagi. ♡
+                            </figcaption>
+
+
+                        </div>
+
+
+                    </figure>
+
+
+
+                    <!-- ==========================
+                         CHAPTER 04
+                    =========================== -->
+
+                    <article class="story-card story-card-cream">
+
+
+                        <div class="story-number">
+                            04
+                        </div>
+
+
+                        <div class="story-icon">
+                            ∞
+                        </div>
+
+
+                        <p class="story-kicker">
+                            AT NAUWI SA FOREVER
+                        </p>
+
+
+                        <h3>
+                            Isang pag-ibig na panghabambuhay.
+                        </h3>
+
+
+                        <p class="story-text">
+
+                            Ngayon, sa harap ng kanilang mga
+                            mahal sa buhay, pinipili nilang
+                            simulan ang panibagong yugto
+                            ng kanilang kwento — isang kwentong
+                            nagsimula sa isang simpleng swipe,
+                            ngunit nauwi sa isang pag-ibig
+                            na panghabambuhay.
+
+                        </p>
+
+
+                        <div class="mini-memory">
+
+
+                            <span>
+                                And then, there was us.
+                            </span>
+
+
+                            <small>
+                                One “Hi.” · One forever. ♡
+                            </small>
+
+
+                        </div>
+
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CLOSING
+        ================================================== -->
+
+        <section class="kw-closing">
+
+
+            <div
+                class="closing-floral closing-floral-left"
+                aria-hidden="true"
+            ></div>
+
+
+            <div
+                class="closing-floral closing-floral-right"
+                aria-hidden="true"
+            ></div>
+
+
+            <div class="closing-content">
+
+
+                <div
+                    class="closing-botanical"
+                    aria-hidden="true"
+                >
+                    ❋
+                </div>
+
+
+                <p class="closing-label">
+                    AT DITO NAGSISIMULA ANG SUSUNOD NA KABANATA
+                </p>
+
+
+                <h2>
+
+                    “Dahil minsan, ang forever ay nagsisimula
+
+                    <em>
+                        rin sa isang “Hi.”
+                    </em>”
+
+                </h2>
+
+
+                <div class="closing-line"></div>
+
+
+                <p class="closing-names">
+                    Mike &amp; Sharmaine
+                </p>
+
+
+                <a
+                    href="detalye.html"
+                    class="next-button"
+                >
+
+                    Detalye ng Kasal
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         NAVIGATION JAVASCRIPT
+    ====================================================== -->
+
+    <script src="app.js"></script>
+
 
 </body>
+
 </html>
