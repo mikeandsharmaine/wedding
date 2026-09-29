@@ -447,8 +447,8 @@ body.dress-code-page {
 
     margin: 0 auto;
 
-    /* Extra room separates the artwork from the HTML labels */
-    padding: 0 20px 105px;
+    /* Dedicated but tighter space for the HTML labels */
+    padding: 0 20px 72px;
 }
 
 
@@ -492,9 +492,9 @@ body.dress-code-page {
     left: 0;
     right: 0;
 
-    bottom: 0;
+    bottom: 18px;
 
-    height: 82px;
+    height: 72px;
 
     pointer-events: none;
 }
@@ -545,23 +545,23 @@ body.dress-code-page {
 }
 
 .label-maid {
-    left: 38.2%;
-    width: 125px;
+    left: 37.2%;
+    width: 110px;
 }
 
 .label-groomsmen {
-    left: 45.0%;
-    width: 120px;
+    left: 45.8%;
+    width: 115px;
 }
 
 .label-couple {
-    left: 55.2%;
-    width: 155px;
+    left: 55.0%;
+    width: 150px;
 }
 
 .label-ninong {
-    left: 65.0%;
-    width: 90px;
+    left: 65.2%;
+    width: 88px;
 }
 
 .label-ring {
@@ -584,7 +584,7 @@ body.dress-code-page {
 
     justify-content: center;
 
-    margin: 0 auto;
+    margin: -12px auto 0;
 }
 
 .palette-guide-box {
@@ -640,7 +640,7 @@ body.dress-code-page {
 
     justify-content: center;
 
-    margin-top: 40px;
+    margin-top: 28px;
 }
 
 .next-button {
@@ -817,7 +817,7 @@ body.dress-code-page {
     .outfit-guide {
         width: 100%;
 
-        padding: 0 0 100px;
+        padding: 0 0 82px;
 
         overflow-x: auto;
         overflow-y: hidden;
@@ -837,9 +837,9 @@ body.dress-code-page {
         width: 900px;
         min-width: 900px;
 
-        height: 80px;
+        height: 72px;
 
-        bottom: 0;
+        bottom: 10px;
     }
 
     .outfit-label {
