@@ -1493,4 +1493,63 @@
         background-position: center top;
     }
 
+   /* =========================================================
+   FINAL DETALYE BACKGROUND
+   Same continuous floral background treatment as KWENTO
+   ========================================================= */
+
+.detalye-page {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+
+    background-color: #ead8b8;
+
+    /*
+     * USE THE SAME BACKGROUND ARTWORK
+     * AS ANG AMING KWENTO
+     */
+    background-image: url("images/kwento-background.png");
+
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    /*
+     * Keep the artwork proportional.
+     * Do NOT stretch it vertically.
+     */
+    background-size: 100% auto;
+
+    background-attachment: scroll;
+}
+
+
+/* =========================================================
+   REMOVE HERO'S SEPARATE BACKGROUND
+   This is what was creating the divider.
+   ========================================================= */
+
+.detalye-page .details-hero {
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   CONTENT MUST ALSO STAY TRANSPARENT
+   So the single page background continues behind it.
+   ========================================================= */
+
+.detalye-page .details-content {
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   CLOSING SECTION
+   Keep the same continuous background.
+   ========================================================= */
+
+.detalye-page .details-closing {
+    background: transparent !important;
 }
