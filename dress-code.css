@@ -1,8 +1,6 @@
 /* ==========================================================
-   MIKE & SHARMAINE — DRESS CODE
-   SECTION 5
-
-   Recreated text + user's exact outfit artwork
+   MIKE & SHARMAINE
+   SECTION 5 — DRESS CODE
    ========================================================== */
 
 
@@ -11,20 +9,28 @@
    ========================================================== */
 
 :root {
+
     --olive: #7f9168;
+
     --sage: #dfe4d0;
+
     --gold: #d7a85a;
 
     --cream: #f7efdf;
+
     --cream-light: #faf4e7;
+
     --paper: #fffaf0;
 
     --peach: #efc3a0;
+
     --burnt: #d85d38;
 
-    --ink: #5f6554;
     --brown: #71675a;
+
     --soft-brown: #9a876c;
+
+    --ink: #5f6554;
 
     --white: #fffdf7;
 }
@@ -43,7 +49,9 @@ html {
 }
 
 body.dress-code-page {
+
     margin: 0;
+
     min-height: 100vh;
 
     overflow-x: hidden;
@@ -52,22 +60,34 @@ body.dress-code-page {
 
     font-family: "Poppins", sans-serif;
 
-    /* Same floral background used by the other sections */
     background-color: var(--cream);
-    background-image: url("floral-frame.png");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
-    background-attachment: fixed;
-}
 
-.dress-code-page a {
-    color: inherit;
+    /*
+     * SAME BACKGROUND AS THE OTHER SECTIONS
+     */
+    background-image:
+        url("floral-frame.png");
+
+    background-repeat: no-repeat;
+
+    background-position:
+        center top;
+
+    background-size:
+        cover;
+
+    background-attachment:
+        fixed;
 }
 
 .dress-code-page img {
     display: block;
+
     max-width: 100%;
+}
+
+.dress-code-page a {
+    color: inherit;
 }
 
 
@@ -76,100 +96,133 @@ body.dress-code-page {
    ========================================================== */
 
 .website-nav {
+
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
 
     min-height: 68px;
+
     padding: 10px 24px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
-    background: rgba(250, 244, 231, 0.96);
+    background:
+        rgba(250, 244, 231, 0.96);
 
-    border-bottom: none;
+    backdrop-filter:
+        blur(10px);
 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    -webkit-backdrop-filter:
+        blur(10px);
 }
 
 .website-nav nav {
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     gap: 30px;
 }
 
-.website-nav nav a {
+.website-nav a {
+
     position: relative;
 
     padding: 8px 0;
 
     text-decoration: none;
+
     white-space: nowrap;
 
-    font-family: "Cardo", serif;
+    color: #6e745f;
+
+    font-family:
+        "Cardo",
+        serif;
 
     font-size: 13px;
 
     letter-spacing: 1.2px;
 
-    color: #6e745f;
-
     transition:
         color 0.25s ease;
 }
 
-.website-nav nav a::after {
+.website-nav a::after {
+
     content: "";
 
     position: absolute;
 
     left: 50%;
+
     bottom: 0;
 
     width: 0;
+
     height: 1px;
 
-    background: var(--burnt);
+    background:
+        var(--burnt);
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     transition:
         width 0.25s ease;
 }
 
-.website-nav nav a:hover,
-.website-nav nav a.active {
-    color: var(--burnt);
+.website-nav a:hover,
+.website-nav a.active {
+
+    color:
+        var(--burnt);
 }
 
-.website-nav nav a:hover::after,
-.website-nav nav a.active::after {
-    width: 100%;
+.website-nav a:hover::after,
+.website-nav a.active::after {
+
+    width:
+        100%;
 }
 
 
 /* ==========================================================
-   PAGE WRAPPER
+   MAIN CONTENT
    ========================================================== */
 
 .dress-code-content {
+
     position: relative;
 
-    width: min(1500px, 94vw);
+    width:
+        min(1500px, 94vw);
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 
-    padding: 58px 0 90px;
-
-    isolation: isolate;
+    padding:
+        55px 0 90px;
 }
 
+
+/*
+ * Soft parchment wash behind the content.
+ * This keeps the floral background visible.
+ */
+
 .dress-code-content::before {
+
     content: "";
 
     position: absolute;
@@ -177,19 +230,23 @@ body.dress-code-page {
     z-index: -1;
 
     top: 0;
+
     left: 50%;
 
-    width: min(1080px, 78vw);
+    width:
+        min(1180px, 82vw);
 
-    height: 100%;
+    height:
+        100%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     background:
         linear-gradient(
             to bottom,
-            rgba(255, 250, 240, 0.58),
-            rgba(255, 250, 240, 0.30)
+            rgba(255, 250, 240, 0.62),
+            rgba(255, 250, 240, 0.38)
         );
 
     pointer-events: none;
@@ -197,77 +254,101 @@ body.dress-code-page {
 
 
 /* ==========================================================
-   SECTION TITLE
+   HEADER
    ========================================================== */
 
-.dress-code-title {
-    text-align: center;
+.dress-header {
 
-    padding: 4px 20px 22px;
+    text-align:
+        center;
+
+    padding:
+        4px 20px 18px;
 }
 
 .section-number {
-    margin-bottom: 9px;
 
-    color: var(--soft-brown);
+    margin-bottom:
+        10px;
 
-    font-family: "Cardo", serif;
+    color:
+        var(--soft-brown);
 
-    font-size: 15px;
+    font-family:
+        "Cardo",
+        serif;
 
-    letter-spacing: 4px;
+    font-size:
+        15px;
+
+    letter-spacing:
+        4px;
 }
 
-.dress-code-title h1 {
-    margin: 0;
+.dress-header h1 {
 
-    color: var(--olive);
+    margin:
+        0;
 
-    font-family: "Cormorant Garamond", serif;
+    color:
+        var(--olive);
 
-    font-size: clamp(58px, 7vw, 96px);
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
-    font-weight: 500;
+    font-size:
+        clamp(58px, 7vw, 94px);
 
-    line-height: 0.9;
+    font-weight:
+        500;
 
-    letter-spacing: 5px;
+    line-height:
+        0.9;
+
+    letter-spacing:
+        5px;
 }
 
-.dress-code-title h1 span {
-    display: inline;
+.script-title {
+
+    margin:
+        18px 0 13px;
+
+    color:
+        var(--burnt);
+
+    font-family:
+        "Allura",
+        cursive;
+
+    font-size:
+        clamp(32px, 3.4vw, 48px);
+
+    line-height:
+        1;
 }
 
-.dress-code-title h1 strong {
-    display: inline;
+.script-title span {
 
-    font-weight: 500;
+    padding:
+        0 8px;
 }
 
-.dress-code-script {
-    margin: 18px 0 13px;
+.gold-heart {
 
-    color: var(--burnt);
+    color:
+        var(--gold);
 
-    font-family: "Allura", cursive;
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
-    font-size: clamp(31px, 3.2vw, 48px);
+    font-size:
+        30px;
 
-    line-height: 1;
-}
-
-.dress-code-script span {
-    padding: 0 7px;
-}
-
-.title-heart {
-    color: var(--gold);
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 29px;
-
-    line-height: 1;
+    line-height:
+        1;
 }
 
 
@@ -275,232 +356,483 @@ body.dress-code-page {
    INTRO AREA
    ========================================================== */
 
-.dress-code-intro {
-    display: grid;
+.intro-area {
+
+    position:
+        relative;
+
+    display:
+        grid;
 
     grid-template-columns:
-        315px minmax(0, 1fr);
+        320px minmax(0, 1fr);
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 42px;
+    gap:
+        42px;
 
-    width: min(1150px, 92%);
+    width:
+        min(1180px, 92%);
 
-    margin: 20px auto 35px;
+    margin:
+        15px auto 20px;
 }
 
 
 /* ==========================================================
-   COLOR PALETTE CARD
+   COLOR PALETTE
    ========================================================== */
 
-.palette-card {
-    position: relative;
+.palette-box {
 
-    padding: 27px 22px 23px;
+    position:
+        relative;
 
-    border: 1px solid rgba(215, 168, 90, 0.75);
+    padding:
+        28px 25px 24px;
+
+    border:
+        1px solid
+        rgba(215, 168, 90, 0.75);
 
     background:
-        linear-gradient(
-            rgba(255, 250, 240, 0.54),
-            rgba(255, 250, 240, 0.54)
-        );
+        rgba(255, 250, 240, 0.38);
 
     outline:
-        1px solid rgba(215, 168, 90, 0.32);
+        1px solid
+        rgba(215, 168, 90, 0.28);
 
-    outline-offset: -7px;
+    outline-offset:
+        -7px;
 }
 
-.palette-card::before,
-.palette-card::after {
-    content: "";
+.palette-box::before,
+.palette-box::after {
 
-    position: absolute;
+    content:
+        "";
 
-    width: 18px;
-    height: 18px;
+    position:
+        absolute;
 
-    border-color: var(--gold);
-    border-style: solid;
+    width:
+        18px;
+
+    height:
+        18px;
+
+    border:
+        1px solid
+        var(--gold);
 }
 
-.palette-card::before {
-    top: 6px;
-    left: 6px;
+.palette-box::before {
 
-    border-width: 1px 0 0 1px;
+    top:
+        6px;
+
+    left:
+        6px;
+
+    border-right:
+        0;
+
+    border-bottom:
+        0;
 }
 
-.palette-card::after {
-    right: 6px;
-    bottom: 6px;
+.palette-box::after {
 
-    border-width: 0 1px 1px 0;
+    right:
+        6px;
+
+    bottom:
+        6px;
+
+    border-left:
+        0;
+
+    border-top:
+        0;
 }
 
 .palette-title {
-    margin-bottom: 20px;
 
-    color: var(--olive);
+    margin-bottom:
+        20px;
 
-    text-align: center;
+    text-align:
+        center;
 
-    font-family: "Cardo", serif;
+    color:
+        var(--olive);
 
-    font-size: 18px;
+    font-family:
+        "Cardo",
+        serif;
 
-    letter-spacing: 1px;
+    font-size:
+        19px;
+
+    letter-spacing:
+        1.5px;
 }
 
-.palette-swatches {
-    display: flex;
+.palette-colors {
 
-    align-items: center;
-    justify-content: center;
+    display:
+        flex;
 
-    gap: 12px;
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
 }
 
-.swatch {
-    width: 42px;
-    height: 42px;
+.color {
 
-    border-radius: 50%;
+    width:
+        45px;
+
+    height:
+        45px;
+
+    border-radius:
+        50%;
 
     border:
-        1px solid rgba(95, 101, 84, 0.14);
+        1px solid
+        rgba(95, 101, 84, 0.16);
 
     box-shadow:
         inset 0 0 0 1px
-        rgba(255, 255, 255, 0.25);
+        rgba(255,255,255,0.25);
 }
 
-.swatch-gold {
-    background: #e5b957;
+.color.gold {
+    background:
+        #e5b957;
 }
 
-.swatch-olive {
-    background: #71845c;
+.color.olive {
+    background:
+        #71845c;
 }
 
-.swatch-terracotta {
-    background: #c9572e;
+.color.terracotta {
+    background:
+        #c9572e;
 }
 
-.swatch-caramel {
-    background: #c4874c;
+.color.caramel {
+    background:
+        #c4874c;
 }
 
-.swatch-beige {
-    background: #e8dcc5;
+.color.beige {
+    background:
+        #e8dcc5;
 }
 
-.palette-ornament {
-    display: flex;
+.palette-decoration {
 
-    align-items: center;
-    justify-content: center;
+    display:
+        flex;
 
-    gap: 9px;
+    align-items:
+        center;
 
-    margin-top: 18px;
+    justify-content:
+        center;
 
-    color: var(--gold);
+    gap:
+        9px;
+
+    margin-top:
+        18px;
+
+    color:
+        var(--gold);
 }
 
-.palette-ornament span {
-    width: 65px;
-    height: 1px;
+.palette-decoration span {
+
+    width:
+        65px;
+
+    height:
+        1px;
 
     background:
-        rgba(215, 168, 90, 0.55);
+        rgba(215,168,90,0.55);
 }
 
-.palette-ornament b {
-    font-family: "Cormorant Garamond", serif;
+.palette-decoration b {
 
-    font-size: 20px;
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
-    font-weight: 400;
+    font-size:
+        20px;
+
+    font-weight:
+        400;
 }
 
 
 /* ==========================================================
-   INTRO COPY
+   INTRO TEXT
    ========================================================== */
 
-.intro-copy {
-    max-width: 720px;
+.intro-text {
 
-    text-align: center;
+    max-width:
+        760px;
+
+    text-align:
+        center;
 }
 
 .intro-quote {
-    margin: 0 0 13px;
 
-    color: var(--olive);
+    margin:
+        0 0 12px;
 
-    font-family: "Cormorant Garamond", serif;
+    color:
+        var(--olive);
 
-    font-size: 25px;
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
-    font-style: italic;
+    font-size:
+        26px;
 
-    font-weight: 600;
+    font-style:
+        italic;
+
+    font-weight:
+        600;
 }
 
-.intro-copy p:not(.intro-quote):not(.intro-note) {
-    margin: 0 auto 11px;
+.intro-text p {
 
-    color: var(--brown);
+    margin:
+        0 auto 11px;
 
-    font-family: "Cardo", serif;
+    color:
+        var(--brown);
 
-    font-size: 16px;
+    font-family:
+        "Cardo",
+        serif;
 
-    line-height: 1.5;
+    font-size:
+        16px;
+
+    line-height:
+        1.5;
 }
 
 .intro-note {
-    margin: 14px auto 0;
 
-    color: var(--brown);
+    margin-top:
+        14px !important;
 
-    font-family: "Cardo", serif;
-
-    font-size: 15px;
-
-    line-height: 1.45;
+    font-size:
+        15px !important;
 }
 
 
 /* ==========================================================
-   OUTFIT ARTWORK
-   User-provided artwork
+   OUTFIT GUIDE
    ========================================================== */
 
-.outfit-section {
-    width: 100%;
+.outfit-guide {
 
-    margin: 15px auto 0;
+    position:
+        relative;
+
+    width:
+        min(1450px, 100%);
+
+    margin:
+        5px auto 0;
 }
 
-.outfit-artwork-wrap {
-    width: 100%;
 
-    margin: 0 auto;
+/*
+ * The transparent artwork is the ONLY image.
+ *
+ * No background.
+ * No text.
+ * No labels.
+ */
 
-    overflow: hidden;
+.outfit-image {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    z-index:
+        1;
 }
 
-.outfit-artwork {
-    width: 100%;
-    height: auto;
+.outfit-image img {
 
-    object-fit: contain;
+    width:
+        100%;
+
+    height:
+        auto;
+
+    object-fit:
+        contain;
+}
+
+
+/* ==========================================================
+   LABELS
+   ========================================================== */
+
+.outfit-labels {
+
+    position:
+        absolute;
+
+    z-index:
+        5;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    /*
+     * This places the labels underneath
+     * the people.
+     */
+    bottom:
+        -3px;
+
+    height:
+        92px;
+
+    pointer-events:
+        none;
+}
+
+.outfit-label {
+
+    position:
+        absolute;
+
+    transform:
+        translateX(-50%);
+
+    text-align:
+        center;
+
+    color:
+        #625d51;
+
+    font-family:
+        "Cardo",
+        serif;
+
+    font-size:
+        clamp(12px, 1.05vw, 17px);
+
+    line-height:
+        1.15;
+
+    white-space:
+        nowrap;
+}
+
+.outfit-label span {
+    display:
+        block;
+}
+
+
+/* ==========================================================
+   INDIVIDUAL LABEL POSITIONS
+   ========================================================== */
+
+/*
+ * These percentages correspond to the groups
+ * in the transparent outfit artwork.
+ */
+
+.label-mother {
+    left: 7%;
+}
+
+.label-father {
+    left: 17%;
+}
+
+.label-secondary {
+    left: 28%;
+}
+
+.label-maid {
+    left: 37%;
+}
+
+.label-groomsmen {
+    left: 48%;
+}
+
+.label-couple {
+    left: 58%;
+}
+
+.label-ninong {
+    left: 69%;
+}
+
+.label-ring {
+    left: 80%;
+}
+
+.label-guests {
+    left: 92%;
+}
+
+
+/* ==========================================================
+   SMALL GOLD ORNAMENT UNDER EACH LABEL
+   ========================================================== */
+
+.outfit-label::after {
+
+    content:
+        "✦";
+
+    display:
+        block;
+
+    margin-top:
+        7px;
+
+    color:
+        var(--gold);
+
+    font-size:
+        12px;
 }
 
 
@@ -509,132 +841,186 @@ body.dress-code-page {
    ========================================================== */
 
 .palette-guide {
-    display: flex;
 
-    justify-content: center;
+    display:
+        flex;
 
-    margin: 10px auto 0;
+    justify-content:
+        center;
+
+    margin:
+        0 auto;
 }
 
-.palette-guide-inner {
-    position: relative;
+.palette-guide-box {
 
-    width: min(560px, 90vw);
+    width:
+        min(580px, 90vw);
 
-    padding: 21px 35px 22px;
+    padding:
+        21px 35px 22px;
 
-    text-align: center;
+    text-align:
+        center;
 
     border:
-        1px solid rgba(215, 168, 90, 0.72);
+        1px solid
+        rgba(215,168,90,0.72);
 
     background:
-        rgba(255, 250, 240, 0.58);
+        rgba(255,250,240,0.52);
 
     outline:
-        1px solid rgba(215, 168, 90, 0.28);
+        1px solid
+        rgba(215,168,90,0.28);
 
-    outline-offset: -6px;
+    outline-offset:
+        -6px;
 }
 
 .guide-title {
-    margin-bottom: 8px;
 
-    color: var(--soft-brown);
+    margin-bottom:
+        8px;
 
-    font-family: "Cardo", serif;
+    color:
+        var(--soft-brown);
 
-    font-size: 17px;
+    font-family:
+        "Cardo",
+        serif;
 
-    letter-spacing: 2px;
+    font-size:
+        17px;
+
+    letter-spacing:
+        2px;
 }
 
-.palette-guide-inner p {
-    margin: 0 0 4px;
+.palette-guide-box p {
 
-    color: var(--brown);
+    margin:
+        0 0 4px;
 
-    font-family: "Cormorant Garamond", serif;
+    color:
+        var(--brown);
 
-    font-size: 20px;
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
-    font-style: italic;
+    font-size:
+        20px;
+
+    font-style:
+        italic;
 }
 
-.palette-guide-inner em {
-    color: var(--brown);
+.palette-guide-box em {
 
-    font-family: "Cormorant Garamond", serif;
+    color:
+        var(--brown);
 
-    font-size: 18px;
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        18px;
 }
 
 
 /* ==========================================================
-   NEXT BUTTON
+   RSVP BUTTON
    ========================================================== */
 
 .next-page {
-    display: flex;
 
-    justify-content: center;
+    display:
+        flex;
 
-    margin-top: 42px;
+    justify-content:
+        center;
+
+    margin-top:
+        40px;
 }
 
 .next-button {
-    display: inline-flex;
 
-    align-items: center;
-    justify-content: center;
+    display:
+        inline-flex;
 
-    gap: 12px;
+    align-items:
+        center;
 
-    min-width: 230px;
+    justify-content:
+        center;
 
-    padding: 13px 30px;
+    gap:
+        12px;
+
+    min-width:
+        230px;
+
+    padding:
+        13px 30px;
 
     border:
-        1px solid var(--gold);
+        1px solid
+        var(--gold);
 
-    border-radius: 50px;
+    border-radius:
+        50px;
 
     background:
-        rgba(255, 252, 242, 0.55);
+        rgba(255,252,242,0.55);
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
-    color: var(--brown);
+    color:
+        var(--brown);
 
-    font-family: "Cardo", serif;
+    font-family:
+        "Cardo",
+        serif;
 
-    font-size: 17px;
+    font-size:
+        17px;
 
     transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
+        all 0.25s ease;
 }
 
 .next-button span {
-    color: var(--burnt);
 
-    font-size: 21px;
+    color:
+        var(--burnt);
+
+    font-size:
+        21px;
 }
 
 .next-button:hover {
-    background: var(--burnt);
 
-    border-color: var(--burnt);
+    background:
+        var(--burnt);
 
-    color: #fff;
+    border-color:
+        var(--burnt);
 
-    transform: translateY(-2px);
+    color:
+        #fff;
+
+    transform:
+        translateY(-2px);
 }
 
 .next-button:hover span {
-    color: #fff;
+
+    color:
+        #fff;
 }
 
 
@@ -645,24 +1031,33 @@ body.dress-code-page {
 @media (max-width: 1000px) {
 
     .website-nav nav {
-        gap: 18px;
+
+        gap:
+            18px;
     }
 
-    .website-nav nav a {
-        font-size: 11px;
+    .website-nav a {
 
-        letter-spacing: 0.9px;
+        font-size:
+            11px;
+
+        letter-spacing:
+            0.9px;
     }
 
-    .dress-code-intro {
+    .intro-area {
+
         grid-template-columns:
-            270px minmax(0, 1fr);
+            270px minmax(0,1fr);
 
-        gap: 28px;
+        gap:
+            25px;
     }
 
-    .intro-copy p:not(.intro-quote):not(.intro-note) {
-        font-size: 15px;
+    .outfit-labels {
+
+        height:
+            75px;
     }
 }
 
@@ -674,151 +1069,204 @@ body.dress-code-page {
 @media (max-width: 760px) {
 
     body.dress-code-page {
-        background-attachment: scroll;
+
+        background-attachment:
+            scroll;
     }
 
     .website-nav {
-        min-height: 60px;
 
-        padding: 8px 12px;
+        min-height:
+            60px;
 
-        overflow-x: auto;
+        padding:
+            8px 12px;
+
+        overflow-x:
+            auto;
     }
 
     .website-nav nav {
-        gap: 18px;
 
-        width: max-content;
+        width:
+            max-content;
+
+        gap:
+            18px;
     }
 
-    .website-nav nav a {
-        font-size: 10px;
+    .website-nav a {
 
-        letter-spacing: 0.7px;
+        font-size:
+            10px;
+
+        letter-spacing:
+            0.7px;
     }
 
     .dress-code-content {
-        width: 94vw;
 
-        padding-top: 42px;
+        width:
+            94vw;
 
-        padding-bottom: 65px;
+        padding:
+            40px 0 65px;
     }
 
     .dress-code-content::before {
-        width: 100%;
-    }
 
-    .dress-code-title {
-        padding-left: 8px;
-        padding-right: 8px;
+        width:
+            100%;
     }
 
     .section-number {
-        font-size: 12px;
 
-        letter-spacing: 3px;
-    }
-
-    .dress-code-title h1 {
         font-size:
-            clamp(43px, 13vw, 68px);
+            12px;
 
-        letter-spacing: 3px;
+        letter-spacing:
+            3px;
     }
 
-    .dress-code-script {
+    .dress-header h1 {
+
+        font-size:
+            clamp(45px, 13vw, 70px);
+
+        letter-spacing:
+            3px;
+    }
+
+    .script-title {
+
         font-size:
             clamp(27px, 8vw, 38px);
 
-        line-height: 1.05;
+        line-height:
+            1.05;
     }
 
-    .dress-code-intro {
-        display: flex;
+    .intro-area {
 
-        flex-direction: column;
+        display:
+            flex;
 
-        width: 94%;
+        flex-direction:
+            column;
 
-        gap: 25px;
+        width:
+            94%;
 
-        margin-top: 18px;
+        gap:
+            25px;
     }
 
-    .palette-card {
-        width: min(330px, 100%);
+    .palette-box {
+
+        width:
+            min(340px, 100%);
     }
 
-    .intro-copy {
-        width: 100%;
+    .intro-text {
+
+        width:
+            100%;
     }
 
     .intro-quote {
-        font-size: 23px;
+
+        font-size:
+            23px;
     }
 
-    .intro-copy p:not(.intro-quote):not(.intro-note) {
-        font-size: 14px;
+    .intro-text p {
 
-        line-height: 1.55;
-    }
+        font-size:
+            14px;
 
-    .intro-note {
-        font-size: 13px;
+        line-height:
+            1.55;
     }
 
 
     /*
-     * Keep the supplied outfit artwork intact.
-     * It stays wide enough so the illustrations
-     * and labels remain readable.
+     * Keep artwork wide on phones so the
+     * individual people remain recognizable.
      */
 
-    .outfit-section {
-        width: 100%;
+    .outfit-guide {
 
-        overflow-x: auto;
-        overflow-y: hidden;
+        width:
+            100%;
+
+        overflow-x:
+            auto;
+
+        overflow-y:
+            hidden;
     }
 
-    .outfit-artwork-wrap {
-        width: 100%;
+    .outfit-image {
 
-        min-width: 720px;
+        width:
+            900px;
+
+        min-width:
+            900px;
     }
 
-    .outfit-artwork {
-        width: 100%;
+    .outfit-labels {
+
+        left:
+            0;
+
+        width:
+            900px;
+
+        min-width:
+            900px;
+
+        height:
+            80px;
+
+        bottom:
+            0;
     }
 
+    .outfit-label {
 
-    .palette-guide-inner {
-        padding: 18px 20px;
+        font-size:
+            14px;
     }
 
-    .palette-guide-inner p {
-        font-size: 18px;
+    .palette-guide-box {
 
-        line-height: 1.25;
+        padding:
+            18px 20px;
     }
 
-    .palette-guide-inner em {
-        font-size: 16px;
+    .palette-guide-box p {
+
+        font-size:
+            18px;
+
+        line-height:
+            1.25;
     }
 
-    .next-page {
-        margin-top: 32px;
+    .palette-guide-box em {
+
+        font-size:
+            16px;
     }
 
     .next-button {
-        width: 250px;
 
-        min-height: 58px;
+        width:
+            250px;
 
-        padding: 12px 22px;
-
-        font-size: 16px;
+        min-height:
+            58px;
     }
 }
 
@@ -830,27 +1278,35 @@ body.dress-code-page {
 @media (max-width: 430px) {
 
     .website-nav nav {
-        gap: 14px;
+
+        gap:
+            14px;
     }
 
-    .website-nav nav a {
-        font-size: 9px;
+    .website-nav a {
+
+        font-size:
+            9px;
     }
 
     .dress-code-content {
-        padding-top: 32px;
+
+        padding-top:
+            32px;
     }
 
-    .dress-code-script {
-        font-size: 29px;
+    .palette-colors {
+
+        gap:
+            8px;
     }
 
-    .palette-swatches {
-        gap: 8px;
-    }
+    .color {
 
-    .swatch {
-        width: 38px;
-        height: 38px;
+        width:
+            38px;
+
+        height:
+            38px;
     }
 }
