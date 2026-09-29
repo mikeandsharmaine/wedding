@@ -1553,3 +1553,67 @@
 .detalye-page .details-closing {
     background: transparent !important;
 }
+/* =========================================================
+   DETALYE — ONE CONTINUOUS FLORAL BACKGROUND
+   ========================================================= */
+
+/* The entire page owns the background */
+body.detalye-page {
+    background-color: #f7f0df !important;
+
+    background-image: url("images/kwento-background.png") !important;
+
+    background-position: center top !important;
+
+    background-repeat: no-repeat !important;
+
+    /*
+       Stretch ONE artwork over the entire page.
+       This prevents any section-to-section divider.
+    */
+    background-size: 100% 100% !important;
+
+    background-attachment: scroll !important;
+}
+
+
+/* =========================================================
+   REMOVE HERO BACKGROUND
+   ========================================================= */
+
+body.detalye-page .details-hero {
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   REMOVE CONTENT BACKGROUND
+   THIS WAS THE OTHER SOURCE OF THE DIVIDER
+   ========================================================= */
+
+body.detalye-page .details-content {
+    background: transparent !important;
+}
+
+
+/* Remove any background created by the content overlays */
+body.detalye-page .details-content::before,
+body.detalye-page .details-content::after {
+    background: none !important;
+}
+
+
+/* =========================================================
+   KEEP CLOSING SECTION CONTINUOUS
+   ========================================================= */
+
+body.detalye-page .details-closing {
+    background: transparent !important;
+}
+
+
+/* Remove any closing-section background overlay */
+body.detalye-page .details-closing::before,
+body.detalye-page .details-closing::after {
+    background: none !important;
+}
