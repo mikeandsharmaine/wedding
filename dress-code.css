@@ -1,1 +1,856 @@
+/* ==========================================================
+   MIKE & SHARMAINE — DRESS CODE
+   SECTION 5
 
+   Recreated text + user's exact outfit artwork
+   ========================================================== */
+
+
+/* ==========================================================
+   COLORS
+   ========================================================== */
+
+:root {
+    --olive: #7f9168;
+    --sage: #dfe4d0;
+    --gold: #d7a85a;
+
+    --cream: #f7efdf;
+    --cream-light: #faf4e7;
+    --paper: #fffaf0;
+
+    --peach: #efc3a0;
+    --burnt: #d85d38;
+
+    --ink: #5f6554;
+    --brown: #71675a;
+    --soft-brown: #9a876c;
+
+    --white: #fffdf7;
+}
+
+
+/* ==========================================================
+   GLOBAL
+   ========================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.dress-code-page {
+    margin: 0;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    color: var(--ink);
+
+    font-family: "Poppins", sans-serif;
+
+    /* Same floral background used by the other sections */
+    background-color: var(--cream);
+    background-image: url("floral-frame.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.dress-code-page a {
+    color: inherit;
+}
+
+.dress-code-page img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ==========================================================
+   NAVIGATION
+   ========================================================== */
+
+.website-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    min-height: 68px;
+    padding: 10px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(250, 244, 231, 0.96);
+
+    border-bottom: none;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.website-nav nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+}
+
+.website-nav nav a {
+    position: relative;
+
+    padding: 8px 0;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    font-family: "Cardo", serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1.2px;
+
+    color: #6e745f;
+
+    transition:
+        color 0.25s ease;
+}
+
+.website-nav nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--burnt);
+
+    transform: translateX(-50%);
+
+    transition:
+        width 0.25s ease;
+}
+
+.website-nav nav a:hover,
+.website-nav nav a.active {
+    color: var(--burnt);
+}
+
+.website-nav nav a:hover::after,
+.website-nav nav a.active::after {
+    width: 100%;
+}
+
+
+/* ==========================================================
+   PAGE WRAPPER
+   ========================================================== */
+
+.dress-code-content {
+    position: relative;
+
+    width: min(1500px, 94vw);
+
+    margin: 0 auto;
+
+    padding: 58px 0 90px;
+
+    isolation: isolate;
+}
+
+.dress-code-content::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: -1;
+
+    top: 0;
+    left: 50%;
+
+    width: min(1080px, 78vw);
+
+    height: 100%;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255, 250, 240, 0.58),
+            rgba(255, 250, 240, 0.30)
+        );
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   SECTION TITLE
+   ========================================================== */
+
+.dress-code-title {
+    text-align: center;
+
+    padding: 4px 20px 22px;
+}
+
+.section-number {
+    margin-bottom: 9px;
+
+    color: var(--soft-brown);
+
+    font-family: "Cardo", serif;
+
+    font-size: 15px;
+
+    letter-spacing: 4px;
+}
+
+.dress-code-title h1 {
+    margin: 0;
+
+    color: var(--olive);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(58px, 7vw, 96px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    letter-spacing: 5px;
+}
+
+.dress-code-title h1 span {
+    display: inline;
+}
+
+.dress-code-title h1 strong {
+    display: inline;
+
+    font-weight: 500;
+}
+
+.dress-code-script {
+    margin: 18px 0 13px;
+
+    color: var(--burnt);
+
+    font-family: "Allura", cursive;
+
+    font-size: clamp(31px, 3.2vw, 48px);
+
+    line-height: 1;
+}
+
+.dress-code-script span {
+    padding: 0 7px;
+}
+
+.title-heart {
+    color: var(--gold);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 29px;
+
+    line-height: 1;
+}
+
+
+/* ==========================================================
+   INTRO AREA
+   ========================================================== */
+
+.dress-code-intro {
+    display: grid;
+
+    grid-template-columns:
+        315px minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 42px;
+
+    width: min(1150px, 92%);
+
+    margin: 20px auto 35px;
+}
+
+
+/* ==========================================================
+   COLOR PALETTE CARD
+   ========================================================== */
+
+.palette-card {
+    position: relative;
+
+    padding: 27px 22px 23px;
+
+    border: 1px solid rgba(215, 168, 90, 0.75);
+
+    background:
+        linear-gradient(
+            rgba(255, 250, 240, 0.54),
+            rgba(255, 250, 240, 0.54)
+        );
+
+    outline:
+        1px solid rgba(215, 168, 90, 0.32);
+
+    outline-offset: -7px;
+}
+
+.palette-card::before,
+.palette-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    border-color: var(--gold);
+    border-style: solid;
+}
+
+.palette-card::before {
+    top: 6px;
+    left: 6px;
+
+    border-width: 1px 0 0 1px;
+}
+
+.palette-card::after {
+    right: 6px;
+    bottom: 6px;
+
+    border-width: 0 1px 1px 0;
+}
+
+.palette-title {
+    margin-bottom: 20px;
+
+    color: var(--olive);
+
+    text-align: center;
+
+    font-family: "Cardo", serif;
+
+    font-size: 18px;
+
+    letter-spacing: 1px;
+}
+
+.palette-swatches {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.swatch {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(95, 101, 84, 0.14);
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(255, 255, 255, 0.25);
+}
+
+.swatch-gold {
+    background: #e5b957;
+}
+
+.swatch-olive {
+    background: #71845c;
+}
+
+.swatch-terracotta {
+    background: #c9572e;
+}
+
+.swatch-caramel {
+    background: #c4874c;
+}
+
+.swatch-beige {
+    background: #e8dcc5;
+}
+
+.palette-ornament {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 18px;
+
+    color: var(--gold);
+}
+
+.palette-ornament span {
+    width: 65px;
+    height: 1px;
+
+    background:
+        rgba(215, 168, 90, 0.55);
+}
+
+.palette-ornament b {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    font-weight: 400;
+}
+
+
+/* ==========================================================
+   INTRO COPY
+   ========================================================== */
+
+.intro-copy {
+    max-width: 720px;
+
+    text-align: center;
+}
+
+.intro-quote {
+    margin: 0 0 13px;
+
+    color: var(--olive);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    font-style: italic;
+
+    font-weight: 600;
+}
+
+.intro-copy p:not(.intro-quote):not(.intro-note) {
+    margin: 0 auto 11px;
+
+    color: var(--brown);
+
+    font-family: "Cardo", serif;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+.intro-note {
+    margin: 14px auto 0;
+
+    color: var(--brown);
+
+    font-family: "Cardo", serif;
+
+    font-size: 15px;
+
+    line-height: 1.45;
+}
+
+
+/* ==========================================================
+   OUTFIT ARTWORK
+   User-provided artwork
+   ========================================================== */
+
+.outfit-section {
+    width: 100%;
+
+    margin: 15px auto 0;
+}
+
+.outfit-artwork-wrap {
+    width: 100%;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+}
+
+.outfit-artwork {
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* ==========================================================
+   PALETTE GUIDE
+   ========================================================== */
+
+.palette-guide {
+    display: flex;
+
+    justify-content: center;
+
+    margin: 10px auto 0;
+}
+
+.palette-guide-inner {
+    position: relative;
+
+    width: min(560px, 90vw);
+
+    padding: 21px 35px 22px;
+
+    text-align: center;
+
+    border:
+        1px solid rgba(215, 168, 90, 0.72);
+
+    background:
+        rgba(255, 250, 240, 0.58);
+
+    outline:
+        1px solid rgba(215, 168, 90, 0.28);
+
+    outline-offset: -6px;
+}
+
+.guide-title {
+    margin-bottom: 8px;
+
+    color: var(--soft-brown);
+
+    font-family: "Cardo", serif;
+
+    font-size: 17px;
+
+    letter-spacing: 2px;
+}
+
+.palette-guide-inner p {
+    margin: 0 0 4px;
+
+    color: var(--brown);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    font-style: italic;
+}
+
+.palette-guide-inner em {
+    color: var(--brown);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+}
+
+
+/* ==========================================================
+   NEXT BUTTON
+   ========================================================== */
+
+.next-page {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 42px;
+}
+
+.next-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    min-width: 230px;
+
+    padding: 13px 30px;
+
+    border:
+        1px solid var(--gold);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255, 252, 242, 0.55);
+
+    text-decoration: none;
+
+    color: var(--brown);
+
+    font-family: "Cardo", serif;
+
+    font-size: 17px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.next-button span {
+    color: var(--burnt);
+
+    font-size: 21px;
+}
+
+.next-button:hover {
+    background: var(--burnt);
+
+    border-color: var(--burnt);
+
+    color: #fff;
+
+    transform: translateY(-2px);
+}
+
+.next-button:hover span {
+    color: #fff;
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 1000px) {
+
+    .website-nav nav {
+        gap: 18px;
+    }
+
+    .website-nav nav a {
+        font-size: 11px;
+
+        letter-spacing: 0.9px;
+    }
+
+    .dress-code-intro {
+        grid-template-columns:
+            270px minmax(0, 1fr);
+
+        gap: 28px;
+    }
+
+    .intro-copy p:not(.intro-quote):not(.intro-note) {
+        font-size: 15px;
+    }
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 760px) {
+
+    body.dress-code-page {
+        background-attachment: scroll;
+    }
+
+    .website-nav {
+        min-height: 60px;
+
+        padding: 8px 12px;
+
+        overflow-x: auto;
+    }
+
+    .website-nav nav {
+        gap: 18px;
+
+        width: max-content;
+    }
+
+    .website-nav nav a {
+        font-size: 10px;
+
+        letter-spacing: 0.7px;
+    }
+
+    .dress-code-content {
+        width: 94vw;
+
+        padding-top: 42px;
+
+        padding-bottom: 65px;
+    }
+
+    .dress-code-content::before {
+        width: 100%;
+    }
+
+    .dress-code-title {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .section-number {
+        font-size: 12px;
+
+        letter-spacing: 3px;
+    }
+
+    .dress-code-title h1 {
+        font-size:
+            clamp(43px, 13vw, 68px);
+
+        letter-spacing: 3px;
+    }
+
+    .dress-code-script {
+        font-size:
+            clamp(27px, 8vw, 38px);
+
+        line-height: 1.05;
+    }
+
+    .dress-code-intro {
+        display: flex;
+
+        flex-direction: column;
+
+        width: 94%;
+
+        gap: 25px;
+
+        margin-top: 18px;
+    }
+
+    .palette-card {
+        width: min(330px, 100%);
+    }
+
+    .intro-copy {
+        width: 100%;
+    }
+
+    .intro-quote {
+        font-size: 23px;
+    }
+
+    .intro-copy p:not(.intro-quote):not(.intro-note) {
+        font-size: 14px;
+
+        line-height: 1.55;
+    }
+
+    .intro-note {
+        font-size: 13px;
+    }
+
+
+    /*
+     * Keep the supplied outfit artwork intact.
+     * It stays wide enough so the illustrations
+     * and labels remain readable.
+     */
+
+    .outfit-section {
+        width: 100%;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .outfit-artwork-wrap {
+        width: 100%;
+
+        min-width: 720px;
+    }
+
+    .outfit-artwork {
+        width: 100%;
+    }
+
+
+    .palette-guide-inner {
+        padding: 18px 20px;
+    }
+
+    .palette-guide-inner p {
+        font-size: 18px;
+
+        line-height: 1.25;
+    }
+
+    .palette-guide-inner em {
+        font-size: 16px;
+    }
+
+    .next-page {
+        margin-top: 32px;
+    }
+
+    .next-button {
+        width: 250px;
+
+        min-height: 58px;
+
+        padding: 12px 22px;
+
+        font-size: 16px;
+    }
+}
+
+
+/* ==========================================================
+   SMALL PHONES
+   ========================================================== */
+
+@media (max-width: 430px) {
+
+    .website-nav nav {
+        gap: 14px;
+    }
+
+    .website-nav nav a {
+        font-size: 9px;
+    }
+
+    .dress-code-content {
+        padding-top: 32px;
+    }
+
+    .dress-code-script {
+        font-size: 29px;
+    }
+
+    .palette-swatches {
+        gap: 8px;
+    }
+
+    .swatch {
+        width: 38px;
+        height: 38px;
+    }
+}
