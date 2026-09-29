@@ -1527,4 +1527,6 @@ body.detalye-page .hero-flower,
 body.detalye-page .closing-flower {
     display: none !important;
 }
-
+.detalye-page .details-title span {
+    text-transform: none;
+}
