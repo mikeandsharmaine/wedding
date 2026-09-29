@@ -690,24 +690,117 @@ body.menu-open { overflow: hidden; }
         transition-duration:.01ms !important;
     }
 /* =========================================================
+   CLOSING
+========================================================= */
+
+.daloy-closing {
+    position: relative;
+
+    padding: 70px 30px 100px;
+
+    text-align: center;
+
+    background: transparent;
+}
+
+.closing-label {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: var(--gold);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    letter-spacing: .34em;
+
+    text-transform: uppercase;
+}
+
+.daloy-closing h2 {
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    color: var(--brown);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: clamp(30px, 4vw, 47px);
+
+    font-style: italic;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+.daloy-closing h2 em {
+    color: var(--peach);
+}
+
+.closing-ornament {
+    margin: 20px auto 15px;
+
+    color: var(--gold);
+
+    font-size: 22px;
+}
+
+.closing-names {
+    color: var(--peach);
+
+    font-family: "Allura", cursive;
+
+    font-size: 42px;
+
+    line-height: 1;
+}
+
+.closing-date {
+    margin: 8px 0 0;
+
+    color: var(--brown);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: .22em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
    NEXT SECTION BUTTON
 ========================================================= */
 
 .next-button {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 24px;
 
     width: 380px;
+
     max-width: 85vw;
 
     min-height: 76px;
 
-    margin: 45px auto 0;
+    margin: 30px auto 0;
+
     padding: 16px 32px;
 
     border: 2px solid rgba(126, 142, 101, 0.55);
+
     border-radius: 50px;
 
     background: rgba(250, 244, 228, 0.45);
@@ -715,18 +808,20 @@ body.menu-open { overflow: hidden; }
     color: var(--brown);
 
     font-family: "Poppins", sans-serif;
+
     font-size: 16px;
+
     font-weight: 400;
 
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
 
     text-decoration: none;
 
     transition:
-        background 0.3s ease,
-        border-color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        background .3s ease,
+        border-color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
 .next-button span {
@@ -735,21 +830,23 @@ body.menu-open { overflow: hidden; }
 
 .next-button strong {
     font-size: 24px;
+
     font-weight: 400;
+
     line-height: 1;
 
-    transition: transform 0.3s ease;
+    transition: transform .3s ease;
 }
 
 .next-button:hover {
-    background: rgba(250, 244, 228, 0.8);
+    background: rgba(250, 244, 228, .8);
 
     border-color: var(--sage-dark);
 
     transform: translateY(-2px);
 
     box-shadow:
-        0 10px 25px rgba(80, 70, 55, 0.08);
+        0 10px 25px rgba(80, 70, 55, .08);
 }
 
 .next-button:hover strong {
@@ -763,13 +860,26 @@ body.menu-open { overflow: hidden; }
 
 @media (max-width: 700px) {
 
+    .daloy-closing {
+        padding: 55px 20px 75px;
+    }
+
+    .daloy-closing h2 {
+        font-size: 31px;
+    }
+
+    .closing-names {
+        font-size: 37px;
+    }
+
     .next-button {
         width: 330px;
+
         max-width: 88vw;
 
         min-height: 64px;
 
-        margin-top: 38px;
+        margin-top: 28px;
 
         padding: 14px 24px;
 
