@@ -33,30 +33,15 @@
     padding: 0;
 
     color: var(--text);
-
     font-family: "Cormorant Garamond", serif;
 
-    /*
-     * ONE CONTINUOUS FLORAL BACKGROUND
-     * ---------------------------------
-     * The floral frame now belongs to the
-     * entire Detalye page instead of only
-     * the upper portion.
-     */
-
+    /* Continuous background */
     background-color: var(--cream);
-
-    background-image:
-        url("floral-frame.png");
-
-    background-position:
-        center top;
-
-    background-size:
-        100% auto;
-
-    background-repeat:
-        repeat-y;
+    background-image: url("floral-frame.png");
+    background-position: center top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
 }
 
 .detalye-page *,
