@@ -10082,3 +10082,142 @@ body.sidebar-open {
         transform: translate(-50%, -50%);
     }
 }
+
+
+
+/* =====================================================
+   FINAL FIX: DESKTOP HORIZONTAL MENU + READABLE DATE
+   Keep hamburger navigation on mobile.
+===================================================== */
+
+/* Desktop and laptop: show all links in one horizontal row */
+@media screen and (min-width: 901px) {
+    header.website-nav {
+        position: fixed !important;
+        inset: 0 0 auto 0 !important;
+        width: 100% !important;
+        height: 82px !important;
+        min-height: 82px !important;
+        padding: 0 28px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        z-index: 1500 !important;
+        background: rgba(255, 250, 240, 0.97) !important;
+        overflow: visible !important;
+    }
+
+    header.website-nav .menu-toggle {
+        display: none !important;
+    }
+
+    header.website-nav .desktop-menu {
+        display: flex !important;
+        flex-flow: row nowrap !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: clamp(10px, 1.35vw, 24px) !important;
+        width: auto !important;
+        max-width: calc(100% - 150px) !important;
+        margin: 0 auto !important;
+        padding: 0 110px 0 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    header.website-nav .desktop-menu a {
+        display: inline-block !important;
+        flex: 0 0 auto !important;
+        color: #68784f !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: clamp(11px, 0.82vw, 14px) !important;
+        line-height: 1.4 !important;
+        font-weight: 500 !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        padding: 10px 0 !important;
+    }
+
+    header.website-nav .desktop-menu a:hover,
+    header.website-nav .desktop-menu a.active {
+        color: #ad8048 !important;
+        border-bottom: 1px solid #ad8048 !important;
+    }
+
+    header.website-nav .nav-monogram {
+        position: absolute !important;
+        top: 50% !important;
+        right: 28px !important;
+        left: auto !important;
+        transform: translateY(-50%) !important;
+        z-index: 2 !important;
+        white-space: nowrap !important;
+        color: #68784f !important;
+    }
+
+    #home {
+        padding-top: 82px !important;
+    }
+}
+
+/* Mobile/tablet: hide horizontal links and retain hamburger */
+@media screen and (max-width: 900px) {
+    header.website-nav .desktop-menu {
+        display: none !important;
+    }
+
+    header.website-nav .menu-toggle {
+        display: flex !important;
+    }
+
+    header.website-nav .nav-monogram {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translate(-50%, -50%) !important;
+    }
+}
+
+/* Make the date and venue easier to read */
+.hero-date {
+    align-items: center !important;
+    gap: 8px !important;
+    color: #4f5940 !important;
+    font-family: "Poppins", sans-serif !important;
+    text-align: center !important;
+}
+
+.hero-date strong {
+    color: #48543a !important;
+    font-family: "Poppins", sans-serif !important;
+    font-size: clamp(16px, 1.2vw, 19px) !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.2px !important;
+    line-height: 1.5 !important;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.65) !important;
+}
+
+.hero-date span {
+    color: #4f5940 !important;
+    font-family: "Poppins", sans-serif !important;
+    font-size: clamp(12px, 0.95vw, 15px) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.6px !important;
+    line-height: 1.6 !important;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.65) !important;
+    max-width: 100% !important;
+}
+
+@media screen and (max-width: 600px) {
+    .hero-date strong {
+        font-size: 16px !important;
+        letter-spacing: 0.6px !important;
+    }
+
+    .hero-date span {
+        font-size: 12px !important;
+        letter-spacing: 0.2px !important;
+        padding: 0 8px !important;
+    }
+}
