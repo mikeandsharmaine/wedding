@@ -3542,7 +3542,7 @@ textarea{
 
 }
 /* =========================================================
-   ANG AMING KWENTO — VINTAGE LOVE LETTER EDITION
+   ANG AMING KWENTO â€” VINTAGE LOVE LETTER EDITION
    ========================================================= */
 
 .kwento-page {
@@ -3653,7 +3653,7 @@ textarea{
 
 .kwento-scrapbook::after {
 
-    content: "❧";
+    content: "â§";
 
     position: absolute;
 
@@ -4928,7 +4928,7 @@ textarea{
 
 
 /* =========================================================
-   ANG AMING KWENTO — VINTAGE FILIPINIANA BACKGROUND
+   ANG AMING KWENTO â€” VINTAGE FILIPINIANA BACKGROUND
    ========================================================= */
 
 body.kwento-page {
@@ -5106,7 +5106,7 @@ body.kwento-page .kwento-gallery::before {
 
 body.kwento-page .kwento-header::before {
 
-    content: "❧";
+    content: "â§";
 
     position: absolute;
 
@@ -5136,7 +5136,7 @@ body.kwento-page .kwento-header::before {
 
 body.kwento-page .kwento-header::after {
 
-    content: "❧";
+    content: "â§";
 
     position: absolute;
 
@@ -5232,7 +5232,7 @@ body.kwento-page .polaroid-two::before {
 
 }
 /* =========================================================
-   ANG AMING KWENTO — FINAL SCRAPBOOK DESIGN
+   ANG AMING KWENTO â€” FINAL SCRAPBOOK DESIGN
    MOBILE FIRST
 ========================================================= */
 
@@ -6242,7 +6242,7 @@ body.kwento-page {
 }
 
 
-/* PHOTO 1 — top right */
+/* PHOTO 1 â€” top right */
 
 .photo-one {
 
@@ -6258,7 +6258,7 @@ body.kwento-page {
 }
 
 
-/* PHOTO 2 — lower right */
+/* PHOTO 2 â€” lower right */
 
 .photo-two {
 
@@ -6661,15 +6661,15 @@ body.kwento-page {
      * On mobile:
      *
      * Title
-     * ↓
+     * â†“
      * Photo 1
-     * ↓
+     * â†“
      * Letter
-     * ↓
+     * â†“
      * Story
-     * ↓
+     * â†“
      * Photo 2
-     * ↓
+     * â†“
      * Film strip
      */
 
@@ -6957,7 +6957,7 @@ body.kwento-page {
 
 
 /* =========================================================
-   KWENTO — FINAL MOBILE LAYOUT
+   KWENTO â€” FINAL MOBILE LAYOUT
    This MUST be the last Kwento mobile CSS
 ========================================================= */
 
@@ -7357,7 +7357,7 @@ body.kwento-page {
 
 
     /* =====================================================
-       LEFT SIDE — STORIES
+       LEFT SIDE â€” STORIES
     ===================================================== */
 
     .kwento-paper {
@@ -7466,7 +7466,7 @@ body.kwento-page {
 
 
     /* =====================================================
-       RIGHT SIDE — SCRAPBOOK
+       RIGHT SIDE â€” SCRAPBOOK
     ===================================================== */
 
     .kwento-visuals {
@@ -7879,7 +7879,7 @@ body.kwento-page .kwento-page-content {
     }
 }
 /* =========================================================
-   KWENTO — FINAL POLISH
+   KWENTO â€” FINAL POLISH
    1) Move the handwritten note beside Story 4
    2) Center the closing message across the FULL mobile page
    3) Keep the two-column story/photo layout
@@ -7924,7 +7924,7 @@ body.kwento-page .kwento-page-content {
   }
 
   /* ---------------------------------------------------------
-     RIGHT COLUMN — NOTE BESIDE STORY 4
+     RIGHT COLUMN â€” NOTE BESIDE STORY 4
      --------------------------------------------------------- */
 
   body.kwento-page .kwento-board > .kwento-visuals .letter-note {
@@ -7993,7 +7993,7 @@ body.kwento-page .kwento-page-content {
   }
 
   /* ---------------------------------------------------------
-     CLOSING MESSAGE — CENTER OF THE WHOLE PAGE
+     CLOSING MESSAGE â€” CENTER OF THE WHOLE PAGE
      --------------------------------------------------------- */
 
   body.kwento-page .kwento-board > .kwento-paper .kwento-closing {
@@ -8068,7 +8068,7 @@ body.kwento-page .kwento-page-content {
   }
 }
 /* =========================================================
-   KWENTO — V4 FINAL POLISH
+   KWENTO â€” V4 FINAL POLISH
    Paste at the VERY BOTTOM of style.css
    ========================================================= */
 
@@ -8146,7 +8146,7 @@ body.kwento-page .kwento-page-content {
   }
 
   /* =======================================================
-     STORY 4 — give it enough bottom space so the closing
+     STORY 4 â€” give it enough bottom space so the closing
      can sit naturally underneath it
      ======================================================= */
 
@@ -8155,7 +8155,7 @@ body.kwento-page .kwento-page-content {
   }
 
   /* =======================================================
-     CLOSING — CENTER ACROSS BOTH COLUMNS
+     CLOSING â€” CENTER ACROSS BOTH COLUMNS
      ======================================================= */
 
   body.kwento-page .kwento-board > .kwento-paper .kwento-closing {
@@ -8192,7 +8192,7 @@ body.kwento-page .kwento-page-content {
   }
 
   /* =======================================================
-     POLAROID CAPTIONS — KEEP VISIBLE
+     POLAROID CAPTIONS â€” KEEP VISIBLE
      ======================================================= */
 
   body.kwento-page .kwento-board > .kwento-visuals
@@ -8472,7 +8472,7 @@ body.kwento-page .kwento-page-content {
    ========================================================= */
 
 #weddingSidebar::before {
-    content: "❧";
+    content: "â§";
 
     position: absolute;
 
@@ -8496,7 +8496,7 @@ body.kwento-page .kwento-page-content {
 
 
 #weddingSidebar::after {
-    content: "✿";
+    content: "âœ¿";
 
     position: absolute;
 
@@ -9151,7 +9151,7 @@ body.sidebar-open {
 }
 
 
-/* Hamburger → X */
+/* Hamburger â†’ X */
 
 .menu-toggle.is-open span:nth-child(1) {
 
@@ -9776,4 +9776,223 @@ body.sidebar-open {
 
     }
 
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE WEDDING NAVIGATION
+   Desktop: horizontal menu bar | Mobile: hamburger sidebar
+   ========================================================== */
+
+.website-nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    width: 100%;
+    min-height: 72px;
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    background: rgba(250, 246, 234, .94);
+    border-bottom: 1px solid rgba(116, 103, 86, .12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.desktop-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(10px, 1.5vw, 24px);
+    width: 100%;
+    padding: 0 100px;
+}
+
+.desktop-menu a {
+    color: #657353;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(10px, .82vw, 12px);
+    font-weight: 400;
+    letter-spacing: .04em;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 10px 0;
+    border-bottom: 1px solid transparent;
+    transition: color .2s ease, border-color .2s ease;
+}
+
+.desktop-menu a:hover,
+.desktop-menu a.active {
+    color: #c87550;
+    border-bottom-color: #c9a15b;
+}
+
+.nav-monogram {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 9px;
+    background: rgba(250, 246, 234, .96);
+    color: #657353;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-monogram span {
+    color: #d96b43;
+    font-family: 'Ballet', cursive;
+    font-size: 27px;
+    line-height: 1;
+}
+
+.menu-toggle {
+    display: none;
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 24px;
+    padding: 2px 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1202;
+}
+
+.menu-toggle:hover,
+.menu-toggle:active {
+    transform: translateY(-50%);
+    background: transparent;
+    box-shadow: none;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: #657353;
+    border-radius: 2px;
+}
+
+.sidebar-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #657353;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.wedding-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: min(370px, 88vw);
+    height: 100vh;
+    z-index: 1400;
+    overflow-y: auto;
+    background: linear-gradient(135deg, #f8f0df 0%, #f4ead7 100%);
+    box-shadow: 15px 0 50px rgba(74, 62, 45, .12);
+    transform: translateX(-105%);
+    transition: transform .35s ease;
+}
+
+.wedding-sidebar.is-open {
+    transform: translateX(0);
+}
+
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1300;
+    background: rgba(67, 57, 44, .3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s ease, visibility .25s ease;
+}
+
+.sidebar-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.sidebar-open {
+    overflow: hidden;
+}
+
+#home {
+    padding-top: 72px;
+}
+
+/* Mobile background: allow the floral artwork to remain visible */
+@media (max-width: 900px) {
+    .website-nav {
+        min-height: 62px;
+        height: 62px;
+        padding: 8px 16px;
+    }
+
+    .desktop-menu {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-monogram {
+        font-size: 20px;
+    }
+
+    #home {
+        padding-top: 62px;
+    }
+
+    body {
+        background-attachment: scroll;
+        background-position: center top;
+        background-size: auto 100vh;
+        background-repeat: repeat-y;
+    }
+
+    .hero-section {
+        min-height: calc(100svh - 62px);
+    }
+}
+
+@media (max-width: 420px) {
+    .nav-monogram {
+        font-size: 19px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
