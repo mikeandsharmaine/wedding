@@ -1,1366 +1,2027 @@
-<!DOCTYPE html>
-<html lang="tl">
+/* =========================================================
+   DALOY NG PAGDIRIWANG
+   Mike & Sharmaine Wedding Website
+   ========================================================= */
 
-<head>
+:root {
+    --cream: #f7f0df;
+    --cream-light: #fbf6e9;
+    --paper: #faf4e4;
 
-    <meta charset="UTF-8">
+    --sage: #7c8d68;
+    --sage-dark: #657353;
+    --sage-light: #c8c9a5;
+    --olive: #697357;
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    --peach: #d96b43;
+    --peach-soft: #e8a27f;
 
-    <title>Daloy ng Pagdiriwang | Mike & Sharmaine</title>
+    --gold: #c9a15b;
+    --gold-light: #dfc78f;
 
+    --brown: #746756;
+    --brown-dark: #554b3d;
+    --text: #706756;
 
-    <!-- =====================================================
-         GOOGLE FONTS
-    ====================================================== -->
+    --white: #fffdf7;
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
+    --header-height: 68px;
+}
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-        crossorigin
-    >
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Allura&family=Cardo:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
-        rel="stylesheet"
-    >
+/* =========================================================
+   RESET
+   ========================================================= */
 
+* {
+    box-sizing: border-box;
+}
 
-    <!-- =====================================================
-         PAGE CSS
-    ====================================================== -->
+html {
+    scroll-behavior: smooth;
+}
 
-    <link
-        rel="stylesheet"
-        href="daloy.css"
-    >
 
-</head>
+body.daloy-page {
+    margin: 0;
+    padding: 0;
 
+    color: var(--text);
 
-<body class="daloy-page">
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
 
+    background-color: var(--cream);
 
-<!-- =========================================================
-     FLOATING PETALS
-========================================================== -->
+    background-image:
+        url("floral-frame.png");
 
-<div
-    id="petals"
-    aria-hidden="true"
-></div>
+    background-position:
+        center top;
 
+    background-size:
+        cover;
 
-<!-- =========================================================
-     TOP NAVIGATION
-========================================================== -->
+    background-repeat:
+        no-repeat;
 
-<header class="website-nav">
+    background-attachment:
+        fixed;
 
-    <button
-        class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="weddingSidebar"
-    >
+    overflow-x: hidden;
+}
 
-        <span></span>
-        <span></span>
-        <span></span>
 
-    </button>
+body.daloy-page a {
+    color: inherit;
+    text-decoration: none;
+}
 
 
-    <a
-        href="index.html"
-        class="nav-monogram"
-        aria-label="Mike and Sharmaine Home"
-    >
+body.daloy-page button {
+    font: inherit;
+}
 
-        M <span>&amp;</span> S
 
-    </a>
+body.daloy-page main {
+    position: relative;
+    overflow: hidden;
+}
 
-</header>
 
+/* =========================================================
+   TOP NAVIGATION
+   ========================================================= */
 
-<!-- =========================================================
-     SIDEBAR
-========================================================== -->
+.website-nav {
+    position: fixed;
 
-<aside
-    class="wedding-sidebar"
-    id="weddingSidebar"
-    aria-hidden="true"
->
+    inset: 0 0 auto 0;
 
-    <div class="sidebar-inner">
+    height: var(--header-height);
 
+    z-index: 1000;
 
-        <!-- BRAND -->
+    display: flex;
 
-        <div class="sidebar-header">
+    align-items: center;
+    justify-content: center;
 
-            <span class="sidebar-eyebrow">
-                OUR WEDDING
-            </span>
+    background:
+        rgba(250, 246, 234, .94);
 
-            <div class="sidebar-monogram">
-                M <span>&amp;</span> S
-            </div>
+    border-bottom:
+        1px solid rgba(116, 103, 86, .08);
 
-            <p class="sidebar-subtitle">
-                Mike &amp; Sharmaine
-            </p>
+    backdrop-filter:
+        blur(8px);
 
-        </div>
+    -webkit-backdrop-filter:
+        blur(8px);
+}
 
 
-        <!-- NAVIGATION -->
+.menu-toggle {
+    position: absolute;
 
-        <nav
-            class="sidebar-menu"
-            aria-label="Wedding navigation"
-        >
+    left: 28px;
+    top: 50%;
 
-            <a
-                href="index.html"
-                class="sidebar-link"
-            >
-                <span class="sidebar-number">01</span>
-                <span>Home</span>
-            </a>
+    width: 28px;
+    height: 24px;
 
+    padding: 0;
+    margin: 0;
 
-            <a
-                href="kwento.html"
-                class="sidebar-link"
-            >
-                <span class="sidebar-number">02</span>
-                <span>Ang Aming Kwento</span>
-            </a>
+    transform:
+        translateY(-50%);
 
+    border: 0;
 
-            <a
-                href="detalye.html"
-                class="sidebar-link"
-            >
-                <span class="sidebar-number">03</span>
-                <span>Detalye ng Kasal</span>
-            </a>
+    background:
+        transparent;
 
+    cursor: pointer;
 
-            <a
-                href="daloy.html"
-                class="sidebar-link active"
-            >
-                <span class="sidebar-number">04</span>
-                <span>Daloy ng Pagdiriwang</span>
-            </a>
+    display: flex;
 
+    flex-direction: column;
 
-            <a
-                href="dress-code.html"
-                class="sidebar-link"
-            >
-                <span class="sidebar-number">05</span>
-                <span>Dress Code</span>
-            </a>
+    justify-content: space-between;
 
+    z-index: 1002;
+}
 
-            <a
-                href="rsvp.html"
-                class="sidebar-link"
-            >
-                <span class="sidebar-number">06</span>
-                <span>RSVP</span>
-            </a>
 
-        </nav>
+.menu-toggle span {
+    display: block;
 
+    width: 23px;
+    height: 1.5px;
 
-        <!-- FOOTER -->
+    background:
+        var(--sage-dark);
 
-        <div class="sidebar-footer">
+    transition:
+        transform .25s ease,
+        opacity .25s ease;
+}
 
-            <div class="sidebar-divider">
-                ♡
-            </div>
 
-            <em>
-                With love,
-            </em>
+.nav-monogram {
+    display: inline-flex;
 
-            <strong>
-                Mike &amp; Sharmaine
-            </strong>
+    align-items: baseline;
 
-        </div>
+    gap: 7px;
 
-    </div>
+    color:
+        var(--sage-dark);
 
-</aside>
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
 
+    font-size: 25px;
 
-<!-- =========================================================
-     OVERLAY
-========================================================== -->
+    font-weight: 600;
 
-<div
-    class="menu-overlay"
-    id="menuOverlay"
-></div>
+    letter-spacing: .08em;
+}
 
 
-<!-- =========================================================
-     MAIN
-========================================================== -->
+.nav-monogram span:nth-child(2),
+.nav-monogram .monogram-and {
+    color:
+        var(--peach);
 
-<main>
+    font-family:
+        "Allura",
+        cursive;
 
+    font-size: 30px;
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
+    font-weight: 400;
+}
 
-    <section class="daloy-hero">
 
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
 
-        <!-- Decorative botanical elements -->
+.wedding-sidebar {
+    position: fixed;
 
-        <div
-            class="hero-flower hero-flower-left"
-            aria-hidden="true"
-        ></div>
+    top: 0;
+    left: 0;
 
+    width: 370px;
+    height: 100vh;
 
-        <div
-            class="hero-flower hero-flower-right"
-            aria-hidden="true"
-        ></div>
+    z-index: 2000;
 
+    background:
+        linear-gradient(
+            135deg,
+            #f8f0df 0%,
+            #f4ead7 100%
+        );
 
-        <div
-            class="hero-leaf hero-leaf-left"
-            aria-hidden="true"
-        ></div>
+    box-shadow:
+        15px 0 50px rgba(74, 62, 45, .12);
 
+    transform:
+        translateX(-105%);
 
-        <div
-            class="hero-leaf hero-leaf-right"
-            aria-hidden="true"
-        ></div>
+    transition:
+        transform .45s cubic-bezier(.77, 0, .18, 1);
 
+    overflow-y: auto;
+}
 
-        <p class="daloy-eyebrow">
-            SECTION 04 · OUR CELEBRATION
-        </p>
 
+.wedding-sidebar.open {
+    transform:
+        translateX(0);
+}
 
-        <h1 class="daloy-title">
 
-            <span>
-                DALOY NG
-            </span>
+.sidebar-inner {
+    min-height: 100%;
 
-            <strong>
-                Pagdiriwang
-            </strong>
+    padding:
+        32px 34px 35px;
 
-        </h1>
+    display: flex;
 
+    flex-direction: column;
+}
 
-        <div class="daloy-ornament">
 
-            <span></span>
+.sidebar-header {
+    margin-bottom: 48px;
 
-            ❋
+    text-align: left;
+}
 
-            <span></span>
 
-        </div>
+.sidebar-eyebrow {
+    display: block;
 
+    margin-bottom: 8px;
 
-        <p class="daloy-subtitle">
+    color:
+        var(--gold);
 
-            Mga sandaling sabay-sabay nating<br>
-            bubuuin at aalalahanin.
+    font-family:
+        Poppins,
+        sans-serif;
 
-        </p>
+    font-size: 9px;
 
+    font-weight: 500;
 
-        <div class="hero-mini-details">
+    letter-spacing: .28em;
+}
 
-            <span>
-                ENERO 15, 2027
-            </span>
 
-            <i>•</i>
+.sidebar-monogram {
+    color:
+        var(--sage-dark);
 
-            <span>
-                FRUELLA'S EVENTS PLACE
-            </span>
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
-        </div>
+    font-size: 29px;
 
-    </section>
+    font-weight: 600;
 
+    letter-spacing: .06em;
+}
 
-    <!-- =====================================================
-         INTRODUCTION
-    ====================================================== -->
 
-    <section class="daloy-intro">
+.sidebar-monogram span {
+    color:
+        var(--peach);
 
-        <div class="intro-paper">
+    font-family:
+        Allura,
+        cursive;
 
-            <span class="intro-label">
-                ANG AMING ARAW
-            </span>
+    font-size: 33px;
+}
 
 
-            <h2>
+.sidebar-subtitle {
+    margin:
+        3px 0 0;
 
-                Isang araw,
+    color:
+        var(--brown);
 
-                <em>
-                    sampung espesyal na sandali.
-                </em>
+    font-size: 17px;
 
-            </h2>
+    font-style: italic;
+}
 
 
-            <p>
+.sidebar-menu {
+    display: flex;
 
-                Mula sa unang pagdating ng aming mga mahal sa buhay
-                hanggang sa huling sayaw ng gabi, bawat bahagi ng
-                aming pagdiriwang ay may sariling kuwento.
+    flex-direction: column;
 
-                <br><br>
+    gap: 4px;
+}
 
-                Narito ang daloy ng araw upang sabay-sabay nating
-                masundan ang bawat sandali.
 
-            </p>
+.sidebar-link {
+    position: relative;
 
+    display: grid;
 
-            <div class="intro-signature">
-                M &amp; S ♡
-            </div>
+    grid-template-columns:
+        38px minmax(0, 1fr);
 
-        </div>
+    align-items: center;
 
-    </section>
+    min-height: 55px;
 
+    padding:
+        8px 12px;
 
-    <!-- =====================================================
-         TIMELINE
-    ====================================================== -->
+    color:
+        var(--brown);
 
-    <section class="timeline-section">
+    border-bottom:
+        1px solid rgba(116, 103, 86, .12);
 
+    transition:
+        color .25s ease,
+        background .25s ease,
+        padding .25s ease;
+}
 
-        <!-- Timeline heading -->
 
-        <div class="timeline-heading">
+.sidebar-link:hover,
+.sidebar-link.active {
+    color:
+        var(--peach);
 
-            <span>
-                THE DAY UNFOLDS
-            </span>
+    background:
+        rgba(217, 107, 67, .055);
 
-            <h2>
-                Mga Sandali ng
-                <em>Pagdiriwang</em>
-            </h2>
+    padding-left:
+        17px;
+}
 
-            <p>
-                Isang araw na puno ng pagmamahal,
-                tawanan, at mga alaala.
-            </p>
 
-        </div>
+.sidebar-number {
+    color:
+        var(--gold);
 
+    font-family:
+        Poppins,
+        sans-serif;
 
-        <!-- =================================================
-             TIMELINE
-        ================================================== -->
+    font-size: 9px;
 
-        <div class="timeline">
+    letter-spacing: .12em;
+}
 
 
-            <!-- CENTER LINE -->
+.sidebar-link > span:nth-child(2) {
+    font-size: 18px;
+}
 
-            <div
-                class="timeline-line"
-                aria-hidden="true"
-            ></div>
 
+.sidebar-footer {
+    margin-top: auto;
 
-            <!-- =================================================
-                 01
-            ================================================== -->
+    padding-top: 45px;
 
-            <article class="timeline-item timeline-left">
+    text-align: center;
+}
 
-                <div class="timeline-content">
 
-                    <div class="timeline-label">
-                        01 · ARRIVAL
-                    </div>
+.sidebar-divider {
+    margin-bottom: 12px;
 
-                    <h2>
-                        Pagdating ng mga Bisita
-                    </h2>
+    color:
+        var(--gold);
 
-                    <p>
-                        Malugod naming sasalubungin ang aming
-                        mga mahal sa buhay bago magsimula ang
-                        seremonya.
-                    </p>
+    font-size: 22px;
+}
 
-                </div>
 
+.sidebar-footer em {
+    display: block;
 
-                <div class="timeline-marker">
+    color:
+        var(--brown);
 
-                    <span class="timeline-number">
-                        01
-                    </span>
+    font-size: 16px;
+}
 
-                    <div class="timeline-icon">
 
-                        <svg
-                            viewBox="0 0 100 100"
-                            aria-hidden="true"
-                        >
+.sidebar-footer strong {
+    display: block;
 
-                            <path d="M25 72V48C25 30 36 20 50 20C64 20 75 30 75 48V72"/>
+    margin-top: 2px;
 
-                            <path d="M33 72V49C33 37 40 29 50 29C60 29 67 37 67 49V72"/>
+    color:
+        var(--sage-dark);
 
-                            <path d="M20 72H80"/>
+    font-size: 20px;
 
-                            <path d="M25 54L18 48"/>
+    font-weight: 500;
+}
 
-                            <path d="M18 48L15 42"/>
 
-                            <path d="M75 54L82 48"/>
+.menu-overlay {
+    position: fixed;
 
-                            <path d="M82 48L85 42"/>
+    inset: 0;
 
-                            <path d="M20 60L15 55"/>
+    z-index: 1900;
 
-                            <path d="M80 60L85 55"/>
+    background:
+        rgba(67, 57, 44, .30);
 
-                        </svg>
+    opacity: 0;
 
-                    </div>
+    visibility: hidden;
 
-                </div>
+    transition:
+        opacity .35s ease,
+        visibility .35s ease;
+}
 
-            </article>
 
+.menu-overlay.show {
+    opacity: 1;
 
-            <!-- =================================================
-                 02
-            ================================================== -->
+    visibility: visible;
+}
 
-            <article class="timeline-item timeline-right">
 
-                <div class="timeline-marker">
+body.menu-open {
+    overflow: hidden;
+}
 
-                    <span class="timeline-number">
-                        02
-                    </span>
 
-                    <div class="timeline-icon">
+/* =========================================================
+   HERO
+   ========================================================= */
 
-                        <svg
-                            viewBox="0 0 100 100"
-                            aria-hidden="true"
-                        >
+.daloy-hero {
+    position: relative;
 
-                            <path d="M27 72V42L50 25L73 42V72"/>
+    min-height: 680px;
 
-                            <path d="M38 72V51H62V72"/>
+    padding:
+        calc(var(--header-height) + 80px)
+        30px
+        80px;
 
-                            <path d="M45 51V72"/>
+    display: flex;
 
-                            <path d="M55 51V72"/>
+    flex-direction: column;
 
-                            <path d="M50 17V31"/>
+    align-items: center;
 
-                            <path d="M44 24H56"/>
+    justify-content: center;
 
-                            <path d="M22 72H78"/>
+    text-align: center;
 
-                        </svg>
+    background:
+        transparent;
+}
 
-                    </div>
 
-                </div>
+.hero-flower,
+.hero-leaf {
+    position: absolute;
 
+    pointer-events: none;
 
-                <div class="timeline-content">
+    opacity: .5;
+}
 
-                    <div class="timeline-label">
-                        02 · CEREMONY
-                    </div>
 
-                    <h2>
-                        Ceremony Proper
-                    </h2>
+.hero-flower-left {
+    left: 4%;
+    top: 28%;
+}
 
-                    <p>
-                        Ang pinakasentro ng aming araw —
-                        ang banal na pag-iisang dibdib
-                        nina Mike at Sharmaine.
-                    </p>
 
-                </div>
+.hero-flower-right {
+    right: 4%;
+    top: 22%;
+}
 
-            </article>
 
+.hero-leaf-left {
+    left: 10%;
+    bottom: 18%;
+}
 
-            <!-- =================================================
-                 03
-            ================================================== -->
 
-            <article class="timeline-item timeline-left">
+.hero-leaf-right {
+    right: 10%;
+    bottom: 15%;
+}
 
-                <div class="timeline-content">
 
-                    <div class="timeline-label">
-                        03 · MEMORIES
-                    </div>
+.daloy-eyebrow {
+    position: relative;
 
-                    <h2>
-                        Photo Session
-                    </h2>
+    z-index: 2;
 
-                    <p>
-                        Mga larawan kasama ang pamilya,
-                        mga kaibigan, at mga taong naging
-                        bahagi ng aming kuwento.
-                    </p>
+    margin:
+        0 0 24px;
 
-                </div>
+    color:
+        var(--brown);
 
+    font-family:
+        Poppins,
+        sans-serif;
 
-                <div class="timeline-marker">
+    font-size: 9px;
 
-                    <span class="timeline-number">
-                        03
-                    </span>
+    font-weight: 500;
 
-                    <div class="timeline-icon">
+    letter-spacing: .38em;
 
-                        <svg
-                            viewBox="0 0 100 100"
-                            aria-hidden="true"
-                        >
+    text-transform: uppercase;
+}
 
-                            <path d="M25 38H75V70H25Z"/>
 
-                            <path d="M35 38L40 30H60L65 38"/>
+.daloy-title {
+    position: relative;
 
-                            <circle
-                                cx="50"
-                                cy="54"
-                                r="12"
-                            />
+    z-index: 2;
 
-                            <circle
-                                cx="50"
-                                cy="54"
-                                r="6"
-                            />
+    margin: 0;
 
-                            <circle
-                                cx="67"
-                                cy="45"
-                                r="3"
-                            />
+    color:
+        var(--sage-dark);
 
-                            <path d="M29 31C23 27 23 21 27 18"/>
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
 
-                            <path d="M27 23L22 21"/>
+    font-size:
+        clamp(58px, 7vw, 92px);
 
-                            <path d="M27 26L31 21"/>
+    font-weight: 500;
 
-                        </svg>
+    line-height: .92;
 
-                    </div>
+    letter-spacing: -.04em;
+}
 
-                </div>
 
-            </article>
+.daloy-title span {
+    display: block;
+}
 
 
-            <!-- =================================================
-                 04
-            ================================================== -->
+.daloy-title strong {
+    display: block;
 
-            <article class="timeline-item timeline-right">
+    margin-top: 8px;
 
-                <div class="timeline-marker">
+    color:
+        var(--peach);
 
-                    <span class="timeline-number">
-                        04
-                    </span>
+    font-family:
+        Allura,
+        cursive;
 
-                    <div class="timeline-icon">
+    font-size:
+        clamp(82px, 9vw, 126px);
 
-                        <svg
-                            viewBox="0 0 100 100"
-                            aria-hidden="true"
-                        >
+    font-weight: 400;
 
-                            <path d="M28 28L43 28L39 48C38 53 34 56 30 56C26 56 23 53 22 48Z"/>
+    line-height: .8;
 
-                            <path d="M32 56V69"/>
+    letter-spacing: 0;
+}
 
-                            <path d="M25 72H39"/>
 
-                            <path d="M57 28L72 28L68 48C67 53 63 56 59 56C55 56 52 53 51 48Z"/>
+.daloy-ornament {
+    position: relative;
 
-                            <path d="M61 56V69"/>
+    z-index: 2;
 
-                            <path d="M54 72H68"/>
+    display: flex;
 
-                            <path d="M39 36L51 44"/>
+    align-items: center;
 
-                            <path d="M51 44L57 36"/>
+    justify-content: center;
 
-                            <path d="M50 20V25"/>
+    gap: 18px;
 
-                            <path d="M47.5 22.5H52.5"/>
+    width: 170px;
 
-                        </svg>
+    margin:
+        48px auto 24px;
 
-                    </div>
+    color:
+        var(--gold);
 
-                </div>
+    font-size: 16px;
+}
 
 
-                <div class="timeline-content">
+.daloy-ornament::before,
+.daloy-ornament::after {
+    content: "";
 
-                    <div class="timeline-label">
-                        04 · TOAST
-                    </div>
+    flex: 1;
 
-                    <h2>
-                        Cocktail Hour
-                    </h2>
+    height: 1px;
 
-                    <p>
-                        Isang sandali para makapagkuwentuhan,
-                        makapagpahinga, at makapag-toast kasama
-                        ang mga bisita.
-                    </p>
+    background:
+        rgba(201, 161, 91, .55);
+}
 
-                </div>
 
-            </article>
+.daloy-subtitle {
+    position: relative;
 
+    z-index: 2;
 
-            <!-- =================================================
-                 05
-            ================================================== -->
+    margin: 0;
 
-            <article class="timeline-item timeline-left">
+    color:
+        var(--brown);
 
-                <div class="timeline-content">
+    font-size: 22px;
 
-                    <div class="timeline-label">
-                        05 · CELEBRATION
-                    </div>
+    font-style: italic;
 
-                    <h2>
-                        Grand Entrance
-                    </h2>
+    line-height: 1.35;
+}
 
-                    <p>
-                        Sama-sama nating sasalubungin ang
-                        bagong kabanata nina Mike at Sharmaine.
-                    </p>
 
-                </div>
+.hero-mini-details {
+    position: relative;
 
+    z-index: 2;
 
-                <div class="timeline-marker">
+    display: flex;
 
-                    <span class="timeline-number">
-                        05
-                    </span>
+    align-items: center;
 
-                    <div class="timeline-icon">
+    justify-content: center;
 
-                        <svg
-                            viewBox="0 0 100 100"
-                            aria-hidden="true"
-                        >
+    flex-wrap: wrap;
 
-                            <path d="M23 72V43C23 28 34 20 50 20C66 20 77 28 77 43V72"/>
+    gap: 10px;
 
-                            <path d="M30 72V45C30 34 38 27 50 27C62 27 70 34 70 45V72"/>
+    margin-top: 30px;
 
-                            <path d="M23 72H77"/>
+    color:
+        var(--brown);
 
-                            <path d="M30 43C37 48 39 57 35 67"/>
+    font-family:
+        Poppins,
+        sans-serif;
 
-                            <path d="M70 43C63 48 61 57 65 67"/>
+    font-size: 8px;
 
-                            <path d="M25 37L19 32"/>
+    font-weight: 500;
 
-                            <path d="M19 32L16 27"/>
+    letter-spacing: .24em;
 
-                            <path d="M75 37L81 32"/>
+    text-transform: uppercase;
+}
 
-                            <path d="M81 32L84 27"/>
 
-                        </svg>
+.hero-mini-details i {
+    color:
+        var(--peach);
 
-                    </div>
+    font-style: normal;
+}
 
-                </div>
 
-            </article>
+/* =========================================================
+   INTRO
+   ========================================================= */
 
+.daloy-intro {
+    position: relative;
 
-            <!-- =================================================
-                 06
-            ================================================== -->
+    width:
+        min(calc(100% - 40px), 770px);
 
-            <article class="timeline-item timeline-right">
+    margin:
+        10px auto 110px;
+}
 
-                <div class="timeline-marker">
 
-                    <span class="timeline-number">
-                        06
-                    </span>
+.intro-paper {
+    position: relative;
 
-                    <div class="timeline-icon">
+    padding:
+        62px 70px;
 
-                        <svg
-                            viewBox="0 0 100 100"
-                            aria-hidden="true"
-                        >
+    background:
+        rgba(250, 244, 228, .88);
 
-                            <circle
-                                cx="43"
-                                cy="30"
-                                r="6"
-                            />
+    border:
+        1px solid rgba(201, 161, 91, .30);
 
-                            <circle
-                                cx="59"
-                                cy="30"
-                                r="6"
-                            />
+    box-shadow:
+        0 15px 45px rgba(85, 75, 61, .07);
 
-                            <path d="M43 37L43 62"/>
+    text-align: center;
+}
 
-                            <path d="M43 43L34 51"/>
 
-                            <path d="M43 43L52 50"/>
+.intro-paper::before {
+    content: "";
 
-                            <path d="M43 62L36 74"/>
+    position: absolute;
 
-                            <path d="M43 62L50 74"/>
+    inset: 10px;
 
-                            <path d="M59 37L59 48"/>
+    border:
+        1px solid rgba(201, 161, 91, .20);
 
-                            <path d="M59 45L51 53"/>
+    pointer-events: none;
+}
 
-                            <path d="M59 45L67 53"/>
 
-                            <path d="M59 48C54 56 49 66 46 74H72C69 66 64 56 59 48Z"/>
+.intro-label {
+    position: relative;
 
-                            <path d="M76 35V41"/>
+    display: block;
 
-                            <path d="M73 38H79"/>
+    margin:
+        0 0 23px;
 
-                            <path d="M25 45V50"/>
+    color:
+        var(--brown);
 
-                            <path d="M22.5 47.5H27.5"/>
+    font-family:
+        Poppins,
+        sans-serif;
 
-                        </svg>
+    font-size: 8px;
 
-                    </div>
+    font-weight: 500;
 
-                </div>
+    letter-spacing: .35em;
 
+    text-transform: uppercase;
+}
 
-                <div class="timeline-content">
 
-                    <div class="timeline-label">
-                        06 · LOVE
-                    </div>
+.intro-paper h2 {
+    position: relative;
 
-                    <h2>
-                        First Dance
-                    </h2>
+    margin: 0;
 
-                    <p>
-                        Isang sayaw na para lamang sa
-                        bagong mag-asawa — ang unang
-                        sayaw bilang magkabiyak.
-                    </p>
+    color:
+        var(--sage-dark);
 
-                </div>
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
 
-            </article>
+    font-size:
+        clamp(35px, 4vw, 48px);
 
+    font-weight: 600;
 
-            <!-- =================================================
-                 07
-            ================================================== -->
+    line-height: 1.15;
+}
 
-            <article class="timeline-item timeline-left">
 
-                <div class="timeline-content">
+.intro-paper h2 em {
+    color:
+        var(--peach);
 
-                    <div class="timeline-label">
-                        07 · FEAST
-                    </div>
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
 
-                    <h2>
-                        Dinner Reception
-                    </h2>
+    font-weight: 500;
+}
 
-                    <p>
-                        Sama-sama nating pagsaluhan ang
-                        masarap na hapunan habang ipinagdiriwang
-                        ang araw ng aming kasal.
-                    </p>
 
-                </div>
+.intro-paper p {
+    position: relative;
 
+    max-width: 570px;
 
-                <div class="timeline-marker">
+    margin:
+        25px auto 0;
 
-                    <span class="timeline-number">
-                        07
-                    </span>
+    color:
+        var(--brown);
 
-                    <div class="timeline-icon">
+    font-size: 19px;
 
-                        <svg
-                            viewBox="0 0 100 100"
-                            aria-hidden="true"
-                        >
+    font-style: italic;
 
-                            <circle
-                                cx="53"
-                                cy="52"
-                                r="20"
-                            />
+    line-height: 1.65;
+}
 
-                            <circle
-                                cx="53"
-                                cy="52"
-                                r="15"
-                            />
 
-                            <path d="M25 32V72"/>
+.intro-signature {
+    position: relative;
 
-                            <path d="M21 32V46"/>
+    margin-top: 25px;
 
-                            <path d="M25 32V46"/>
+    color:
+        var(--peach);
 
-                            <path d="M29 32V46"/>
+    font-family:
+        Allura,
+        cursive;
 
-                            <path d="M21 46C21 50 25 52 25 52"/>
+    font-size: 34px;
+}
 
-                            <path d="M79 32V72"/>
 
-                            <path d="M79 32C73 39 73 46 79 50"/>
+/* =========================================================
+   TIMELINE
+   ========================================================= */
 
-                        </svg>
+.timeline-section {
+    position: relative;
 
-                    </div>
+    padding:
+        20px 30px 120px;
 
-                </div>
+    background:
+        transparent;
+}
 
-            </article>
 
+.timeline-heading {
+    margin-bottom: 85px;
 
-            <!-- =================================================
-                 08
-            ================================================== -->
+    text-align: center;
+}
 
-            <article class="timeline-item timeline-right">
 
-                <div class="timeline-marker">
+.timeline-heading > span {
+    display: block;
 
-                    <span class="timeline-number">
-                        08
-                    </span>
+    margin-bottom: 15px;
 
-                    <div class="timeline-icon">
+    color:
+        var(--gold);
 
-                        <svg
-                            viewBox="0 0 100 100"
-                            aria-hidden="true"
-                        >
+    font-family:
+        Poppins,
+        sans-serif;
 
-                            <path d="M23 32H58C64 32 68 36 68 42V57C68 63 64 67 58 67H39L29 75V67H23C17 67 13 63 13 57V42C13 36 17 32 23 32Z"/>
+    font-size: 8px;
 
-                            <path d="M47 45H77C83 45 87 49 87 55V68C87 74 83 78 77 78H68L60 84V78H47"/>
+    font-weight: 500;
 
-                            <path d="M48 51C44 45 36 48 38 54C40 59 48 64 48 64S56 59 58 54C60 48 52 45 48 51Z"/>
+    letter-spacing: .34em;
 
-                        </svg>
+    text-transform: uppercase;
+}
 
-                    </div>
 
-                </div>
+.timeline-heading h2 {
+    margin: 0;
 
+    color:
+        var(--sage-dark);
 
-                <div class="timeline-content">
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
 
-                    <div class="timeline-label">
-                        08 · FUN
-                    </div>
+    font-size:
+        clamp(38px, 5vw, 58px);
 
-                    <h2>
-                        Messages &amp; Games
-                    </h2>
+    line-height: 1;
+}
 
-                    <p>
-                        Tawanan, pagbati, masasayang mensahe,
-                        at mga larong makikisali ang aming
-                        mga mahal sa buhay.
-                    </p>
 
-                </div>
+.timeline-heading h2 em {
+    color:
+        var(--peach);
 
-            </article>
+    font-family:
+        Allura,
+        cursive;
 
+    font-weight: 400;
+}
 
-            <!-- =================================================
-                 09
-            ================================================== -->
 
-            <article class="timeline-item timeline-left">
+.timeline-heading p {
+    margin:
+        18px 0 0;
 
-                <div class="timeline-content">
+    color:
+        var(--brown);
 
-                    <div class="timeline-label">
-                        09 · SWEET MOMENT
-                    </div>
+    font-size: 18px;
 
-                    <h2>
-                        Cake Cutting
-                    </h2>
+    font-style: italic;
+}
 
-                    <p>
-                        Isang matamis na sandali habang
-                        sabay naming hinihiwa ang aming
-                        wedding cake.
-                    </p>
 
-                </div>
+.timeline {
+    position: relative;
 
+    width:
+        min(1180px, 100%);
 
-                <div class="timeline-marker">
+    margin:
+        0 auto;
+}
 
-                    <span class="timeline-number">
-                        09
-                    </span>
 
-                    <div class="timeline-icon">
+.timeline-line {
+    position: absolute;
 
-                        <svg
-                            viewBox="0 0 100 100"
-                            aria-hidden="true"
-                        >
+    top: 20px;
+    bottom: 20px;
 
-                            <path d="M27 58H73V73H27Z"/>
+    left: 50%;
 
-                            <path d="M34 45H66V58H34Z"/>
+    width: 1px;
 
-                            <path d="M42 35H58V45H42Z"/>
+    transform:
+        translateX(-50%);
 
-                            <path d="M34 48C38 51 42 46 46 49C50 52 54 46 58 49C62 52 65 48 66 48"/>
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(201, 161, 91, .72) 0,
+            rgba(201, 161, 91, .72) 5px,
+            transparent 5px,
+            transparent 12px
+        );
 
-                            <path d="M50 35V28"/>
+    pointer-events: none;
+}
 
-                            <path d="M46 25C48 22 52 22 54 25C52 29 48 29 46 25Z"/>
 
-                            <path d="M22 77H78"/>
+.timeline-item {
+    position: relative;
 
-                        </svg>
+    display: grid;
 
-                    </div>
+    grid-template-columns:
+        minmax(0, 1fr)
+        110px
+        minmax(0, 1fr);
 
-                </div>
+    align-items: center;
 
-            </article>
+    min-height: 190px;
 
+    margin-bottom: 22px;
+}
 
-            <!-- =================================================
-                 10
-            ================================================== -->
 
-            <article class="timeline-item timeline-right">
+.timeline-content {
+    position: relative;
 
-                <div class="timeline-marker">
+    width:
+        min(420px, 100%);
 
-                    <span class="timeline-number">
-                        10
-                    </span>
+    padding:
+        28px 32px;
 
-                    <div class="timeline-icon">
+    background:
+        rgba(250, 244, 228, .82);
 
-                        <svg
-                            viewBox="0 0 100 100"
-                            aria-hidden="true"
-                        >
+    border:
+        1px solid rgba(201, 161, 91, .23);
 
-                            <circle
-                                cx="50"
-                                cy="53"
-                                r="22"
-                            />
+    box-shadow:
+        0 7px 24px rgba(80, 70, 55, .035);
 
-                            <path d="M28 53H72"/>
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
 
-                            <path d="M32 42H68"/>
 
-                            <path d="M32 64H68"/>
+.timeline-content:hover {
+    transform:
+        translateY(-3px);
 
-                            <path d="M50 31V75"/>
+    box-shadow:
+        0 12px 30px rgba(80, 70, 55, .08);
+}
 
-                            <path d="M39 34C44 40 44 66 39 72"/>
 
-                            <path d="M61 34C56 40 56 66 61 72"/>
+.timeline-left .timeline-content {
+    grid-column: 1;
 
-                            <path d="M50 17V31"/>
+    justify-self: end;
 
-                            <path d="M22 25V33"/>
+    margin-right: 0;
 
-                            <path d="M18 29H26"/>
+    text-align: right;
+}
 
-                            <path d="M78 69V77"/>
 
-                            <path d="M74 73H82"/>
+.timeline-left .timeline-marker {
+    grid-column: 2;
+}
 
-                        </svg>
 
-                    </div>
+.timeline-right .timeline-marker {
+    grid-column: 2;
+}
 
-                </div>
 
+.timeline-right .timeline-content {
+    grid-column: 3;
 
-                <div class="timeline-content">
+    justify-self: start;
 
-                    <div class="timeline-label">
-                        10 · PARTY
-                    </div>
+    margin-left: 0;
 
-                    <h2>
-                        After Party
-                    </h2>
+    text-align: left;
+}
 
-                    <p>
-                        At bago matapos ang gabi,
-                        magsaya, sumayaw, at gumawa
-                        pa tayo ng mga alaala.
-                    </p>
 
-                </div>
+.timeline-left::after,
+.timeline-right::after {
+    content: "";
 
-            </article>
+    position: absolute;
 
+    top: 50%;
 
-        </div>
+    height: 1px;
 
-    </section>
+    width: 38px;
 
+    background:
+        rgba(201, 161, 91, .45);
 
-    <!-- =====================================================
-         CLOSING
-    ====================================================== -->
+    z-index: 1;
+}
 
-    <section class="daloy-closing">
 
-        <div
-            class="closing-floral"
-            aria-hidden="true"
-        ></div>
+.timeline-left::after {
+    left:
+        calc(50% - 55px);
 
+    transform:
+        translateX(-100%);
+}
 
-        <span class="closing-label">
-            AT SA DULO NG ARAW...
-        </span>
 
+.timeline-right::after {
+    left:
+        calc(50% + 55px);
+}
 
-        <h2>
 
-            Ang pinakamagandang
-            <em>alaala</em>
-            ay ang mga sandaling
-            kasama ka.
+.timeline-label {
+    margin-bottom: 8px;
 
-        </h2>
+    color:
+        var(--gold);
 
+    font-family:
+        Poppins,
+        sans-serif;
 
-        <div class="closing-ornament">
-            ♡
-        </div>
+    font-size: 8px;
 
+    font-weight: 500;
 
-        <div class="closing-names">
-            Mike &amp; Sharmaine
-        </div>
+    letter-spacing: .28em;
+}
 
 
-        <p class="closing-date">
-            Enero 15, 2027 · Tagaytay
-        </p>
+.timeline-content h2 {
+    margin: 0;
 
+    color:
+        var(--sage-dark);
 
-        <!-- =================================================
-             NEXT PAGE
-             SECTION 04 → SECTION 05
-        ================================================== -->
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
 
-        <a
-            href="dress-code.html"
-            class="next-button"
-        >
+    font-size: 27px;
 
-            <span>
-                Dress Code
-            </span>
+    font-weight: 600;
 
-            <strong>
-                →
-            </strong>
+    line-height: 1.1;
+}
 
-        </a>
 
+.timeline-content p {
+    margin:
+        13px 0 0;
 
-    </section>
+    color:
+        var(--brown);
 
+    font-size: 17px;
 
-</main>
+    line-height: 1.5;
+}
 
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================== -->
+.timeline-marker {
+    position: relative;
 
-<script>
+    z-index: 5;
+
+    width: 82px;
+    height: 82px;
+
+    justify-self: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(250, 244, 228, .97);
+
+    border:
+        1px solid rgba(201, 161, 91, .55);
+
+    box-shadow:
+        0 0 0 7px rgba(247, 240, 223, .72);
+}
+
+
+.timeline-number {
+    position: absolute;
+
+    top: -21px;
+
+    color:
+        var(--gold);
+
+    font-family:
+        Poppins,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    letter-spacing: .2em;
+}
+
+
+.timeline-icon {
+    width: 50px;
+    height: 50px;
+
+    display: block;
+}
+
+
+.timeline-icon svg {
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+
+    stroke:
+        var(--gold);
+
+    stroke-width: 1.45;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+.timeline-icon path,
+.timeline-icon line,
+.timeline-icon circle,
+.timeline-icon rect,
+.timeline-icon polyline,
+.timeline-icon polygon,
+.timeline-icon ellipse {
+    vector-effect:
+        non-scaling-stroke;
+}
+
+
+.timeline-item:nth-child(3n+1)
+.timeline-marker {
+    border-color:
+        rgba(126, 142, 101, .55);
+}
+
+
+.timeline-item:nth-child(3n+2)
+.timeline-marker {
+    border-color:
+        rgba(217, 107, 67, .42);
+}
+
+
+.timeline-item:nth-child(3n)
+.timeline-marker {
+    border-color:
+        rgba(201, 161, 91, .55);
+}
+
+
+/* =========================================================
+   CLOSING
+   ========================================================= */
+
+.daloy-closing {
+    position: relative;
+
+    padding:
+        80px 30px 130px;
+
+    text-align: center;
+
+    background:
+        transparent;
+}
+
+
+.closing-floral {
+    pointer-events: none;
+}
+
+
+.closing-label {
+    display: block;
+
+    margin-bottom: 22px;
+
+    color:
+        var(--gold);
+
+    font-family:
+        Poppins,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    letter-spacing: .34em;
+
+    text-transform: uppercase;
+}
+
+
+.daloy-closing h2 {
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    color:
+        var(--sage-dark);
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(30px, 4vw, 47px);
+
+    font-style: italic;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+
+.daloy-closing h2 em {
+    color:
+        var(--peach);
+}
+
+
+.closing-ornament {
+    margin:
+        25px auto 20px;
+
+    color:
+        var(--gold);
+
+    font-size: 22px;
+}
+
+
+.closing-names {
+    color:
+        var(--peach);
+
+    font-family:
+        Allura,
+        cursive;
+
+    font-size: 42px;
+}
+
+
+.closing-date {
+    margin:
+        8px 0 0;
+
+    color:
+        var(--brown);
+
+    font-family:
+        Poppins,
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: .22em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   NEXT PAGE BUTTON
+   SECTION 04 → SECTION 05
+   MATCHES SECTION 03 BUTTON
+   ========================================================= */
+
+.daloy-page .next-button {
+    position: relative;
+
+    z-index: 3;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 32px;
+
+    min-width: 310px;
+
+    padding:
+        13px 30px;
+
+    border:
+        1px solid var(--gold);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255, 252, 242, .55);
+
+    color:
+        var(--brown);
+
+    font-family:
+        "Cardo",
+        serif;
+
+    font-size: 18px;
+
+    text-decoration: none;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease,
+        border-color .25s ease;
+}
+
+
+.daloy-page .next-button span {
+    display: inline-block;
+}
+
+
+.daloy-page .next-button strong {
+    color:
+        var(--peach);
+
+    font-family:
+        "Cardo",
+        serif;
+
+    font-size: 21px;
+
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+
+.daloy-page .next-button:hover {
+    transform:
+        translateY(-2px);
+
+    background:
+        var(--peach);
+
+    border-color:
+        var(--peach);
+
+    color:
+        #fff;
+}
+
+
+.daloy-page .next-button:hover strong {
+    color:
+        #fff;
+}
+
+
+/* =========================================================
+   FLOATING PETALS
+   ========================================================= */
+
+#petals {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 5;
+
+    overflow: hidden;
+}
+
+
+.floating-petal {
+    position: absolute;
+
+    top: -30px;
+
+    color:
+        rgba(217, 107, 67, .35);
+
+    pointer-events: none;
+
+    animation:
+        petalFall linear forwards;
+}
+
+
+@keyframes petalFall {
+
+    0% {
+        transform:
+            translate3d(0, -30px, 0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .55;
+    }
+
+    90% {
+        opacity: .35;
+    }
+
+    100% {
+        transform:
+            translate3d(70px, 110vh, 0)
+            rotate(240deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   KEEP FLORAL BACKGROUND CONTINUOUS
+   ========================================================= */
+
+.daloy-hero,
+.daloy-intro,
+.timeline-section,
+.daloy-closing {
+    background-color:
+        transparent !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .daloy-hero {
+        min-height: 600px;
+
+        padding:
+            calc(var(--header-height) + 65px)
+            25px
+            70px;
+    }
+
+
+    .intro-paper {
+        padding:
+            50px 55px;
+    }
+
+
+    .timeline-item {
+        grid-template-columns:
+            minmax(0, 1fr)
+            90px
+            minmax(0, 1fr);
+
+        min-height: 175px;
+    }
+
+
+    .timeline-content {
+        padding:
+            24px 26px;
+    }
+
+
+    .timeline-content h2 {
+        font-size: 24px;
+    }
+
+
+    .timeline-content p {
+        font-size: 16px;
+    }
+
+
+    .timeline-marker {
+        width: 72px;
+        height: 72px;
+    }
+
+
+    .timeline-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+
+    .timeline-left::after {
+        left:
+            calc(50% - 45px);
+    }
+
+
+    .timeline-right::after {
+        left:
+            calc(50% + 45px);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    body.daloy-page {
+        background-color:
+            var(--cream);
+
+        background-image:
+            url("floral-frame.png");
+
+        background-position:
+            center top;
+
+        background-size:
+            auto 100%;
+
+        background-repeat:
+            no-repeat;
+
+        background-attachment:
+            scroll;
+    }
+
+
+    .website-nav {
+        height: 62px;
+    }
+
+
+    .menu-toggle {
+        left: 20px;
+
+        width: 25px;
+
+        height: 21px;
+    }
+
+
+    .nav-monogram {
+        font-size: 23px;
+    }
+
+
+    .daloy-hero {
+        min-height: 570px;
+
+        padding:
+            105px 18px 65px;
+    }
+
+
+    .daloy-eyebrow {
+        margin-bottom: 20px;
+
+        font-size: 7px;
+
+        letter-spacing: .28em;
+    }
+
+
+    .daloy-title {
+        font-size: 52px;
+    }
+
+
+    .daloy-title strong {
+        font-size: 74px;
+    }
+
+
+    .daloy-ornament {
+        margin-top: 40px;
+    }
+
+
+    .daloy-subtitle {
+        font-size: 19px;
+    }
+
+
+    .hero-mini-details {
+        max-width: 330px;
+
+        font-size: 7px;
+
+        letter-spacing: .16em;
+    }
+
+
+    .daloy-intro {
+        width:
+            calc(100% - 28px);
+
+        margin-bottom: 75px;
+    }
+
+
+    .intro-paper {
+        padding:
+            45px 25px;
+    }
+
+
+    .intro-paper::before {
+        inset: 8px;
+    }
+
+
+    .intro-paper h2 {
+        font-size: 31px;
+    }
+
+
+    .intro-paper p {
+        font-size: 17px;
+
+        line-height: 1.55;
+    }
+
+
+    .timeline-section {
+        padding:
+            10px 15px 80px;
+    }
+
+
+    .timeline-heading {
+        margin-bottom: 50px;
+    }
+
+
+    .timeline-heading h2 {
+        font-size: 38px;
+    }
+
+
+    .timeline-heading p {
+        font-size: 16px;
+    }
+
 
     /* =====================================================
-       SIDEBAR
-    ====================================================== */
+       MOBILE TIMELINE
+       ===================================================== */
 
-    const menuToggle =
-        document.getElementById("menuToggle");
+    .timeline-line {
+        left: 31px;
 
-    const weddingSidebar =
-        document.getElementById("weddingSidebar");
+        top: 0;
 
-    const menuOverlay =
-        document.getElementById("menuOverlay");
+        bottom: 0;
 
-
-    function openMenu() {
-
-        weddingSidebar.classList.add("open");
-
-        menuOverlay.classList.add("show");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "true"
-        );
-
-        weddingSidebar.setAttribute(
-            "aria-hidden",
-            "false"
-        );
-
-        document.body.classList.add(
-            "menu-open"
-        );
-
+        transform: none;
     }
 
 
-    function closeMenu() {
+    .timeline-item,
+    .timeline-left,
+    .timeline-right {
 
-        weddingSidebar.classList.remove("open");
+        display: block;
 
-        menuOverlay.classList.remove("show");
+        min-height: auto;
 
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
+        margin-bottom: 48px;
 
-        weddingSidebar.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
-        document.body.classList.remove(
-            "menu-open"
-        );
-
+        padding-left: 72px;
     }
 
 
-    menuToggle.addEventListener(
-        "click",
-        function () {
+    .timeline-marker,
+    .timeline-left .timeline-marker,
+    .timeline-right .timeline-marker {
 
-            if (
-                weddingSidebar.classList.contains(
-                    "open"
-                )
-            ) {
+        position: absolute;
 
-                closeMenu();
+        top: 0;
 
-            } else {
+        left: 0;
 
-                openMenu();
+        width: 62px;
 
-            }
+        height: 62px;
 
-        }
-    );
+        margin: 0;
+
+        transform: none;
+    }
 
 
-    menuOverlay.addEventListener(
-        "click",
-        closeMenu
-    );
+    .timeline-number {
+        top: -17px;
+    }
 
 
-    document.querySelectorAll(
-        ".sidebar-link"
-    ).forEach(
-        function (link) {
+    .timeline-icon {
+        width: 38px;
 
-            link.addEventListener(
-                "click",
-                closeMenu
-            );
-
-        }
-    );
+        height: 38px;
+    }
 
 
-    document.addEventListener(
-        "keydown",
-        function (event) {
+    .timeline-content,
+    .timeline-left .timeline-content,
+    .timeline-right .timeline-content {
 
-            if (
-                event.key === "Escape"
-            ) {
+        width: 100%;
 
-                closeMenu();
+        margin: 0;
 
-            }
+        padding:
+            23px 20px;
 
-        }
-    );
+        text-align: left;
 
+        background:
+            rgba(250, 244, 228, .88);
+    }
+
+
+    .timeline-content h2 {
+        font-size: 24px;
+    }
+
+
+    .timeline-content p {
+        font-size: 16px;
+
+        line-height: 1.48;
+    }
+
+
+    .timeline-left::after,
+    .timeline-right::after {
+        display: none;
+    }
 
 
     /* =====================================================
-       FLOATING PETALS
-    ====================================================== */
+       CLOSING
+       ===================================================== */
 
-    const petalsContainer =
-        document.getElementById("petals");
-
-
-    const petalSymbols = [
-        "❀",
-        "✿",
-        "❋",
-        "·"
-    ];
-
-
-    function createPetal() {
-
-        const petal =
-            document.createElement("span");
-
-
-        petal.className =
-            "floating-petal";
-
-
-        petal.textContent =
-            petalSymbols[
-                Math.floor(
-                    Math.random() *
-                    petalSymbols.length
-                )
-            ];
-
-
-        petal.style.left =
-            Math.random() * 100 + "%";
-
-
-        petal.style.animationDuration =
-            (10 + Math.random() * 8) + "s";
-
-
-        petal.style.animationDelay =
-            Math.random() * 4 + "s";
-
-
-        petal.style.fontSize =
-            (8 + Math.random() * 9) + "px";
-
-
-        petalsContainer.appendChild(
-            petal
-        );
-
-
-        setTimeout(
-            function () {
-
-                petal.remove();
-
-            },
-            19000
-        );
-
+    .daloy-closing {
+        padding:
+            60px 20px 90px;
     }
 
 
-    setInterval(
-        createPetal,
-        2500
-    );
+    .daloy-closing h2 {
+        font-size: 31px;
+    }
 
 
-</script>
+    .closing-names {
+        font-size: 37px;
+    }
 
 
-</body>
+    /* =====================================================
+       NEXT BUTTON — MOBILE
+       ===================================================== */
 
-</html>
+    .daloy-page .next-button {
+
+        width: 330px;
+
+        max-width: 88vw;
+
+        min-height: 62px;
+
+        margin-top: 25px;
+
+        padding:
+            12px 22px;
+
+        font-size: 16px;
+    }
+
+
+    .wedding-sidebar {
+        width:
+            min(340px, 88vw);
+    }
+
+
+    .sidebar-inner {
+        padding:
+            28px 25px 30px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+    .daloy-hero {
+        min-height: 535px;
+
+        padding:
+            100px 14px 55px;
+    }
+
+
+    .daloy-title {
+        font-size: 45px;
+    }
+
+
+    .daloy-title strong {
+        font-size: 65px;
+    }
+
+
+    .daloy-subtitle {
+        font-size: 17px;
+    }
+
+
+    .hero-mini-details {
+        font-size: 6.5px;
+    }
+
+
+    .daloy-intro {
+        padding: 0;
+    }
+
+
+    .intro-paper {
+        padding:
+            40px 20px;
+    }
+
+
+    .intro-paper h2 {
+        font-size: 28px;
+    }
+
+
+    .intro-paper p {
+        font-size: 16px;
+    }
+
+
+    .timeline-item,
+    .timeline-left,
+    .timeline-right {
+        padding-left: 67px;
+    }
+
+
+    .timeline-line {
+        left: 31px;
+    }
+
+
+    .timeline-marker {
+        width: 62px;
+
+        height: 62px;
+    }
+
+
+    .timeline-content {
+        padding:
+            20px 17px;
+    }
+
+
+    .timeline-content h2 {
+        font-size: 21px;
+    }
+
+
+    .timeline-content p {
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .daloy-page *,
+    .daloy-page *::before,
+    .daloy-page *::after {
+
+        scroll-behavior: auto !important;
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+    }
+
+}
