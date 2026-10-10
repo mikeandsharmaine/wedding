@@ -1659,3 +1659,63 @@ body.kwento-page .closing-names {
     font-size: clamp(38px, 8vw, 56px) !important;
   }
 }
+
+
+/* ==========================================================
+   TYPOGRAPHY REFINEMENT — LESS ORNATE, CLEANER ONE-LINE TEXT
+   ========================================================== */
+
+/* Replace the oversized, highly flourished script with an
+   elegant italic serif that matches the vintage wedding theme. */
+body.kwento-page .kw-hero h1 span {
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: clamp(58px, 8vw, 108px) !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  line-height: 0.95 !important;
+  letter-spacing: -1px !important;
+  color: var(--burnt) !important;
+  margin-top: 8px !important;
+}
+
+/* Keep the subtitle on one line on laptop/desktop. */
+body.kwento-page .kw-hero .hero-subtitle {
+  white-space: nowrap !important;
+  max-width: none !important;
+  font-size: clamp(16px, 2vw, 28px) !important;
+  line-height: 1.25 !important;
+  font-family: "Cormorant Garamond", serif !important;
+  font-style: italic !important;
+}
+
+/* Make the highlighted closing phrase refined and less flourished.
+   Keep the phrase on one line on larger screens. */
+body.kwento-page .kw-closing h2 em {
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 0.92em !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  color: var(--burnt) !important;
+}
+
+/* Use the same refined font for handwritten-style details. */
+body.kwento-page .paper-signature,
+body.kwento-page .story-photo figcaption,
+body.kwento-page .memory-note p,
+body.kwento-page .mini-memory span {
+  font-family: "Cormorant Garamond", serif !important;
+  font-style: italic !important;
+}
+
+/* On narrow phones, avoid forcing long text beyond the screen. */
+@media (max-width: 900px) {
+  body.kwento-page .kw-hero .hero-subtitle {
+    white-space: normal !important;
+    max-width: 95% !important;
+  }
+
+  body.kwento-page .kw-closing h2 em {
+    white-space: normal !important;
+  }
+}
