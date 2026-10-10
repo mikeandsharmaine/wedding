@@ -1538,3 +1538,36 @@ body.menu-open {
     padding-top: 100px !important;
   }
 }
+
+/* Match the script typography used in Ang Aming Kwento */
+.detalye-page .details-title span,
+.detalye-page .details-closing h2 em,
+.detalye-page .monogram span,
+.detalye-page .side-brand span {
+    font-family: "Cormorant Garamond", serif !important;
+    font-style: italic !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+}
+
+/* Reduce oversized flourishes in the main title */
+.detalye-page .details-title span {
+    font-size: clamp(64px, 7vw, 100px) !important;
+    line-height: 0.95 !important;
+}
+
+/* Keep the closing phrase elegant and readable */
+.detalye-page .details-closing h2 em {
+    font-size: 0.9em !important;
+    line-height: 1.15 !important;
+}
+
+@media (max-width: 700px) {
+    .detalye-page .details-title span {
+        font-size: clamp(58px, 13vw, 78px) !important;
+    }
+
+    .detalye-page .details-closing h2 em {
+        font-size: 0.85em !important;
+    }
+}
