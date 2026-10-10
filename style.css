@@ -9996,3 +9996,89 @@ body.sidebar-open {
         padding-right: 20px;
     }
 }
+
+/* ========================================
+   RESPONSIVE WEDDING NAVIGATION
+   Desktop: Horizontal menu
+   Mobile: Hamburger menu
+======================================== */
+
+/* Desktop and laptop */
+@media screen and (min-width: 901px) {
+    header.website-nav {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        min-height: 72px;
+        padding: 12px 24px;
+        box-sizing: border-box;
+        z-index: 1000;
+    }
+
+    header.website-nav .menu-toggle {
+        display: none !important;
+    }
+
+    header.website-nav .desktop-menu {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: clamp(12px, 2vw, 30px);
+        width: auto;
+        margin: 0 auto;
+    }
+
+    header.website-nav .desktop-menu a {
+        display: inline-block;
+        color: #6f7f57;
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: color 0.25s ease;
+    }
+
+    header.website-nav .desktop-menu a:hover,
+    header.website-nav .desktop-menu a.active {
+        color: #b58a55;
+    }
+
+    header.website-nav .nav-monogram {
+        position: absolute;
+        right: 28px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6f7f57;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    #home {
+        padding-top: 90px;
+    }
+}
+
+/* Mobile and smaller screens */
+@media screen and (max-width: 900px) {
+    header.website-nav .desktop-menu {
+        display: none !important;
+    }
+
+    header.website-nav .menu-toggle {
+        display: flex !important;
+    }
+
+    header.website-nav .nav-monogram {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
