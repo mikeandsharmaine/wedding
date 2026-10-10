@@ -43,6 +43,82 @@
         href="daloy.css"
     >
 
+    <!-- Navigation layout correction: desktop logo in the middle; mobile hamburger retained -->
+    <style>
+        @media screen and (min-width: 901px) {
+            .daloy-page .website-nav {
+                position: relative !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            .daloy-page .website-nav .desktop-menu {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                flex-wrap: nowrap !important;
+                gap: clamp(12px, 1.45vw, 24px) !important;
+                width: 100% !important;
+                margin: 0 auto !important;
+                padding: 0 18px !important;
+                box-sizing: border-box !important;
+            }
+
+            .daloy-page .website-nav .desktop-menu > a {
+                position: static !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                flex: 0 0 auto !important;
+                margin: 0 !important;
+                white-space: nowrap !important;
+                text-decoration: none !important;
+            }
+
+            .daloy-page .website-nav .desktop-menu > .desktop-monogram {
+                font-family: "Cormorant Garamond", serif !important;
+                font-size: 25px !important;
+                letter-spacing: 3px !important;
+                line-height: 1 !important;
+                color: #6f7f57 !important;
+                padding: 0 3px !important;
+            }
+
+            .daloy-page .website-nav .desktop-menu > .desktop-monogram span {
+                color: #bd8c4e !important;
+                margin: 0 2px !important;
+            }
+
+            .daloy-page .website-nav > .nav-monogram,
+            .daloy-page .website-nav > .menu-toggle {
+                display: none !important;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .daloy-page .website-nav .desktop-menu {
+                display: none !important;
+            }
+
+            .daloy-page .website-nav > .menu-toggle {
+                display: flex !important;
+            }
+
+            .daloy-page .website-nav > .nav-monogram {
+                display: inline-flex !important;
+                position: absolute !important;
+                left: 50% !important;
+                right: auto !important;
+                top: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                z-index: 5 !important;
+            }
+        }
+    </style>
+
 </head>
 
 
@@ -85,19 +161,26 @@
         <a href="index.html">Home</a>
         <a href="kwento.html">Ang Aming Kwento</a>
         <a href="detalye.html">Detalye ng Kasal</a>
+
+        <!-- Desktop monogram sits between Detalye and Daloy -->
+        <a
+            href="index.html"
+            class="desktop-monogram"
+            aria-label="Mike and Sharmaine Home"
+        >M <span>&amp;</span> S</a>
+
         <a href="daloy.html" class="active" aria-current="page">Daloy ng Pagdiriwang</a>
         <a href="dress-code.html">Dress Code</a>
         <a href="rsvp.html">RSVP</a>
     </nav>
 
+    <!-- Mobile monogram: centered in the header beside the hamburger -->
     <a
         href="index.html"
         class="nav-monogram"
         aria-label="Mike and Sharmaine Home"
     >
-
         M <span>&amp;</span> S
-
     </a>
 
 </header>
