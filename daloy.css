@@ -2116,3 +2116,63 @@ body.menu-open {
     transform: translate(-50%, -50%) !important;
   }
 }
+
+/* DALOY: Center M & S between the navigation links */
+
+@media screen and (min-width: 901px) {
+  .daloy-page .wedding-header {
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .daloy-page .desktop-menu {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(12px, 1.5vw, 25px) !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .daloy-page .desktop-menu .desktop-monogram {
+    display: inline-flex !important;
+    position: static !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 4px !important;
+    transform: none !important;
+    font-family: "Cormorant Garamond", serif !important;
+    font-size: 25px !important;
+    letter-spacing: 3px !important;
+    white-space: nowrap !important;
+    color: #6f7f57 !important;
+  }
+
+  .daloy-page .wedding-header > .monogram {
+    display: none !important;
+  }
+}
+
+/* Mobile: keep the hamburger and centered M & S */
+@media screen and (max-width: 900px) {
+  .daloy-page .desktop-menu {
+    display: none !important;
+  }
+
+  .daloy-page .menu-toggle {
+    display: flex !important;
+  }
+
+  .daloy-page .wedding-header > .monogram {
+    display: inline-flex !important;
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+}
