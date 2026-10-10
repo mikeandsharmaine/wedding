@@ -1119,37 +1119,6 @@ body.kwento-page {
   color: var(--burnt);
 }
 
-/* Closing quote — smaller and more balanced */
-body.kwento-page .kw-closing h2 {
-  max-width: 1000px !important;
-  margin: 0 auto !important;
-  font-size: clamp(32px, 4.2vw, 62px) !important;
-  line-height: 1.15 !important;
-  text-align: center !important;
-}
-
-body.kwento-page .kw-closing h2 em {
-  display: block !important;
-  margin-top: 8px !important;
-  font-family: "Cormorant Garamond", serif !important;
-  font-size: 0.85em !important;
-  font-style: italic !important;
-  font-weight: 500 !important;
-  line-height: 1.1 !important;
-  white-space: nowrap !important;
-  color: var(--burnt) !important;
-}
-
-@media (max-width: 600px) {
-  body.kwento-page .kw-closing h2 {
-    font-size: clamp(27px, 7vw, 40px) !important;
-  }
-
-  body.kwento-page .kw-closing h2 em {
-    white-space: normal !important;
-  }
-}
-
 
 /*
    REMOVE CLOSING DIVIDER LINE.
@@ -1747,6 +1716,71 @@ body.kwento-page .mini-memory span {
   }
 
   body.kwento-page .kw-closing h2 em {
+    white-space: normal !important;
+  }
+}
+
+
+/* ==========================================================
+   FINAL OVERRIDE: CLOSING QUOTE FONT SIZE + TWO-LINE LAYOUT
+   Keep this block at the very end of kwento.css.
+   ========================================================== */
+
+/* Override inherited heading and em styles with higher specificity. */
+body.kwento-page section.kw-closing h2,
+body.kwento-page .kw-closing h2 {
+  width: min(100%, 1200px) !important;
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  box-sizing: border-box !important;
+  font-size: clamp(28px, 3.2vw, 48px) !important;
+  line-height: 1.12 !important;
+  text-align: center !important;
+  overflow-wrap: normal !important;
+}
+
+/* Make the second phrase smaller and put it on its own line. */
+body.kwento-page section.kw-closing h2 em,
+body.kwento-page .kw-closing h2 em {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 10px auto 0 !important;
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 0.78em !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  line-height: 1.12 !important;
+  white-space: nowrap !important;
+  color: var(--burnt, #d9573b) !important;
+  letter-spacing: 0 !important;
+  transform: none !important;
+}
+
+/* If the original heading has nested spans, keep them inheriting
+   the reduced size rather than the old oversized display size. */
+body.kwento-page .kw-closing h2 span {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+/* Smaller screens: keep it readable and prevent horizontal overflow. */
+@media (max-width: 900px) {
+  body.kwento-page section.kw-closing h2,
+  body.kwento-page .kw-closing h2 {
+    max-width: 94% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    font-size: clamp(25px, 5.5vw, 38px) !important;
+    line-height: 1.15 !important;
+  }
+
+  body.kwento-page section.kw-closing h2 em,
+  body.kwento-page .kw-closing h2 em {
+    font-size: 0.82em !important;
     white-space: normal !important;
   }
 }
