@@ -2199,4 +2199,13 @@ body.menu-open {
     top: 50% !important;
     transform: translate(-50%, -50%) !important;
   }
+
+/* Center and bold the final program reminder */
+.timeline-heading > p {
+  text-align: center !important;
+  font-weight: 700 !important;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
+
