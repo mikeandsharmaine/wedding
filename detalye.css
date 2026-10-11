@@ -1,6 +1,6 @@
 /* =========================================================
    DETALYE NG KASAL
-   SECTION 03 — Mike & Sharmaine
+   SECTION 03 â€” Mike & Sharmaine
    ========================================================= */
 
 :root {
@@ -1061,7 +1061,7 @@ body.menu-open {
 
 /* =========================================================
    NEXT PAGE BUTTON
-   SECTION 03 → SECTION 04
+   SECTION 03 â†’ SECTION 04
    ========================================================= */
 
 .detalye-page .next-button {
@@ -1410,7 +1410,7 @@ body.menu-open {
 
 
 /* ==========================================================
-   DETALYE PAGE — CONSISTENT RESPONSIVE NAVIGATION
+   DETALYE PAGE â€” CONSISTENT RESPONSIVE NAVIGATION
    Desktop/laptop: horizontal menu; mobile: hamburger menu
    ========================================================== */
 
@@ -1575,7 +1575,7 @@ body.menu-open {
 
 
 /* ==========================================================
-   FINAL FIX — MATCH NAVIGATION ACROSS WEDDING SECTIONS
+   FINAL FIX â€” MATCH NAVIGATION ACROSS WEDDING SECTIONS
    Desktop: one centered horizontal menu + one centered M & S
    Mobile/tablet: hamburger + centered M & S
    ========================================================== */
@@ -1751,7 +1751,7 @@ body.menu-open {
 
 
 /* ==========================================================
-   FINAL OVERRIDES — MATCH THE DALoy SECTION'S PROPORTIONS
+   FINAL OVERRIDES â€” MATCH THE DALoy SECTION'S PROPORTIONS
    Keep Detalye's existing colors, floral background and cards.
    ========================================================== */
 
@@ -1887,5 +1887,125 @@ body.menu-open {
     .detalye-page .details-title span {
         font-size: clamp(48px, 10vw, 66px) !important;
         line-height: 1 !important;
+    }
+}
+
+
+
+/* ==========================================================
+   AUTHORITATIVE FINAL OVERRIDE â€” DETALYE HERO SCALE
+   Match the heading proportions used by Ang Aming Kwento.
+   Keep this block at the VERY END of detalye.css.
+   ========================================================== */
+
+body.detalye-page .details-hero {
+    align-items: center !important;
+    text-align: center !important;
+}
+
+body.detalye-page .details-title {
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-size: clamp(58px, 6.2vw, 92px) !important;
+    font-weight: 500 !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.035em !important;
+    margin: 0 !important;
+}
+
+body.detalye-page .details-title span {
+    display: block !important;
+    margin-top: 0.02em !important;
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-size: clamp(70px, 7.2vw, 108px) !important;
+    font-style: italic !important;
+    font-weight: 500 !important;
+    line-height: 0.98 !important;
+    letter-spacing: 0 !important;
+}
+
+body.detalye-page .details-ornament {
+    margin-top: 44px !important;
+    margin-bottom: 22px !important;
+}
+
+body.detalye-page .details-subtitle {
+    font-size: 21px !important;
+    line-height: 1.45 !important;
+}
+
+/* Keep the closing message on the intended two lines. */
+body.detalye-page .details-closing h2 {
+    max-width: 1100px !important;
+    font-size: clamp(30px, 3.2vw, 44px) !important;
+    line-height: 1.18 !important;
+    text-wrap: balance;
+}
+
+body.detalye-page .details-closing h2 em {
+    display: block !important;
+    margin-top: 4px !important;
+    font-size: 0.9em !important;
+    line-height: 1.15 !important;
+}
+
+@media (max-width: 900px) {
+    body.detalye-page .details-title {
+        font-size: clamp(48px, 9vw, 70px) !important;
+        line-height: 1 !important;
+    }
+
+    body.detalye-page .details-title span {
+        font-size: clamp(62px, 12vw, 88px) !important;
+        line-height: 1 !important;
+    }
+
+    body.detalye-page .details-ornament {
+        margin-top: 34px !important;
+        margin-bottom: 18px !important;
+    }
+
+    body.detalye-page .details-subtitle {
+        font-size: 19px !important;
+    }
+
+    body.detalye-page .details-closing h2 {
+        font-size: clamp(27px, 5.2vw, 36px) !important;
+    }
+}
+
+@media (max-width: 430px) {
+    body.detalye-page .details-title {
+        font-size: 49px !important;
+        line-height: 1 !important;
+        letter-spacing: -0.02em !important;
+    }
+
+    body.detalye-page .details-title span {
+        font-size: 80px !important;
+        line-height: 1 !important;
+        margin-top: 2px !important;
+    }
+
+    body.detalye-page .details-ornament {
+        margin-top: 27px !important;
+        margin-bottom: 16px !important;
+    }
+
+    body.detalye-page .details-subtitle {
+        font-size: 18px !important;
+        line-height: 1.45 !important;
+    }
+
+    body.detalye-page .details-closing {
+        padding: 60px 18px 78px !important;
+    }
+
+    body.detalye-page .details-closing h2 {
+        font-size: 28px !important;
+        line-height: 1.2 !important;
+    }
+
+    body.detalye-page .details-closing h2 em {
+        font-size: 0.86em !important;
     }
 }
