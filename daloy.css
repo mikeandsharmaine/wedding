@@ -2225,4 +2225,21 @@ html body .timeline-section .timeline-heading > p.program-note {
     left: auto !important;
     right: auto !important;
 }
+   
+/* FINAL FIX: Center and bold the program reminder on all screen sizes */
+body.daloy-page .timeline-section .timeline-heading > p.program-note {
+    display: block !important;
+    position: static !important;
+    float: none !important;
+    width: 100% !important;
+    max-width: 620px !important;
+    margin: 18px auto 0 !important;
+    padding: 0 12px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    font-weight: 700 !important;
+    line-height: 1.5 !important;
+    transform: none !important;
+}
+
 }
