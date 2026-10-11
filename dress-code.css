@@ -2185,3 +2185,30 @@ body.dress-code-page {
         min-height: 60px !important;
     }
 }
+
+/* FINAL MONOGRAM MATCH â€” match the reference section's M & S */
+body.dress-code-page .wedding-header > .monogram {
+    color: #6f7f57 !important;
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.06em !important;
+    gap: 8px !important;
+    line-height: 1 !important;
+}
+
+body.dress-code-page .wedding-header > .monogram span {
+    color: #b98b4b !important;
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-size: 1em !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+}
+
+@media screen and (max-width: 900px) {
+    body.dress-code-page .wedding-header > .monogram {
+        font-size: 25px !important;
+        gap: 6px !important;
+    }
+}
