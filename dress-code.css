@@ -1483,3 +1483,80 @@ body.dress-code-page {
         letter-spacing: 1.8px;
     }
 }
+
+/* ==========================================================
+   FINAL CONSISTENCY FIX — MATCH OTHER WEDDING SECTIONS
+   Paste at the bottom of dress-code.css
+========================================================== */
+
+/* Use the same refined italic serif treatment as the other sections.
+   This replaces the overly decorative Ballet lettering. */
+.dress-code-page .dress-code-script {
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-style: italic !important;
+    font-weight: 500 !important;
+    font-size: clamp(30px, 3vw, 44px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0 !important;
+}
+
+/* Keep the small decorative ampersand in the monogram consistent. */
+.dress-code-page .monogram span,
+.dress-code-page .sidebar-monogram span {
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-style: italic !important;
+}
+
+/* Match the desktop menu scale and weight used by the other sections. */
+@media screen and (min-width: 761px) {
+    .dress-code-page .wedding-header {
+        height: 78px !important;
+        min-height: 78px !important;
+        padding: 0 28px !important;
+        gap: clamp(22px, 2vw, 36px) !important;
+    }
+
+    .dress-code-page .desktop-menu {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: clamp(18px, 1.65vw, 30px) !important;
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        white-space: nowrap !important;
+    }
+
+    .dress-code-page .desktop-menu a {
+        font-family: "Poppins", sans-serif !important;
+        font-size: clamp(13px, 0.9vw, 15px) !important;
+        font-weight: 400 !important;
+        letter-spacing: 0 !important;
+        line-height: 1.4 !important;
+        padding: 9px 0 !important;
+        white-space: nowrap !important;
+    }
+
+    .dress-code-page .wedding-header > .monogram {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        flex: 0 0 auto !important;
+        margin: 0 !important;
+        padding: 0 4px !important;
+        font-size: 27px !important;
+        letter-spacing: 0.08em !important;
+        white-space: nowrap !important;
+        background: transparent !important;
+    }
+
+    .dress-code-page .menu-toggle {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .dress-code-page .dress-code-script {
+        font-size: clamp(25px, 7vw, 34px) !important;
+    }
+}
