@@ -2048,4 +2048,11 @@ body.detalye-page .details-title span {
     .detalye-page .desktop-menu > a:not(.desktop-monogram) {
         font-size: clamp(13px, 0.95vw, 18px) !important;
     }
+/* Match Detalye navigation to Daloy navigation */
+@media (min-width: 901px) {
+    .detalye-page .desktop-menu > a:not(.desktop-monogram) {
+        font-size: clamp(13px, 0.95vw, 18px) !important;
+        font-weight: 400 !important;
+        letter-spacing: normal !important;
+    }
 }
