@@ -1648,4 +1648,100 @@ body.menu-open {
         font-size: 25px !important;
         gap: 5px !important;
     }
+/* ==========================================================
+   DEFINITIVE DETALYE MONOGRAM FIX
+   Paste this at the VERY BOTTOM of detalye.css.
+   This forces the orange emblem to display as a normal "&".
+   ========================================================== */
+
+/* Desktop monogram between the third and fourth navigation links */
+.detalye-page .desktop-menu a.desktop-monogram,
+.detalye-page .desktop-menu a.desktop-monogram span,
+.detalye-page .wedding-header > a.monogram,
+.detalye-page .wedding-header > a.monogram span {
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    background: none !important;
+    background-image: none !important;
+    -webkit-mask: none !important;
+    mask: none !important;
+    filter: none !important;
+    text-shadow: none !important;
+    transform: none !important;
+    letter-spacing: 0.04em !important;
+}
+
+/* Ensure the ampersand is plain text, not a decorative logo/icon */
+.detalye-page .desktop-menu a.desktop-monogram span,
+.detalye-page .wedding-header > a.monogram span {
+    display: inline !important;
+    color: #d96b43 !important;
+    font-size: 0.9em !important;
+    line-height: 1 !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    background: transparent !important;
+    background-image: none !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+}
+
+/* Remove any decorative pseudo-elements that may be creating the emblem */
+.detalye-page .desktop-menu a.desktop-monogram::before,
+.detalye-page .desktop-menu a.desktop-monogram::after,
+.detalye-page .desktop-menu a.desktop-monogram span::before,
+.detalye-page .desktop-menu a.desktop-monogram span::after,
+.detalye-page .wedding-header > a.monogram::before,
+.detalye-page .wedding-header > a.monogram::after,
+.detalye-page .wedding-header > a.monogram span::before,
+.detalye-page .wedding-header > a.monogram span::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    background-image: none !important;
+    -webkit-mask: none !important;
+    mask: none !important;
+}
+
+/* Match the same simple, refined monogram on desktop */
+@media (min-width: 901px) {
+    .detalye-page .desktop-menu a.desktop-monogram {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        margin: 0 3px !important;
+        color: #657353 !important;
+        font-size: 27px !important;
+        line-height: 1 !important;
+        letter-spacing: 0.08em !important;
+        white-space: nowrap !important;
+    }
+}
+
+/* Keep the mobile header monogram centered beside the hamburger */
+@media (max-width: 900px) {
+    .detalye-page .wedding-header > a.monogram {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: absolute !important;
+        left: 50% !important;
+        right: auto !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        gap: 5px !important;
+        color: #657353 !important;
+        font-size: 25px !important;
+        line-height: 1 !important;
+        letter-spacing: 0.08em !important;
+        white-space: nowrap !important;
+    }
+
+    .detalye-page .wedding-header > a.monogram span {
+        transform: none !important;
+    }
 }
