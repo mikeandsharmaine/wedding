@@ -2190,10 +2190,10 @@ body.dress-code-page {
 body.dress-code-page .wedding-header > .monogram {
     color: #6f7f57 !important;
     font-family: "Cormorant Garamond", Georgia, serif !important;
-    font-size: 30px !important;
+    font-size: 26px !important;
     font-weight: 500 !important;
     letter-spacing: 0.06em !important;
-    gap: 8px !important;
+    gap: 7px !important;
     line-height: 1 !important;
 }
 
@@ -2208,7 +2208,7 @@ body.dress-code-page .wedding-header > .monogram span {
 
 @media screen and (max-width: 900px) {
     body.dress-code-page .wedding-header > .monogram {
-        font-size: 25px !important;
-        gap: 6px !important;
+        font-size: 22px !important;
+        gap: 5px !important;
     }
 }
