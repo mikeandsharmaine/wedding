@@ -1879,3 +1879,97 @@ body.dress-code-page {
         right: 18px !important;
     }
 }
+
+
+
+/* ==========================================================
+   FINAL CONSISTENCY OVERRIDE
+   Match the desktop navigation typography and monogram scale
+   to the other wedding sections while keeping the split menu.
+   ========================================================== */
+
+@media screen and (min-width: 761px) {
+    .dress-code-page .wedding-header {
+        height: 96px !important;
+        min-height: 96px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .dress-code-page .desktop-menu-left,
+    .dress-code-page .desktop-menu-right {
+        display: flex !important;
+        align-items: center !important;
+        gap: clamp(14px, 1.45vw, 28px) !important;
+    }
+
+    .dress-code-page .desktop-menu-left {
+        left: clamp(32px, 4.2vw, 84px) !important;
+        right: calc(50% + 72px) !important;
+        justify-content: flex-end !important;
+    }
+
+    .dress-code-page .desktop-menu-right {
+        left: calc(50% + 72px) !important;
+        right: clamp(32px, 4.2vw, 84px) !important;
+        justify-content: flex-start !important;
+    }
+
+    .dress-code-page .desktop-menu-left a,
+    .dress-code-page .desktop-menu-right a {
+        font-family: "Poppins", sans-serif !important;
+        font-size: clamp(17px, 1.18vw, 24px) !important;
+        font-weight: 500 !important;
+        line-height: 1.3 !important;
+        letter-spacing: 0 !important;
+        padding: 9px 0 !important;
+        margin: 0 !important;
+        white-space: nowrap !important;
+    }
+
+    .dress-code-page .wedding-header > .monogram {
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        font-family: "Cormorant Garamond", Georgia, serif !important;
+        font-size: 36px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.08em !important;
+        line-height: 1 !important;
+        padding: 0 10px !important;
+        margin: 0 !important;
+        white-space: nowrap !important;
+        z-index: 1002 !important;
+    }
+
+    .dress-code-page .wedding-header > .monogram span {
+        color: #d96b43 !important;
+    }
+}
+
+@media screen and (max-width: 1100px) and (min-width: 761px) {
+    .dress-code-page .desktop-menu-left,
+    .dress-code-page .desktop-menu-right {
+        gap: 9px !important;
+    }
+
+    .dress-code-page .desktop-menu-left a,
+    .dress-code-page .desktop-menu-right a {
+        font-size: 13px !important;
+    }
+
+    .dress-code-page .desktop-menu-left {
+        left: 18px !important;
+        right: calc(50% + 48px) !important;
+    }
+
+    .dress-code-page .desktop-menu-right {
+        left: calc(50% + 48px) !important;
+        right: 18px !important;
+    }
+
+    .dress-code-page .wedding-header > .monogram {
+        font-size: 28px !important;
+        padding: 0 5px !important;
+    }
+}
