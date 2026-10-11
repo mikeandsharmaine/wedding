@@ -1288,3 +1288,198 @@ body.dress-code-page {
         width: min(370px, 88vw);
     }
 }
+
+
+/* ==========================================================
+   FINAL NAVIGATION + SECTION POLISH
+   Shared desktop navigation; hamburger/sidebar on mobile
+   ========================================================== */
+
+.dress-code-page .wedding-header {
+    position: sticky;
+    top: 0;
+    left: auto;
+    width: 100%;
+    height: 72px;
+    min-height: 72px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    z-index: 1000;
+}
+
+.dress-code-page .desktop-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(14px, 1.8vw, 30px);
+    width: max-content;
+    max-width: calc(100% - 150px);
+}
+
+.dress-code-page .desktop-menu a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 0;
+    color: #6e745f;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(10px, 0.82vw, 13px);
+    font-weight: 400;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color .25s ease;
+}
+
+.dress-code-page .desktop-menu a:hover,
+.dress-code-page .desktop-menu a.active {
+    color: var(--burnt);
+}
+
+.dress-code-page .desktop-menu a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--burnt);
+    transform: translateX(-50%);
+    transition: width .25s ease;
+}
+
+.dress-code-page .desktop-menu a:hover::after,
+.dress-code-page .desktop-menu a.active::after {
+    width: 100%;
+}
+
+.dress-code-page .wedding-header .monogram {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1002;
+    background: rgba(250, 246, 234, .98);
+    padding: 0 12px;
+    white-space: nowrap;
+}
+
+/* Keep the centered monogram from overlapping menu links */
+@media (min-width: 761px) {
+    .dress-code-page .desktop-menu {
+        gap: clamp(12px, 1.45vw, 24px);
+        max-width: calc(100% - 260px);
+    }
+
+    .dress-code-page .desktop-menu a {
+        font-size: clamp(10px, .78vw, 12px);
+    }
+
+    .dress-code-page .menu-toggle {
+        display: none;
+    }
+
+    .dress-code-page .site-sidebar,
+    .dress-code-page .sidebar-overlay {
+        display: none;
+    }
+
+    .dress-code-page .dress-code-content {
+        padding-top: 0;
+    }
+}
+
+/* Use the same elegant script font as the other wedding sections */
+.dress-code-page .dress-code-script,
+.dress-code-page .monogram span,
+.dress-code-page .sidebar-monogram span {
+    font-family: "Ballet", cursive;
+}
+
+.dress-code-page .dress-code-script {
+    font-size: clamp(27px, 2.7vw, 40px);
+    line-height: 1.12;
+}
+
+/* Remove any leftover section-number spacing */
+.dress-code-page .dress-code-title {
+    padding-top: 110px;
+}
+
+.dress-code-page .section-number {
+    display: none !important;
+}
+
+/* More prominent RSVP call-to-action */
+.dress-code-page .next-page {
+    margin-top: 48px;
+    margin-bottom: 20px;
+}
+
+.dress-code-page .next-button {
+    min-width: 280px;
+    min-height: 68px;
+    padding: 18px 42px;
+    gap: 14px;
+    border-width: 1.5px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--burnt);
+    background: rgba(255, 250, 240, .78);
+    box-shadow: 0 8px 24px rgba(113, 88, 52, .08);
+}
+
+.dress-code-page .next-button:hover {
+    color: #fff;
+}
+
+@media (max-width: 760px) {
+    .dress-code-page .wedding-header {
+        position: sticky;
+        height: 60px;
+        min-height: 60px;
+        padding: 8px 12px;
+        overflow: visible;
+    }
+
+    .dress-code-page .menu-toggle {
+        display: flex;
+        left: 20px;
+    }
+
+    .dress-code-page .desktop-menu {
+        display: none;
+    }
+
+    .dress-code-page .wedding-header .monogram {
+        left: 50%;
+        padding: 0 8px;
+    }
+
+    .dress-code-page .site-sidebar {
+        display: block;
+    }
+
+    .dress-code-page .sidebar-overlay {
+        display: block;
+    }
+
+    .dress-code-page .dress-code-title {
+        padding-top: 90px;
+    }
+
+    .dress-code-page .dress-code-script {
+        font-size: clamp(25px, 7vw, 34px);
+    }
+
+    .dress-code-page .next-button {
+        width: min(320px, 88vw);
+        min-width: 0;
+        min-height: 64px;
+        font-size: 18px;
+        letter-spacing: 1.8px;
+    }
+}
