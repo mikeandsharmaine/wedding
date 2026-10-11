@@ -948,7 +948,9 @@ body.menu-open {
     color: var(--brown);
     font-size: 16px;
     font-style: italic;
+    font-weight: 700;
     line-height: 1.5;
+    text-align: center;
 }
 
 
