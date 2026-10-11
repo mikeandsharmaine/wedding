@@ -1,6 +1,6 @@
 /* =========================================================
    DETALYE NG KASAL
-   SECTION 03 â€” Mike & Sharmaine
+   SECTION 03 Ã¢â‚¬â€ Mike & Sharmaine
    ========================================================= */
 
 :root {
@@ -1061,7 +1061,7 @@ body.menu-open {
 
 /* =========================================================
    NEXT PAGE BUTTON
-   SECTION 03 â†’ SECTION 04
+   SECTION 03 Ã¢â€ â€™ SECTION 04
    ========================================================= */
 
 .detalye-page .next-button {
@@ -1410,7 +1410,7 @@ body.menu-open {
 
 
 /* ==========================================================
-   DETALYE PAGE â€” CONSISTENT RESPONSIVE NAVIGATION
+   DETALYE PAGE Ã¢â‚¬â€ CONSISTENT RESPONSIVE NAVIGATION
    Desktop/laptop: horizontal menu; mobile: hamburger menu
    ========================================================== */
 
@@ -1575,7 +1575,7 @@ body.menu-open {
 
 
 /* ==========================================================
-   FINAL FIX â€” MATCH NAVIGATION ACROSS WEDDING SECTIONS
+   FINAL FIX Ã¢â‚¬â€ MATCH NAVIGATION ACROSS WEDDING SECTIONS
    Desktop: one centered horizontal menu + one centered M & S
    Mobile/tablet: hamburger + centered M & S
    ========================================================== */
@@ -1751,7 +1751,7 @@ body.menu-open {
 
 
 /* ==========================================================
-   FINAL OVERRIDES â€” MATCH THE DALoy SECTION'S PROPORTIONS
+   FINAL OVERRIDES Ã¢â‚¬â€ MATCH THE DALoy SECTION'S PROPORTIONS
    Keep Detalye's existing colors, floral background and cards.
    ========================================================== */
 
@@ -1851,6 +1851,8 @@ body.menu-open {
     .detalye-page .details-closing h2 em {
         font-size: 0.86em !important;
     }
+}
+
 /* FINAL FIX: Match Detalye heading size to Ang Aming Kwento */
 
 /* Laptop and desktop */
@@ -1893,7 +1895,7 @@ body.menu-open {
 
 
 /* ==========================================================
-   AUTHORITATIVE FINAL OVERRIDE â€” DETALYE HERO SCALE
+   AUTHORITATIVE FINAL OVERRIDE Ã¢â‚¬â€ DETALYE HERO SCALE
    Match the heading proportions used by Ang Aming Kwento.
    Keep this block at the VERY END of detalye.css.
    ========================================================== */
@@ -2011,7 +2013,7 @@ body.detalye-page .details-closing h2 em {
 }
 
 /* =========================================================
-   FINAL HERO TITLE SIZE â€” MATCH ANG AMING KWENTO
+   FINAL HERO TITLE SIZE Ã¢â‚¬â€ MATCH ANG AMING KWENTO
    Added after all previous rules so older overrides cannot
    enlarge the Detalye heading again.
    ========================================================= */
@@ -2043,16 +2045,128 @@ body.detalye-page .details-title span {
         font-size: clamp(70px, 21vw, 105px) !important;
         line-height: 0.9 !important;
     }
-/* FINAL FIX — MATCH THE DALoy NAVIGATION FONT SIZE */
+}
+
+/* FINAL FIX â€” MATCH THE DALoy NAVIGATION FONT SIZE */
 @media (min-width: 901px) {
     .detalye-page .desktop-menu > a:not(.desktop-monogram) {
         font-size: clamp(13px, 0.95vw, 18px) !important;
     }
+}
+
 /* Match Detalye navigation to Daloy navigation */
 @media (min-width: 901px) {
     .detalye-page .desktop-menu > a:not(.desktop-monogram) {
         font-size: clamp(13px, 0.95vw, 18px) !important;
         font-weight: 400 !important;
         letter-spacing: normal !important;
+    }
+}
+
+
+/* =========================================================
+   AUTHORITATIVE NAVIGATION FIX â€” MATCH DALOY NG PAGDIRIWANG
+   Keep desktop menu font size, weight, spacing and logo consistent.
+   Mobile/tablet keeps the hamburger navigation.
+   ========================================================= */
+
+@media screen and (min-width: 901px) {
+    .detalye-page .wedding-header {
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 82px !important;
+        min-height: 82px !important;
+        padding: 0 24px !important;
+        box-sizing: border-box !important;
+        background: rgba(250, 246, 234, 0.97) !important;
+    }
+
+    .detalye-page .desktop-menu {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-wrap: nowrap !important;
+        gap: clamp(12px, 1.6vw, 25px) !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    .detalye-page .desktop-menu a:not(.desktop-monogram) {
+        display: inline-flex !important;
+        align-items: center !important;
+        flex: 0 0 auto !important;
+        margin: 0 !important;
+        padding: 8px 0 !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: clamp(11px, 0.85vw, 14px) !important;
+        font-weight: 400 !important;
+        letter-spacing: normal !important;
+        line-height: 1.4 !important;
+        white-space: nowrap !important;
+        text-decoration: none !important;
+        color: #6f765f !important;
+    }
+
+    .detalye-page .desktop-menu a:not(.desktop-monogram).active,
+    .detalye-page .desktop-menu a:not(.desktop-monogram):hover {
+        color: #c96a42 !important;
+    }
+
+    .detalye-page .desktop-menu .desktop-monogram {
+        display: inline-flex !important;
+        position: static !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex: 0 0 auto !important;
+        margin: 0 4px !important;
+        padding: 0 !important;
+        transform: none !important;
+        font-family: "Cormorant Garamond", serif !important;
+        font-size: 25px !important;
+        font-weight: 500 !important;
+        letter-spacing: 3px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+        color: #6f7f57 !important;
+    }
+
+    .detalye-page .desktop-menu .desktop-monogram::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    .detalye-page .menu-toggle,
+    .detalye-page .wedding-header > .monogram {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .detalye-page .desktop-menu {
+        display: none !important;
+    }
+
+    .detalye-page .menu-toggle {
+        display: flex !important;
+    }
+
+    .detalye-page .wedding-header {
+        height: 62px !important;
+        min-height: 62px !important;
+        padding: 0 18px !important;
+        justify-content: flex-start !important;
+    }
+
+    .detalye-page .wedding-header > .monogram {
+        display: inline-flex !important;
+        position: absolute !important;
+        left: 50% !important;
+        right: auto !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
     }
 }
