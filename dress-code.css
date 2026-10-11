@@ -1877,3 +1877,171 @@ body.dress-code-page {
         display: block !important;
     }
 }
+
+/* ==========================================================
+   FINAL NAVIGATION REPAIR â€” MATCH THE OTHER SECTIONS
+   Supports the current split desktop nav and legacy single nav.
+   ========================================================== */
+
+.dress-code-page .wedding-header,
+.dress-code-page .website-nav {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-height: 70px !important;
+    height: 70px !important;
+    padding: 0 4.5% !important;
+    background: rgba(250, 246, 234, 0.96) !important;
+    border-bottom: 1px solid rgba(116, 103, 86, 0.08) !important;
+    overflow: visible !important;
+}
+
+/* Current HTML: two nav groups with the monogram centered between them. */
+.dress-code-page .wedding-header:has(.desktop-menu-left):has(.desktop-menu-right) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) !important;
+    align-items: center !important;
+    justify-content: stretch !important;
+    column-gap: clamp(18px, 2.3vw, 42px) !important;
+}
+
+.dress-code-page .wedding-header .desktop-menu-left,
+.dress-code-page .wedding-header .desktop-menu-right {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(12px, 1.7vw, 30px) !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+}
+
+.dress-code-page .wedding-header .desktop-menu a {
+    display: inline-flex !important;
+    align-items: center !important;
+    position: relative !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    padding: 9px 0 !important;
+    font-family: "Poppins", sans-serif !important;
+    font-size: clamp(12px, 1.3vw, 18px) !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+    line-height: 1.2 !important;
+    text-transform: none !important;
+    color: #68745a !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+}
+
+.dress-code-page .wedding-header .desktop-menu a:hover,
+.dress-code-page .wedding-header .desktop-menu a.active {
+    color: #df6943 !important;
+}
+
+.dress-code-page .wedding-header .desktop-menu a::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 0 !important;
+    width: 0 !important;
+    height: 1px !important;
+    background: #df6943 !important;
+    transform: translateX(-50%) !important;
+    transition: width .25s ease !important;
+}
+
+.dress-code-page .wedding-header .desktop-menu a:hover::after,
+.dress-code-page .wedding-header .desktop-menu a.active::after {
+    width: 100% !important;
+}
+
+.dress-code-page .wedding-header > .monogram {
+    position: static !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 0 4px !important;
+    transform: none !important;
+    background: transparent !important;
+    color: #68745a !important;
+    font-family: "Cormorant Garamond", serif !important;
+    font-size: clamp(30px, 2.8vw, 42px) !important;
+    font-weight: 500 !important;
+    letter-spacing: .04em !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    z-index: 1002 !important;
+}
+
+.dress-code-page .wedding-header > .monogram span {
+    color: #df6943 !important;
+    font-family: "Cormorant Garamond", serif !important;
+    font-size: inherit !important;
+    font-style: normal !important;
+}
+
+/* Legacy HTML: one nav containing all six links. */
+.dress-code-page .website-nav > nav:not(.desktop-menu) {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    gap: clamp(12px, 2vw, 32px) !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    overflow: visible !important;
+}
+
+.dress-code-page .website-nav > nav:not(.desktop-menu) a {
+    display: inline-flex !important;
+    position: relative !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    padding: 8px 0 !important;
+    font-family: "Poppins", sans-serif !important;
+    font-size: clamp(12px, 1.3vw, 18px) !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+}
+
+@media (max-width: 900px) {
+    .dress-code-page .wedding-header,
+    .dress-code-page .website-nav {
+        height: 62px !important;
+        min-height: 62px !important;
+        padding: 0 14px !important;
+    }
+
+    .dress-code-page .wedding-header .desktop-menu,
+    .dress-code-page .website-nav > nav {
+        display: none !important;
+    }
+
+    .dress-code-page .wedding-header > .menu-toggle,
+    .dress-code-page .website-nav > .menu-toggle {
+        display: flex !important;
+        position: absolute !important;
+        left: 16px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+    }
+
+    .dress-code-page .wedding-header > .monogram,
+    .dress-code-page .website-nav > .nav-monogram {
+        display: inline-flex !important;
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        font-size: 27px !important;
+    }
+}
