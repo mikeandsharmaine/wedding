@@ -2205,3 +2205,47 @@ body.detalye-page .details-title span {
         line-height: 0.98 !important;
     }
 }
+
+/* FINAL MONOGRAM FIX â€” match the size and colors used in Ang Aming Kwento */
+@media screen and (min-width: 901px) {
+    .detalye-page .desktop-menu > a.desktop-monogram {
+        font-family: "Cormorant Garamond", Georgia, serif !important;
+        font-size: 22px !important;
+        font-weight: 500 !important;
+        line-height: 1 !important;
+        letter-spacing: 0.08em !important;
+        color: #6f765f !important;
+        gap: 5px !important;
+        margin: 0 3px !important;
+    }
+
+    .detalye-page .desktop-menu > a.desktop-monogram span {
+        font-family: "Cormorant Garamond", Georgia, serif !important;
+        font-size: 1em !important;
+        font-style: normal !important;
+        font-weight: 500 !important;
+        color: #b88950 !important;
+        letter-spacing: 0 !important;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .detalye-page .wedding-header > .monogram {
+        font-family: "Cormorant Garamond", Georgia, serif !important;
+        font-size: 23px !important;
+        font-weight: 500 !important;
+        line-height: 1 !important;
+        letter-spacing: 0.08em !important;
+        color: #6f765f !important;
+        gap: 5px !important;
+    }
+
+    .detalye-page .wedding-header > .monogram span {
+        font-family: "Cormorant Garamond", Georgia, serif !important;
+        font-size: 1em !important;
+        font-style: normal !important;
+        font-weight: 500 !important;
+        color: #b88950 !important;
+        letter-spacing: 0 !important;
+    }
+}
