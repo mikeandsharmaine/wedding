@@ -2009,3 +2009,38 @@ body.detalye-page .details-closing h2 em {
         font-size: 0.86em !important;
     }
 }
+
+/* =========================================================
+   FINAL HERO TITLE SIZE â€” MATCH ANG AMING KWENTO
+   Added after all previous rules so older overrides cannot
+   enlarge the Detalye heading again.
+   ========================================================= */
+body.detalye-page .details-title {
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-size: clamp(64px, 8.5vw, 112px) !important;
+    font-weight: 500 !important;
+    line-height: 0.84 !important;
+    letter-spacing: -2px !important;
+}
+
+body.detalye-page .details-title span {
+    display: block !important;
+    margin-top: 4px !important;
+    font-family: "Ballet", cursive !important;
+    font-size: clamp(92px, 12vw, 160px) !important;
+    font-weight: 400 !important;
+    line-height: 0.9 !important;
+    letter-spacing: 0 !important;
+}
+
+@media (max-width: 820px) {
+    body.detalye-page .details-title {
+        font-size: clamp(48px, 15vw, 72px) !important;
+        line-height: 0.88 !important;
+        letter-spacing: -1px !important;
+    }
+    body.detalye-page .details-title span {
+        font-size: clamp(70px, 21vw, 105px) !important;
+        line-height: 0.9 !important;
+    }
+}
