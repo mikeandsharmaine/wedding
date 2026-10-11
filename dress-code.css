@@ -442,6 +442,16 @@ body.dress-code-page {
     line-height: 1.45;
 }
 
+.attire-reminder {
+    max-width: 720px;
+    margin: 18px auto 0;
+    color: var(--olive);
+    font-family: "Cardo", serif;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+}
+
 
 /* ==========================================================
    OUTFIT ARTWORK
@@ -660,6 +670,19 @@ body.dress-code-page {
     .dress-code-title {
         padding-left: 8px;
         padding-right: 8px;
+        text-align: center;
+    }
+
+    .dress-code-title h1 {
+        max-width: 100%;
+        overflow-wrap: break-word;
+        text-align: center;
+    }
+
+    .attire-reminder {
+        font-size: 14px;
+        line-height: 1.5;
+        padding: 0 4px;
     }
 
     .section-number {
