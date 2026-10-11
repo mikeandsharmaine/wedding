@@ -1603,4 +1603,49 @@ body.menu-open {
     white-space: normal !important;
     font-size: 0.85em !important;
   }
+/* ==========================================================
+   DETALYE NG KASAL — M & S MONOGRAM CONSISTENCY FIX
+   Paste this at the VERY BOTTOM of detalye.css
+   ========================================================== */
+
+.detalye-page .desktop-menu .desktop-monogram,
+.detalye-page .wedding-header > .monogram {
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.08em !important;
+    color: var(--sage-dark, #657353) !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+
+.detalye-page .desktop-menu .desktop-monogram span,
+.detalye-page .wedding-header > .monogram span {
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    color: var(--peach, #d96b43) !important;
+    letter-spacing: 0 !important;
+}
+
+.detalye-page .desktop-menu .desktop-monogram::after,
+.detalye-page .wedding-header > .monogram::after {
+    display: none !important;
+}
+
+@media (min-width: 901px) {
+    .detalye-page .desktop-menu .desktop-monogram {
+        font-size: 27px !important;
+        gap: 5px !important;
+        margin: 0 3px !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .detalye-page .wedding-header > .monogram {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 25px !important;
+        gap: 5px !important;
+    }
 }
