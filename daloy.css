@@ -2209,3 +2209,20 @@ body.menu-open {
   margin-right: auto;
 }
 
+/* FIX: Center and bold the final program reminder */
+html body .timeline-section .timeline-heading > p.program-note {
+    display: block !important;
+    position: static !important;
+    float: none !important;
+    width: 100% !important;
+    max-width: 620px !important;
+    box-sizing: border-box !important;
+    margin: 18px auto 0 !important;
+    padding: 0 12px !important;
+    text-align: center !important;
+    font-weight: 700 !important;
+    transform: none !important;
+    left: auto !important;
+    right: auto !important;
+}
+}
