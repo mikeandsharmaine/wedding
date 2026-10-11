@@ -1560,3 +1560,144 @@ body.dress-code-page {
         font-size: clamp(25px, 7vw, 34px) !important;
     }
 }
+
+
+/* ==========================================================
+   DEFINITIVE DRESS CODE CONSISTENCY FIX
+   Match the shared wedding navigation and title typography.
+   These rules intentionally override earlier conflicting rules.
+   ========================================================== */
+
+/* Desktop: balanced navigation with M & S at the true center. */
+@media screen and (min-width: 761px) {
+    .dress-code-page .wedding-header {
+        position: sticky !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: 78px !important;
+        min-height: 78px !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: visible !important;
+        background: rgba(250, 246, 234, 0.96) !important;
+        z-index: 1000 !important;
+    }
+
+    .dress-code-page .desktop-menu {
+        position: absolute !important;
+        inset: 0 3.2vw !important;
+        width: auto !important;
+        max-width: none !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: clamp(14px, 1.55vw, 28px) !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        white-space: nowrap !important;
+    }
+
+    .dress-code-page .desktop-menu a {
+        flex: 0 0 auto !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: clamp(13px, 0.9vw, 15px) !important;
+        font-weight: 400 !important;
+        letter-spacing: 0 !important;
+        line-height: 1.4 !important;
+        padding: 9px 0 !important;
+        white-space: nowrap !important;
+    }
+
+    /* Keep the first three links on the left of the monogram
+       and the final three links on its right. */
+    .dress-code-page .desktop-menu a:nth-child(3) {
+        margin-right: auto !important;
+    }
+
+    .dress-code-page .desktop-menu a:nth-child(4) {
+        margin-left: auto !important;
+    }
+
+    .dress-code-page .wedding-header > .monogram {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin: 0 !important;
+        padding: 0 12px !important;
+        background: rgba(250, 246, 234, 0.98) !important;
+        font-family: "Cormorant Garamond", Georgia, serif !important;
+        font-size: 27px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.08em !important;
+        white-space: nowrap !important;
+        z-index: 1002 !important;
+    }
+
+    .dress-code-page .menu-toggle,
+    .dress-code-page .site-sidebar,
+    .dress-code-page .sidebar-overlay {
+        display: none !important;
+    }
+}
+
+/* Same refined italic serif styling as the other sections;
+   avoid the ornate Allura/Ballet script on Dress Code. */
+.dress-code-page .dress-code-script {
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-style: italic !important;
+    font-weight: 500 !important;
+    font-size: clamp(30px, 3vw, 44px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0 !important;
+}
+
+/* Mobile: hide desktop links and keep the hamburger + centered M & S. */
+@media screen and (max-width: 760px) {
+    .dress-code-page .wedding-header {
+        position: sticky !important;
+        top: 0 !important;
+        height: 60px !important;
+        min-height: 60px !important;
+        padding: 0 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: visible !important;
+    }
+
+    .dress-code-page .desktop-menu {
+        display: none !important;
+    }
+
+    .dress-code-page .menu-toggle {
+        display: flex !important;
+        position: absolute !important;
+        left: 20px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 1002 !important;
+    }
+
+    .dress-code-page .wedding-header > .monogram {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        padding: 0 8px !important;
+        background: transparent !important;
+        font-size: 23px !important;
+        white-space: nowrap !important;
+    }
+
+    .dress-code-page .site-sidebar,
+    .dress-code-page .sidebar-overlay {
+        display: block !important;
+    }
+
+    .dress-code-page .dress-code-script {
+        font-size: clamp(25px, 7vw, 34px) !important;
+    }
+}
