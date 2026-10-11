@@ -1,6 +1,6 @@
 /* =========================================================
    DETALYE NG KASAL
-   SECTION 03 Ã¢â‚¬â€ Mike & Sharmaine
+   SECTION 03 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Mike & Sharmaine
    ========================================================= */
 
 :root {
@@ -1061,7 +1061,7 @@ body.menu-open {
 
 /* =========================================================
    NEXT PAGE BUTTON
-   SECTION 03 Ã¢â€ â€™ SECTION 04
+   SECTION 03 ÃƒÂ¢Ã¢â‚¬ Ã¢â‚¬â„¢ SECTION 04
    ========================================================= */
 
 .detalye-page .next-button {
@@ -1410,7 +1410,7 @@ body.menu-open {
 
 
 /* ==========================================================
-   DETALYE PAGE Ã¢â‚¬â€ CONSISTENT RESPONSIVE NAVIGATION
+   DETALYE PAGE ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CONSISTENT RESPONSIVE NAVIGATION
    Desktop/laptop: horizontal menu; mobile: hamburger menu
    ========================================================== */
 
@@ -1575,7 +1575,7 @@ body.menu-open {
 
 
 /* ==========================================================
-   FINAL FIX Ã¢â‚¬â€ MATCH NAVIGATION ACROSS WEDDING SECTIONS
+   FINAL FIX ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â MATCH NAVIGATION ACROSS WEDDING SECTIONS
    Desktop: one centered horizontal menu + one centered M & S
    Mobile/tablet: hamburger + centered M & S
    ========================================================== */
@@ -1751,7 +1751,7 @@ body.menu-open {
 
 
 /* ==========================================================
-   FINAL OVERRIDES Ã¢â‚¬â€ MATCH THE DALoy SECTION'S PROPORTIONS
+   FINAL OVERRIDES ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â MATCH THE DALoy SECTION'S PROPORTIONS
    Keep Detalye's existing colors, floral background and cards.
    ========================================================== */
 
@@ -1895,7 +1895,7 @@ body.menu-open {
 
 
 /* ==========================================================
-   AUTHORITATIVE FINAL OVERRIDE Ã¢â‚¬â€ DETALYE HERO SCALE
+   AUTHORITATIVE FINAL OVERRIDE ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â DETALYE HERO SCALE
    Match the heading proportions used by Ang Aming Kwento.
    Keep this block at the VERY END of detalye.css.
    ========================================================== */
@@ -2013,7 +2013,7 @@ body.detalye-page .details-closing h2 em {
 }
 
 /* =========================================================
-   FINAL HERO TITLE SIZE Ã¢â‚¬â€ MATCH ANG AMING KWENTO
+   FINAL HERO TITLE SIZE ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â MATCH ANG AMING KWENTO
    Added after all previous rules so older overrides cannot
    enlarge the Detalye heading again.
    ========================================================= */
@@ -2047,7 +2047,7 @@ body.detalye-page .details-title span {
     }
 }
 
-/* FINAL FIX â€” MATCH THE DALoy NAVIGATION FONT SIZE */
+/* FINAL FIX Ã¢â‚¬â€ MATCH THE DALoy NAVIGATION FONT SIZE */
 @media (min-width: 901px) {
     .detalye-page .desktop-menu > a:not(.desktop-monogram) {
         font-size: clamp(13px, 0.95vw, 18px) !important;
@@ -2065,7 +2065,7 @@ body.detalye-page .details-title span {
 
 
 /* =========================================================
-   AUTHORITATIVE NAVIGATION FIX â€” MATCH DALOY NG PAGDIRIWANG
+   AUTHORITATIVE NAVIGATION FIX Ã¢â‚¬â€ MATCH DALOY NG PAGDIRIWANG
    Keep desktop menu font size, weight, spacing and logo consistent.
    Mobile/tablet keeps the hamburger navigation.
    ========================================================= */
@@ -2168,5 +2168,40 @@ body.detalye-page .details-title span {
         right: auto !important;
         top: 50% !important;
         transform: translate(-50%, -50%) !important;
+    }
+}
+
+
+/* =========================================================
+   FINAL TYPOGRAPHY FIX â€” MATCH ANG AMING KWENTO / DALOY
+   Keep "Kasal" in the same italic serif style as the other
+   section headings. This overrides the older Ballet rules.
+   ========================================================= */
+
+body.detalye-page .details-title {
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-weight: 500 !important;
+}
+
+body.detalye-page .details-title span {
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-style: italic !important;
+    font-weight: 500 !important;
+    font-size: clamp(62px, 7vw, 100px) !important;
+    line-height: 0.98 !important;
+    letter-spacing: 0 !important;
+    margin-top: 2px !important;
+}
+
+@media (max-width: 820px) {
+    body.detalye-page .details-title {
+        font-size: clamp(48px, 10vw, 70px) !important;
+        line-height: 0.95 !important;
+        letter-spacing: -1px !important;
+    }
+
+    body.detalye-page .details-title span {
+        font-size: clamp(50px, 11vw, 78px) !important;
+        line-height: 0.98 !important;
     }
 }
