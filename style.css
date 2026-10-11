@@ -10269,3 +10269,35 @@ body.sidebar-open {
         transform: translate(-50%, -50%) !important;
     }
 }
+
+
+/* =========================================================
+   HOME PAGE — MOBILE HERO NAME ALIGNMENT
+   Desktop/laptop styling remains unchanged.
+   ========================================================= */
+@media screen and (max-width: 600px) {
+    #home .hero-section .hero-content {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    #home .hero-section .hero-title {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: clamp(2.2rem, 10.5vw, 3.2rem);
+        letter-spacing: 0.5px;
+        line-height: 0.98;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    #home .hero-section .hero-title span {
+        text-align: center;
+    }
+}
