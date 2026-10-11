@@ -2213,3 +2213,12 @@ body.daloy-page .timeline-section .timeline-heading > p.program-note {
     font-weight: 700 !important;
     line-height: 1.5 !important;
 }
+
+/* MOBILE FIX: Keep "Pagdiriwang" italic */
+@media (max-width: 600px) {
+    body.daloy-page .daloy-title strong {
+        font-family: "Cormorant Garamond", Georgia, serif !important;
+        font-style: italic !important;
+        font-weight: 500 !important;
+    }
+}
