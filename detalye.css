@@ -2043,4 +2043,9 @@ body.detalye-page .details-title span {
         font-size: clamp(70px, 21vw, 105px) !important;
         line-height: 0.9 !important;
     }
+/* FINAL FIX — MATCH THE DALoy NAVIGATION FONT SIZE */
+@media (min-width: 901px) {
+    .detalye-page .desktop-menu > a:not(.desktop-monogram) {
+        font-size: clamp(13px, 0.95vw, 18px) !important;
+    }
 }
