@@ -942,6 +942,15 @@ body.menu-open {
     font-style: italic;
 }
 
+.program-note {
+    max-width: 620px;
+    margin: 18px auto 0;
+    color: var(--brown);
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
 
 .timeline {
     position: relative;
@@ -1745,8 +1754,16 @@ body.menu-open {
 
     .timeline-heading {
         margin-bottom: 50px;
+        text-align: center;
     }
 
+    .intro-paper h2,
+    .timeline-heading h2,
+    .daloy-closing h2 {
+        text-align: center;
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
 
     .timeline-heading h2 {
         font-size: 38px;
@@ -1755,6 +1772,11 @@ body.menu-open {
 
     .timeline-heading p {
         font-size: 16px;
+    }
+
+    .program-note {
+        font-size: 15px;
+        padding: 0 8px;
     }
 
 
