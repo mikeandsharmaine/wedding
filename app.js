@@ -785,12 +785,12 @@ function renderThankYouPage() {
 
     doneButton.addEventListener("click", function () {
 
-        App.party = [];
-        App.editMode = false;
+    App.party = [];
+    App.editMode = false;
 
-        transitionTo(renderWelcomePage);
+    returnToWebsite();
 
-    });
+});
 
 }
 function showLoading(message = "Please wait...") {
