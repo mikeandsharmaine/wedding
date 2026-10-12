@@ -13,6 +13,16 @@ const App = {
 };
 
 let pendingParty = [];
+
+// Escape values inserted into HTML attributes or text fields.
+function escapeHtml(value) {
+    return String(value == null ? "" : value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
 async function searchGuest(name) {
 
     const response = await fetch(
@@ -143,78 +153,52 @@ function renderWelcomePage() {
 // -------------------------------
 
 async function findGuest() {
+    const btn = document.querySelector("#app button");
+    const nameInput = document.getElementById("guestName");
+    const name = nameInput ? nameInput.value.trim() : "";
+    const defaultButtonText = "Tingnan ang Aking Imbitasyon";
 
-    const btn = document.querySelector("button");
+    if (!name) {
+        alert("Pakilagay ang inyong pangalan.");
+        if (nameInput) nameInput.focus();
+        return;
+    }
 
-    btn.disabled = true;
-    btn.innerHTML = "⏳ Hinahanap...";
-
-    const name = document.getElementById("guestName").value.trim();
-
-    if (name === "") {
-
-alert("Pakilagay ang inyong pangalan.");
-        
-    btn.disabled = false;
-btn.innerHTML = "View My Invitation";
-
-    return;
-
-}
+    if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = "⏳ Hinahanap...";
+    }
 
     try {
+        const result = await searchGuest(name);
 
-   console.log("1. Searching...");
+        if (!result || !Array.isArray(result.guests) || result.guests.length === 0) {
+            alert("Hindi namin mahanap ang inyong pangalan. Pakisuri ang spelling at subukan muli.");
+            return;
+        }
 
-const result = await searchGuest(name);
+        App.party = result.guests;
+        pendingParty = result.guests;
+        App.editMode = result.editMode === true;
 
-console.log("API Response:", result);
+        if (App.editMode) {
+            showUpdateModal();
+            return;
+        }
 
-const guests = result.guests;
-
-App.party = guests;          // <-- THIS IS MISSING
-        pendingParty = guests;
-App.editMode = result.editMode;
-
-console.log("Guests:");
-console.log(guests);
-
-console.log("Edit Mode:");
-console.log(App.editMode);
-
-// Check if already submitted
-if (App.editMode) {
-
-    console.log("About to show modal...");
-
-btn.disabled = false;
-btn.innerHTML = "View My Invitation";
-
-showUpdateModal();
-return;
-    }
         transitionTo(renderInvitationSummary);
-
-console.log("5. Finished");
-        
     } catch (error) {
-
-    console.error(error);
-
-    btn.disabled = false;
-btn.innerHTML = "View My Invitation";
-
-    alert(error.message);
-
+        console.error("Guest search failed:", error);
+        alert(error && error.message
+            ? error.message
+            : "Hindi makakonekta sa RSVP server. Pakisubukan muli.");
+    } finally {
+        if (btn) {
+            btn.disabled = false;
+            btn.innerHTML = defaultButtonText;
+        }
+    }
 }
-}
-
-// -------------------------------
-
-window.onload = renderWebsiteHome;
-
-console.log("Edit Mode:", App.editMode);
-console.log("App.party:", App.party);
 
 function renderInvitationSummary() {
 
@@ -361,23 +345,25 @@ function renderInvitationSummary() {
     `;
 }
 function renderContactPage() {
+    const existingGuest = App.party && App.party.length ? App.party[0] : {};
+    const mobileValue = escapeHtml(existingGuest.Mobile || "");
+    const emailValue = escapeHtml(existingGuest.Email || "");
+    const messageValue = escapeHtml(existingGuest.Message || "");
+    const buttonText = App.editMode ? "I-update ang RSVP" : "Kumpirmahin ang RSVP";
 
     document.getElementById("app").innerHTML = `
-
         ${renderProgress(2)}
 
         <h1 class="contact-update-title">
-    I-update ang Detalye sa Pakikipag-ugnayan
-</h1>
+            ${App.editMode
+                ? "I-update ang Detalye sa Pakikipag-ugnayan"
+                : "Detalye sa Pakikipag-ugnayan"}
+        </h1>
 
         <p>
-
-            ${
-                App.editMode
+            ${App.editMode
                 ? "Pakikumpirma o i-update ang inyong mga detalye sa pakikipag-ugnayan bago i-save ang inyong na-update na RSVP."
-                : "Pakibigay ang inyong mga detalye sa pakikipag-ugnayan."
-            }
-
+                : "Pakibigay ang inyong mga detalye sa pakikipag-ugnayan."}
         </p>
 
         <input
@@ -385,7 +371,8 @@ function renderContactPage() {
             type="tel"
             inputmode="numeric"
             autocomplete="tel"
-            placeholder="Numero ng Mobile">
+            placeholder="Numero ng Mobile"
+            value="${mobileValue}">
 
         <input
             id="email"
@@ -393,7 +380,8 @@ function renderContactPage() {
             autocomplete="email"
             autocapitalize="off"
             spellcheck="false"
-            placeholder="Email Address (Opsyonal)">
+            placeholder="Email Address (Opsyonal)"
+            value="${emailValue}">
 
         <label class="field-label">
             Mag-iwan ng Mensahe
@@ -403,90 +391,89 @@ function renderContactPage() {
             id="message"
             rows="4"
             autocapitalize="sentences"
-            placeholder="Ibahagi ang inyong pagbati at mensahe para kina Mike at Sharmaine…"></textarea>
+            placeholder="Ibahagi ang inyong pagbati at mensahe para kina Mike at Sharmaine…">${messageValue}</textarea>
 
         <button
             id="submitBtn"
             onclick="submitRSVP()">
-
-            ${
-                App.editMode
-                ? "I-update ang RSVP"
-                : "Kumpirmahin ang RSVP"
-            }
-
+            ${buttonText}
         </button>
-
     `;
-
 }
+
 async function submitRSVP() {
-
     const btn = document.getElementById("submitBtn");
+    if (!btn) return;
 
+    const defaultButtonText = App.editMode ? "I-update ang RSVP" : "Kumpirmahin ang RSVP";
     btn.disabled = true;
     btn.innerHTML = "♡ Sine-save ang inyong RSVP…";
 
     const mobile = document.getElementById("mobile").value.trim();
-const email = document.getElementById("email").value.trim();
-const message = document.getElementById("message").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-if (message === "") {
+    if (!message) {
+        alert("Mag-iwan ng mensahe bago kumpirmahin ang inyong RSVP.");
+        btn.disabled = false;
+        btn.innerHTML = defaultButtonText;
+        document.getElementById("message").focus();
+        return;
+    }
 
-    alert("Mag-iwan ng mensahe bago kumpirmahin ang inyong RSVP.");
+    if (!App.party || App.party.length === 0 || !App.party[0].InvitationID) {
+        alert("Nawawala ang detalye ng inyong imbitasyon. Pakisubukang hanapin muli ang inyong pangalan.");
+        btn.disabled = false;
+        btn.innerHTML = defaultButtonText;
+        return;
+    }
 
-    btn.disabled = false;
-    btn.innerHTML = "Kumpirmahin ang RSVP";
-
-    document.getElementById("message").focus();
-
-    return;
-}
-
-const guests = App.party.map(guest => ({
+    const guests = App.party.map(guest => ({
         GuestName: guest.GuestName,
         RSVP: guest.RSVP
     }));
 
     try {
+        const query = new URLSearchParams({
+            action: "submit",
+            invitationId: App.party[0].InvitationID,
+            mobile: mobile,
+            email: email,
+            message: message,
+            guests: JSON.stringify(guests)
+        });
 
-        const response = await fetch(
-            `${App.apiUrl}?action=submit`
-            + `&invitationId=${encodeURIComponent(App.party[0].InvitationID)}`
-            + `&mobile=${encodeURIComponent(mobile)}`
-            + `&email=${encodeURIComponent(email)}`
-            + `&message=${encodeURIComponent(message)}`
-            + `&guests=${encodeURIComponent(JSON.stringify(guests))}`
-        );
+        const response = await fetch(`${App.apiUrl}?${query.toString()}`);
+
+        if (!response.ok) {
+            throw new Error("Hindi makakonekta sa RSVP server. Pakisubukan muli.");
+        }
 
         const result = await response.json();
+        console.log("Submit Result:", result);
 
-console.log("Submit Result:", result);
+        if (!result || result.success !== true) {
+            throw new Error(result && result.error
+                ? result.error
+                : "Hindi na-save ang RSVP. Pakisubukan muli.");
+        }
 
-if (result.success) {
+        celebrateRSVP();
 
-    celebrateRSVP();
-
-    setTimeout(() => {
-
-        transitionTo(renderThankYouPage);
-
-    },800);
-
-}
+        setTimeout(() => {
+            transitionTo(renderThankYouPage);
+        }, 800);
 
     } catch (error) {
-
-        console.error(error);
-
+        console.error("RSVP submission failed:", error);
+        alert(error && error.message
+            ? error.message
+            : "Hindi na-save ang RSVP. Pakisubukan muli.");
         btn.disabled = false;
-        btn.innerHTML = "Confirm RSVP";
-
-        alert("Unable to submit RSVP.");
-
+        btn.innerHTML = defaultButtonText;
     }
-
 }
+
 function continueToContact() {
 
     App.party.forEach((guest, index) => {
