@@ -430,10 +430,20 @@ async function submitRSVP() {
         return;
     }
 
-    const guests = App.party.map(guest => ({
+    
+console.log("RSVP payload before submission:", JSON.stringify({
+    invitationId: App.party[0].InvitationID,
+    guests: App.party.map(guest => ({
         GuestName: guest.GuestName,
         RSVP: guest.RSVP
-    }));
+    }))
+}));
+
+const guests = App.party.map(guest => ({
+    GuestName: guest.GuestName,
+    RSVP: guest.RSVP
+}));
+
 
     try {
         const query = new URLSearchParams({
