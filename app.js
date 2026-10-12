@@ -13,6 +13,7 @@ const App = {
 };
 
 let pendingParty = [];
+let searchedGuestName = "";
 
 // Escape values inserted into HTML attributes or text fields.
 function escapeHtml(value) {
@@ -177,9 +178,10 @@ async function findGuest() {
             return;
         }
 
-        App.party = result.guests;
-        pendingParty = result.guests;
-        App.editMode = result.editMode === true;
+       App.party = result.guests;
+pendingParty = result.guests;
+searchedGuestName = name;
+App.editMode = result.editMode === true;
 
         if (App.editMode) {
             showUpdateModal();
@@ -685,14 +687,14 @@ function renderThankYouPage() {
             </h1>
 
             <p>
-                ${
-                    isUpdate
-                    ? `Natanggap na namin ang iyong na-update na RSVP,
-                       <strong>${App.party[0].GuestName}</strong>.`
-                    : `Natanggap na namin ang inyong RSVP,
-                       <strong>${App.party[0].GuestName}</strong>.`
-                }
-            </p>
+    ${
+        isUpdate
+        ? `Natanggap na namin ang iyong na-update na RSVP,
+           <strong>${App.party[0].GuestName}</strong>.`
+        : `Natanggap na namin ang inyong RSVP,
+           <strong>${escapeHtml(searchedGuestName || App.party[0].GuestName)}</strong>.`
+    }
+</p>
 
             <p class="thank-you-message">
 
