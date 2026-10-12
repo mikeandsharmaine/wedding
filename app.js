@@ -124,7 +124,7 @@ function renderWelcomePage() {
 
            <p class="rsvp-deadline">
     Mangyaring mag-RSVP bago o sa
-    <strong>Disyembre 15, 2026.</strong>
+    <strong>Nobyembre 30, 2026.</strong>
 </p>
 
             <div class="divider"></div>
