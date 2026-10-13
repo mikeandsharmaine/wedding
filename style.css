@@ -10301,3 +10301,38 @@ body.sidebar-open {
         text-align: center;
     }
 }
+
+.gift-note {
+    margin-top: 30px;
+    padding: 28px;
+    border: 2px solid #e8dfce;
+    border-radius: 24px;
+    background: #fcfaf5;
+    text-align: center;
+    color: #6f6a62;
+}
+
+.gift-note h3 {
+    margin: 0 0 24px;
+    color: #7d8964;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.gift-note hr {
+    border: 0;
+    border-top: 1px solid #e0d5c0;
+    margin: 0 0 28px;
+}
+
+.gift-note p {
+    margin: 0 0 24px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.gift-note .gift-note-thanks {
+    margin-bottom: 0;
+    color: #7d8964;
+    font-size: 20px;
+}
