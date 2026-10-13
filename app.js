@@ -128,6 +128,22 @@ function renderWelcomePage() {
     <strong>Nobyembre 30, 2026.</strong>
 </p>
 
+
+<div class="gift-note">
+    <h3>Munting Handog</h3>
+    <hr>
+    <p>
+        Ang inyong presensya sa aming espesyal na araw ay
+        higit pa sa sapat. Kung nanaisin po ninyong magbigay
+        ng regalo, mas ikagagalak po namin ang isang munting
+        handog na salapi sa halip na material na regalo.
+    </p>
+    <p class="gift-note-thanks">
+        Maraming salamat sa inyong kabutihang-loob at
+        pagmamahal.
+    </p>
+</div>
+
             <div class="divider"></div>
             
 <p class="help-text">
