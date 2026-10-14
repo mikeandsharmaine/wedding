@@ -189,10 +189,20 @@ async function findGuest() {
     try {
         const result = await searchGuest(name);
 
-        if (!result || !Array.isArray(result.guests) || result.guests.length === 0) {
-            alert("Hindi namin mahanap ang inyong pangalan. Pakisuri ang spelling at subukan muli.");
-            return;
-        }
+       
+if (result && result.ambiguous) {
+    alert(
+        result.message ||
+        "Maraming bisita ang tumutugma sa pangalang ito. Pakilagay ang inyong first name o buong pangalan."
+    );
+    return;
+}
+
+if (!result || !Array.isArray(result.guests) || result.guests.length === 0) {
+    alert("Hindi namin mahanap ang inyong pangalan. Pakisuri ang spelling at subukan muli.");
+    return;
+}
+
 
        App.party = result.guests;
 pendingParty = result.guests;
